@@ -14,8 +14,6 @@ env:
     dev_mode=yes
     module_text_server_fb_enabled=yes
   GODOT_CPP_BRANCH: 4.5
-  DOTNET_NOLOGO: true
-  DOTNET_CLI_TELEMETRY_OPTOUT: true
   ASAN_OPTIONS: color=always:print_suppressions=1:suppressions=${{ github.workspace }}/misc/error_suppressions/asan.txt
   LSAN_OPTIONS: color=always:print_suppressions=1:suppressions=${{ github.workspace }}/misc/error_suppressions/lsan.txt
   TSAN_OPTIONS: color=always:print_suppressions=1:suppressions=${{ github.workspace }}/misc/error_suppressions/tsan.txt
@@ -31,12 +29,11 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - name: Editor w/ Mono (target=editor)
-            cache-name: linux-editor-mono
+          - name: Editor (target=editor)
+            cache-name: linux-editor
             target: editor
-            scons-flags: module_mono_enabled=yes compiledb=yes
-            bin: ./bin/godot.linuxbsd.editor.x86_64.mono
-            build-mono: true
+            scons-flags: compiledb=yes
+            bin: ./bin/godot.linuxbsd.editor.x86_64
             doc-test: true
             proj-conv: true
             proj-export: true
@@ -88,18 +85,16 @@ jobs:
             bin: ./bin/godot.linuxbsd.editor.dev.x86_64.llvm.san
             free-space: true
 
-          - name: Template w/ Mono, release (target=template_release)
-            cache-name: linux-template-mono
+          - name: Template, release (target=template_release)
+            cache-name: linux-template
             target: template_release
-            scons-flags: module_mono_enabled=yes
-            bin: ./bin/godot.linuxbsd.template_release.x86_64.mono
+            bin: ./bin/godot.linuxbsd.template_release.x86_64
             artifact: true
 
-          - name: Template w/ Mono, debug (target=template_debug)
-            cache-name: linux-template-mono-debug
+          - name: Template, debug (target=template_debug)
+            cache-name: linux-template-debug
             target: template_debug
-            scons-flags: module_mono_enabled=yes
-            bin: ./bin/godot.linuxbsd.template_debug.x86_64.mono
+            bin: ./bin/godot.linuxbsd.template_debug.x86_64
             artifact: true
 
           - name: Minimal template (target=template_release, everything disabled)
@@ -157,18 +152,6 @@ jobs:
           python-version: 3.9
           scons-version: 4.4
 
-      - name: Force remove preinstalled .NET SDKs
-        if: matrix.build-mono
-        run: |
-          sudo rm -rf /usr/share/dotnet/sdk/*
-
-      - name: Setup older .NET SDK as baseline
-        if: matrix.build-mono
-        uses: actions/setup-dotnet@v5
-        with:
-          # Targeting the oldest version we want to support to ensure it still builds.
-          dotnet-version: 8.0.100
-
       - name: Download pre-built AccessKit
         shell: sh
         id: accesskit-sdk
@@ -213,17 +196,6 @@ jobs:
           cache-name: ${{ matrix.cache-name }}
         continue-on-error: true
 
-      - name: Generate C# glue
-        if: matrix.build-mono
-        run: |
-          ${{ matrix.bin }} --headless --generate-mono-glue ./modules/mono/glue
-
-      - name: Build .NET solutions
-        if: matrix.build-mono
-        run: |
-          dotnet --info
-          ./modules/mono/build_scripts/build_assemblies.py --godot-output-dir=./bin --godot-platform=linuxbsd --werror
-
       - name: Prepare artifact
         if: matrix.artifact
         run: |
@@ -242,11 +214,6 @@ jobs:
           ${{ matrix.bin }} --version
           ${{ matrix.bin }} --help
           ${{ matrix.bin }} --headless --test --force-colors
-
-      - name: .NET source generators tests
-        if: matrix.build-mono
-        run: |
-          dotnet test modules/mono/editor/Godot.NET.Sdk/Godot.SourceGenerators.Tests
 
       # Check class reference
       - name: Check for class reference updates
