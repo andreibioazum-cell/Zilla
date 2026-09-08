@@ -1,4 +1,4 @@
- name: 🤖 Android Builds
+name: 🤖 Android Builds
 on:
   workflow_call:
     secrets:
