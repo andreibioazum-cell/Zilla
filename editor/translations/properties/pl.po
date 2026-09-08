@@ -2822,9 +2822,6 @@ msgstr "Rozmiar czcionki kodu w pomocy"
 msgid "Help Title Font Size"
 msgstr "Rozmiar czcionki tytułu w pomocy"
 
-msgid "Class Reference Examples"
-msgstr "Przykłady referencji klas"
-
 msgid "Sort Functions Alphabetically"
 msgstr "Sortuj funkcje alfabetycznie"
 
@@ -3590,119 +3587,11 @@ msgstr "Schowaj pasek postępu"
 msgid "Suppress UI Gesture"
 msgstr "Ignoruj gesty UI"
 
-msgid "XR"
-msgstr "XR"
-
-msgid "OpenXR"
-msgstr "OpenXR"
-
-msgid "Target API Version"
-msgstr "Docelowa wersja API"
-
-msgid "Default Action Map"
-msgstr "Domyślna mapa akcji"
-
-msgid "Form Factor"
-msgstr "Czynnik formy"
-
-msgid "View Configuration"
-msgstr "Konfiguracja widoku"
-
-msgid "Reference Space"
-msgstr "Przestrzeń odniesienia"
-
-msgid "Environment Blend Mode"
-msgstr "Tryb mieszania środowiska"
-
-msgid "Foveation Level"
-msgstr "Poziom wgłębienia"
-
-msgid "Foveation Dynamic"
-msgstr "Dynamika wgłębienia"
-
-msgid "Foveation Eye Tracked"
-msgstr "Wgłębienie śledzące oko"
-
-msgid "Foveation with Subsampled Images"
-msgstr "Wgłębienie z podpróbkowanymi obrazkami"
-
-msgid "Submit Depth Buffer"
-msgstr "Prześlij bufor głębi"
-
-msgid "Startup Alert"
-msgstr "Alarm rozpoczęcia"
-
-msgid "Extensions"
-msgstr "Rozszerzenia"
-
-msgid "Debug Utils"
-msgstr "Narzędzia debugowania"
-
-msgid "Debug Message Types"
-msgstr "Typy wiadomości debugowania"
-
-msgid "Frame Synthesis"
-msgstr "Synteza klatek"
-
-msgid "Hand Tracking"
-msgstr "Śledzenie dłoni"
-
-msgid "Hand Tracking Unobstructed Data Source"
-msgstr "Źródło niezasłoniętych danych śledzenia dłoni"
-
-msgid "Hand Tracking Controller Data Source"
-msgstr "Źródło danych kontrolera śledzenia dłoni"
-
-msgid "Hand Interaction Profile"
-msgstr "Profil interakcji dłoni"
-
-msgid "Spatial Entity"
-msgstr "Podmiot przestrzenny"
-
-msgid "Enable Spatial Anchors"
-msgstr "Włącz przestrzenne zakotwiczenia"
-
-msgid "Enable Persistent Anchors"
-msgstr "Włącz trwałe zakotwiczenia"
-
-msgid "Enable Builtin Anchor Detection"
-msgstr "Włącz wykrywanie wbudowanych zakotwiczeń"
-
-msgid "Enable Plane Tracking"
-msgstr "Włącz śledzenie płaszczyzn"
-
-msgid "Enable Builtin Plane Detection"
-msgstr "Włącz wykrywanie wbudowanych płaszczyzn"
-
 msgid "Enable Marker Tracking"
 msgstr "Włącz śledzenie znaczników"
 
 msgid "Enable Builtin Marker Tracking"
 msgstr "Włącz śledzenie wbudowanych znaczników"
-
-msgid "Aruco Dict"
-msgstr "Słownik Aruco"
-
-msgid "April Tag Dict"
-msgstr "Słownik AprilTag"
-
-msgid "Eye Gaze Interaction"
-msgstr "Interakcja wzrokowa"
-
-msgid "Render Model"
-msgstr "Renderowany model"
-
-msgid "User Presence"
-msgstr "Obecność użytkownika"
-
-msgid "Binding Modifiers"
-msgstr "Modyfikatory przypisania"
-
-msgid "Analog Threshold"
-msgstr "Próg analogu"
-
-msgid "Dpad Binding"
-msgstr "Przypisanie D-Padu"
 
 msgid "Boot Splash"
 msgstr "Ekran uruchamiania"
@@ -3763,21 +3652,6 @@ msgstr "Obraz"
 
 msgid "Minimum Display Time"
 msgstr "Minimalny czas wyświetlania"
-
-msgid "Dotnet"
-msgstr "Dotnet"
-
-msgid "Project"
-msgstr "Projekt"
-
-msgid "Assembly Name"
-msgstr "Nazwa zespołu"
-
-msgid "Solution Directory"
-msgstr "Katalog rozwiązania"
-
-msgid "Assembly Reload Attempts"
-msgstr "Próby przeładowania zestawu"
 
 msgid "Time"
 msgstr "Czas"
@@ -4691,36 +4565,6 @@ msgstr "Odszumianie"
 msgid "Denoiser"
 msgstr "Filtr"
 
-msgid "Eye Height"
-msgstr "Wysokość oczu"
-
-msgid "IOD"
-msgstr "PD"
-
-msgid "Display Width"
-msgstr "Szerokość wyświetlacza"
-
-msgid "Display to Lens"
-msgstr "Wyświetlacz do soczewki"
-
-msgid "Offset Rect"
-msgstr "Prostokąt przesunięcia"
-
-msgid "Oversample"
-msgstr "Nadpróbkowanie"
-
-msgid "K1"
-msgstr "K1"
-
-msgid "K2"
-msgstr "K2"
-
-msgid "Vulkan VRS"
-msgstr "VRS Vulkana"
-
-msgid "Min Radius"
-msgstr "Minimalny promień"
-
 msgid "BPM"
 msgstr "BPM"
 
@@ -4859,200 +4703,11 @@ msgstr "Brzeg bezszwowego mieszania"
 msgid "Bump Strength"
 msgstr "Siła uderzenia"
 
-msgid "Localized Name"
-msgstr "Nazwa lokalizowana"
-
-msgid "Action Type"
-msgstr "Typ akcji"
-
-msgid "Toplevel Paths"
-msgstr "Ścieżki najwyższego rzędu"
-
-msgid "Action Sets"
-msgstr "Zestawy akcji"
-
-msgid "Interaction Profiles"
-msgstr "Profile interakcji"
-
-msgid "Actions"
-msgstr "Akcje"
-
-msgid "Binding Path"
-msgstr "Ścieżka wiązania"
-
-msgid "Interaction Profile Path"
-msgstr "Ścieżka profilu interakcji"
-
-msgid "Bindings"
-msgstr "Przypisania"
-
-msgid "Runtime Paths"
-msgstr "Ścieżki czasu uruchomienia"
-
-msgid "Action Set"
-msgstr "Zestaw akcji"
-
-msgid "Input Path"
-msgstr "Ścieżka wejścia"
-
-msgid "Threshold Released"
-msgstr "Próg puszczenia"
-
-msgid "Center Region"
-msgstr "Obszar środkowy"
-
-msgid "Wedge Angle"
-msgstr "Kąt klinu"
-
-msgid "Is Sticky"
-msgstr "Jest przyczepny"
-
-msgid "On Haptic"
-msgstr "Na dotyku"
-
-msgid "Off Haptic"
-msgstr "Na puszczeniu"
-
-msgid "Relax Frame Interval"
-msgstr "Rozluźnij odstęp czasu klatek"
-
-msgid "On Threshold"
-msgstr "Na progu"
-
-msgid "Off Threshold"
-msgstr "Poza progiem"
-
-msgid "UUID"
-msgstr "UUID"
-
-msgid "Entity"
-msgstr "Podmiot"
-
-msgid "Spatial Tracking State"
-msgstr "Stan śledzenia przestrzennego"
-
-msgid "April Dict"
-msgstr "AprilDict"
-
-msgid "Bounds Size"
-msgstr "Rozmiar granic"
-
-msgid "Marker Type"
-msgstr "Typ znacznika"
-
-msgid "Marker ID"
-msgstr "ID znacznika"
-
-msgid "Plane Alignment"
-msgstr "Wyrównanie płaszczyzny"
-
-msgid "Plane Label"
-msgstr "Etykieta płaszczyzny"
-
-msgid "Display Refresh Rate"
-msgstr "Pokaż częstotliwość odświeżania"
-
-msgid "Render Target Size Multiplier"
-msgstr "Multiplier rozmiaru obiektu renderowania"
-
 msgid "Next"
 msgstr "Dalej"
 
-msgid "Layer Viewport"
-msgstr "Ułóż widok"
-
-msgid "Use Android Surface"
-msgstr "Użyj powierzchni Androida"
-
-msgid "Protected Content"
-msgstr "Zawartość chroniona"
-
-msgid "Android Surface Size"
-msgstr "Rozmiar powierzchni Androida"
-
-msgid "Sort Order"
-msgstr "Kolejność sortowania"
-
-msgid "Alpha Blend"
-msgstr "Mieszanie alpha"
-
-msgid "Enable Hole Punch"
-msgstr "Włącz wybijanie dziur"
-
-msgid "Eye Visibility"
-msgstr "Widoczność oka"
-
-msgid "Swapchain State"
-msgstr "Stan łańcucha wymiany"
-
-msgid "Mipmap Mode"
-msgstr "Tryb mipmap"
-
-msgid "Horizontal Wrap"
-msgstr "Zawinięcie poziome"
-
-msgid "Vertical Wrap"
-msgstr "Zawinięcie pionowe"
-
-msgid "Red Swizzle"
-msgstr "Przypisanie mieszane czerwone"
-
-msgid "Green Swizzle"
-msgstr "Przypisanie mieszane zielone"
-
-msgid "Blue Swizzle"
-msgstr "Przypisanie mieszane niebieskie"
-
-msgid "Alpha Swizzle"
-msgstr "Przypisanie mieszane alfa"
-
-msgid "Max Anisotropy"
-msgstr "Maks. anizotropia"
-
 msgid "Border Color"
 msgstr "Kolor brzegu"
-
-msgid "Aspect Ratio"
-msgstr "Współczynnik proporcji"
-
-msgid "Central Angle"
-msgstr "Kąt środkowy"
-
-msgid "Fallback Segments"
-msgstr "Segmenty awaryjne"
-
-msgid "Central Horizontal Angle"
-msgstr "Kąt środkowy poziomy"
-
-msgid "Upper Vertical Angle"
-msgstr "Kąt pionowy górny"
-
-msgid "Lower Vertical Angle"
-msgstr "Kąt pionowy dolny"
-
-msgid "Quad Size"
-msgstr "Rozmiar czworokąta"
-
-msgid "Hand"
-msgstr "Dłoń"
-
-msgid "Motion Range"
-msgstr "Zakres ruchu"
-
-msgid "Hand Skeleton"
-msgstr "Szkielet dłoni"
-
-msgid "Skeleton Rig"
-msgstr "Rig szkieletu"
-
-msgid "Bone Update"
-msgstr "Aktualizacja kości"
-
-msgid "Tracker"
-msgstr "Tracker"
-
-msgid "Make Local to Pose"
-msgstr "Uczyń lokalne dla pozy"
 
 msgid "Subject"
 msgstr "Temat"
@@ -5243,27 +4898,6 @@ msgstr "Maks. zakolejkowane pakiety"
 msgid "Heartbeat Interval"
 msgstr "Odstęp czasowy pulsu"
 
-msgid "Session Mode"
-msgstr "Tryb sesji"
-
-msgid "Required Features"
-msgstr "Funkcje wymagane"
-
-msgid "Optional Features"
-msgstr "Funkcje opcjonalne"
-
-msgid "Requested Reference Space Types"
-msgstr "Żądane typy przestrzeni odniesień"
-
-msgid "Reference Space Type"
-msgstr "Typ przestrzeni odniesień"
-
-msgid "Enabled Features"
-msgstr "Włączone funkcjonalności"
-
-msgid "Visibility State"
-msgstr "Stan widoczności"
-
 msgid "Debug Keystore"
 msgstr "Keystore debugowy"
 
@@ -5416,12 +5050,6 @@ msgstr "Grafika"
 
 msgid "OpenGL Debug"
 msgstr "Debugowanie OpenGL"
-
-msgid "XR Features"
-msgstr "Funkcje XR"
-
-msgid "XR Mode"
-msgstr "Tryb XR"
 
 msgid "Gesture"
 msgstr "Gestura"
@@ -5770,9 +5398,6 @@ msgstr "Opis użycia usuwalnych wolumenów"
 
 msgid "Removable Volumes Usage Description Localized"
 msgstr "Lokalizowany opis użycia usuwalnych wolumenów"
-
-msgid "Min visionOS Version"
-msgstr "Min. wersja visionOS"
 
 msgid "Web"
 msgstr "Przeglądarka (HTML5)"
@@ -7906,26 +7531,8 @@ msgstr "Propagacja"
 msgid "Use Two Bounces"
 msgstr "Użyj dwóch odbić"
 
-msgid "Body Tracker"
-msgstr "Tracker ciała"
-
-msgid "Body Update"
-msgstr "Odświeżanie ciała"
-
-msgid "Face Tracker"
-msgstr "Tracker twarzy"
-
-msgid "Hand Tracker"
-msgstr "Tracker dłoni"
-
 msgid "Pose"
 msgstr "Poza"
-
-msgid "Show When Tracked"
-msgstr "Pokaż kiedy śledzony"
-
-msgid "World Scale"
-msgstr "Skala świata"
 
 msgid "Play Mode"
 msgstr "Tryb odtwarzania"
@@ -9463,9 +9070,6 @@ msgstr "Ścieżka rzutni"
 
 msgid "Disable 3D"
 msgstr "Wyłącz 3D"
-
-msgid "Use XR"
-msgstr "Użyj XR"
 
 msgid "Own World 3D"
 msgstr "Własny świat 3D"
@@ -12824,9 +12428,6 @@ msgstr "Maksymalne renderowalne światła"
 msgid "Max Lights per Object"
 msgstr "Maksymalne światła na obiekt"
 
-msgid "Shaders"
-msgstr "Shadery"
-
 msgid "Shader Language"
 msgstr "Język shadera"
 
@@ -12976,48 +12577,3 @@ msgstr "Dołącz dane serwera tekstów"
 
 msgid "Line Breaking Strictness"
 msgstr "Ścisłość łamania linii"
-
-msgid "Has Tracking Data"
-msgstr "Posiada dane śledzenia"
-
-msgid "Body Flags"
-msgstr "Flagi ciała"
-
-msgid "Blend Shapes"
-msgstr "Kształty mieszania"
-
-msgid "Hand Tracking Source"
-msgstr "Źródło śledzenia dłoni"
-
-msgid "Is Primary"
-msgstr "Jest główny"
-
-msgid "Play Area Mode"
-msgstr "Tryb obszaru odtwarzania"
-
-msgid "AR"
-msgstr "AR"
-
-msgid "Is Anchor Detection Enabled"
-msgstr "Wykrywanie zakotwiczenia włączone"
-
-msgid "Tracking Confidence"
-msgstr "Pewność śledzenia"
-
-msgid "World Origin"
-msgstr "Początek świata"
-
-msgid "Camera Locked to Origin"
-msgstr "Kamera zablokowana na początku"
-
-msgid "Primary Interface"
-msgstr "Interfejs główny"
-
-msgid "VRS Min Radius"
-msgstr "Minimalny promień VRS"
-
-msgid "VRS Strength"
-msgstr "Siła VRS"
-
-msgid "VRS Render Region"
-msgstr "Obszar renderowania VRS"

@@ -32,7 +32,7 @@
 		<method name="get_camera_transform" qualifiers="const">
 			<return type="Transform3D" />
 			<description>
-				Returns the transform of the camera plus the vertical ([member v_offset]) and horizontal ([member h_offset]) offsets; and any other adjustments made to the position and orientation of the camera by subclassed cameras such as [XRCamera3D].
+				Returns the transform of the camera plus the vertical ([member v_offset]) and horizontal ([member h_offset]) offsets; and any other adjustments made to the position and orientation of the camera by subclassed cameras.
 			</description>
 		</method>
 		<method name="get_cull_mask_value" qualifiers="const">

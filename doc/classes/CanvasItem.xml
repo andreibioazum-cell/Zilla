@@ -381,14 +381,9 @@
 			<description>
 				Draws [param text] using the specified [param font] at the [param pos] in local space (bottom-left corner using the baseline of the font). The text will have its color multiplied by [param modulate]. If [param width] is greater than or equal to 0, the text will be clipped if it exceeds the specified width. If [param oversampling] is greater than zero, it is used as font oversampling factor, otherwise viewport oversampling settings are used.
 				[b]Example:[/b] Draw "Hello world", using the project's default font:
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				draw_string(ThemeDB.fallback_font, Vector2(64, 64), "Hello world", HORIZONTAL_ALIGNMENT_LEFT, -1, ThemeDB.fallback_font_size)
-				[/gdscript]
-				[csharp]
-				DrawString(ThemeDB.FallbackFont, new Vector2(64, 64), "Hello world", HorizontalAlignment.Left, -1, ThemeDB.FallbackFontSize);
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 				See also [method Font.draw_string].
 			</description>
 		</method>

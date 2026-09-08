@@ -104,7 +104,7 @@ struct ClearAttKey {
 
 #pragma mark - Cached Buffer
 
-struct API_AVAILABLE(macos(11.0), ios(14.0), tvos(14.0), visionos(2.0)) MDCachedBuffer {
+struct API_AVAILABLE(macos(11.0), ios(14.0), tvos(14.0)) MDCachedBuffer {
 	MTL::Buffer *buffer = nullptr;
 	void *contents = nullptr;
 	uint64_t gpu_address = 0;
@@ -127,7 +127,7 @@ struct API_AVAILABLE(macos(11.0), ios(14.0), tvos(14.0), visionos(2.0)) MDCached
 /// A ring buffer backed by MTLBuffer instances for transient GPU allocations.
 /// Allocations are 16-byte aligned with a minimum size of 16 bytes.
 /// When the current buffer is exhausted, a new buffer is allocated.
-class API_AVAILABLE(macos(11.0), ios(14.0), tvos(14.0), visionos(2.0)) MDRingBuffer {
+class API_AVAILABLE(macos(11.0), ios(14.0), tvos(14.0)) MDRingBuffer {
 public:
 	static constexpr uint32_t DEFAULT_BUFFER_SIZE = 512 * 1024;
 	static constexpr uint32_t MIN_BLOCK_SIZE = 16;
@@ -225,7 +225,7 @@ public:
 
 #pragma mark - Resource Factory
 
-class API_AVAILABLE(macos(11.0), ios(14.0), tvos(14.0), visionos(2.0)) MDResourceFactory {
+class API_AVAILABLE(macos(11.0), ios(14.0), tvos(14.0)) MDResourceFactory {
 private:
 	MTL::Device *device;
 	PixelFormats &pixel_formats;
@@ -250,7 +250,7 @@ public:
 	~MDResourceFactory() = default;
 };
 
-class API_AVAILABLE(macos(11.0), ios(14.0), tvos(14.0), visionos(2.0)) MDResourceCache {
+class API_AVAILABLE(macos(11.0), ios(14.0), tvos(14.0)) MDResourceCache {
 private:
 	typedef HashMap<ClearAttKey, NS::SharedPtr<MTL::RenderPipelineState>> HashMap;
 	std::unique_ptr<MDResourceFactory> resource_factory;
@@ -291,7 +291,7 @@ _FORCE_INLINE_ static uint32_t to_index(RDD::ShaderStage p_s) {
 	}
 }
 
-class API_AVAILABLE(macos(11.0), ios(14.0), tvos(14.0), visionos(2.0)) MDFrameBuffer {
+class API_AVAILABLE(macos(11.0), ios(14.0), tvos(14.0)) MDFrameBuffer {
 public:
 	Size2i size;
 	MTL::RasterizationRateMap *rasterization_rate_map = nullptr;
@@ -302,7 +302,7 @@ public:
 	virtual ~MDFrameBuffer() = default;
 };
 
-class API_AVAILABLE(macos(11.0), ios(14.0), tvos(14.0), visionos(2.0)) MDFrameBufferTexture : public MDFrameBuffer {
+class API_AVAILABLE(macos(11.0), ios(14.0), tvos(14.0)) MDFrameBufferTexture : public MDFrameBuffer {
 	Vector<MTL::Texture *> textures;
 
 public:
@@ -414,7 +414,7 @@ struct MDSubpass {
 	MTLFmtCaps getRequiredFmtCapsForAttachmentAt(uint32_t p_index) const;
 };
 
-struct API_AVAILABLE(macos(11.0), ios(14.0), tvos(14.0), visionos(2.0)) MDAttachment {
+struct API_AVAILABLE(macos(11.0), ios(14.0), tvos(14.0)) MDAttachment {
 private:
 	uint32_t index = 0;
 	uint32_t firstUseSubpassIndex = 0;
@@ -489,7 +489,7 @@ public:
 	bool shouldClear(const MDSubpass &p_subpass, bool p_is_stencil) const;
 };
 
-class API_AVAILABLE(macos(11.0), ios(14.0), tvos(14.0), visionos(2.0)) MDRenderPass {
+class API_AVAILABLE(macos(11.0), ios(14.0), tvos(14.0)) MDRenderPass {
 public:
 	LocalVector<MDAttachment> attachments;
 	LocalVector<MDSubpass> subpasses;
@@ -567,7 +567,7 @@ struct RenderStateBase {
 };
 
 /// Abstract base class for Metal command buffers, shared between MTL3 and MTL4 implementations.
-class API_AVAILABLE(macos(11.0), ios(14.0), tvos(14.0), visionos(2.0)) MDCommandBufferBase {
+class API_AVAILABLE(macos(11.0), ios(14.0), tvos(14.0)) MDCommandBufferBase {
 	LocalVector<CFTypeRef> _retained_resources;
 
 protected:
@@ -734,7 +734,7 @@ public:
 
 #pragma mark - Uniform Types
 
-struct API_AVAILABLE(macos(11.0), ios(14.0), tvos(14.0), visionos(2.0)) UniformInfo {
+struct API_AVAILABLE(macos(11.0), ios(14.0), tvos(14.0)) UniformInfo {
 	uint32_t binding;
 	BitField<RDD::ShaderStage> active_stages;
 	MTL::DataType dataType = MTL::DataTypeNone;
@@ -770,13 +770,13 @@ struct API_AVAILABLE(macos(11.0), ios(14.0), tvos(14.0), visionos(2.0)) UniformI
 	}
 };
 
-struct API_AVAILABLE(macos(11.0), ios(14.0), tvos(14.0), visionos(2.0)) UniformSet {
+struct API_AVAILABLE(macos(11.0), ios(14.0), tvos(14.0)) UniformSet {
 	LocalVector<UniformInfo> uniforms;
 	LocalVector<uint32_t> dynamic_uniforms;
 	uint32_t buffer_size = 0;
 };
 
-class API_AVAILABLE(macos(11.0), ios(14.0), tvos(14.0), visionos(2.0)) DynamicOffsetLayout {
+class API_AVAILABLE(macos(11.0), ios(14.0), tvos(14.0)) DynamicOffsetLayout {
 	struct Data {
 		uint8_t offset : 4;
 		uint8_t count : 4;
@@ -879,7 +879,7 @@ struct ShaderCacheEntry {
 	~ShaderCacheEntry() = default;
 };
 
-class API_AVAILABLE(macos(11.0), ios(14.0), tvos(14.0), visionos(2.0)) MDShader {
+class API_AVAILABLE(macos(11.0), ios(14.0), tvos(14.0)) MDShader {
 public:
 	CharString name;
 	Vector<UniformSet> sets;
@@ -896,7 +896,7 @@ public:
 	virtual ~MDShader() = default;
 };
 
-class API_AVAILABLE(macos(11.0), ios(14.0), tvos(14.0), visionos(2.0)) MDComputeShader final : public MDShader {
+class API_AVAILABLE(macos(11.0), ios(14.0), tvos(14.0)) MDComputeShader final : public MDShader {
 public:
 	MTL::Size local = {};
 
@@ -905,7 +905,7 @@ public:
 	MDComputeShader(CharString p_name, Vector<UniformSet> p_sets, bool p_uses_argument_buffers, std::shared_ptr<MDLibrary> p_kernel);
 };
 
-class API_AVAILABLE(macos(11.0), ios(14.0), tvos(14.0), visionos(2.0)) MDRenderShader final : public MDShader {
+class API_AVAILABLE(macos(11.0), ios(14.0), tvos(14.0)) MDRenderShader final : public MDShader {
 public:
 	bool needs_view_mask_buffer = false;
 
@@ -951,7 +951,7 @@ _FORCE_INLINE_ MTL::ResourceUsage resource_usage_for_stage(StageResourceUsage p_
 	return MTL::ResourceUsage((p_usage >> (p_stage * 2)) & 0b11);
 }
 
-class API_AVAILABLE(macos(11.0), ios(14.0), tvos(14.0), visionos(2.0)) MDUniformSet {
+class API_AVAILABLE(macos(11.0), ios(14.0), tvos(14.0)) MDUniformSet {
 public:
 	MetalBuffer arg_buffer;
 	Vector<uint8_t> arg_buffer_data; // Stored for dynamic uniform sets.
@@ -967,7 +967,7 @@ enum class MDPipelineType {
 	Compute,
 };
 
-class API_AVAILABLE(macos(11.0), ios(14.0), tvos(14.0), visionos(2.0)) MDPipeline {
+class API_AVAILABLE(macos(11.0), ios(14.0), tvos(14.0)) MDPipeline {
 public:
 	MDPipelineType type;
 
@@ -976,7 +976,7 @@ public:
 	virtual ~MDPipeline() = default;
 };
 
-class API_AVAILABLE(macos(11.0), ios(14.0), tvos(14.0), visionos(2.0)) MDRenderPipeline final : public MDPipeline {
+class API_AVAILABLE(macos(11.0), ios(14.0), tvos(14.0)) MDRenderPipeline final : public MDPipeline {
 public:
 	NS::SharedPtr<MTL::RenderPipelineState> state;
 	NS::SharedPtr<MTL::DepthStencilState> depth_stencil;
@@ -1055,7 +1055,7 @@ public:
 	~MDRenderPipeline() override = default;
 };
 
-class API_AVAILABLE(macos(11.0), ios(14.0), tvos(14.0), visionos(2.0)) MDComputePipeline final : public MDPipeline {
+class API_AVAILABLE(macos(11.0), ios(14.0), tvos(14.0)) MDComputePipeline final : public MDPipeline {
 public:
 	NS::SharedPtr<MTL::ComputePipelineState> state;
 	struct {

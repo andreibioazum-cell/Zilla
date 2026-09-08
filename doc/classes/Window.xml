@@ -127,8 +127,7 @@
 			<description>
 				Returns the maximum value for linear color components that can be displayed in this window, regardless of SDR or HDR output. Returns [code]1.0[/code] if HDR is not enabled or not supported. The [signal output_max_linear_value_changed] signal will be emitted whenever this value changes.
 				This value is used by tonemapping and other [Environment] effects to ensure that bright colors are presented in the range that can be displayed by this window. When using this maximum linear value in your project, it should only be used to present colors directly to the screen without tonemapping and without influencing lighting, post-processing effects, or surrounding color. The following is an example that produces the brightest purple color that the screen can produce:
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				func _process(_delta):
 					# output_max_linear_value may change often, so do this every frame.
 					var max_linear_value = get_window().get_output_max_linear_value()
@@ -150,8 +149,7 @@
 					# Convert back to nonlinear sRGB encoding, which is required for Color in
 					# Godot unless stated otherwise.
 					return linear_color.linear_to_srgb()
-				[/gdscript]
-				[/codeblocks]
+				[/codeblock]
 				[b]Note:[/b] You will need to convert sRGB colors to linear before multiplying by this value to get correct results.
 			</description>
 		</method>
@@ -725,8 +723,7 @@
 		<member name="mouse_passthrough_polygon" type="PackedVector2Array" setter="set_mouse_passthrough_polygon" getter="get_mouse_passthrough_polygon" default="PackedVector2Array()">
 			Sets a polygonal region of the window which accepts mouse events. Mouse events outside the region will be passed through.
 			Passing an empty array will disable passthrough support (all mouse events will be intercepted by the window, which is the default behavior).
-			[codeblocks]
-			[gdscript]
+			[codeblock]
 			# Set region, using Path2D node.
 			$Window.mouse_passthrough_polygon = $Path2D.curve.get_baked_points()
 
@@ -735,18 +732,7 @@
 
 			# Reset region to default.
 			$Window.mouse_passthrough_polygon = []
-			[/gdscript]
-			[csharp]
-			// Set region, using Path2D node.
-			GetNode&lt;Window&gt;("Window").MousePassthroughPolygon = GetNode&lt;Path2D&gt;("Path2D").Curve.GetBakedPoints();
-
-			// Set region, using Polygon2D node.
-			GetNode&lt;Window&gt;("Window").MousePassthroughPolygon = GetNode&lt;Polygon2D&gt;("Polygon2D").Polygon;
-
-			// Reset region to default.
-			GetNode&lt;Window&gt;("Window").MousePassthroughPolygon = [];
-			[/csharp]
-			[/codeblocks]
+			[/codeblock]
 			[b]Note:[/b] This property is ignored if [member mouse_passthrough] is set to [code]true[/code].
 			[b]Note:[/b] On Windows, the portion of a window that lies outside the region is not drawn, while on Linux (X11) and macOS it is.
 			[b]Note:[/b] This property is implemented on Linux (X11), macOS and Windows.

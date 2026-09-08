@@ -2692,9 +2692,6 @@ msgstr "Hilfsquellschriftgröße"
 msgid "Help Title Font Size"
 msgstr "Hilfstitelschriftgröße"
 
-msgid "Class Reference Examples"
-msgstr "Klassenreferenzbeispiele"
-
 msgid "Sort Functions Alphabetically"
 msgstr "Funktionen alphabetisch sortieren"
 
@@ -3301,60 +3298,6 @@ msgstr "Statusleiste verbergen"
 msgid "Suppress UI Gesture"
 msgstr "UI-Geste unterdrücken"
 
-msgid "XR"
-msgstr "XR"
-
-msgid "OpenXR"
-msgstr "OpenXR"
-
-msgid "Default Action Map"
-msgstr "Default-Action-Map"
-
-msgid "Form Factor"
-msgstr "Formfaktor"
-
-msgid "View Configuration"
-msgstr "Konfigurations betrachten"
-
-msgid "Reference Space"
-msgstr "Reference-Space"
-
-msgid "Environment Blend Mode"
-msgstr "Environment-Blending-Modus"
-
-msgid "Foveation Level"
-msgstr "Foveation-Grad"
-
-msgid "Foveation Dynamic"
-msgstr "Foveation-Dynamik"
-
-msgid "Submit Depth Buffer"
-msgstr "Tiefenpuffer absenden"
-
-msgid "Startup Alert"
-msgstr "Startbenachrichtigung"
-
-msgid "Extensions"
-msgstr "Extensions"
-
-msgid "Frame Synthesis"
-msgstr "Bildsynthese"
-
-msgid "Hand Tracking"
-msgstr "Hand-Tracking"
-
-msgid "Hand Interaction Profile"
-msgstr "Hand-Interaktionsprofil"
-
-msgid "Aruco Dict"
-msgstr "Aruco-Wörterbuch"
-
-msgid "April Tag Dict"
-msgstr "April-Tag-Wörterbuch"
-
-msgid "Eye Gaze Interaction"
-msgstr "Blickkontakt-Interaktion"
-
 msgid "Boot Splash"
 msgstr "Startladebild"
 
@@ -3414,21 +3357,6 @@ msgstr "Bild"
 
 msgid "Minimum Display Time"
 msgstr "Minimale Anzeigedauer"
-
-msgid "Dotnet"
-msgstr "Dotnet"
-
-msgid "Project"
-msgstr "Projekt"
-
-msgid "Assembly Name"
-msgstr "Assembly-Name"
-
-msgid "Solution Directory"
-msgstr "Solution-Verzeichnis"
-
-msgid "Assembly Reload Attempts"
-msgstr "Assembly-Neuladen-Versuche"
 
 msgid "Time"
 msgstr "Zeit"
@@ -4114,36 +4042,6 @@ msgstr "Rauschunterdrückung"
 msgid "Denoiser"
 msgstr "Rauschunterdrückungs-Typ"
 
-msgid "Eye Height"
-msgstr "Augenhöhe"
-
-msgid "IOD"
-msgstr "IOD"
-
-msgid "Display Width"
-msgstr "Displaybreite"
-
-msgid "Display to Lens"
-msgstr "Zum Brillenglas anzeigen"
-
-msgid "Offset Rect"
-msgstr "Offset-Rechteck"
-
-msgid "Oversample"
-msgstr "Oversample"
-
-msgid "K1"
-msgstr "K1"
-
-msgid "K2"
-msgstr "K2"
-
-msgid "Vulkan VRS"
-msgstr "Vulkan VRS"
-
-msgid "Min Radius"
-msgstr "Min-Radius"
-
 msgid "BPM"
 msgstr "BPM"
 
@@ -4279,92 +4177,11 @@ msgstr "Nahtlose Blending-Begrenzung"
 msgid "Bump Strength"
 msgstr "Beulenstärke"
 
-msgid "Localized Name"
-msgstr "Lokalisierter Name"
-
-msgid "Action Type"
-msgstr "Aktionstyp"
-
-msgid "Toplevel Paths"
-msgstr "Top-Level-Pfade"
-
-msgid "Interaction Profile Path"
-msgstr "Interaktionsprofilpfad"
-
-msgid "Runtime Paths"
-msgstr "Runtime-Pfade"
-
-msgid "Is Sticky"
-msgstr "Ist haftend"
-
-msgid "On Haptic"
-msgstr "Haptik aktiviert"
-
-msgid "Off Haptic"
-msgstr "Haptik deaktiviert"
-
-msgid "Display Refresh Rate"
-msgstr "Aktualisierungsrate anzeigen"
-
-msgid "Render Target Size Multiplier"
-msgstr "Renderzielgrößenfaktor"
-
 msgid "Next"
 msgstr "Nächste"
 
-msgid "Layer Viewport"
-msgstr "Ebenen-Viewport"
-
-msgid "Sort Order"
-msgstr "Sortierreihenfolge"
-
-msgid "Alpha Blend"
-msgstr "Alpha-Blending"
-
-msgid "Enable Hole Punch"
-msgstr "Hole Punch aktivieren"
-
 msgid "Border Color"
 msgstr "Rahmenfarbe"
-
-msgid "Aspect Ratio"
-msgstr "Seitenverhältnis"
-
-msgid "Central Angle"
-msgstr "Zentraler Winkel"
-
-msgid "Fallback Segments"
-msgstr "Fallback-Segmente"
-
-msgid "Central Horizontal Angle"
-msgstr "Zentraler horizontaler Winkel"
-
-msgid "Upper Vertical Angle"
-msgstr "Oberer vertikaler Winkel"
-
-msgid "Lower Vertical Angle"
-msgstr "Unterer vertikaler Winkel"
-
-msgid "Quad Size"
-msgstr "Quad-Größe"
-
-msgid "Hand"
-msgstr "Hand"
-
-msgid "Motion Range"
-msgstr "Bewegungsbereich"
-
-msgid "Hand Skeleton"
-msgstr "Handskelett"
-
-msgid "Skeleton Rig"
-msgstr "Skelett-Rig"
-
-msgid "Bone Update"
-msgstr "Knochen-Update"
-
-msgid "Tracker"
-msgstr "Tracker"
 
 msgid "Subject"
 msgstr "Subjekt"
@@ -4534,27 +4351,6 @@ msgstr "Zeitüberschreitung des Handshakes"
 msgid "Max Queued Packets"
 msgstr "Max. Pakete in Warteschlange"
 
-msgid "Session Mode"
-msgstr "Session-Modus"
-
-msgid "Required Features"
-msgstr "Benötigte Features"
-
-msgid "Optional Features"
-msgstr "Optionale Features"
-
-msgid "Requested Reference Space Types"
-msgstr "Angefragte Reference-Space-Typen"
-
-msgid "Reference Space Type"
-msgstr "Reference-Space-Typ"
-
-msgid "Enabled Features"
-msgstr "Aktivierte Features"
-
-msgid "Visibility State"
-msgstr "Sichtbarkeitsstatus"
-
 msgid "Install Exported APK"
 msgstr "Exportierte APK installieren"
 
@@ -4665,12 +4461,6 @@ msgstr "Grafik"
 
 msgid "OpenGL Debug"
 msgstr "OpenGL-Debug"
-
-msgid "XR Features"
-msgstr "XR-Features"
-
-msgid "XR Mode"
-msgstr "XR-Modus"
 
 msgid "Gesture"
 msgstr "Geste"
@@ -6933,26 +6723,8 @@ msgstr "Verbreitung"
 msgid "Use Two Bounces"
 msgstr "Zwei Abprälle verwenden"
 
-msgid "Body Tracker"
-msgstr "Body-Tracker"
-
-msgid "Body Update"
-msgstr "Body-Update"
-
-msgid "Face Tracker"
-msgstr "Gesichtstracker"
-
-msgid "Hand Tracker"
-msgstr "Hand-Tracker"
-
 msgid "Pose"
 msgstr "Pose"
-
-msgid "Show When Tracked"
-msgstr "Anzeigen wenn getrackt"
-
-msgid "World Scale"
-msgstr "Weltskalierung"
 
 msgid "Play Mode"
 msgstr "Abspielmodus"
@@ -8160,9 +7932,6 @@ msgstr "Viewport-Pfad"
 
 msgid "Disable 3D"
 msgstr "3D deaktivieren"
-
-msgid "Use XR"
-msgstr "XR verwenden"
 
 msgid "Own World 3D"
 msgstr "Eigene Welt 3D"
@@ -11098,9 +10867,6 @@ msgstr "Max. renderbare Lichter"
 msgid "Max Lights per Object"
 msgstr "Max. Lichtinstanzen pro Objekt"
 
-msgid "Shaders"
-msgstr "Shader"
-
 msgid "Shader Language"
 msgstr "Shader-Sprache"
 
@@ -11214,45 +10980,3 @@ msgstr "LCD-Subpixel-Layout"
 
 msgid "Include Text Server Data"
 msgstr "Textserverdaten einbinden"
-
-msgid "Has Tracking Data"
-msgstr "Hat Tracking-Daten"
-
-msgid "Body Flags"
-msgstr "Body-Flags"
-
-msgid "Blend Shapes"
-msgstr "Blend-Shapes"
-
-msgid "Hand Tracking Source"
-msgstr "Hand-Tracking-Quelle"
-
-msgid "Is Primary"
-msgstr "Ist Primär"
-
-msgid "Play Area Mode"
-msgstr "Bereichsspielmodus"
-
-msgid "AR"
-msgstr "AR"
-
-msgid "Is Anchor Detection Enabled"
-msgstr "Ist Ankererkennung aktiviert"
-
-msgid "Tracking Confidence"
-msgstr "Tracking-Konfidenz"
-
-msgid "World Origin"
-msgstr "Weltursprung"
-
-msgid "Camera Locked to Origin"
-msgstr "Kamera auf Ursprung fixiert"
-
-msgid "Primary Interface"
-msgstr "Primäre Schnittstelle"
-
-msgid "VRS Min Radius"
-msgstr "VRS Min-Radius"
-
-msgid "VRS Strength"
-msgstr "VRS-Stärke"

@@ -134,7 +134,6 @@ class ExportTemplateManager : public AcceptDialog {
 		ANDROID,
 
 		IOS,
-		VISIONOS,
 
 		ICU_DATA,
 	};
@@ -146,7 +145,6 @@ class ExportTemplateManager : public AcceptDialog {
 		WEB,
 		ANDROID,
 		IOS,
-		VISIONOS,
 		COMMON,
 	};
 

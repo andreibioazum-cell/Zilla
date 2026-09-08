@@ -7,8 +7,7 @@
 		Shortcuts (also known as hotkeys) are containers of [InputEvent] resources. They are commonly used to interact with a [Control] element from an [InputEvent].
 		One shortcut can contain multiple [InputEvent] resources, making it possible to trigger one action with multiple different inputs.
 		[b]Example:[/b] Capture the [kbd]Ctrl + S[/kbd] shortcut using a [Shortcut] resource:
-		[codeblocks]
-		[gdscript]
+		[codeblock]
 		extends Node
 
 		var save_shortcut = Shortcut.new()
@@ -23,39 +22,7 @@
 			if save_shortcut.matches_event(event) and event.is_pressed() and not event.is_echo():
 				print("Save shortcut pressed!")
 				get_viewport().set_input_as_handled()
-		[/gdscript]
-		[csharp]
-		using Godot;
-
-		public partial class MyNode : Node
-		{
-			private readonly Shortcut _saveShortcut = new Shortcut();
-
-			public override void _Ready()
-			{
-				InputEventKey keyEvent = new InputEventKey
-				{
-					Keycode = Key.S,
-					CtrlPressed = true,
-					CommandOrControlAutoremap = true, // Swaps Ctrl for Command on Mac.
-				};
-
-				_saveShortcut.Events = [keyEvent];
-			}
-
-			public override void _Input(InputEvent @event)
-			{
-				if (@event is InputEventKey keyEvent &amp;&amp;
-					_saveShortcut.MatchesEvent(@event) &amp;&amp;
-					keyEvent.Pressed &amp;&amp; !keyEvent.Echo)
-				{
-					GD.Print("Save shortcut pressed!");
-					GetViewport().SetInputAsHandled();
-				}
-			}
-		}
-		[/csharp]
-		[/codeblocks]
+		[/codeblock]
 	</description>
 	<tutorials>
 	</tutorials>

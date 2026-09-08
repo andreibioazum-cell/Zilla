@@ -2743,9 +2743,6 @@ msgstr "Mida de la Lletra del Codi d’Ajuda"
 msgid "Help Title Font Size"
 msgstr "Mida de la Lletra dels Títols d’Ajuda"
 
-msgid "Class Reference Examples"
-msgstr "Exemples de la Referència de Classes"
-
 msgid "Sort Functions Alphabetically"
 msgstr "Ordena les Funcions Alfabèticament"
 
@@ -3511,119 +3508,11 @@ msgstr "Amaga la barra d'estat"
 msgid "Suppress UI Gesture"
 msgstr "Suprimir el gest de la interfície d'usuari"
 
-msgid "XR"
-msgstr "XR"
-
-msgid "OpenXR"
-msgstr "OpenXR"
-
-msgid "Target API Version"
-msgstr "Versió de l'API de destinació"
-
-msgid "Default Action Map"
-msgstr "Mapa d'accions per defecte"
-
-msgid "Form Factor"
-msgstr "Factor de forma"
-
-msgid "View Configuration"
-msgstr "Veure configuració"
-
-msgid "Reference Space"
-msgstr "Espai de referència"
-
-msgid "Environment Blend Mode"
-msgstr "Mode de fusió d'entorn"
-
-msgid "Foveation Level"
-msgstr "Nivell de Foveació"
-
-msgid "Foveation Dynamic"
-msgstr "Foveació dinàmica"
-
-msgid "Foveation Eye Tracked"
-msgstr "Seguiment ocular de Foveació"
-
-msgid "Foveation with Subsampled Images"
-msgstr "Foveació amb imatges submostrejades"
-
-msgid "Submit Depth Buffer"
-msgstr "Enviar el buffer de profunditat"
-
-msgid "Startup Alert"
-msgstr "Alerta d'inici"
-
-msgid "Extensions"
-msgstr "Extensions"
-
-msgid "Debug Utils"
-msgstr "Utilittats de depuració"
-
-msgid "Debug Message Types"
-msgstr "Tipus de missatges de depuració"
-
-msgid "Frame Synthesis"
-msgstr "Síntesi de marcs"
-
-msgid "Hand Tracking"
-msgstr "Seguiment de mans"
-
-msgid "Hand Tracking Unobstructed Data Source"
-msgstr "Font de dades sense obstacles de seguiment manual"
-
-msgid "Hand Tracking Controller Data Source"
-msgstr "Font de dades del controlador de seguiment manual"
-
-msgid "Hand Interaction Profile"
-msgstr "Perfil d'interacció manual"
-
-msgid "Spatial Entity"
-msgstr "Entitat espacial"
-
-msgid "Enable Spatial Anchors"
-msgstr "Habilita les àncores espacials"
-
-msgid "Enable Persistent Anchors"
-msgstr "Habilita les àncores persistents"
-
-msgid "Enable Builtin Anchor Detection"
-msgstr "Activa la detecció d'àncora integrada"
-
-msgid "Enable Plane Tracking"
-msgstr "Activa el seguiment de plans"
-
-msgid "Enable Builtin Plane Detection"
-msgstr "Activa la detecció de pla integrada"
-
 msgid "Enable Marker Tracking"
 msgstr "Activa el seguiment de marcadors"
 
 msgid "Enable Builtin Marker Tracking"
 msgstr "Activa el seguiment de marcadors integrat"
-
-msgid "Aruco Dict"
-msgstr "Dictat d'Aruco"
-
-msgid "April Tag Dict"
-msgstr "Diccionari d'etiquetes d'abril"
-
-msgid "Eye Gaze Interaction"
-msgstr "Interacció de la mirada"
-
-msgid "Render Model"
-msgstr "Model de renderització"
-
-msgid "User Presence"
-msgstr "Presència de l'usuari"
-
-msgid "Binding Modifiers"
-msgstr "Modificadors d'enllaç"
-
-msgid "Analog Threshold"
-msgstr "Assignació analògica"
-
-msgid "Dpad Binding"
-msgstr "Assignació Dpad"
 
 msgid "Boot Splash"
 msgstr "Pantalla inicial de càrrega"
@@ -3684,21 +3573,6 @@ msgstr "Imatge"
 
 msgid "Minimum Display Time"
 msgstr "Temps mínim de visualització"
-
-msgid "Dotnet"
-msgstr "Dotnet"
-
-msgid "Project"
-msgstr "Projecte"
-
-msgid "Assembly Name"
-msgstr "Nom de l'assemblatge"
-
-msgid "Solution Directory"
-msgstr "Directori de solució"
-
-msgid "Assembly Reload Attempts"
-msgstr "Intents de recàrrega de l'assemblatge"
 
 msgid "Time"
 msgstr "Temps"
@@ -4612,36 +4486,6 @@ msgstr "Eliminació de soroll"
 msgid "Denoiser"
 msgstr "Eliminació de soroll"
 
-msgid "Eye Height"
-msgstr "Alçada d'ull"
-
-msgid "IOD"
-msgstr "IOD"
-
-msgid "Display Width"
-msgstr "Amplada de visualització"
-
-msgid "Display to Lens"
-msgstr "Pantalla a lent"
-
-msgid "Offset Rect"
-msgstr "Rectangle desplaçat"
-
-msgid "Oversample"
-msgstr "Sobremostratge"
-
-msgid "K1"
-msgstr "K1"
-
-msgid "K2"
-msgstr "K2"
-
-msgid "Vulkan VRS"
-msgstr "Vulkan VRS"
-
-msgid "Min Radius"
-msgstr "Radi mínim"
-
 msgid "BPM"
 msgstr "BPM"
 
@@ -4780,200 +4624,11 @@ msgstr "Faldilla de barreja sense costures"
 msgid "Bump Strength"
 msgstr "Força de cop"
 
-msgid "Localized Name"
-msgstr "Nom localitzat"
-
-msgid "Action Type"
-msgstr "Tipus d'acció"
-
-msgid "Toplevel Paths"
-msgstr "Camins de nivell superior"
-
-msgid "Action Sets"
-msgstr "Conjunts d'accions"
-
-msgid "Interaction Profiles"
-msgstr "Perfils d'interacció"
-
-msgid "Actions"
-msgstr "Accions"
-
-msgid "Binding Path"
-msgstr "Camí d'enllaç"
-
-msgid "Interaction Profile Path"
-msgstr "Camí del perfil d'interacció"
-
-msgid "Bindings"
-msgstr "Vinculacions"
-
-msgid "Runtime Paths"
-msgstr "Rutes d'execució"
-
-msgid "Action Set"
-msgstr "Conjunt d'accions"
-
-msgid "Input Path"
-msgstr "Camí d'entrada"
-
-msgid "Threshold Released"
-msgstr "Llindar alliberat"
-
-msgid "Center Region"
-msgstr "Regió Central"
-
-msgid "Wedge Angle"
-msgstr "Angle de falca"
-
-msgid "Is Sticky"
-msgstr "És enganxós"
-
-msgid "On Haptic"
-msgstr "Hàptic Activat"
-
-msgid "Off Haptic"
-msgstr "Hàptic Desactivat"
-
-msgid "Relax Frame Interval"
-msgstr "Interval de fotograma de relaxació"
-
-msgid "On Threshold"
-msgstr "Llindar Activat"
-
-msgid "Off Threshold"
-msgstr "Llindar Desactivat"
-
-msgid "UUID"
-msgstr "UUID"
-
-msgid "Entity"
-msgstr "Entitat"
-
-msgid "Spatial Tracking State"
-msgstr "Estat de seguiment espacial"
-
-msgid "April Dict"
-msgstr "Dict Abril"
-
-msgid "Bounds Size"
-msgstr "Mida dels límits"
-
-msgid "Marker Type"
-msgstr "Tipus de marcador"
-
-msgid "Marker ID"
-msgstr "ID de marcador"
-
-msgid "Plane Alignment"
-msgstr "Alineament de pla"
-
-msgid "Plane Label"
-msgstr "Etiqueta de pla"
-
-msgid "Display Refresh Rate"
-msgstr "Freqüència d'actualització de la pantalla"
-
-msgid "Render Target Size Multiplier"
-msgstr "Multiplicador de la mida de l'objectiu de renderització"
-
 msgid "Next"
 msgstr "Següent"
 
-msgid "Layer Viewport"
-msgstr "Vista de capa"
-
-msgid "Use Android Surface"
-msgstr "Utilitzar Android Surface"
-
-msgid "Protected Content"
-msgstr "Contingut protegit"
-
-msgid "Android Surface Size"
-msgstr "Tamany de superfície Android"
-
-msgid "Sort Order"
-msgstr "Ordre d'ordenació"
-
-msgid "Alpha Blend"
-msgstr "Barreja Alfa"
-
-msgid "Enable Hole Punch"
-msgstr "Activa la perforadora"
-
-msgid "Eye Visibility"
-msgstr "Visibilitat ocular"
-
-msgid "Swapchain State"
-msgstr "Estat de Swapchain"
-
-msgid "Mipmap Mode"
-msgstr "Mode Mipmap"
-
-msgid "Horizontal Wrap"
-msgstr "Embolcallat horitzontal"
-
-msgid "Vertical Wrap"
-msgstr "Embolcallat vertical"
-
-msgid "Red Swizzle"
-msgstr "Remapeig del vermell"
-
-msgid "Green Swizzle"
-msgstr "Remapeig del verd"
-
-msgid "Blue Swizzle"
-msgstr "Remapeig del blau"
-
-msgid "Alpha Swizzle"
-msgstr "Remapeig alfa"
-
-msgid "Max Anisotropy"
-msgstr "Anisotropia màxima"
-
 msgid "Border Color"
 msgstr "Color de la vora"
-
-msgid "Aspect Ratio"
-msgstr "Relació d'aspecte"
-
-msgid "Central Angle"
-msgstr "Angle central"
-
-msgid "Fallback Segments"
-msgstr "Segments de reserva"
-
-msgid "Central Horizontal Angle"
-msgstr "Angle horitzontal central"
-
-msgid "Upper Vertical Angle"
-msgstr "Angle vertical superior"
-
-msgid "Lower Vertical Angle"
-msgstr "Angle vertical inferior"
-
-msgid "Quad Size"
-msgstr "Mida quàdruple"
-
-msgid "Hand"
-msgstr "Mà"
-
-msgid "Motion Range"
-msgstr "Abast de moviment"
-
-msgid "Hand Skeleton"
-msgstr "Esquelet de la mà"
-
-msgid "Skeleton Rig"
-msgstr "Plataforma d'esquelet"
-
-msgid "Bone Update"
-msgstr "Actualització d'ós"
-
-msgid "Tracker"
-msgstr "Rastrejador"
-
-msgid "Make Local to Pose"
-msgstr "Fes local a posició"
 
 msgid "Subject"
 msgstr "Subjecte"
@@ -5164,27 +4819,6 @@ msgstr "Màxim paquets en cua"
 msgid "Heartbeat Interval"
 msgstr "Interval de batecs del cor"
 
-msgid "Session Mode"
-msgstr "Mode de sessió"
-
-msgid "Required Features"
-msgstr "Característiques necessàries"
-
-msgid "Optional Features"
-msgstr "Característiques opcionals"
-
-msgid "Requested Reference Space Types"
-msgstr "Tipus d'espais de referència sol·licitats"
-
-msgid "Reference Space Type"
-msgstr "Tipus d'espai de referència"
-
-msgid "Enabled Features"
-msgstr "Característiques activades"
-
-msgid "Visibility State"
-msgstr "Estat de visibilitat"
-
 msgid "Debug Keystore"
 msgstr "Depurar el magatzem de claus"
 
@@ -5337,12 +4971,6 @@ msgstr "Gràfics"
 
 msgid "OpenGL Debug"
 msgstr "Depuració OpenGL"
-
-msgid "XR Features"
-msgstr "Característiques XR"
-
-msgid "XR Mode"
-msgstr "Mode XR"
 
 msgid "Gesture"
 msgstr "Gest"
@@ -5691,9 +5319,6 @@ msgstr "Descripció de l'ús de volums extraïbles"
 
 msgid "Removable Volumes Usage Description Localized"
 msgstr "Volums extraïbles Ús Descripció Localitzat"
-
-msgid "Min visionOS Version"
-msgstr "Versió mínima de VisionOS"
 
 msgid "Web"
 msgstr "Web"
@@ -7827,26 +7452,8 @@ msgstr "Propagació"
 msgid "Use Two Bounces"
 msgstr "Utilitzar dos rebots"
 
-msgid "Body Tracker"
-msgstr "Rastrejador de cos"
-
-msgid "Body Update"
-msgstr "Actualització de cos"
-
-msgid "Face Tracker"
-msgstr "Rastrejador facial"
-
-msgid "Hand Tracker"
-msgstr "Rastrejador de mà"
-
 msgid "Pose"
 msgstr "Posició"
-
-msgid "Show When Tracked"
-msgstr "Mostra quan es fa el seguiment"
-
-msgid "World Scale"
-msgstr "Escala mundial"
 
 msgid "Play Mode"
 msgstr "Mode joc"
@@ -9384,9 +8991,6 @@ msgstr "Camí de la vista"
 
 msgid "Disable 3D"
 msgstr "Desactiva el 3D"
-
-msgid "Use XR"
-msgstr "Utilitza XR"
 
 msgid "Own World 3D"
 msgstr "Món propi 3D"
@@ -12745,9 +12349,6 @@ msgstr "Llums renderitzables màxims"
 msgid "Max Lights per Object"
 msgstr "Llums màximes per objecte"
 
-msgid "Shaders"
-msgstr "Shaders"
-
 msgid "Shader Language"
 msgstr "Llenguatge de shader"
 
@@ -12897,48 +12498,3 @@ msgstr "Inclou dades del servidor de text"
 
 msgid "Line Breaking Strictness"
 msgstr "Rigor del salt de línia"
-
-msgid "Has Tracking Data"
-msgstr "Té dades de seguiment"
-
-msgid "Body Flags"
-msgstr "Indicadors del cos"
-
-msgid "Blend Shapes"
-msgstr "Formes de mescla"
-
-msgid "Hand Tracking Source"
-msgstr "Origen del seguiment de mans"
-
-msgid "Is Primary"
-msgstr "És primari"
-
-msgid "Play Area Mode"
-msgstr "Mode de l'àrea de joc"
-
-msgid "AR"
-msgstr "AR"
-
-msgid "Is Anchor Detection Enabled"
-msgstr "La detecció d'ancoratges està activada"
-
-msgid "Tracking Confidence"
-msgstr "Confiança del seguiment"
-
-msgid "World Origin"
-msgstr "Origen del món"
-
-msgid "Camera Locked to Origin"
-msgstr "Càmera bloquejada a l'origen"
-
-msgid "Primary Interface"
-msgstr "Interfície principal"
-
-msgid "VRS Min Radius"
-msgstr "Radi de VRS mínim"
-
-msgid "VRS Strength"
-msgstr "Força de VRS"
-
-msgid "VRS Render Region"
-msgstr "Regió de renderització VRS"

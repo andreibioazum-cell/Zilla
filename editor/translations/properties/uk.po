@@ -2763,9 +2763,6 @@ msgstr "Довідка Джерело Розмір шрифту"
 msgid "Help Title Font Size"
 msgstr "Розмір шрифту заголовка довідки"
 
-msgid "Class Reference Examples"
-msgstr "Приклади посилання на клас"
-
 msgid "Sort Functions Alphabetically"
 msgstr "Упорядкувати функції за абеткою"
 
@@ -3531,119 +3528,11 @@ msgstr "Приховати рядок стану"
 msgid "Suppress UI Gesture"
 msgstr "Придушити жест інтерфейсу користувача"
 
-msgid "XR"
-msgstr "XR"
-
-msgid "OpenXR"
-msgstr "OpenXR"
-
-msgid "Target API Version"
-msgstr "Цільова версія API"
-
-msgid "Default Action Map"
-msgstr "Карта дій за замовчуванням"
-
-msgid "Form Factor"
-msgstr "Форм-фактор"
-
-msgid "View Configuration"
-msgstr "Конфігурація подання"
-
-msgid "Reference Space"
-msgstr "Опорний простір"
-
-msgid "Environment Blend Mode"
-msgstr "Режим змішування середовища"
-
-msgid "Foveation Level"
-msgstr "Рівень фовеації"
-
-msgid "Foveation Dynamic"
-msgstr "Динамічна фовеація"
-
-msgid "Foveation Eye Tracked"
-msgstr "Фовеація з відстеженням руху очей"
-
-msgid "Foveation with Subsampled Images"
-msgstr "Фовеація із зображеннями з пониженою роздільною здатністю"
-
-msgid "Submit Depth Buffer"
-msgstr "Надіслати буфер глибини"
-
-msgid "Startup Alert"
-msgstr "Сповіщення про запуск"
-
-msgid "Extensions"
-msgstr "Розширення"
-
-msgid "Debug Utils"
-msgstr "Налагодження Утилс"
-
-msgid "Debug Message Types"
-msgstr "Типи повідомлень налагодження"
-
-msgid "Frame Synthesis"
-msgstr "Синтез фреймів"
-
-msgid "Hand Tracking"
-msgstr "Відстеження рук"
-
-msgid "Hand Tracking Unobstructed Data Source"
-msgstr "Безперешкодне джерело даних відстеження руки"
-
-msgid "Hand Tracking Controller Data Source"
-msgstr "Джерело даних контролера відстеження рук"
-
-msgid "Hand Interaction Profile"
-msgstr "Профіль взаємодії рук"
-
-msgid "Spatial Entity"
-msgstr "Просторова сутність"
-
-msgid "Enable Spatial Anchors"
-msgstr "Увімкнути просторові прив'язки"
-
-msgid "Enable Persistent Anchors"
-msgstr "Увімкнути постійні прив'язки"
-
-msgid "Enable Builtin Anchor Detection"
-msgstr "Увімкнути вбудоване виявлення якорів"
-
-msgid "Enable Plane Tracking"
-msgstr "Увімкнути відстеження літака"
-
-msgid "Enable Builtin Plane Detection"
-msgstr "Увімкнути вбудоване виявлення площин"
-
 msgid "Enable Marker Tracking"
 msgstr "Увімкнути відстеження маркерів"
 
 msgid "Enable Builtin Marker Tracking"
 msgstr "Увімкнути вбудоване відстеження маркерів"
-
-msgid "Aruco Dict"
-msgstr "Аруко Дикт"
-
-msgid "April Tag Dict"
-msgstr "Квітневий теговий словник"
-
-msgid "Eye Gaze Interaction"
-msgstr "Взаємодія погляду очей"
-
-msgid "Render Model"
-msgstr "Рендеринг моделі"
-
-msgid "User Presence"
-msgstr "Присутність користувача"
-
-msgid "Binding Modifiers"
-msgstr "Модифікатори прив'язки"
-
-msgid "Analog Threshold"
-msgstr "Аналоговий поріг"
-
-msgid "Dpad Binding"
-msgstr "Dpad Біндінг"
 
 msgid "Boot Splash"
 msgstr "Вітання системи"
@@ -3704,21 +3593,6 @@ msgstr "Зображення"
 
 msgid "Minimum Display Time"
 msgstr "Мінімальний час показу"
-
-msgid "Dotnet"
-msgstr "Дотнет"
-
-msgid "Project"
-msgstr "Проєкт"
-
-msgid "Assembly Name"
-msgstr "Назва збірки"
-
-msgid "Solution Directory"
-msgstr "Каталог проєкту"
-
-msgid "Assembly Reload Attempts"
-msgstr "Спроби перезавантаження збірки"
 
 msgid "Time"
 msgstr "Час"
@@ -4632,36 +4506,6 @@ msgstr "Усунення шуму"
 msgid "Denoiser"
 msgstr "Деноайзер"
 
-msgid "Eye Height"
-msgstr "Висота очей"
-
-msgid "IOD"
-msgstr "IOD"
-
-msgid "Display Width"
-msgstr "Ширина екрану"
-
-msgid "Display to Lens"
-msgstr "Дисплей до об’єктива"
-
-msgid "Offset Rect"
-msgstr "Зміщення Rect"
-
-msgid "Oversample"
-msgstr "Надвибірка"
-
-msgid "K1"
-msgstr "K1"
-
-msgid "K2"
-msgstr "K2"
-
-msgid "Vulkan VRS"
-msgstr "Vulkan VRS"
-
-msgid "Min Radius"
-msgstr "Мінімальний радіус"
-
 msgid "BPM"
 msgstr "BPM"
 
@@ -4800,200 +4644,11 @@ msgstr "Безшовна змішана спідниця"
 msgid "Bump Strength"
 msgstr "Потужність витискання"
 
-msgid "Localized Name"
-msgstr "Локалізована назва"
-
-msgid "Action Type"
-msgstr "Тип дії"
-
-msgid "Toplevel Paths"
-msgstr "Шляхи верхнього рівня"
-
-msgid "Action Sets"
-msgstr "Набори дій"
-
-msgid "Interaction Profiles"
-msgstr "Профілі взаємодії"
-
-msgid "Actions"
-msgstr "Дії"
-
-msgid "Binding Path"
-msgstr "Шлях прив'язки"
-
-msgid "Interaction Profile Path"
-msgstr "Шлях до профілю взаємодії"
-
-msgid "Bindings"
-msgstr "Кріплення"
-
-msgid "Runtime Paths"
-msgstr "Шляхи виконання"
-
-msgid "Action Set"
-msgstr "Набір дій"
-
-msgid "Input Path"
-msgstr "Вхідний шлях"
-
-msgid "Threshold Released"
-msgstr "Порогове значення звільнено"
-
-msgid "Center Region"
-msgstr "Район Центр"
-
-msgid "Wedge Angle"
-msgstr "Клиновий кут"
-
-msgid "Is Sticky"
-msgstr "Є липким"
-
-msgid "On Haptic"
-msgstr "Увімкнено Haptic"
-
-msgid "Off Haptic"
-msgstr "Вимкнено Haptic"
-
-msgid "Relax Frame Interval"
-msgstr "Інтервал кадру релаксації"
-
-msgid "On Threshold"
-msgstr "На порозі"
-
-msgid "Off Threshold"
-msgstr "Поза порогом"
-
-msgid "UUID"
-msgstr "UUID"
-
-msgid "Entity"
-msgstr "Сутність"
-
-msgid "Spatial Tracking State"
-msgstr "Стан просторового відстеження"
-
-msgid "April Dict"
-msgstr "Квітневий диктант"
-
-msgid "Bounds Size"
-msgstr "Розмір меж"
-
-msgid "Marker Type"
-msgstr "Тип маркера"
-
-msgid "Marker ID"
-msgstr "Маркер ID"
-
-msgid "Plane Alignment"
-msgstr "Вирівнювання площини"
-
-msgid "Plane Label"
-msgstr "Мітка літака"
-
-msgid "Display Refresh Rate"
-msgstr "Частота оновлення дисплея"
-
-msgid "Render Target Size Multiplier"
-msgstr "Множник цільового розміру візуалізації"
-
 msgid "Next"
 msgstr "Далі"
 
-msgid "Layer Viewport"
-msgstr "Вікно перегляду шару"
-
-msgid "Use Android Surface"
-msgstr "Використовувати Android Surface"
-
-msgid "Protected Content"
-msgstr "Захищений контент"
-
-msgid "Android Surface Size"
-msgstr "Розмір поверхні Android"
-
-msgid "Sort Order"
-msgstr "Порядок сортування"
-
-msgid "Alpha Blend"
-msgstr "Альфа суміш"
-
-msgid "Enable Hole Punch"
-msgstr "Увімкнути перфорацію"
-
-msgid "Eye Visibility"
-msgstr "Видимість очей"
-
-msgid "Swapchain State"
-msgstr "Стан свопчейну"
-
-msgid "Mipmap Mode"
-msgstr "Режим міп-карти"
-
-msgid "Horizontal Wrap"
-msgstr "Горизонтальне обтікання"
-
-msgid "Vertical Wrap"
-msgstr "Вертикальне обгортання"
-
-msgid "Red Swizzle"
-msgstr "Червоний Свізл"
-
-msgid "Green Swizzle"
-msgstr "Зелений свізл"
-
-msgid "Blue Swizzle"
-msgstr "Блакитний Свізл"
-
-msgid "Alpha Swizzle"
-msgstr "Альфа Свіззл"
-
-msgid "Max Anisotropy"
-msgstr "Максимальна анізотропія"
-
 msgid "Border Color"
 msgstr "Колір рамки"
-
-msgid "Aspect Ratio"
-msgstr "Співвідношення сторін"
-
-msgid "Central Angle"
-msgstr "Центральний кут"
-
-msgid "Fallback Segments"
-msgstr "Запасні сегменти"
-
-msgid "Central Horizontal Angle"
-msgstr "Центральний горизонтальний кут"
-
-msgid "Upper Vertical Angle"
-msgstr "Верхній вертикальний кут"
-
-msgid "Lower Vertical Angle"
-msgstr "Нижній вертикальний кут"
-
-msgid "Quad Size"
-msgstr "Розмір Quad"
-
-msgid "Hand"
-msgstr "Рука"
-
-msgid "Motion Range"
-msgstr "Діапазон руху"
-
-msgid "Hand Skeleton"
-msgstr "Скелет руки"
-
-msgid "Skeleton Rig"
-msgstr "Скелетна установка"
-
-msgid "Bone Update"
-msgstr "Оновлення кістки"
-
-msgid "Tracker"
-msgstr "Трекер"
-
-msgid "Make Local to Pose"
-msgstr "Зробити локальним для пози"
 
 msgid "Subject"
 msgstr "Призначення"
@@ -5184,27 +4839,6 @@ msgstr "Максимальна кількість пакетів у черзі"
 msgid "Heartbeat Interval"
 msgstr "Інтервал серцебиття"
 
-msgid "Session Mode"
-msgstr "Режим області"
-
-msgid "Required Features"
-msgstr "Обов'язкові можливості"
-
-msgid "Optional Features"
-msgstr "Необов'язкові можливості"
-
-msgid "Requested Reference Space Types"
-msgstr "Запитані типи довідкового простору"
-
-msgid "Reference Space Type"
-msgstr "Тип опорного простору"
-
-msgid "Enabled Features"
-msgstr "Увімкнені функції"
-
-msgid "Visibility State"
-msgstr "Перемкнути видимість"
-
 msgid "Debug Keystore"
 msgstr "Сховище ключів налагодження"
 
@@ -5357,12 +4991,6 @@ msgstr "Графіка"
 
 msgid "OpenGL Debug"
 msgstr "Діагностика OpenGL"
-
-msgid "XR Features"
-msgstr "Можливості XR"
-
-msgid "XR Mode"
-msgstr "Режим XR"
 
 msgid "Gesture"
 msgstr "Жест"
@@ -5711,9 +5339,6 @@ msgstr "Опис використання портативних томів"
 
 msgid "Removable Volumes Usage Description Localized"
 msgstr "Використання знімних носіїв: опис (локалізована версія)"
-
-msgid "Min visionOS Version"
-msgstr "Мінімальна версія visionOS"
 
 msgid "Web"
 msgstr "Інтернет"
@@ -7847,26 +7472,8 @@ msgstr "Навігація"
 msgid "Use Two Bounces"
 msgstr "Використовувати два відскоки"
 
-msgid "Body Tracker"
-msgstr "Відстеження тіла"
-
-msgid "Body Update"
-msgstr "Оновлення тіла"
-
-msgid "Face Tracker"
-msgstr "Відстеження обличчя"
-
-msgid "Hand Tracker"
-msgstr "Ручний трекер"
-
 msgid "Pose"
 msgstr "Поза"
-
-msgid "Show When Tracked"
-msgstr "Показувати під час відстеження"
-
-msgid "World Scale"
-msgstr "Масштаб світу"
 
 msgid "Play Mode"
 msgstr "Режим гри"
@@ -9404,9 +9011,6 @@ msgstr "Шлях до панелі перегляду"
 
 msgid "Disable 3D"
 msgstr "Вимкнути тривимірність"
-
-msgid "Use XR"
-msgstr "Використовувати XR"
 
 msgid "Own World 3D"
 msgstr "Власний світ 3D"
@@ -12765,9 +12369,6 @@ msgstr "Максимальне відтворення світла"
 msgid "Max Lights per Object"
 msgstr "Максимальна кількість світла на об'єкт"
 
-msgid "Shaders"
-msgstr "Шейдери"
-
 msgid "Shader Language"
 msgstr "Мова шейдерів"
 
@@ -12917,48 +12518,3 @@ msgstr "Включити дані текстового сервера"
 
 msgid "Line Breaking Strictness"
 msgstr "Строгість порушення ліній"
-
-msgid "Has Tracking Data"
-msgstr "Є дані відстеження"
-
-msgid "Body Flags"
-msgstr "Прапорці тіла"
-
-msgid "Blend Shapes"
-msgstr "Змішати фігури"
-
-msgid "Hand Tracking Source"
-msgstr "Джерело відстеження руки"
-
-msgid "Is Primary"
-msgstr "Є основним"
-
-msgid "Play Area Mode"
-msgstr "Режим ігрової зони"
-
-msgid "AR"
-msgstr "AR"
-
-msgid "Is Anchor Detection Enabled"
-msgstr "Чи ввімкнено виявлення прив’язки"
-
-msgid "Tracking Confidence"
-msgstr "Відстеження впевненості"
-
-msgid "World Origin"
-msgstr "Походження світу"
-
-msgid "Camera Locked to Origin"
-msgstr "Камера заблокована до джерела"
-
-msgid "Primary Interface"
-msgstr "Основний інтерфейс"
-
-msgid "VRS Min Radius"
-msgstr "Мінімальний радіус VRS"
-
-msgid "VRS Strength"
-msgstr "Сила VRS"
-
-msgid "VRS Render Region"
-msgstr "Регіон візуалізації VRS"

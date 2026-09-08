@@ -16,8 +16,7 @@
 		[/codeblock]
 		[b]Note:[/b] Accessing project ("res://") directories once exported may behave unexpectedly as some files are converted to engine-specific formats and their original source files may not be present in the expected PCK package. Because of this, to access resources in an exported project, it is recommended to use [ResourceLoader] instead of [FileAccess].
 		Here is an example on how to iterate through the files of a directory:
-		[codeblocks]
-		[gdscript]
+		[codeblock]
 		func dir_contents(path):
 			var dir = DirAccess.open(path)
 			if dir:
@@ -31,35 +30,7 @@
 					file_name = dir.get_next()
 			else:
 				print("An error occurred when trying to access the path.")
-		[/gdscript]
-		[csharp]
-		public void DirContents(string path)
-		{
-			using var dir = DirAccess.Open(path);
-			if (dir != null)
-			{
-				dir.ListDirBegin();
-				string fileName = dir.GetNext();
-				while (fileName != "")
-				{
-					if (dir.CurrentIsDir())
-					{
-						GD.Print($"Found directory: {fileName}");
-					}
-					else
-					{
-						GD.Print($"Found file: {fileName}");
-					}
-					fileName = dir.GetNext();
-				}
-			}
-			else
-			{
-				GD.Print("An error occurred when trying to access the path.");
-			}
-		}
-		[/csharp]
-		[/codeblocks]
+		[/codeblock]
 		Keep in mind that file names may change or be remapped after export. If you want to see the actual resource file list as it appears in the editor, use [method ResourceLoader.list_directory] instead.
 	</description>
 	<tutorials>

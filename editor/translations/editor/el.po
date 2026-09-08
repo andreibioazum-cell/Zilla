@@ -6723,12 +6723,6 @@ msgstr "Μετάβαση σε:"
 msgid "Begin Bake"
 msgstr "Έναρξη ψησίματος"
 
-msgid "Class name can't be a reserved keyword"
-msgstr "Το όνομα της κλάσης δεν μπορεί να είναι λέξη-κλειδί"
-
-msgid "Not enough bytes for decoding bytes, or invalid format."
-msgstr "Δεν υπάρχουν αρκετά byte για την αποκωδικοποίηση, ή άκυρη μορφή."
-
 msgid "%s/s"
 msgstr "%s/δευτ."
 

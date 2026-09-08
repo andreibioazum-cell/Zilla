@@ -69,7 +69,7 @@ constexpr MTL::GPUFamily GPUFamilyApple9 = static_cast<MTL::GPUFamily>(1009);
 constexpr MTL::GPUFamily GPUFamilyApple9 = MTL::GPUFamilyApple9;
 #endif
 
-API_AVAILABLE(macos(11.0), ios(14.0), tvos(14.0), visionos(1.0))
+API_AVAILABLE(macos(11.0), ios(14.0), tvos(14.0))
 MTL::GPUFamily &operator--(MTL::GPUFamily &p_family) {
 	p_family = static_cast<MTL::GPUFamily>(static_cast<int>(p_family) - 1);
 	if (p_family < MTL::GPUFamilyApple1) {
@@ -156,7 +156,7 @@ void MetalDeviceProperties::init_features(MTL::Device *p_device) {
 
 	if (features.msl_target_version >= MSL_VERSION_31) {
 		// Native atomics are only supported on 3.1 and above.
-		if (__builtin_available(macOS 14.0, iOS 17.0, tvOS 17.0, visionOS 1.0, *)) {
+		if (__builtin_available(macOS 14.0, iOS 17.0, tvOS 17.0, *)) {
 			features.supports_native_image_atomics = true;
 		}
 	}
@@ -165,7 +165,7 @@ void MetalDeviceProperties::init_features(MTL::Device *p_device) {
 		features.supports_native_image_atomics = false;
 	}
 
-	if (__builtin_available(macOS 15.0, iOS 18.0, tvOS 18.0, visionOS 2.0, *)) {
+	if (__builtin_available(macOS 15.0, iOS 18.0, tvOS 18.0, *)) {
 		features.supports_residency_sets = p_device->supportsFamily(MTL::GPUFamilyApple6);
 	} else {
 		features.supports_residency_sets = false;

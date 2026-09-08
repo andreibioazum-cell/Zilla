@@ -3141,13 +3141,6 @@ msgstr ""
 msgid "Note:"
 msgstr "Huomio:"
 
-msgid ""
-"There are notable differences when using this API with C#. See [url=%s]C# API "
-"differences to GDScript[/url] for more information."
-msgstr ""
-"Tämän APIn käytössä on huomattavia eroja C# kanssa. Katso [url=%s] C# API "
-"erot GDScriptiin[/url] saadaksesi lisätietoa."
-
 msgid "Online Tutorials"
 msgstr "Online-oppaat"
 
@@ -5006,13 +4999,6 @@ msgstr ""
 "Skriptiä ei voi suorittaa, koska se ei ole työkaluskripti (lisää @tool-"
 "annotaatio alkuun)."
 
-msgid ""
-"Cannot run the script because it's not a tool script (add the [Tool] "
-"attribute above the class definition)."
-msgstr ""
-"Skriptiä ei voi suorittaa, koska se ei ole työkaluskripti (lisää [Tool]-"
-"attribuutti luokkamäärittelyn yläpuolelle)."
-
 msgid "Cannot run the script because it's not a tool script."
 msgstr "Skriptiä ei voi suorittaa, koska se ei ole työkaluskripti."
 
@@ -5627,17 +5613,6 @@ msgid ""
 msgstr ""
 ".ipa-tiedostoja voi luoda vain macOS-käyttöjärjestelmässä. Poistutaan Xcode-"
 "projektista luomatta pakettia."
-
-msgid ""
-"Exporting to an Apple Embedded platform when using C#/.NET is experimental "
-"and requires macOS."
-msgstr ""
-"Vienti Apple Embedded -alustalle C#/.NET-kielellä on kokeiluluonteista ja "
-"edellyttää macOS-käyttöjärjestelmää."
-
-msgid ""
-"Exporting to an Apple Embedded platform when using C#/.NET is experimental."
-msgstr "Vienti Apple Embedded -alustalle C#/.NET-kielellä on kokeiluluonteista."
 
 msgid "Custom debug template not found."
 msgstr "Mukautettua debug-vientimallia ei löytynyt."
@@ -10142,9 +10117,6 @@ msgstr "WOFF2 Fontit"
 msgid "SIL Graphite Fonts"
 msgstr "SIL Graphite Fontit"
 
-msgid "XR (AR and VR)."
-msgstr "XR (AR and VR)."
-
 msgid ""
 "TrueType, OpenType, Type 1, and WOFF1 font format support using FreeType "
 "library (if disabled, WOFF2 support is also disabled)."
@@ -10818,15 +10790,6 @@ msgstr "Integroi epäsuora valaistus %d%%"
 msgid "Integrating light probes %d%%"
 msgstr "Integroidaan valoantureita %d%%"
 
-msgid "Class name can't be a reserved keyword"
-msgstr "Luokan nimi ei voi olla varattu avainsana"
-
-msgid "Class name must be a valid identifier"
-msgstr "Metodin nimen täytyy olla kelvollinen tunniste"
-
-msgid "Not enough bytes for decoding bytes, or invalid format."
-msgstr "Ei tarpeeksi tavuja tavujen purkamiseksi tai virheellinen formaatti."
-
 msgid "%s/s"
 msgstr "%s/s"
 
@@ -10862,38 +10825,11 @@ msgstr ""
 "Tälle solmulle täytyy asettaa tai luoda NavigationMesh resurssi, jotta se "
 "toimisi."
 
-msgid "Add action set"
-msgstr "Lisää toimintajoukko"
-
-msgid "Error loading %s: %s."
-msgstr "Virhe ladatessa %s: %s."
-
-msgid "Error saving file %s: %s"
-msgstr "Virhe tallennettaessa tiedostoa %s: %s"
-
-msgid "Action Sets"
-msgstr "Toimintajoukot"
-
-msgid "Add action"
-msgstr "Lisää toiminto"
-
-msgid "Add binding"
-msgstr "Lisää sidos"
-
 msgid "Boolean"
 msgstr "Totuusarvo"
 
 msgid "Float"
 msgstr "Liukuluku"
-
-msgid "Pose"
-msgstr "Asento"
-
-msgid "Haptic"
-msgstr "Haptinen"
-
-msgid "Unknown"
-msgstr "Tuntematon"
 
 msgid "E constant (2.718282). Represents the base of the natural logarithm."
 msgstr "E-vakio (2.718282). Kuvastaa luonnollisen logaritmin kantalukua."
@@ -11556,9 +11492,6 @@ msgstr "Ajetaan laitteella..."
 
 msgid "Could not execute on device."
 msgstr "Ei voitu suorittaa laitteella."
-
-msgid "Exporting to Android when using C#/.NET is experimental."
-msgstr "Androidille vienti C#/.NET-käytössä on kokeellinen."
 
 msgid ""
 "Android build template not installed in the project. Install it from the "

@@ -20,7 +20,6 @@
 			<description>
 				Calls [param method] on each node inside this tree added to the given [param group]. You can pass arguments to [param method] by specifying them at the end of this method call. Nodes that cannot call [param method] (either because the method doesn't exist or the arguments do not match) are ignored. See also [method set_group] and [method notify_group].
 				[b]Note:[/b] This method acts immediately on all selected nodes at once, which may cause stuttering in some performance-intensive situations.
-				[b]Note:[/b] In C#, [param method] must be in snake_case when referring to built-in Godot methods. Prefer using the names exposed in the [code]MethodName[/code] class to avoid allocating a new [StringName] on each call.
 			</description>
 		</method>
 		<method name="call_group_flags" qualifiers="vararg">
@@ -36,7 +35,6 @@
 						SceneTree.GROUP_CALL_DEFERRED | SceneTree.GROUP_CALL_REVERSE,
 						"enemies", "hide")
 				[/codeblock]
-				[b]Note:[/b] In C#, [param method] must be in snake_case when referring to built-in Godot methods. Prefer using the names exposed in the [code]MethodName[/code] class to avoid allocating a new [StringName] on each call.
 			</description>
 		</method>
 		<method name="change_scene_to_file">
@@ -83,22 +81,12 @@
 				If [param process_in_physics] is [code]true[/code], the timer will update at the end of the physics frame, instead of the process frame.
 				If [param ignore_time_scale] is [code]true[/code], the timer will ignore [member Engine.time_scale] and update with the real, elapsed time.
 				This method is commonly used to create a one-shot delay timer, as in the following example:
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				func some_function():
 					print("start")
 					await get_tree().create_timer(1.0).timeout
 					print("end")
-				[/gdscript]
-				[csharp]
-				public async Task SomeFunction()
-				{
-					GD.Print("start");
-					await ToSignal(GetTree().CreateTimer(1.0f), SceneTreeTimer.SignalName.Timeout);
-					GD.Print("end");
-				}
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 				[b]Note:[/b] The timer is always updated [i]after[/i] all of the nodes in the tree. A node's [method Node._process] method would be called before the timer updates (or [method Node._physics_process] if [param process_in_physics] is set to [code]true[/code]).
 			</description>
 		</method>
@@ -223,7 +211,6 @@
 			<description>
 				Sets the given [param property] to [param value] on all nodes inside this tree added to the given [param group]. Nodes that do not have the [param property] are ignored. See also [method call_group] and [method notify_group].
 				[b]Note:[/b] This method acts immediately on all selected nodes at once, which may cause stuttering in some performance-intensive situations.
-				[b]Note:[/b] In C#, [param property] must be in snake_case when referring to built-in Godot properties. Prefer using the names exposed in the [code]PropertyName[/code] class to avoid allocating a new [StringName] on each call.
 			</description>
 		</method>
 		<method name="set_group_flags">
@@ -234,7 +221,6 @@
 			<param index="3" name="value" type="Variant" />
 			<description>
 				Sets the given [param property] to [param value] on all nodes inside this tree added to the given [param group]. Nodes that do not have the [param property] are ignored. Use [param call_flags] to customize this method's behavior (see [enum GroupCallFlags]).
-				[b]Note:[/b] In C#, [param property] must be in snake_case when referring to built-in Godot properties. Prefer using the names exposed in the [code]PropertyName[/code] class to avoid allocating a new [StringName] on each call.
 			</description>
 		</method>
 		<method name="set_multiplayer">

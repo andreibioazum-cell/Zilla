@@ -3492,13 +3492,6 @@ msgstr ""
 msgid "Note:"
 msgstr "注意："
 
-msgid ""
-"There are notable differences when using this API with C#. See [url=%s]C# API "
-"differences to GDScript[/url] for more information."
-msgstr ""
-"使用 C# 时，此 API 存在显著差异。有关详细信息，请参阅 [url=%s]C# API 与 "
-"GDScript 的差异[/url]。"
-
 msgid "Online Tutorials"
 msgstr "在线教程"
 
@@ -5419,11 +5412,6 @@ msgid ""
 "annotation at the top)."
 msgstr "无法运行脚本，因为它不是工具脚本（请在顶部添加@tool 注解）。"
 
-msgid ""
-"Cannot run the script because it's not a tool script (add the [Tool] "
-"attribute above the class definition)."
-msgstr "无法运行脚本，因为它不是工具脚本（请在类定义上方添加 [Tool] 属性）。"
-
 msgid "Cannot run the script because it's not a tool script."
 msgstr "无法运行脚本，因为它不是工具脚本。"
 
@@ -6080,15 +6068,6 @@ msgid ""
 ".ipa can only be built on macOS. Leaving Xcode project without building the "
 "package."
 msgstr ".ipa 只能在 macOS 上构建。正在离开 Xcode 项目，未构建包。"
-
-msgid ""
-"Exporting to an Apple Embedded platform when using C#/.NET is experimental "
-"and requires macOS."
-msgstr "使用 C#/.NET 时向 Apple Embedded 平台导出是实验性的，并且需要 macOS。"
-
-msgid ""
-"Exporting to an Apple Embedded platform when using C#/.NET is experimental."
-msgstr "使用 C#/.NET 时向 Apple Embedded 平台导出是实验性的。"
 
 msgid "Custom debug template not found."
 msgstr "未找到自定义调试模板。"
@@ -8822,15 +8801,6 @@ msgstr ""
 "\n"
 
 msgid ""
-"Warning: This project uses C#, but this build of Godot does not have\n"
-"the Mono module. If you proceed you will not be able to use any C# scripts.\n"
-"\n"
-msgstr ""
-"警告：该项目使用 C#，但 Godot 的这个版本没有\n"
-"Mono 模块。如果继续，你将无法使用任何 C# 脚本。\n"
-"\n"
-
-msgid ""
 "Warning: This project was last edited in Godot %s. Opening will change it to "
 "Godot %s.\n"
 "\n"
@@ -9247,20 +9217,8 @@ msgstr "停止运行中的项目"
 msgid "Run Current Scene"
 msgstr "运行当前场景"
 
-msgid "Run Scene in Regular Mode"
-msgstr "在常规模式下运行场景"
-
-msgid "Run Scene in XR Mode"
-msgstr "在 XR 模式下运行场景"
-
 msgid "Run Specific Scene"
 msgstr "运行特定场景"
-
-msgid "Run in Regular Mode"
-msgstr "在常规模式下运行"
-
-msgid "Run in XR Mode"
-msgstr "在 XR 模式下运行"
 
 msgid "Enable Movie Maker Mode"
 msgstr "启用 Movie Maker 模式"
@@ -15732,12 +15690,6 @@ msgstr "无障碍支持 (AccessKit)"
 msgid "Improved Gamepad Support (SDL)"
 msgstr "改进的游戏手柄支持 (SDL)"
 
-msgid "XR"
-msgstr "XR"
-
-msgid "OpenXR"
-msgstr "OpenXR"
-
 msgid "Wayland"
 msgstr "Wayland"
 
@@ -15829,12 +15781,6 @@ msgstr ""
 "通过 SDL 库改进了对 Windows、macOS 和 Linux 上游戏手柄的支持。\n"
 "如果禁用，将改用内置的自定义代码来支持游戏手柄，但这可能对某些控制器型号不太可"
 "靠。"
-
-msgid "XR (AR and VR)."
-msgstr "XR（AR 和 VR）。"
-
-msgid "OpenXR standard implementation (requires XR to be enabled)."
-msgstr "OpenXR 标准实现（需要启用 XR）。"
 
 msgid "Wayland display server support (Linux only)."
 msgstr "Wayland 显示服务器支持（仅限 Linux）。"
@@ -15948,11 +15894,6 @@ msgid ""
 msgstr ""
 "即将在当前项目的所有文件中扫描用到的类。\n"
 "请注意首次扫描耗时可能较长，尤其是针对大型项目。"
-
-msgid ""
-"Warning: Class detection for C# scripts is not currently available, and such "
-"files will be ignored."
-msgstr "警告：针对 C# 脚本的类检测目前不可用，相关文件会被忽略。"
 
 msgid ""
 "Clear cache of used classes per file? This will make it so that those files "
@@ -17421,52 +17362,6 @@ msgstr "降噪"
 msgid "Retrieving textures"
 msgstr "正在获取纹理"
 
-msgid "Class name can't be a reserved keyword"
-msgstr "类名不能是保留关键字"
-
-msgid "Class name must be a valid identifier"
-msgstr "类名必须是有效的标识符"
-
-msgid "Not enough bytes for decoding bytes, or invalid format."
-msgstr "解码字节数不够，或格式无效。"
-
-msgid ""
-"Unable to load .NET runtime, no compatible version was found.\n"
-"Attempting to create/edit a project will lead to a crash.\n"
-"\n"
-"Please install the .NET SDK 8.0 or later from https://get.dot.net and restart "
-"Godot."
-msgstr ""
-"无法加载 .NET 运行时，未找到兼容的版本。\n"
-"尝试创建/编辑项目会导致崩溃。\n"
-"\n"
-"请从 https://get.dot.net 安装 .NET SDK 8.0 或后续版本，然后重启 Godot。"
-
-msgid "Failed to load .NET runtime"
-msgstr "加载 .NET 运行时失败"
-
-msgid ""
-"Unable to find the .NET assemblies directory.\n"
-"Make sure the '%s' directory exists and contains the .NET assemblies."
-msgstr ""
-"无法找到 .NET 程序集目录。\n"
-"请确保存在“%s”目录并且其中包含 .NET 程序集。"
-
-msgid ".NET assemblies not found"
-msgstr "未找到 .NET 程序集"
-
-msgid ""
-"Unable to load .NET runtime, specifically hostfxr.\n"
-"Attempting to create/edit a project will lead to a crash.\n"
-"\n"
-"Please install the .NET SDK 8.0 or later from https://get.dot.net and restart "
-"Godot."
-msgstr ""
-"无法加载 .NET 运行时的 hostfxr。\n"
-"尝试创建和编辑项目会导致崩溃。\n"
-"\n"
-"请从 https://get.dot.net 安装 .NET SDK 8.0 或后续版本，然后重启 Godot。"
-
 msgctxt "Network"
 msgid "Down"
 msgstr "下载"
@@ -17973,162 +17868,6 @@ msgstr "ObjectDB 分析器"
 msgid "Diff Against:"
 msgstr "与...进行比较:"
 
-msgid "Rename Action"
-msgstr "重命名动作"
-
-msgid "Rename Actions Localized name"
-msgstr "重命名动作本地化名称"
-
-msgid "Change Action Type"
-msgstr "修改动作类型"
-
-msgid ""
-"Internal name of the action. Some XR runtimes don't allow spaces or special "
-"characters."
-msgstr "动作的内部名称。部分 XR 运行时不运行使用空格和特殊字符。"
-
-msgid "Action Name"
-msgstr "动作名称"
-
-msgid "Human-readable name of the action. This can be displayed to end users."
-msgstr "动作的人类可读名称，可以展示给最终用户。"
-
-msgid "Action Localized Name"
-msgstr "动作本地化名称"
-
-msgid "Type of the action"
-msgstr "动作的类型"
-
-msgid "Action Type"
-msgstr "动作类型"
-
-msgid "Remove action"
-msgstr "移除动作"
-
-msgid "Add action set"
-msgstr "添加动作集"
-
-msgid "Remove action set"
-msgstr "移除动作集"
-
-msgid "Add interaction profile"
-msgstr "添加交互配置"
-
-msgid "Error loading %s: %s."
-msgstr "加载 %s 时出错：%s。"
-
-msgid "Error saving file %s: %s"
-msgstr "保存文件 %s 时出错：%s"
-
-msgid "OpenXR Action map:"
-msgstr "OpenXR 动作映射："
-
-msgid "Remove interaction profile"
-msgstr "移除交互配置"
-
-msgid "OpenXR Action Map"
-msgstr "OpenXR 动作映射"
-
-msgid "Toggle OpenXR Action Map Dock"
-msgstr "开关 OpenXR 动作映射面板"
-
-msgid "Add Action Set"
-msgstr "添加动作集"
-
-msgid "Add an action set."
-msgstr "添加动作集。"
-
-msgid "Add profile"
-msgstr "添加配置"
-
-msgid "Add an interaction profile."
-msgstr "添加一个交互配置。"
-
-msgid "Save this OpenXR action map."
-msgstr "保存这个 OpenXR 动作映射。"
-
-msgid "Reset to default OpenXR action map."
-msgstr "重置为默认的 OpenXR 动作映射。"
-
-msgid "Action Sets"
-msgstr "动作集"
-
-msgid "Rename Action Set"
-msgstr "重命名动作集"
-
-msgid "Rename Action Sets Localized name"
-msgstr "重命名动作集本地化名称"
-
-msgid "Change Action Sets priority"
-msgstr "更改动作集优先级"
-
-msgid "Add action"
-msgstr "添加动作"
-
-msgid "Delete action"
-msgstr "删除动作"
-
-msgid "Fold"
-msgstr "折叠"
-
-msgid "Action Set Name"
-msgstr "动作集名称"
-
-msgid ""
-"Human-readable name of the action set. This can be displayed to end users."
-msgstr "动作集的人类可读名称，可以展示给最终用户。"
-
-msgid "Action Set Localized Name"
-msgstr "动作集本地化名称"
-
-msgid ""
-"Priority of the action set. If multiple action sets bind to the same input, "
-"the action set with the highest priority will be updated."
-msgstr ""
-"动作集的优先级。如果同一输入绑定了多个动作集，更新的是优先级最高的动作集。"
-
-msgid "Action Set Priority"
-msgstr "动作集优先级"
-
-msgid "Add action."
-msgstr "添加动作。"
-
-msgid "Remove action set."
-msgstr "移除动作集。"
-
-msgid "Remove this binding modifier."
-msgstr "移除该绑定修改器。"
-
-msgid "Remove binding modifier"
-msgstr "移除绑定修改器"
-
-msgid "Add binding modifier"
-msgstr "添加绑定修改器"
-
-msgid "Note: modifiers will only be applied if supported on the host system."
-msgstr "提醒：修改器仅在宿主系统支持时生效。"
-
-msgid "Binding modifiers for:"
-msgstr "绑定修改器："
-
-msgid "Remove action from interaction profile"
-msgstr "从交互配置中移除动作"
-
-msgid "Edit binding modifiers"
-msgstr "编辑绑定修改器"
-
-msgid "Note: This interaction profile requires extension %s support."
-msgstr "提醒：本交互预设需要%s扩展的支持。"
-
-msgid "Add binding"
-msgstr "添加绑定"
-
-msgid "Remove binding"
-msgstr "移除绑定"
-
-msgid "Note: This binding path requires extension %s support."
-msgstr "提醒：本绑定路径需要%s扩展的支持。"
-
 msgid "Boolean"
 msgstr "布尔值"
 
@@ -18137,53 +17876,6 @@ msgstr "浮点数"
 
 msgid "Vector2"
 msgstr "Vector2"
-
-msgid "Pose"
-msgstr "姿势"
-
-msgid "Haptic"
-msgstr "触摸"
-
-msgid "Unknown"
-msgstr "未知"
-
-msgid "Modifiers"
-msgstr "修改器"
-
-msgid "Select an action"
-msgstr "选择动作"
-
-msgid "Select an interaction profile"
-msgstr "选择交互配置"
-
-msgid "All interaction profiles have been added to the action map."
-msgstr "所有交互预设已保存到动作映射。"
-
-msgid "Choose an XR runtime."
-msgstr "请选择 XR 运行时。"
-
-msgid ""
-"Cannot use the same SubViewport with multiple OpenXR composition layers. "
-"Clear it from its current layer first."
-msgstr ""
-"无法为多个 OpenXR 合成层使用同一个 SubViewport。请先在当前层中将其清除。"
-
-msgid ""
-"Cannot set SubViewport on an OpenXR composition layer when using an Android "
-"surface."
-msgstr "使用 Android 表面时无法为 OpenXR 合成层设置 SubViewport。"
-
-msgid ""
-"OpenXR composition layers must have orthonormalized transforms (ie. no scale "
-"or shearing)."
-msgstr "OpenXR 合成层的变换必须正交归一（即无缩放和倾斜）。"
-
-msgid ""
-"Hole punching won't work as expected unless the sort order is less than zero."
-msgstr "排序小于零时打洞功能才能够正常工作。"
-
-msgid "OpenXR visibility mask must have an XRCamera3D node as their parent."
-msgstr "OpenXR 可见遮罩的父节点必须为 XRCamera3D。"
 
 msgid "E constant (2.718282). Represents the base of the natural logarithm."
 msgstr "E 常数 (2.718282)。表示自然对数的基数。"
@@ -19619,22 +19311,6 @@ msgstr "无法在设备上运行。"
 msgid "Error: There was a problem validating the keystore username and password"
 msgstr "错误：校验密钥库用户名密码时出现问题"
 
-msgid ""
-"Unable to determine the C# project's TFM, it may be incompatible. The export "
-"template only supports '%s'. Make sure the project targets '%s' or consider "
-"using gradle builds instead."
-msgstr ""
-"无法确定 C# 项目的 TFM，可能不兼容。导出模板仅支持“%s”。请确保项目以“%s”为目"
-"标，或考虑改用 Gradle 构建。"
-
-msgid ""
-"C# project targets '%s' but the export template only supports '%s'. Consider "
-"using gradle builds instead."
-msgstr "C# 项目以“%s”为目标，但是导出模板仅支持“%s”。请考虑改用 Gradle 构建。"
-
-msgid "Exporting to Android when using C#/.NET is experimental."
-msgstr "使用 C#/.NET 时导出到 Android 是实验性的。"
-
 msgid "Custom Android source template not found."
 msgstr "找不到自定义 Android 源码模板。"
 
@@ -19986,12 +19662,6 @@ msgstr "App Store 分发时，安装程序签名身份是必填项。"
 msgid "App sandbox is required for App Store distribution."
 msgstr "App Store 分发时，App 沙盒是必选项。"
 
-msgid ""
-"'rcodesign' doesn't support signing applications with embedded dynamic "
-"libraries (GDExtension or .NET)."
-msgstr ""
-"“rcodesign”不支持对带有嵌入式动态库的应用程序进行签名（GDExtension 和 .NET）。"
-
 msgid "Code signing is required for App Store distribution."
 msgstr "App Store 分发时，代码签名是必选项。"
 
@@ -20309,18 +19979,6 @@ msgstr "无法读取文件：“%s”。"
 
 msgid "PWA"
 msgstr "PWA"
-
-msgid ""
-"Exporting to Web is currently not supported in Godot 4 when using C#/.NET. "
-"Use Godot 3 to target Web with C#/Mono instead."
-msgstr ""
-"Godot 4 中目前尚不支持使用 C#/.NET 导出到 Web。要在 Web 目标上使用 C#/Mono，请"
-"改用 Godot 3。"
-
-msgid ""
-"If this project does not use C#, use a non-C# editor build to export the "
-"project."
-msgstr "如果这个项目不使用 C#，请使用非 C# 版本的编辑器来导出项目。"
 
 msgid "Could not read HTML shell: \"%s\"."
 msgstr "无法读取 HTML 壳：“%s”。"
@@ -21224,48 +20882,6 @@ msgid ""
 "scenes)."
 msgstr "每个场景中只允许有一个 WorldEnvironment（含实例化的场景）。"
 
-msgid ""
-"XRCamera3D may not function as expected without an XROrigin3D node as its "
-"parent."
-msgstr "父节点不是 XROrigin3D 时 XRCamera3D 可能无法正常工作。"
-
-msgid ""
-"XRCamera3D should have physics_interpolation_mode set to OFF in order to "
-"avoid jitter."
-msgstr "XRCamera3D 应当关闭 physics_interpolation_mode，从而避免抖动。"
-
-msgid ""
-"XRNode3D may not function as expected without an XROrigin3D node as its "
-"parent."
-msgstr "父节点不是 XROrigin3D 时 XRNode3D 可能无法正常工作。"
-
-msgid "No tracker name is set."
-msgstr "未设置追踪器名称。"
-
-msgid "No pose is set."
-msgstr "未设置姿势。"
-
-msgid ""
-"XRNode3D should have physics_interpolation_mode set to OFF in order to avoid "
-"jitter."
-msgstr "XRNode3D 应当关闭 physics_interpolation_mode，从而避免抖动。"
-
-msgid "XROrigin3D requires an XRCamera3D child node."
-msgstr "XROrigin3D 需要 XRCamera3D 子节点。"
-
-msgid ""
-"Changing the scale on the XROrigin3D node is not supported. Change the World "
-"Scale instead."
-msgstr "无法更改XROrigin3D节点的比例。请更改世界比例。"
-
-msgid ""
-"XR shaders are not enabled in project settings. Stereoscopic output is not "
-"supported unless they are enabled. Please enable `xr/shaders/enabled` to use "
-"stereoscopic output."
-msgstr ""
-"项目设置中未启用 XR 着色器。除非启用，否则不支持立体输出。使用立体输出请启用 "
-"`xr/shaders/enabled`。"
-
 msgid "Animation '%s' not found."
 msgstr "未找到动画：“%s”。"
 
@@ -21695,14 +21311,6 @@ msgstr "没有找到与之匹配的函数：“%s”。"
 
 msgid "Varying '%s' cannot be passed for the '%s' parameter in that context."
 msgstr "Varying“%s”在该上下文中无法作为“%s”参数传递。"
-
-msgid ""
-"Unable to pass a multiview texture sampler as a parameter to a custom "
-"function. Consider sampling it in the main function and then passing the "
-"vector result to the custom function."
-msgstr ""
-"无法将多视图纹理采样器作为参数传递给自定义函数。建议在主函数中进行采样，然后将"
-"向量结果传递给自定义函数。"
 
 msgid ""
 "Unable to pass RADIANCE texture sampler as a parameter to a custom function. "

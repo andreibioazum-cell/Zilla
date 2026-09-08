@@ -108,10 +108,6 @@
 #include "servers/physics_3d/physics_server_3d_manager.h"
 #endif // PHYSICS_3D_DISABLED
 
-#ifndef XR_DISABLED
-#include "servers/xr/xr_server.h"
-#endif // XR_DISABLED
-
 #ifdef TESTS_ENABLED
 #include "servers/rendering/dummy/rasterizer_dummy.h"
 #include "tests/test_main.h"
@@ -145,11 +141,7 @@
 #include "main/steam_tracker.h"
 #endif
 
-#include "modules/modules_enabled.gen.h" // For mono.
 
-#if defined(MODULE_MONO_ENABLED) && defined(TOOLS_ENABLED)
-#include "modules/mono/editor/bindings_generator.h"
-#endif
 
 #ifdef MODULE_GDSCRIPT_ENABLED
 #include "modules/gdscript/gdscript.h"
@@ -187,9 +179,6 @@ static DisplayServer *display_server = nullptr;
 static RenderingServer *rendering_server = nullptr;
 static TextServerManager *tsman = nullptr;
 static ThemeDB *theme_db = nullptr;
-#ifndef XR_DISABLED
-static XRServer *xr_server = nullptr;
-#endif // XR_DISABLED
 // We error out if setup2() doesn't turn this true
 static bool _start_success = false;
 
@@ -218,7 +207,6 @@ static uint64_t quit_after = 0;
 static ProcessID editor_pid = 0;
 static bool found_project = false;
 static bool recovery_mode = false;
-static bool auto_build_solutions = false;
 static String debug_server_uri;
 static bool wait_for_import = false;
 static bool restore_editor_window_layout = true;
@@ -580,7 +568,6 @@ void Main::print_help(const char *p_binary) {
 	print_help_option("--screen <N>", "Request window screen.\n");
 	print_help_option("--single-window", "Use a single window (no separate subwindows).\n");
 #ifndef _3D_DISABLED
-	print_help_option("--xr-mode <mode>", "Select XR (Extended Reality) mode [\"default\", \"off\", \"on\"].\n");
 #endif
 	print_help_option("--wid <window_id>", "Request parented to window.\n");
 	print_help_option("--accessibility <mode>", "Select accessibility mode ['auto' (when screen reader is running, default), 'always', 'disabled'].\n");
@@ -661,7 +648,6 @@ void Main::print_help(const char *p_binary) {
 #ifdef MODULE_GDSCRIPT_ENABLED
 	print_help_option("--gdscript-docs <path>", "Rather than dumping the engine API, generate API reference from the inline documentation in the GDScript files found in <path> (used with --doctool).\n", CLI_OPTION_AVAILABILITY_EDITOR);
 #endif
-	print_help_option("--build-solutions", "Build the scripting solutions (e.g. for C# projects). Implies --editor and requires a valid project to edit.\n", CLI_OPTION_AVAILABILITY_EDITOR);
 	print_help_option("--dump-gdextension-interface", "Generate a GDExtension header file \"gdextension_interface.h\" in the current folder. This file is the base file required to implement a GDExtension.\n", CLI_OPTION_AVAILABILITY_EDITOR);
 	print_help_option("--dump-gdextension-interface-json", "Generate a JSON dump of the GDExtension interface named \"gdextension_interface.json\" in the current folder.\n", CLI_OPTION_AVAILABILITY_EDITOR);
 	print_help_option("--dump-extension-api", "Generate a JSON dump of the Godot API for GDExtension bindings named \"extension_api.json\" in the current folder.\n", CLI_OPTION_AVAILABILITY_EDITOR);
@@ -737,9 +723,6 @@ Error Main::test_setup() {
 
 	/** INITIALIZE SERVERS **/
 	register_server_types();
-#ifndef XR_DISABLED
-	XRServer::set_xr_mode(XRServer::XRMODE_OFF); // Skip in tests.
-#endif // XR_DISABLED
 	initialize_modules(MODULE_INITIALIZATION_LEVEL_SERVERS);
 	GDExtensionManager::get_singleton()->initialize_extensions(GDExtension::INITIALIZATION_LEVEL_SERVERS);
 
@@ -1123,7 +1106,6 @@ Error Main::setup(const char *execpath, int argc, char *argv[], bool p_second_ph
 				arg == "--display-driver" ||
 				arg == "--rendering-method" ||
 				arg == "--rendering-driver" ||
-				arg == "--xr-mode" ||
 				arg == "-l" ||
 				arg == "--language") {
 			if (N) {
@@ -1557,11 +1539,6 @@ Error Main::setup(const char *execpath, int argc, char *argv[], bool p_second_ph
 			}
 		} else if (arg == "--single-threaded-scene") {
 			single_threaded_scene = true;
-		} else if (arg == "--build-solutions") { // Build the scripting solution such C#
-
-			auto_build_solutions = true;
-			editor = true;
-			cmdline_tool = true;
 		} else if (arg == "--dump-gdextension-interface") {
 			// Register as an editor instance to use low-end fallback if relevant.
 			editor = true;
@@ -1940,26 +1917,6 @@ Error Main::setup(const char *execpath, int argc, char *argv[], bool p_second_ph
 		} else if (I->get() == "--ignore-error-breaks") {
 			ignore_error_breaks = true;
 #endif // defined(DEBUG_ENABLED) || defined(TOOLS_ENABLED)
-#ifndef XR_DISABLED
-		} else if (arg == "--xr-mode") {
-			if (N) {
-				String xr_mode = N->get().to_lower();
-				N = N->next();
-				if (xr_mode == "default") {
-					XRServer::set_xr_mode(XRServer::XRMODE_DEFAULT);
-				} else if (xr_mode == "off") {
-					XRServer::set_xr_mode(XRServer::XRMODE_OFF);
-				} else if (xr_mode == "on") {
-					XRServer::set_xr_mode(XRServer::XRMODE_ON);
-				} else {
-					OS::get_singleton()->print("Unknown --xr-mode argument \"%s\", aborting.\n", xr_mode.ascii().get_data());
-					goto error;
-				}
-			} else {
-				OS::get_singleton()->print("Missing --xr-mode argument, aborting.\n");
-				goto error;
-			}
-#endif // XR_DISABLED
 		} else if (arg == "--benchmark") {
 			OS::get_singleton()->set_use_benchmark(true);
 		} else if (arg == "--benchmark-file") {
@@ -2354,7 +2311,6 @@ Error Main::setup(const char *execpath, int argc, char *argv[], bool p_second_ph
 		GLOBAL_DEF_RST(PropertyInfo(Variant::STRING, "rendering/rendering_device/driver.linuxbsd", PROPERTY_HINT_ENUM, "vulkan"), "vulkan");
 		GLOBAL_DEF_RST(PropertyInfo(Variant::STRING, "rendering/rendering_device/driver.android", PROPERTY_HINT_ENUM, "vulkan"), "vulkan");
 		GLOBAL_DEF_RST(PropertyInfo(Variant::STRING, "rendering/rendering_device/driver.ios", PROPERTY_HINT_ENUM, "metal,vulkan"), "metal");
-		GLOBAL_DEF_RST(PropertyInfo(Variant::STRING, "rendering/rendering_device/driver.visionos", PROPERTY_HINT_ENUM, "metal"), "metal");
 		GLOBAL_DEF_RST(PropertyInfo(Variant::STRING, "rendering/rendering_device/driver.macos", PROPERTY_HINT_ENUM, "metal,vulkan"), "metal");
 
 		GLOBAL_DEF_RST("rendering/rendering_device/fallback_to_vulkan", true);
@@ -2772,7 +2728,6 @@ Error Main::setup(const char *execpath, int argc, char *argv[], bool p_second_ph
 	GLOBAL_DEF_NOVAL(PropertyInfo(Variant::STRING, "display/display_server/driver.linuxbsd", PROPERTY_HINT_ENUM, "default,x11,wayland,headless"), "default");
 	GLOBAL_DEF_NOVAL(PropertyInfo(Variant::STRING, "display/display_server/driver.android", PROPERTY_HINT_ENUM, "default,android,headless"), "default");
 	GLOBAL_DEF_NOVAL(PropertyInfo(Variant::STRING, "display/display_server/driver.ios", PROPERTY_HINT_ENUM, "default,iOS,headless"), "default");
-	GLOBAL_DEF_NOVAL(PropertyInfo(Variant::STRING, "display/display_server/driver.visionos", PROPERTY_HINT_ENUM, "default,visionOS,headless"), "default");
 	GLOBAL_DEF_NOVAL(PropertyInfo(Variant::STRING, "display/display_server/driver.macos", PROPERTY_HINT_ENUM, "default,macos,headless"), "default");
 
 	GLOBAL_DEF_RST_NOVAL("audio/driver/driver", AudioDriverManager::get_driver(0)->get_name());
@@ -2843,91 +2798,6 @@ Error Main::setup(const char *execpath, int argc, char *argv[], bool p_second_ph
 	GLOBAL_DEF("display/window/ios/hide_home_indicator", true);
 	GLOBAL_DEF("display/window/ios/hide_status_bar", true);
 	GLOBAL_DEF("display/window/ios/suppress_ui_gesture", true);
-
-#ifndef _3D_DISABLED
-	// XR project settings.
-	GLOBAL_DEF_RST_BASIC("xr/openxr/enabled", false);
-	GLOBAL_DEF(PropertyInfo(Variant::STRING, "xr/openxr/target_api_version"), "");
-	GLOBAL_DEF_BASIC(PropertyInfo(Variant::STRING, "xr/openxr/default_action_map", PROPERTY_HINT_FILE, "*.tres"), "res://openxr_action_map.tres");
-	GLOBAL_DEF_BASIC(PropertyInfo(Variant::INT, "xr/openxr/form_factor", PROPERTY_HINT_ENUM, "Head Mounted,Handheld"), "0");
-	GLOBAL_DEF_BASIC(PropertyInfo(Variant::INT, "xr/openxr/view_configuration", PROPERTY_HINT_ENUM, "Mono,Stereo"), "1"); // "Mono,Stereo,Quad,Observer"
-	GLOBAL_DEF_BASIC(PropertyInfo(Variant::INT, "xr/openxr/reference_space", PROPERTY_HINT_ENUM, "Local,Stage,Local Floor"), "1");
-	GLOBAL_DEF_BASIC(PropertyInfo(Variant::INT, "xr/openxr/environment_blend_mode", PROPERTY_HINT_ENUM, "Opaque,Additive,Alpha"), "0");
-	GLOBAL_DEF_BASIC(PropertyInfo(Variant::INT, "xr/openxr/foveation_level", PROPERTY_HINT_ENUM, "Off,Low,Medium,High"), "0");
-	GLOBAL_DEF_BASIC("xr/openxr/foveation_dynamic", false);
-	GLOBAL_DEF_BASIC("xr/openxr/foveation_eye_tracked", true);
-	GLOBAL_DEF_BASIC("xr/openxr/foveation_with_subsampled_images", true);
-
-	GLOBAL_DEF_BASIC("xr/openxr/submit_depth_buffer", false);
-	GLOBAL_DEF_BASIC("xr/openxr/startup_alert", true);
-
-	// OpenXR project extensions settings.
-#ifndef DISABLE_DEPRECATED
-#define MOVE_PROJECT_SETTING(m_old_setting, m_new_setting) \
-	if (!ProjectSettings::get_singleton()->has_setting(m_new_setting) && ProjectSettings::get_singleton()->has_setting(m_old_setting)) { \
-		Variant value = GLOBAL_GET(m_old_setting); \
-		ProjectSettings::get_singleton()->set_setting(m_new_setting, value); \
-		ProjectSettings::get_singleton()->clear(m_old_setting); \
-	}
-
-	MOVE_PROJECT_SETTING("xr/openxr/extensions/spatial_entity/enable_marker_tracking", "xr/openxr/extensions/spatial_entity/marker_tracking/enable");
-	MOVE_PROJECT_SETTING("xr/openxr/extensions/spatial_entity/aruco_dict", "xr/openxr/extensions/spatial_entity/marker_tracking/aruco_dict");
-	MOVE_PROJECT_SETTING("xr/openxr/extensions/spatial_entity/april_tag_dict", "xr/openxr/extensions/spatial_entity/marker_tracking/april_tag_dict");
-
-	if (!ProjectSettings::get_singleton()->has_setting("xr/openxr/extensions/spatial_entity/marker_tracking/enable_builtin_for_types") && ProjectSettings::get_singleton()->has_setting("xr/openxr/extensions/spatial_entity/enable_builtin_marker_tracking")) {
-		bool value = GLOBAL_GET("xr/openxr/extensions/spatial_entity/enable_builtin_marker_tracking");
-		ProjectSettings::get_singleton()->set_setting("xr/openxr/extensions/spatial_entity/marker_tracking/enable_builtin_for_types", value ? 15 : 0);
-		ProjectSettings::get_singleton()->clear("xr/openxr/extensions/spatial_entity/enable_builtin_marker_tracking");
-	}
-#undef MOVE_PROJECT_SETTING
-#endif // DISABLE_DEPRECATED
-
-	GLOBAL_DEF_BASIC(PropertyInfo(Variant::INT, "xr/openxr/extensions/debug_utils", PROPERTY_HINT_ENUM, "Disabled,Error,Warning,Info,Verbose"), "0");
-	GLOBAL_DEF_BASIC(PropertyInfo(Variant::INT, "xr/openxr/extensions/debug_message_types", PROPERTY_HINT_FLAGS, "General,Validation,Performance,Conformance"), "15");
-	GLOBAL_DEF_BASIC("xr/openxr/extensions/frame_synthesis", false);
-	GLOBAL_DEF_BASIC("xr/openxr/extensions/frame_synthesis/flip_y", false);
-	GLOBAL_DEF_BASIC("xr/openxr/extensions/hand_tracking", false);
-	GLOBAL_DEF_BASIC("xr/openxr/extensions/hand_tracking_unobstructed_data_source", false); // XR_HAND_TRACKING_DATA_SOURCE_UNOBSTRUCTED_EXT
-	GLOBAL_DEF_BASIC("xr/openxr/extensions/hand_tracking_controller_data_source", false); // XR_HAND_TRACKING_DATA_SOURCE_CONTROLLER_EXT
-	GLOBAL_DEF_RST_BASIC("xr/openxr/extensions/hand_interaction_profile", false);
-	GLOBAL_DEF_BASIC("xr/openxr/extensions/spatial_entity/enabled", false);
-	GLOBAL_DEF_BASIC("xr/openxr/extensions/spatial_entity/enable_spatial_anchors", false);
-	GLOBAL_DEF_BASIC("xr/openxr/extensions/spatial_entity/enable_persistent_anchors", false);
-	GLOBAL_DEF_BASIC("xr/openxr/extensions/spatial_entity/enable_builtin_anchor_detection", false);
-	GLOBAL_DEF_BASIC("xr/openxr/extensions/spatial_entity/enable_plane_tracking", false);
-	GLOBAL_DEF_BASIC("xr/openxr/extensions/spatial_entity/enable_builtin_plane_detection", false);
-	GLOBAL_DEF_BASIC("xr/openxr/extensions/spatial_entity/marker_tracking/enable", false);
-	GLOBAL_DEF_BASIC(PropertyInfo(Variant::INT, "xr/openxr/extensions/spatial_entity/marker_tracking/enable_builtin_for_types", PROPERTY_HINT_FLAGS, "QR codes,Micro QR codes,ArUco markers,April tags"), 0);
-	GLOBAL_DEF_BASIC(PropertyInfo(Variant::INT, "xr/openxr/extensions/spatial_entity/marker_tracking/aruco_dict", PROPERTY_HINT_ENUM, "4x4 50 IDs,4x4 100 IDs,4x4 250 IDs,4x4 1000 IDs,5x5 50 IDs,5x5 100 IDs,5x5 250 IDs,5x5 1000 IDs,6x6 50 IDs,6x6 100 IDs,6x6 250 IDs,6x6 1000 IDs,7x7 50 IDs,7x7 100 IDs,7x7 250 IDs,7x7 1000 IDs"), "15");
-	GLOBAL_DEF_BASIC(PropertyInfo(Variant::INT, "xr/openxr/extensions/spatial_entity/marker_tracking/april_tag_dict", PROPERTY_HINT_ENUM, "4x4H5,5x5H9,6x6H10,6x6H11"), "3");
-	GLOBAL_DEF_RST_BASIC("xr/openxr/extensions/eye_gaze_interaction", false);
-	GLOBAL_DEF_BASIC("xr/openxr/extensions/render_model", false);
-	GLOBAL_DEF_BASIC("xr/openxr/extensions/user_presence", false);
-
-	// OpenXR Binding modifier settings
-	GLOBAL_DEF_BASIC("xr/openxr/binding_modifiers/analog_threshold", false);
-	GLOBAL_DEF_RST_BASIC("xr/openxr/binding_modifiers/dpad_binding", false);
-
-	// visionOS settings
-	GLOBAL_DEF_BASIC("xr/visionos/enable_hand_tracking", false);
-	GLOBAL_DEF_BASIC("xr/visionos/enable_controller_tracking", false);
-	// Dynamic render quality, to be used at runtime depending on the complexity of your scene, see https://developer.apple.com/documentation/compositorservices/defining-layer-renderer-quality.
-	GLOBAL_DEF_BASIC("xr/visionos/dynamic_render_quality/enable", false);
-	// The default value of 0.38 is equivalent to https://developer.apple.com/documentation/compositorservices/layerrenderer/capabilities/defaultrenderquality.
-	// Do not set this value higher than the maximum value you're planning to use at runtime, or your app will use more memory than necessary.
-	GLOBAL_DEF_BASIC(PropertyInfo(Variant::FLOAT, "xr/visionos/dynamic_render_quality/maximum_quality", PROPERTY_HINT_RANGE, "0,1,0.01"), 0.38);
-	// Initial values of the corresponding VisionOSXRInterface properties, applied when the immersive scene is created.
-	GLOBAL_DEF_BASIC(PropertyInfo(Variant::INT, "xr/visionos/upper_limb_visibility", PROPERTY_HINT_ENUM, "Automatic,Visible,Hidden"), 0);
-	GLOBAL_DEF_BASIC(PropertyInfo(Variant::INT, "xr/visionos/persistent_system_overlays", PROPERTY_HINT_ENUM, "Automatic,Visible,Hidden"), 0);
-
-#ifdef TOOLS_ENABLED
-	// Disabled for now, using XR inside of the editor we'll be working on during the coming months.
-
-	// editor settings (it seems we're too early in the process when setting up rendering, to access editor settings...)
-	// EDITOR_DEF_RST("xr/openxr/in_editor", false);
-	// GLOBAL_DEF("xr/openxr/in_editor", false);
-#endif // TOOLS_ENABLED
-#endif // _3D_DISABLED
 
 	Engine::get_singleton()->set_frame_delay(frame_delay);
 
@@ -3581,18 +3451,6 @@ Error Main::setup2(bool p_show_boot_logo) {
 		OS::get_singleton()->benchmark_end_measure("Servers", "Audio");
 	}
 
-#ifndef XR_DISABLED
-	/* Initialize XR Server */
-
-	{
-		OS::get_singleton()->benchmark_begin_measure("Servers", "XR");
-
-		xr_server = memnew(XRServer);
-
-		OS::get_singleton()->benchmark_end_measure("Servers", "XR");
-	}
-#endif // XR_DISABLED
-
 	OS::get_singleton()->benchmark_end_measure("Startup", "Servers");
 
 #ifndef WEB_ENABLED
@@ -3861,14 +3719,6 @@ Error Main::setup2(bool p_show_boot_logo) {
 	theme_db->initialize_theme();
 	audio_server->load_default_bus_layout();
 
-#if defined(MODULE_MONO_ENABLED) && defined(TOOLS_ENABLED)
-	// Hacky to have it here, but we don't have good facility yet to let modules
-	// register command line options to call at the right time. This needs to happen
-	// after init'ing the ScriptServer, but also after init'ing the ThemeDB,
-	// for the C# docs generation in the bindings.
-	List<String> cmdline_args = OS::get_singleton()->get_cmdline_args();
-	BindingsGenerator::handle_cmdline_args(cmdline_args);
-#endif
 
 #ifdef DEBUG_ENABLED
 	if (use_debug_profiler && EngineDebugger::is_active()) {
@@ -4185,15 +4035,6 @@ int Main::start() {
 				ERR_FAIL_COND_V_MSG(!da->dir_exists("doc"), EXIT_FAILURE, "--doctool must be run from the Godot repository's root folder, or specify a path that points there.");
 			}
 		}
-
-#ifndef MODULE_MONO_ENABLED
-		// Hack to define .NET-specific project settings even on non-.NET builds,
-		// so that we don't lose their descriptions and default values in DocTools.
-		// Default values should be synced with mono_gd/gd_mono.cpp.
-		GLOBAL_DEF("dotnet/project/assembly_name", "");
-		GLOBAL_DEF("dotnet/project/solution_directory", "");
-		GLOBAL_DEF(PropertyInfo(Variant::INT, "dotnet/project/assembly_reload_attempts", PROPERTY_HINT_RANGE, "1,16,1,or_greater"), 3);
-#endif
 
 		Error err;
 		DocTools doc;
@@ -4942,10 +4783,6 @@ bool Main::iteration() {
 	bool exit = false;
 
 	// process all our active interfaces
-#ifndef XR_DISABLED
-	GodotProfileZoneGrouped(_profile_zone, "xr_server->_process");
-	XRServer::get_singleton()->_process();
-#endif // XR_DISABLED
 
 	GodotProfileZoneGrouped(_profile_zone, "physics");
 	for (int iters = 0; iters < advance.physics_steps; ++iters) {
@@ -5163,23 +5000,6 @@ bool Main::iteration() {
 	OS::get_singleton()->add_frame_delay(DisplayServer::get_singleton()->window_can_draw(), wake_for_events);
 
 #ifdef TOOLS_ENABLED
-	if (auto_build_solutions) {
-		auto_build_solutions = false;
-		// Only relevant when running the editor.
-		if (!editor) {
-			OS::get_singleton()->set_exit_code(EXIT_FAILURE);
-			ERR_FAIL_V_MSG(true,
-					"Command line option --build-solutions was passed, but no project is being edited. Aborting.");
-		}
-		if (!EditorNode::get_singleton()->call_build()) {
-			OS::get_singleton()->set_exit_code(EXIT_FAILURE);
-			ERR_FAIL_V_MSG(true,
-					"Command line option --build-solutions was passed, but the build callback failed. Aborting.");
-		}
-	}
-#endif
-
-#ifdef TOOLS_ENABLED
 	if (exit && quit_after_timeout && EditorNode::get_singleton()) {
 		EditorNode::get_singleton()->unload_editor_addons();
 	}
@@ -5260,14 +5080,6 @@ void Main::cleanup(bool p_force) {
 	//clear global shader variables before scene and other graphics stuff are deinitialized.
 	rendering_server->global_shader_parameters_clear();
 
-#ifndef XR_DISABLED
-	if (xr_server) {
-		// Now that we're unregistering properly in plugins we need to keep access to xr_server for a little longer
-		// We do however unset our primary interface
-		xr_server->set_primary_interface(Ref<XRInterface>());
-	}
-#endif // XR_DISABLED
-
 #ifdef TOOLS_ENABLED
 	GDExtensionManager::get_singleton()->deinitialize_extensions(GDExtension::INITIALIZATION_LEVEL_EDITOR);
 	uninitialize_modules(MODULE_INITIALIZATION_LEVEL_EDITOR);
@@ -5308,10 +5120,6 @@ void Main::cleanup(bool p_force) {
 	unregister_server_types();
 
 	EngineDebugger::deinitialize();
-
-#ifndef XR_DISABLED
-	memdelete(xr_server);
-#endif // XR_DISABLED
 
 	if (audio_server) {
 		audio_server->finish();

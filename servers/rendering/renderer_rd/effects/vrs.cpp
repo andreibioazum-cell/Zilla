@@ -34,11 +34,6 @@
 #include "servers/rendering/renderer_rd/storage_rd/texture_storage.h"
 #include "servers/rendering/renderer_rd/uniform_set_cache_rd.h"
 
-#ifndef XR_DISABLED
-#include "servers/xr/xr_interface.h"
-#include "servers/xr/xr_server.h"
-#endif // XR_DISABLED
-
 using namespace RendererRD;
 
 VRS::VRS() {
@@ -51,9 +46,7 @@ VRS::VRS() {
 
 		vrs_shader.shader.initialize(vrs_modes);
 
-		if (!RendererCompositorRD::get_singleton()->is_xr_enabled()) {
-			vrs_shader.shader.set_variant_enabled(VRS_MULTIVIEW, false);
-		}
+		vrs_shader.shader.set_variant_enabled(VRS_MULTIVIEW, false);
 
 		vrs_shader.shader_version = vrs_shader.shader.version_create();
 
@@ -131,22 +124,6 @@ void VRS::update_vrs_texture(RID p_vrs_fb, RID p_render_target) {
 					copy_vrs(rd_texture, p_vrs_fb, layers > 1);
 				}
 			}
-#ifndef XR_DISABLED
-		} else if (vrs_mode == RSE::VIEWPORT_VRS_XR) {
-			Ref<XRInterface> interface = XRServer::get_singleton()->get_primary_interface();
-			if (interface.is_valid() && interface->get_vrs_texture_format() == XRInterface::XR_VRS_TEXTURE_FORMAT_UNIFIED) {
-				RID vrs_texture = interface->get_vrs_texture();
-				if (vrs_texture.is_valid()) {
-					RID rd_texture = texture_storage->texture_get_rd_texture(vrs_texture);
-					int layers = texture_storage->texture_get_layers(vrs_texture);
-
-					if (rd_texture.is_valid()) {
-						// Copy into our density buffer
-						copy_vrs(rd_texture, p_vrs_fb, layers > 1);
-					}
-				}
-			}
-#endif // XR_DISABLED
 		}
 
 		if (vrs_update_mode == RSE::VIEWPORT_VRS_UPDATE_ONCE) {

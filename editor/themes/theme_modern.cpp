@@ -2112,10 +2112,6 @@ void ThemeModern::populate_editor_styles(const Ref<EditorTheme> &p_theme, Editor
 			p_theme->set_type_variation("NoBorderAnimation", "MarginContainer");
 			p_theme->set_constant("margin_left", "NoBorderAnimation", margin);
 			p_theme->set_constant("margin_right", "NoBorderAnimation", margin);
-
-			// Used in the OpenXR action map editor.
-			p_theme->set_type_variation("NoBorderOpenXR", "NoBorderAnimation");
-			p_theme->set_constant("margin_bottom", "NoBorderOpenXR", -panel_margin);
 		}
 
 		// Buttons in material previews.

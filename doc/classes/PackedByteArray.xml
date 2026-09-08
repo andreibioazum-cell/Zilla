@@ -371,7 +371,7 @@
 			<description>
 				Converts system multibyte code page encoded array to [String]. If conversion fails, empty string is returned. This is the inverse of [method String.to_multibyte_char_buffer].
 				The values permitted for [param encoding] are system dependent. If [param encoding] is empty string, system default encoding is used.
-				- For Windows, see [url=https://learn.microsoft.com/en-us/windows/win32/Intl/code-page-identifiers]Code Page Identifiers[/url] .NET names.
+				- For Windows, see [url=https://learn.microsoft.com/en-us/windows/win32/Intl/code-page-identifiers]Code Page Identifiers[/url] names.
 				- For macOS and Linux/BSD, see [code]libiconv[/code] library documentation and [code]iconv --list[/code] for a list of supported encodings.
 			</description>
 		</method>
@@ -418,16 +418,10 @@
 			<return type="String" />
 			<description>
 				Returns a hexadecimal representation of this array as a [String].
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				var array = PackedByteArray([11, 46, 255])
 				print(array.hex_encode()) # Prints "0b2eff"
-				[/gdscript]
-				[csharp]
-				byte[] array = [11, 46, 255];
-				GD.Print(array.HexEncode()); // Prints "0b2eff"
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 			</description>
 		</method>
 		<method name="insert">

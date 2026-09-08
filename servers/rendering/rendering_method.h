@@ -34,14 +34,6 @@
 #include "servers/rendering/rendering_server_enums.h"
 #include "servers/rendering/rendering_server_types.h"
 
-#ifdef XR_DISABLED
-// RendererSceneCull::render_camera is empty when XR is disabled, but
-// it and RenderingMethod::render_camera have a parameter for XRInterface.
-#define XRInterface RefCounted
-#else
-class XRInterface;
-#endif // XR_DISABLED
-
 class Image;
 class RenderSceneBuffers;
 
@@ -350,7 +342,7 @@ public:
 
 	virtual void render_empty_scene(const Ref<RenderSceneBuffers> &p_render_buffers, RID p_scenario, RID p_shadow_atlas, float p_window_output_max_value) = 0;
 
-	virtual void render_camera(const Ref<RenderSceneBuffers> &p_render_buffers, RID p_camera, RID p_scenario, RID p_viewport, Size2 p_viewport_size, uint32_t p_jitter_phase_count, float p_mesh_lod_threshold, RID p_shadow_atlas, Ref<XRInterface> &p_xr_interface, float p_window_output_max_value, RenderingServerTypes::RenderInfo *r_render_info = nullptr) = 0;
+	virtual void render_camera(const Ref<RenderSceneBuffers> &p_render_buffers, RID p_camera, RID p_scenario, RID p_viewport, Size2 p_viewport_size, uint32_t p_jitter_phase_count, float p_mesh_lod_threshold, RID p_shadow_atlas, float p_window_output_max_value, RenderingServerTypes::RenderInfo *r_render_info = nullptr) = 0;
 
 	virtual void update() = 0;
 	virtual void render_probes() = 0;

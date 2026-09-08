@@ -39,11 +39,6 @@
 #include "servers/rendering/rendering_server.h"
 #include "servers/rendering/rendering_server_default.h"
 
-#ifndef XR_DISABLED
-#include "servers/xr/xr_interface.h"
-#include "servers/xr/xr_server.h"
-#endif
-
 //#define DEBUG_CULL_TIME
 #ifdef DEBUG_CULL_TIME
 #include "core/os/os.h"
@@ -2673,7 +2668,7 @@ bool RendererSceneCull::_light_instance_update_shadow(Instance *p_instance, cons
 	return animated_material_found;
 }
 
-void RendererSceneCull::render_camera(const Ref<RenderSceneBuffers> &p_render_buffers, RID p_camera, RID p_scenario, RID p_viewport, Size2 p_viewport_size, uint32_t p_jitter_phase_count, float p_screen_mesh_lod_threshold, RID p_shadow_atlas, Ref<XRInterface> &p_xr_interface, float p_window_output_max_value, RenderingServerTypes::RenderInfo *r_render_info) {
+void RendererSceneCull::render_camera(const Ref<RenderSceneBuffers> &p_render_buffers, RID p_camera, RID p_scenario, RID p_viewport, Size2 p_viewport_size, uint32_t p_jitter_phase_count, float p_screen_mesh_lod_threshold, RID p_shadow_atlas, float p_window_output_max_value, RenderingServerTypes::RenderInfo *r_render_info) {
 #ifndef _3D_DISABLED
 
 	Camera *camera = camera_owner.get_or_null(p_camera);
@@ -2699,9 +2694,8 @@ void RendererSceneCull::render_camera(const Ref<RenderSceneBuffers> &p_render_bu
 
 	RendererSceneRender::CameraData camera_data;
 
-	// Setup Camera(s)
-	if (p_xr_interface.is_null()) {
-		// Normal camera
+	// Setup Camera
+	{
 		Transform3D transform = camera->transform;
 		Projection projection;
 		bool vaspect = camera->vaspect;
@@ -2738,45 +2732,6 @@ void RendererSceneCull::render_camera(const Ref<RenderSceneBuffers> &p_render_bu
 		}
 
 		camera_data.set_camera(transform, projection, is_orthogonal, vaspect, jitter, taa_frame_count, camera->visible_layers);
-#ifndef XR_DISABLED
-	} else {
-		XRServer *xr_server = XRServer::get_singleton();
-
-		// Setup our camera for our XR interface.
-		// We can support multiple views here each with their own camera
-		Transform3D transforms[RendererSceneRender::MAX_RENDER_VIEWS];
-		Projection projections[RendererSceneRender::MAX_RENDER_VIEWS];
-
-		uint32_t view_count = p_xr_interface->get_view_count();
-		ERR_FAIL_COND_MSG(view_count == 0 || view_count > RendererSceneRender::MAX_RENDER_VIEWS, "Requested view count is not supported");
-
-		float aspect = p_viewport_size.width / (float)p_viewport_size.height;
-
-		Transform3D world_origin = xr_server->get_world_origin();
-
-		// We ignore our camera position, it will have been positioned with a slightly old tracking position.
-		// Instead we take our origin point and have our XR interface add fresh tracking data! Whoohoo!
-		for (uint32_t v = 0; v < view_count; v++) {
-			transforms[v] = p_xr_interface->get_transform_for_view(v, world_origin);
-			projections[v] = p_xr_interface->get_projection_for_view(v, aspect, camera->znear, camera->zfar);
-		}
-
-		// If requested, we move the views to be rendered as if the HMD is at the XROrigin.
-		if (unlikely(xr_server->is_camera_locked_to_origin())) {
-			Transform3D camera_reset = p_xr_interface->get_camera_transform().affine_inverse() * xr_server->get_reference_frame().affine_inverse();
-			for (uint32_t v = 0; v < view_count; v++) {
-				transforms[v] *= camera_reset;
-			}
-		}
-
-		if (view_count == 1) {
-			camera_data.set_camera(transforms[0], projections[0], false, camera->vaspect, jitter, p_jitter_phase_count, camera->visible_layers);
-		} else if (view_count == 2) {
-			camera_data.set_multiview_camera(view_count, transforms, projections, false, camera->vaspect, camera->visible_layers);
-		} else {
-			// this won't be called (see fail check above) but keeping this comment to indicate we may support more then 2 views in the future...
-		}
-#endif // XR_DISABLED
 	}
 
 	RID environment = _render_get_environment(p_camera, p_scenario);

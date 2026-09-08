@@ -3262,8 +3262,7 @@ void main() {
 #endif // !RENDER_MOTION_VECTORS
 
 #if defined(RENDER_MOTION_VECTORS)
-	// These motion vectors are in NDC space (as opposed to screen space) to fit the OpenXR XR_FB_space_warp specification.
-	// https://registry.khronos.org/OpenXR/specs/1.0/html/xrspec.html#XR_FB_space_warp
+	// These motion vectors are in NDC space (as opposed to screen space).
 
 	vec3 ndc = clip_position.xyz / clip_position.w;
 	vec3 prev_ndc = prev_clip_position.xyz / prev_clip_position.w;

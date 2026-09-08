@@ -2655,9 +2655,6 @@ msgstr "மூல எழுத்துரு அளவு உதவி"
 msgid "Help Title Font Size"
 msgstr "தலைப்பு எழுத்துரு அளவு உதவி"
 
-msgid "Class Reference Examples"
-msgstr "வகுப்பு குறிப்பு எடுத்துக்காட்டுகள்"
-
 msgid "Sort Functions Alphabetically"
 msgstr "அகர வரிசைப்படி செயல்பாடுகளை வரிசைப்படுத்துங்கள்"
 
@@ -3381,110 +3378,11 @@ msgstr "நிலை பட்டியை மறைக்கவும்"
 msgid "Suppress UI Gesture"
 msgstr "இடைமுகம் சைகை அடக்கவும்"
 
-msgid "XR"
-msgstr "எக்ச்ஆர்"
-
-msgid "OpenXR"
-msgstr "Openxr"
-
-msgid "Target API Version"
-msgstr "இலக்கு பநிஇ பதிப்பு"
-
-msgid "Default Action Map"
-msgstr "இயல்புநிலை செயல் வரைபடம்"
-
-msgid "Form Factor"
-msgstr "உருவம் காரணி"
-
-msgid "View Configuration"
-msgstr "உள்ளமைவைக் காண்க"
-
-msgid "Reference Space"
-msgstr "குறிப்பு இடம்"
-
-msgid "Environment Blend Mode"
-msgstr "சுற்றுச்சூழல் கலவை முறை"
-
-msgid "Foveation Level"
-msgstr "Foveation நிலை"
-
-msgid "Foveation Dynamic"
-msgstr "Foveation மாறும்"
-
-msgid "Submit Depth Buffer"
-msgstr "ஆழ இடையகத்தை சமர்ப்பிக்கவும்"
-
-msgid "Startup Alert"
-msgstr "தொடக்க எச்சரிக்கை"
-
-msgid "Extensions"
-msgstr "நீட்டிப்புகள்"
-
-msgid "Debug Utils"
-msgstr "பிழைத்திருத்த பயன்பாடுகள்"
-
-msgid "Debug Message Types"
-msgstr "செய்தி வகைகளை பிழைத்திருத்தவும்"
-
-msgid "Frame Synthesis"
-msgstr "சட்ட தொகுப்பு"
-
-msgid "Hand Tracking"
-msgstr "கை கண்காணிப்பு"
-
-msgid "Hand Tracking Unobstructed Data Source"
-msgstr "கை கண்காணிப்பு தடையற்ற தரவு மூல"
-
-msgid "Hand Tracking Controller Data Source"
-msgstr "கை கண்காணிப்பு கட்டுப்பாட்டு தரவு மூல"
-
-msgid "Hand Interaction Profile"
-msgstr "கை தொடர்பு சுயவிவரம்"
-
-msgid "Spatial Entity"
-msgstr "இடஞ்சார்ந்த நிறுவனம்"
-
-msgid "Enable Spatial Anchors"
-msgstr "ச்பேசியல் ஆங்கர்களை இயக்கு"
-
-msgid "Enable Persistent Anchors"
-msgstr "நிரந்தர ஆங்கர்களை இயக்கு"
-
-msgid "Enable Builtin Anchor Detection"
-msgstr "பில்டின் ஆங்கர் கண்டறிதலை இயக்கு"
-
-msgid "Enable Plane Tracking"
-msgstr "விமான கண்காணிப்பை இயக்கு"
-
-msgid "Enable Builtin Plane Detection"
-msgstr "பில்டின் பிளேன் கண்டறிதலை இயக்கவும்"
-
 msgid "Enable Marker Tracking"
 msgstr "மார்க்கர் கண்காணிப்பை இயக்கு"
 
 msgid "Enable Builtin Marker Tracking"
 msgstr "பில்டின் மார்க்கர் கண்காணிப்பை இயக்கவும்"
-
-msgid "Aruco Dict"
-msgstr "அருகோ டிக்ட்"
-
-msgid "April Tag Dict"
-msgstr "ஏப்ரல் டேக் டிக்ட்"
-
-msgid "Eye Gaze Interaction"
-msgstr "கண் பார்வை தொடர்பு"
-
-msgid "Render Model"
-msgstr "மாதிரி வழங்கவும்"
-
-msgid "Binding Modifiers"
-msgstr "பிணைப்பு மாற்றிகள்"
-
-msgid "Analog Threshold"
-msgstr "அனலாக் வாசல்"
-
-msgid "Dpad Binding"
-msgstr "DPAD பிணைப்பு"
 
 msgid "Boot Splash"
 msgstr "துவக்க ச்பிளாச்"
@@ -3545,21 +3443,6 @@ msgstr "படம்"
 
 msgid "Minimum Display Time"
 msgstr "குறைந்தபட்ச காட்சி நேரம்"
-
-msgid "Dotnet"
-msgstr "டாட்நெட்"
-
-msgid "Project"
-msgstr "திட்டம்"
-
-msgid "Assembly Name"
-msgstr "பேரவை பெயர்"
-
-msgid "Solution Directory"
-msgstr "தீர்வு அடைவு"
-
-msgid "Assembly Reload Attempts"
-msgstr "பேரவை மறுஏற்றம் முயற்சிகள்"
 
 msgid "Time"
 msgstr "நேரம்"
@@ -4461,36 +4344,6 @@ msgstr "டெனோயிங்"
 msgid "Denoiser"
 msgstr "டெனோவர்"
 
-msgid "Eye Height"
-msgstr "கண் உயரம்"
-
-msgid "IOD"
-msgstr "அயோட்"
-
-msgid "Display Width"
-msgstr "காட்சி அகலம்"
-
-msgid "Display to Lens"
-msgstr "லென்சுக்குக் காண்பி"
-
-msgid "Offset Rect"
-msgstr "ஆஃப்செட் செவ்வகம்"
-
-msgid "Oversample"
-msgstr "மிகைப்படுத்தப்பட்ட மாதிரி"
-
-msgid "K1"
-msgstr "கே 1"
-
-msgid "K2"
-msgstr "கே 2"
-
-msgid "Vulkan VRS"
-msgstr "எரிமலை Vs"
-
-msgid "Min Radius"
-msgstr "குறைந்தபட்ச ஆரம்"
-
 msgid "BPM"
 msgstr "பிபிஎம்"
 
@@ -4626,185 +4479,11 @@ msgstr "தடையற்ற கலப்பு பாவாடை"
 msgid "Bump Strength"
 msgstr "பம்ப் வலிமை"
 
-msgid "Localized Name"
-msgstr "உள்ளூர்மயமாக்கப்பட்ட பெயர்"
-
-msgid "Action Type"
-msgstr "செயல் வகை"
-
-msgid "Toplevel Paths"
-msgstr "டோப்ல்வெல் பாதைகள்"
-
-msgid "Binding Path"
-msgstr "பிணைப்பு பாதை"
-
-msgid "Interaction Profile Path"
-msgstr "தொடர்பு சுயவிவர பாதை"
-
-msgid "Runtime Paths"
-msgstr "இயக்க நேர பாதைகள்"
-
-msgid "Action Set"
-msgstr "செயல் தொகுப்பு"
-
-msgid "Input Path"
-msgstr "உள்ளீட்டு பாதை"
-
-msgid "Threshold Released"
-msgstr "வாசல் வெளியிடப்பட்டது"
-
-msgid "Center Region"
-msgstr "மைய பகுதி"
-
-msgid "Wedge Angle"
-msgstr "ஆப்பு கோணம்"
-
-msgid "Is Sticky"
-msgstr "ஒட்டும்"
-
-msgid "On Haptic"
-msgstr "ஆப்டிக் மீது"
-
-msgid "Off Haptic"
-msgstr "ஆஃப் ஆப்டிக்"
-
-msgid "Relax Frame Interval"
-msgstr "ரிலாக்ச் ஃப்ரேம் இடைவெளி"
-
-msgid "On Threshold"
-msgstr "வாசலில்"
-
-msgid "Off Threshold"
-msgstr "வாசல் ஆஃப்"
-
-msgid "UUID"
-msgstr "UUID"
-
-msgid "Entity"
-msgstr "உருபொருள்"
-
-msgid "Spatial Tracking State"
-msgstr "இடஞ்சார்ந்த கண்காணிப்பு நிலை"
-
-msgid "April Dict"
-msgstr "ஏப்ரல் டிக்ட்"
-
-msgid "Bounds Size"
-msgstr "எல்லை அளவு"
-
-msgid "Marker Type"
-msgstr "குறிப்பான் வகை"
-
-msgid "Marker ID"
-msgstr "மார்க்கர் அடையாளம்"
-
-msgid "Plane Alignment"
-msgstr "வானூர்தி சீரமைப்பு"
-
-msgid "Plane Label"
-msgstr "விமான சிட்டை"
-
-msgid "Display Refresh Rate"
-msgstr "புதுப்பிப்பு வீதத்தைக் காண்பி"
-
-msgid "Render Target Size Multiplier"
-msgstr "இலக்கு அளவு பெருக்கி வழங்கவும்"
-
 msgid "Next"
 msgstr "அடுத்தது"
 
-msgid "Layer Viewport"
-msgstr "அடுக்கு வியாபோர்ட்"
-
-msgid "Use Android Surface"
-msgstr "ஆண்ட்ராய்டு மேற்பரப்பைப் பயன்படுத்தவும்"
-
-msgid "Protected Content"
-msgstr "பாதுகாக்கப்பட்ட உள்ளடக்கம்"
-
-msgid "Android Surface Size"
-msgstr "ஆண்ட்ராய்டு மேற்பரப்பு அளவு"
-
-msgid "Sort Order"
-msgstr "வரிசைப்படுத்தும் முறை"
-
-msgid "Alpha Blend"
-msgstr "ஆல்பா கலவை"
-
-msgid "Enable Hole Punch"
-msgstr "துளை பஞ்சை இயக்கவும்"
-
-msgid "Swapchain State"
-msgstr "ச்வாப்செயின் மாநிலம்"
-
-msgid "Mipmap Mode"
-msgstr "MIPMAP பயன்முறை"
-
-msgid "Horizontal Wrap"
-msgstr "கிடைமட்ட மடக்கு"
-
-msgid "Vertical Wrap"
-msgstr "செங்குத்து மடக்கு"
-
-msgid "Red Swizzle"
-msgstr "சிவப்பு ச்விச்ல்"
-
-msgid "Green Swizzle"
-msgstr "பச்சை ச்விச்ல்"
-
-msgid "Blue Swizzle"
-msgstr "நீல நிற ச்விச்ல்"
-
-msgid "Alpha Swizzle"
-msgstr "ஆல்பா ச்விச்ல்"
-
-msgid "Max Anisotropy"
-msgstr "அதிகபட்ச அனிசோட்ரோபி"
-
 msgid "Border Color"
 msgstr "எல்லை நிறம்"
-
-msgid "Aspect Ratio"
-msgstr "அம்ச விகிதம்"
-
-msgid "Central Angle"
-msgstr "மைய கோணம்"
-
-msgid "Fallback Segments"
-msgstr "குறைவடையும் பிரிவுகள்"
-
-msgid "Central Horizontal Angle"
-msgstr "மைய கிடைமட்ட கோணம்"
-
-msgid "Upper Vertical Angle"
-msgstr "மேல் செங்குத்து கோணம்"
-
-msgid "Lower Vertical Angle"
-msgstr "குறைந்த செங்குத்து கோணம்"
-
-msgid "Quad Size"
-msgstr "குவாட் அளவு"
-
-msgid "Hand"
-msgstr "கை"
-
-msgid "Motion Range"
-msgstr "இயக்க வீச்சு"
-
-msgid "Hand Skeleton"
-msgstr "கை எலும்புக்கூடு"
-
-msgid "Skeleton Rig"
-msgstr "எலும்புக்கூடு ரிக்"
-
-msgid "Bone Update"
-msgstr "எலும்பு புதுப்பிப்பு"
-
-msgid "Tracker"
-msgstr "கண்காணிப்பு"
-
-msgid "Make Local to Pose"
-msgstr "போச் செய்ய உள்ளக செய்யுங்கள்"
 
 msgid "Subject"
 msgstr "பொருள்"
@@ -4995,27 +4674,6 @@ msgstr "அதிகபட்சம் வரிசைப்படுத்த�
 msgid "Heartbeat Interval"
 msgstr "இதய துடிப்பு இடைவெளி"
 
-msgid "Session Mode"
-msgstr "அமர்வு முறை"
-
-msgid "Required Features"
-msgstr "தேவையான நற்பொருத்தங்கள்"
-
-msgid "Optional Features"
-msgstr "விருப்ப நற்பொருத்தங்கள்"
-
-msgid "Requested Reference Space Types"
-msgstr "கோரப்பட்ட குறிப்பு விண்வெளி வகைகள்"
-
-msgid "Reference Space Type"
-msgstr "குறிப்பு இட வகை"
-
-msgid "Enabled Features"
-msgstr "இயக்கப்பட்ட நற்பொருத்தங்கள்"
-
-msgid "Visibility State"
-msgstr "தெரிவுநிலை நிலை"
-
 msgid "Debug Keystore"
 msgstr "பிழைத்திருத்த கீச்டோர்"
 
@@ -5159,12 +4817,6 @@ msgstr "கிராபிக்ச்"
 
 msgid "OpenGL Debug"
 msgstr "Opengl பிழைத்திருத்தம்"
-
-msgid "XR Features"
-msgstr "எக்ச்ஆர் நற்பொருத்தங்கள்"
-
-msgid "XR Mode"
-msgstr "எக்ச்ஆர் பயன்முறை"
 
 msgid "Gesture"
 msgstr "சைகை"
@@ -5513,9 +5165,6 @@ msgstr "நீக்கக்கூடிய தொகுதிகள் பய�
 
 msgid "Removable Volumes Usage Description Localized"
 msgstr "நீக்கக்கூடிய தொகுதிகள் பயன்பாட்டு விளக்கம் உள்ளூர்மயமாக்கப்பட்டது"
-
-msgid "Min visionOS Version"
-msgstr "மின் விசோச் பதிப்பு"
 
 msgid "Web"
 msgstr "விரலிடைத் தோல்"
@@ -7631,26 +7280,8 @@ msgstr "பரப்புதல்"
 msgid "Use Two Bounces"
 msgstr "இரண்டு பவுன்ச் பயன்படுத்தவும்"
 
-msgid "Body Tracker"
-msgstr "உடல் கண்காணிப்பு"
-
-msgid "Body Update"
-msgstr "உடல் புதுப்பிப்பு"
-
-msgid "Face Tracker"
-msgstr "ஃபேச் டிராக்கர்"
-
-msgid "Hand Tracker"
-msgstr "கை கண்காணிப்பு"
-
 msgid "Pose"
 msgstr "போச்"
-
-msgid "Show When Tracked"
-msgstr "கண்காணிக்கும்போது காட்டு"
-
-msgid "World Scale"
-msgstr "உலக அளவு"
 
 msgid "Play Mode"
 msgstr "ப்ளே பயன்முறையில்"
@@ -9092,9 +8723,6 @@ msgstr "வியூபோர்ட் பாதை"
 
 msgid "Disable 3D"
 msgstr "3D ஐ முடக்கு"
-
-msgid "Use XR"
-msgstr "எக்ச்ஆர் பயன்படுத்தவும்"
 
 msgid "Own World 3D"
 msgstr "சொந்த உலக 3 டி"
@@ -12354,9 +11982,6 @@ msgstr "அதிகபட்ச ரெண்டரபிள் விளக்�
 msgid "Max Lights per Object"
 msgstr "ஒரு பொருளுக்கு அதிகபட்ச விளக்குகள்"
 
-msgid "Shaders"
-msgstr "சேடர்ச்"
-
 msgid "Shader Language"
 msgstr "சேடர் மொழி"
 
@@ -12506,48 +12131,3 @@ msgstr "உரை சேவையக தரவைச் சேர்க்கவ
 
 msgid "Line Breaking Strictness"
 msgstr "வரி உடைக்கும் கண்டிப்பு"
-
-msgid "Has Tracking Data"
-msgstr "கண்காணிப்பு தரவைக் கொண்டுள்ளது"
-
-msgid "Body Flags"
-msgstr "உடல் கொடிகள்"
-
-msgid "Blend Shapes"
-msgstr "கலப்பு வடிவங்கள்"
-
-msgid "Hand Tracking Source"
-msgstr "கை கண்காணிப்பு மூல"
-
-msgid "Is Primary"
-msgstr "முதன்மை"
-
-msgid "Play Area Mode"
-msgstr "பகுதி பயன்முறையை விளையாடுங்கள்"
-
-msgid "AR"
-msgstr "Ar"
-
-msgid "Is Anchor Detection Enabled"
-msgstr "நங்கூரம் கண்டறிதல் இயக்கப்பட்டது"
-
-msgid "Tracking Confidence"
-msgstr "நம்பிக்கையை கண்காணித்தல்"
-
-msgid "World Origin"
-msgstr "உலக தோற்றம்"
-
-msgid "Camera Locked to Origin"
-msgstr "கேமரா தோற்றத்திற்கு பூட்டப்பட்டுள்ளது"
-
-msgid "Primary Interface"
-msgstr "முதன்மை இடைமுகம்"
-
-msgid "VRS Min Radius"
-msgstr "வி.ஆர்.எச் மணித்துளி ஆரம்"
-
-msgid "VRS Strength"
-msgstr "வி.ஆர்.எச் வலிமை"
-
-msgid "VRS Render Region"
-msgstr "வி.ஆர்.எச் பிராந்தியத்தை வழங்குகிறது"

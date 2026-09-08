@@ -46,9 +46,6 @@ public:
 		RID self;
 		RID parent;
 
-		// use xr interface to override camera positioning and projection matrices and control output
-		bool use_xr = false;
-
 		Size2i internal_size;
 		Size2i size;
 		uint32_t view_count;
@@ -175,7 +172,6 @@ public:
 			snap_2d_transforms_to_pixel = false;
 			snap_2d_vertices_to_pixel = false;
 
-			use_xr = false;
 			sdf_active = false;
 
 			time_cpu_begin = 0;
@@ -219,10 +215,6 @@ private:
 public:
 	RID viewport_allocate();
 	void viewport_initialize(RID p_rid);
-
-#ifndef XR_DISABLED
-	void viewport_set_use_xr(RID p_viewport, bool p_use_xr);
-#endif // XR_DISABLED
 
 	void viewport_set_size(RID p_viewport, int p_width, int p_height, int p_view_count = 1);
 

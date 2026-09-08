@@ -7,22 +7,13 @@
 		[SpinBox] is a numerical input text field. It allows entering integers and floating-point numbers. The [SpinBox] also has up and down buttons that can be clicked to increase or decrease the value. The value can also be changed by dragging the mouse up or down over the [SpinBox]'s arrows.
 		Additionally, mathematical expressions can be entered. These are evaluated when the user presses [kbd]Enter[/kbd] while editing the [SpinBox]'s text field. This uses the [Expression] class to parse and evaluate the expression. The result of the expression is then set as the value of the [SpinBox]. Some examples of valid expressions are [code]5 + 2 * 3[/code], [code]pow(2, 4)[/code], and [code]PI + sin(0.5)[/code]. Expressions are case-sensitive.
 		[b]Example:[/b] Create a [SpinBox], disable its context menu and set its text alignment to right.
-		[codeblocks]
-		[gdscript]
+		[codeblock]
 		var spin_box = SpinBox.new()
 		add_child(spin_box)
 		var line_edit = spin_box.get_line_edit()
 		line_edit.context_menu_enabled = false
 		spin_box.horizontal_alignment = LineEdit.HORIZONTAL_ALIGNMENT_RIGHT
-		[/gdscript]
-		[csharp]
-		var spinBox = new SpinBox();
-		AddChild(spinBox);
-		var lineEdit = spinBox.GetLineEdit();
-		lineEdit.ContextMenuEnabled = false;
-		spinBox.AlignHorizontal = LineEdit.HorizontalAlignEnum.Right;
-		[/csharp]
-		[/codeblocks]
+		[/codeblock]
 		See [Range] class for more options over the [SpinBox].
 		[b]Note:[/b] With the [SpinBox]'s context menu disabled, you can right-click the bottom half of the spinbox to set the value to its minimum, while right-clicking the top half sets the value to its maximum.
 		[b]Note:[/b] [SpinBox] relies on an underlying [LineEdit] node. To theme a [SpinBox]'s background, add theme items for [LineEdit] and customize them. The [LineEdit] has the [code]SpinBoxInnerLineEdit[/code] theme variation, so that you can give it a distinct appearance from regular [LineEdit]s.

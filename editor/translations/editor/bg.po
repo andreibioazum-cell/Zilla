@@ -5908,9 +5908,6 @@ msgstr ""
 "Задайте ресурс от тип MeshLibrary в този GridMap, за да можете да използвате "
 "полигонните му мрежи."
 
-msgid "Not enough bytes for decoding bytes, or invalid format."
-msgstr "Недостатъчно байтове за разкодиране или неправилен формат."
-
 msgid "Node"
 msgstr "Връх"
 
@@ -5927,12 +5924,6 @@ msgid "A NavigationMesh resource must be set or created for this node to work."
 msgstr ""
 "Трябва да се зададе или създаде ресурс от тип NavigationMesh, за може да "
 "работи този обект."
-
-msgid "Error loading %s: %s."
-msgstr "Грешка при зареждането на %s: %s."
-
-msgid "Add an action set."
-msgstr "Добавяне на набор от действия."
 
 msgid "Vector2"
 msgstr "Вектор2"

@@ -2322,36 +2322,6 @@ msgstr "ორიენტაცია"
 msgid "Hide Status Bar"
 msgstr "მდგომარეობის ზოლის დამალვა"
 
-msgid "XR"
-msgstr "XR"
-
-msgid "OpenXR"
-msgstr "OpenXR"
-
-msgid "Default Action Map"
-msgstr "ნაგულისხმევი ქმედების რუკა"
-
-msgid "Form Factor"
-msgstr "ზომა"
-
-msgid "Environment Blend Mode"
-msgstr "გარემოს შერევის რეჟიმი"
-
-msgid "Foveation Level"
-msgstr "ჩაღრმავების დონე"
-
-msgid "Startup Alert"
-msgstr "გაშვების გაფრთხილება"
-
-msgid "Extensions"
-msgstr "გაფართოებები"
-
-msgid "Hand Tracking"
-msgstr "ხელის დევნება"
-
-msgid "Eye Gaze Interaction"
-msgstr "ურთიერთქმედებაზე მიჩერება"
-
 msgid "BG Color"
 msgstr "ფონის ფერი"
 
@@ -2387,12 +2357,6 @@ msgstr "გამოსახულება"
 
 msgid "Minimum Display Time"
 msgstr "მინიმალური ჩვენების დრო"
-
-msgid "Project"
-msgstr "პროექტი"
-
-msgid "Assembly Name"
-msgstr "აგების სახელი"
 
 msgid "Time"
 msgstr "დრო"
@@ -2697,21 +2661,6 @@ msgstr "ხმაურის მოცილება"
 msgid "Denoiser"
 msgstr "დენოიზერი"
 
-msgid "IOD"
-msgstr "IOD"
-
-msgid "Display Width"
-msgstr "ეკრანის სიგანე"
-
-msgid "Display to Lens"
-msgstr "ეკრანიდან ლინზამდე"
-
-msgid "K1"
-msgstr "K1"
-
-msgid "K2"
-msgstr "K2"
-
 msgid "BPM"
 msgstr "BPM"
 
@@ -2802,47 +2751,11 @@ msgstr "გამჭვირვალე"
 msgid "Invert"
 msgstr "ინვერსია"
 
-msgid "Localized Name"
-msgstr "ლოკალიზებული სახელი"
-
-msgid "Action Type"
-msgstr "ქმედების ტიპი"
-
-msgid "Toplevel Paths"
-msgstr "ზედა დონის ბილიკები"
-
-msgid "Interaction Profile Path"
-msgstr "ინტერაქციის პროფილის ბილიკი"
-
-msgid "Runtime Paths"
-msgstr "გაშვების გარემოს ბილიკები"
-
-msgid "Display Refresh Rate"
-msgstr "ეკრანის განახლების სიხშირე"
-
 msgid "Next"
 msgstr "შემდეგი"
 
 msgid "Border Color"
 msgstr "საზღვრის ფერი"
-
-msgid "Hand"
-msgstr "ხელი"
-
-msgid "Motion Range"
-msgstr "მოძრაობის შუალედი"
-
-msgid "Hand Skeleton"
-msgstr "ხელის ჩონჩხი"
-
-msgid "Skeleton Rig"
-msgstr "ჩონჩხი"
-
-msgid "Bone Update"
-msgstr "ძვლის განახლება"
-
-msgid "Tracker"
-msgstr "ტრეკერი"
 
 msgid "Names"
 msgstr "სახელები"
@@ -2958,9 +2871,6 @@ msgstr "ჩაწერის რეჟიმი"
 msgid "Supported Protocols"
 msgstr "მხარდაჭერილი პროტოკოლები"
 
-msgid "Session Mode"
-msgstr "სესიის რეჟიმი"
-
 msgid "Wi-Fi Remote Debug Host"
 msgstr "Wi-Fi დაშორებული გამართვის ჰოსტი"
 
@@ -2996,12 +2906,6 @@ msgstr "გრაფიკა"
 
 msgid "OpenGL Debug"
 msgstr "OpenGL-ის გამართვა"
-
-msgid "XR Features"
-msgstr "XR თვისებები"
-
-msgid "XR Mode"
-msgstr "XR რეჟიმი"
 
 msgid "Gesture"
 msgstr "ჟესტი"
@@ -4411,9 +4315,6 @@ msgstr "გავრცელება"
 
 msgid "Pose"
 msgstr "პოზა"
-
-msgid "World Scale"
-msgstr "სამყაროს მასშტაბი"
 
 msgid "Play Mode"
 msgstr "დაკვრის რეჟიმი"
@@ -6969,9 +6870,6 @@ msgstr "კლასტერის ამგები"
 msgid "OpenGL"
 msgstr "OpenGL"
 
-msgid "Shaders"
-msgstr "შეიდერები"
-
 msgid "Shader Language"
 msgstr "შეიდერის ენა"
 
@@ -7043,15 +6941,3 @@ msgstr "ნაგულისხმევი ფონტის ქვეპი�
 
 msgid "LCD Subpixel Layout"
 msgstr "LCD ქვეპიქსელის განლაგება"
-
-msgid "Has Tracking Data"
-msgstr "აქვს ტრეკინგის მონაცემები"
-
-msgid "Play Area Mode"
-msgstr "დაკვრის ადგილის რეჟიმი"
-
-msgid "AR"
-msgstr "AR"
-
-msgid "World Origin"
-msgstr "სამყაროს წყარო"

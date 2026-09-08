@@ -5147,10 +5147,6 @@ msgstr "Colocar iluminación directa"
 msgid "Integrate indirect lighting"
 msgstr "Integrar iluminación directa"
 
-msgid "Not enough bytes for decoding bytes, or invalid format."
-msgstr ""
-"Non hai insuficientes \"bytes\" para descodificar, ou o formato é inválido."
-
 msgid "%s/s"
 msgstr "%s/s"
 

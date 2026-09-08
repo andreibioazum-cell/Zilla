@@ -8,27 +8,13 @@
 		If a script extending this class also has a global class name, it will be included in the editor's command palette.
 		[b]Note:[/b] Extending scripts need to have [code]tool[/code] mode enabled.
 		[b]Example:[/b] Running the following script prints "Hello from the Godot Editor!":
-		[codeblocks]
-		[gdscript]
+		[codeblock]
 		@tool
 		extends EditorScript
 
 		func _run():
 			print("Hello from the Godot Editor!")
-		[/gdscript]
-		[csharp]
-		using Godot;
-
-		[Tool]
-		public partial class HelloEditor : EditorScript
-		{
-			public override void _Run()
-			{
-				GD.Print("Hello from the Godot Editor!");
-			}
-		}
-		[/csharp]
-		[/codeblocks]
+		[/codeblock]
 		[b]Note:[/b] EditorScript is [RefCounted], meaning it is destroyed when nothing references it. This can cause errors during asynchronous operations if there are no references to the script.
 	</description>
 	<tutorials>

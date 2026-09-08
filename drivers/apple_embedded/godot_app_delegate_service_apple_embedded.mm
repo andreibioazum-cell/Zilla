@@ -159,25 +159,23 @@ static __weak GDTViewController *_viewController = nil;
 // if you open the app list without switching to another app or open/close the
 // notification panel by swiping from the upper part of the screen.
 
-- (void)sceneDidDisconnect:(UIScene *)scene API_AVAILABLE(ios(13.0), tvos(13.0), visionos(1.0)) {
+- (void)sceneDidDisconnect:(UIScene *)scene API_AVAILABLE(ios(13.0), tvos(13.0)) {
 	OS_AppleEmbedded::get_singleton()->on_focus_out();
 }
 
-- (void)sceneWillEnterForeground:(UIScene *)scene API_AVAILABLE(ios(13.0), tvos(13.0), visionos(1.0)) {
-	// This method is not called on visionOS Compositor Services Immersive Scenes due to a pre-existing issue.
+- (void)sceneWillEnterForeground:(UIScene *)scene API_AVAILABLE(ios(13.0), tvos(13.0)) {
 	OS_AppleEmbedded::get_singleton()->on_exit_background();
 }
 
-- (void)sceneDidBecomeActive:(UIScene *)scene API_AVAILABLE(ios(13.0), tvos(13.0), visionos(1.0)) {
+- (void)sceneDidBecomeActive:(UIScene *)scene API_AVAILABLE(ios(13.0), tvos(13.0)) {
 	OS_AppleEmbedded::get_singleton()->on_focus_in();
 }
 
-- (void)sceneWillResignActive:(UIScene *)scene API_AVAILABLE(ios(13.0), tvos(13.0), visionos(1.0)) {
-	// This method is not called on visionOS Compositor Services Immersive Scenes due to a pre-existing issue.
+- (void)sceneWillResignActive:(UIScene *)scene API_AVAILABLE(ios(13.0), tvos(13.0)) {
 	OS_AppleEmbedded::get_singleton()->on_focus_out();
 }
 
-- (void)sceneDidEnterBackground:(UIScene *)scene API_AVAILABLE(ios(13.0), tvos(13.0), visionos(1.0)) {
+- (void)sceneDidEnterBackground:(UIScene *)scene API_AVAILABLE(ios(13.0), tvos(13.0)) {
 	OS_AppleEmbedded::get_singleton()->on_enter_background();
 }
 

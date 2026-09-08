@@ -111,16 +111,16 @@ static NSMutableArray<GDTAppDelegateServiceProtocol *> *services = nil;
 
 // MARK: Scene
 
-- (UISceneConfiguration *)application:(UIApplication *)application configurationForConnectingSceneSession:(UISceneSession *)connectingSceneSession options:(UISceneConnectionOptions *)options API_AVAILABLE(ios(13.0), tvos(13.0), visionos(1.0)) {
+- (UISceneConfiguration *)application:(UIApplication *)application configurationForConnectingSceneSession:(UISceneSession *)connectingSceneSession options:(UISceneConnectionOptions *)options API_AVAILABLE(ios(13.0), tvos(13.0)) {
 	UISceneConfiguration *config = [[UISceneConfiguration alloc] initWithName:@"Default Configuration" sessionRole:connectingSceneSession.role];
 	config.delegateClass = [GDTAppDelegate class];
 	return config;
 }
 
-- (void)application:(UIApplication *)application didDiscardSceneSessions:(NSSet<UISceneSession *> *)sceneSessions API_AVAILABLE(ios(13.0), tvos(13.0), visionos(1.0)) {
+- (void)application:(UIApplication *)application didDiscardSceneSessions:(NSSet<UISceneSession *> *)sceneSessions API_AVAILABLE(ios(13.0), tvos(13.0)) {
 }
 
-- (void)scene:(UIScene *)scene willConnectToSession:(UISceneSession *)session options:(UISceneConnectionOptions *)connectionOptions API_AVAILABLE(ios(13.0), tvos(13.0), visionos(1.0)) {
+- (void)scene:(UIScene *)scene willConnectToSession:(UISceneSession *)session options:(UISceneConnectionOptions *)connectionOptions API_AVAILABLE(ios(13.0), tvos(13.0)) {
 	for (GDTAppDelegateServiceProtocol *service in services) {
 		if (![service respondsToSelector:_cmd]) {
 			continue;
@@ -130,7 +130,7 @@ static NSMutableArray<GDTAppDelegateServiceProtocol *> *services = nil;
 	}
 }
 
-- (void)scene:(UIScene *)scene openURLContexts:(NSSet<UIOpenURLContext *> *)URLContexts API_AVAILABLE(ios(13.0), tvos(13.0), visionos(1.0)) {
+- (void)scene:(UIScene *)scene openURLContexts:(NSSet<UIOpenURLContext *> *)URLContexts API_AVAILABLE(ios(13.0), tvos(13.0)) {
 	for (GDTAppDelegateServiceProtocol *service in services) {
 		if (![service respondsToSelector:_cmd]) {
 			continue;
@@ -140,7 +140,7 @@ static NSMutableArray<GDTAppDelegateServiceProtocol *> *services = nil;
 	}
 }
 
-- (void)scene:(UIScene *)scene continueUserActivity:(NSUserActivity *)userActivity API_AVAILABLE(ios(13.0), tvos(13.0), visionos(1.0)) {
+- (void)scene:(UIScene *)scene continueUserActivity:(NSUserActivity *)userActivity API_AVAILABLE(ios(13.0), tvos(13.0)) {
 	for (GDTAppDelegateServiceProtocol *service in services) {
 		if (![service respondsToSelector:_cmd]) {
 			continue;
@@ -152,7 +152,7 @@ static NSMutableArray<GDTAppDelegateServiceProtocol *> *services = nil;
 
 // MARK: Life-Cycle
 
-- (void)sceneDidDisconnect:(UIScene *)scene API_AVAILABLE(ios(13.0), tvos(13.0), visionos(1.0)) {
+- (void)sceneDidDisconnect:(UIScene *)scene API_AVAILABLE(ios(13.0), tvos(13.0)) {
 	for (GDTAppDelegateServiceProtocol *service in services) {
 		if (![service respondsToSelector:_cmd]) {
 			continue;
@@ -162,7 +162,7 @@ static NSMutableArray<GDTAppDelegateServiceProtocol *> *services = nil;
 	}
 }
 
-- (void)sceneDidBecomeActive:(UIScene *)scene API_AVAILABLE(ios(13.0), tvos(13.0), visionos(1.0)) {
+- (void)sceneDidBecomeActive:(UIScene *)scene API_AVAILABLE(ios(13.0), tvos(13.0)) {
 	for (GDTAppDelegateServiceProtocol *service in services) {
 		if (![service respondsToSelector:_cmd]) {
 			continue;
@@ -172,7 +172,7 @@ static NSMutableArray<GDTAppDelegateServiceProtocol *> *services = nil;
 	}
 }
 
-- (void)sceneWillResignActive:(UIScene *)scene API_AVAILABLE(ios(13.0), tvos(13.0), visionos(1.0)) {
+- (void)sceneWillResignActive:(UIScene *)scene API_AVAILABLE(ios(13.0), tvos(13.0)) {
 	for (GDTAppDelegateServiceProtocol *service in services) {
 		if (![service respondsToSelector:_cmd]) {
 			continue;
@@ -182,7 +182,7 @@ static NSMutableArray<GDTAppDelegateServiceProtocol *> *services = nil;
 	}
 }
 
-- (void)sceneDidEnterBackground:(UIScene *)scene API_AVAILABLE(ios(13.0), tvos(13.0), visionos(1.0)) {
+- (void)sceneDidEnterBackground:(UIScene *)scene API_AVAILABLE(ios(13.0), tvos(13.0)) {
 	for (GDTAppDelegateServiceProtocol *service in services) {
 		if (![service respondsToSelector:_cmd]) {
 			continue;
@@ -192,7 +192,7 @@ static NSMutableArray<GDTAppDelegateServiceProtocol *> *services = nil;
 	}
 }
 
-- (void)sceneWillEnterForeground:(UIScene *)scene API_AVAILABLE(ios(13.0), tvos(13.0), visionos(1.0)) {
+- (void)sceneWillEnterForeground:(UIScene *)scene API_AVAILABLE(ios(13.0), tvos(13.0)) {
 	for (GDTAppDelegateServiceProtocol *service in services) {
 		if (![service respondsToSelector:_cmd]) {
 			continue;

@@ -524,7 +524,7 @@ static const _ModelInfo _models[] = {
 };
 
 String OS_AppleEmbedded::get_processor_name() const {
-#if defined(IOS_SIMULATOR) || defined(VISIONOS_SIMULATOR)
+#if defined(IOS_SIMULATOR)
 	return "Simulator";
 #else
 	if (apple_embedded) {

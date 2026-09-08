@@ -478,14 +478,9 @@
 			<param index="0" name="variable" type="Variant" />
 			<description>
 				Returns the integer hash of the passed [param variable].
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				print(hash("a")) # Prints 177670
-				[/gdscript]
-				[csharp]
-				GD.Print(GD.Hash("a")); // Prints 177670
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 			</description>
 		</method>
 		<method name="instance_from_id">
@@ -493,29 +488,14 @@
 			<param index="0" name="instance_id" type="int" />
 			<description>
 				Returns the [Object] that corresponds to [param instance_id]. All Objects have a unique instance ID. See also [method Object.get_instance_id].
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				var drink = "water"
 
 				func _ready():
 					var id = get_instance_id()
 					var instance = instance_from_id(id)
 					print(instance.drink) # Prints "water"
-				[/gdscript]
-				[csharp]
-				public partial class MyNode : Node
-				{
-					public string Drink { get; set; } = "water";
-
-					public override void _Ready()
-					{
-						ulong id = GetInstanceId();
-						var instance = (MyNode)InstanceFromId(Id);
-						GD.Print(instance.Drink); // Prints "water"
-					}
-				}
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 			</description>
 		</method>
 		<method name="inverse_lerp" keywords="interpolate">
@@ -847,16 +827,10 @@
 			<return type="void" />
 			<description>
 				Converts one or more arguments of any type to string in the best way possible and prints them to the console.
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				var a = [1, 2, 3]
 				print("a", "b", a) # Prints "ab[1, 2, 3]"
-				[/gdscript]
-				[csharp]
-				Godot.Collections.Array a = [1, 2, 3];
-				GD.Print("a", "b", a); // Prints "ab[1, 2, 3]"
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 				[b]Note:[/b] Consider using [method push_error] and [method push_warning] to print error and warning messages instead of [method print] or [method print_rich]. This distinguishes them from print messages used for debugging purposes, while also displaying a stack trace when an error or warning is printed. See also [member Engine.print_to_stdout] and [member ProjectSettings.application/run/disable_stdout].
 			</description>
 		</method>
@@ -867,14 +841,9 @@
 				The following BBCode tags are supported: [code]b[/code], [code]i[/code], [code]u[/code], [code]s[/code], [code]indent[/code], [code]code[/code], [code]url[/code], [code]center[/code], [code]right[/code], [code]color[/code], [code]bgcolor[/code], [code]fgcolor[/code].
 				URL tags support both URLs wrapped by a URL tag and URLs with a different title ([code skip-lint][url=address]text[/url][/code]). Support for URLs with a different title varies across terminal emulators. Most modern terminal emulators support them, but Terminal.app and conhost (the legacy Windows console) do not.
 				When printing to standard output, the supported subset of BBCode is converted to ANSI escape codes for the terminal emulator to display. Support for ANSI escape codes varies across terminal emulators, especially for italic and strikethrough. In standard output, [code]code[/code] is represented with faint text but without any font change. Unsupported tags are left as-is in standard output.
-				[codeblocks]
-				[gdscript skip-lint]
+				[codeblock skip-lint]
 				print_rich("[color=green][b]Hello world![/b][/color]") # Prints "Hello world!", in green with a bold font.
-				[/gdscript]
-				[csharp skip-lint]
-				GD.PrintRich("[color=green][b]Hello world![/b][/color]"); // Prints "Hello world!", in green with a bold font.
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 				[b]Note:[/b] Consider using [method push_error] and [method push_warning] to print error and warning messages instead of [method print] or [method print_rich]. This distinguishes them from print messages used for debugging purposes, while also displaying a stack trace when an error or warning is printed.
 				[b]Note:[/b] Output displayed in the editor supports clickable [code skip-lint][url=address]text[/url][/code] tags. The [code skip-lint][url][/code] tag's [code]address[/code] value is handled by [method OS.shell_open] when clicked.
 			</description>
@@ -889,14 +858,9 @@
 			<return type="void" />
 			<description>
 				Prints one or more arguments to strings in the best way possible to standard error line.
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				printerr("prints to stderr")
-				[/gdscript]
-				[csharp]
-				GD.PrintErr("prints to stderr");
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 			</description>
 		</method>
 		<method name="printraw" qualifiers="vararg">
@@ -904,62 +868,39 @@
 			<description>
 				Prints one or more arguments to strings in the best way possible to the OS terminal. Unlike [method print], no newline is automatically added at the end.
 				[b]Note:[/b] The OS terminal is [i]not[/i] the same as the editor's Output dock. The output sent to the OS terminal can be seen when running Godot from a terminal. On Windows, this requires using the [code]console.exe[/code] executable.
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				# Prints "ABC" to terminal.
 				printraw("A")
 				printraw("B")
 				printraw("C")
-				[/gdscript]
-				[csharp]
-				// Prints "ABC" to terminal.
-				GD.PrintRaw("A");
-				GD.PrintRaw("B");
-				GD.PrintRaw("C");
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 			</description>
 		</method>
 		<method name="prints" qualifiers="vararg">
 			<return type="void" />
 			<description>
 				Prints one or more arguments to the console with a space between each argument.
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				prints("A", "B", "C") # Prints "A B C"
-				[/gdscript]
-				[csharp]
-				GD.PrintS("A", "B", "C"); // Prints "A B C"
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 			</description>
 		</method>
 		<method name="printt" qualifiers="vararg">
 			<return type="void" />
 			<description>
 				Prints one or more arguments to the console with a tab between each argument.
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				printt("A", "B", "C") # Prints "A       B       C"
-				[/gdscript]
-				[csharp]
-				GD.PrintT("A", "B", "C"); // Prints "A       B       C"
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 			</description>
 		</method>
 		<method name="push_error" qualifiers="vararg">
 			<return type="void" />
 			<description>
 				Pushes an error message to Godot's built-in debugger and to the OS terminal.
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				push_error("test error") # Prints "test error" to debugger and terminal as an error.
-				[/gdscript]
-				[csharp]
-				GD.PushError("test error"); // Prints "test error" to debugger and terminal as an error.
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 				[b]Note:[/b] This function does not pause project execution. To print an error message and pause project execution in debug builds, use [code]assert(false, "test error")[/code] instead.
 			</description>
 		</method>
@@ -967,14 +908,9 @@
 			<return type="void" />
 			<description>
 				Pushes a warning message to Godot's built-in debugger and to the OS terminal.
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				push_warning("test warning") # Prints "test warning" to debugger and terminal as a warning.
-				[/gdscript]
-				[csharp]
-				GD.PushWarning("test warning"); // Prints "test warning" to debugger and terminal as a warning.
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 			</description>
 		</method>
 		<method name="rad_to_deg">
@@ -1007,14 +943,9 @@
 			<return type="float" />
 			<description>
 				Returns a random floating-point value between [code]0.0[/code] and [code]1.0[/code] (inclusive).
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				randf() # Returns e.g. 0.375671
-				[/gdscript]
-				[csharp]
-				GD.Randf(); // Returns e.g. 0.375671
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 			</description>
 		</method>
 		<method name="randf_range">
@@ -1023,16 +954,10 @@
 			<param index="1" name="to" type="float" />
 			<description>
 				Returns a random floating-point value between [param from] and [param to] (inclusive).
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				randf_range(0, 20.5) # Returns e.g. 7.45315
 				randf_range(-10, 10) # Returns e.g. -3.844535
-				[/gdscript]
-				[csharp]
-				GD.RandRange(0.0, 20.5);   // Returns e.g. 7.45315
-				GD.RandRange(-10.0, 10.0); // Returns e.g. -3.844535
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 			</description>
 		</method>
 		<method name="randfn">
@@ -1048,20 +973,12 @@
 			<return type="int" />
 			<description>
 				Returns a random unsigned 32-bit integer. Use remainder to obtain a random value in the interval [code][0, N - 1][/code] (where N is smaller than 2^32).
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				randi()           # Returns random integer between 0 and 2^32 - 1
 				randi() % 20      # Returns random integer between 0 and 19
 				randi() % 100     # Returns random integer between 0 and 99
 				randi() % 100 + 1 # Returns random integer between 1 and 100
-				[/gdscript]
-				[csharp]
-				GD.Randi();           // Returns random integer between 0 and 2^32 - 1
-				GD.Randi() % 20;      // Returns random integer between 0 and 19
-				GD.Randi() % 100;     // Returns random integer between 0 and 99
-				GD.Randi() % 100 + 1; // Returns random integer between 1 and 100
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 			</description>
 		</method>
 		<method name="randi_range">
@@ -1070,16 +987,10 @@
 			<param index="1" name="to" type="int" />
 			<description>
 				Returns a random signed 32-bit integer between [param from] and [param to] (inclusive). If [param to] is lesser than [param from], they are swapped.
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				randi_range(0, 1)      # Returns either 0 or 1
 				randi_range(-10, 1000) # Returns random integer between -10 and 1000
-				[/gdscript]
-				[csharp]
-				GD.RandRange(0, 1);      // Returns either 0 or 1
-				GD.RandRange(-10, 1000); // Returns random integer between -10 and 1000
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 			</description>
 		</method>
 		<method name="randomize">
@@ -1164,24 +1075,14 @@
 			<param index="0" name="base" type="int" />
 			<description>
 				Sets the seed for the random number generator to [param base]. Setting the seed manually can ensure consistent, repeatable results for most random functions.
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				var my_seed = "Godot Rocks".hash()
 				seed(my_seed)
 				var a = randf() + randi()
 				seed(my_seed)
 				var b = randf() + randi()
 				# a and b are now identical
-				[/gdscript]
-				[csharp]
-				ulong mySeed = (ulong)GD.Hash("Godot Rocks");
-				GD.Seed(mySeed);
-				var a = GD.Randf() + GD.Randi();
-				GD.Seed(mySeed);
-				var b = GD.Randf() + GD.Randi();
-				// a and b are now identical
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 			</description>
 		</method>
 		<method name="sign">
@@ -1322,7 +1223,7 @@
 				sqrt(10.24) # Returns 3.2
 				sqrt(-1)    # Returns NaN
 				[/codeblock]
-				[b]Note:[/b] Negative values of [param x] return NaN ("Not a Number"). In C#, if you need negative inputs, use [code]System.Numerics.Complex[/code].
+				[b]Note:[/b] Negative values of [param x] return NaN ("Not a Number").
 			</description>
 		</method>
 		<method name="step_decimals">
@@ -1354,18 +1255,11 @@
 			<param index="0" name="string" type="String" />
 			<description>
 				Converts a formatted [param string] that was returned by [method var_to_str] to the original [Variant].
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				var data = '{ "a": 1, "b": 2 }' # data is a String
 				var dict = str_to_var(data)     # dict is a Dictionary
 				print(dict["a"])                # Prints 1
-				[/gdscript]
-				[csharp]
-				string data = "{ \"a\": 1, \"b\": 2 }";           // data is a string
-				var dict = GD.StrToVar(data).AsGodotDictionary(); // dict is a Dictionary
-				GD.Print(dict["a"]);                              // Prints 1
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 			</description>
 		</method>
 		<method name="tan">
@@ -1458,16 +1352,10 @@
 			<param index="0" name="variable" type="Variant" />
 			<description>
 				Converts a [Variant] [param variable] to a formatted [String] that can then be parsed using [method str_to_var].
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				var a = { "a": 1, "b": 2 }
 				print(var_to_str(a))
-				[/gdscript]
-				[csharp]
-				var a = new Godot.Collections.Dictionary { ["a"] = 1, ["b"] = 2 };
-				GD.Print(GD.VarToStr(a));
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 				Prints:
 				[codeblock lang=text]
 				{
@@ -1674,9 +1562,6 @@
 		</member>
 		<member name="WorkerThreadPool" type="WorkerThreadPool" setter="" getter="">
 			The [WorkerThreadPool] singleton.
-		</member>
-		<member name="XRServer" type="XRServer" setter="" getter="">
-			The [XRServer] singleton.
 		</member>
 	</members>
 	<constants>
@@ -2891,8 +2776,7 @@
 			If a property is [String], hints that the property represents a particular type (class). This allows to select a type from the create dialog. The property will store the selected type as a string.
 			If a property is [Array], hints the editor how to show elements. The [code]hint_string[/code] must encode nested types using [code]":"[/code] and [code]"/"[/code].
 			If a property is [Dictionary], hints the editor how to show elements. The [code]hint_string[/code] is the same as [Array], with a [code]";"[/code] separating the key and value.
-			[codeblocks]
-			[gdscript]
+			[codeblock]
 			# Array of elem_type.
 			hint_string = "%d:" % [elem_type]
 			hint_string = "%d/%d:%s" % [elem_type, elem_hint, elem_hint_string]
@@ -2902,22 +2786,9 @@
 			# Three-dimensional array of elem_type (array of arrays of arrays of elem_type).
 			hint_string = "%d:%d:%d:" % [TYPE_ARRAY, TYPE_ARRAY, elem_type]
 			hint_string = "%d:%d:%d/%d:%s" % [TYPE_ARRAY, TYPE_ARRAY, elem_type, elem_hint, elem_hint_string]
-			[/gdscript]
-			[csharp]
-			// Array of elemType.
-			hintString = $"{elemType:D}:";
-			hintString = $"{elemType:D}/{elemHint:D}:{elemHintString}";
-			// Two-dimensional array of elemType (array of arrays of elemType).
-			hintString = $"{Variant.Type.Array:D}:{elemType:D}:";
-			hintString = $"{Variant.Type.Array:D}:{elemType:D}/{elemHint:D}:{elemHintString}";
-			// Three-dimensional array of elemType (array of arrays of arrays of elemType).
-			hintString = $"{Variant.Type.Array:D}:{Variant.Type.Array:D}:{elemType:D}:";
-			hintString = $"{Variant.Type.Array:D}:{Variant.Type.Array:D}:{elemType:D}/{elemHint:D}:{elemHintString}";
-			[/csharp]
-			[/codeblocks]
+			[/codeblock]
 			[b]Examples:[/b]
-			[codeblocks]
-			[gdscript]
+			[codeblock]
 			hint_string = "%d:" % [TYPE_INT] # Array of integers.
 			hint_string = "%d/%d:1,10,1" % [TYPE_INT, PROPERTY_HINT_RANGE] # Array of integers (in range from 1 to 10).
 			hint_string = "%d/%d:Zero,One,Two" % [TYPE_INT, PROPERTY_HINT_ENUM] # Array of integers (an enum).
@@ -2929,20 +2800,7 @@
 			hint_string = "%d:%d/%d:" % [TYPE_ARRAY, TYPE_STRING, PROPERTY_HINT_MULTILINE_TEXT] # Two-dimensional array of multiline strings.
 			hint_string = "%d:%d/%d:-1,1,0.1" % [TYPE_ARRAY, TYPE_FLOAT, PROPERTY_HINT_RANGE] # Two-dimensional array of floats (in range from -1 to 1).
 			hint_string = "%d:%d/%d:Texture2D" % [TYPE_ARRAY, TYPE_OBJECT, PROPERTY_HINT_RESOURCE_TYPE] # Two-dimensional array of textures.
-			[/gdscript]
-			[csharp]
-			hintString = $"{Variant.Type.Int:D}/{PropertyHint.Range:D}:1,10,1"; // Array of integers (in range from 1 to 10).
-			hintString = $"{Variant.Type.Int:D}/{PropertyHint.Enum:D}:Zero,One,Two"; // Array of integers (an enum).
-			hintString = $"{Variant.Type.Int:D}/{PropertyHint.Enum:D}:Zero,One,Three:3,Six:6"; // Array of integers (an enum).
-			hintString = $"{Variant.Type.String:D}/{PropertyHint.File:D}:*.png"; // Array of strings (file paths).
-			hintString = $"{Variant.Type.Object:D}/{PropertyHint.ResourceType:D}:Texture2D"; // Array of textures.
-
-			hintString = $"{Variant.Type.Array:D}:{Variant.Type.Float:D}:"; // Two-dimensional array of floats.
-			hintString = $"{Variant.Type.Array:D}:{Variant.Type.String:D}/{PropertyHint.MultilineText:D}:"; // Two-dimensional array of multiline strings.
-			hintString = $"{Variant.Type.Array:D}:{Variant.Type.Float:D}/{PropertyHint.Range:D}:-1,1,0.1"; // Two-dimensional array of floats (in range from -1 to 1).
-			hintString = $"{Variant.Type.Array:D}:{Variant.Type.Object:D}/{PropertyHint.ResourceType:D}:Texture2D"; // Two-dimensional array of textures.
-			[/csharp]
-			[/codeblocks]
+			[/codeblock]
 			[b]Note:[/b] The trailing colon is required for properly detecting built-in types.
 		</constant>
 		<constant name="PROPERTY_HINT_NODE_PATH_TO_EDITED_NODE" value="24" enum="PropertyHint" deprecated="This hint is not used by the engine.">

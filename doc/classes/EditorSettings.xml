@@ -8,24 +8,14 @@
 		Property names use slash delimiters to distinguish sections. Setting values can be of any [Variant] type. It's recommended to use [code]snake_case[/code] for editor settings to be consistent with the Godot editor itself.
 		Editor settings are saved automatically when changed.
 		Accessing the settings can be done using the following methods, such as:
-		[codeblocks]
-		[gdscript]
+		[codeblock]
 		var settings = EditorInterface.get_editor_settings()
 		# `settings.set("some/property", 10)` also works as this class overrides `_set()` internally.
 		settings.set_setting("some/property", 10)
 		# `settings.get("some/property")` also works as this class overrides `_get()` internally.
 		settings.get_setting("some/property")
 		var list_of_settings = settings.get_property_list()
-		[/gdscript]
-		[csharp]
-		EditorSettings settings = EditorInterface.Singleton.GetEditorSettings();
-		// `settings.set("some/property", value)` also works as this class overrides `_set()` internally.
-		settings.SetSetting("some/property", Value);
-		// `settings.get("some/property", value)` also works as this class overrides `_get()` internally.
-		settings.GetSetting("some/property");
-		Godot.Collections.Array&lt;Godot.Collections.Dictionary&gt; listOfSettings = settings.GetPropertyList();
-		[/csharp]
-		[/codeblocks]
+		[/codeblock]
 		[b]Note:[/b] This class shouldn't be instantiated directly. Instead, access the singleton using [method EditorInterface.get_editor_settings].
 	</description>
 	<tutorials>
@@ -39,8 +29,7 @@
 				- [code]name[/code]: [String] (the name of the property)
 				- [code]type[/code]: [int] (see [enum Variant.Type])
 				- optionally [code]hint[/code]: [int] (see [enum PropertyHint]) and [code]hint_string[/code]: [String]
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				var settings = EditorInterface.get_editor_settings()
 				settings.set("category/property_name", 0)
 
@@ -52,22 +41,7 @@
 				}
 
 				settings.add_property_info(property_info)
-				[/gdscript]
-				[csharp]
-				var settings = GetEditorInterface().GetEditorSettings();
-				settings.Set("category/property_name", 0);
-
-				var propertyInfo = new Godot.Collections.Dictionary
-				{
-					{ "name", "category/propertyName" },
-					{ "type", Variant.Type.Int },
-					{ "hint", PropertyHint.Enum },
-					{ "hint_string", "one,two,three" },
-				};
-
-				settings.AddPropertyInfo(propertyInfo);
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 			</description>
 		</method>
 		<method name="add_shortcut">
@@ -1318,7 +1292,7 @@
 		</member>
 		<member name="interface/touchscreen/touch_actions_panel" type="int" setter="" getter="">
 			A touch-friendly panel that provides easy access to common actions such as save, delete, undo, and redo without requiring a keyboard.
-			[b]Note:[/b] Only available in the Android and XR editor.
+			[b]Note:[/b] Only available in the Android editor.
 		</member>
 		<member name="network/connection/check_for_updates" type="int" setter="" getter="">
 			Specifies how the engine should check for updates.
@@ -1758,7 +1732,7 @@
 			The script editor's background color for the line the caret is currently on. This should be set to a translucent color so that it can display on top of other line color modifiers such as [member text_editor/theme/highlighting/mark_color].
 		</member>
 		<member name="text_editor/theme/highlighting/doc_comment_color" type="Color" setter="" getter="">
-			The script editor's documentation comment color. In GDScript, this is used for comments starting with [code]##[/code]. In C#, this is used for comments starting with [code]///[/code] or [code]/**[/code].
+			The script editor's documentation comment color. In GDScript, this is used for comments starting with [code]##[/code].
 		</member>
 		<member name="text_editor/theme/highlighting/engine_type_color" type="Color" setter="" getter="">
 			The script editor's engine type color ([Object], [Mesh], [Node], ...).

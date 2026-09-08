@@ -4209,9 +4209,6 @@ msgstr ""
 "scenei.\n"
 "Mutați nodul rădăcină CSG sub un nod părinte."
 
-msgid "Not enough bytes for decoding bytes, or invalid format."
-msgstr "Insuficienți bytes pentru decodare bytes, sau format invalid."
-
 msgid "%s/s"
 msgstr "%s/s"
 

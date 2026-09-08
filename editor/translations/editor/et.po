@@ -7232,9 +7232,6 @@ msgstr "Globaalne muutuja"
 msgid "3D Engine"
 msgstr "3D mootor"
 
-msgid "XR"
-msgstr "Laiendatud reaalsus"
-
 msgid "File saving failed."
 msgstr "Faili salvestamine nurjus."
 
@@ -7773,9 +7770,6 @@ msgstr "Kursor Pööra z"
 msgid "Retrieving textures"
 msgstr "Tekstuuride hankimine"
 
-msgid "Not enough bytes for decoding bytes, or invalid format."
-msgstr "Ebapiisav kogus baite nende dekodeerimiseks või kehtetu formaat."
-
 msgid "Node"
 msgstr "Sõlm"
 
@@ -7797,17 +7791,8 @@ msgstr "Muuda Alustamise Asukohta"
 msgid "Change End Position"
 msgstr "Muuda Lõpetamise Asukohta"
 
-msgid "Error loading %s: %s."
-msgstr "Viga laadimisel %s: %s."
-
-msgid "Error saving file %s: %s"
-msgstr "Tõrge faili %s: %s salvestamisel"
-
 msgid "Float"
 msgstr "Ujuvkomaarv"
-
-msgid "Pose"
-msgstr "Poos"
 
 msgid "Add Input"
 msgstr "Lisa Sisend"

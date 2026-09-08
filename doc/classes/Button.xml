@@ -6,8 +6,7 @@
 	<description>
 		[Button] is the standard themed button. It can contain text and an icon, and it will display them according to the current [Theme].
 		[b]Example:[/b] Create a button and connect a method that will be called when the button is pressed:
-		[codeblocks]
-		[gdscript]
+		[codeblock]
 		func _ready():
 			var button = Button.new()
 			button.text = "Click me"
@@ -16,22 +15,7 @@
 
 		func _button_pressed():
 			print("Hello world!")
-		[/gdscript]
-		[csharp]
-		public override void _Ready()
-		{
-			var button = new Button();
-			button.Text = "Click me";
-			button.Pressed += ButtonPressed;
-			AddChild(button);
-		}
-
-		private void ButtonPressed()
-		{
-			GD.Print("Hello world!");
-		}
-		[/csharp]
-		[/codeblocks]
+		[/codeblock]
 		See also [BaseButton] which contains common properties and methods associated with this node.
 		[b]Note:[/b] Buttons support multitouch via touch input, allowing multiple buttons to be pressed at the same time. Otherwise, mouse input is used, limiting interaction to one button press at a time.
 	</description>

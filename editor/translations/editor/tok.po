@@ -2761,18 +2761,6 @@ msgstr "o pini e pali ni"
 msgid "Run Current Scene"
 msgstr "o kepeken ma pali ni"
 
-msgid "Run Scene in Regular Mode"
-msgstr "o kepeken ma pali lon nasin meso"
-
-msgid "Run Scene in XR Mode"
-msgstr "o kepeken ma pali lon nasin XR"
-
-msgid "Run in Regular Mode"
-msgstr "o kepeken lon nasin meso"
-
-msgid "Run in XR Mode"
-msgstr "o kepeken lon nasin XR"
-
 msgid ""
 "Enable Movie Maker mode.\n"
 "The project will run at stable FPS and the visual and audio output will be "
@@ -4308,9 +4296,6 @@ msgstr "%s li nasin pi ken ala li lon ala nasin pi poki sona (res://)."
 msgid "Global Variable"
 msgstr "nanpa ante pi ma ale"
 
-msgid "XR"
-msgstr "XR"
-
 msgid "File saving failed."
 msgstr "mi awen e lipu la mi pakala."
 
@@ -4681,12 +4666,6 @@ msgstr "sina wile ala wile weka e nasin ijo?"
 
 msgid "Remove Property"
 msgstr "o weka e nasin ijo"
-
-msgid "Error loading %s: %s."
-msgstr "kama lon e %s la pakala li lon: %s."
-
-msgid "Error saving file %s: %s"
-msgstr "kama awen e lipu %s la pakala li lon: %s"
 
 msgid "Boolean"
 msgstr "Boolean"

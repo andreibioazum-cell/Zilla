@@ -89,7 +89,7 @@ def get_doc_path():
 def get_flags():
     return {
         "arch": detect_arch(),
-        "supported": ["library", "mono"],
+        "supported": ["library"],
     }
 
 
@@ -333,8 +333,6 @@ def configure(env: "SConsEnvironment"):
         # No pkgconfig file so far, hardcode expected lib name.
         env.Append(LIBS=["embree4"])
 
-    if not env["builtin_openxr"]:
-        env.ParseConfig("pkg-config openxr --cflags --libs")
 
     if env["fontconfig"]:
         if not env["use_sowrap"]:

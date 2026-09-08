@@ -63,7 +63,7 @@
 #include "scene/gui/line_edit.h"
 #include "servers/display/display_server.h"
 
-#include "modules/modules_enabled.gen.h" // For gdscript, mono.
+#include "modules/modules_enabled.gen.h" // For gdscript.
 
 // For syntax highlighting.
 #ifdef MODULE_GDSCRIPT_ENABLED
@@ -72,45 +72,8 @@
 #endif
 
 // For syntax highlighting.
-#ifdef MODULE_MONO_ENABLED
-#include "modules/mono/csharp_script.h"
-#endif
 
 #define CONTRIBUTE_URL "https://contributing.godotengine.org/en/latest/documentation/class_reference.html"
-
-#ifdef MODULE_MONO_ENABLED
-// Sync with the types mentioned in https://docs.godotengine.org/en/stable/tutorials/scripting/c_sharp/c_sharp_differences.html
-const Vector<String> classes_with_csharp_differences = {
-	"@GlobalScope",
-	"String",
-	"NodePath",
-	"Signal",
-	"Callable",
-	"RID",
-	"Basis",
-	"Transform2D",
-	"Transform3D",
-	"Rect2",
-	"Rect2i",
-	"AABB",
-	"Quaternion",
-	"Projection",
-	"Color",
-	"Array",
-	"Dictionary",
-	"PackedByteArray",
-	"PackedColorArray",
-	"PackedFloat32Array",
-	"PackedFloat64Array",
-	"PackedInt32Array",
-	"PackedInt64Array",
-	"PackedStringArray",
-	"PackedVector2Array",
-	"PackedVector3Array",
-	"PackedVector4Array",
-	"Variant",
-};
-#endif
 
 const Vector<String> packed_array_types = {
 	"PackedByteArray",
@@ -1132,22 +1095,6 @@ void EditorHelp::_update_doc() {
 
 		_pop_normal_font();
 	}
-
-#ifdef MODULE_MONO_ENABLED
-	if (classes_with_csharp_differences.has(cd.name)) {
-		class_desc->add_newline();
-
-		const String &csharp_differences_url = vformat("%s/tutorials/scripting/c_sharp/c_sharp_differences.html", GODOT_VERSION_DOCS_URL);
-
-		_push_normal_font();
-		class_desc->push_color(theme_cache.text_color);
-
-		class_desc->append_text("[b]" + TTR("Note:") + "[/b] " + vformat(TTR("There are notable differences when using this API with C#. See [url=%s]C# API differences to GDScript[/url] for more information."), csharp_differences_url));
-
-		class_desc->pop(); // color
-		_pop_normal_font();
-	}
-#endif
 
 	// Online tutorials
 	if (!cd.tutorials.is_empty()) {
@@ -2517,50 +2464,9 @@ static void _add_text_to_rt(const String &p_bbcode, RichTextLabel *p_rt, const C
 
 	String bbcode = p_bbcode.dedent().remove_chars("\r").strip_edges();
 
-	// Select the correct code examples.
-	switch ((int)EDITOR_GET("text_editor/help/class_reference_examples")) {
-		case 0: // GDScript
-			bbcode = bbcode.replace("[gdscript", "[codeblock lang=gdscript"); // Tag can have extra arguments.
-			bbcode = bbcode.replace("[/gdscript]", "[/codeblock]");
-
-			for (int pos = bbcode.find("[csharp"); pos != -1; pos = bbcode.find("[csharp")) {
-				int end_pos = bbcode.find("[/csharp]");
-				if (end_pos == -1) {
-					WARN_PRINT("Unclosed [csharp] block or parse fail in code (search for tag errors)");
-					break;
-				}
-
-				bbcode = bbcode.left(pos) + bbcode.substr(end_pos + 9); // 9 is length of "[/csharp]".
-				while (bbcode[pos] == '\n') {
-					bbcode = bbcode.left(pos) + bbcode.substr(pos + 1);
-				}
-			}
-			break;
-		case 1: // C#
-			bbcode = bbcode.replace("[csharp", "[codeblock lang=csharp"); // Tag can have extra arguments.
-			bbcode = bbcode.replace("[/csharp]", "[/codeblock]");
-
-			for (int pos = bbcode.find("[gdscript"); pos != -1; pos = bbcode.find("[gdscript")) {
-				int end_pos = bbcode.find("[/gdscript]");
-				if (end_pos == -1) {
-					WARN_PRINT("Unclosed [gdscript] block or parse fail in code (search for tag errors)");
-					break;
-				}
-
-				bbcode = bbcode.left(pos) + bbcode.substr(end_pos + 11); // 11 is length of "[/gdscript]".
-				while (bbcode[pos] == '\n') {
-					bbcode = bbcode.left(pos) + bbcode.substr(pos + 1);
-				}
-			}
-			break;
-		case 2: // GDScript and C#
-			bbcode = bbcode.replace("[csharp", "[b]C#:[/b]\n[codeblock lang=csharp"); // Tag can have extra arguments.
-			bbcode = bbcode.replace("[gdscript", "[b]GDScript:[/b]\n[codeblock lang=gdscript"); // Tag can have extra arguments.
-
-			bbcode = bbcode.replace("[/csharp]", "[/codeblock]");
-			bbcode = bbcode.replace("[/gdscript]", "[/codeblock]");
-			break;
-	}
+	// Code examples are GDScript only.
+	bbcode = bbcode.replace("[gdscript", "[codeblock lang=gdscript"); // Tag can have extra arguments.
+	bbcode = bbcode.replace("[/gdscript]", "[/codeblock]");
 
 	// Remove codeblocks (they would be printed otherwise).
 	bbcode = bbcode.replace("[codeblocks]\n", "");
@@ -2802,13 +2708,6 @@ static void _add_text_to_rt(const String &p_bbcode, RichTextLabel *p_rt, const C
 #ifdef MODULE_GDSCRIPT_ENABLED
 			if (!codeblock_printed && (lang.is_empty() || lang == "gdscript")) {
 				EditorHelpHighlighter::get_singleton()->highlight(p_rt, EditorHelpHighlighter::LANGUAGE_GDSCRIPT, codeblock_text, is_native);
-				codeblock_printed = true;
-			}
-#endif
-
-#ifdef MODULE_MONO_ENABLED
-			if (!codeblock_printed && lang == "csharp") {
-				EditorHelpHighlighter::get_singleton()->highlight(p_rt, EditorHelpHighlighter::LANGUAGE_CSHARP, codeblock_text, is_native);
 				codeblock_printed = true;
 			}
 #endif
@@ -3363,7 +3262,7 @@ void EditorHelp::_notification(int p_what) {
 			if (EditorSettings::get_singleton()->check_changed_settings_in_group("text_editor/help")) {
 				need_update = true;
 			}
-#if defined(MODULE_GDSCRIPT_ENABLED) || defined(MODULE_MONO_ENABLED)
+#ifdef MODULE_GDSCRIPT_ENABLED
 			if (!need_update && EditorSettings::get_singleton()->check_changed_settings_in_group("text_editor/theme/highlighting")) {
 				need_update = true;
 			}
@@ -4651,10 +4550,6 @@ String EditorHelpBit::get_as_plain_text(const String &p_symbol, const String &p_
 			pos = brk_end + 1;
 			output.append("GDScript:\n");
 			tag_stack.push_front("gdscript");
-		} else if (tag.begins_with("csharp")) {
-			pos = brk_end + 1;
-			output.append("C#:\n");
-			tag_stack.push_front("csharp");
 		} else if (tag == "b") {
 			pos = brk_end + 1;
 			tag_stack.push_front(tag);
@@ -5222,11 +5117,6 @@ EditorHelpHighlighter::HighlightData EditorHelpHighlighter::_get_highlight_data(
 			ERR_FAIL_V_MSG(HighlightData(), "GDScript module is disabled.");
 #endif
 			break;
-		case LANGUAGE_CSHARP:
-#ifndef MODULE_MONO_ENABLED
-			ERR_FAIL_V_MSG(HighlightData(), "Mono module is disabled.");
-#endif
-			break;
 		default:
 			ERR_FAIL_V_MSG(HighlightData(), "Invalid parameter \"p_language\".");
 	}
@@ -5305,10 +5195,6 @@ void EditorHelpHighlighter::clear_cache() {
 	text_edits[LANGUAGE_GDSCRIPT]->add_theme_color_override(SceneStringName(font_color), text_color);
 #endif
 
-#ifdef MODULE_MONO_ENABLED
-	highlight_data_caches[LANGUAGE_CSHARP].clear();
-	text_edits[LANGUAGE_CSHARP]->add_theme_color_override(SceneStringName(font_color), text_color);
-#endif
 }
 
 EditorHelpHighlighter::EditorHelpHighlighter() {
@@ -5331,24 +5217,6 @@ EditorHelpHighlighter::EditorHelpHighlighter() {
 	highlighters[LANGUAGE_GDSCRIPT] = gdscript_highlighter;
 #endif
 
-#ifdef MODULE_MONO_ENABLED
-	TextEdit *csharp_text_edit = memnew(TextEdit);
-	csharp_text_edit->add_theme_color_override(SceneStringName(font_color), text_color);
-
-	// See GH-89610.
-	//Ref<CSharpScript> csharp;
-	//csharp.instantiate();
-
-	Ref<EditorStandardSyntaxHighlighter> csharp_highlighter;
-	csharp_highlighter.instantiate();
-	csharp_highlighter->set_text_edit(csharp_text_edit);
-	//csharp_highlighter->_set_edited_resource(csharp);
-	csharp_highlighter->_set_script_language(CSharpLanguage::get_singleton());
-
-	text_edits[LANGUAGE_CSHARP] = csharp_text_edit;
-	//scripts[LANGUAGE_CSHARP] = csharp;
-	highlighters[LANGUAGE_CSHARP] = csharp_highlighter;
-#endif
 }
 
 EditorHelpHighlighter::~EditorHelpHighlighter() {
@@ -5356,9 +5224,6 @@ EditorHelpHighlighter::~EditorHelpHighlighter() {
 	memdelete(text_edits[LANGUAGE_GDSCRIPT]);
 #endif
 
-#ifdef MODULE_MONO_ENABLED
-	memdelete(text_edits[LANGUAGE_CSHARP]);
-#endif
 }
 
 /// FindBar ///

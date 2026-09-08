@@ -3370,13 +3370,6 @@ msgstr ""
 msgid "Note:"
 msgstr "Ghi chú:"
 
-msgid ""
-"There are notable differences when using this API with C#. See [url=%s]C# API "
-"differences to GDScript[/url] for more information."
-msgstr ""
-"Có một số khác biệt cần nhớ khi sử dụng API này trong C#. Xem [url=%s]điểm "
-"khác biệt giữa C# API và GDScript[/url] để thêm thông tin."
-
 msgid "Online Tutorials"
 msgstr "Hướng dẫn trực tuyến"
 
@@ -5395,13 +5388,6 @@ msgstr ""
 "Không thể chạy tập lệnh vì nó không phải là một tool script (hãy thêm chú "
 "thích @tool ở trên cùng)."
 
-msgid ""
-"Cannot run the script because it's not a tool script (add the [Tool] "
-"attribute above the class definition)."
-msgstr ""
-"Không thể chạy tập lệnh vì nó không phải là một tool script (hãy thêm thuộc "
-"tính [Tool] phía trên định nghĩa lớp)."
-
 msgid "Cannot run the script because it's not a tool script."
 msgstr "Không thể chạy tập lệnh vì nó không phải là một tool script."
 
@@ -6079,19 +6065,6 @@ msgid ""
 msgstr ""
 "Tệp .ipa chỉ có thể được build trên macOS. Hệ thống sẽ giữ nguyên dự án Xcode "
 "mà không đóng gói package."
-
-msgid ""
-"Exporting to an Apple Embedded platform when using C#/.NET is experimental "
-"and requires macOS."
-msgstr ""
-"Tính năng xuất bản sang nền tảng nhúng của Apple khi dùng C#/.NET hiện đang ở "
-"giai đoạn thử nghiệm (experimental) và yêu cầu hệ điều hành macOS."
-
-msgid ""
-"Exporting to an Apple Embedded platform when using C#/.NET is experimental."
-msgstr ""
-"Tính năng xuất bản sang nền tảng nhúng của Apple khi dùng C#/.NET hiện đang ở "
-"giai đoạn thử nghiệm (experimental)."
 
 msgid "Custom debug template not found."
 msgstr "Không tìm thấy bản mẫu gỡ lỗi tuỳ chỉnh."
@@ -8996,15 +8969,6 @@ msgstr ""
 "\n"
 
 msgid ""
-"Warning: This project uses C#, but this build of Godot does not have\n"
-"the Mono module. If you proceed you will not be able to use any C# scripts.\n"
-"\n"
-msgstr ""
-"Cảnh báo: Dự án này sử dụng C#, nhưng bản build Godot này không tích hợp\n"
-"module Mono. Nếu tiếp tục, bạn sẽ không thể sử dụng bất kỳ tập lệnh C# nào.\n"
-"\n"
-
-msgid ""
 "Warning: This project was last edited in Godot %s. Opening will change it to "
 "Godot %s.\n"
 "\n"
@@ -9445,20 +9409,8 @@ msgstr "Dừng Dự án đang chạy"
 msgid "Run Current Scene"
 msgstr "Chạy Cảnh Hiện tại"
 
-msgid "Run Scene in Regular Mode"
-msgstr "Chạy Scene ở Chế độ Thường"
-
-msgid "Run Scene in XR Mode"
-msgstr "Chạy Scene ở Chế độ XR (Thực tế ảo)"
-
 msgid "Run Specific Scene"
 msgstr "Chạy Scene Cụ thể"
-
-msgid "Run in Regular Mode"
-msgstr "Chạy ở Chế độ Thường"
-
-msgid "Run in XR Mode"
-msgstr "Chạy ở Chế độ XR"
 
 msgid "Enable Movie Maker Mode"
 msgstr "Bật Chế độ Movie Maker"
@@ -16259,12 +16211,6 @@ msgstr "Hỗ trợ Tiếp cận người khuyết tật (AccessKit)"
 msgid "Improved Gamepad Support (SDL)"
 msgstr "Hỗ trợ Tay cầm nâng cao (SDL)"
 
-msgid "XR"
-msgstr "Thực tế mở rộng (XR)"
-
-msgid "OpenXR"
-msgstr "Tiêu chuẩn OpenXR"
-
 msgid "Wayland"
 msgstr "Wayland"
 
@@ -16363,12 +16309,6 @@ msgstr ""
 "cách sử dụng thư viện SDL.\n"
 "Nếu tắt, hệ thống sẽ sử dụng mã nguồn tùy chỉnh tích hợp sẵn để xử lý tay "
 "cầm, điều này có thể kém ổn định hơn đối với một số mẫu tay cầm cụ thể."
-
-msgid "XR (AR and VR)."
-msgstr "XR (AR và VR)."
-
-msgid "OpenXR standard implementation (requires XR to be enabled)."
-msgstr "Triển khai tiêu chuẩn OpenXR (Yêu cầu phải kích hoạt tính năng XR)."
 
 msgid "Wayland display server support (Linux only)."
 msgstr "Hỗ trợ máy chủ hiển thị Wayland (Chỉ dành cho Linux)."
@@ -16494,13 +16434,6 @@ msgstr ""
 "hiện các lớp (classes) đang được sử dụng.\n"
 "Lưu ý lần quét đầu tiên có thể mất nhiều thời gian, đặc biệt là đối với các "
 "dự án lớn."
-
-msgid ""
-"Warning: Class detection for C# scripts is not currently available, and such "
-"files will be ignored."
-msgstr ""
-"Cảnh báo: Tính năng tự động phát hiện lớp (class) cho các tập lệnh C# hiện "
-"chưa khả dụng, và các tệp này sẽ bị bỏ qua."
 
 msgid ""
 "Clear cache of used classes per file? This will make it so that those files "
@@ -18028,56 +17961,6 @@ msgstr "Đang khử nhiễu"
 msgid "Retrieving textures"
 msgstr "Đang lấy các kết cấu (textures)"
 
-msgid "Class name can't be a reserved keyword"
-msgstr "Tên Lớp không được trùng với từ khóa"
-
-msgid "Class name must be a valid identifier"
-msgstr "Tên lớp (class name) bắt buộc phải là một định danh hợp lệ"
-
-msgid "Not enough bytes for decoding bytes, or invalid format."
-msgstr "Không đủ byte để giải mã, hoặc định dạng không hợp lệ."
-
-msgid ""
-"Unable to load .NET runtime, no compatible version was found.\n"
-"Attempting to create/edit a project will lead to a crash.\n"
-"\n"
-"Please install the .NET SDK 8.0 or later from https://get.dot.net and restart "
-"Godot."
-msgstr ""
-"Không thể tải môi trường thực thi .NET runtime, không tìm thấy phiên bản "
-"tương thích nào.\n"
-"Việc cố gắng tạo hoặc chỉnh sửa dự án sẽ dẫn đến lỗi sập phần mềm.\n"
-"\n"
-"Vui lòng cài đặt bộ công cụ .NET SDK 8.0 hoặc mới hơn từ trang https://"
-"get.dot.net và khởi động lại Godot."
-
-msgid "Failed to load .NET runtime"
-msgstr "Không thể tải môi trường thực thi .NET runtime"
-
-msgid ""
-"Unable to find the .NET assemblies directory.\n"
-"Make sure the '%s' directory exists and contains the .NET assemblies."
-msgstr ""
-"Không thể tìm thấy thư mục chứa các tệp thư viện .NET assemblies.\n"
-"Hãy đảm bảo rằng thư mục '%s' tồn tại và có chứa các tệp .NET assemblies này."
-
-msgid ".NET assemblies not found"
-msgstr "Không tìm thấy các tệp thư viện .NET assemblies"
-
-msgid ""
-"Unable to load .NET runtime, specifically hostfxr.\n"
-"Attempting to create/edit a project will lead to a crash.\n"
-"\n"
-"Please install the .NET SDK 8.0 or later from https://get.dot.net and restart "
-"Godot."
-msgstr ""
-"Không thể tải môi trường thực thi .NET runtime, cụ thể là thành phần thư viện "
-"hostfxr.\n"
-"Việc cố gắng tạo hoặc chỉnh sửa dự án sẽ dẫn đến lỗi sập phần mềm.\n"
-"\n"
-"Vui lòng cài đặt bộ công cụ .NET SDK 8.0 hoặc mới hơn từ trang https://"
-"get.dot.net và khởi động lại Godot."
-
 msgctxt "Network"
 msgid "Down"
 msgstr "Xuống (Down)"
@@ -18613,175 +18496,6 @@ msgstr "Trình phân tích bộ nhớ ObjectDB"
 msgid "Diff Against:"
 msgstr "So sánh khác biệt với:"
 
-msgid "Rename Action"
-msgstr "Đổi tên Hành động"
-
-msgid "Rename Actions Localized name"
-msgstr "Đổi tên hiển thị (Localized name) của Hành động"
-
-msgid "Change Action Type"
-msgstr "Thay đổi kiểu hành động"
-
-msgid ""
-"Internal name of the action. Some XR runtimes don't allow spaces or special "
-"characters."
-msgstr ""
-"Tên định danh nội bộ của hành động. Một số môi trường thực thi XR (XR "
-"runtimes) không cho phép chứa dấu cách hoặc ký tự đặc biệt."
-
-msgid "Action Name"
-msgstr "Tên hành động"
-
-msgid "Human-readable name of the action. This can be displayed to end users."
-msgstr ""
-"Tên hành động thân thiện với người dùng. Tên này có thể hiển thị trực tiếp "
-"cho người chơi."
-
-msgid "Action Localized Name"
-msgstr "Tên hiển thị của Hành động"
-
-msgid "Type of the action"
-msgstr "Kiểu của hành động này"
-
-msgid "Action Type"
-msgstr "Kiểu hành động"
-
-msgid "Remove action"
-msgstr "Xóa hành động"
-
-msgid "Add action set"
-msgstr "Thêm bộ hành động"
-
-msgid "Remove action set"
-msgstr "Xóa bộ hành động"
-
-msgid "Add interaction profile"
-msgstr "Thêm hồ sơ tương tác (interaction profile)"
-
-msgid "Error loading %s: %s."
-msgstr "Lỗi khi tải %s: %s."
-
-msgid "Error saving file %s: %s"
-msgstr "Lỗi khi lưu tệp %s: %s"
-
-msgid "OpenXR Action map:"
-msgstr "Sơ đồ hành động OpenXR:"
-
-msgid "Remove interaction profile"
-msgstr "Xóa hồ sơ tương tác"
-
-msgid "OpenXR Action Map"
-msgstr "Sơ đồ hành động OpenXR"
-
-msgid "Toggle OpenXR Action Map Dock"
-msgstr "Bật/Tắt bảng Sơ đồ hành động OpenXR"
-
-msgid "Add Action Set"
-msgstr "Thêm Bộ hành động"
-
-msgid "Add an action set."
-msgstr "Thêm một bộ hành động."
-
-msgid "Add profile"
-msgstr "Thêm hồ sơ (profile)"
-
-msgid "Add an interaction profile."
-msgstr "Thêm một hồ sơ tương tác."
-
-msgid "Save this OpenXR action map."
-msgstr "Lưu sơ đồ hành động (action map) OpenXR này."
-
-msgid "Reset to default OpenXR action map."
-msgstr "Đặt lại sơ đồ hành động OpenXR về mặc định."
-
-msgid "Action Sets"
-msgstr "Các Bộ hành động"
-
-msgid "Rename Action Set"
-msgstr "Đổi tên Bộ hành động"
-
-msgid "Rename Action Sets Localized name"
-msgstr "Đổi tên hiển thị của Bộ hành động (Action Sets)"
-
-msgid "Change Action Sets priority"
-msgstr "Thay đổi độ ưu tiên của Bộ hành động"
-
-msgid "Add action"
-msgstr "Thêm hành động"
-
-msgid "Delete action"
-msgstr "Xóa hành động"
-
-msgid "Fold"
-msgstr "Thu gọn (Fold)"
-
-msgid "Action Set Name"
-msgstr "Tên Bộ hành động"
-
-msgid ""
-"Human-readable name of the action set. This can be displayed to end users."
-msgstr ""
-"Tên bộ hành động thân thiện với người dùng. Tên này có thể hiển thị trực tiếp "
-"cho người chơi."
-
-msgid "Action Set Localized Name"
-msgstr "Tên hiển thị của Bộ hành động"
-
-msgid ""
-"Priority of the action set. If multiple action sets bind to the same input, "
-"the action set with the highest priority will be updated."
-msgstr ""
-"Độ ưu tiên của bộ hành động. Nếu nhiều bộ hành động cùng liên kết phím vào "
-"một cổng nạp tín hiệu, bộ hành động có độ ưu tiên cao nhất sẽ được cập nhật "
-"dữ liệu."
-
-msgid "Action Set Priority"
-msgstr "Độ ưu tiên của Bộ hành động"
-
-msgid "Add action."
-msgstr "Thêm hành động."
-
-msgid "Remove action set."
-msgstr "Xóa bộ hành động."
-
-msgid "Remove this binding modifier."
-msgstr "Xóa phím đổi hướng liên kết này."
-
-msgid "Remove binding modifier"
-msgstr "Xóa phím đổi hướng liên kết"
-
-msgid "Add binding modifier"
-msgstr "Thêm phím đổi hướng liên kết"
-
-msgid "Note: modifiers will only be applied if supported on the host system."
-msgstr ""
-"Lưu ý: Các tổ hợp phím đổi hướng (modifiers) chỉ có hiệu lực nếu hệ thống máy "
-"chủ hỗ trợ."
-
-msgid "Binding modifiers for:"
-msgstr "Liên kết phím đổi hướng cho:"
-
-msgid "Remove action from interaction profile"
-msgstr "Xóa hành động khỏi hồ sơ tương tác (interaction profile)"
-
-msgid "Edit binding modifiers"
-msgstr "Chỉnh sửa các phím đổi hướng liên kết"
-
-msgid "Note: This interaction profile requires extension %s support."
-msgstr ""
-"Lưu ý: Hồ sơ tương tác này yêu cầu hệ thống phải hỗ trợ tiện ích mở rộng %s."
-
-msgid "Add binding"
-msgstr "Thêm liên kết (binding)"
-
-msgid "Remove binding"
-msgstr "Xóa liên kết (binding)"
-
-msgid "Note: This binding path requires extension %s support."
-msgstr ""
-"Lưu ý: Đường dẫn liên kết này yêu cầu hệ thống phải hỗ trợ tiện ích mở rộng "
-"%s."
-
 msgid "Boolean"
 msgstr "Boolean"
 
@@ -18790,63 +18504,6 @@ msgstr "Số thực (Float)"
 
 msgid "Vector2"
 msgstr "Vector2"
-
-msgid "Pose"
-msgstr "Tư thế (Pose)"
-
-msgid "Haptic"
-msgstr "Phản hồi xúc giác (Haptic)"
-
-msgid "Unknown"
-msgstr "Không xác định"
-
-msgid "Modifiers"
-msgstr "Các phím đổi hướng (Modifiers)"
-
-msgid "Select an action"
-msgstr "Chọn một hành động"
-
-msgid "Select an interaction profile"
-msgstr "Chọn một hồ sơ tương tác"
-
-msgid "All interaction profiles have been added to the action map."
-msgstr "Tất cả các hồ sơ tương tác đã được thêm vào sơ đồ hành động."
-
-msgid "Choose an XR runtime."
-msgstr "Vui lòng chọn một môi trường thực thi XR runtime."
-
-msgid ""
-"Cannot use the same SubViewport with multiple OpenXR composition layers. "
-"Clear it from its current layer first."
-msgstr ""
-"Không thể dùng chung một SubViewport cho nhiều lớp nén OpenXR (OpenXR "
-"composition layers). Hãy xóa nó khỏi lớp hiện tại trước."
-
-msgid ""
-"Cannot set SubViewport on an OpenXR composition layer when using an Android "
-"surface."
-msgstr ""
-"Không thể thiết lập SubViewport trên một lớp nén OpenXR khi đang sử dụng một "
-"bề mặt Android surface."
-
-msgid ""
-"OpenXR composition layers must have orthonormalized transforms (ie. no scale "
-"or shearing)."
-msgstr ""
-"Các lớp nén OpenXR bắt buộc phải có ma trận biến đổi trực chuẩn "
-"(orthonormalized transforms - nghĩa là không được co giãn hoặc cắt biến dạng "
-"hình khối)."
-
-msgid ""
-"Hole punching won't work as expected unless the sort order is less than zero."
-msgstr ""
-"Tính năng đục lỗ hiển thị (hole punching) sẽ không hoạt động chính xác trừ "
-"khi thứ tự sắp xếp (sort order) nhỏ hơn 0."
-
-msgid "OpenXR visibility mask must have an XRCamera3D node as their parent."
-msgstr ""
-"Mặt nạ hiển thị (visibility mask) của OpenXR bắt buộc phải có một node "
-"XRCamera3D làm node cha."
 
 msgid "E constant (2.718282). Represents the base of the natural logarithm."
 msgstr "Hằng số E (2,718282). Cơ số của logarit tự nhiên."
@@ -20417,27 +20074,6 @@ msgid "Error: There was a problem validating the keystore username and password"
 msgstr ""
 "Lỗi: Có vấn đề khi xác thực tên người dùng và mật khẩu kho khóa (keystore)"
 
-msgid ""
-"Unable to determine the C# project's TFM, it may be incompatible. The export "
-"template only supports '%s'. Make sure the project targets '%s' or consider "
-"using gradle builds instead."
-msgstr ""
-"Không thể xác định TFM của dự án C#, dự án có thể không tương thích. Mẫu xuất "
-"(export template) chỉ hỗ trợ '%s'. Hãy đảm bảo dự án nhắm mục tiêu là '%s' "
-"hoặc cân nhắc sử dụng gradle để build thay thế."
-
-msgid ""
-"C# project targets '%s' but the export template only supports '%s'. Consider "
-"using gradle builds instead."
-msgstr ""
-"Dự án C# nhắm mục tiêu '%s' nhưng mẫu xuất chỉ hỗ trợ '%s'. Cân nhắc sử dụng "
-"gradle để build."
-
-msgid "Exporting to Android when using C#/.NET is experimental."
-msgstr ""
-"Tính năng xuất dự án ra Android khi dùng C#/.NET vẫn đang ở giai đoạn thử "
-"nghiệm."
-
 msgid "Custom Android source template not found."
 msgstr "Không tìm thấy bản mẫu nguồn Android tùy chỉnh."
 
@@ -20816,13 +20452,6 @@ msgstr ""
 msgid "App sandbox is required for App Store distribution."
 msgstr "Cần có App Sandbox để phân phối lên App Store."
 
-msgid ""
-"'rcodesign' doesn't support signing applications with embedded dynamic "
-"libraries (GDExtension or .NET)."
-msgstr ""
-"'rcodesign' không hỗ trợ ký các ứng dụng có chứa thư viện động nhúng "
-"(GDExtension hoặc .NET)."
-
 msgid "Code signing is required for App Store distribution."
 msgstr "Cần phải ký mã nguồn để phân phối lên App Store."
 
@@ -21161,19 +20790,6 @@ msgstr "Không thể đọc tệp tin: \"%s\"."
 
 msgid "PWA"
 msgstr "PWA"
-
-msgid ""
-"Exporting to Web is currently not supported in Godot 4 when using C#/.NET. "
-"Use Godot 3 to target Web with C#/Mono instead."
-msgstr ""
-"Việc xuất ra Web hiện chưa được hỗ trợ trong Godot 4 khi dùng C#/.NET. Hãy sử "
-"dụng Godot 3 nếu muốn xuất Web với C#/Mono."
-
-msgid ""
-"If this project does not use C#, use a non-C# editor build to export the "
-"project."
-msgstr ""
-"Nếu dự án này không dùng C#, hãy sử dụng bản Godot không kèm C# để xuất dự án."
 
 msgid "Could not read HTML shell: \"%s\"."
 msgstr "Không thể đọc được HTML shell: \"%s\"."
@@ -22198,55 +21814,6 @@ msgstr ""
 "Mỗi scene (hoặc tập hợp các scene được khởi tạo) chỉ được phép có một "
 "WorldEnvironment."
 
-msgid ""
-"XRCamera3D may not function as expected without an XROrigin3D node as its "
-"parent."
-msgstr ""
-"XRCamera3D có thể không hoạt động như mong đợi nếu không có node XROrigin3D "
-"làm cha."
-
-msgid ""
-"XRCamera3D should have physics_interpolation_mode set to OFF in order to "
-"avoid jitter."
-msgstr "XRCamera3D nên đặt physics_interpolation_mode là OFF để tránh rung lắc."
-
-msgid ""
-"XRNode3D may not function as expected without an XROrigin3D node as its "
-"parent."
-msgstr ""
-"XRNode3D có thể không hoạt động như mong đợi nếu không có node XROrigin3D làm "
-"cha."
-
-msgid "No tracker name is set."
-msgstr "Chưa thiết lập tên tracker."
-
-msgid "No pose is set."
-msgstr "Không có tư thế nào được thiết lập."
-
-msgid ""
-"XRNode3D should have physics_interpolation_mode set to OFF in order to avoid "
-"jitter."
-msgstr "XRNode3D nên đặt physics_interpolation_mode là OFF để tránh rung lắc."
-
-msgid "XROrigin3D requires an XRCamera3D child node."
-msgstr "XROrigin3D yêu cầu một node con XRCamera3D."
-
-msgid ""
-"Changing the scale on the XROrigin3D node is not supported. Change the World "
-"Scale instead."
-msgstr ""
-"Không hỗ trợ thay đổi tỉ lệ trên node XROrigin3D. Hãy thay đổi World Scale "
-"thay thế."
-
-msgid ""
-"XR shaders are not enabled in project settings. Stereoscopic output is not "
-"supported unless they are enabled. Please enable `xr/shaders/enabled` to use "
-"stereoscopic output."
-msgstr ""
-"XR shaders chưa được bật trong cài đặt dự án. Đầu ra lập thể (stereoscopic) "
-"không được hỗ trợ trừ khi chúng được bật. Vui lòng bật `xr/shaders/enabled` "
-"để sử dụng đầu ra lập thể."
-
 msgid "Animation '%s' not found."
 msgstr "Không tìm thấy hoạt ảnh '%s'."
 
@@ -22720,14 +22287,6 @@ msgstr "Không tìm thấy hàm phù hợp cho: '%s'."
 
 msgid "Varying '%s' cannot be passed for the '%s' parameter in that context."
 msgstr "Varying '%s' không thể được truyền cho tham số '%s' trong ngữ cảnh này."
-
-msgid ""
-"Unable to pass a multiview texture sampler as a parameter to a custom "
-"function. Consider sampling it in the main function and then passing the "
-"vector result to the custom function."
-msgstr ""
-"Không thể truyền sampler texture multiview làm tham số cho hàm tùy chỉnh. Hãy "
-"thử sample nó trong hàm chính rồi truyền kết quả vector vào hàm tùy chỉnh."
 
 msgid ""
 "Unable to pass RADIANCE texture sampler as a parameter to a custom function. "

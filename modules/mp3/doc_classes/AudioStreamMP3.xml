@@ -40,24 +40,13 @@
 		<member name="data" type="PackedByteArray" setter="set_data" getter="get_data" default="PackedByteArray()">
 			Contains the audio data in bytes.
 			You can load a file without having to import it beforehand using the code snippet below. Keep in mind that this snippet loads the whole file into memory and may not be ideal for huge files (hundreds of megabytes or more).
-			[codeblocks]
-			[gdscript]
+			[codeblock]
 			func load_mp3(path):
 				var file = FileAccess.open(path, FileAccess.READ)
 				var sound = AudioStreamMP3.new()
 				sound.data = file.get_buffer(file.get_length())
 				return sound
-			[/gdscript]
-			[csharp]
-			public AudioStreamMP3 LoadMP3(string path)
-			{
-				using var file = FileAccess.Open(path, FileAccess.ModeFlags.Read);
-				var sound = new AudioStreamMP3();
-				sound.Data = file.GetBuffer(file.GetLength());
-				return sound;
-			}
-			[/csharp]
-			[/codeblocks]
+			[/codeblock]
 		</member>
 		<member name="loop" type="bool" setter="set_loop" getter="has_loop" default="false">
 			If [code]true[/code], the stream will play again from the specified [member loop_offset] once it reaches the end of the audio track, or once it reaches the end of the last beat according to the amount specified in [member beat_count]. Useful for ambient sounds and background music.

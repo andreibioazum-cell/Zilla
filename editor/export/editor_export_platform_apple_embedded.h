@@ -222,7 +222,7 @@ protected:
 	virtual Error _export_loading_screen_file(const Ref<EditorExportPreset> &p_preset, const String &p_dest_dir) { return OK; }
 	virtual Error _export_icons(const Ref<EditorExportPreset> &p_preset, const String &p_iconset_dir);
 
-	// Asset-catalog dir name under Images.xcassets. visionOS overrides for layered icons.
+	// Asset-catalog dir name under Images.xcassets. Subclasses may override for layered icons.
 	virtual String _get_iconset_dir_name() const { return "AppIcon.appiconset"; }
 
 	virtual String get_platform_name() const = 0;

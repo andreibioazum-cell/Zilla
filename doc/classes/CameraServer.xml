@@ -5,7 +5,7 @@
 	</brief_description>
 	<description>
 		The [CameraServer] keeps track of different cameras accessible in Godot. These are external cameras such as webcams or the cameras on your phone.
-		It is notably used to provide AR modules with a video feed from the camera.
+		It can be used to provide a video feed from the camera to your project.
 		[b]Note:[/b] This class is currently only implemented on Linux, Android, macOS, and iOS. On other platforms no [CameraFeed]s will be available. To get a [CameraFeed] on iOS, enable [member EditorExportPlatformIOS.modules/camera].
 	</description>
 	<tutorials>
@@ -50,28 +50,14 @@
 			If [code]true[/code], the server is actively monitoring available camera feeds.
 			This has a performance cost, so only set it to [code]true[/code] when you're actively accessing the camera.
 			[b]Note:[/b] After setting it to [code]true[/code], you can receive updated camera feeds through the [signal camera_feeds_updated] signal.
-			[codeblocks]
-			[gdscript]
+			[codeblock]
 			func _ready():
 				CameraServer.camera_feeds_updated.connect(_on_camera_feeds_updated)
 				CameraServer.monitoring_feeds = true
 
 			func _on_camera_feeds_updated():
 				var feeds = CameraServer.feeds()
-			[/gdscript]
-			[csharp]
-			public override void _Ready()
-			{
-				CameraServer.CameraFeedsUpdated += OnCameraFeedsUpdated;
-				CameraServer.MonitoringFeeds = true;
-			}
-
-			void OnCameraFeedsUpdated()
-			{
-				var feeds = CameraServer.Feeds();
-			}
-			[/csharp]
-			[/codeblocks]
+			[/codeblock]
 		</member>
 	</members>
 	<signals>

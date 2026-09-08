@@ -8,7 +8,6 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 set(GODOT_ROOT_DIR ../../../..)
 set(ANDROID_ROOT_DIR "${GODOT_ROOT_DIR}/platform/android" CACHE STRING "")
-set(OPENXR_INCLUDE_DIR "${GODOT_ROOT_DIR}/thirdparty/openxr/include" CACHE STRING "")
 set(PERFETTO_INCLUDE_DIR "${GODOT_ROOT_DIR}/thirdparty/perfetto" CACHE STRING "")
 
 # Get sources
@@ -20,7 +19,6 @@ target_include_directories(${PROJECT_NAME}
         SYSTEM PUBLIC
         ${GODOT_ROOT_DIR}
         ${ANDROID_ROOT_DIR}
-        ${OPENXR_INCLUDE_DIR}
         ${PERFETTO_INCLUDE_DIR})
 
 add_definitions(

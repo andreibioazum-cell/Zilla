@@ -6,14 +6,9 @@
 	<description>
 		A dialog used for confirmation of actions. This window is similar to [AcceptDialog], but pressing its Cancel button can have a different outcome from pressing the OK button. The order of the two buttons varies depending on the host OS.
 		To get cancel action, you can use:
-		[codeblocks]
-		[gdscript]
+		[codeblock]
 		get_cancel_button().pressed.connect(_on_canceled)
-		[/gdscript]
-		[csharp]
-		GetCancelButton().Pressed += OnCanceled;
-		[/csharp]
-		[/codeblocks]
+		[/codeblock]
 		[b]Note:[/b] [AcceptDialog] is invisible by default. To make it visible, call one of the [code]popup_*[/code] methods from [Window] on the node, such as [method Window.popup_centered_clamped].
 	</description>
 	<tutorials>

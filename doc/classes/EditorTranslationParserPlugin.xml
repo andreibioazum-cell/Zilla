@@ -8,8 +8,7 @@
 		The return value should be an [Array] of [PackedStringArray]s, one for each extracted translatable string. Each entry should contain [code][msgid, msgctxt, msgid_plural, comment, source_line][/code], where all except [code]msgid[/code] are optional. Empty strings will be ignored.
 		The extracted strings will be written into a translation template file selected by user under "Template Generation" in "Localization" tab in "Project Settings" menu.
 		Below shows an example of a custom parser that extracts strings from a CSV file to write into a template.
-		[codeblocks]
-		[gdscript]
+		[codeblock]
 		@tool
 		extends EditorTranslationParserPlugin
 
@@ -26,56 +25,18 @@
 
 		func _get_recognized_extensions():
 			return ["csv"]
-		[/gdscript]
-		[csharp]
-		using Godot;
-
-		[Tool]
-		public partial class CustomParser : EditorTranslationParserPlugin
-		{
-			public override Godot.Collections.Array&lt;string[]&gt; _ParseFile(string path)
-			{
-				Godot.Collections.Array&lt;string[]&gt; ret;
-				using var file = FileAccess.Open(path, FileAccess.ModeFlags.Read);
-				string text = file.GetAsText();
-				string[] splitStrs = text.Split(",", allowEmpty: false);
-				foreach (string s in splitStrs)
-				{
-					ret.Add([s]);
-					//GD.Print($"Extracted string: {s}");
-				}
-				return ret;
-			}
-
-			public override string[] _GetRecognizedExtensions()
-			{
-				return ["csv"];
-			}
-		}
-		[/csharp]
-		[/codeblocks]
+		[/codeblock]
 		To add a translatable string associated with a context, plural, comment, or source line:
-		[codeblocks]
-		[gdscript]
+		[codeblock]
 		# This will add a message with msgid "Test 1", msgctxt "context", msgid_plural "test 1 plurals", comment "test 1 comment", and source line "7".
 		ret.append(PackedStringArray(["Test 1", "context", "test 1 plurals", "test 1 comment", "7"]))
 		# This will add a message with msgid "A test without context" and msgid_plural "plurals".
 		ret.append(PackedStringArray(["A test without context", "", "plurals"]))
 		# This will add a message with msgid "Only with context" and msgctxt "a friendly context".
 		ret.append(PackedStringArray(["Only with context", "a friendly context"]))
-		[/gdscript]
-		[csharp]
-		// This will add a message with msgid "Test 1", msgctxt "context", msgid_plural "test 1 plurals", comment "test 1 comment", and source line "7".
-		ret.Add(["Test 1", "context", "test 1 plurals", "test 1 comment", "7"]);
-		// This will add a message with msgid "A test without context" and msgid_plural "plurals".
-		ret.Add(["A test without context", "", "plurals"]);
-		// This will add a message with msgid "Only with context" and msgctxt "a friendly context".
-		ret.Add(["Only with context", "a friendly context"]);
-		[/csharp]
-		[/codeblocks]
-		[b]Note:[/b] If you override parsing logic for standard script types (GDScript, C#, etc.), it would be better to load the [code]path[/code] argument using [method ResourceLoader.load]. This is because built-in scripts are loaded as [Resource] type, not [FileAccess] type. For example:
-		[codeblocks]
-		[gdscript]
+		[/codeblock]
+		[b]Note:[/b] If you override parsing logic for standard script types (GDScript, etc.), it would be better to load the [code]path[/code] argument using [method ResourceLoader.load]. This is because built-in scripts are loaded as [Resource] type, not [FileAccess] type. For example:
+		[codeblock]
 		func _parse_file(path):
 			var res = ResourceLoader.load(path, "Script")
 			var text = res.source_code
@@ -83,21 +44,7 @@
 
 		func _get_recognized_extensions():
 			return ["gd"]
-		[/gdscript]
-		[csharp]
-		public override Godot.Collections.Array&lt;string[]&gt; _ParseFile(string path)
-		{
-			var res = ResourceLoader.Load&lt;Script&gt;(path, "Script");
-			string text = res.SourceCode;
-			// Parsing logic.
-		}
-
-		public override string[] _GetRecognizedExtensions()
-		{
-			return ["gd"];
-		}
-		[/csharp]
-		[/codeblocks]
+		[/codeblock]
 		Alternatively, the plugin can directly modify the final list of strings, by implementing [method _customize_strings].
 		To use [EditorTranslationParserPlugin], register it using the [method EditorPlugin.add_translation_parser_plugin] method first.
 	</description>

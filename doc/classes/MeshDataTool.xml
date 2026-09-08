@@ -7,8 +7,7 @@
 		MeshDataTool provides access to individual vertices in a [Mesh]. It allows users to read and edit vertex data of meshes. It also creates an array of faces and edges.
 		To use MeshDataTool, load a mesh with [method create_from_surface]. When you are finished editing the data commit the data to a mesh with [method commit_to_surface].
 		Below is an example of how MeshDataTool may be used.
-		[codeblocks]
-		[gdscript]
+		[codeblock]
 		var mesh = ArrayMesh.new()
 		mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, BoxMesh.new().get_mesh_arrays())
 		var mdt = MeshDataTool.new()
@@ -24,27 +23,7 @@
 		var mi = MeshInstance.new()
 		mi.mesh = mesh
 		add_child(mi)
-		[/gdscript]
-		[csharp]
-		var mesh = new ArrayMesh();
-		mesh.AddSurfaceFromArrays(Mesh.PrimitiveType.Triangles, new BoxMesh().GetMeshArrays());
-		var mdt = new MeshDataTool();
-		mdt.CreateFromSurface(mesh, 0);
-		for (var i = 0; i &lt; mdt.GetVertexCount(); i++)
-		{
-			Vector3 vertex = mdt.GetVertex(i);
-			// In this example we extend the mesh by one unit, which results in separated faces as it is flat shaded.
-			vertex += mdt.GetVertexNormal(i);
-			// Save your change.
-			mdt.SetVertex(i, vertex);
-		}
-		mesh.ClearSurfaces();
-		mdt.CommitToSurface(mesh);
-		var mi = new MeshInstance();
-		mi.Mesh = mesh;
-		AddChild(mi);
-		[/csharp]
-		[/codeblocks]
+		[/codeblock]
 		See also [ArrayMesh], [ImmediateMesh] and [SurfaceTool] for procedural geometry generation.
 		[b]Note:[/b] Godot uses clockwise [url=https://learnopengl.com/Advanced-OpenGL/Face-culling]winding order[/url] for front faces of triangle primitive modes.
 	</description>
@@ -140,18 +119,11 @@
 			<description>
 				Returns the specified vertex index of the given face.
 				[param vertex] must be either [code]0[/code], [code]1[/code], or [code]2[/code] because faces contain three vertices.
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				var index = mesh_data_tool.get_face_vertex(0, 1) # Gets the index of the second vertex of the first face.
 				var position = mesh_data_tool.get_vertex(index)
 				var normal = mesh_data_tool.get_vertex_normal(index)
-				[/gdscript]
-				[csharp]
-				int index = meshDataTool.GetFaceVertex(0, 1); // Gets the index of the second vertex of the first face.
-				Vector3 position = meshDataTool.GetVertex(index);
-				Vector3 normal = meshDataTool.GetVertexNormal(index);
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 			</description>
 		</method>
 		<method name="get_format" qualifiers="const">

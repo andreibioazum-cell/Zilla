@@ -2604,9 +2604,6 @@ msgstr "說明文件原始碼字體大小"
 msgid "Help Title Font Size"
 msgstr "說明標題字體大小"
 
-msgid "Class Reference Examples"
-msgstr "類別參考範例"
-
 msgid "Sort Functions Alphabetically"
 msgstr "按字母排序函式"
 
@@ -3312,75 +3309,6 @@ msgstr "隱藏狀態列"
 msgid "Suppress UI Gesture"
 msgstr "抑制 UI 手勢"
 
-msgid "XR"
-msgstr "XR"
-
-msgid "OpenXR"
-msgstr "OpenXR"
-
-msgid "Default Action Map"
-msgstr "預設動作對映"
-
-msgid "Form Factor"
-msgstr "構成因素"
-
-msgid "View Configuration"
-msgstr "視圖配置"
-
-msgid "Reference Space"
-msgstr "參照空間型別"
-
-msgid "Environment Blend Mode"
-msgstr "環境混合模式"
-
-msgid "Foveation Level"
-msgstr "注視點級別"
-
-msgid "Foveation Dynamic"
-msgstr "動態注視點"
-
-msgid "Submit Depth Buffer"
-msgstr "提交深度緩衝區"
-
-msgid "Startup Alert"
-msgstr "啟動警報"
-
-msgid "Extensions"
-msgstr "擴充功能"
-
-msgid "Debug Utils"
-msgstr "除錯工具"
-
-msgid "Debug Message Types"
-msgstr "偵錯訊息類型"
-
-msgid "Hand Tracking"
-msgstr "手部追蹤"
-
-msgid "Hand Tracking Unobstructed Data Source"
-msgstr "手部追蹤無遮蔽資料來源"
-
-msgid "Hand Tracking Controller Data Source"
-msgstr "手部追蹤控制器資料來源"
-
-msgid "Hand Interaction Profile"
-msgstr "手部互動設定檔"
-
-msgid "Eye Gaze Interaction"
-msgstr "眼動追蹤互動"
-
-msgid "Render Model"
-msgstr "算繪模型"
-
-msgid "Binding Modifiers"
-msgstr "綁定修飾符"
-
-msgid "Analog Threshold"
-msgstr "類比閾值"
-
-msgid "Dpad Binding"
-msgstr "方向鍵綁定"
-
 msgid "Boot Splash"
 msgstr "啟動畫面"
 
@@ -3440,21 +3368,6 @@ msgstr "圖像"
 
 msgid "Minimum Display Time"
 msgstr "最短顯示時間"
-
-msgid "Dotnet"
-msgstr ".NET"
-
-msgid "Project"
-msgstr "專案"
-
-msgid "Assembly Name"
-msgstr "程式集名稱"
-
-msgid "Solution Directory"
-msgstr "解決方案目錄"
-
-msgid "Assembly Reload Attempts"
-msgstr "嘗試重新載入程式集"
 
 msgid "Time"
 msgstr "時間"
@@ -4350,36 +4263,6 @@ msgstr "降噪"
 msgid "Denoiser"
 msgstr "降噪工具"
 
-msgid "Eye Height"
-msgstr "眼睛高度"
-
-msgid "IOD"
-msgstr "IOD"
-
-msgid "Display Width"
-msgstr "顯示寬度"
-
-msgid "Display to Lens"
-msgstr "顯示器至鏡頭"
-
-msgid "Offset Rect"
-msgstr "偏移矩形"
-
-msgid "Oversample"
-msgstr "過取樣"
-
-msgid "K1"
-msgstr "K1"
-
-msgid "K2"
-msgstr "K2"
-
-msgid "Vulkan VRS"
-msgstr "Vulkan 可變速率著色(VRS)"
-
-msgid "Min Radius"
-msgstr "最小半徑"
-
 msgid "BPM"
 msgstr "BPM"
 
@@ -4515,152 +4398,11 @@ msgstr "無縫混邊"
 msgid "Bump Strength"
 msgstr "凹凸強度"
 
-msgid "Localized Name"
-msgstr "當地語系化名稱"
-
-msgid "Action Type"
-msgstr "動作型別"
-
-msgid "Toplevel Paths"
-msgstr "頂層路徑"
-
-msgid "Binding Path"
-msgstr "綁定路徑"
-
-msgid "Interaction Profile Path"
-msgstr "互動配置路徑"
-
-msgid "Runtime Paths"
-msgstr "執行階段路徑"
-
-msgid "Action Set"
-msgstr "動作集"
-
-msgid "Input Path"
-msgstr "輸入路徑"
-
-msgid "Threshold Released"
-msgstr "閾值已釋放"
-
-msgid "Center Region"
-msgstr "中心區域"
-
-msgid "Wedge Angle"
-msgstr "楔形角"
-
-msgid "Is Sticky"
-msgstr "是否黏著"
-
-msgid "On Haptic"
-msgstr "開啟觸覺回饋"
-
-msgid "Off Haptic"
-msgstr "關閉觸覺回饋"
-
-msgid "On Threshold"
-msgstr "開啟閾值"
-
-msgid "Off Threshold"
-msgstr "關閉閾值"
-
-msgid "Display Refresh Rate"
-msgstr "顯示更新率"
-
-msgid "Render Target Size Multiplier"
-msgstr "算繪目標大小倍數"
-
 msgid "Next"
 msgstr "下一個"
 
-msgid "Layer Viewport"
-msgstr "圖層視埠"
-
-msgid "Use Android Surface"
-msgstr "使用 Android 表面"
-
-msgid "Android Surface Size"
-msgstr "Android 表面尺寸"
-
-msgid "Sort Order"
-msgstr "排序順序"
-
-msgid "Alpha Blend"
-msgstr "Alpha 混合"
-
-msgid "Enable Hole Punch"
-msgstr "啟用穿孔"
-
-msgid "Swapchain State"
-msgstr "交換鏈狀態"
-
-msgid "Mipmap Mode"
-msgstr "Mipmap 模式"
-
-msgid "Horizontal Wrap"
-msgstr "水平包裹"
-
-msgid "Vertical Wrap"
-msgstr "垂直包裹"
-
-msgid "Red Swizzle"
-msgstr "紅通道重排"
-
-msgid "Green Swizzle"
-msgstr "綠通道重排"
-
-msgid "Blue Swizzle"
-msgstr "藍通道重排"
-
-msgid "Alpha Swizzle"
-msgstr "Alpha 通道重排"
-
-msgid "Max Anisotropy"
-msgstr "最大各向異性"
-
 msgid "Border Color"
 msgstr "邊框顏色"
-
-msgid "Aspect Ratio"
-msgstr "長寬比"
-
-msgid "Central Angle"
-msgstr "中心角"
-
-msgid "Fallback Segments"
-msgstr "後備分段"
-
-msgid "Central Horizontal Angle"
-msgstr "中央水平角度"
-
-msgid "Upper Vertical Angle"
-msgstr "上方垂直角度"
-
-msgid "Lower Vertical Angle"
-msgstr "下垂直角度"
-
-msgid "Quad Size"
-msgstr "四邊形大小"
-
-msgid "Hand"
-msgstr "掌上"
-
-msgid "Motion Range"
-msgstr "運動範圍"
-
-msgid "Hand Skeleton"
-msgstr "手骨架"
-
-msgid "Skeleton Rig"
-msgstr "骨骼骨架"
-
-msgid "Bone Update"
-msgstr "骨骼更新"
-
-msgid "Tracker"
-msgstr "追蹤器"
-
-msgid "Make Local to Pose"
-msgstr "使相對於姿勢為本地座標"
 
 msgid "Subject"
 msgstr "對象"
@@ -4848,27 +4590,6 @@ msgstr "輸出封包上限"
 msgid "Heartbeat Interval"
 msgstr "心跳間隔"
 
-msgid "Session Mode"
-msgstr "會話模式"
-
-msgid "Required Features"
-msgstr "必要特性"
-
-msgid "Optional Features"
-msgstr "可選特性"
-
-msgid "Requested Reference Space Types"
-msgstr "被請求的參照空間型別"
-
-msgid "Reference Space Type"
-msgstr "參照空間型別"
-
-msgid "Enabled Features"
-msgstr "已啟用功能"
-
-msgid "Visibility State"
-msgstr "切換可見／隱藏"
-
 msgid "Debug Keystore"
 msgstr "偵錯金鑰儲存庫"
 
@@ -4997,12 +4718,6 @@ msgstr "圖形"
 
 msgid "OpenGL Debug"
 msgstr "OpenGL 除錯"
-
-msgid "XR Features"
-msgstr "XR 功能"
-
-msgid "XR Mode"
-msgstr "XR 模式"
 
 msgid "Gesture"
 msgstr "手勢"
@@ -5345,9 +5060,6 @@ msgstr "可移除標名使用描述"
 
 msgid "Removable Volumes Usage Description Localized"
 msgstr "可移除標名使用描述當地語系化"
-
-msgid "Min visionOS Version"
-msgstr "最低 visionOS 版本"
 
 msgid "Web"
 msgstr "Web"
@@ -7451,26 +7163,8 @@ msgstr "傳播"
 msgid "Use Two Bounces"
 msgstr "使用二次反彈"
 
-msgid "Body Tracker"
-msgstr "身體追蹤器"
-
-msgid "Body Update"
-msgstr "身體更新"
-
-msgid "Face Tracker"
-msgstr "臉部追蹤器"
-
-msgid "Hand Tracker"
-msgstr "臉部追蹤器"
-
 msgid "Pose"
 msgstr "姿勢"
-
-msgid "Show When Tracked"
-msgstr "被追蹤時顯示"
-
-msgid "World Scale"
-msgstr "世界縮放"
 
 msgid "Play Mode"
 msgstr "播放模式"
@@ -8831,9 +8525,6 @@ msgstr "檢視區路徑"
 
 msgid "Disable 3D"
 msgstr "停用 3D"
-
-msgid "Use XR"
-msgstr "使用 XR"
 
 msgid "Own World 3D"
 msgstr "自有 3D 世界"
@@ -12024,9 +11715,6 @@ msgstr "最大可算繪光源數"
 msgid "Max Lights per Object"
 msgstr "單物件最大光源數"
 
-msgid "Shaders"
-msgstr "著色器"
-
 msgid "Shader Language"
 msgstr "著色器語言"
 
@@ -12176,48 +11864,3 @@ msgstr "包括文字伺服器資料"
 
 msgid "Line Breaking Strictness"
 msgstr "換行嚴格程度"
-
-msgid "Has Tracking Data"
-msgstr "有追蹤資料"
-
-msgid "Body Flags"
-msgstr "身體旗標"
-
-msgid "Blend Shapes"
-msgstr "混合形狀"
-
-msgid "Hand Tracking Source"
-msgstr "手部追蹤來源"
-
-msgid "Is Primary"
-msgstr "是否主要"
-
-msgid "Play Area Mode"
-msgstr "遊玩區模式"
-
-msgid "AR"
-msgstr "AR"
-
-msgid "Is Anchor Detection Enabled"
-msgstr "錨點檢測是否啟用"
-
-msgid "Tracking Confidence"
-msgstr "追蹤置信度"
-
-msgid "World Origin"
-msgstr "世界原點"
-
-msgid "Camera Locked to Origin"
-msgstr "攝影機鎖定至原點"
-
-msgid "Primary Interface"
-msgstr "主介面"
-
-msgid "VRS Min Radius"
-msgstr "VRS 最小半徑"
-
-msgid "VRS Strength"
-msgstr "VRS 強度"
-
-msgid "VRS Render Region"
-msgstr "VRS 渲染區域"

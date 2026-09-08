@@ -56,8 +56,7 @@
 			<param index="0" name="viewport_control" type="Control" />
 			<description>
 				Called by the engine when the 3D editor's viewport is updated. [param viewport_control] is an overlay on top of the viewport and it can be used for drawing. You can update the viewport manually by calling [method update_overlays].
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				func _forward_3d_draw_over_viewport(overlay):
 					# Draw a circle at the cursor's position.
 					overlay.draw_circle(overlay.get_local_mouse_position(), 64, Color.WHITE)
@@ -68,26 +67,7 @@
 						update_overlays()
 						return EditorPlugin.AFTER_GUI_INPUT_STOP
 					return EditorPlugin.AFTER_GUI_INPUT_PASS
-				[/gdscript]
-				[csharp]
-				public override void _Forward3DDrawOverViewport(Control viewportControl)
-				{
-					// Draw a circle at the cursor's position.
-					viewportControl.DrawCircle(viewportControl.GetLocalMousePosition(), 64, Colors.White);
-				}
-
-				public override EditorPlugin.AfterGuiInput _Forward3DGuiInput(Camera3D viewportCamera, InputEvent @event)
-				{
-					if (@event is InputEventMouseMotion)
-					{
-						// Redraw the viewport when the cursor is moved.
-						UpdateOverlays();
-						return EditorPlugin.AfterGuiInput.Stop;
-					}
-					return EditorPlugin.AfterGuiInput.Pass;
-				}
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 			</description>
 		</method>
 		<method name="_forward_3d_force_draw_over_viewport" qualifiers="virtual">
@@ -104,35 +84,17 @@
 			<param index="1" name="event" type="InputEvent" />
 			<description>
 				Called when there is a root node in the current edited scene, [method _handles] is implemented, and an [InputEvent] happens in the 3D viewport. The return value decides whether the [InputEvent] is consumed or forwarded to other [EditorPlugin]s. See [enum AfterGUIInput] for options.
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				# Prevents the InputEvent from reaching other Editor classes.
 				func _forward_3d_gui_input(camera, event):
 					return EditorPlugin.AFTER_GUI_INPUT_STOP
-				[/gdscript]
-				[csharp]
-				// Prevents the InputEvent from reaching other Editor classes.
-				public override EditorPlugin.AfterGuiInput _Forward3DGuiInput(Camera3D camera, InputEvent @event)
-				{
-					return EditorPlugin.AfterGuiInput.Stop;
-				}
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 				This method must return [constant AFTER_GUI_INPUT_PASS] in order to forward the [InputEvent] to other Editor classes.
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				# Consumes InputEventMouseMotion and forwards other InputEvent types.
 				func _forward_3d_gui_input(camera, event):
 					return EditorPlugin.AFTER_GUI_INPUT_STOP if event is InputEventMouseMotion else EditorPlugin.AFTER_GUI_INPUT_PASS
-				[/gdscript]
-				[csharp]
-				// Consumes InputEventMouseMotion and forwards other InputEvent types.
-				public override EditorPlugin.AfterGuiInput _Forward3DGuiInput(Camera3D camera, InputEvent @event)
-				{
-					return @event is InputEventMouseMotion ? EditorPlugin.AfterGuiInput.Stop : EditorPlugin.AfterGuiInput.Pass;
-				}
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 			</description>
 		</method>
 		<method name="_forward_canvas_draw_over_viewport" qualifiers="virtual">
@@ -140,8 +102,7 @@
 			<param index="0" name="viewport_control" type="Control" />
 			<description>
 				Called by the engine when the 2D editor's viewport is updated. [param viewport_control] is an overlay on top of the viewport and it can be used for drawing. You can update the viewport manually by calling [method update_overlays].
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				func _forward_canvas_draw_over_viewport(overlay):
 					# Draw a circle at the cursor's position.
 					overlay.draw_circle(overlay.get_local_mouse_position(), 64, Color.WHITE)
@@ -152,26 +113,7 @@
 						update_overlays()
 						return true
 					return false
-				[/gdscript]
-				[csharp]
-				public override void _ForwardCanvasDrawOverViewport(Control viewportControl)
-				{
-					// Draw a circle at the cursor's position.
-					viewportControl.DrawCircle(viewportControl.GetLocalMousePosition(), 64, Colors.White);
-				}
-
-				public override bool _ForwardCanvasGuiInput(InputEvent @event)
-				{
-					if (@event is InputEventMouseMotion)
-					{
-						// Redraw the viewport when the cursor is moved.
-						UpdateOverlays();
-						return true;
-					}
-					return false;
-				}
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 			</description>
 		</method>
 		<method name="_forward_canvas_force_draw_over_viewport" qualifiers="virtual">
@@ -187,41 +129,19 @@
 			<param index="0" name="event" type="InputEvent" />
 			<description>
 				Called when there is a root node in the current edited scene, [method _handles] is implemented, and an [InputEvent] happens in the 2D viewport. If this method returns [code]true[/code], [param event] is intercepted by this [EditorPlugin], otherwise [param event] is forwarded to other Editor classes.
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				# Prevents the InputEvent from reaching other Editor classes.
 				func _forward_canvas_gui_input(event):
 					return true
-				[/gdscript]
-				[csharp]
-				// Prevents the InputEvent from reaching other Editor classes.
-				public override bool ForwardCanvasGuiInput(InputEvent @event)
-				{
-					return true;
-				}
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 				This method must return [code]false[/code] in order to forward the [InputEvent] to other Editor classes.
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				# Consumes InputEventMouseMotion and forwards other InputEvent types.
 				func _forward_canvas_gui_input(event):
 					if (event is InputEventMouseMotion):
 						return true
 					return false
-				[/gdscript]
-				[csharp]
-				// Consumes InputEventMouseMotion and forwards other InputEvent types.
-				public override bool _ForwardCanvasGuiInput(InputEvent @event)
-				{
-					if (@event is InputEventMouseMotion)
-					{
-						return true;
-					}
-					return false;
-				}
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 			</description>
 		</method>
 		<method name="_get_breakpoints" qualifiers="virtual const">
@@ -236,24 +156,13 @@
 				Override this method in your plugin to return a [Texture2D] in order to give it an icon.
 				For main screen plugins, this appears at the top of the screen, to the right of the "2D", "3D", "Script", "Game", and "Asset Store" buttons.
 				Ideally, the plugin icon should be white with a transparent background and 16×16 pixels in size.
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				func _get_plugin_icon():
 					# You can use a custom icon:
 					return preload("res://addons/my_plugin/my_plugin_icon.svg")
 					# Or use a built-in icon:
 					return EditorInterface.get_editor_theme().get_icon("Node", "EditorIcons")
-				[/gdscript]
-				[csharp]
-				public override Texture2D _GetPluginIcon()
-				{
-					// You can use a custom icon:
-					return ResourceLoader.Load&lt;Texture2D&gt;("res://addons/my_plugin/my_plugin_icon.svg");
-					// Or use a built-in icon:
-					return EditorInterface.Singleton.GetEditorTheme().GetIcon("Node", "EditorIcons");
-				}
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 			</description>
 		</method>
 		<method name="_get_plugin_name" qualifiers="virtual const">
@@ -499,8 +408,7 @@
 			<description>
 				Registers a new [EditorInspectorPlugin]. Inspector plugins are used to extend [EditorInspector] and provide custom configuration tools for your object's properties.
 				[b]Note:[/b] Always use [method remove_inspector_plugin] to remove the registered [EditorInspectorPlugin] when your [EditorPlugin] is disabled to prevent leaks and an unexpected behavior.
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				const MyInspectorPlugin = preload("res://addons/your_addon/path/to/your/script.gd")
 				var inspector_plugin = MyInspectorPlugin.new()
 
@@ -509,8 +417,7 @@
 
 				func _exit_tree():
 					remove_inspector_plugin(inspector_plugin)
-				[/gdscript]
-				[/codeblocks]
+				[/codeblock]
 			</description>
 		</method>
 		<method name="add_node_3d_gizmo_plugin">

@@ -72,7 +72,6 @@ import org.godotengine.godot.utils.beginBenchmarkMeasure
 import org.godotengine.godot.utils.benchmarkFile
 import org.godotengine.godot.utils.endBenchmarkMeasure
 import org.godotengine.godot.utils.useBenchmark
-import org.godotengine.godot.xr.XRMode
 import java.util.*
 import java.util.concurrent.Callable
 import java.util.concurrent.CountDownLatch
@@ -150,8 +149,6 @@ class Godot private constructor(val context: Context) {
 			?: mSensorManager?.getDefaultSensor(Sensor.TYPE_ROTATION_VECTOR)
 	}
 
-	val isXrRuntime: Boolean by lazy { hasFeature("xr_runtime") }
-
 	val tts = GodotTTS(context)
 	val directoryAccessHandler = DirectoryAccessHandler(context)
 	val fileAccessHandler = FileAccessHandler(context)
@@ -205,7 +202,6 @@ class Godot private constructor(val context: Context) {
 	val io = GodotIO(this)
 
 	private var commandLine : MutableList<String> = ArrayList<String>()
-	internal var xrMode = XRMode.REGULAR
 	private val useImmersive = AtomicBoolean(false)
 	private val isEdgeToEdge = AtomicBoolean(false)
 	private var useDebugOpengl = false
@@ -281,11 +277,7 @@ class Godot private constructor(val context: Context) {
 			var i = 0
 			while (i < commandLine.size) {
 				val hasExtra: Boolean = i < commandLine.size - 1
-				if (commandLine[i] == XRMode.REGULAR.cmdLineArg) {
-					xrMode = XRMode.REGULAR
-				} else if (commandLine[i] == XRMode.OPENXR.cmdLineArg) {
-					xrMode = XRMode.OPENXR
-				} else if (commandLine[i] == "--debug_opengl") {
+				if (commandLine[i] == "--debug_opengl") {
 					useDebugOpengl = true
 				} else if (commandLine[i] == "--edge_to_edge") {
 					isEdgeToEdge.set(true)
@@ -573,7 +565,7 @@ class Godot private constructor(val context: Context) {
 			if (nativeRenderer == "vulkan") {
 				renderView = GodotVulkanRenderView(this, godotInputHandler, shouldBeTransparent)
 			} else if (nativeRenderer == "opengl3") {
-				renderView = GodotGLRenderView(this, godotInputHandler, xrMode, useDebugOpengl, shouldBeTransparent)
+				renderView = GodotGLRenderView(this, godotInputHandler, useDebugOpengl, shouldBeTransparent)
 			} else {
 				throw IllegalStateException("No native renderer is available.")
 			}

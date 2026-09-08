@@ -6,42 +6,20 @@
 	<description>
 		The [bool] is a built-in [Variant] type that may only store one of two values: [code]true[/code] or [code]false[/code]. You can imagine it as a switch that can be either turned on or off, or as a binary digit that can either be 1 or 0.
 		Booleans can be directly used in [code]if[/code], and other conditional statements:
-		[codeblocks]
-		[gdscript]
+		[codeblock]
 		var can_shoot = true
 		if can_shoot:
 			launch_bullet()
-		[/gdscript]
-		[csharp]
-		bool canShoot = true;
-		if (canShoot)
-		{
-			LaunchBullet();
-		}
-		[/csharp]
-		[/codeblocks]
+		[/codeblock]
 		All comparison operators return booleans ([code]==[/code], [code]&gt;[/code], [code]&lt;=[/code], etc.). As such, it is not necessary to compare booleans themselves. You do not need to add [code]== true[/code] or [code]== false[/code].
 		Booleans can be combined with the logical operators [code]and[/code], [code]or[/code], [code]not[/code] to create complex conditions:
-		[codeblocks]
-		[gdscript]
+		[codeblock]
 		if bullets &gt; 0 and not is_reloading():
 			launch_bullet()
 
 		if bullets == 0 or is_reloading():
 			play_clack_sound()
-		[/gdscript]
-		[csharp]
-		if (bullets &gt; 0 &amp;&amp; !IsReloading())
-		{
-			LaunchBullet();
-		}
-
-		if (bullets == 0 || IsReloading())
-		{
-			PlayClackSound();
-		}
-		[/csharp]
-		[/codeblocks]
+		[/codeblock]
 		[b]Note:[/b] In modern programming languages, logical operators are evaluated in order. All remaining conditions are skipped if their result would have no effect on the final value. This concept is known as [url=https://en.wikipedia.org/wiki/Short-circuit_evaluation]short-circuit evaluation[/url] and can be useful to avoid evaluating expensive conditions in some performance-critical cases.
 		[b]Note:[/b] By convention, built-in methods and properties that return booleans are usually defined as yes-no questions, single adjectives, or similar ([method String.is_empty], [method Node.can_process], [member Camera2D.enabled], etc.).
 	</description>

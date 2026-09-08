@@ -87,24 +87,11 @@
 			<description>
 				Returns the total number of frames passed since the engine started. This number is increased every [b]physics frame[/b]. See also [method get_process_frames].
 				This method can be used to run expensive logic less often without relying on a [Timer]:
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				func _physics_process(_delta):
 					if Engine.get_physics_frames() % 2 == 0:
 						pass # Run expensive logic only once every 2 physics frames here.
-				[/gdscript]
-				[csharp]
-				public override void _PhysicsProcess(double delta)
-				{
-					base._PhysicsProcess(delta);
-
-					if (Engine.GetPhysicsFrames() % 2 == 0)
-					{
-						// Run expensive logic only once every 2 physics frames here.
-					}
-				}
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 			</description>
 		</method>
 		<method name="get_physics_interpolation_fraction" qualifiers="const">
@@ -118,24 +105,11 @@
 			<description>
 				Returns the total number of frames passed since the engine started. This number is increased every [b]process frame[/b], regardless of whether the render loop is enabled. See also [method get_frames_drawn] and [method get_physics_frames].
 				This method can be used to run expensive logic less often without relying on a [Timer]:
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				func _process(_delta):
 					if Engine.get_process_frames() % 5 == 0:
 						pass # Run expensive logic only once every 5 process (render) frames here.
-				[/gdscript]
-				[csharp]
-				public override void _Process(double delta)
-				{
-					base._Process(delta);
-
-					if (Engine.GetProcessFrames() % 5 == 0)
-					{
-						// Run expensive logic only once every 5 process (render) frames here.
-					}
-				}
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 			</description>
 		</method>
 		<method name="get_script_language" qualifiers="const">
@@ -180,24 +154,12 @@
 				- [code]string[/code] - [code]major[/code], [code]minor[/code], [code]patch[/code], [code]status[/code], and [code]build[/code] in a single String.
 				The [code]hex[/code] value is encoded as follows, from left to right: one byte for the major, one byte for the minor, one byte for the patch version. For example, "3.1.12" would be [code]0x03010C[/code].
 				[b]Note:[/b] The [code]hex[/code] value is still an [int] internally, and printing it will give you its decimal representation, which is not particularly meaningful. Use hexadecimal literals for quick version comparisons from code:
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				if Engine.get_version_info().hex &gt;= 0x040100:
 					pass # Do things specific to version 4.1 or later.
 				else:
 					pass # Do things specific to versions before 4.1.
-				[/gdscript]
-				[csharp]
-				if ((int)Engine.GetVersionInfo()["hex"] &gt;= 0x040100)
-				{
-					// Do things specific to version 4.1 or later.
-				}
-				else
-				{
-					// Do things specific to versions before 4.1.
-				}
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 			</description>
 		</method>
 		<method name="get_write_movie_path" qualifiers="const">
@@ -211,20 +173,12 @@
 			<param index="0" name="name" type="StringName" />
 			<description>
 				Returns [code]true[/code] if a singleton with the given [param name] exists in the global scope. See also [method get_singleton].
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				print(Engine.has_singleton("OS"))          # Prints true
 				print(Engine.has_singleton("Engine"))      # Prints true
 				print(Engine.has_singleton("AudioServer")) # Prints true
 				print(Engine.has_singleton("Unknown"))     # Prints false
-				[/gdscript]
-				[csharp]
-				GD.Print(Engine.HasSingleton("OS"));          // Prints True
-				GD.Print(Engine.HasSingleton("Engine"));      // Prints True
-				GD.Print(Engine.HasSingleton("AudioServer")); // Prints True
-				GD.Print(Engine.HasSingleton("Unknown"));     // Prints False
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 				[b]Note:[/b] Global singletons are not the same as autoloaded nodes, which are configurable in the project settings.
 			</description>
 		</method>
@@ -232,20 +186,12 @@
 			<return type="bool" />
 			<description>
 				Returns [code]true[/code] if the script is currently running inside the editor, otherwise returns [code]false[/code]. This is useful for [code]@tool[/code] scripts to conditionally draw editor helpers, or prevent accidentally running "game" code that would affect the scene state while in the editor:
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				if Engine.is_editor_hint():
 					draw_gizmos()
 				else:
 					simulate_physics()
-				[/gdscript]
-				[csharp]
-				if (Engine.IsEditorHint())
-					DrawGizmos();
-				else
-					SimulatePhysics();
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 				See [url=$DOCS_URL/tutorials/plugins/running_code_in_the_editor.html]Running code in the editor[/url] in the documentation for more information.
 				[b]Note:[/b] To detect whether the script is running on an editor [i]build[/i] (such as when pressing [kbd]F5[/kbd]), use [method OS.has_feature] with the [code]"editor"[/code] argument instead. [code]OS.has_feature("editor")[/code] evaluate to [code]true[/code] both when the script is running in the editor and when running the project from the editor, but returns [code]false[/code] when run from an exported project.
 			</description>

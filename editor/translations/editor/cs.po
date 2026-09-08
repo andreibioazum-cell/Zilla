@@ -3484,13 +3484,6 @@ msgstr ""
 msgid "Note:"
 msgstr "Poznámka:"
 
-msgid ""
-"There are notable differences when using this API with C#. See [url=%s]C# API "
-"differences to GDScript[/url] for more information."
-msgstr ""
-"Existují významné rozdíly při použití tohoto API s C#. Pro více informací viz "
-"[url=%s]Rozdíly C# API ve srovnání s GDScript[/url]."
-
 msgid "Online Tutorials"
 msgstr "Online návody"
 
@@ -5503,13 +5496,6 @@ msgstr ""
 "Skript nelze spustit, protože se nejedná o nástrojový skript (nahoře přidejte "
 "anotaci @tool)."
 
-msgid ""
-"Cannot run the script because it's not a tool script (add the [Tool] "
-"attribute above the class definition)."
-msgstr ""
-"Skript nelze spustit, protože se nejedná o nástrojový skript (přidejte "
-"atribut [Tool] nad definici třídy)."
-
 msgid "Cannot run the script because it's not a tool script."
 msgstr "Skript nelze spustit, protože se nejedná o nástrojový skript."
 
@@ -6188,18 +6174,6 @@ msgid ""
 msgstr ""
 "Sestavit .ipa je možné pouze na macOS. Xcode projekt opuštěn bez sestavení "
 "balíčku."
-
-msgid ""
-"Exporting to an Apple Embedded platform when using C#/.NET is experimental "
-"and requires macOS."
-msgstr ""
-"Export pro vestavěnou platformu Apple při využití C#/.NET je experimentální a "
-"vyžaduje macOS."
-
-msgid ""
-"Exporting to an Apple Embedded platform when using C#/.NET is experimental."
-msgstr ""
-"Export pro vestavěnou platformu Apple za použití C#/.NET je experimentální."
 
 msgid "Custom debug template not found."
 msgstr "Vlastní šablona pro ladění nebyla nalezena."
@@ -9046,15 +9020,6 @@ msgstr ""
 "\n"
 
 msgid ""
-"Warning: This project uses C#, but this build of Godot does not have\n"
-"the Mono module. If you proceed you will not be able to use any C# scripts.\n"
-"\n"
-msgstr ""
-"Varování: Tento projekt používá C#, ale toto sestavení Godotu nemá\n"
-"modul Mono. Budete-li pokračovat, nebudete moci používat žádné skripty C#.\n"
-"\n"
-
-msgid ""
 "Warning: This project was last edited in Godot %s. Opening will change it to "
 "Godot %s.\n"
 "\n"
@@ -9494,20 +9459,8 @@ msgstr "Zastavit běžící projekt"
 msgid "Run Current Scene"
 msgstr "Spustit aktuální scénu"
 
-msgid "Run Scene in Regular Mode"
-msgstr "Spustit scénu v běžném režimu"
-
-msgid "Run Scene in XR Mode"
-msgstr "Spustit scénu v režimu XR"
-
 msgid "Run Specific Scene"
 msgstr "Spustit konkrétní scénu"
-
-msgid "Run in Regular Mode"
-msgstr "Spustit v běžném režimu"
-
-msgid "Run in XR Mode"
-msgstr "Spustit v režimu XR"
 
 msgid "Enable Movie Maker Mode"
 msgstr "Povolit režim Movie Maker"
@@ -16208,12 +16161,6 @@ msgstr "Podpora přístupnosti (AccessKit)"
 msgid "Improved Gamepad Support (SDL)"
 msgstr "Vylepšená podpora gamepadu (SDL)"
 
-msgid "XR"
-msgstr "XR"
-
-msgid "OpenXR"
-msgstr "OpenXR"
-
 msgid "Wayland"
 msgstr "Wayland"
 
@@ -16308,12 +16255,6 @@ msgstr ""
 "Vylepšená podpora gamepadů na Windows, macOS a Linux pomocí knihovny SDL.\n"
 "Pokud vypnuto, vlastní vestavěný kód bude použit pro podporu gamepadů, což "
 "může být méně spolehlivé pro některé modely kontrolerů."
-
-msgid "XR (AR and VR)."
-msgstr "XR (AR a VR)."
-
-msgid "OpenXR standard implementation (requires XR to be enabled)."
-msgstr "Standartní implementace OpenXR (vyžaduje zapnuté XR)."
 
 msgid "Wayland display server support (Linux only)."
 msgstr "Podpora pro Zobrazovací Server Wayland (pouze pro Linux)."
@@ -16435,13 +16376,6 @@ msgstr ""
 "tříd.\n"
 "Upozorňujeme že první prohledání může chvíli trvat, zejména u větších "
 "projektů."
-
-msgid ""
-"Warning: Class detection for C# scripts is not currently available, and such "
-"files will be ignored."
-msgstr ""
-"Varování: Detekce tříd pro C# skripty není aktuálně dostupná, takové soubory "
-"budou ignorovány."
 
 msgid ""
 "Clear cache of used classes per file? This will make it so that those files "
@@ -17942,55 +17876,6 @@ msgstr "Odstraňování šumu"
 msgid "Retrieving textures"
 msgstr "Načítání textur"
 
-msgid "Class name can't be a reserved keyword"
-msgstr "Název třídy nemůže být rezervované klíčové slovo"
-
-msgid "Class name must be a valid identifier"
-msgstr "Název třídy musí být platný identifikátor"
-
-msgid "Not enough bytes for decoding bytes, or invalid format."
-msgstr "Nedostatek bajtů pro dekódování bajtů, nebo neplatný formát."
-
-msgid ""
-"Unable to load .NET runtime, no compatible version was found.\n"
-"Attempting to create/edit a project will lead to a crash.\n"
-"\n"
-"Please install the .NET SDK 8.0 or later from https://get.dot.net and restart "
-"Godot."
-msgstr ""
-"Nelze načíst běhové prostředí .NET, nebyla nalezena žádná kompatibilní "
-"verze.\n"
-"Pokus o vytvoření/úpravu projektu povede k pádu.\n"
-"\n"
-"Nainstalujte prosím .NET SDK 8.0 nebo novější z https://get.dot.net a "
-"restartujte Godot."
-
-msgid "Failed to load .NET runtime"
-msgstr "Načtení .NET runtime selhalo"
-
-msgid ""
-"Unable to find the .NET assemblies directory.\n"
-"Make sure the '%s' directory exists and contains the .NET assemblies."
-msgstr ""
-"Nelze najít adresář sestavení .NET.\n"
-"Ujistěte se, že adresář '%s' existuje a obsahuje sestavení .NET."
-
-msgid ".NET assemblies not found"
-msgstr "Sestavení .NET nebyla nalezena"
-
-msgid ""
-"Unable to load .NET runtime, specifically hostfxr.\n"
-"Attempting to create/edit a project will lead to a crash.\n"
-"\n"
-"Please install the .NET SDK 8.0 or later from https://get.dot.net and restart "
-"Godot."
-msgstr ""
-"Nepodařilo se načíst běhové prostředí .NET, konkrétně hostfxr.\n"
-"Pokus o vytvoření/úpravu projektu povede k pádu.\n"
-"\n"
-"Nainstalujte prosím .NET SDK 8.0 nebo novější z https://get.dot.net a "
-"restartujte Godot."
-
 msgctxt "Network"
 msgid "Down"
 msgstr "Stahování"
@@ -18512,167 +18397,6 @@ msgstr "Profiler ObjectDB"
 msgid "Diff Against:"
 msgstr "Rozdíl oproti:"
 
-msgid "Rename Action"
-msgstr "Přejmenovat akci"
-
-msgid "Rename Actions Localized name"
-msgstr "Přejmenovat lokalizovaný název akce"
-
-msgid "Change Action Type"
-msgstr "Změnit typ akce"
-
-msgid ""
-"Internal name of the action. Some XR runtimes don't allow spaces or special "
-"characters."
-msgstr ""
-"Interní název akce. Některé XR runtime nepovolují mezery ani speciální znaky."
-
-msgid "Action Name"
-msgstr "Název Akce"
-
-msgid "Human-readable name of the action. This can be displayed to end users."
-msgstr "Lidsky čitelný název akce. Toto bude zobrazeno koncovému uživateli."
-
-msgid "Action Localized Name"
-msgstr "Lokalizovaný název akce"
-
-msgid "Type of the action"
-msgstr "Typ akce"
-
-msgid "Action Type"
-msgstr "Typ Akce"
-
-msgid "Remove action"
-msgstr "Odstranit akci"
-
-msgid "Add action set"
-msgstr "Přidat sadu akcí"
-
-msgid "Remove action set"
-msgstr "Odstranit sadu akcí"
-
-msgid "Add interaction profile"
-msgstr "Přidat profil interakce"
-
-msgid "Error loading %s: %s."
-msgstr "Chyba při načítání %s: %s."
-
-msgid "Error saving file %s: %s"
-msgstr "Chyba při ukládání souboru %s: %s"
-
-msgid "OpenXR Action map:"
-msgstr "Mapa akcí OpenXR:"
-
-msgid "Remove interaction profile"
-msgstr "Odstranit profil interakce"
-
-msgid "OpenXR Action Map"
-msgstr "Mapa akcí OpenXR"
-
-msgid "Toggle OpenXR Action Map Dock"
-msgstr "Přepnout dok Mapy akcí OpenXR"
-
-msgid "Add Action Set"
-msgstr "Přidat sadu akcí"
-
-msgid "Add an action set."
-msgstr "Přidat množinu akcí."
-
-msgid "Add profile"
-msgstr "Přidat profil"
-
-msgid "Add an interaction profile."
-msgstr "Přidat profil interakce."
-
-msgid "Save this OpenXR action map."
-msgstr "Uložit tuto mapu akcí OpenXR."
-
-msgid "Reset to default OpenXR action map."
-msgstr "Obnovit výchozí mapu akcí OpenXR."
-
-msgid "Action Sets"
-msgstr "Sady akcí"
-
-msgid "Rename Action Set"
-msgstr "Přejmenovat sadu akcí"
-
-msgid "Rename Action Sets Localized name"
-msgstr "Přejmenovat lokalizovaný název sady akcí"
-
-msgid "Change Action Sets priority"
-msgstr "Změnit prioritu sady akcí"
-
-msgid "Add action"
-msgstr "Přidat akci"
-
-msgid "Delete action"
-msgstr "Smazat akci"
-
-msgid "Fold"
-msgstr "Složka"
-
-msgid "Action Set Name"
-msgstr "Název sady akcí"
-
-msgid ""
-"Human-readable name of the action set. This can be displayed to end users."
-msgstr ""
-"Lidsky čitelný název sady akcí. Toto bude zobrazeno koncovému uživateli."
-
-msgid "Action Set Localized Name"
-msgstr "Lokalizovaný název sady akcí"
-
-msgid ""
-"Priority of the action set. If multiple action sets bind to the same input, "
-"the action set with the highest priority will be updated."
-msgstr ""
-"Priorita sady akcí. Pokud se na stejný vstup váže více sad akcí, aktualizuje "
-"se sada akcí s nejvyšší prioritou."
-
-msgid "Action Set Priority"
-msgstr "Priorita sady akcí"
-
-msgid "Add action."
-msgstr "Přidat akci."
-
-msgid "Remove action set."
-msgstr "Odstanit množinu akcí."
-
-msgid "Remove this binding modifier."
-msgstr "Odstranit tento modifikátor vazby."
-
-msgid "Remove binding modifier"
-msgstr "Odstranit modifikátor vazby"
-
-msgid "Add binding modifier"
-msgstr "Přidat modifikátor vazby"
-
-msgid "Note: modifiers will only be applied if supported on the host system."
-msgstr ""
-"Poznámka: modifikátory budou aplikovány pouze, pokud je hostující systém "
-"podporuje."
-
-msgid "Binding modifiers for:"
-msgstr "Modifikátory vazeb pro:"
-
-msgid "Remove action from interaction profile"
-msgstr "Odstranit akci z profilu interakce"
-
-msgid "Edit binding modifiers"
-msgstr "Upravit modifikátory vazeb"
-
-msgid "Note: This interaction profile requires extension %s support."
-msgstr "Poznámka: Tento profil interakce vyžaduje podporu rozšíření %s."
-
-msgid "Add binding"
-msgstr "Přidat vazbu"
-
-msgid "Remove binding"
-msgstr "Odstranit vazbu"
-
-msgid "Note: This binding path requires extension %s support."
-msgstr "Poznámka: Tato cesta vazby vyžaduje podporu rozšíření %s."
-
 msgid "Boolean"
 msgstr "Boolean"
 
@@ -18681,59 +18405,6 @@ msgstr "Float"
 
 msgid "Vector2"
 msgstr "Vector2"
-
-msgid "Pose"
-msgstr "Póza"
-
-msgid "Haptic"
-msgstr "Haptická"
-
-msgid "Unknown"
-msgstr "Neznámá"
-
-msgid "Modifiers"
-msgstr "Modifikátory"
-
-msgid "Select an action"
-msgstr "Vybrat akci"
-
-msgid "Select an interaction profile"
-msgstr "Vybrat profil interakce"
-
-msgid "All interaction profiles have been added to the action map."
-msgstr "Všechny profily interakcí byly přidány do mapy akcí."
-
-msgid "Choose an XR runtime."
-msgstr "Zvolit běhové prostředí pro XR."
-
-msgid ""
-"Cannot use the same SubViewport with multiple OpenXR composition layers. "
-"Clear it from its current layer first."
-msgstr ""
-"Nelze použít stejný SubViewport s více vrstvami kompozice OpenXR. Nejprve jej "
-"vymažte z aktuální vrstvy."
-
-msgid ""
-"Cannot set SubViewport on an OpenXR composition layer when using an Android "
-"surface."
-msgstr ""
-"Při použití Android povrchu nelze nastavit SubViewport na kompoziční vrstvě "
-"OpenXR."
-
-msgid ""
-"OpenXR composition layers must have orthonormalized transforms (ie. no scale "
-"or shearing)."
-msgstr ""
-"Vrstvy kompozice OpenXR musí mít ortonormální transformace (tj. žádné "
-"škálování nebo zkosení)."
-
-msgid ""
-"Hole punching won't work as expected unless the sort order is less than zero."
-msgstr ""
-"Děrování nebude fungovat podle očekávání, pokud není pořadí menší než nula."
-
-msgid "OpenXR visibility mask must have an XRCamera3D node as their parent."
-msgstr "Maska viditelnosti OpenXR musí mít jako rodičovský uzel XRCamera3D."
 
 msgid "E constant (2.718282). Represents the base of the natural logarithm."
 msgstr "Konstanta e (2.718282). Reprezentuje základ přirozeného logaritmu."
@@ -20262,25 +19933,6 @@ msgstr ""
 "Chyba: Vyskytnul se problém při ověření uživatelského jména a hesla úložiště "
 "klíčů"
 
-msgid ""
-"Unable to determine the C# project's TFM, it may be incompatible. The export "
-"template only supports '%s'. Make sure the project targets '%s' or consider "
-"using gradle builds instead."
-msgstr ""
-"Nelze určit TFM projektu C#, může být nekompatibilní. Exportní šablona "
-"podporuje pouze '%s'. Ujistětese, že projekt cílí na '%s' nebo namísto toho "
-"zvažte použití gradle sestavení."
-
-msgid ""
-"C# project targets '%s' but the export template only supports '%s'. Consider "
-"using gradle builds instead."
-msgstr ""
-"Projekt C# cílí na '%s', ale exportní šablona podporuje pouze '%s'. Zvažte "
-"namísto toho použití gradle sestavení."
-
-msgid "Exporting to Android when using C#/.NET is experimental."
-msgstr "Export pro Android za použití C#/.NET je experimentální."
-
 msgid "Custom Android source template not found."
 msgstr "Vlastní zdrojová šablona pro Android nebyla nalezena."
 
@@ -20660,13 +20312,6 @@ msgstr ""
 msgid "App sandbox is required for App Store distribution."
 msgstr "Pro distribuci přes App Store je vyžadován sandbox aplikace."
 
-msgid ""
-"'rcodesign' doesn't support signing applications with embedded dynamic "
-"libraries (GDExtension or .NET)."
-msgstr ""
-"'rcodesign' nepodporuje podepisování aplikací s vloženými dynamickými "
-"knihovnami (GDExtension nebo .NET)."
-
 msgid "Code signing is required for App Store distribution."
 msgstr "Podepsání kódu je vyžadováno pro distribuci přes App Store."
 
@@ -21011,20 +20656,6 @@ msgstr "Nelze přečíst soubor: \"%s\"."
 
 msgid "PWA"
 msgstr "Progresivní webová aplikace (PWA)"
-
-msgid ""
-"Exporting to Web is currently not supported in Godot 4 when using C#/.NET. "
-"Use Godot 3 to target Web with C#/Mono instead."
-msgstr ""
-"Exportování na web v současnosti není v Godotu 4 za použití C#/.NET "
-"podporováno. Pro zacílení na web využijte Godot 3 s použitím C#/Mono."
-
-msgid ""
-"If this project does not use C#, use a non-C# editor build to export the "
-"project."
-msgstr ""
-"Pokud tento projekt nepoužívá C#, použijte pro jeho export sestavení editoru "
-"bez C#."
 
 msgid "Could not read HTML shell: \"%s\"."
 msgstr "Nebylo možné přečíst HTML shell: \"%s\"."
@@ -22066,57 +21697,6 @@ msgstr ""
 "Na každou scénu (nebo skupinu instancovaných scén) je povolen pouze jeden "
 "WorldEnvironment."
 
-msgid ""
-"XRCamera3D may not function as expected without an XROrigin3D node as its "
-"parent."
-msgstr "XRCamera3D nemusí fungovat, jestliže nemá za rodiče uzel XROrigin3D."
-
-msgid ""
-"XRCamera3D should have physics_interpolation_mode set to OFF in order to "
-"avoid jitter."
-msgstr ""
-"Aby se zabránilo chvění, měla by mít XRCamera3D nastavený parametr "
-"physics_interpolation_mode na vypnuto."
-
-msgid ""
-"XRNode3D may not function as expected without an XROrigin3D node as its "
-"parent."
-msgstr ""
-"XRNode3D nemusí fungovat podle očekávání, jestliže nemá rodičovský uzel "
-"XROrigin3D."
-
-msgid "No tracker name is set."
-msgstr "Není nastaven název sledovače."
-
-msgid "No pose is set."
-msgstr "Není nastavena žádná póza."
-
-msgid ""
-"XRNode3D should have physics_interpolation_mode set to OFF in order to avoid "
-"jitter."
-msgstr ""
-"Aby se zabránilo chvění, měl by mít XRNode3Dnastavený parametr "
-"physics_interpolation_mode na vypnuto."
-
-msgid "XROrigin3D requires an XRCamera3D child node."
-msgstr "XROrigin3D musí mít uzel XRCamera3D jako potomka."
-
-msgid ""
-"Changing the scale on the XROrigin3D node is not supported. Change the World "
-"Scale instead."
-msgstr ""
-"Změnu měřítka na uzlu XROrigin3D není podporována. Změňte místo toho měřítko "
-"světa."
-
-msgid ""
-"XR shaders are not enabled in project settings. Stereoscopic output is not "
-"supported unless they are enabled. Please enable `xr/shaders/enabled` to use "
-"stereoscopic output."
-msgstr ""
-"XR shadery nejsou v nastavení projektu povoleny. Stereoskopický výstup není "
-"podporován, pokud nejsou povoleny. Pro použití stereoskopického výstupu "
-"povolte `xr/shaders/enabled`."
-
 msgid "Animation '%s' not found."
 msgstr "Animace '%s' nenalezena."
 
@@ -22600,15 +22180,6 @@ msgid "Varying '%s' cannot be passed for the '%s' parameter in that context."
 msgstr ""
 "Interpolovaná proměnná '%s' nemůže být předána pro parametr '%s' v tomto "
 "kontextu."
-
-msgid ""
-"Unable to pass a multiview texture sampler as a parameter to a custom "
-"function. Consider sampling it in the main function and then passing the "
-"vector result to the custom function."
-msgstr ""
-"Nelze předat více-pohledový vzorkovač textur jako parametr vlastní funkci. "
-"Zvažte vzorkování provést v hlavní funkci a pak jí předat výsledný vektor "
-"jako výsledek vlastní funkci."
 
 msgid ""
 "Unable to pass RADIANCE texture sampler as a parameter to a custom function. "

@@ -88,7 +88,7 @@
 #ifdef __linux__
 #define HAVE_INOTIFY 1
 #define HAVE_INOTIFY_INIT1 1
-// Don't add these defines, for some reason they mess with C#'s ability
+// Don't add these defines, they interfere with the engine's ability
 // to use environment variables (see GH-109024)
 //#define HAVE_GETENV 1
 //#define HAVE_SETENV 1
@@ -132,14 +132,10 @@
 #define SDL_THREAD_PTHREAD 1
 #define SDL_THREAD_PTHREAD_RECURSIVE_MUTEX 1
 
-// iOS/visionOS defines
-#elif defined(SDL_PLATFORM_IOS) || defined(SDL_PLATFORM_VISIONOS)
+// iOS defines
+#elif defined(SDL_PLATFORM_IOS)
 
-#ifdef SDL_PLATFORM_IOS
 #define SDL_PLATFORM_PRIVATE_NAME "iOS"
-#else
-#define SDL_PLATFORM_PRIVATE_NAME "visionOS"
-#endif
 
 #define SDL_PLATFORM_UNIX 1
 

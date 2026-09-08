@@ -2781,9 +2781,6 @@ msgstr "Ukuran Font Sumber Bantuan"
 msgid "Help Title Font Size"
 msgstr "Ukuran Font Judul Bantuan"
 
-msgid "Class Reference Examples"
-msgstr "Contoh Referensi Kelas"
-
 msgid "Sort Functions Alphabetically"
 msgstr "Urutkan Fungsi Secara Abjad"
 
@@ -3549,119 +3546,11 @@ msgstr "Sembunyikan Bilah Status"
 msgid "Suppress UI Gesture"
 msgstr "Menekan Gerakan UI"
 
-msgid "XR"
-msgstr "XR"
-
-msgid "OpenXR"
-msgstr "OpenXR"
-
-msgid "Target API Version"
-msgstr "Versi API Target"
-
-msgid "Default Action Map"
-msgstr "Peta Tindakan Default"
-
-msgid "Form Factor"
-msgstr "Faktor Bentuk"
-
-msgid "View Configuration"
-msgstr "Lihat Konfigurasi"
-
-msgid "Reference Space"
-msgstr "Ruang Referensi"
-
-msgid "Environment Blend Mode"
-msgstr "Mode Blend Lingkungan"
-
-msgid "Foveation Level"
-msgstr "Tingkat Foveation"
-
-msgid "Foveation Dynamic"
-msgstr "Foveation Dinamis"
-
-msgid "Foveation Eye Tracked"
-msgstr "Foveation Pelacakan Mata"
-
-msgid "Foveation with Subsampled Images"
-msgstr "Foveation dengan Gambar Tersampel"
-
-msgid "Submit Depth Buffer"
-msgstr "Kirim Buffer Kedalaman"
-
-msgid "Startup Alert"
-msgstr "Peringatan Startup"
-
-msgid "Extensions"
-msgstr "Ekstensi"
-
-msgid "Debug Utils"
-msgstr "Utilitas Debug"
-
-msgid "Debug Message Types"
-msgstr "Jenis Pesan Debug"
-
-msgid "Frame Synthesis"
-msgstr "Sintesis Bingkai"
-
-msgid "Hand Tracking"
-msgstr "Pelacakan Tangan"
-
-msgid "Hand Tracking Unobstructed Data Source"
-msgstr "Sumber Data Pelacakan Tangan Tanpa Halangan"
-
-msgid "Hand Tracking Controller Data Source"
-msgstr "Sumber Data Pengendali Pelacakan Tangan"
-
-msgid "Hand Interaction Profile"
-msgstr "Profil Interaksi Tangan"
-
-msgid "Spatial Entity"
-msgstr "Entitas Spasial"
-
-msgid "Enable Spatial Anchors"
-msgstr "Aktifkan Anchor Spasial"
-
-msgid "Enable Persistent Anchors"
-msgstr "Aktifkan Anchor Persisten"
-
-msgid "Enable Builtin Anchor Detection"
-msgstr "Aktifkan Deteksi Anchor Bawaan"
-
-msgid "Enable Plane Tracking"
-msgstr "Aktifkan Pelacakan Bidang"
-
-msgid "Enable Builtin Plane Detection"
-msgstr "Aktifkan Deteksi Bidang Bawaan"
-
 msgid "Enable Marker Tracking"
 msgstr "Aktifkan Pelacakan Marker"
 
 msgid "Enable Builtin Marker Tracking"
 msgstr "Aktifkan Pelacakan Marker Bawaan"
-
-msgid "Aruco Dict"
-msgstr "Kamus Aruco"
-
-msgid "April Tag Dict"
-msgstr "Kamus April Tag"
-
-msgid "Eye Gaze Interaction"
-msgstr "Interaksi Tatapan Mata"
-
-msgid "Render Model"
-msgstr "Model Render"
-
-msgid "User Presence"
-msgstr "Kehadiran Pengguna"
-
-msgid "Binding Modifiers"
-msgstr "Modifier Binding"
-
-msgid "Analog Threshold"
-msgstr "Ambang Analog"
-
-msgid "Dpad Binding"
-msgstr "Binding D-pad"
 
 msgid "Boot Splash"
 msgstr "Splash Boot"
@@ -3722,21 +3611,6 @@ msgstr "Gambar"
 
 msgid "Minimum Display Time"
 msgstr "Waktu Tampilan Minimal"
-
-msgid "Dotnet"
-msgstr "Dotnet"
-
-msgid "Project"
-msgstr "Proyek"
-
-msgid "Assembly Name"
-msgstr "Nama Assembly"
-
-msgid "Solution Directory"
-msgstr "Direktori Solusi"
-
-msgid "Assembly Reload Attempts"
-msgstr "Upaya Muat Ulang Perakitan"
 
 msgid "Time"
 msgstr "Waktu"
@@ -4650,36 +4524,6 @@ msgstr "Denoising"
 msgid "Denoiser"
 msgstr "Denoiser"
 
-msgid "Eye Height"
-msgstr "Tinggi Mata"
-
-msgid "IOD"
-msgstr "IOD"
-
-msgid "Display Width"
-msgstr "Lebar Tampilan"
-
-msgid "Display to Lens"
-msgstr "Tampilan ke Lensa"
-
-msgid "Offset Rect"
-msgstr "Offset Rect"
-
-msgid "Oversample"
-msgstr "Sampel berlebih"
-
-msgid "K1"
-msgstr "K1"
-
-msgid "K2"
-msgstr "K2"
-
-msgid "Vulkan VRS"
-msgstr "VRS Vulkan"
-
-msgid "Min Radius"
-msgstr "Radius Minimum"
-
 msgid "BPM"
 msgstr "BPM"
 
@@ -4818,200 +4662,11 @@ msgstr "Rok Campuran Mulus"
 msgid "Bump Strength"
 msgstr "Kekuatan Bump"
 
-msgid "Localized Name"
-msgstr "Nama yang Dilokalkan"
-
-msgid "Action Type"
-msgstr "Jenis Tindakan"
-
-msgid "Toplevel Paths"
-msgstr "Path Tingkat Atas"
-
-msgid "Action Sets"
-msgstr "Set Aksi"
-
-msgid "Interaction Profiles"
-msgstr "Profil Interaksi"
-
-msgid "Actions"
-msgstr "Aksi"
-
-msgid "Binding Path"
-msgstr "Path Binding"
-
-msgid "Interaction Profile Path"
-msgstr "Path Profil Interaksi"
-
-msgid "Bindings"
-msgstr "Binding"
-
-msgid "Runtime Paths"
-msgstr "Path Runtime"
-
-msgid "Action Set"
-msgstr "Set Aksi"
-
-msgid "Input Path"
-msgstr "Path Input"
-
-msgid "Threshold Released"
-msgstr "Ambang Dilepas"
-
-msgid "Center Region"
-msgstr "Wilayah Tengah"
-
-msgid "Wedge Angle"
-msgstr "Sudut Irisan"
-
-msgid "Is Sticky"
-msgstr "Lengket"
-
-msgid "On Haptic"
-msgstr "Haptik Saat Aktif"
-
-msgid "Off Haptic"
-msgstr "Haptik Saat Nonaktif"
-
-msgid "Relax Frame Interval"
-msgstr "Interval Bingkai Relaksasi"
-
-msgid "On Threshold"
-msgstr "Ambang Aktif"
-
-msgid "Off Threshold"
-msgstr "Ambang Nonaktif"
-
-msgid "UUID"
-msgstr "UUID"
-
-msgid "Entity"
-msgstr "Entitas"
-
-msgid "Spatial Tracking State"
-msgstr "Status Pelacakan Spasial"
-
-msgid "April Dict"
-msgstr "Kamus April"
-
-msgid "Bounds Size"
-msgstr "Ukuran Batas"
-
-msgid "Marker Type"
-msgstr "Jenis Marker"
-
-msgid "Marker ID"
-msgstr "ID Marker"
-
-msgid "Plane Alignment"
-msgstr "Perataan Bidang"
-
-msgid "Plane Label"
-msgstr "Label Bidang"
-
-msgid "Display Refresh Rate"
-msgstr "Kecepatan Refresh Layar"
-
-msgid "Render Target Size Multiplier"
-msgstr "Render Pengganda Ukuran Target"
-
 msgid "Next"
 msgstr "Berikutnya"
 
-msgid "Layer Viewport"
-msgstr "Viewport Lapisan"
-
-msgid "Use Android Surface"
-msgstr "Gunakan Surface Android"
-
-msgid "Protected Content"
-msgstr "Konten Terproteksi"
-
-msgid "Android Surface Size"
-msgstr "Ukuran Surface Android"
-
-msgid "Sort Order"
-msgstr "Urutan Pengurutan"
-
-msgid "Alpha Blend"
-msgstr "Blend Alpha"
-
-msgid "Enable Hole Punch"
-msgstr "Aktifkan Hole Punch"
-
-msgid "Eye Visibility"
-msgstr "Visibilitas Mata"
-
-msgid "Swapchain State"
-msgstr "Status Swapchain"
-
-msgid "Mipmap Mode"
-msgstr "Mode Mipmap"
-
-msgid "Horizontal Wrap"
-msgstr "Wrap Horizontal"
-
-msgid "Vertical Wrap"
-msgstr "Wrap Vertikal"
-
-msgid "Red Swizzle"
-msgstr "Swizzle Merah"
-
-msgid "Green Swizzle"
-msgstr "Swizzle Hijau"
-
-msgid "Blue Swizzle"
-msgstr "Swizzle Biru"
-
-msgid "Alpha Swizzle"
-msgstr "Swizzle Alpha"
-
-msgid "Max Anisotropy"
-msgstr "Anisotropi Maksimum"
-
 msgid "Border Color"
 msgstr "Warna Perbatasan"
-
-msgid "Aspect Ratio"
-msgstr "Rasio Aspek"
-
-msgid "Central Angle"
-msgstr "Sudut Pusat"
-
-msgid "Fallback Segments"
-msgstr "Segmen Cadangan"
-
-msgid "Central Horizontal Angle"
-msgstr "Sudut Horizontal Pusat"
-
-msgid "Upper Vertical Angle"
-msgstr "Sudut Vertikal Atas"
-
-msgid "Lower Vertical Angle"
-msgstr "Sudut Vertikal Bawah"
-
-msgid "Quad Size"
-msgstr "Ukuran Quad"
-
-msgid "Hand"
-msgstr "Tangan"
-
-msgid "Motion Range"
-msgstr "Rentang Gerak"
-
-msgid "Hand Skeleton"
-msgstr "Kerangka Tangan"
-
-msgid "Skeleton Rig"
-msgstr "Rig Kerangka"
-
-msgid "Bone Update"
-msgstr "Pembaruan Tulang"
-
-msgid "Tracker"
-msgstr "Pelacak"
-
-msgid "Make Local to Pose"
-msgstr "Jadikan Lokal terhadap Pose"
 
 msgid "Subject"
 msgstr "Subjek"
@@ -5202,27 +4857,6 @@ msgstr "Paket Antrian Maksimal"
 msgid "Heartbeat Interval"
 msgstr "Interval Heartbeat"
 
-msgid "Session Mode"
-msgstr "Mode Sesi"
-
-msgid "Required Features"
-msgstr "Fitur yang Diperlukan"
-
-msgid "Optional Features"
-msgstr "Fitur Opsional"
-
-msgid "Requested Reference Space Types"
-msgstr "Jenis Ruang Referensi yang Diminta"
-
-msgid "Reference Space Type"
-msgstr "Jenis Ruang Referensi"
-
-msgid "Enabled Features"
-msgstr "Fitur yang Diaktifkan"
-
-msgid "Visibility State"
-msgstr "Status Visibilitas"
-
 msgid "Debug Keystore"
 msgstr "Keystore Debug"
 
@@ -5375,12 +5009,6 @@ msgstr "Grafik"
 
 msgid "OpenGL Debug"
 msgstr "Debug OpenGL"
-
-msgid "XR Features"
-msgstr "Fitur XR"
-
-msgid "XR Mode"
-msgstr "Mode XR"
 
 msgid "Gesture"
 msgstr "Gestur"
@@ -5729,9 +5357,6 @@ msgstr "Deskripsi Penggunaan Volume yang Dapat Dilepas"
 
 msgid "Removable Volumes Usage Description Localized"
 msgstr "Volume yang Dapat Dilepas Deskripsi Penggunaan Dilokalisasi"
-
-msgid "Min visionOS Version"
-msgstr "Versi visionOS Minimum"
 
 msgid "Web"
 msgstr "Situs"
@@ -7865,26 +7490,8 @@ msgstr "Propagasi"
 msgid "Use Two Bounces"
 msgstr "Gunakan Dua Pantulan"
 
-msgid "Body Tracker"
-msgstr "Pelacak Tubuh"
-
-msgid "Body Update"
-msgstr "Pembaruan Tubuh"
-
-msgid "Face Tracker"
-msgstr "Pelacak Wajah"
-
-msgid "Hand Tracker"
-msgstr "Pelacak Tangan"
-
 msgid "Pose"
 msgstr "Pose"
-
-msgid "Show When Tracked"
-msgstr "Tampilkan Saat Terlacak"
-
-msgid "World Scale"
-msgstr "Skala Dunia"
 
 msgid "Play Mode"
 msgstr "Mode Putar"
@@ -9419,9 +9026,6 @@ msgstr "Path Viewport"
 
 msgid "Disable 3D"
 msgstr "Nonaktifkan 3D"
-
-msgid "Use XR"
-msgstr "Gunakan XR"
 
 msgid "Own World 3D"
 msgstr "Dunia Sendiri 3D"
@@ -12780,9 +12384,6 @@ msgstr "Jumlah Lampu yang Bisa Dihitung Maksimal"
 msgid "Max Lights per Object"
 msgstr "Maksimal Lampu per Object"
 
-msgid "Shaders"
-msgstr "Shader"
-
 msgid "Shader Language"
 msgstr "Bahasa Shader"
 
@@ -12932,48 +12533,3 @@ msgstr "Sertakan Data Server Teks"
 
 msgid "Line Breaking Strictness"
 msgstr "Ketegasan Pemutusan Baris"
-
-msgid "Has Tracking Data"
-msgstr "Memiliki Data Pelacakan"
-
-msgid "Body Flags"
-msgstr "Flag Bodi"
-
-msgid "Blend Shapes"
-msgstr "Blend Shape"
-
-msgid "Hand Tracking Source"
-msgstr "Sumber Pelacakan Tangan"
-
-msgid "Is Primary"
-msgstr "Adalah Pertama"
-
-msgid "Play Area Mode"
-msgstr "Mode Area Bermain"
-
-msgid "AR"
-msgstr "AR"
-
-msgid "Is Anchor Detection Enabled"
-msgstr "Adalah Deteksi Pemancangan Enabled"
-
-msgid "Tracking Confidence"
-msgstr "Keyakinan Pelacakan"
-
-msgid "World Origin"
-msgstr "Pangkal Dunia"
-
-msgid "Camera Locked to Origin"
-msgstr "Kamera Dikunci ke Titik Pusat"
-
-msgid "Primary Interface"
-msgstr "Antarmuka Utama"
-
-msgid "VRS Min Radius"
-msgstr "Radius Minimum VRS"
-
-msgid "VRS Strength"
-msgstr "Kekuatan VRS"
-
-msgid "VRS Render Region"
-msgstr "Wilayah Render VRS"

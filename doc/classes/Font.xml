@@ -273,15 +273,9 @@
 			<description>
 				Returns the size of a bounding box of a single-line string, taking kerning, advance and subpixel positioning into account. See also [method get_multiline_string_size] and [method draw_string].
 				For example, to get the string size as displayed by a single-line Label, use:
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				var string_size = $Label.get_theme_font("font").get_string_size($Label.text, HORIZONTAL_ALIGNMENT_LEFT, -1, $Label.get_theme_font_size("font_size"))
-				[/gdscript]
-				[csharp]
-				Label label = GetNode&lt;Label&gt;("Label");
-				Vector2 stringSize = label.GetThemeFont("font").GetStringSize(label.Text, HorizontalAlignment.Left, -1, label.GetThemeFontSize("font_size"));
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 				[b]Note:[/b] Since kerning, advance and subpixel positioning are taken into account by [method get_string_size], using separate [method get_string_size] calls on substrings of a string then adding the results together will return a different result compared to using a single [method get_string_size] call on the full string.
 				[b]Note:[/b] Real height of the string is context-dependent and can be significantly different from the value returned by [method get_height].
 			</description>

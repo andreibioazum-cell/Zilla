@@ -3231,13 +3231,6 @@ msgstr ""
 msgid "Note:"
 msgstr "注記:"
 
-msgid ""
-"There are notable differences when using this API with C#. See [url=%s]C# API "
-"differences to GDScript[/url] for more information."
-msgstr ""
-"このAPIをC#で使用する場合、顕著な違いがあります。詳しくは[url=%s]C# APIと"
-"GDScriptの違い[/url]を参照してください。"
-
 msgid "Online Tutorials"
 msgstr "オンラインチュートリアル"
 
@@ -5136,13 +5129,6 @@ msgstr ""
 "ツールスクリプトでないため、スクリプトを実行できません(先頭に@toolアノテーショ"
 "ンを追加してください)。"
 
-msgid ""
-"Cannot run the script because it's not a tool script (add the [Tool] "
-"attribute above the class definition)."
-msgstr ""
-"ツールスクリプトでないため、スクリプトを実行できません(クラス定義に [Tool] 属"
-"性を追加してください)。"
-
 msgid "Cannot run the script because it's not a tool script."
 msgstr "ツールスクリプトではないため、スクリプトを実行できません。"
 
@@ -5773,19 +5759,6 @@ msgid ""
 "package."
 msgstr ""
 ".ipa は macOS でしかビルドできません。パッケージをビルドせずに終了します。"
-
-msgid ""
-"Exporting to an Apple Embedded platform when using C#/.NET is experimental "
-"and requires macOS."
-msgstr ""
-"C#/.NET を使用する場合の Apple 組み込みプラットフォームへのエクスポートは実験"
-"的なものであり、macOS が必要です。"
-
-msgid ""
-"Exporting to an Apple Embedded platform when using C#/.NET is experimental."
-msgstr ""
-"C#/.NET 使用時の Apple 組み込みプラットフォームへのエクスポートは実験段階で"
-"す。"
 
 msgid "Custom debug template not found."
 msgstr "カスタム デバッグテンプレートが見つかりません。"
@@ -8149,15 +8122,6 @@ msgstr ""
 "\n"
 
 msgid ""
-"Warning: This project uses C#, but this build of Godot does not have\n"
-"the Mono module. If you proceed you will not be able to use any C# scripts.\n"
-"\n"
-msgstr ""
-"警告 このプロジェクトはC#を使用していますが、このGodotのビルドには\n"
-"Monoモジュールがありません。続行するとC#スクリプトを使用できなくなります。\n"
-"\n"
-
-msgid ""
 "Warning: This project was last edited in Godot %s. Opening will change it to "
 "Godot %s.\n"
 "\n"
@@ -8556,20 +8520,8 @@ msgstr "プロジェクトの実行を停止"
 msgid "Run Current Scene"
 msgstr "現在のシーンを実行"
 
-msgid "Run Scene in Regular Mode"
-msgstr "シーンを通常モードで実行"
-
-msgid "Run Scene in XR Mode"
-msgstr "シーンをXRモードで実行"
-
 msgid "Run Specific Scene"
 msgstr "特定のシーンを実行"
-
-msgid "Run in Regular Mode"
-msgstr "通常モードで実行"
-
-msgid "Run in XR Mode"
-msgstr "XRモードで実行"
 
 msgid "Enable Movie Maker Mode"
 msgstr "ムービーメーカーモードを有効にします"
@@ -14375,12 +14327,6 @@ msgstr "ナビゲーション(2D)"
 msgid "Navigation (3D)"
 msgstr "ナビゲーション(3D)"
 
-msgid "XR"
-msgstr "XR"
-
-msgid "OpenXR"
-msgstr "OpenXR"
-
 msgid "Wayland"
 msgstr "Wayland"
 
@@ -14440,12 +14386,6 @@ msgstr "SILグラファイトフォント"
 
 msgid "Multi-channel Signed Distance Field Font Rendering"
 msgstr "マルチチャンネル符号付き距離フィールドフォント描画"
-
-msgid "XR (AR and VR)."
-msgstr "XR (AR と VR)."
-
-msgid "OpenXR standard implementation (requires XR to be enabled)."
-msgstr "OpenXR標準実装（XRが有効であることが必要）。"
 
 msgid "Forward+ renderer for advanced 3D graphics."
 msgstr "高度な3Dグラフィックス用のForward+レンダラー。"
@@ -14533,13 +14473,6 @@ msgstr ""
 "出します。\n"
 "最初のスキャンは時間がかかる場合があります。特に大きなプロジェクトでは注意して"
 "ください。"
-
-msgid ""
-"Warning: Class detection for C# scripts is not currently available, and such "
-"files will be ignored."
-msgstr ""
-"警告:C#スクリプトのクラス検出は現在利用できないため、そのようなファイルは無視"
-"されます。"
 
 msgid "Scanning Project for Used Classes"
 msgstr "プロジェクト内の使用クラスをスキャン中"
@@ -15821,56 +15754,6 @@ msgstr "ノイズ除去"
 msgid "Retrieving textures"
 msgstr "テクスチャの取得"
 
-msgid "Class name can't be a reserved keyword"
-msgstr "クラス名を予約キーワードにすることはできません"
-
-msgid "Class name must be a valid identifier"
-msgstr "クラス名は有効な識別子である必要があります"
-
-msgid "Not enough bytes for decoding bytes, or invalid format."
-msgstr "デコードするにはバイトが足りないか、または無効な形式です。"
-
-msgid ""
-"Unable to load .NET runtime, no compatible version was found.\n"
-"Attempting to create/edit a project will lead to a crash.\n"
-"\n"
-"Please install the .NET SDK 8.0 or later from https://get.dot.net and restart "
-"Godot."
-msgstr ""
-".NETランタイムの読み込みに失敗しました。互換性のあるバージョンが見つかりませ"
-"ん。\n"
-"プロジェクトの作成・編集を行うとクラッシュする可能性があります。\n"
-"\n"
-".NET SDK 8.0またはそれ以降のバージョンを https://get.dot.net よりインストール"
-"し、Godotを再起動してください。"
-
-msgid "Failed to load .NET runtime"
-msgstr ".NETランタイムの読み込みに失敗しました"
-
-msgid ""
-"Unable to find the .NET assemblies directory.\n"
-"Make sure the '%s' directory exists and contains the .NET assemblies."
-msgstr ""
-".NETアセンブリディレクトリが見つかりません。\n"
-"ディレクトリ '%s' が存在していることと、そこに.NETアセンブリが含まれていること"
-"を確認してください。"
-
-msgid ".NET assemblies not found"
-msgstr ".NET アセンブリが見つかりません"
-
-msgid ""
-"Unable to load .NET runtime, specifically hostfxr.\n"
-"Attempting to create/edit a project will lead to a crash.\n"
-"\n"
-"Please install the .NET SDK 8.0 or later from https://get.dot.net and restart "
-"Godot."
-msgstr ""
-".NETランタイム（hostfxr）の読み込みに失敗しました。\n"
-"プロジェクトの作成・編集を行うとクラッシュする可能性があります。\n"
-"\n"
-"https://dotnet.microsoft.com/ja-jp/download から .NET SDK 8.0 以上をインストー"
-"ルし、Godot を再起動してください。"
-
 msgctxt "Network"
 msgid "Down"
 msgstr "下り"
@@ -16242,131 +16125,6 @@ msgstr "ObjectDB スナップショットを取得"
 msgid "Diff Against:"
 msgstr "比較対象:"
 
-msgid "Rename Action"
-msgstr "アクション名を変更"
-
-msgid "Rename Actions Localized name"
-msgstr "ローカライズされたアクション名を変更"
-
-msgid "Change Action Type"
-msgstr "アクションの型を変更"
-
-msgid ""
-"Internal name of the action. Some XR runtimes don't allow spaces or special "
-"characters."
-msgstr ""
-"アクションの内部名。一部の XR ランタイムではスペースや特殊文字を使用できませ"
-"ん。"
-
-msgid "Human-readable name of the action. This can be displayed to end users."
-msgstr "アクションの人間が読める名前。エンドユーザーに表示することができます。"
-
-msgid "Remove action"
-msgstr "アクションを除去"
-
-msgid "Add action set"
-msgstr "アクションセットの追加"
-
-msgid "Remove action set"
-msgstr "アクションセットを除去"
-
-msgid "Add interaction profile"
-msgstr "インタラクションプロファイルを追加"
-
-msgid "Error loading %s: %s."
-msgstr "%s のロード中にエラーが発生しました: %s 。"
-
-msgid "Error saving file %s: %s"
-msgstr "ファイル %s の保存エラー: %s"
-
-msgid "OpenXR Action map:"
-msgstr "OpenXRアクションマップ:"
-
-msgid "Remove interaction profile"
-msgstr "インタラクションプロファイルを削除"
-
-msgid "OpenXR Action Map"
-msgstr "OpenXRアクションマップ"
-
-msgid "Add Action Set"
-msgstr "アクションセットの追加"
-
-msgid "Add an action set."
-msgstr "アクションセットを追加します。"
-
-msgid "Add profile"
-msgstr "プロファイルの追加"
-
-msgid "Add an interaction profile."
-msgstr "インタラクションプロファイルを追加します。"
-
-msgid "Save this OpenXR action map."
-msgstr "このOpenXRアクションマップを保存します。"
-
-msgid "Reset to default OpenXR action map."
-msgstr "デフォルトのOpenXRアクションマップにリセットします。"
-
-msgid "Action Sets"
-msgstr "アクションセット"
-
-msgid "Rename Action Set"
-msgstr "アクションセットの名前を変更"
-
-msgid "Rename Action Sets Localized name"
-msgstr "ローカライズされたアクションセット名を変更"
-
-msgid "Change Action Sets priority"
-msgstr "アクションセットの優先度を変更"
-
-msgid "Add action"
-msgstr "アクションを追加"
-
-msgid "Delete action"
-msgstr "アクションを削除"
-
-msgid ""
-"Human-readable name of the action set. This can be displayed to end users."
-msgstr ""
-"アクションセットの人間が読める名前。エンドユーザーに表示することができます。"
-
-msgid ""
-"Priority of the action set. If multiple action sets bind to the same input, "
-"the action set with the highest priority will be updated."
-msgstr ""
-"アクションセットの優先度。複数のアクションセットが同じ入力にバインドされている"
-"場合、最も優先度が高いアクションセットが更新されます。"
-
-msgid "Add action."
-msgstr "アクションを追加します。"
-
-msgid "Remove action set."
-msgstr "アクションセットを除去します。"
-
-msgid "Note: modifiers will only be applied if supported on the host system."
-msgstr "注: 修飾子は、ホストシステムでサポートしている場合にのみ適用されます。"
-
-msgid "Binding modifiers for:"
-msgstr "バインディングの修飾子:"
-
-msgid "Remove action from interaction profile"
-msgstr "インタラクションプロファイルからアクションを削除"
-
-msgid "Edit binding modifiers"
-msgstr "装飾キーの割り当てを編集"
-
-msgid "Note: This interaction profile requires extension %s support."
-msgstr ""
-"注: このインタラクションプロファイルには、拡張機能 %s のサポートが必要です。"
-
-msgid "Add binding"
-msgstr "バインドを追加"
-
-msgid "Remove binding"
-msgstr "バインドを削除"
-
-msgid "Note: This binding path requires extension %s support."
-msgstr "注: このバインディングパスには、拡張機能 %s のサポートが必要です。"
-
 msgid "Boolean"
 msgstr "Boolean"
 
@@ -16375,40 +16133,6 @@ msgstr "Float"
 
 msgid "Vector2"
 msgstr "Vector2"
-
-msgid "Pose"
-msgstr "ポーズ"
-
-msgid "Haptic"
-msgstr "触覚"
-
-msgid "Unknown"
-msgstr "不明"
-
-msgid "Select an action"
-msgstr "アクションを選択"
-
-msgid "Select an interaction profile"
-msgstr "インタラクションプロファイルを選択"
-
-msgid "All interaction profiles have been added to the action map."
-msgstr ""
-"すべてのインタラクションプロファイルがアクションマップに追加されました。"
-
-msgid "Choose an XR runtime."
-msgstr "XRランタイムを選択します。"
-
-msgid ""
-"OpenXR composition layers must have orthonormalized transforms (ie. no scale "
-"or shearing)."
-msgstr ""
-"OpenXR composition layer は、正規直交変換でなければなりません(つまり scale や "
-"shearing は不可です)。"
-
-msgid ""
-"Hole punching won't work as expected unless the sort order is less than zero."
-msgstr ""
-"ホールパンチングは sort order が0より小さくなければ期待通りに動作しません。"
 
 msgid "E constant (2.718282). Represents the base of the natural logarithm."
 msgstr "ネイピア数(2.718282)。自然対数のベースを表します。"
@@ -17835,17 +17559,6 @@ msgstr "デバイスで実行できませんでした。"
 msgid "Error: There was a problem validating the keystore username and password"
 msgstr "エラー: キーストアのユーザー名とパスワードの検証中に問題が発生しました"
 
-msgid ""
-"C# project targets '%s' but the export template only supports '%s'. Consider "
-"using gradle builds instead."
-msgstr ""
-"C# プロジェクトは '%s' をターゲットにしていますが、エクスポートテンプレートは "
-"'%s' のみをサポートしています。代わりに Gradle ビルドの使用を検討してくださ"
-"い。"
-
-msgid "Exporting to Android when using C#/.NET is experimental."
-msgstr "C#/.NET を使用する場合の Android へのエクスポートは実験的です。"
-
 msgid "Custom Android source template not found."
 msgstr "カスタム Android ソーステンプレートが見つかりません。"
 
@@ -18186,13 +17899,6 @@ msgstr "App Store の配布には、インストーラーの署名 ID が必要�
 msgid "App sandbox is required for App Store distribution."
 msgstr "App Store の配布にはアプリサンドボックスが必要です。"
 
-msgid ""
-"'rcodesign' doesn't support signing applications with embedded dynamic "
-"libraries (GDExtension or .NET)."
-msgstr ""
-"「rcodesign」は、組み込み動的ライブラリ (GDExtension または .NET) を使用したア"
-"プリケーションの署名をサポートしていません。"
-
 msgid "Code signing is required for App Store distribution."
 msgstr "App Storeでの配布にはコード署名が必要です。"
 
@@ -18525,21 +18231,6 @@ msgstr "ファイルを読み込めませんでした: \"%s\"。"
 
 msgid "PWA"
 msgstr "PWA"
-
-msgid ""
-"Exporting to Web is currently not supported in Godot 4 when using C#/.NET. "
-"Use Godot 3 to target Web with C#/Mono instead."
-msgstr ""
-"C#/.NET を使用する場合、Godot 4では Web へのエクスポートは現在サポートされてい"
-"ません。代わりに、Godot 3を使用して C#/Mono で Web をターゲットにしてくださ"
-"い。"
-
-msgid ""
-"If this project does not use C#, use a non-C# editor build to export the "
-"project."
-msgstr ""
-"このプロジェクトで C# が使用されていない場合は、非 C# エディター ビルドを使用"
-"してプロジェクトをエクスポートします。"
 
 msgid "Could not read HTML shell: \"%s\"."
 msgstr "HTMLシェルを読み込めませんでした: \"%s\"。"
@@ -19492,58 +19183,6 @@ msgid ""
 msgstr ""
 "シーン (またはインスタンス化されたシーンのセット) ごとに許可される "
 "WorldEnvironment は1つだけです。"
-
-msgid ""
-"XRCamera3D may not function as expected without an XROrigin3D node as its "
-"parent."
-msgstr ""
-"XROrigin3Dノードを親にしないと、XRCamera3Dが期待どおりに機能しない可能性があり"
-"ます。"
-
-msgid ""
-"XRCamera3D should have physics_interpolation_mode set to OFF in order to "
-"avoid jitter."
-msgstr ""
-"XRCamera3Dは、ジッターを避けるために、physics_interpolation_modeをOFFに設定す"
-"る必要があります。"
-
-msgid ""
-"XRNode3D may not function as expected without an XROrigin3D node as its "
-"parent."
-msgstr ""
-"XRNode3Dは親にXROrigin3Dノードがないと期待どおりに機能しない可能性があります。"
-
-msgid "No tracker name is set."
-msgstr "トラッカー名が設定されていません。"
-
-msgid "No pose is set."
-msgstr "ポーズは設定されていません。"
-
-msgid ""
-"XRNode3D should have physics_interpolation_mode set to OFF in order to avoid "
-"jitter."
-msgstr ""
-"XRNode3Dは、ジッターを避けるために、physics_interpolation_modeをOFFに設定する"
-"必要があります。"
-
-msgid "XROrigin3D requires an XRCamera3D child node."
-msgstr "XROrigin3D には XRCamera3D 子ノードが必要です。"
-
-msgid ""
-"Changing the scale on the XROrigin3D node is not supported. Change the World "
-"Scale instead."
-msgstr ""
-"XROrigin3D ノードのスケール変更はサポートされていません。代わりに World Scale "
-"を変更してください。"
-
-msgid ""
-"XR shaders are not enabled in project settings. Stereoscopic output is not "
-"supported unless they are enabled. Please enable `xr/shaders/enabled` to use "
-"stereoscopic output."
-msgstr ""
-"XRシェーダーはプロジェクト設定で有効になっていません。これが有効になっていない"
-"と立体視出力はサポートされません。立体視出力を使用するには、プロジェクト設定の"
-"XR > シェーダーを有効にしてください。"
 
 msgid "Animation Apply Reset"
 msgstr "アニメーション適用リセット"

@@ -7,14 +7,9 @@
 		[TextServer] is the API backend for managing fonts and rendering text.
 		[b]Note:[/b] This is a low-level API, consider using [TextLine], [TextParagraph], and [Font] classes instead.
 		This is an abstract class, so to get the currently active [TextServer] instance, use the following code:
-		[codeblocks]
-		[gdscript]
+		[codeblock]
 		var ts = TextServerManager.get_primary_interface()
-		[/gdscript]
-		[csharp]
-		var ts = TextServerManager.GetPrimaryInterface();
-		[/csharp]
-		[/codeblocks]
+		[/codeblock]
 	</description>
 	<tutorials>
 	</tutorials>

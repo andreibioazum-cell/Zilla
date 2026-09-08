@@ -475,7 +475,7 @@
 			<param index="1" name="view_count" type="int" default="1" />
 			<description>
 				Creates a new framebuffer format with the specified [param attachments] and [param view_count]. Returns the new framebuffer's unique framebuffer format ID.
-				If [param view_count] is greater than or equal to [code]2[/code], enables multiview which is used for VR rendering. This requires support for the Vulkan multiview extension.
+				If [param view_count] is greater than or equal to [code]2[/code], enables multiview which is used for stereoscopic rendering. This requires support for the Vulkan multiview extension.
 			</description>
 		</method>
 		<method name="framebuffer_format_create_empty">
@@ -491,7 +491,7 @@
 			<param index="1" name="passes" type="RDFramebufferPass[]" />
 			<param index="2" name="view_count" type="int" default="1" />
 			<description>
-				Creates a multipass framebuffer format with the specified [param attachments], [param passes] and [param view_count] and returns its ID. If [param view_count] is greater than or equal to [code]2[/code], enables multiview which is used for VR rendering. This requires support for the Vulkan multiview extension.
+				Creates a multipass framebuffer format with the specified [param attachments], [param passes] and [param view_count] and returns its ID. If [param view_count] is greater than or equal to [code]2[/code], enables multiview which is used for stereoscopic rendering. This requires support for the Vulkan multiview extension.
 			</description>
 		</method>
 		<method name="framebuffer_format_get_texture_samples">
@@ -814,8 +814,7 @@
 				Starts a list of raytracing commands. The returned value should be passed to other [code]raytracing_list_*[/code] functions.
 				Multiple raytracing lists cannot be created at the same time; you must finish the previous raytracing list first using [method raytracing_list_end].
 				A simple raytracing operation might look like this (code is not a complete example):
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				var rd = RenderingDevice.new()
 				assert(rd.has_feature(RenderingDevice.SUPPORTS_RAYTRACING_PIPELINE))
 
@@ -858,8 +857,7 @@
 				rd.raytracing_list_trace_rays(raylist, 0, hit_sbt, width, height, 1)
 
 				rd.raytracing_list_end()
-				[/gdscript]
-				[/codeblocks]
+				[/codeblock]
 			</description>
 		</method>
 		<method name="raytracing_list_bind_raytracing_pipeline" experimental="">
@@ -2354,29 +2352,25 @@
 		</constant>
 		<constant name="BUFFER_CREATION_DEVICE_ADDRESS_BIT" value="1" enum="BufferCreationBits" is_bitfield="true">
 			Optionally, set this flag if you wish to use [method buffer_get_device_address] functionality. You must first check the GPU supports it:
-			[codeblocks]
-			[gdscript]
+			[codeblock]
 			rd = RenderingServer.get_rendering_device()
 
 			if rd.has_feature(RenderingDevice.SUPPORTS_BUFFER_DEVICE_ADDRESS):
 				storage_buffer = rd.storage_buffer_create(bytes.size(), bytes, RenderingDevice.STORAGE_BUFFER_USAGE_SHADER_DEVICE_ADDRESS)
 				storage_buffer_address = rd.buffer_get_device_address(storage_buffer)
-			[/gdscript]
-			[/codeblocks]
+			[/codeblock]
 		</constant>
 		<constant name="BUFFER_CREATION_AS_STORAGE_BIT" value="2" enum="BufferCreationBits" is_bitfield="true">
 			Set this flag so that it is created as storage. This is useful if Compute Shaders need access (for reading or writing) to the buffer, e.g. skeletal animations are processed in Compute Shaders which need access to vertex buffers, to be later consumed by vertex shaders as part of the regular rasterization pipeline.
 		</constant>
 		<constant name="BUFFER_CREATION_ACCELERATION_STRUCTURE_BUILD_INPUT_READ_ONLY_BIT" value="8" enum="BufferCreationBits" is_bitfield="true" experimental="">
 			Allows usage of this buffer as input data for an acceleration structure build operation. You must first check that the GPU supports it:
-			[codeblocks]
-			[gdscript]
+			[codeblock]
 			rd = RenderingServer.get_rendering_device()
 
 			if rd.has_feature(RenderingDevice.SUPPORTS_RAYTRACING_PIPELINE):
 				storage_buffer = rd.storage_buffer_create(bytes.size(), bytes, RenderingDevice.BUFFER_CREATION_ACCELERATION_STRUCTURE_BUILD_INPUT_READ_ONLY_BIT)
-			[/gdscript]
-			[/codeblocks]
+			[/codeblock]
 		</constant>
 		<constant name="ACCELERATION_STRUCTURE_ALLOW_UPDATE_BIT" value="1" enum="AccelerationStructureFlagBits" is_bitfield="true" experimental="">
 			Allows the acceleration structure to be updated after it has been built.
@@ -2851,7 +2845,7 @@
 			Support for high dynamic range (HDR) output.
 		</constant>
 		<constant name="SUPPORTS_RASTERIZATION_RATE_MAP" value="14" enum="Features">
-			Support for rasterization rate maps. The current implementation targets Metal on Apple platforms. This allows for foveated rendering, which is used by the visionOS XR module.
+			Support for rasterization rate maps. The current implementation targets Metal on Apple platforms. This allows for foveated rendering.
 		</constant>
 		<constant name="LIMIT_MAX_BOUND_UNIFORM_SETS" value="0" enum="Limit">
 			Maximum number of uniform sets that can be bound at a given time.

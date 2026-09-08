@@ -2756,9 +2756,6 @@ msgstr "Teckenstorlek för hjälpkällkod"
 msgid "Help Title Font Size"
 msgstr "Teckenstorlek för hjälprubriker"
 
-msgid "Class Reference Examples"
-msgstr "Exempel i klassreferensen"
-
 msgid "Sort Functions Alphabetically"
 msgstr "Sortera funktioner alfabetiskt"
 
@@ -3524,119 +3521,11 @@ msgstr "Dölj statusfält"
 msgid "Suppress UI Gesture"
 msgstr "Undertryck UI‑gest"
 
-msgid "XR"
-msgstr "XR"
-
-msgid "OpenXR"
-msgstr "OpenXR"
-
-msgid "Target API Version"
-msgstr "Målversion för API"
-
-msgid "Default Action Map"
-msgstr "Standardåtgärdskarta"
-
-msgid "Form Factor"
-msgstr "Formfaktor"
-
-msgid "View Configuration"
-msgstr "Vy­konfiguration"
-
-msgid "Reference Space"
-msgstr "Referensutrymme"
-
-msgid "Environment Blend Mode"
-msgstr "Miljöblandningsläge"
-
-msgid "Foveation Level"
-msgstr "Foveationsnivå"
-
-msgid "Foveation Dynamic"
-msgstr "Dynamisk foveering"
-
-msgid "Foveation Eye Tracked"
-msgstr "Foveation med ögonspårning"
-
-msgid "Foveation with Subsampled Images"
-msgstr "Foveation med undersamplade bilder"
-
-msgid "Submit Depth Buffer"
-msgstr "Skicka djupbuffert"
-
-msgid "Startup Alert"
-msgstr "Startvarning"
-
-msgid "Extensions"
-msgstr "Tillägg"
-
-msgid "Debug Utils"
-msgstr "Felsökningsverktyg"
-
-msgid "Debug Message Types"
-msgstr "Felsökningsmeddelandetyper"
-
-msgid "Frame Synthesis"
-msgstr "Ramsyntes"
-
-msgid "Hand Tracking"
-msgstr "Handspårning"
-
-msgid "Hand Tracking Unobstructed Data Source"
-msgstr "Handspårning – oberoende datakälla"
-
-msgid "Hand Tracking Controller Data Source"
-msgstr "Handspårning – kontrollerdatakälla"
-
-msgid "Hand Interaction Profile"
-msgstr "Handinteraktionsprofil"
-
-msgid "Spatial Entity"
-msgstr "Spatial entitet"
-
-msgid "Enable Spatial Anchors"
-msgstr "Aktivera spatiala ankare"
-
-msgid "Enable Persistent Anchors"
-msgstr "Aktivera persistenta ankare"
-
-msgid "Enable Builtin Anchor Detection"
-msgstr "Aktivera inbyggd ankardetektering"
-
-msgid "Enable Plane Tracking"
-msgstr "Aktivera plan‑spårning"
-
-msgid "Enable Builtin Plane Detection"
-msgstr "Aktivera inbyggd plandetektering"
-
 msgid "Enable Marker Tracking"
 msgstr "Aktivera markörspårning"
 
 msgid "Enable Builtin Marker Tracking"
 msgstr "Aktivera inbyggd markörspårning"
-
-msgid "Aruco Dict"
-msgstr "ArUco‑ordlista"
-
-msgid "April Tag Dict"
-msgstr "AprilTag‑ordlista"
-
-msgid "Eye Gaze Interaction"
-msgstr "Ögonblicksinteraktion"
-
-msgid "Render Model"
-msgstr "Renderingsmodell"
-
-msgid "User Presence"
-msgstr "Användarnärvaro"
-
-msgid "Binding Modifiers"
-msgstr "Bindningsmodifierare"
-
-msgid "Analog Threshold"
-msgstr "Analog tröskel"
-
-msgid "Dpad Binding"
-msgstr "D‑pad‑bindning"
 
 msgid "Boot Splash"
 msgstr "Uppstartsskärm"
@@ -3697,21 +3586,6 @@ msgstr "Bild"
 
 msgid "Minimum Display Time"
 msgstr "Minimal visningstid"
-
-msgid "Dotnet"
-msgstr "Dotnet"
-
-msgid "Project"
-msgstr "Projekt"
-
-msgid "Assembly Name"
-msgstr "Assemblenamn"
-
-msgid "Solution Directory"
-msgstr "Lösningskatalog"
-
-msgid "Assembly Reload Attempts"
-msgstr "Försök att ladda om assembly"
 
 msgid "Time"
 msgstr "Tid"
@@ -4625,36 +4499,6 @@ msgstr "Brusreducering"
 msgid "Denoiser"
 msgstr "Brusreducerare"
 
-msgid "Eye Height"
-msgstr "Ögonhöjd"
-
-msgid "IOD"
-msgstr "IOD"
-
-msgid "Display Width"
-msgstr "Skärmbredd"
-
-msgid "Display to Lens"
-msgstr "Avstånd från skärm till lins"
-
-msgid "Offset Rect"
-msgstr "Förskjutningsrektangel"
-
-msgid "Oversample"
-msgstr "Översampling"
-
-msgid "K1"
-msgstr "K1"
-
-msgid "K2"
-msgstr "K2"
-
-msgid "Vulkan VRS"
-msgstr "Vulkan VRS"
-
-msgid "Min Radius"
-msgstr "Minsta radie"
-
 msgid "BPM"
 msgstr "BPM"
 
@@ -4793,200 +4637,11 @@ msgstr "Sömlös blandningskjol"
 msgid "Bump Strength"
 msgstr "Bump‑styrka"
 
-msgid "Localized Name"
-msgstr "Lokaliserat namn"
-
-msgid "Action Type"
-msgstr "Åtgärdstyp"
-
-msgid "Toplevel Paths"
-msgstr "Toppnivåvägar"
-
-msgid "Action Sets"
-msgstr "Åtgärdsuppsättningar"
-
-msgid "Interaction Profiles"
-msgstr "Interaktionsprofiler"
-
-msgid "Actions"
-msgstr "Åtgärder"
-
-msgid "Binding Path"
-msgstr "Bindningssökväg"
-
-msgid "Interaction Profile Path"
-msgstr "Interaktionsprofilsökväg"
-
-msgid "Bindings"
-msgstr "Bindningar"
-
-msgid "Runtime Paths"
-msgstr "Körtidssökvägar"
-
-msgid "Action Set"
-msgstr "Åtgärdsuppsättning"
-
-msgid "Input Path"
-msgstr "Inmatningssökväg"
-
-msgid "Threshold Released"
-msgstr "Tröskel släppt"
-
-msgid "Center Region"
-msgstr "Centrerad region"
-
-msgid "Wedge Angle"
-msgstr "Kilvinkel"
-
-msgid "Is Sticky"
-msgstr "Är klistrig"
-
-msgid "On Haptic"
-msgstr "Vid haptik"
-
-msgid "Off Haptic"
-msgstr "Av haptik"
-
-msgid "Relax Frame Interval"
-msgstr "Mjukare ramintervall"
-
-msgid "On Threshold"
-msgstr "Vid tröskel"
-
-msgid "Off Threshold"
-msgstr "Av tröskel"
-
-msgid "UUID"
-msgstr "UUID"
-
-msgid "Entity"
-msgstr "Enhet"
-
-msgid "Spatial Tracking State"
-msgstr "Spatial spårningsstatus"
-
-msgid "April Dict"
-msgstr "April-ordlista"
-
-msgid "Bounds Size"
-msgstr "Gränsstorlek"
-
-msgid "Marker Type"
-msgstr "Markörtyp"
-
-msgid "Marker ID"
-msgstr "Markör-ID"
-
-msgid "Plane Alignment"
-msgstr "Planjustering"
-
-msgid "Plane Label"
-msgstr "Planetikett"
-
-msgid "Display Refresh Rate"
-msgstr "Skärmens uppdateringsfrekvens"
-
-msgid "Render Target Size Multiplier"
-msgstr "Storleksmultiplikator för renderingsmål"
-
 msgid "Next"
 msgstr "Nästa"
 
-msgid "Layer Viewport"
-msgstr "Lager‑vyport"
-
-msgid "Use Android Surface"
-msgstr "Använd Android‑yta"
-
-msgid "Protected Content"
-msgstr "Skyddat innehåll"
-
-msgid "Android Surface Size"
-msgstr "Android‑ytans storlek"
-
-msgid "Sort Order"
-msgstr "Sorteringsordning"
-
-msgid "Alpha Blend"
-msgstr "Alfablendning"
-
-msgid "Enable Hole Punch"
-msgstr "Aktivera hålslag"
-
-msgid "Eye Visibility"
-msgstr "Ögonsynlighet"
-
-msgid "Swapchain State"
-msgstr "Swapchain‑tillstånd"
-
-msgid "Mipmap Mode"
-msgstr "Mipmap-mode"
-
-msgid "Horizontal Wrap"
-msgstr "Horisontell radbrytning"
-
-msgid "Vertical Wrap"
-msgstr "Vertikal radbrytning"
-
-msgid "Red Swizzle"
-msgstr "Red Swizzle"
-
-msgid "Green Swizzle"
-msgstr "Green Swizzle"
-
-msgid "Blue Swizzle"
-msgstr "Blue Swizzle"
-
-msgid "Alpha Swizzle"
-msgstr "Alpha Swizzle"
-
-msgid "Max Anisotropy"
-msgstr "Maximal anisotropi"
-
 msgid "Border Color"
 msgstr "Kantfärg"
-
-msgid "Aspect Ratio"
-msgstr "Bildförhållande"
-
-msgid "Central Angle"
-msgstr "Centralvinkel"
-
-msgid "Fallback Segments"
-msgstr "Reservsegment"
-
-msgid "Central Horizontal Angle"
-msgstr "Central horisontalvinkel"
-
-msgid "Upper Vertical Angle"
-msgstr "Övre vertikalvinkel"
-
-msgid "Lower Vertical Angle"
-msgstr "Nedre vertikalvinkel"
-
-msgid "Quad Size"
-msgstr "Quad‑storlek"
-
-msgid "Hand"
-msgstr "Hand"
-
-msgid "Motion Range"
-msgstr "Rörelseomfång"
-
-msgid "Hand Skeleton"
-msgstr "Hand‑skelett"
-
-msgid "Skeleton Rig"
-msgstr "Skelett‑rigg"
-
-msgid "Bone Update"
-msgstr "Ben‑uppdatering"
-
-msgid "Tracker"
-msgstr "Spårare"
-
-msgid "Make Local to Pose"
-msgstr "Gör lokal till posen"
 
 msgid "Subject"
 msgstr "Ämne"
@@ -5177,27 +4832,6 @@ msgstr "Max antal köade paket"
 msgid "Heartbeat Interval"
 msgstr "Hjärtslagsintervall"
 
-msgid "Session Mode"
-msgstr "Sessionsläge"
-
-msgid "Required Features"
-msgstr "Obligatoriska funktioner"
-
-msgid "Optional Features"
-msgstr "Valfria funktioner"
-
-msgid "Requested Reference Space Types"
-msgstr "Begärda referensrymdstyper"
-
-msgid "Reference Space Type"
-msgstr "Referensrymdstyp"
-
-msgid "Enabled Features"
-msgstr "Aktiverade funktioner"
-
-msgid "Visibility State"
-msgstr "Synlighetsstatus"
-
 msgid "Debug Keystore"
 msgstr "Debug‑nyckellager"
 
@@ -5350,12 +4984,6 @@ msgstr "Grafik"
 
 msgid "OpenGL Debug"
 msgstr "OpenGL‑debugg"
-
-msgid "XR Features"
-msgstr "XR‑funktioner"
-
-msgid "XR Mode"
-msgstr "XR‑läge"
 
 msgid "Gesture"
 msgstr "Gest"
@@ -5704,9 +5332,6 @@ msgstr "Flyttbarvolymsanvändningsbeskrivning"
 
 msgid "Removable Volumes Usage Description Localized"
 msgstr "Flyttbarvolymsanvändningsbeskrivning (lokaliserad)"
-
-msgid "Min visionOS Version"
-msgstr "Min visionOS‑version"
 
 msgid "Web"
 msgstr "Webb"
@@ -7840,26 +7465,8 @@ msgstr "Propagering"
 msgid "Use Two Bounces"
 msgstr "Använd två ljusstudsar"
 
-msgid "Body Tracker"
-msgstr "Kroppsspårare"
-
-msgid "Body Update"
-msgstr "Kroppsuppdatering"
-
-msgid "Face Tracker"
-msgstr "Ansiktsspårare"
-
-msgid "Hand Tracker"
-msgstr "Handspårare"
-
 msgid "Pose"
 msgstr "Ställning"
-
-msgid "Show When Tracked"
-msgstr "Visa när spårad"
-
-msgid "World Scale"
-msgstr "Världsskala"
 
 msgid "Play Mode"
 msgstr "Uppspelningsläge"
@@ -9397,9 +9004,6 @@ msgstr "Viewport‑sökväg"
 
 msgid "Disable 3D"
 msgstr "Avaktivera 3D"
-
-msgid "Use XR"
-msgstr "Använd XR"
 
 msgid "Own World 3D"
 msgstr "Eget 3D‑världsläge"
@@ -12758,9 +12362,6 @@ msgstr "Maximalt antal renderbara ljus"
 msgid "Max Lights per Object"
 msgstr "Maximalt antal ljus per objekt"
 
-msgid "Shaders"
-msgstr "Shaders"
-
 msgid "Shader Language"
 msgstr "Shader-språk"
 
@@ -12910,48 +12511,3 @@ msgstr "Inkludera textserver‑data"
 
 msgid "Line Breaking Strictness"
 msgstr "Radbrytningsstrikthet"
-
-msgid "Has Tracking Data"
-msgstr "Har spårningsdata"
-
-msgid "Body Flags"
-msgstr "Kroppsflaggor"
-
-msgid "Blend Shapes"
-msgstr "Blandningsformer"
-
-msgid "Hand Tracking Source"
-msgstr "Källa för handspårning"
-
-msgid "Is Primary"
-msgstr "Är primär"
-
-msgid "Play Area Mode"
-msgstr "Spellägesyta / Spelyte‑läge"
-
-msgid "AR"
-msgstr "AR"
-
-msgid "Is Anchor Detection Enabled"
-msgstr "Är ankardetektering aktiverad"
-
-msgid "Tracking Confidence"
-msgstr "Spårningssäkerhet"
-
-msgid "World Origin"
-msgstr "Origo"
-
-msgid "Camera Locked to Origin"
-msgstr "Kamera låst till origo"
-
-msgid "Primary Interface"
-msgstr "Huvudgränssnitt"
-
-msgid "VRS Min Radius"
-msgstr "VRS minradie"
-
-msgid "VRS Strength"
-msgstr "VRS-styrka"
-
-msgid "VRS Render Region"
-msgstr "VRS‑renderingsregion"

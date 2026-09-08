@@ -39,9 +39,9 @@ public:
 	enum VersionFormat {
 		// 4.3.2.stable
 		FORMAT_BASIC,
-		// v4.3.2.stable.mono [HASH]
+		// v4.3.2.stable [HASH]
 		FORMAT_WITH_BUILD,
-		// Godot Engine v4.3.2.stable.mono.official [HASH]
+		// Godot Engine v4.3.2.stable.official [HASH]
 		FORMAT_WITH_NAME_AND_BUILD,
 	};
 

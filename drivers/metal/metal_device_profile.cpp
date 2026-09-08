@@ -36,7 +36,7 @@ Mutex MetalDeviceProfile::profiles_lock;
 HashMap<MetalDeviceProfile::ProfileKey, MetalDeviceProfile> MetalDeviceProfile::profiles;
 
 const MetalDeviceProfile *MetalDeviceProfile::get_profile(Platform p_platform, GPU p_gpu, MinOsVersion p_min_os_version) {
-	DEV_ASSERT(p_platform == Platform::macOS || p_platform == Platform::iOS || p_platform == Platform::visionOS);
+	DEV_ASSERT(p_platform == Platform::macOS || p_platform == Platform::iOS);
 
 	MutexLock lock(profiles_lock);
 
@@ -103,26 +103,6 @@ const MetalDeviceProfile *MetalDeviceProfile::get_profile(Platform p_platform, G
 			}
 		} break;
 
-		case Platform::visionOS: {
-			if (p_min_os_version >= os_version::VISIONOS_26_0) {
-				res.features.msl_version = MSL_VERSION_40;
-			} else if (p_min_os_version >= os_version::VISIONOS_02_4) {
-				res.features.msl_version = MSL_VERSION_32;
-			} else {
-				ERR_FAIL_V_MSG(nullptr, "visionOS 2.4 is the minimum supported version for visionOS.");
-			}
-
-			switch (p_gpu) {
-				case GPU::Apple8:
-				case GPU::Apple9: {
-					res.features.use_argument_buffers = true;
-					res.features.simdPermute = true;
-				} break;
-				default: {
-					CRASH_NOW_MSG("visionOS hardware has a minimum Apple8 GPU.");
-				}
-			}
-		} break;
 	}
 
 	return &profiles.insert(key, res)->value;

@@ -2813,9 +2813,6 @@ msgstr "Taille de police de code source d'aide"
 msgid "Help Title Font Size"
 msgstr "Taille de police de titre d'aide"
 
-msgid "Class Reference Examples"
-msgstr "Exemples de la référence de classe"
-
 msgid "Sort Functions Alphabetically"
 msgstr "Trier les fonctions par ordre alphabétique"
 
@@ -3539,110 +3536,11 @@ msgstr "Cacher la barre de statut"
 msgid "Suppress UI Gesture"
 msgstr "Supprimer les gestes interface utilisateur"
 
-msgid "XR"
-msgstr "XR"
-
-msgid "OpenXR"
-msgstr "OpenXR"
-
-msgid "Target API Version"
-msgstr "Version d'API choisie"
-
-msgid "Default Action Map"
-msgstr "Carte d'action par défaut"
-
-msgid "Form Factor"
-msgstr "Facteur de forme"
-
-msgid "View Configuration"
-msgstr "Afficher la configuration"
-
-msgid "Reference Space"
-msgstr "Référentiel spatial"
-
-msgid "Environment Blend Mode"
-msgstr "Mode mélange d'environnement"
-
-msgid "Foveation Level"
-msgstr "Niveau de Fovéation"
-
-msgid "Foveation Dynamic"
-msgstr "Fovéation dynamique"
-
-msgid "Submit Depth Buffer"
-msgstr "Soumettre le tampon de profondeur"
-
-msgid "Startup Alert"
-msgstr "Alerte de démarrage"
-
-msgid "Extensions"
-msgstr "Extensions"
-
-msgid "Debug Utils"
-msgstr "Utilitaires de débogage"
-
-msgid "Debug Message Types"
-msgstr "Types de message de débogage"
-
-msgid "Frame Synthesis"
-msgstr "Synthèse d'Image"
-
-msgid "Hand Tracking"
-msgstr "Suivi des mains"
-
-msgid "Hand Tracking Unobstructed Data Source"
-msgstr "Source de données du suivi des mains non-obstruées"
-
-msgid "Hand Tracking Controller Data Source"
-msgstr "Source de données du suivi des mains par contrôleur"
-
-msgid "Hand Interaction Profile"
-msgstr "Profil d'interaction de main"
-
-msgid "Spatial Entity"
-msgstr "Entité spatiale"
-
-msgid "Enable Spatial Anchors"
-msgstr "Activer les ancrages dans l'espace"
-
-msgid "Enable Persistent Anchors"
-msgstr "Activer les ancres persistantes"
-
-msgid "Enable Builtin Anchor Detection"
-msgstr "Activer la détection d'ancrage intégrée"
-
-msgid "Enable Plane Tracking"
-msgstr "Activer le suivi de plan"
-
-msgid "Enable Builtin Plane Detection"
-msgstr "Activer la détection intégrée des plane"
-
 msgid "Enable Marker Tracking"
 msgstr "Activer le suivi des marqueurs"
 
 msgid "Enable Builtin Marker Tracking"
 msgstr "Activer le suivi intégré des marqueurs"
-
-msgid "Aruco Dict"
-msgstr "Aruco Dict"
-
-msgid "April Tag Dict"
-msgstr "Avril Tag Dict"
-
-msgid "Eye Gaze Interaction"
-msgstr "Interaction du regard de l'oeil"
-
-msgid "Render Model"
-msgstr "Modèle de rendu"
-
-msgid "Binding Modifiers"
-msgstr "Modificateurs de liaison"
-
-msgid "Analog Threshold"
-msgstr "Seuil analogique"
-
-msgid "Dpad Binding"
-msgstr "Liaison de la croix directionnelle"
 
 msgid "Boot Splash"
 msgstr "Écran de démarrage"
@@ -3703,21 +3601,6 @@ msgstr "Image"
 
 msgid "Minimum Display Time"
 msgstr "Temps d'affichage minimum"
-
-msgid "Dotnet"
-msgstr "Dotnet"
-
-msgid "Project"
-msgstr "Projet"
-
-msgid "Assembly Name"
-msgstr "Nom de l'assembly"
-
-msgid "Solution Directory"
-msgstr "Choisir un répertoire pour la solution"
-
-msgid "Assembly Reload Attempts"
-msgstr "Essais de rechargement d'assembly"
 
 msgid "Time"
 msgstr "Temps"
@@ -4619,36 +4502,6 @@ msgstr "Suppression de bruit"
 msgid "Denoiser"
 msgstr "Denoiser"
 
-msgid "Eye Height"
-msgstr "Hauteur de l’œil"
-
-msgid "IOD"
-msgstr "DP"
-
-msgid "Display Width"
-msgstr "Afficher la largeur"
-
-msgid "Display to Lens"
-msgstr "Distance entre affichage et lentille"
-
-msgid "Offset Rect"
-msgstr "Rectangle de décalage"
-
-msgid "Oversample"
-msgstr "Suréchantillonner"
-
-msgid "K1"
-msgstr "K1"
-
-msgid "K2"
-msgstr "K2"
-
-msgid "Vulkan VRS"
-msgstr "Vulkan VRS"
-
-msgid "Min Radius"
-msgstr "Rayon minimal"
-
 msgid "BPM"
 msgstr "BPM"
 
@@ -4784,185 +4637,11 @@ msgstr "Jupe de mélange transparent"
 msgid "Bump Strength"
 msgstr "Force du bossage"
 
-msgid "Localized Name"
-msgstr "Nom localisé"
-
-msgid "Action Type"
-msgstr "Type d'action"
-
-msgid "Toplevel Paths"
-msgstr "Chemins de niveau supérieur"
-
-msgid "Binding Path"
-msgstr "Chemin de Binding"
-
-msgid "Interaction Profile Path"
-msgstr "Chemin de profil d'interaction"
-
-msgid "Runtime Paths"
-msgstr "Chemins de l'environnement d'exécution"
-
-msgid "Action Set"
-msgstr "Ensemble d'actions"
-
-msgid "Input Path"
-msgstr "Chemin de l'entrée"
-
-msgid "Threshold Released"
-msgstr "Seuil de relâchement"
-
-msgid "Center Region"
-msgstr "Région centrale"
-
-msgid "Wedge Angle"
-msgstr "Angle d'un quartier"
-
-msgid "Is Sticky"
-msgstr "Est Collant"
-
-msgid "On Haptic"
-msgstr "Haptique à l'activation"
-
-msgid "Off Haptic"
-msgstr "Haptique à la désactivation"
-
-msgid "Relax Frame Interval"
-msgstr "Relâcher l'intervalle des trames"
-
-msgid "On Threshold"
-msgstr "Seuil d'activation"
-
-msgid "Off Threshold"
-msgstr "Seuil de désactivation"
-
-msgid "UUID"
-msgstr "UUID"
-
-msgid "Entity"
-msgstr "Entité"
-
-msgid "Spatial Tracking State"
-msgstr "État de suivi spatial"
-
-msgid "April Dict"
-msgstr "Avril Dict"
-
-msgid "Bounds Size"
-msgstr "Bornes de taille"
-
-msgid "Marker Type"
-msgstr "Type de marqueur"
-
-msgid "Marker ID"
-msgstr "Marker ID"
-
-msgid "Plane Alignment"
-msgstr "Alignement du plan"
-
-msgid "Plane Label"
-msgstr "Légende du plan"
-
-msgid "Display Refresh Rate"
-msgstr "Afficher le taux de rafraichissement"
-
-msgid "Render Target Size Multiplier"
-msgstr "Multiplicateur de la taille de la cible du rendu"
-
 msgid "Next"
 msgstr "Suivant"
 
-msgid "Layer Viewport"
-msgstr "Fenêtre d'affichage de calque"
-
-msgid "Use Android Surface"
-msgstr "Utiliser surface Android"
-
-msgid "Protected Content"
-msgstr "Contenu protégé"
-
-msgid "Android Surface Size"
-msgstr "Taille de la surface Android"
-
-msgid "Sort Order"
-msgstr "Ordre du tri"
-
-msgid "Alpha Blend"
-msgstr "Mélange de l'alpha"
-
-msgid "Enable Hole Punch"
-msgstr "Activer le hole punching (Perforation)"
-
-msgid "Swapchain State"
-msgstr "État de la swapchain"
-
-msgid "Mipmap Mode"
-msgstr "Mode de mipmap"
-
-msgid "Horizontal Wrap"
-msgstr "Enroulement horizontal"
-
-msgid "Vertical Wrap"
-msgstr "Enroulement vertical"
-
-msgid "Red Swizzle"
-msgstr "Swizzle Rouge"
-
-msgid "Green Swizzle"
-msgstr "Swizzle vert"
-
-msgid "Blue Swizzle"
-msgstr "Swizzle bleu"
-
-msgid "Alpha Swizzle"
-msgstr "Swizzle alpha"
-
-msgid "Max Anisotropy"
-msgstr "Anisotropie maximale"
-
 msgid "Border Color"
 msgstr "Couleur de la bordure"
-
-msgid "Aspect Ratio"
-msgstr "Ratio d'aspect"
-
-msgid "Central Angle"
-msgstr "Angle central"
-
-msgid "Fallback Segments"
-msgstr "Segment de repli"
-
-msgid "Central Horizontal Angle"
-msgstr "Angle horizontal central"
-
-msgid "Upper Vertical Angle"
-msgstr "Angle vertical supérieur"
-
-msgid "Lower Vertical Angle"
-msgstr "Angle vertical inférieur"
-
-msgid "Quad Size"
-msgstr "Taille du quadrilatère"
-
-msgid "Hand"
-msgstr "Main"
-
-msgid "Motion Range"
-msgstr "Plage de mouvement"
-
-msgid "Hand Skeleton"
-msgstr "Squelette de main"
-
-msgid "Skeleton Rig"
-msgstr "Rig du squelette"
-
-msgid "Bone Update"
-msgstr "Mettre à jour l'os"
-
-msgid "Tracker"
-msgstr "Traqueur"
-
-msgid "Make Local to Pose"
-msgstr "Rendre local à la pose"
 
 msgid "Subject"
 msgstr "Sujet"
@@ -5150,27 +4829,6 @@ msgstr "Paquets en queue maximum"
 msgid "Heartbeat Interval"
 msgstr "Intervalle du battement de cœur"
 
-msgid "Session Mode"
-msgstr "Mode de session"
-
-msgid "Required Features"
-msgstr "Fonctionnalités Requises"
-
-msgid "Optional Features"
-msgstr "Fonctionnalités Optionnelles"
-
-msgid "Requested Reference Space Types"
-msgstr "Types d'espaces référence requis"
-
-msgid "Reference Space Type"
-msgstr "Type d'espace de référence"
-
-msgid "Enabled Features"
-msgstr "Fonctionnalités activées"
-
-msgid "Visibility State"
-msgstr "État de la visibilité"
-
 msgid "Debug Keystore"
 msgstr "Keystore de débogage"
 
@@ -5314,12 +4972,6 @@ msgstr "Graphismes"
 
 msgid "OpenGL Debug"
 msgstr "Débogage OpenGL"
-
-msgid "XR Features"
-msgstr "Fonctionnalités XR"
-
-msgid "XR Mode"
-msgstr "Mode XR"
 
 msgid "Gesture"
 msgstr "Geste"
@@ -5668,9 +5320,6 @@ msgstr "Description (localisée) d'accès aux disques amovibles"
 
 msgid "Removable Volumes Usage Description Localized"
 msgstr "Description (localisée) d'accès aux disques amovibles"
-
-msgid "Min visionOS Version"
-msgstr "Version visionOS minimale"
 
 msgid "Web"
 msgstr "Web"
@@ -7777,26 +7426,8 @@ msgstr "Propagation"
 msgid "Use Two Bounces"
 msgstr "Utiliser deux rebonds"
 
-msgid "Body Tracker"
-msgstr "Traque du corps"
-
-msgid "Body Update"
-msgstr "Mise à jour du corps"
-
-msgid "Face Tracker"
-msgstr "Traqueur de face"
-
-msgid "Hand Tracker"
-msgstr "Traqueur de main"
-
 msgid "Pose"
 msgstr "Pose"
-
-msgid "Show When Tracked"
-msgstr "Afficher quand suivi"
-
-msgid "World Scale"
-msgstr "Échelle du Monde"
 
 msgid "Play Mode"
 msgstr "Mode jouer"
@@ -9238,9 +8869,6 @@ msgstr "Chemin de la fenêtre d'affichage"
 
 msgid "Disable 3D"
 msgstr "Désactiver 3D"
-
-msgid "Use XR"
-msgstr "Utiliser XR"
 
 msgid "Own World 3D"
 msgstr "Propre monde 3D"
@@ -12353,9 +11981,6 @@ msgstr "Lumières pouvant être rendu au maximum"
 msgid "Max Lights per Object"
 msgstr "Maximum de lumières par objet"
 
-msgid "Shaders"
-msgstr "Shaders"
-
 msgid "Shader Language"
 msgstr "Langue de shader"
 
@@ -12484,48 +12109,3 @@ msgstr "Disposition de sous-pixel LCD"
 
 msgid "Include Text Server Data"
 msgstr "Inclure les données textuelles de serveur"
-
-msgid "Has Tracking Data"
-msgstr "Possède des données de suivi"
-
-msgid "Body Flags"
-msgstr "Option du corps"
-
-msgid "Blend Shapes"
-msgstr "Blend Shapes"
-
-msgid "Hand Tracking Source"
-msgstr "Source du suivi des mains"
-
-msgid "Is Primary"
-msgstr "Est primaire"
-
-msgid "Play Area Mode"
-msgstr "Mode jouer dans la zone"
-
-msgid "AR"
-msgstr "AR"
-
-msgid "Is Anchor Detection Enabled"
-msgstr "La détection d'ancre est-elle activée"
-
-msgid "Tracking Confidence"
-msgstr "Confiance de la traque"
-
-msgid "World Origin"
-msgstr "Origine du monde"
-
-msgid "Camera Locked to Origin"
-msgstr "Caméra verrouillée sur l'origine"
-
-msgid "Primary Interface"
-msgstr "Interface primaire"
-
-msgid "VRS Min Radius"
-msgstr "Rayon minium du VRS"
-
-msgid "VRS Strength"
-msgstr "Force VRS"
-
-msgid "VRS Render Region"
-msgstr "Région de rendu VRS"

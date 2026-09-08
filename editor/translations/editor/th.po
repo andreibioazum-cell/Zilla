@@ -5851,12 +5851,6 @@ msgstr "มอบทรัพยากร MeshLibrary ให้กับ GridMap
 msgid "Begin Bake"
 msgstr "เริ่มต้น Bake"
 
-msgid "Class name can't be a reserved keyword"
-msgstr "ชื่อคลาสไม่สามารถมีคีย์เวิร์ดได้"
-
-msgid "Not enough bytes for decoding bytes, or invalid format."
-msgstr "ไบต์ไม่เพียงพอหรือรูปแบบไม่ถูกต้องสำหรับการถอดรหัสไบต์"
-
 msgid "%s/s"
 msgstr "%s/s"
 

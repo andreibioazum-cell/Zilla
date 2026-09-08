@@ -1576,18 +1576,6 @@ msgstr "Ẩn chỉ báo trang chủ"
 msgid "Hide Status Bar"
 msgstr "Ẩn thanh trạng thái"
 
-msgid "XR"
-msgstr "XR"
-
-msgid "View Configuration"
-msgstr "Cấu hình chế độ xem"
-
-msgid "Foveation Dynamic"
-msgstr "Foveation động"
-
-msgid "Submit Depth Buffer"
-msgstr "Gửi bộ đệm độ sâu"
-
 msgid "Boot Splash"
 msgstr "Bắn tung khởi động"
 
@@ -1611,15 +1599,6 @@ msgstr "Điểm phát sóng hình ảnh tùy chỉnh"
 
 msgid "Image"
 msgstr "Ảnh"
-
-msgid "Dotnet"
-msgstr "Dotnet"
-
-msgid "Project"
-msgstr "Dự Án"
-
-msgid "Assembly Reload Attempts"
-msgstr "Số lần thử tải lại Assembly"
 
 msgid "Time"
 msgstr "Thời gian"
@@ -1867,21 +1846,6 @@ msgstr "Số lượng tia thăm dò chất lượng cực cao"
 msgid "Max Rays per Probe Pass"
 msgstr "Số tia tối đa trên mỗi lần đi qua thăm dò"
 
-msgid "Eye Height"
-msgstr "Chiều cao mắt"
-
-msgid "IOD"
-msgstr "IOD"
-
-msgid "Oversample"
-msgstr "Lấy mẫu quá mức"
-
-msgid "K1"
-msgstr "K1"
-
-msgid "K2"
-msgstr "K2"
-
 msgid "BPM"
 msgstr "BPM"
 
@@ -1998,15 +1962,6 @@ msgstr "WebRTC"
 
 msgid "Max Queued Packets"
 msgstr "Gói hàng đợi tối đa"
-
-msgid "Requested Reference Space Types"
-msgstr "Các loại không gian tham chiếu được yêu cầu"
-
-msgid "Reference Space Type"
-msgstr "Loại không gian tham chiếu"
-
-msgid "Visibility State"
-msgstr "Trạng thái khả năng hiển thị"
 
 msgid "Force System User"
 msgstr "Buộc System User"
@@ -2730,9 +2685,6 @@ msgstr "Tỷ lệ bản đồ ánh sáng"
 
 msgid "Use Two Bounces"
 msgstr "Sử dụng hai lần nảy"
-
-msgid "Show When Tracked"
-msgstr "Hiển thị khi được theo dõi"
 
 msgid "Sync"
 msgstr "Đồng bộ hoá"
@@ -3912,15 +3864,3 @@ msgstr "Tạo bản đồ Mipmap phông chữ mặc định"
 
 msgid "Include Text Server Data"
 msgstr "Bao gồm dữ liệu máy chủ văn bản"
-
-msgid "Is Primary"
-msgstr "Là chính"
-
-msgid "AR"
-msgstr "AR"
-
-msgid "Is Anchor Detection Enabled"
-msgstr "Đã bật phát hiện neo chưa"
-
-msgid "Tracking Confidence"
-msgstr "Độ tin cậy theo dõi"

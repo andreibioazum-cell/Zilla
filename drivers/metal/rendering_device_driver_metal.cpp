@@ -328,13 +328,9 @@ RDD::TextureID RenderingDeviceDriverMetal::texture_create(const TextureFormat &p
 
 	MTL::ResourceOptions options = 0;
 	bool is_linear = false;
-#if defined(VISIONOS_ENABLED)
-	const bool supports_memoryless = true;
-#else
 	GODOT_CLANG_WARNING_PUSH_AND_IGNORE("-Wdeprecated-declarations")
 	const bool supports_memoryless = (*device_properties).features.highestFamily >= MTL::GPUFamilyApple2 && (*device_properties).features.highestFamily < MTL::GPUFamilyMac1;
 	GODOT_CLANG_WARNING_POP
-#endif
 	if (supports_memoryless && p_format.usage_bits & TEXTURE_USAGE_TRANSIENT_BIT) {
 		options = base_hazard_tracking | MTL::ResourceStorageModeMemoryless;
 		desc->setStorageMode(MTL::StorageModeMemoryless);
@@ -832,7 +828,7 @@ RDD::SamplerID RenderingDeviceDriverMetal::sampler_create(const SamplerState &p_
 
 #if __MAC_OS_X_VERSION_MAX_ALLOWED >= 260000 || __IPHONE_OS_VERSION_MAX_ALLOWED >= 260000 || __TV_OS_VERSION_MAX_ALLOWED >= 260000 || __VISION_OS_VERSION_MAX_ALLOWED >= 260000
 	if (p_state.lod_bias != 0.0) {
-		if (__builtin_available(macOS 26.0, iOS 26.0, tvOS 26.0, visionOS 26.0, *)) {
+		if (__builtin_available(macOS 26.0, iOS 26.0, tvOS 26.0, *)) {
 			desc->setLodBias(p_state.lod_bias);
 		}
 	}
@@ -967,7 +963,7 @@ void RenderingDeviceDriverMetal::_swap_chain_release_buffers(SwapChain *p_swap_c
 RDD::SwapChainID RenderingDeviceDriverMetal::swap_chain_create(RenderingContextDriver::SurfaceID p_surface) {
 	const RenderingContextDriverMetal::Surface *surface = (RenderingContextDriverMetal::Surface *)(p_surface);
 	if (sync_mode != HazardTracking) {
-		if (__builtin_available(macOS 26.0, iOS 26.0, tvOS 26.0, visionOS 26.0, *)) {
+		if (__builtin_available(macOS 26.0, iOS 26.0, tvOS 26.0, *)) {
 			add_residency_set_to_main_queue(surface->get_residency_set());
 		}
 	}
@@ -1065,7 +1061,7 @@ void RenderingDeviceDriverMetal::swap_chain_set_max_fps(SwapChainID p_swap_chain
 void RenderingDeviceDriverMetal::swap_chain_free(SwapChainID p_swap_chain) {
 	SwapChain *swap_chain = (SwapChain *)(p_swap_chain.id);
 	if (sync_mode != HazardTracking) {
-		if (__builtin_available(macOS 26.0, iOS 26.0, tvOS 26.0, visionOS 26.0, *)) {
+		if (__builtin_available(macOS 26.0, iOS 26.0, tvOS 26.0, *)) {
 			RenderingContextDriverMetal::Surface *surface = (RenderingContextDriverMetal::Surface *)(swap_chain->surface);
 			remove_residency_set_to_main_queue(surface->get_residency_set());
 		}
@@ -1199,7 +1195,7 @@ RDD::ShaderID RenderingDeviceDriverMetal::shader_create_from_container(const Ref
 	uint32_t major = mtl_reflection_data.msl_version / 10000;
 	uint32_t minor = (mtl_reflection_data.msl_version / 100) % 100;
 	options->setLanguageVersion(MTL::LanguageVersion((major << 0x10) + minor));
-	if (__builtin_available(macOS 15.0, iOS 18.0, tvOS 18.0, visionOS 2.0, *)) {
+	if (__builtin_available(macOS 15.0, iOS 18.0, tvOS 18.0, *)) {
 		options->setEnableLogging(mtl_reflection_data.needs_debug_logging());
 	}
 
@@ -1246,7 +1242,7 @@ RDD::ShaderID RenderingDeviceDriverMetal::shader_create_from_container(const Ref
 					binary);
 		} else {
 			options->setPreserveInvariance(shader_data.is_position_invariant);
-#if __MAC_OS_X_VERSION_MIN_REQUIRED >= 150000 || __IPHONE_OS_VERSION_MIN_REQUIRED >= 180000 || __TV_OS_VERSION_MIN_REQUIRED >= 180000 || defined(VISIONOS_ENABLED)
+#if __MAC_OS_X_VERSION_MIN_REQUIRED >= 150000 || __IPHONE_OS_VERSION_MIN_REQUIRED >= 180000 || __TV_OS_VERSION_MIN_REQUIRED >= 180000
 			options->setMathMode(MTL::MathModeFast);
 #else
 			options->setFastMathEnabled(true);
@@ -2810,10 +2806,6 @@ bool RenderingDeviceDriverMetal::has_feature(Features p_feature) {
 			return device_properties->features.supports_msaa_depth_resolve;
 		case SUPPORTS_RASTERIZATION_RATE_MAP: {
 			bool is_supported = device->supportsRasterizationRateMap(1);
-#if defined(VISIONOS_ENABLED)
-			// We need to support 2 layers on visionOS. Using more than 2 layers shouldn't be needed.
-			is_supported &= device->supportsRasterizationRateMap(2);
-#endif
 			return is_supported;
 		}
 		case SUPPORTS_GPU_MAPPABLE_BUFFER:
@@ -2880,7 +2872,7 @@ RenderingDeviceDriverMetal::RenderingDeviceDriverMetal(RenderingContextDriverMet
 		_shader_load_strategy = ShaderLoadStrategy::LAZY;
 	}
 #else
-	// Always use the lazy strategy on other OSs like iOS, tvOS, or visionOS.
+	// Always use the lazy strategy on other OSs like iOS or tvOS.
 	_shader_load_strategy = ShaderLoadStrategy::LAZY;
 #endif
 }
@@ -2957,8 +2949,6 @@ static MetalDeviceProfile device_profile_from_properties(MetalDeviceProperties *
 	res.platform = DP::Platform::macOS;
 #elif TARGET_OS_IPHONE
 	res.platform = DP::Platform::iOS;
-#elif TARGET_OS_VISION
-	res.platform = DP::Platform::visionOS;
 #else
 #error "Unsupported Apple platform"
 #endif

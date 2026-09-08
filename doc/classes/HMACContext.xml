@@ -5,8 +5,7 @@
 	</brief_description>
 	<description>
 		The HMACContext class is useful for advanced HMAC use cases, such as streaming the message as it supports creating the message over time rather than providing it all at once.
-		[codeblocks]
-		[gdscript]
+		[codeblock]
 		extends Node
 		var ctx = HMACContext.new()
 
@@ -23,32 +22,7 @@
 			var hmac = ctx.finish()
 			print(hmac.hex_encode())
 
-		[/gdscript]
-		[csharp]
-		using Godot;
-		using System.Diagnostics;
-
-		public partial class MyNode : Node
-		{
-			private HmacContext _ctx = new HmacContext();
-
-			public override void _Ready()
-			{
-				byte[] key = "supersecret".ToUtf8Buffer();
-				Error err = _ctx.Start(HashingContext.HashType.Sha256, key);
-				Debug.Assert(err == Error.Ok);
-				byte[] msg1 = "this is ".ToUtf8Buffer();
-				byte[] msg2 = "super duper secret".ToUtf8Buffer();
-				err = _ctx.Update(msg1);
-				Debug.Assert(err == Error.Ok);
-				err = _ctx.Update(msg2);
-				Debug.Assert(err == Error.Ok);
-				byte[] hmac = _ctx.Finish();
-				GD.Print(hmac.HexEncode());
-			}
-		}
-		[/csharp]
-		[/codeblocks]
+		[/codeblock]
 	</description>
 	<tutorials>
 	</tutorials>

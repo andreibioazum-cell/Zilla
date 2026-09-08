@@ -3093,14 +3093,6 @@ msgstr ""
 msgid "Note:"
 msgstr "Catatan:"
 
-msgid ""
-"There are notable differences when using this API with C#. See [url=%s]C# API "
-"differences to GDScript[/url] for more information."
-msgstr ""
-"Tidak ada catatan perbedaan ketika menggunakan API ini dengan C#. Lihat "
-"[url=%s]Perbedaan Antara C# API dan GDScript[/url] untuk informasi lebih "
-"lanjut."
-
 msgid "Online Tutorials"
 msgstr "Tutorial Daring"
 
@@ -4695,19 +4687,6 @@ msgid ""
 msgstr ""
 "File .ipa hanya bisa dibuat di macOS. Meninggalkan proyek Xcode tanpa membuat "
 "paket aplikasi."
-
-msgid ""
-"Exporting to an Apple Embedded platform when using C#/.NET is experimental "
-"and requires macOS."
-msgstr ""
-"Mengekspor game ke platform Internal Apple menggunakan C#/.NET masih bersifat "
-"eksperimental dan membutuhkan macOS."
-
-msgid ""
-"Exporting to an Apple Embedded platform when using C#/.NET is experimental."
-msgstr ""
-"Mengekspor ke platform Tersemat (Embedded) Apple saat menggunakan C#/.NET "
-"bersifat eksperimental."
 
 msgid "Custom debug template not found."
 msgstr "Templat debug kustom tidak ditemukan."
@@ -10153,9 +10132,6 @@ msgstr "Variabel Global"
 msgid "3D Engine"
 msgstr "Mesin 3D"
 
-msgid "XR"
-msgstr "XR"
-
 msgid "RenderingDevice"
 msgstr "PerangkatRendering"
 
@@ -10182,9 +10158,6 @@ msgstr "Font Graphite SIL"
 
 msgid "Multi-channel Signed Distance Field Font Rendering"
 msgstr "Rendering Font Bidang Jarak Bertanda Multi-saluran"
-
-msgid "XR (AR and VR)."
-msgstr "XR (AR dan VR)."
 
 msgid ""
 "Fallback implementation of Text Server\n"
@@ -10882,12 +10855,6 @@ msgstr "Berikan resource MeshLibrary ke GridMap ini untuk menggunakan mesh-nya."
 msgid "Begin Bake"
 msgstr "Mulai Bake"
 
-msgid "Class name can't be a reserved keyword"
-msgstr "Nama kelas tidak boleh reserved keyword"
-
-msgid "Not enough bytes for decoding bytes, or invalid format."
-msgstr "Tidak cukup byte untuk decoding byte, atau format tidak valid."
-
 msgid "%s/s"
 msgstr "%s / s"
 
@@ -10934,9 +10901,6 @@ msgstr "Float"
 
 msgid "Vector2"
 msgstr "Vector2"
-
-msgid "Pose"
-msgstr "Pose"
 
 msgid "E constant (2.718282). Represents the base of the natural logarithm."
 msgstr "Konstanta E (2.718282). Mewakili basis dari logaritma natural."

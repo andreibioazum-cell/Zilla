@@ -2941,13 +2941,6 @@ msgstr ""
 msgid "Note:"
 msgstr "குறிப்பு:"
 
-msgid ""
-"There are notable differences when using this API with C#. See [url=%s]C# API "
-"differences to GDScript[/url] for more information."
-msgstr ""
-"சி#உடன் இந்த பநிஇ பயன்படுத்தும் போது குறிப்பிடத்தக்க வேறுபாடுகள் உள்ளன. மேலும் தகவலுக்கு "
-"[url =%s] சி# பநிஇ வேறுபாடுகளைப் பார்க்கவும் [/url]."
-
 msgid "Online Tutorials"
 msgstr "நிகழ்நிலை பயிற்சிகள்"
 
@@ -4784,13 +4777,6 @@ msgstr ""
 "ச்கிரிப்டை இயக்க முடியாது, ஏனெனில் இது ஒரு கருவி ச்கிரிப்ட் அல்ல (மேலே @tool "
 "சிறுகுறிப்பைச் சேர்க்கவும்)."
 
-msgid ""
-"Cannot run the script because it's not a tool script (add the [Tool] "
-"attribute above the class definition)."
-msgstr ""
-"ச்கிரிப்டை இயக்க முடியாது, ஏனெனில் இது ஒரு கருவி ச்கிரிப்ட் அல்ல (வகுப்பு வரையறைக்கு "
-"மேலே [கருவி] பண்புக்கூறு சேர்க்கவும்)."
-
 msgid "Cannot run the script because it's not a tool script."
 msgstr "ச்கிரிப்டை இயக்க முடியாது, ஏனெனில் இது ஒரு கருவி ச்கிரிப்ட் அல்ல."
 
@@ -5407,19 +5393,6 @@ msgid ""
 msgstr ""
 ".பாவை MACOS இல் மட்டுமே கட்ட முடியும். தொகுப்பை உருவாக்காமல் XCODE திட்டத்தை விட்டு "
 "வெளியேறுகிறது."
-
-msgid ""
-"Exporting to an Apple Embedded platform when using C#/.NET is experimental "
-"and requires macOS."
-msgstr ""
-"சி#/. நிகரத்தைப் பயன்படுத்தும் போது ஆப்பிள் உட்பொதிக்கப்பட்ட தளத்திற்கு ஏற்றுமதி செய்வது "
-"சோதனை மற்றும் மேகோச் தேவைப்படுகிறது."
-
-msgid ""
-"Exporting to an Apple Embedded platform when using C#/.NET is experimental."
-msgstr ""
-"சி#/. நிகரத்தைப் பயன்படுத்தும் போது ஆப்பிள் உட்பொதிக்கப்பட்ட தளத்திற்கு ஏற்றுமதி செய்வது "
-"சோதனை."
 
 msgid "Custom debug template not found."
 msgstr "தனிப்பயன் பிழைத்திருத்த வார்ப்புரு கிடைக்கவில்லை."
@@ -7663,16 +7636,6 @@ msgstr ""
 "\n"
 
 msgid ""
-"Warning: This project uses C#, but this build of Godot does not have\n"
-"the Mono module. If you proceed you will not be able to use any C# scripts.\n"
-"\n"
-msgstr ""
-"எச்சரிக்கை: இந்த திட்டம் சி#ஐப் பயன்படுத்துகிறது, ஆனால் இந்த கோடோட்டின் கட்டமைப்பைக் "
-"கொண்டிருக்கவில்லை \n"
-"மோனோ தொகுதி. நீங்கள் தொடர்ந்தால் எந்த சி# ச்கிரிப்ட்களையும் பயன்படுத்த முடியாது.\n"
-"\n"
-
-msgid ""
 "Warning: This project was last edited in Godot %s. Opening will change it to "
 "Godot %s.\n"
 "\n"
@@ -8055,20 +8018,8 @@ msgstr "இயங்கும் திட்டத்தை நிறுத்�
 msgid "Run Current Scene"
 msgstr "தற்போதைய காட்சியை இயக்கவும்"
 
-msgid "Run Scene in Regular Mode"
-msgstr "வழக்கமான பயன்முறையில் காட்சியை இயக்கவும்"
-
-msgid "Run Scene in XR Mode"
-msgstr "எக்ச்ஆர் பயன்முறையில் காட்சியை இயக்கவும்"
-
 msgid "Run Specific Scene"
 msgstr "குறிப்பிட்ட காட்சியை இயக்கவும்"
-
-msgid "Run in Regular Mode"
-msgstr "வழக்கமான பயன்முறையில் இயக்கவும்"
-
-msgid "Run in XR Mode"
-msgstr "எக்ச்ஆர் பயன்முறையில் இயக்கவும்"
 
 msgid "Enable Movie Maker Mode"
 msgstr "மூவி மேக்கர் பயன்முறையை இயக்கு"
@@ -13541,12 +13492,6 @@ msgstr "வழிசெலுத்தல் (2 டி)"
 msgid "Navigation (3D)"
 msgstr "வழிசெலுத்தல் (3D)"
 
-msgid "XR"
-msgstr "எக்ச்ஆர்"
-
-msgid "OpenXR"
-msgstr "Openxr"
-
 msgid "Wayland"
 msgstr "வேலண்ட்"
 
@@ -13603,12 +13548,6 @@ msgstr "சில் கிராஃபைட் எழுத்துருக�
 
 msgid "Multi-channel Signed Distance Field Font Rendering"
 msgstr "மல்டி-சேனல் கையொப்பமிடப்பட்ட தூர புலம் எழுத்துரு வழங்குதல்"
-
-msgid "XR (AR and VR)."
-msgstr "எக்ச்ஆர் (ஏ.ஆர் மற்றும் வி.ஆர்)."
-
-msgid "OpenXR standard implementation (requires XR to be enabled)."
-msgstr "OpenXR நிலையான செயல்படுத்தல் (எக்ச்ஆர் இயக்கப்பட வேண்டும்)."
 
 msgid "Forward+ renderer for advanced 3D graphics."
 msgstr "மேம்பட்ட 3D கிராபிக்ச் முன்னோக்கி+ ரெண்டரர்."
@@ -13697,13 +13636,6 @@ msgstr ""
 "இது பயன்படுத்தப்பட்ட வகுப்புகளைக் கண்டறிய தற்போதைய திட்டத்தில் உள்ள அனைத்து கோப்புகளையும் "
 "வருடு செய்யும். \n"
 "முதல் வருடு சிறிது நேரம் ஆகலாம், குறிப்பாக பெரிய திட்டங்களில்."
-
-msgid ""
-"Warning: Class detection for C# scripts is not currently available, and such "
-"files will be ignored."
-msgstr ""
-"எச்சரிக்கை: சி# ச்கிரிப்ட்களுக்கான வகுப்பு கண்டறிதல் தற்போது கிடைக்கவில்லை, அத்தகைய "
-"கோப்புகள் புறக்கணிக்கப்படும்."
 
 msgid "Scanning Project for Used Classes"
 msgstr "பயன்படுத்தப்பட்ட வகுப்புகளுக்கான ச்கேனிங் திட்டம்"
@@ -14946,54 +14878,6 @@ msgstr "டெனோயிங்"
 msgid "Retrieving textures"
 msgstr "அமைப்புகளை மீட்டெடுப்பது"
 
-msgid "Class name can't be a reserved keyword"
-msgstr "வகுப்பு பெயர் ஒதுக்கப்பட்ட முக்கிய சொல்லாக இருக்க முடியாது"
-
-msgid "Class name must be a valid identifier"
-msgstr "வகுப்பு பெயர் சரியான அடையாளங்காட்டியாக இருக்க வேண்டும்"
-
-msgid "Not enough bytes for decoding bytes, or invalid format."
-msgstr "டிகோடிங் பைட்டுகளுக்கு போதுமான பைட்டுகள் இல்லை, அல்லது தவறான வடிவம்."
-
-msgid ""
-"Unable to load .NET runtime, no compatible version was found.\n"
-"Attempting to create/edit a project will lead to a crash.\n"
-"\n"
-"Please install the .NET SDK 8.0 or later from https://get.dot.net and restart "
-"Godot."
-msgstr ""
-".NET இயக்க நேரத்தை ஏற்ற முடியவில்லை, இணக்கமான பதிப்பு எதுவும் காணப்படவில்லை. \n"
-"ஒரு திட்டத்தை உருவாக்க/திருத்த முயற்சிப்பது விபத்துக்கு வழிவகுக்கும். \n"
-"\n"
-"தயவுசெய்து .NET SDK 8.0 அல்லது அதற்குப் பிறகு https://get.dot.net இலிருந்து நிறுவி "
-"கோடோட்டை மறுதொடக்கம் செய்யுங்கள்."
-
-msgid "Failed to load .NET runtime"
-msgstr ".NET இயக்க நேரத்தை ஏற்றுவதில் தோல்வி"
-
-msgid ""
-"Unable to find the .NET assemblies directory.\n"
-"Make sure the '%s' directory exists and contains the .NET assemblies."
-msgstr ""
-"நெட் அசெம்பிளிச் கோப்பகத்தைக் கண்டுபிடிக்க முடியவில்லை. \n"
-"'%s' அடைவு இருப்பதை உறுதிசெய்து, நெட் கூட்டங்கள் உள்ளன."
-
-msgid ".NET assemblies not found"
-msgstr ".NET கூட்டங்கள் காணப்படவில்லை"
-
-msgid ""
-"Unable to load .NET runtime, specifically hostfxr.\n"
-"Attempting to create/edit a project will lead to a crash.\n"
-"\n"
-"Please install the .NET SDK 8.0 or later from https://get.dot.net and restart "
-"Godot."
-msgstr ""
-".Net இயக்க நேரத்தை ஏற்ற முடியவில்லை, குறிப்பாக ஓச்ட்ஃப்எக்ச்ஆர். \n"
-"ஒரு திட்டத்தை உருவாக்க/திருத்த முயற்சிப்பது விபத்துக்கு வழிவகுக்கும். \n"
-"\n"
-"தயவுசெய்து .NET SDK 8.0 அல்லது அதற்குப் பிறகு https://get.dot.net இலிருந்து நிறுவி "
-"கோடோட்டை மறுதொடக்கம் செய்யுங்கள்."
-
 msgctxt "Network"
 msgid "Down"
 msgstr "கீழே"
@@ -15220,164 +15104,6 @@ msgstr ""
 msgid "Toggles whether the noise preview is computed in 3D space."
 msgstr "ஒலி முன்னோட்டம் 3D இடத்தில் கணக்கிடப்பட்டதா என்பதை மாற்றுகிறது."
 
-msgid "Rename Action"
-msgstr "நடவடிக்கை மறுபெயரிடுங்கள்"
-
-msgid "Rename Actions Localized name"
-msgstr "செயல்கள் உள்ளூர்மயமாக்கப்பட்ட பெயரை மறுபெயரிடுங்கள்"
-
-msgid "Change Action Type"
-msgstr "செயல் வகையை மாற்றவும்"
-
-msgid ""
-"Internal name of the action. Some XR runtimes don't allow spaces or special "
-"characters."
-msgstr ""
-"செயலின் உள் பெயர். சில எக்ச்ஆர் ரன் டைம்கள் இடைவெளிகளையோ சிறப்பு எழுத்துக்களையோ "
-"அனுமதிக்காது."
-
-msgid "Action Name"
-msgstr "செயல் பெயர்"
-
-msgid "Human-readable name of the action. This can be displayed to end users."
-msgstr "செயலின் மனிதனால் படிக்கக்கூடிய பெயர். இறுதி பயனர்களுக்கு இது காட்டப்படலாம்."
-
-msgid "Action Localized Name"
-msgstr "செயல் உள்ளூர்மயமாக்கப்பட்ட பெயர்"
-
-msgid "Type of the action"
-msgstr "செயலின் வகை"
-
-msgid "Action Type"
-msgstr "செயல் வகை"
-
-msgid "Remove action"
-msgstr "செயலை அகற்று"
-
-msgid "Add action set"
-msgstr "செயல் தொகுப்பைச் சேர்க்கவும்"
-
-msgid "Remove action set"
-msgstr "செயல் தொகுப்பை அகற்று"
-
-msgid "Add interaction profile"
-msgstr "தொடர்பு சுயவிவரத்தைச் சேர்க்கவும்"
-
-msgid "Error loading %s: %s."
-msgstr "பிழை ஏற்றுதல் %s: %s."
-
-msgid "Error saving file %s: %s"
-msgstr "பிழை சேமிப்பு கோப்பு %s: %s"
-
-msgid "OpenXR Action map:"
-msgstr "Openxr செயல் வரைபடம்:"
-
-msgid "Remove interaction profile"
-msgstr "தொடர்பு சுயவிவரத்தை அகற்று"
-
-msgid "OpenXR Action Map"
-msgstr "Openxr செயல் வரைபடம்"
-
-msgid "Add Action Set"
-msgstr "செயல் தொகுப்பைச் சேர்க்கவும்"
-
-msgid "Add an action set."
-msgstr "ஒரு செயல் தொகுப்பைச் சேர்க்கவும்."
-
-msgid "Add profile"
-msgstr "சுயவிவரத்தைச் சேர்க்கவும்"
-
-msgid "Add an interaction profile."
-msgstr "தொடர்பு சுயவிவரத்தைச் சேர்க்கவும்."
-
-msgid "Save this OpenXR action map."
-msgstr "இந்த Openxr செயல் வரைபடத்தை சேமிக்கவும்."
-
-msgid "Reset to default OpenXR action map."
-msgstr "இயல்புநிலை Openxr செயல் வரைபடத்திற்கு மீட்டமைக்கவும்."
-
-msgid "Action Sets"
-msgstr "செயல் தொகுப்புகள்"
-
-msgid "Rename Action Set"
-msgstr "செயல் தொகுப்பு மறுபெயரிடுதல்"
-
-msgid "Rename Action Sets Localized name"
-msgstr "மறுபெயரிடு நடவடிக்கை உள்ளூர்மயமாக்கப்பட்ட பெயரை அமைக்கிறது"
-
-msgid "Change Action Sets priority"
-msgstr "அதிரடி மாற்றத்தை மாற்றுகிறது"
-
-msgid "Add action"
-msgstr "செயலைச் சேர்க்கவும்"
-
-msgid "Delete action"
-msgstr "செயலை நீக்கு"
-
-msgid "Fold"
-msgstr "மடிப்பு"
-
-msgid "Action Set Name"
-msgstr "செயல் தொகுப்பு பெயர்"
-
-msgid ""
-"Human-readable name of the action set. This can be displayed to end users."
-msgstr ""
-"செயல் தொகுப்பின் மனிதனால் படிக்கக்கூடிய பெயர். இறுதி பயனர்களுக்கு இது காட்டப்படலாம்."
-
-msgid "Action Set Localized Name"
-msgstr "செயல் உள்ளூர்மயமாக்கப்பட்ட பெயரை அமைக்கவும்"
-
-msgid ""
-"Priority of the action set. If multiple action sets bind to the same input, "
-"the action set with the highest priority will be updated."
-msgstr ""
-"செயல் தொகுப்பின் முன்னுரிமை. பல செயல் தொகுப்புகள் ஒரே உள்ளீட்டுடன் பிணைக்கப்பட்டால், அதிக "
-"முன்னுரிமையுடன் அமைக்கப்பட்ட செயல் புதுப்பிக்கப்படும்."
-
-msgid "Action Set Priority"
-msgstr "செயல் முன் முன்னுரிமை"
-
-msgid "Add action."
-msgstr "செயலைச் சேர்க்கவும்."
-
-msgid "Remove action set."
-msgstr "செயல் தொகுப்பை அகற்று."
-
-msgid "Remove this binding modifier."
-msgstr "இந்த பிணைப்பு மாற்றியமைப்பை அகற்று."
-
-msgid "Remove binding modifier"
-msgstr "பிணைப்பு மாற்றியமைப்பை அகற்று"
-
-msgid "Add binding modifier"
-msgstr "பிணைப்பு மாற்றியமைப்பைச் சேர்க்கவும்"
-
-msgid "Note: modifiers will only be applied if supported on the host system."
-msgstr ""
-"குறிப்பு: புரவலன் அமைப்பில் ஆதரிக்கப்பட்டால் மட்டுமே மாற்றியமைப்பாளர்கள் பயன்படுத்தப்படும்."
-
-msgid "Binding modifiers for:"
-msgstr "இதற்கான பிணைப்பு மாற்றிகள்:"
-
-msgid "Remove action from interaction profile"
-msgstr "தொடர்பு சுயவிவரத்திலிருந்து செயலை அகற்று"
-
-msgid "Edit binding modifiers"
-msgstr "பிணைப்பு மாற்றிகளைத் திருத்தவும்"
-
-msgid "Note: This interaction profile requires extension %s support."
-msgstr "குறிப்பு: இந்த தொடர்பு சுயவிவரத்திற்கு நீட்டிப்பு %s உதவி தேவைப்படுகிறது."
-
-msgid "Add binding"
-msgstr "பிணைப்பு சேர்க்கவும்"
-
-msgid "Remove binding"
-msgstr "பிணைப்பை அகற்று"
-
-msgid "Note: This binding path requires extension %s support."
-msgstr "குறிப்பு: இந்த பிணைப்பு பாதைக்கு நீட்டிப்பு %s உதவி தேவைப்படுகிறது."
-
 msgid "Boolean"
 msgstr "பூலியன்"
 
@@ -15386,61 +15112,6 @@ msgstr "மிதவை"
 
 msgid "Vector2"
 msgstr "திசையன் 2"
-
-msgid "Pose"
-msgstr "போச்"
-
-msgid "Haptic"
-msgstr "ஆப்டிக்"
-
-msgid "Unknown"
-msgstr "தெரியவில்லை"
-
-msgid "Modifiers"
-msgstr "மாற்றியமைப்பாளர்கள்"
-
-msgid "Select an action"
-msgstr "ஒரு செயலைத் தேர்ந்தெடுக்கவும்"
-
-msgid "Select an interaction profile"
-msgstr "தொடர்பு சுயவிவரத்தைத் தேர்ந்தெடுக்கவும்"
-
-msgid "All interaction profiles have been added to the action map."
-msgstr "அனைத்து தொடர்பு சுயவிவரங்களும் செயல் வரைபடத்தில் சேர்க்கப்பட்டுள்ளன."
-
-msgid "Choose an XR runtime."
-msgstr "எக்ச்ஆர் இயக்க நேரத்தைத் தேர்வுசெய்க."
-
-msgid ""
-"Cannot use the same SubViewport with multiple OpenXR composition layers. "
-"Clear it from its current layer first."
-msgstr ""
-"பல ஓபன்எக்ச்ஆர் கலவை அடுக்குகளுடன் ஒரே சப் வியூ போர்ட்டைப் பயன்படுத்த முடியாது. முதலில் "
-"அதன் தற்போதைய அடுக்கிலிருந்து அழிக்கவும்."
-
-msgid ""
-"Cannot set SubViewport on an OpenXR composition layer when using an Android "
-"surface."
-msgstr ""
-"ஆண்ட்ராய்டு மேற்பரப்பைப் பயன்படுத்தும் போது Openxr கலவை அடுக்கில் SUBVIEWPORT ஐ அமைக்க "
-"முடியாது."
-
-msgid ""
-"OpenXR composition layers must have orthonormalized transforms (ie. no scale "
-"or shearing)."
-msgstr ""
-"OpenXR கலவை அடுக்குகளில் ஆர்த்தோனார்மலைச் மாற்றங்கள் இருக்க வேண்டும் (அதாவது அளவு அல்லது "
-"வெட்டுதல் இல்லை)."
-
-msgid ""
-"Hole punching won't work as expected unless the sort order is less than zero."
-msgstr ""
-"வரிசை வரிசை பூச்சியத்தை விட குறைவாக இல்லாவிட்டால் துளை குத்துதல் எதிர்பார்த்தபடி "
-"செயல்படாது."
-
-msgid "OpenXR visibility mask must have an XRCamera3D node as their parent."
-msgstr ""
-"Openxr தெரிவுநிலை முகமூடியில் அவர்களின் பெற்றோராக XRCAMERA3D முனை இருக்க வேண்டும்."
 
 msgid "E constant (2.718282). Represents the base of the natural logarithm."
 msgstr "மின் மாறிலி (2.718282). இயற்கை மடக்கையின் தளத்தைக் குறிக்கிறது."
@@ -16898,25 +16569,6 @@ msgstr "சாதனத்தில் இயக்க முடியவில�
 msgid "Error: There was a problem validating the keystore username and password"
 msgstr "பிழை: கீச்டோர் பயனர்பெயர் மற்றும் கடவுச்சொல்லை சரிபார்க்கும் சிக்கல் இருந்தது"
 
-msgid ""
-"Unable to determine the C# project's TFM, it may be incompatible. The export "
-"template only supports '%s'. Make sure the project targets '%s' or consider "
-"using gradle builds instead."
-msgstr ""
-"சி# திட்டத்தின் TFM ஐ தீர்மானிக்க முடியவில்லை, அது பொருந்தாது. ஏற்றுமதி வார்ப்புரு '%s' "
-"ஐ மட்டுமே ஆதரிக்கிறது. திட்ட இலக்குகளை '%s' இலக்காகக் கொள்ளுங்கள் அல்லது அதற்கு பதிலாக "
-"கிரேடில் கட்டமைப்புகளைப் பயன்படுத்துவதைக் கவனியுங்கள்."
-
-msgid ""
-"C# project targets '%s' but the export template only supports '%s'. Consider "
-"using gradle builds instead."
-msgstr ""
-"சி# திட்ட இலக்குகள் '%s' ஆனால் ஏற்றுமதி வார்ப்புரு '%s' ஐ மட்டுமே ஆதரிக்கிறது. அதற்கு "
-"பதிலாக கிரேடில் பில்ட்சைப் பயன்படுத்துவதைக் கவனியுங்கள்."
-
-msgid "Exporting to Android when using C#/.NET is experimental."
-msgstr "C#/. வலைமம் ஐப் பயன்படுத்தும் போது ஆண்ட்ராய்டு க்கு ஏற்றுமதி செய்வது சோதனை."
-
 msgid "Custom Android source template not found."
 msgstr "தனிப்பயன் ஆண்ட்ராய்டு மூல வார்ப்புரு கிடைக்கவில்லை."
 
@@ -17258,13 +16910,6 @@ msgstr "ஆப் கடை விநியோகத்திற்கு நி
 msgid "App sandbox is required for App Store distribution."
 msgstr "ஆப் கடை விநியோகத்திற்கு ஆப் சாண்ட்பாக்ச் தேவை."
 
-msgid ""
-"'rcodesign' doesn't support signing applications with embedded dynamic "
-"libraries (GDExtension or .NET)."
-msgstr ""
-"உட்பொதிக்கப்பட்ட மாறும் நூலகங்களுடன் (gdextension அல்லது .net) பயன்பாடுகளில் "
-"கையொப்பமிடுவதை 'rcodesign' ஆதரிக்கவில்லை."
-
 msgid "Code signing is required for App Store distribution."
 msgstr "ஆப் கடை விநியோகத்திற்கு குறியீடு கையொப்பமிடுதல் தேவை."
 
@@ -17576,21 +17221,6 @@ msgstr "கோப்பைப் படிக்க முடியவில்�
 
 msgid "PWA"
 msgstr "PWA"
-
-msgid ""
-"Exporting to Web is currently not supported in Godot 4 when using C#/.NET. "
-"Use Godot 3 to target Web with C#/Mono instead."
-msgstr ""
-"சி#/. நிகரத்தைப் பயன்படுத்தும் போது கோடோட் 4 இல் வலையில் ஏற்றுமதி செய்வது தற்போது "
-"ஆதரிக்கப்படவில்லை. அதற்கு பதிலாக சி#/மோனோவுடன் வலையை குறிவைக்க கோடோட் 3 ஐப் "
-"பயன்படுத்தவும்."
-
-msgid ""
-"If this project does not use C#, use a non-C# editor build to export the "
-"project."
-msgstr ""
-"இந்த திட்டம் சி# ஐப் பயன்படுத்தவில்லை என்றால், திட்டத்தை ஏற்றுமதி செய்ய சி# அல்லாத எடிட்டர் "
-"கட்டமைப்பைப் பயன்படுத்தவும்."
 
 msgid "Could not read HTML shell: \"%s\"."
 msgstr "உஉகுமொ செல்லைப் படிக்க முடியவில்லை: \"%s\"."
@@ -18202,44 +17832,6 @@ msgid ""
 msgstr ""
 "ஒரு காட்சிக்கு ஒரு உலக சுற்றுச்சூழல் மட்டுமே அனுமதிக்கப்படுகிறது (அல்லது உடனடி "
 "காட்சிகளின் தொகுப்பு)."
-
-msgid ""
-"XRCamera3D may not function as expected without an XROrigin3D node as its "
-"parent."
-msgstr "Xrcamera3d அதன் பெற்றோராக xrorigin3d முனை இல்லாமல் எதிர்பார்த்தபடி செயல்படாது."
-
-msgid ""
-"XRCamera3D should have physics_interpolation_mode set to OFF in order to "
-"avoid jitter."
-msgstr "Xrcamera3d இயற்பியல்_இண்டர்போலேசன்_மோட் அணிய வேண்டும்."
-
-msgid ""
-"XRNode3D may not function as expected without an XROrigin3D node as its "
-"parent."
-msgstr "Xrnode3d அதன் பெற்றோராக xrorigin3d முனை இல்லாமல் எதிர்பார்த்தபடி செயல்படாது."
-
-msgid "No tracker name is set."
-msgstr "டிராக்கர் பெயர் எதுவும் அமைக்கப்படவில்லை."
-
-msgid "No pose is set."
-msgstr "போச் அமைக்கப்படவில்லை."
-
-msgid ""
-"XRNode3D should have physics_interpolation_mode set to OFF in order to avoid "
-"jitter."
-msgstr "Xrnode3d இயற்பியல்_இண்டர்போலேசன்_மோட் இருக்க வேண்டும்."
-
-msgid "XROrigin3D requires an XRCamera3D child node."
-msgstr "Xrorigin3D க்கு ஒரு XRCAMERA3D குழந்தை முனை தேவை."
-
-msgid ""
-"XR shaders are not enabled in project settings. Stereoscopic output is not "
-"supported unless they are enabled. Please enable `xr/shaders/enabled` to use "
-"stereoscopic output."
-msgstr ""
-"திட்ட அமைப்புகளில் எக்ச்ஆர் சேடர்கள் இயக்கப்படவில்லை. ச்டீரியோச்கோபிக் வெளியீடு "
-"இயக்கப்படாவிட்டால் அவை ஆதரிக்கப்படாது. ச்டீரியோச்கோபிக் வெளியீட்டைப் பயன்படுத்த `எக்ச்ஆர்/சேடர்ச்/"
-"இயக்கப்பட்ட` ஐ இயக்கவும்."
 
 msgid "Animation Apply Reset"
 msgstr "அனிமேசன் மீட்டமைப்பைப் பயன்படுத்துகிறது"

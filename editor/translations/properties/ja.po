@@ -2961,27 +2961,6 @@ msgstr "ステータスバーを隠す"
 msgid "Suppress UI Gesture"
 msgstr "UIジェスチャーを抑制する"
 
-msgid "XR"
-msgstr "XR"
-
-msgid "OpenXR"
-msgstr "OpenXR"
-
-msgid "Default Action Map"
-msgstr "デフォルトのアクションマップ"
-
-msgid "Environment Blend Mode"
-msgstr "環境ブレンドモード"
-
-msgid "Foveation Level"
-msgstr "フォベーションレベル"
-
-msgid "Foveation Dynamic"
-msgstr "動的フォベーション"
-
-msgid "Hand Tracking"
-msgstr "ハンドトラッキング"
-
 msgid "Boot Splash"
 msgstr "ブートスプラッシュ"
 
@@ -3038,21 +3017,6 @@ msgstr "画像"
 
 msgid "Minimum Display Time"
 msgstr "最小表示時間"
-
-msgid "Dotnet"
-msgstr ".NET"
-
-msgid "Project"
-msgstr "プロジェクト"
-
-msgid "Assembly Name"
-msgstr "アセンブリ名"
-
-msgid "Solution Directory"
-msgstr "ソリューションのディレクトリ"
-
-msgid "Assembly Reload Attempts"
-msgstr "アセンブリのリロード試行"
 
 msgid "Time"
 msgstr "時間"
@@ -3357,30 +3321,6 @@ msgstr "ノイズ除去"
 msgid "Denoiser"
 msgstr "デノイザー"
 
-msgid "Eye Height"
-msgstr "目の高さ"
-
-msgid "IOD"
-msgstr "IOD"
-
-msgid "Display Width"
-msgstr "表示幅"
-
-msgid "Oversample"
-msgstr "オーバーサンプル"
-
-msgid "K1"
-msgstr "K1"
-
-msgid "K2"
-msgstr "K2"
-
-msgid "Vulkan VRS"
-msgstr "Vulkan VRS"
-
-msgid "Min Radius"
-msgstr "最小半径"
-
 msgid "BPM"
 msgstr "BPM"
 
@@ -3432,47 +3372,8 @@ msgstr "法線マップとして"
 msgid "Bump Strength"
 msgstr "バンプ強度"
 
-msgid "Display Refresh Rate"
-msgstr "ディスプレイリフレッシュレート"
-
-msgid "Render Target Size Multiplier"
-msgstr "レンダーターゲットサイズ倍率"
-
 msgid "Next"
 msgstr "次"
-
-msgid "Layer Viewport"
-msgstr "レイヤービューポート"
-
-msgid "Alpha Blend"
-msgstr "アルファブレンド"
-
-msgid "Mipmap Mode"
-msgstr "ミップマップモード"
-
-msgid "Horizontal Wrap"
-msgstr "水平ラップ"
-
-msgid "Vertical Wrap"
-msgstr "垂直ラップ"
-
-msgid "Red Swizzle"
-msgstr "赤スウィズル"
-
-msgid "Green Swizzle"
-msgstr "緑スウィズル"
-
-msgid "Blue Swizzle"
-msgstr "青スウィズル"
-
-msgid "Alpha Swizzle"
-msgstr "アルファスウィズル"
-
-msgid "Max Anisotropy"
-msgstr "最大異方性"
-
-msgid "Bone Update"
-msgstr "ボーン更新"
 
 msgid "Names"
 msgstr "名前"
@@ -3521,21 +3422,6 @@ msgstr "書き込みモード"
 
 msgid "Handshake Timeout"
 msgstr "ハンドシェイクのタイムアウト"
-
-msgid "Session Mode"
-msgstr "セッションモード"
-
-msgid "Required Features"
-msgstr "必須機能"
-
-msgid "Optional Features"
-msgstr "オプションの機能"
-
-msgid "Enabled Features"
-msgstr "有効な機能"
-
-msgid "Visibility State"
-msgstr "可視性の状態"
 
 msgid "Java SDK Path"
 msgstr "Java SDKパス"
@@ -3593,12 +3479,6 @@ msgstr "署名付き"
 
 msgid "OpenGL Debug"
 msgstr "OpenGLデバッグ"
-
-msgid "XR Features"
-msgstr "XR機能"
-
-msgid "XR Mode"
-msgstr "XRモード"
 
 msgid "Gesture"
 msgstr "ジェスチャー"
@@ -4531,12 +4411,6 @@ msgstr "グローバルイルミネーション"
 msgid "Pose"
 msgstr "ポーズ"
 
-msgid "Show When Tracked"
-msgstr "トラッキング時に表示"
-
-msgid "World Scale"
-msgstr "ワールドスケール"
-
 msgid "Sync"
 msgstr "同期"
 
@@ -4875,9 +4749,6 @@ msgstr "ビューポートパス"
 
 msgid "Disable 3D"
 msgstr "3Dを無効化"
-
-msgid "Use XR"
-msgstr "XRを使用"
 
 msgid "World 3D"
 msgstr "ワールド 3D"
@@ -5887,9 +5758,6 @@ msgstr "ライト更新フレーム数"
 msgid "OpenGL"
 msgstr "OpenGL"
 
-msgid "Shaders"
-msgstr "シェーダー"
-
 msgid "Shader Language"
 msgstr "シェーダー言語"
 
@@ -5919,30 +5787,3 @@ msgstr "ライトのみ"
 
 msgid "Include Text Server Data"
 msgstr "テキストサーバーデータを含める"
-
-msgid "Has Tracking Data"
-msgstr "トラッキングデータあり"
-
-msgid "Blend Shapes"
-msgstr "ブレンドシェイプ"
-
-msgid "Is Primary"
-msgstr "プライマリ"
-
-msgid "Play Area Mode"
-msgstr "プレイエリアモード"
-
-msgid "AR"
-msgstr "AR"
-
-msgid "Is Anchor Detection Enabled"
-msgstr "アンカー検出を有効にする"
-
-msgid "World Origin"
-msgstr "ワールド原点"
-
-msgid "Camera Locked to Origin"
-msgstr "カメラを原点にロック"
-
-msgid "Primary Interface"
-msgstr "プライマリインターフェース"

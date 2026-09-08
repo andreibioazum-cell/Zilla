@@ -159,22 +159,12 @@
 				If [param force_readable_name] is [code]true[/code], improves the readability of the added [param node]. If not named, the [param node] is renamed to its type, and if it shares [member name] with a sibling, a number is suffixed more appropriately. This operation is very slow. As such, it is recommended leaving this to [code]false[/code], which assigns a dummy name featuring [code]@[/code] in both situations.
 				If [param internal] is different than [constant INTERNAL_MODE_DISABLED], the child will be added as internal node. These nodes are ignored by methods like [method get_children], unless their parameter [code]include_internal[/code] is [code]true[/code]. It also prevents these nodes being duplicated with their parent. The intended usage is to hide the internal nodes from the user, so the user won't accidentally delete or modify them. Used by some GUI nodes, e.g. [ColorPicker].
 				[b]Note:[/b] If [param node] already has a parent, this method will fail. Use [method remove_child] first to remove [param node] from its current parent. For example:
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				var child_node = get_child(0)
 				if child_node.get_parent():
 					child_node.get_parent().remove_child(child_node)
 				add_child(child_node)
-				[/gdscript]
-				[csharp]
-				Node childNode = GetChild(0);
-				if (childNode.GetParent() != null)
-				{
-					childNode.GetParent().RemoveChild(childNode);
-				}
-				AddChild(childNode);
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 				If you need the child node to be added below a specific node in the list of children, use [method add_sibling] instead of this method.
 				[b]Note:[/b] If you want a child to be persisted to a [PackedScene], you must set [member owner] in addition to calling [method add_child]. This is typically relevant for [url=$DOCS_URL/tutorials/plugins/running_code_in_the_editor.html]tool scripts[/url] and [url=$DOCS_URL/tutorials/plugins/editor/index.html]editor plugins[/url]. If [method add_child] is called without setting [member owner], the newly added [Node] will not be visible in the scene tree, though it will be visible in the 2D/3D view.
 			</description>
@@ -264,14 +254,9 @@
 			<description>
 				Creates a new [Tween] and binds it to this node.
 				This is the equivalent of doing:
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				get_tree().create_tween().bind_node(self)
-				[/gdscript]
-				[csharp]
-				GetTree().CreateTween().BindNode(this);
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 				The Tween will start automatically on the next process frame or physics frame (depending on [enum Tween.TweenProcessMode]). See [method Tween.bind_node] for more info on Tweens bound to nodes.
 				[b]Note:[/b] The method can still be used when the node is not inside [SceneTree]. It can fail in an unlikely case of using a custom [MainLoop].
 			</description>
@@ -369,24 +354,13 @@
 				Returns an [Array] of group names that the node has been added to.
 				[b]Note:[/b] To improve performance, the order of group names is [i]not[/i] guaranteed and may vary between project runs. Therefore, do not rely on the group order.
 				[b]Note:[/b] This method may also return some group names starting with an underscore ([code]_[/code]). These are internally used by the engine. To avoid conflicts, do not use custom groups starting with underscores. To exclude internal groups, see the following code snippet:
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				# Stores the node's non-internal groups only (as an array of StringNames).
 				var non_internal_groups = []
 				for group in get_groups():
 					if not str(group).begins_with("_"):
 						non_internal_groups.push_back(group)
-				[/gdscript]
-				[csharp]
-				// Stores the node's non-internal groups only (as a List of StringNames).
-				List&lt;string&gt; nonInternalGroups = new List&lt;string&gt;();
-				foreach (string group in GetGroups())
-				{
-					if (!group.BeginsWith("_"))
-						nonInternalGroups.Add(group);
-				}
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 			</description>
 		</method>
 		<method name="get_index" qualifiers="const">
@@ -429,20 +403,12 @@
 				       ┖╴Goblin
 				[/codeblock]
 				The following calls will return a valid node:
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				get_node("Sword")
 				get_node("Backpack/Dagger")
 				get_node("../Swamp/Alligator")
 				get_node("/root/MyGame")
-				[/gdscript]
-				[csharp]
-				GetNode("Sword");
-				GetNode("Backpack/Dagger");
-				GetNode("../Swamp/Alligator");
-				GetNode("/root/MyGame");
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 			</description>
 		</method>
 		<method name="get_node_and_resource">
@@ -454,8 +420,7 @@
 				- Element [code]1[/code] is the subname's last nested [Resource], or [code]null[/code] if not found;
 				- Element [code]2[/code] is the remaining [NodePath], referring to an existing, non-[Resource] property (see [method Object.get_indexed]).
 				[b]Example:[/b] Assume that the child's [member Sprite2D.texture] has been assigned an [AtlasTexture]:
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				var a = get_node_and_resource("Area2D/Sprite2D")
 				print(a[0].name) # Prints Sprite2D
 				print(a[1])      # Prints &lt;null&gt;
@@ -470,24 +435,7 @@
 				print(c[0].name)        # Prints Sprite2D
 				print(c[1].get_class()) # Prints AtlasTexture
 				print(c[2])             # Prints ^":region"
-				[/gdscript]
-				[csharp]
-				var a = GetNodeAndResource(NodePath("Area2D/Sprite2D"));
-				GD.Print(a[0].Name); // Prints Sprite2D
-				GD.Print(a[1]);      // Prints &lt;null&gt;
-				GD.Print(a[2]);      // Prints ^"
-
-				var b = GetNodeAndResource(NodePath("Area2D/Sprite2D:texture:atlas"));
-				GD.Print(b[0].name);        // Prints Sprite2D
-				GD.Print(b[1].get_class()); // Prints AtlasTexture
-				GD.Print(b[2]);             // Prints ^""
-
-				var c = GetNodeAndResource(NodePath("Area2D/Sprite2D:texture:atlas:region"));
-				GD.Print(c[0].name);        // Prints Sprite2D
-				GD.Print(c[1].get_class()); // Prints AtlasTexture
-				GD.Print(c[2]);             // Prints ^":region"
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 			</description>
 		</method>
 		<method name="get_node_or_null" qualifiers="const">

@@ -176,7 +176,7 @@ repos:
         exclude: |
           (?x)^(
             core/math/bvh_.*\.inc|
-            platform/(?!android|ios|linuxbsd|macos|visionos|web|windows)\w+/.*|
+            platform/(?!android|ios|linuxbsd|macos|web|windows)\w+/.*|
             platform/android/java/lib/src/main/java/org/godotengine/godot/gl/GLSurfaceView\.java|
             platform/android/java/lib/src/main/java/org/godotengine/godot/gl/EGLLogWrapper\.java|
             platform/android/java/lib/src/main/java/org/godotengine/godot/utils/ProcessPhoenix\.java
@@ -204,21 +204,3 @@ repos:
             modules/gdscript/tests/scripts/parser/warnings/empty_file_newline\.norun\.gd|
             tests/data/.*\.bin
           )$
-
-      - id: dotnet-format
-        name: dotnet-format
-        language: python
-        entry: python misc/scripts/dotnet_format.py
-        types_or: [c#]
-#
-# End of upstream Godot pre-commit hooks.
-#
-# Keep this separation to let downstream forks add their own hooks to this file,
-# without running into merge conflicts when rebasing on latest upstream.
-#
-# Start of downstream pre-commit hooks.
-#
-# This is still the "repo: local" scope, so new local hooks can be defined directly at this indentation:
-#     - id: new-local-hook
-# To add external repo hooks, bring the indentation back to:
-# - repo: my-remote-hook

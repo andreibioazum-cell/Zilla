@@ -7,8 +7,7 @@
 		The [WorkerThreadPool] singleton allocates a set of [Thread]s (called worker threads) on project startup and provides methods for offloading tasks to them. This can be used for simple multithreading without having to create [Thread]s.
 		Tasks hold the [Callable] to be run by the threads. [WorkerThreadPool] can be used to create regular tasks, which will be taken by one worker thread, or group tasks, which can be distributed between multiple worker threads. Group tasks execute the [Callable] multiple times, which makes them useful for iterating over a lot of elements, such as the enemies in an arena.
 		Here's a sample on how to offload an expensive function to worker threads:
-		[codeblocks]
-		[gdscript]
+		[codeblock]
 		var enemies = [] # An array to be filled with enemies.
 
 		func process_enemy_ai(enemy_index):
@@ -20,25 +19,7 @@
 			# Other code...
 			WorkerThreadPool.wait_for_group_task_completion(task_id)
 			# Other code that depends on the enemy AI already being processed.
-		[/gdscript]
-		[csharp]
-		private List&lt;Node&gt; _enemies = new List&lt;Node&gt;(); // A list to be filled with enemies.
-
-		private void ProcessEnemyAI(int enemyIndex)
-		{
-			Node processedEnemy = _enemies[enemyIndex];
-			// Expensive logic here.
-		}
-
-		public override void _Process(double delta)
-		{
-			long taskId = WorkerThreadPool.AddGroupTask(Callable.From&lt;int&gt;(ProcessEnemyAI), _enemies.Count);
-			// Other code...
-			WorkerThreadPool.WaitForGroupTaskCompletion(taskId);
-			// Other code that depends on the enemy AI already being processed.
-		}
-		[/csharp]
-		[/codeblocks]
+		[/codeblock]
 		The above code relies on the number of elements in the [code]enemies[/code] array remaining constant during the multithreaded part.
 		[b]Note:[/b] Using this singleton could affect performance negatively if the task being distributed between threads is not computationally expensive.
 	</description>

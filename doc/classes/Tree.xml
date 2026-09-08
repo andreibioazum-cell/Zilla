@@ -6,8 +6,7 @@
 	<description>
 		A control used to show a set of internal [TreeItem]s in a hierarchical structure. The tree items can be selected, expanded and collapsed. The tree can have multiple columns with custom controls like [LineEdit]s, buttons and popups. It can be useful for structured displays and interactions.
 		Trees are built via code, using [TreeItem] objects to create the structure. They have a single root, but multiple roots can be simulated with [member hide_root]:
-		[codeblocks]
-		[gdscript]
+		[codeblock]
 		func _ready():
 			var tree = Tree.new()
 			var root = tree.create_item()
@@ -16,20 +15,7 @@
 			var child2 = tree.create_item(root)
 			var subchild1 = tree.create_item(child1)
 			subchild1.set_text(0, "Subchild1")
-		[/gdscript]
-		[csharp]
-		public override void _Ready()
-		{
-			var tree = new Tree();
-			TreeItem root = tree.CreateItem();
-			tree.HideRoot = true;
-			TreeItem child1 = tree.CreateItem(root);
-			TreeItem child2 = tree.CreateItem(root);
-			TreeItem subchild1 = tree.CreateItem(child1);
-			subchild1.SetText(0, "Subchild1");
-		}
-		[/csharp]
-		[/codeblocks]
+		[/codeblock]
 		To iterate over all the [TreeItem] objects in a [Tree] object, use [method TreeItem.get_next] and [method TreeItem.get_first_child] after getting the root through [method get_root]. You can use [method Object.free] on a [TreeItem] to remove it from the [Tree].
 		[b]Incremental search:[/b] Like [ItemList] and [PopupMenu], [Tree] supports searching within the list while the control is focused. Press a key that matches the first letter of an item's name to select the first item starting with the given letter. After that point, there are two ways to perform incremental search: 1) Press the same key again before the timeout duration to select the next item starting with the same letter. 2) Press letter keys that match the rest of the word before the timeout duration to match to select the item in question directly. Both of these actions will be reset to the beginning of the list if the timeout duration has passed since the last keystroke was registered. You can adjust the timeout duration by changing [member ProjectSettings.gui/timers/incremental_search_max_interval_msec].
 	</description>
@@ -170,26 +156,13 @@
 			<return type="TreeItem" />
 			<description>
 				Returns the currently edited item. Can be used with [signal item_edited] to get the item that was modified.
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				func _ready():
 					$Tree.item_edited.connect(on_Tree_item_edited)
 
 				func on_Tree_item_edited():
 					print($Tree.get_edited()) # This item just got edited (e.g. checked).
-				[/gdscript]
-				[csharp]
-				public override void _Ready()
-				{
-					GetNode&lt;Tree&gt;("Tree").ItemEdited += OnTreeItemEdited;
-				}
-
-				public void OnTreeItemEdited()
-				{
-					GD.Print(GetNode&lt;Tree&gt;("Tree").GetEdited()); // This item just got edited (e.g. checked).
-				}
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 			</description>
 		</method>
 		<method name="get_edited_column" qualifiers="const">

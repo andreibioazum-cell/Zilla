@@ -7,8 +7,7 @@
 		[EditorImportPlugin]s provide a way to extend the editor's resource import functionality. Use them to import resources from custom files or to provide alternatives to the editor's existing importers.
 		EditorImportPlugins work by associating with specific file extensions and a resource type. See [method _get_recognized_extensions] and [method _get_resource_type]. They may optionally specify some import presets that affect the import process. EditorImportPlugins are responsible for creating the resources and saving them in the [code].godot/imported[/code] directory (see [member ProjectSettings.application/config/use_hidden_project_data_directory]).
 		Below is an example EditorImportPlugin that imports a [Mesh] from a file with the extension ".special" or ".spec":
-		[codeblocks]
-		[gdscript]
+		[codeblock]
 		@tool
 		extends EditorImportPlugin
 
@@ -45,75 +44,7 @@
 
 			var filename = save_path + "." + _get_save_extension()
 			return ResourceSaver.save(mesh, filename)
-		[/gdscript]
-		[csharp]
-		using Godot;
-
-		public partial class MySpecialPlugin : EditorImportPlugin
-		{
-			public override string _GetImporterName()
-			{
-				return "my.special.plugin";
-			}
-
-			public override string _GetVisibleName()
-			{
-				return "Special Mesh";
-			}
-
-			public override string[] _GetRecognizedExtensions()
-			{
-				return ["special", "spec"];
-			}
-
-			public override string _GetSaveExtension()
-			{
-				return "mesh";
-			}
-
-			public override string _GetResourceType()
-			{
-				return "Mesh";
-			}
-
-			public override int _GetPresetCount()
-			{
-				return 1;
-			}
-
-			public override string _GetPresetName(int presetIndex)
-			{
-				return "Default";
-			}
-
-			public override Godot.Collections.Array&lt;Godot.Collections.Dictionary&gt; _GetImportOptions(string path, int presetIndex)
-			{
-				return
-				[
-					new Godot.Collections.Dictionary
-					{
-						{ "name", "myOption" },
-						{ "default_value", false },
-					},
-				];
-			}
-
-			public override Error _Import(string sourceFile, string savePath, Godot.Collections.Dictionary options, Godot.Collections.Array&lt;string&gt; platformVariants, Godot.Collections.Array&lt;string&gt; genFiles)
-			{
-				using var file = FileAccess.Open(sourceFile, FileAccess.ModeFlags.Read);
-				if (file.GetError() != Error.Ok)
-				{
-					return Error.Failed;
-				}
-
-				var mesh = new ArrayMesh();
-				// Fill the Mesh with data read in "file", left as an exercise to the reader.
-				string filename = $"{savePath}.{_GetSaveExtension()}";
-				return ResourceSaver.Save(mesh, filename);
-			}
-		}
-		[/csharp]
-		[/codeblocks]
+		[/codeblock]
 		To use [EditorImportPlugin], register it using the [method EditorPlugin.add_import_plugin] method first.
 	</description>
 	<tutorials>
@@ -162,28 +93,14 @@
 			<param index="2" name="options" type="Dictionary" />
 			<description>
 				Gets whether the import option specified by [param option_name] should be visible in the Import dock. The default implementation always returns [code]true[/code], making all options visible. This is mainly useful for hiding options that depend on others if one of them is disabled.
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				func _get_option_visibility(path, option_name, options):
 					# Only show the lossy quality setting if the compression mode is set to "Lossy".
 					if option_name == "compress/lossy_quality" and options.has("compress/mode"):
 						return int(options["compress/mode"]) == COMPRESS_LOSSY # This is a constant that you set
 
 					return true
-				[/gdscript]
-				[csharp]
-				public override bool _GetOptionVisibility(string path, StringName optionName, Godot.Collections.Dictionary options)
-				{
-					// Only show the lossy quality setting if the compression mode is set to "Lossy".
-					if (optionName == "compress/lossy_quality" &amp;&amp; options.ContainsKey("compress/mode"))
-					{
-						return (int)options["compress/mode"] == CompressLossy; // This is a constant you set
-					}
-
-					return true;
-				}
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 			</description>
 		</method>
 		<method name="_get_preset_count" qualifiers="virtual const">

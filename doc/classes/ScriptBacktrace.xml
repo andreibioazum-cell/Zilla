@@ -4,7 +4,7 @@
 		A captured backtrace of a specific script language.
 	</brief_description>
 	<description>
-		[ScriptBacktrace] holds an already captured backtrace of a specific script language, such as GDScript or C#, which are captured using [method Engine.capture_script_backtraces].
+		[ScriptBacktrace] holds an already captured backtrace of a specific script language, such as GDScript, which are captured using [method Engine.capture_script_backtraces].
 		See [member ProjectSettings.debug/settings/gdscript/always_track_call_stacks] and [member ProjectSettings.debug/settings/gdscript/always_track_local_variables] for ways of controlling the contents of this class.
 	</description>
 	<tutorials>
