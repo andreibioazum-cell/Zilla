@@ -3491,13 +3491,6 @@ msgstr ""
 msgid "Note:"
 msgstr "Obs:"
 
-msgid ""
-"There are notable differences when using this API with C#. See [url=%s]C# API "
-"differences to GDScript[/url] for more information."
-msgstr ""
-"Det finns märkbara skillnader när det här API:et används med C#. Se "
-"[url=%s]C# API differences to GDScript[/url] för ytterligare information."
-
 msgid "Online Tutorials"
 msgstr "Online-tutorials"
 
@@ -5522,13 +5515,6 @@ msgstr ""
 "Kan inte köra skriptet eftersom det inte är ett verktygsskript (lägg till "
 "@tool högst upp)."
 
-msgid ""
-"Cannot run the script because it's not a tool script (add the [Tool] "
-"attribute above the class definition)."
-msgstr ""
-"Kan inte köra skriptet eftersom det inte är ett verktygsskript (lägg till "
-"[Tool] egenskapen ovanför klassdefinitionen)."
-
 msgid "Cannot run the script because it's not a tool script."
 msgstr "Kan inte köra skriptet eftersom det inte är ett verktygsskript."
 
@@ -6202,19 +6188,6 @@ msgid ""
 "package."
 msgstr ""
 ".ipa kan endast skapas på macOS. Paketet byggs därför inte i Xcode‑projektet."
-
-msgid ""
-"Exporting to an Apple Embedded platform when using C#/.NET is experimental "
-"and requires macOS."
-msgstr ""
-"Export till en Apple Embedded-plattform när man använder C#/.NET är "
-"experimentellt och kräver macOS."
-
-msgid ""
-"Exporting to an Apple Embedded platform when using C#/.NET is experimental."
-msgstr ""
-"Export till en Apple Embedded-plattform när man använder C#/.NET är "
-"experimentellt."
 
 msgid "Custom debug template not found."
 msgstr "Anpassad avlusningsmall hittades ej."
@@ -9063,16 +9036,6 @@ msgstr ""
 "\n"
 
 msgid ""
-"Warning: This project uses C#, but this build of Godot does not have\n"
-"the Mono module. If you proceed you will not be able to use any C# scripts.\n"
-"\n"
-msgstr ""
-"Varning: Det här projektet använder C#, men det här Godot-bygget har inte\n"
-"Mono-modulen. Om du fortsätter kommer du inte att kunna använda några C#-"
-"skript.\n"
-"\n"
-
-msgid ""
 "Warning: This project was last edited in Godot %s. Opening will change it to "
 "Godot %s.\n"
 "\n"
@@ -9519,20 +9482,8 @@ msgstr "Avbryt projektkörning"
 msgid "Run Current Scene"
 msgstr "Kör nuvarande scen"
 
-msgid "Run Scene in Regular Mode"
-msgstr "Kör scenen i reguljärt läge"
-
-msgid "Run Scene in XR Mode"
-msgstr "Kör scenen i XR-läge"
-
 msgid "Run Specific Scene"
 msgstr "Kör specifik scen"
-
-msgid "Run in Regular Mode"
-msgstr "Kör i reguljärt läge"
-
-msgid "Run in XR Mode"
-msgstr "Kör i XR-läge"
 
 msgid "Enable Movie Maker Mode"
 msgstr "Aktivera Movie Maker‑läge"
@@ -16215,12 +16166,6 @@ msgstr "Tillgänglighetsstöd (AccessKit)"
 msgid "Improved Gamepad Support (SDL)"
 msgstr "Förbättrat handkontrollstöd (SDL)"
 
-msgid "XR"
-msgstr "XR"
-
-msgid "OpenXR"
-msgstr "OpenXR"
-
 msgid "Wayland"
 msgstr "Wayland"
 
@@ -16314,12 +16259,6 @@ msgstr ""
 "SDL‑biblioteket.\n"
 "Om detta är inaktiverat används inbyggd egen kod för handkontrollsstöd i "
 "stället, vilket kan vara mindre tillförlitligt för vissa kontrollermodeller."
-
-msgid "XR (AR and VR)."
-msgstr "XR (AR och VR)."
-
-msgid "OpenXR standard implementation (requires XR to be enabled)."
-msgstr "OpenXR standardimplementation (kräver att XR är aktiverat)."
 
 msgid "Wayland display server support (Linux only)."
 msgstr "Wayland displayserver-stöd (endast Linux)."
@@ -16440,13 +16379,6 @@ msgstr ""
 "klasser.\n"
 "Notera att första skanningen kan eventuellt ta en längre tid, speciellt i "
 "stora projekt."
-
-msgid ""
-"Warning: Class detection for C# scripts is not currently available, and such "
-"files will be ignored."
-msgstr ""
-"Varning: Klassdetektion för C# skript är i nuläget otillgänglig, och sådana "
-"filer kommer ignoreras."
 
 msgid ""
 "Clear cache of used classes per file? This will make it so that those files "
@@ -17951,55 +17883,6 @@ msgstr "Brusreducerar"
 msgid "Retrieving textures"
 msgstr "Hämtar texturer"
 
-msgid "Class name can't be a reserved keyword"
-msgstr "Klassnamnet får inte vara ett reserverat nyckelord"
-
-msgid "Class name must be a valid identifier"
-msgstr "Klassnamnet måste vara en giltig identifierare"
-
-msgid "Not enough bytes for decoding bytes, or invalid format."
-msgstr ""
-"Inte tillräckligt med byts för att avkoda bytes, eller också ogiltigt format."
-
-msgid ""
-"Unable to load .NET runtime, no compatible version was found.\n"
-"Attempting to create/edit a project will lead to a crash.\n"
-"\n"
-"Please install the .NET SDK 8.0 or later from https://get.dot.net and restart "
-"Godot."
-msgstr ""
-"Kunde inte läsa in .NET runtime, ingen kompatibel version hittades.\n"
-"Försök att skapa eller redigera projekt kommer att resultera i en krasch.\n"
-"\n"
-"Var vänlig installera .NET SDK 6.0 eller senare från https://"
-"dotnet.microsoft.com/en-us/download och starta om Godot."
-
-msgid "Failed to load .NET runtime"
-msgstr "Kunde inte läsa in .NET runtime"
-
-msgid ""
-"Unable to find the .NET assemblies directory.\n"
-"Make sure the '%s' directory exists and contains the .NET assemblies."
-msgstr ""
-"Kunde inte hitta .NET assembly-katalogen.\n"
-"Kontrollera att katalogen \"%s\" finns och innehåller .NET-assemblierna."
-
-msgid ".NET assemblies not found"
-msgstr "Kunde inte hitta .NET assembly"
-
-msgid ""
-"Unable to load .NET runtime, specifically hostfxr.\n"
-"Attempting to create/edit a project will lead to a crash.\n"
-"\n"
-"Please install the .NET SDK 8.0 or later from https://get.dot.net and restart "
-"Godot."
-msgstr ""
-"Kunde inte läsa in .NET runtime, specifikt hstfxr.\n"
-"Försök att skapa eller redigera projekt kommer att resultera i en krasch.\n"
-"\n"
-"Var vänlig installera .NET SDK 6.0 eller senare från https://"
-"dotnet.microsoft.com/en-us/download och starta om Godot."
-
 msgctxt "Network"
 msgid "Down"
 msgstr "Ned"
@@ -18522,167 +18405,6 @@ msgstr "ObjectDB‑profilerare"
 msgid "Diff Against:"
 msgstr "Jämför med:"
 
-msgid "Rename Action"
-msgstr "Byt namn på åtgärd"
-
-msgid "Rename Actions Localized name"
-msgstr "Byt åtgärdens lokaliserade namn"
-
-msgid "Change Action Type"
-msgstr "Ändra åtgärdstyp"
-
-msgid ""
-"Internal name of the action. Some XR runtimes don't allow spaces or special "
-"characters."
-msgstr ""
-"Internt namn på åtgärden. Vissa XR-körningar tillåter inte mellanslag eller "
-"specialtecken."
-
-msgid "Action Name"
-msgstr "Åtgärdsnamn"
-
-msgid "Human-readable name of the action. This can be displayed to end users."
-msgstr "Läsbart namn på åtgärden. Detta kan visas för slutanvändare."
-
-msgid "Action Localized Name"
-msgstr "Åtgärdens lokaliserade namn"
-
-msgid "Type of the action"
-msgstr "Typ av åtgärden"
-
-msgid "Action Type"
-msgstr "Åtgärdstyp"
-
-msgid "Remove action"
-msgstr "Ta bort åtgärd"
-
-msgid "Add action set"
-msgstr "Lägg till åtgärds-sätt"
-
-msgid "Remove action set"
-msgstr "Ta bort åtgärds-sätt"
-
-msgid "Add interaction profile"
-msgstr "Lägg till interaktionsprofil"
-
-msgid "Error loading %s: %s."
-msgstr "Fel vid inläsning av %s: %s."
-
-msgid "Error saving file %s: %s"
-msgstr "Fel vid sparande av fil %s: %s"
-
-msgid "OpenXR Action map:"
-msgstr "OpenXR-åtgärdskarta:"
-
-msgid "Remove interaction profile"
-msgstr "Ta bort interaktionsprofil"
-
-msgid "OpenXR Action Map"
-msgstr "OpenXR-åtgärdskarta"
-
-msgid "Toggle OpenXR Action Map Dock"
-msgstr "Växla OpenXR‑åtgardskartsdocka"
-
-msgid "Add Action Set"
-msgstr "Lägg till åtgärds-sätt"
-
-msgid "Add an action set."
-msgstr "Lägg till ett åtgärds-sätt."
-
-msgid "Add profile"
-msgstr "Lägg till profil"
-
-msgid "Add an interaction profile."
-msgstr "Lägg till en interaktionsprofil."
-
-msgid "Save this OpenXR action map."
-msgstr "Spara den här OpenXR-åtgärdskartan."
-
-msgid "Reset to default OpenXR action map."
-msgstr "Återgå till standard-OpenXR-åtgärdskartan."
-
-msgid "Action Sets"
-msgstr "Åtgärds-sätt"
-
-msgid "Rename Action Set"
-msgstr "Byt namn på åtgärds-sätt"
-
-msgid "Rename Action Sets Localized name"
-msgstr "Byt åtgärds-sättets lokaliserade namn"
-
-msgid "Change Action Sets priority"
-msgstr "Ändra åtgärds-sättets prioritering"
-
-msgid "Add action"
-msgstr "Lägg till åtgärd"
-
-msgid "Delete action"
-msgstr "Ta bort åtgärd"
-
-msgid "Fold"
-msgstr "Vik"
-
-msgid "Action Set Name"
-msgstr "Namn på åtgärdsuppsättning"
-
-msgid ""
-"Human-readable name of the action set. This can be displayed to end users."
-msgstr ""
-"Läsbart namn på åtgärdsuppsättningen. Detta kan visas för slutanvändare."
-
-msgid "Action Set Localized Name"
-msgstr "Lokaliserat namn för åtgärdsuppsättning"
-
-msgid ""
-"Priority of the action set. If multiple action sets bind to the same input, "
-"the action set with the highest priority will be updated."
-msgstr ""
-"Prioritet för åtgärdsuppsättningen. Om flera åtgärdsuppsättningar binder till "
-"samma indata uppdateras åtgärdsuppsättningen med högst prioritet."
-
-msgid "Action Set Priority"
-msgstr "Åtgärdsuppsättningens prioritet"
-
-msgid "Add action."
-msgstr "Lägg till åtgärd."
-
-msgid "Remove action set."
-msgstr "Ta bort åtgärds-sätt."
-
-msgid "Remove this binding modifier."
-msgstr "Ta bort denna bindningsmodifierare."
-
-msgid "Remove binding modifier"
-msgstr "Ta bort bindningsmodifierare"
-
-msgid "Add binding modifier"
-msgstr "Lägg till bindningsmodifierare"
-
-msgid "Note: modifiers will only be applied if supported on the host system."
-msgstr ""
-"Obs: modifierare kommer endast att tillämpas om de stöds av värdsystemet."
-
-msgid "Binding modifiers for:"
-msgstr "Bindningsmodifierare för:"
-
-msgid "Remove action from interaction profile"
-msgstr "Ta bort åtgärd från interaktionsprofil"
-
-msgid "Edit binding modifiers"
-msgstr "Redigera bindningsmodifierare"
-
-msgid "Note: This interaction profile requires extension %s support."
-msgstr "Obs! Denna interaktionsprofil kräver stöd för tillägget %s."
-
-msgid "Add binding"
-msgstr "Lägg till bindning"
-
-msgid "Remove binding"
-msgstr "Ta bort bindning"
-
-msgid "Note: This binding path requires extension %s support."
-msgstr "Obs! Den här bindningsvägen kräver stöd för tillägget %s."
-
 msgid "Boolean"
 msgstr "Boolean"
 
@@ -18691,60 +18413,6 @@ msgstr "Float"
 
 msgid "Vector2"
 msgstr "Vector2"
-
-msgid "Pose"
-msgstr "Ställning"
-
-msgid "Haptic"
-msgstr "Haptisk"
-
-msgid "Unknown"
-msgstr "Okänd"
-
-msgid "Modifiers"
-msgstr "Modifierare"
-
-msgid "Select an action"
-msgstr "Välj en åtgärd"
-
-msgid "Select an interaction profile"
-msgstr "Välj en interaktionsprofil"
-
-msgid "All interaction profiles have been added to the action map."
-msgstr "Alla interaktionsprofiler har lagts till i åtgärdskartan."
-
-msgid "Choose an XR runtime."
-msgstr "Välj en XR-runtime."
-
-msgid ""
-"Cannot use the same SubViewport with multiple OpenXR composition layers. "
-"Clear it from its current layer first."
-msgstr ""
-"Kan inte använda samma SubViewport med flera OpenXR-kompositionslager. Rensa "
-"den från dess nuvarande lager först."
-
-msgid ""
-"Cannot set SubViewport on an OpenXR composition layer when using an Android "
-"surface."
-msgstr ""
-"Det går inte att ställa in SubViewport på ett OpenXR-kompositionslager när en "
-"Android-surface används."
-
-msgid ""
-"OpenXR composition layers must have orthonormalized transforms (ie. no scale "
-"or shearing)."
-msgstr ""
-"OpenXR-kompositionslager måste ha ortnormaliserade transformationer (d.v.s, "
-"ingen skalning eller skjuvning)."
-
-msgid ""
-"Hole punching won't work as expected unless the sort order is less than zero."
-msgstr ""
-"Hålslagning kommer inte att fungera som förväntat om inte sorteringsordningen "
-"är mindre än noll."
-
-msgid "OpenXR visibility mask must have an XRCamera3D node as their parent."
-msgstr "OpenXR-kompositionslager måste ha en XROrigin3D-nod som sin förälder."
 
 msgid "E constant (2.718282). Represents the base of the natural logarithm."
 msgstr ""
@@ -20278,25 +19946,6 @@ msgstr ""
 "Fel: Ett problem uppstod när keystore-användarnamnet och -lösenordet skulle "
 "valideras"
 
-msgid ""
-"Unable to determine the C# project's TFM, it may be incompatible. The export "
-"template only supports '%s'. Make sure the project targets '%s' or consider "
-"using gradle builds instead."
-msgstr ""
-"Det gick inte att fastställa C#-projektets TFM, det kan vara inkompatibelt. "
-"Exportmallen stöder endast '%s'. Se till att projektet riktar sig mot '%s' "
-"eller överväg att använda gradle-byggen istället."
-
-msgid ""
-"C# project targets '%s' but the export template only supports '%s'. Consider "
-"using gradle builds instead."
-msgstr ""
-"C#-projektet riktar sig mot '%s' men exportmallen stöder bara '%s'. Överväg "
-"att använda gradle-builds istället."
-
-msgid "Exporting to Android when using C#/.NET is experimental."
-msgstr "Export till Android med C#/.NET är experimentellt."
-
 msgid "Custom Android source template not found."
 msgstr "Anpassat Android-källmall hittades inte."
 
@@ -20672,13 +20321,6 @@ msgstr ""
 msgid "App sandbox is required for App Store distribution."
 msgstr "App-sandlåda krävs för distribution i App Store."
 
-msgid ""
-"'rcodesign' doesn't support signing applications with embedded dynamic "
-"libraries (GDExtension or .NET)."
-msgstr ""
-"'rcodesign' stöder inte signeringsapplikationer med inbäddade dynamiska "
-"bibliotek (GDExtension eller .NET)."
-
 msgid "Code signing is required for App Store distribution."
 msgstr "Kodsignering krävs för distribution till App Store."
 
@@ -21026,20 +20668,6 @@ msgstr "Kunde inte läsa från filen: \"%s\"."
 
 msgid "PWA"
 msgstr "PWA"
-
-msgid ""
-"Exporting to Web is currently not supported in Godot 4 when using C#/.NET. "
-"Use Godot 3 to target Web with C#/Mono instead."
-msgstr ""
-"Export till webben stöds för närvarande inte i Godot 4 när C#/.NET används. "
-"Använd Godot 3 för använda webben med C#/Mono istället."
-
-msgid ""
-"If this project does not use C#, use a non-C# editor build to export the "
-"project."
-msgstr ""
-"Om det här projektet inte använder C#, använd en icke-C#-editor för att "
-"exportera projektet."
 
 msgid "Could not read HTML shell: \"%s\"."
 msgstr "Kunde inte läsa HTML-shell: \"%s\"."
@@ -22072,59 +21700,6 @@ msgstr ""
 "Endast en WorldEnvironment är tillåten per scen (eller uppsättning av "
 "instansierade scener)."
 
-msgid ""
-"XRCamera3D may not function as expected without an XROrigin3D node as its "
-"parent."
-msgstr ""
-"XRCamera3D kanske inte fungerar som förväntat utan en XROrigin3D‑nod som "
-"överordnad."
-
-msgid ""
-"XRCamera3D should have physics_interpolation_mode set to OFF in order to "
-"avoid jitter."
-msgstr ""
-"XRCamera3D bör ha physics_interpolation_mode inställt på AV för att undvika "
-"jitter."
-
-msgid ""
-"XRNode3D may not function as expected without an XROrigin3D node as its "
-"parent."
-msgstr ""
-"XRNode3D kanske inte fungerar som förväntat utan en XROrigin3D‑nod som "
-"överordnad."
-
-msgid "No tracker name is set."
-msgstr "Inget tracker‑namn har angetts."
-
-msgid "No pose is set."
-msgstr "Ingen pose har angetts."
-
-msgid ""
-"XRNode3D should have physics_interpolation_mode set to OFF in order to avoid "
-"jitter."
-msgstr ""
-"XRNode3D bör ha physics_interpolation_mode inställt på OFF för att undvika "
-"jitter."
-
-msgid "XROrigin3D requires an XRCamera3D child node."
-msgstr "XROrigin3D kräver en XRCamera3D‑barnnod."
-
-msgid ""
-"Changing the scale on the XROrigin3D node is not supported. Change the World "
-"Scale instead."
-msgstr ""
-"Att ändra skalningen på noden **XROrigin3D** stöds inte. Ändra **World "
-"Scale** i stället."
-
-msgid ""
-"XR shaders are not enabled in project settings. Stereoscopic output is not "
-"supported unless they are enabled. Please enable `xr/shaders/enabled` to use "
-"stereoscopic output."
-msgstr ""
-"XR‑shaders är inte aktiverade i projektinställningarna. Stereoskopisk output "
-"stöds inte om de inte är aktiverade. Aktivera `xr/shaders/enabled` för att "
-"använda stereoskopisk output."
-
 msgid "Animation '%s' not found."
 msgstr "Animationen ”%s” hittades inte."
 
@@ -22608,15 +22183,6 @@ msgstr "Ingen matchande funktion funnen för: '%s'."
 
 msgid "Varying '%s' cannot be passed for the '%s' parameter in that context."
 msgstr "Varying '%s' kan inte skickas som parameter '%s' i det sammanhanget."
-
-msgid ""
-"Unable to pass a multiview texture sampler as a parameter to a custom "
-"function. Consider sampling it in the main function and then passing the "
-"vector result to the custom function."
-msgstr ""
-"Det går inte att skicka en multiview‑texturesampler som parameter till en "
-"anpassad funktion. Överväg att sampla den i huvudfunktionen och sedan skicka "
-"vektorresultatet till den anpassade funktionen."
 
 msgid ""
 "Unable to pass RADIANCE texture sampler as a parameter to a custom function. "

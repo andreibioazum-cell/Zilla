@@ -315,7 +315,7 @@ def configure(env: "SConsEnvironment"):
     # Do not call main immediately when the support code is ready.
     env.Append(LINKFLAGS=["-sINVOKE_RUN=0"])
 
-    # callMain for manual start, cwrap for the mono version.
+    # callMain for manual start.
     # Make sure also to have those memory-related functions available.
     heap_arrays = [f"HEAP{heap_type}{heap_size}" for heap_size in [8, 16, 32, 64] for heap_type in ["", "U"]] + [
         "HEAPF32",

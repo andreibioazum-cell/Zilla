@@ -4430,12 +4430,6 @@ msgstr "הטיית מצביע ב־Z"
 msgid "Give a MeshLibrary resource to this GridMap to use its meshes."
 msgstr "יש לחבר משאב MeshLibrary ל- GridMap הזה כדי להשתמש ברשתות שלו."
 
-msgid "Class name can't be a reserved keyword"
-msgstr "שם מחלקה לא יכול להיות מילת מפתח שמורה"
-
-msgid "Not enough bytes for decoding bytes, or invalid format."
-msgstr "אין מספיק בתים לפענוח בתים, או פורמט לא תקין‭‭."
-
 msgid "%s/s"
 msgstr "%s לשנייה"
 
@@ -4453,9 +4447,6 @@ msgstr "הקונפדרציה"
 
 msgid "A NavigationMesh resource must be set or created for this node to work."
 msgstr "יש להגדיר או ליצור משאב NavigationMesh כדי שצומת זה יפעל."
-
-msgid "Pose"
-msgstr "פוזה"
 
 msgid "Add Input"
 msgstr "הוספת קלט"

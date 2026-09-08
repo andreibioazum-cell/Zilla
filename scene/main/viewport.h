@@ -228,7 +228,6 @@ public:
 	enum VRSMode {
 		VRS_DISABLED,
 		VRS_TEXTURE,
-		VRS_XR,
 		VRS_MAX
 	};
 
@@ -518,7 +517,6 @@ private:
 
 protected:
 	bool _set_size(const Size2i &p_size, const int p_view_count, const Size2 &p_size_2d_override, bool p_allocated);
-	void _check_xr_size();
 
 	Size2i _get_size() const;
 	Size2 _get_size_2d_override() const;
@@ -825,9 +823,6 @@ public:
 #ifndef _3D_DISABLED
 private:
 	// 3D audio, camera, physics, and world.
-#ifndef XR_DISABLED
-	bool use_xr = false;
-#endif // XR_DISABLED
 	friend class AudioListener3D;
 	AudioListener3D *audio_listener_3d = nullptr;
 	HashSet<AudioListener3D *> audio_listener_3d_set;
@@ -885,14 +880,6 @@ public:
 	void set_use_own_world_3d(bool p_use_own_world_3d);
 	bool is_using_own_world_3d() const;
 
-#ifndef XR_DISABLED
-	void set_use_xr(bool p_use_xr);
-	bool is_using_xr() const;
-
-#ifndef DISABLE_DEPRECATED
-	bool _is_using_xr_115799();
-#endif
-#endif // XR_DISABLED
 #endif // _3D_DISABLED
 
 	Viewport();

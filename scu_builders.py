@@ -358,7 +358,6 @@ def generate_scu_files(max_includes_per_scu):
     process_folder(["modules/jolt_physics/spaces"])
     process_folder(["modules/lightmapper_rd"])
     process_folder(["modules/mbedtls"])
-    process_folder(["modules/mono"])
     process_folder(["modules/multiplayer"])
     process_folder(["modules/multiplayer/editor"])
     process_folder(["modules/navigation_3d"])
@@ -369,18 +368,9 @@ def generate_scu_files(max_includes_per_scu):
     process_folder(["modules/navigation_2d/editor"])
     process_folder(["modules/objectdb_profiler/editor"])
     process_folder(["modules/objectdb_profiler/editor/data_viewers"])
-    process_folder(["modules/openxr"], ["register_types"])
-    process_folder(["modules/openxr/action_map"])
-    process_folder(["modules/openxr/editor"])
-    process_folder(
-        ["modules/openxr/extensions"], ["openxr_fb_update_swapchain_extension", "openxr_fb_foveation_extension"]
-    )
-    process_folder(["modules/openxr/extensions/spatial_entities"])
-    process_folder(["modules/openxr/scene"])
     process_folder(["modules/tilemap"])
     process_folder(["modules/webrtc"])
     process_folder(["modules/websocket"])
-    process_folder(["modules/webxr"])
 
     process_folder(["scene/2d"])
     process_folder(["scene/2d/physics"])
@@ -388,7 +378,6 @@ def generate_scu_files(max_includes_per_scu):
     process_folder(["scene/3d"])
     process_folder(["scene/3d/physics"])
     process_folder(["scene/3d/physics/joints"])
-    process_folder(["scene/3d/xr"])
     process_folder(["scene/animation"])
     process_folder(["scene/debugger"])
     process_folder(["scene/gui"])
@@ -415,7 +404,6 @@ def generate_scu_files(max_includes_per_scu):
     process_folder(["servers/rendering/renderer_rd/storage_rd"])
     process_folder(["servers/rendering/renderer_rd/forward_clustered"])
     process_folder(["servers/rendering/renderer_rd/forward_mobile"])
-    process_folder(["servers/xr"])
 
     # NOTE: Tests previously compiled as one large unit. We replicate this behavior in SCU builds.
     process_folder(

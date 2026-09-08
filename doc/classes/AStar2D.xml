@@ -46,16 +46,10 @@
 			<description>
 				Adds a new point at the given position with the given identifier. The [param id] must be 0 or larger, and the [param weight_scale] must be 0.0 or greater.
 				The [param weight_scale] is multiplied by the result of [method _compute_cost] when determining the overall cost of traveling across a segment from a neighboring point to this point. Thus, all else being equal, the algorithm prefers points with lower [param weight_scale]s to form a path.
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				var astar = AStar2D.new()
 				astar.add_point(1, Vector2(1, 0), 4) # Adds the point (1, 0) with weight_scale 4 and id 1
-				[/gdscript]
-				[csharp]
-				var astar = new AStar2D();
-				astar.AddPoint(1, new Vector2(1, 0), 4); // Adds the point (1, 0) with weight_scale 4 and id 1
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 				If there already exists a point for the given [param id], its position and weight scale are updated to the given values.
 			</description>
 		</method>
@@ -81,20 +75,12 @@
 			<param index="2" name="bidirectional" type="bool" default="true" />
 			<description>
 				Creates a segment between the given points. If [param bidirectional] is [code]false[/code], only movement from [param id] to [param to_id] is allowed, not the reverse direction.
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				var astar = AStar2D.new()
 				astar.add_point(1, Vector2(1, 1))
 				astar.add_point(2, Vector2(0, 5))
 				astar.connect_points(1, 2, false)
-				[/gdscript]
-				[csharp]
-				var astar = new AStar2D();
-				astar.AddPoint(1, new Vector2(1, 1));
-				astar.AddPoint(2, new Vector2(0, 5));
-				astar.ConnectPoints(1, 2, false);
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 			</description>
 		</method>
 		<method name="disconnect_points">
@@ -126,22 +112,13 @@
 			<param index="0" name="to_position" type="Vector2" />
 			<description>
 				Returns the closest position to [param to_position] that resides inside a segment between two connected points.
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				var astar = AStar2D.new()
 				astar.add_point(1, Vector2(0, 0))
 				astar.add_point(2, Vector2(0, 5))
 				astar.connect_points(1, 2)
 				var res = astar.get_closest_position_in_segment(Vector2(3, 3)) # Returns (0, 3)
-				[/gdscript]
-				[csharp]
-				var astar = new AStar2D();
-				astar.AddPoint(1, new Vector2(0, 0));
-				astar.AddPoint(2, new Vector2(0, 5));
-				astar.ConnectPoints(1, 2);
-				Vector2 res = astar.GetClosestPositionInSegment(new Vector2(3, 3)); // Returns (0, 3)
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 				The result is in the segment that goes from [code]y = 0[/code] to [code]y = 5[/code]. It's the closest position in the segment to the given point.
 			</description>
 		</method>
@@ -155,8 +132,7 @@
 				If [param from_id] point is disabled, returns an empty array (even if [code]from_id == to_id[/code]).
 				If [param from_id] point is not disabled, there is no valid path to the target, and [param allow_partial_path] is [code]true[/code], returns a path to the point closest to the target that can be reached.
 				[b]Note:[/b] When [param allow_partial_path] is [code]true[/code] and [param to_id] is disabled the search may take an unusually long time to finish.
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				var astar = AStar2D.new()
 				astar.add_point(1, Vector2(0, 0))
 				astar.add_point(2, Vector2(0, 1), 1) # Default weight is 1
@@ -169,21 +145,7 @@
 				astar.connect_points(1, 4, false)
 
 				var res = astar.get_id_path(1, 3) # Returns [1, 2, 3]
-				[/gdscript]
-				[csharp]
-				var astar = new AStar2D();
-				astar.AddPoint(1, new Vector2(0, 0));
-				astar.AddPoint(2, new Vector2(0, 1), 1); // Default weight is 1
-				astar.AddPoint(3, new Vector2(1, 1));
-				astar.AddPoint(4, new Vector2(2, 0));
-
-				astar.ConnectPoints(1, 2, false);
-				astar.ConnectPoints(2, 3, false);
-				astar.ConnectPoints(4, 3, false);
-				astar.ConnectPoints(1, 4, false);
-				long[] res = astar.GetIdPath(1, 3); // Returns [1, 2, 3]
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 				If you change the 2nd point's weight to 3, then the result will be [code][1, 4, 3][/code] instead, because now even though the distance is longer, it's "easier" to get through point 4 than through point 2.
 			</description>
 		</method>
@@ -198,8 +160,7 @@
 			<param index="0" name="id" type="int" />
 			<description>
 				Returns an array with the IDs of the points that form the connection with the given point.
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				var astar = AStar2D.new()
 				astar.add_point(1, Vector2(0, 0))
 				astar.add_point(2, Vector2(0, 1))
@@ -210,20 +171,7 @@
 				astar.connect_points(1, 3, true)
 
 				var neighbors = astar.get_point_connections(1) # Returns [2, 3]
-				[/gdscript]
-				[csharp]
-				var astar = new AStar2D();
-				astar.AddPoint(1, new Vector2(0, 0));
-				astar.AddPoint(2, new Vector2(0, 1));
-				astar.AddPoint(3, new Vector2(1, 1));
-				astar.AddPoint(4, new Vector2(2, 0));
-
-				astar.ConnectPoints(1, 2, true);
-				astar.ConnectPoints(1, 3, true);
-
-				long[] neighbors = astar.GetPointConnections(1); // Returns [2, 3]
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 			</description>
 		</method>
 		<method name="get_point_count" qualifiers="const">

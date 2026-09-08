@@ -75,7 +75,7 @@
 			<param index="1" name="will_build_archive" type="bool" />
 			<description>
 				This is called after Xcode project generation, but before it is built.
-				[b]Note:[/b] Only supported on iOS and visionOS.
+				[b]Note:[/b] Only supported on iOS.
 			</description>
 		</method>
 		<method name="_export_begin" qualifiers="virtual">
@@ -319,7 +319,7 @@
 			<param index="2" name="products" type="PackedStringArray" />
 			<description>
 				Adds a Swift Package Manager package to the Apple embedded platform's Xcode project. The [param url] is the URL of the package, [param version] is the version requirement (e.g. "1.0.0"), and [param products] is an array of product names to include from the package.
-				[b]Note:[/b] Only supported on iOS and visionOS.
+				[b]Note:[/b] Only supported on iOS.
 			</description>
 		</method>
 		<method name="add_file">

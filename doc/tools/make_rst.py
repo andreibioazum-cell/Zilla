@@ -78,7 +78,6 @@ BASE_STRINGS = [
     "There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!",
     "There is currently no description for this operator. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!",
     "There is currently no description for this theme property. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!",
-    "There are notable differences when using this API with C#. See :ref:`doc_c_sharp_differences` for more information.",
     "Deprecated:",
     "Experimental:",
     "This signal may be changed or removed in future versions.",
@@ -110,39 +109,6 @@ CLASS_GROUPS_BASE: dict[str, str] = {
     "variant": "Variant",
 }
 
-# Sync with the types mentioned in https://docs.godotengine.org/en/stable/tutorials/scripting/c_sharp/c_sharp_differences.html
-CLASSES_WITH_CSHARP_DIFFERENCES: list[str] = [
-    "@GlobalScope",
-    "String",
-    "StringName",
-    "NodePath",
-    "Signal",
-    "Callable",
-    "RID",
-    "Basis",
-    "Transform2D",
-    "Transform3D",
-    "Rect2",
-    "Rect2i",
-    "AABB",
-    "Quaternion",
-    "Projection",
-    "Color",
-    "Array",
-    "Dictionary",
-    "PackedByteArray",
-    "PackedColorArray",
-    "PackedFloat32Array",
-    "PackedFloat64Array",
-    "PackedInt32Array",
-    "PackedInt64Array",
-    "PackedStringArray",
-    "PackedVector2Array",
-    "PackedVector3Array",
-    "PackedVector4Array",
-    "Variant",
-]
-
 PACKED_ARRAY_TYPES: list[str] = [
     "PackedByteArray",
     "PackedColorArray",
@@ -165,7 +131,6 @@ class State:
         self.current_class: str = ""
 
         # Additional content and structure checks and validators.
-        self.script_language_parity_check: ScriptLanguageParityCheck = ScriptLanguageParityCheck()
         self.reserved_tag_check: ReservedTagCheck = ReservedTagCheck()
 
     def parse_class(self, class_root: ET.Element, filepath: str) -> None:
@@ -642,30 +607,6 @@ class ClassDef(DefinitionBase):
         self.class_group = group_name
 
 
-# Checks if code samples have both GDScript and C# variations.
-# For simplicity we assume that a GDScript example is always present, and ignore contexts
-# which don't necessarily need C# examples.
-class ScriptLanguageParityCheck:
-    def __init__(self) -> None:
-        self.hit_map: OrderedDict[str, list[tuple[DefinitionBase, str]]] = OrderedDict()
-        self.hit_count = 0
-
-    def add_hit(self, class_name: str, context: DefinitionBase, error: str, state: State) -> None:
-        if class_name in ["@GDScript", "@GlobalScope"]:
-            return  # We don't expect these contexts to have parity.
-
-        class_def = state.classes[class_name]
-        if class_def.class_group == "variant" and class_def.name != "Object":
-            return  # Variant types are replaced with native types in C#, we don't expect parity.
-
-        self.hit_count += 1
-
-        if class_name not in self.hit_map:
-            self.hit_map[class_name] = []
-
-        self.hit_map[class_name].append((context, error))
-
-
 # Checks if reserved tags have matching opening/closing pairs.
 class ReservedTagCheck:
     def __init__(self) -> None:
@@ -853,24 +794,6 @@ def main() -> None:
 
     # Print out checks.
 
-    if state.script_language_parity_check.hit_count > 0:
-        if not args.verbose:
-            print(
-                f"{Ansi.YELLOW}{state.script_language_parity_check.hit_count} code samples failed parity check. Use --verbose to get more information.{Ansi.RESET}"
-            )
-        else:
-            print(
-                f"{Ansi.YELLOW}{state.script_language_parity_check.hit_count} code samples failed parity check:{Ansi.RESET}"
-            )
-
-            for class_name in state.script_language_parity_check.hit_map.keys():
-                class_hits = state.script_language_parity_check.hit_map[class_name]
-                print(f'{Ansi.YELLOW}- {len(class_hits)} hits in class "{class_name}"{Ansi.RESET}')
-
-                for context, error in class_hits:
-                    print(f"  - {error} in {format_context_name(context)}")
-        print("")
-
     # Print out warnings and errors, or lack thereof, and exit with an appropriate code.
 
     if state.num_warnings >= 2:
@@ -1025,15 +948,6 @@ def make_rst_class(class_def: ClassDef, state: State, dry_run: bool, output_dir:
             f.write(
                 translate(
                     "There is currently no description for this class. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!"
-                )
-                + "\n\n"
-            )
-
-        if class_def.name in CLASSES_WITH_CSHARP_DIFFERENCES:
-            f.write(".. note::\n\n\t")
-            f.write(
-                translate(
-                    "There are notable differences when using this API with C#. See :ref:`doc_c_sharp_differences` for more information."
                 )
                 + "\n\n"
             )
@@ -1818,7 +1732,7 @@ def make_rst_index(grouped_classes: dict[str, list[str]], dry_run: bool, output_
 
 RESERVED_FORMATTING_TAGS = ["i", "b", "u", "lb", "rb", "code", "kbd", "center", "url", "br"]
 RESERVED_LAYOUT_TAGS = ["codeblocks"]
-RESERVED_CODEBLOCK_TAGS = ["codeblock", "gdscript", "csharp"]
+RESERVED_CODEBLOCK_TAGS = ["codeblock", "gdscript"]
 RESERVED_CROSSLINK_TAGS = [
     "method",
     "constructor",
@@ -1905,9 +1819,6 @@ def format_text_block(
     ignore_code_warnings = False
     code_warning_if_intended_string = "If this is intended, use [code skip-lint]...[/code]."
 
-    has_codeblocks_gdscript = False
-    has_codeblocks_csharp = False
-
     pos = 0
     admonition_pos = -1
     state.reserved_tag_check.reset()
@@ -1918,7 +1829,7 @@ def format_text_block(
             and not (
                 len(state.reserved_tag_check.tag_stack) == 2
                 and state.reserved_tag_check.tag_stack[0] == "codeblocks"
-                and state.reserved_tag_check.tag_stack[1] in ("gdscript", "csharp")
+                and state.reserved_tag_check.tag_stack[1] == "gdscript"
             )
         ):
             print_warning(
@@ -1999,17 +1910,6 @@ def format_text_block(
 
             elif tag_state.name == "codeblocks":
                 if tag_state.closing:
-                    if not has_codeblocks_gdscript or not has_codeblocks_csharp:
-                        state.script_language_parity_check.add_hit(
-                            state.current_class,
-                            context,
-                            "Only one script language sample found in [codeblocks]",
-                            state,
-                        )
-
-                    has_codeblocks_gdscript = False
-                    has_codeblocks_csharp = False
-
                     state.reserved_tag_check.add_closing_tag(tag_state.name)
                     tag_text = ""
                     inside_code_tabs = False
@@ -2027,26 +1927,8 @@ def format_text_block(
                             f"{state.current_class}.xml: GDScript code block is used outside of [codeblocks] in {context_name}.",
                             state,
                         )
-                    else:
-                        has_codeblocks_gdscript = True
                     tag_text = "\n .. code-tab:: gdscript\n"
-                elif tag_state.name == "csharp":
-                    if not inside_code_tabs:
-                        print_error(
-                            f"{state.current_class}.xml: C# code block is used outside of [codeblocks] in {context_name}.",
-                            state,
-                        )
-                    else:
-                        has_codeblocks_csharp = True
-                    tag_text = "\n .. code-tab:: csharp\n"
                 else:
-                    state.script_language_parity_check.add_hit(
-                        state.current_class,
-                        context,
-                        "Code sample is formatted with [codeblock] where [codeblocks] should be used",
-                        state,
-                    )
-
                     if "lang=text" in tag_state.arguments.split(" "):
                         tag_text = "\n.. code:: text\n"
                     else:
@@ -2556,8 +2438,6 @@ def preformat_text_block(text: str, state: State) -> str | None:
                 or stripped_line.startswith("[codeblock ")
                 or stripped_line.startswith("[gdscript]")
                 or stripped_line.startswith("[gdscript ")
-                or stripped_line.startswith("[csharp]")
-                or stripped_line.startswith("[csharp ")
             ):
                 if result:
                     result += "\n"

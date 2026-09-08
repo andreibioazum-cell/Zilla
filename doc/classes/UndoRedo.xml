@@ -7,8 +7,7 @@
 		UndoRedo works by registering methods and property changes inside "actions". You can create an action, then provide ways to do and undo this action using function calls and property changes, then commit the action.
 		When an action is committed, all of the [code]do_*[/code] methods will run. If the [method undo] method is used, the [code]undo_*[/code] methods will run. If the [method redo] method is used, once again, all of the [code]do_*[/code] methods will run.
 		Here's an example on how to add an action:
-		[codeblocks]
-		[gdscript]
+		[codeblock]
 		var undo_redo = UndoRedo.new()
 
 		func do_something():
@@ -25,43 +24,12 @@
 			undo_redo.add_do_property(node, "position", Vector2(100, 100))
 			undo_redo.add_undo_property(node, "position", node.position)
 			undo_redo.commit_action()
-		[/gdscript]
-		[csharp]
-		private UndoRedo _undoRedo;
-
-		public override void _Ready()
-		{
-			_undoRedo = new UndoRedo();
-		}
-
-		public void DoSomething()
-		{
-			// Put your code here.
-		}
-
-		public void UndoSomething()
-		{
-			// Put here the code that reverts what's done by "DoSomething()".
-		}
-
-		private void OnMyButtonPressed()
-		{
-			var node = GetNode&lt;Node2D&gt;("MyNode2D");
-			_undoRedo.CreateAction("Move the node");
-			_undoRedo.AddDoMethod(new Callable(this, MethodName.DoSomething));
-			_undoRedo.AddUndoMethod(new Callable(this, MethodName.UndoSomething));
-			_undoRedo.AddDoProperty(node, "position", new Vector2(100, 100));
-			_undoRedo.AddUndoProperty(node, "position", node.Position);
-			_undoRedo.CommitAction();
-		}
-		[/csharp]
-		[/codeblocks]
+		[/codeblock]
 		Before calling any of the [code]add_(un)do_*[/code] methods, you need to first call [method create_action]. Afterwards you need to call [method commit_action].
 		If you don't need to register a method, you can leave [method add_do_method] and [method add_undo_method] out; the same goes for properties. You can also register more than one method/property.
 		If you are making an [EditorPlugin] and want to integrate into the editor's undo history, use [EditorUndoRedoManager] instead.
 		If you are registering multiple properties/method which depend on one another, be aware that by default undo operation are called in the same order they have been added. Therefore instead of grouping do operation with their undo operations it is better to group do on one side and undo on the other as shown below.
-		[codeblocks]
-		[gdscript]
+		[codeblock]
 		undo_redo.create_action("Add object")
 
 		# DO
@@ -73,21 +41,7 @@
 		undo_redo.add_undo_method(_destroy_that_object)
 
 		undo_redo.commit_action()
-		[/gdscript]
-		[csharp]
-		_undo_redo.CreateAction("Add object");
-
-		// DO
-		_undo_redo.AddDoMethod(new Callable(this, MethodName.CreateObject));
-		_undo_redo.AddDoMethod(new Callable(this, MethodName.AddObjectToSingleton));
-
-		// UNDO
-		_undo_redo.AddUndoMethod(new Callable(this, MethodName.RemoveObjectFromSingleton));
-		_undo_redo.AddUndoMethod(new Callable(this, MethodName.DestroyThatObject));
-
-		_undo_redo.CommitAction();
-		[/csharp]
-		[/codeblocks]
+		[/codeblock]
 	</description>
 	<tutorials>
 	</tutorials>

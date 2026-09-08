@@ -123,9 +123,7 @@ static const float earth_gravity = 9.80665;
 	self.useCADisplayLink = bool(GLOBAL_DEF("display.AppleEmbedded/use_cadisplaylink", true)) ? YES : NO;
 	last_edr_headroom = 0.0;
 
-#if !defined(VISIONOS_ENABLED)
 	self.contentScaleFactor = [UIScreen mainScreen].scale;
-#endif
 
 	if (@available(iOS 17.0, *)) {
 		[self registerForTraitChanges:@[ [UITraitUserInterfaceStyle class] ] withTarget:self action:@selector(traitCollectionDidChangeWithView:previousTraitCollection:)];
@@ -156,9 +154,7 @@ static const float earth_gravity = 9.80665;
 
 - (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection {
 	if (@available(iOS 13.0, *)) {
-#if !defined(VISIONOS_ENABLED)
 		[super traitCollectionDidChange:previousTraitCollection];
-#endif
 		[self traitCollectionDidChangeWithView:self
 					   previousTraitCollection:previousTraitCollection];
 	}
@@ -242,7 +238,7 @@ static const float earth_gravity = 9.80665;
 	}
 
 	if (self.delegate && !self.delegateDidFinishSetUp) {
-		[self layoutRenderingLayer]; // Trigger DisplayServerVisionOS::resize_window after Main::start()
+		[self layoutRenderingLayer];
 		self.delegateDidFinishSetUp = [self.delegate godotViewFinishedSetup:self];
 		if (!_delegateDidFinishSetUp) {
 			return;
@@ -251,7 +247,6 @@ static const float earth_gravity = 9.80665;
 
 	[self handleMotion];
 
-#if !defined(VISIONOS_ENABLED)
 	if (@available(iOS 16.0, *)) {
 		CGFloat edr_headroom = UIScreen.mainScreen.currentEDRHeadroom;
 		if (last_edr_headroom != edr_headroom) {
@@ -261,8 +256,6 @@ static const float earth_gravity = 9.80665;
 			}
 		}
 	}
-
-#endif
 
 	[self.renderer renderOnView:self];
 
@@ -437,11 +430,7 @@ static const float earth_gravity = 9.80665;
 	// our orientation which is not a good thing when you're trying to get
 	// your user to move the screen in all directions and want consistent
 	// output
-#if defined(VISIONOS_ENABLED)
-	UIInterfaceOrientation interfaceOrientation = [UIApplication sharedApplication].delegate.window.windowScene.effectiveGeometry.interfaceOrientation;
-#else
 	UIInterfaceOrientation interfaceOrientation = [UIApplication sharedApplication].delegate.window.windowScene.interfaceOrientation;
-#endif
 
 	switch (interfaceOrientation) {
 		case UIInterfaceOrientationLandscapeLeft: {

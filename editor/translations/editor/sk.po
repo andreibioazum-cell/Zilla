@@ -5802,9 +5802,6 @@ msgstr "Globálna premenná"
 msgid "3D Engine"
 msgstr "3D Engine"
 
-msgid "XR"
-msgstr "XR"
-
 msgid "Vulkan"
 msgstr "Vulkan"
 
@@ -5825,9 +5822,6 @@ msgstr "Fonty WOFF2"
 
 msgid "SIL Graphite Fonts"
 msgstr "Fonty SIL Graphite"
-
-msgid "XR (AR and VR)."
-msgstr "XR (AR a VR)."
 
 msgid ""
 "Fallback implementation of Text Server\n"
@@ -6190,15 +6184,6 @@ msgstr "Názov vzdialeného repozitára"
 msgid "Remote URL"
 msgstr "URL vzdialeného repozitára"
 
-msgid "Class name must be a valid identifier"
-msgstr "Názov triedy musí byť platným identifikátorom"
-
-msgid "Not enough bytes for decoding bytes, or invalid format."
-msgstr "Nedostatok bajtov na dekódovanie, alebo chybný formát."
-
-msgid "Failed to load .NET runtime"
-msgstr "Načítanie .NET runtime zlyhalo"
-
 msgid "%s/s"
 msgstr "%s/s"
 
@@ -6261,12 +6246,6 @@ msgid "A NavigationMesh resource must be set or created for this node to work."
 msgstr ""
 "Prostriedok NavigationMesh musí byť nastavený alebo vytvorený, aby tento node "
 "mohol pracovať."
-
-msgid "Error loading %s: %s."
-msgstr "Chyba pri načítaní %s: %s."
-
-msgid "Add an action set."
-msgstr "Pridať set akcii."
 
 msgid "Add Input"
 msgstr "Pridať Vstup"
@@ -6736,9 +6715,6 @@ msgid ""
 msgstr ""
 "Nie sú nastavené žiadne VoxelGI dáta, takže tento node je vypnutý. Bakenite "
 "statické objekty, aby ste zapli GI."
-
-msgid "XROrigin3D requires an XRCamera3D child node."
-msgstr "XROrigin3D potrebuje detský XRCamera3D node."
 
 msgid "No playback resource set at path: %s."
 msgstr "Nieje nastavený žiadny zdrojový playback ako cesta: %s."

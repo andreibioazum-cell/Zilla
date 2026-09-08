@@ -1871,12 +1871,6 @@ msgstr "دستی"
 msgid "Output Latency"
 msgstr "نهفتگی برونداد"
 
-msgid "XR"
-msgstr "اکس‌آر"
-
-msgid "Extensions"
-msgstr "افزونه‌ها"
-
 msgid "Environment"
 msgstr "محیط"
 
@@ -1909,12 +1903,6 @@ msgstr "عکس"
 
 msgid "Minimum Display Time"
 msgstr "کمینهٔ زمان نمایش"
-
-msgid "Dotnet"
-msgstr "دات‌نت"
-
-msgid "Project"
-msgstr "پروژه"
 
 msgid "Time"
 msgstr "زمان"
@@ -2123,15 +2111,6 @@ msgstr "گرهٔ جهان"
 msgid "Region Size"
 msgstr "اندازهٔ دامنه"
 
-msgid "IOD"
-msgstr "آی‌او‌دی"
-
-msgid "Display Width"
-msgstr "پهنای نمایشگر"
-
-msgid "Vulkan VRS"
-msgstr "وی.آر.اس وولکان"
-
 msgid "Loop Offset"
 msgstr "بازه از مبدای چرخه"
 
@@ -2156,29 +2135,11 @@ msgstr "یک‌پارچه"
 msgid "In 3D Space"
 msgstr "در فضای سه‌بعدی"
 
-msgid "Display Refresh Rate"
-msgstr "نرخ نوگردانی نمایشگر"
-
 msgid "Next"
 msgstr "بعدی"
 
-msgid "Layer Viewport"
-msgstr "دیدگسترهٔ لایه"
-
 msgid "Border Color"
 msgstr "رنگ مرز"
-
-msgid "Aspect Ratio"
-msgstr "نسبت نما"
-
-msgid "Central Angle"
-msgstr "زاویهٔ مرکزی"
-
-msgid "Motion Range"
-msgstr "برد جنبش"
-
-msgid "Tracker"
-msgstr "ردیاب"
 
 msgid "Subject"
 msgstr "موضوع"
@@ -3270,20 +3231,8 @@ msgstr "برد پویا"
 msgid "Use Two Bounces"
 msgstr "به‌کارگیری دو واگشت"
 
-msgid "Body Tracker"
-msgstr "ردگیر بدن"
-
-msgid "Body Update"
-msgstr "به‌روزرسانی بدن"
-
 msgid "Pose"
 msgstr "ژست"
-
-msgid "Show When Tracked"
-msgstr "نمایش هنگام ردیافت"
-
-msgid "World Scale"
-msgstr "مقیاس جهان"
 
 msgid "Play Mode"
 msgstr "حالت پخش"
@@ -4401,9 +4350,6 @@ msgstr "OpenGL"
 msgid "Max Renderable Lights"
 msgstr "بیشینهٔ نورهای نماپرداختنی"
 
-msgid "Shaders"
-msgstr "سایه‌زن‌ها"
-
 msgid "Shader Language"
 msgstr "زبان سایه‌زن"
 
@@ -4421,27 +4367,3 @@ msgstr "نگهداشتن داده"
 
 msgid "Default Font Antialiasing"
 msgstr "نادندانگی پیش‌فرض قلم"
-
-msgid "Has Tracking Data"
-msgstr "دادهٔ ردیابی‌شده دارد"
-
-msgid "Body Flags"
-msgstr "پرچم‌های بدن"
-
-msgid "Blend Shapes"
-msgstr "شکل‌های درآمیزی"
-
-msgid "Hand Tracking Source"
-msgstr "سرچشمهٔ ردیابی دست"
-
-msgid "World Origin"
-msgstr "خاستگاه جهان"
-
-msgid "Primary Interface"
-msgstr "میانای اصلی"
-
-msgid "VRS Min Radius"
-msgstr "کمینهٔ شعاع وی.آر.اس"
-
-msgid "VRS Strength"
-msgstr "قدرت وی.آر.اس"

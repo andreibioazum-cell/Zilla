@@ -3580,13 +3580,6 @@ msgstr ""
 msgid "Note:"
 msgstr "Nota:"
 
-msgid ""
-"There are notable differences when using this API with C#. See [url=%s]C# API "
-"differences to GDScript[/url] for more information."
-msgstr ""
-"Ci sono notevoli differenze quando si usa questa API con C#. Visita "
-"[url=%s]differenze tra API di C# e GDScript[/url] per maggiori informazioni."
-
 msgid "Online Tutorials"
 msgstr "Corsi Online"
 
@@ -5639,13 +5632,6 @@ msgstr ""
 "Impossibile eseguire lo script perché non è uno script strumento (aggiungi "
 "l'annotazione \"@tool\" in alto)."
 
-msgid ""
-"Cannot run the script because it's not a tool script (add the [Tool] "
-"attribute above the class definition)."
-msgstr ""
-"Impossibile eseguire lo script perché non è uno script strumento (aggiungi "
-"l'attributo [Tool] sopra la definizione della classe)."
-
 msgid "Cannot run the script because it's not a tool script."
 msgstr ""
 "Impossibile eseguire lo script perché non è uno script strumento (tool)."
@@ -6341,19 +6327,6 @@ msgid ""
 msgstr ""
 "I .ipa possono essere solo costruiti su macOS. Mantenendo il progetto Xcode "
 "senza costruire il pacchetto."
-
-msgid ""
-"Exporting to an Apple Embedded platform when using C#/.NET is experimental "
-"and requires macOS."
-msgstr ""
-"L'esportazione su una piattaforma Apple Embedded utilizzando C#/. NET è "
-"sperimentale e richiede macOS."
-
-msgid ""
-"Exporting to an Apple Embedded platform when using C#/.NET is experimental."
-msgstr ""
-"L'esportazione su una piattaforma Apple Embedded utilizzando C#/. NET è "
-"sperimentale."
 
 msgid "Custom debug template not found."
 msgstr "Modello di sviluppo personalizzato non trovato."
@@ -9222,17 +9195,6 @@ msgstr ""
 "\n"
 
 msgid ""
-"Warning: This project uses C#, but this build of Godot does not have\n"
-"the Mono module. If you proceed you will not be able to use any C# scripts.\n"
-"\n"
-msgstr ""
-"Attenzione: Questo progetto utilizza C#, ma questa compilazione di Godot non "
-"contiene\n"
-"il modulo Mono. Se si procede, non sarà possibile utilizzare alcuno script in "
-"C#.\n"
-"\n"
-
-msgid ""
 "Warning: This project was last edited in Godot %s. Opening will change it to "
 "Godot %s.\n"
 "\n"
@@ -9668,20 +9630,8 @@ msgstr "Arresta progetto in esecuzione"
 msgid "Run Current Scene"
 msgstr "Esegui scena attuale"
 
-msgid "Run Scene in Regular Mode"
-msgstr "Esegui scena in modalità regolare"
-
-msgid "Run Scene in XR Mode"
-msgstr "Esegui scena in modalità XR"
-
 msgid "Run Specific Scene"
 msgstr "Esegui scena specifica"
-
-msgid "Run in Regular Mode"
-msgstr "Esegui in modalità regolare"
-
-msgid "Run in XR Mode"
-msgstr "Esegui in modalità XR"
 
 msgid "Enable Movie Maker Mode"
 msgstr "Abilita la modalità Movie Maker"
@@ -16441,12 +16391,6 @@ msgstr "Supporto per l'accessibilità (AccessKit)"
 msgid "Improved Gamepad Support (SDL)"
 msgstr "Supporto migliorato per gamepad (SDL)"
 
-msgid "XR"
-msgstr "XR"
-
-msgid "OpenXR"
-msgstr "OpenXR"
-
 msgid "Wayland"
 msgstr "Wayland"
 
@@ -16535,12 +16479,6 @@ msgstr ""
 "Se disabilitato, il supporto per gamepad è gestito tramite un codice "
 "personalizzato integrato, che potrebbe essere meno affidabile per alcuni "
 "modelli di controller."
-
-msgid "XR (AR and VR)."
-msgstr "XR (AR e VR)."
-
-msgid "OpenXR standard implementation (requires XR to be enabled)."
-msgstr "Implementazione standard di OpenXR (richiede che XR sia abilitato)."
 
 msgid "Wayland display server support (Linux only)."
 msgstr "Supporto per il server di visualizzazione Wayland (solo Linux)."
@@ -16659,13 +16597,6 @@ msgstr ""
 "le classi utilizzate.\n"
 "Nota che la prima scansione potrebbe richiedere un po' di tempo, soprattutto "
 "nei progetti più grandi."
-
-msgid ""
-"Warning: Class detection for C# scripts is not currently available, and such "
-"files will be ignored."
-msgstr ""
-"Attenzione: Il rilevamento delle classi per gli script C# non è attualmente "
-"disponibile, e tali file verranno ignorati."
 
 msgid "Scanning Project for Used Classes"
 msgstr "Scansione del progetto per trovare le classi usate"
@@ -18164,55 +18095,6 @@ msgstr "Eliminazione del rumore"
 msgid "Retrieving textures"
 msgstr "Prelievo delle texture"
 
-msgid "Class name can't be a reserved keyword"
-msgstr "Il nome della classe non può essere una parola chiave riservata"
-
-msgid "Class name must be a valid identifier"
-msgstr "Il nome della classe deve essere un identificatore valido"
-
-msgid "Not enough bytes for decoding bytes, or invalid format."
-msgstr "Byte insufficienti per la decodifica, o formato non valido."
-
-msgid ""
-"Unable to load .NET runtime, no compatible version was found.\n"
-"Attempting to create/edit a project will lead to a crash.\n"
-"\n"
-"Please install the .NET SDK 8.0 or later from https://get.dot.net and restart "
-"Godot."
-msgstr ""
-"Impossibile caricare eseguibile .NET, nessuna versione compatibile è stata "
-"trovata.\n"
-"Tentare di creare o modificare un progetto provocherà un arresto anomalo.\n"
-"\n"
-"Si prega di installare il .NET SDK 8.0 o più recenti da https://get.dot.net e "
-"riavviare Godot."
-
-msgid "Failed to load .NET runtime"
-msgstr "Errore durante il caricamento dell'eseguibile .NET"
-
-msgid ""
-"Unable to find the .NET assemblies directory.\n"
-"Make sure the '%s' directory exists and contains the .NET assemblies."
-msgstr ""
-"Impossibile trovare la cartella degli assembly .NET.\n"
-"Assicurarsi che la cartella '%s' esista e che contenga gli assembly .NET."
-
-msgid ".NET assemblies not found"
-msgstr "Assembly .NET non trovato"
-
-msgid ""
-"Unable to load .NET runtime, specifically hostfxr.\n"
-"Attempting to create/edit a project will lead to a crash.\n"
-"\n"
-"Please install the .NET SDK 8.0 or later from https://get.dot.net and restart "
-"Godot."
-msgstr ""
-"Impossibile caricare eseguibile .NET, specificamente hostfxr.\n"
-"Tentare di creare o modificare un progetto provocherà un arresto anomalo.\n"
-"\n"
-"Si prega di installare il .NET SDK 8.0 o più recenti da https://get.dot.net e "
-"riavviare Godot."
-
 msgctxt "Network"
 msgid "Down"
 msgstr "In entrata"
@@ -18687,171 +18569,6 @@ msgstr "Impossibile rinominare lo snapshot"
 msgid "ObjectDB Profiler"
 msgstr "Profiler di ObjectDB"
 
-msgid "Rename Action"
-msgstr "Rinomina un'azione"
-
-msgid "Rename Actions Localized name"
-msgstr "Rinomina il nome localizzato di un'azione"
-
-msgid "Change Action Type"
-msgstr "Cambia il tipo di un'azione"
-
-msgid ""
-"Internal name of the action. Some XR runtimes don't allow spaces or special "
-"characters."
-msgstr ""
-"Nome interno dell'azione. Alcuni runtime XR non permettono spazi o caratteri "
-"speciali."
-
-msgid "Action Name"
-msgstr "Nome dell'azione"
-
-msgid "Human-readable name of the action. This can be displayed to end users."
-msgstr ""
-"Nome dell'azione leggibile in chiaro. Si può visualizzare agli utenti finali."
-
-msgid "Action Localized Name"
-msgstr "Nome localizzato dell'azione"
-
-msgid "Type of the action"
-msgstr "Tipo dell'azione"
-
-msgid "Action Type"
-msgstr "Tipo dell'azione"
-
-msgid "Remove action"
-msgstr "Rimuovi un'azione"
-
-msgid "Add action set"
-msgstr "Aggiungi un insieme di azioni"
-
-msgid "Remove action set"
-msgstr "Rimuovi un insieme di azioni"
-
-msgid "Add interaction profile"
-msgstr "Aggiungi un profilo d'interazoine"
-
-msgid "Error loading %s: %s."
-msgstr "Errore di caricamento %s: %s."
-
-msgid "Error saving file %s: %s"
-msgstr "Errore nel salvataggio del file %s: %s"
-
-msgid "OpenXR Action map:"
-msgstr "Mappa delle azioni OpenXR:"
-
-msgid "Remove interaction profile"
-msgstr "Rimuovi un profilo d'interazione"
-
-msgid "OpenXR Action Map"
-msgstr "Mappa delle azioni OpenXR"
-
-msgid "Toggle OpenXR Action Map Dock"
-msgstr "Commuta il pannello Mappa delle azioni OpenXR"
-
-msgid "Add Action Set"
-msgstr "Aggiungi un insieme di azioni"
-
-msgid "Add an action set."
-msgstr "Aggiunge un insieme di azioni."
-
-msgid "Add profile"
-msgstr "Aggiungi un profilo"
-
-msgid "Add an interaction profile."
-msgstr "Aggiungi un profilo d'interazione."
-
-msgid "Save this OpenXR action map."
-msgstr "Salva questa mappa delle azioni OpenXR."
-
-msgid "Reset to default OpenXR action map."
-msgstr "Ripristina la mappa delle azioni OpenXR predefinita."
-
-msgid "Action Sets"
-msgstr "Insiemi di azioni"
-
-msgid "Rename Action Set"
-msgstr "Rinomina un insieme di azioni"
-
-msgid "Rename Action Sets Localized name"
-msgstr "Cambia il nome localizzato di insiemi di azioni"
-
-msgid "Change Action Sets priority"
-msgstr "Cambia la priorità di insiemi di azioni"
-
-msgid "Add action"
-msgstr "Aggiungi un'azione"
-
-msgid "Delete action"
-msgstr "Elimina un'azione"
-
-msgid "Fold"
-msgstr "Riduci"
-
-msgid "Action Set Name"
-msgstr "Nome di insieme di azioni"
-
-msgid ""
-"Human-readable name of the action set. This can be displayed to end users."
-msgstr ""
-"Nome leggibile in chiaro dell'insieme di azioni. Si può visualizzare agli "
-"utenti finali."
-
-msgid "Action Set Localized Name"
-msgstr "Nome localizzato di insieme di azioni"
-
-msgid ""
-"Priority of the action set. If multiple action sets bind to the same input, "
-"the action set with the highest priority will be updated."
-msgstr ""
-"Priorità dell'insieme di azioni. Se più insiemi di azioni sono associati allo "
-"stesso input, verrà aggiornato l'insieme di azioni con la priorità più alta."
-
-msgid "Action Set Priority"
-msgstr "Priorità di insieme di azioni"
-
-msgid "Add action."
-msgstr "Aggiungi un'azione."
-
-msgid "Remove action set."
-msgstr "Rimuovi un insieme di azioni."
-
-msgid "Remove this binding modifier."
-msgstr "Rimuovi questo modificatore di associazione."
-
-msgid "Remove binding modifier"
-msgstr "Rimuovi un modificatore di associazione"
-
-msgid "Add binding modifier"
-msgstr "Aggiungi un modificatore di associazione"
-
-msgid "Note: modifiers will only be applied if supported on the host system."
-msgstr ""
-"Nota: i modificatori saranno applicati solo se supportati dal sistema host."
-
-msgid "Binding modifiers for:"
-msgstr "Modificatori di associazione per:"
-
-msgid "Remove action from interaction profile"
-msgstr "Rimuovi un'azione dal profilo d'interazione"
-
-msgid "Edit binding modifiers"
-msgstr "Modifica i modificatori delle associazioni"
-
-msgid "Note: This interaction profile requires extension %s support."
-msgstr ""
-"Nota: questo profilo d'interazione richiede supporto per l'estensione %s."
-
-msgid "Add binding"
-msgstr "Aggiungi un'associazione"
-
-msgid "Remove binding"
-msgstr "Rimuovi un'associazione"
-
-msgid "Note: This binding path requires extension %s support."
-msgstr ""
-"Nota: questo percorso di associazione richiede supporto per l'estensione %s."
-
 msgid "Boolean"
 msgstr "Booleano"
 
@@ -18860,63 +18577,6 @@ msgstr "Float"
 
 msgid "Vector2"
 msgstr "Vector2"
-
-msgid "Pose"
-msgstr "Posa"
-
-msgid "Haptic"
-msgstr "Tattile"
-
-msgid "Unknown"
-msgstr "Sconosciuta"
-
-msgid "Modifiers"
-msgstr "Modificatori"
-
-msgid "Select an action"
-msgstr "Selezionare un'azione"
-
-msgid "Select an interaction profile"
-msgstr "Seleziona un profilo d'interazione"
-
-msgid "All interaction profiles have been added to the action map."
-msgstr ""
-"Tutti i profili di interazione sono stati aggiunti alla mappa delle azioni."
-
-msgid "Choose an XR runtime."
-msgstr "Scegli un eseguibile XR."
-
-msgid ""
-"Cannot use the same SubViewport with multiple OpenXR composition layers. "
-"Clear it from its current layer first."
-msgstr ""
-"Non è possibile usare la stessa SubViewport con più di un livello di "
-"composizione OpenXR. Rimuovila prima dal suo livello attuale."
-
-msgid ""
-"Cannot set SubViewport on an OpenXR composition layer when using an Android "
-"surface."
-msgstr ""
-"Non è possibile impostare SubViewport su un livello di composizione OpenXR "
-"quando si utilizza una superficie di Android."
-
-msgid ""
-"OpenXR composition layers must have orthonormalized transforms (ie. no scale "
-"or shearing)."
-msgstr ""
-"I livelli di composizione OpenXR devono avere trasformazioni ortonormali (non "
-"devono essere ridimenzionati o inclinati)."
-
-msgid ""
-"Hole punching won't work as expected unless the sort order is less than zero."
-msgstr ""
-"La perforazione non funzionerà come previsto a meno che l'ordinamento non sia "
-"minore di zero."
-
-msgid "OpenXR visibility mask must have an XRCamera3D node as their parent."
-msgstr ""
-"La maschera di visibilità OpenXR deve avere un nodo XRCamera3D come suo "
-"genitore."
 
 msgid "E constant (2.718282). Represents the base of the natural logarithm."
 msgstr "La costante E (2.718282). Rappresenta la base del logaritmo naturale."
@@ -20492,25 +20152,6 @@ msgstr ""
 "Errore: Si è verificato un problema durante la convalida del nome utente e "
 "della password del keystore"
 
-msgid ""
-"Unable to determine the C# project's TFM, it may be incompatible. The export "
-"template only supports '%s'. Make sure the project targets '%s' or consider "
-"using gradle builds instead."
-msgstr ""
-"Impossibile determinare il TFM del progetto C#, potrebbe essere "
-"incompatibile. Il modello di esportazione supporta solo '%s'. Assicurati che "
-"il progetto indirizzi '%s' o considera invece l'utilizzo di build gradle."
-
-msgid ""
-"C# project targets '%s' but the export template only supports '%s'. Consider "
-"using gradle builds instead."
-msgstr ""
-"Il progetto C# indirizza '%s' ma il modello di esportazione supporta solo "
-"'%s'. Si consiglia di utilizzare invece le build gradle."
-
-msgid "Exporting to Android when using C#/.NET is experimental."
-msgstr "L'esportazione di un progetto C#/. NET su Android è sperimentale."
-
 msgid "Custom Android source template not found."
 msgstr "Il modello personalizzato della sorgente Android non è stato trovato."
 
@@ -20912,13 +20553,6 @@ msgstr ""
 msgid "App sandbox is required for App Store distribution."
 msgstr "Un App Sandbox è necessario per la distribuzione sull'App Store."
 
-msgid ""
-"'rcodesign' doesn't support signing applications with embedded dynamic "
-"libraries (GDExtension or .NET)."
-msgstr ""
-"'rcodesign' non supporta la firma di applicazioni con librerie dinamiche "
-"integrate (GDExtension o .NET)."
-
 msgid "Code signing is required for App Store distribution."
 msgstr "La firma del codice è necessaria per la distribuzione sull'App Store."
 
@@ -21269,20 +20903,6 @@ msgstr "Non è stato possibile leggere il file: \"%s\"."
 
 msgid "PWA"
 msgstr "PWA"
-
-msgid ""
-"Exporting to Web is currently not supported in Godot 4 when using C#/.NET. "
-"Use Godot 3 to target Web with C#/Mono instead."
-msgstr ""
-"L'esportazione sul Web è attualmente non supportata in Godot 4 quando si "
-"utilizza C#/.NET. Invece, usa Godot 3 per esportare su Web con C#/Mono."
-
-msgid ""
-"If this project does not use C#, use a non-C# editor build to export the "
-"project."
-msgstr ""
-"Se questo progetto non utilizza C#, utilizza una build dell'editor senza C# "
-"per esportare il progetto."
 
 msgid "Could not read HTML shell: \"%s\"."
 msgstr "Non è stato possibile leggere lo shell HTML: \"%s\"."
@@ -22359,52 +21979,6 @@ msgstr ""
 "Un solo WorldEnvironment è consentito per scena (o un insieme di scene "
 "istanziate)."
 
-msgid ""
-"XRCamera3D may not function as expected without an XROrigin3D node as its "
-"parent."
-msgstr ""
-"XRCamera3D potrebbe non funzionare come previsto senza un nodo ARVROrigin3D "
-"come genitore."
-
-msgid ""
-"XRCamera3D should have physics_interpolation_mode set to OFF in order to "
-"avoid jitter."
-msgstr ""
-"XRCamera3D dovrebbe impostare physics_interpolation_mode su OFF per evitare "
-"tremolii (jitter)."
-
-msgid ""
-"XRNode3D may not function as expected without an XROrigin3D node as its "
-"parent."
-msgstr ""
-"XRNode3D potrebbe non funzionare come previsto senza un nodo XROrigin3D come "
-"genitore."
-
-msgid "No tracker name is set."
-msgstr "Nessun nome del tracciatore impostato."
-
-msgid "No pose is set."
-msgstr "Nessuna posa è impostata."
-
-msgid ""
-"XRNode3D should have physics_interpolation_mode set to OFF in order to avoid "
-"jitter."
-msgstr ""
-"XRNode3D dovrebbe impostare physics_interpolation_mode su OFF per evitare "
-"tremolii (jitter)."
-
-msgid "XROrigin3D requires an XRCamera3D child node."
-msgstr "XROrigin3D richiede un nodo figlio di tipo XRCamera3D."
-
-msgid ""
-"XR shaders are not enabled in project settings. Stereoscopic output is not "
-"supported unless they are enabled. Please enable `xr/shaders/enabled` to use "
-"stereoscopic output."
-msgstr ""
-"Gli shader XR non sono abilitati nelle Impostazioni del progetto. L'uscita "
-"stereoscopica non è supportata a meno che non siano attivi. Si prega di "
-"abilitare `xr/shaders/enabled` per utilizzare l'uscita stereoscopica."
-
 msgid "Animation '%s' not found."
 msgstr "Animazione \"%s\" non trovata."
 
@@ -22909,15 +22483,6 @@ msgstr "Nessuna funzione corrispondente trovata per: \"%s\"."
 msgid "Varying '%s' cannot be passed for the '%s' parameter in that context."
 msgstr ""
 "Il varying '%s' non può essere passato per il parametro '%s' in quel contesto."
-
-msgid ""
-"Unable to pass a multiview texture sampler as a parameter to a custom "
-"function. Consider sampling it in the main function and then passing the "
-"vector result to the custom function."
-msgstr ""
-"Impossibile passare un campionatore di texture multiview come parametro a una "
-"funzione personalizzata. Considera di campionarla nella funzione principale e "
-"poi passare il vettore risultate alla funzione personalizzata."
 
 msgid ""
 "Unable to pass RADIANCE texture sampler as a parameter to a custom function. "

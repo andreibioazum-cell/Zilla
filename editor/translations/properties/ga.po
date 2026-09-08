@@ -2723,9 +2723,6 @@ msgstr "Méid Cló Foinse Cabhrach"
 msgid "Help Title Font Size"
 msgstr "Méid Cló Teidil na Cabhrach"
 
-msgid "Class Reference Examples"
-msgstr "Samplaí Tagartha Ranga"
-
 msgid "Sort Functions Alphabetically"
 msgstr "Sórtáil feidhmeanna in ord aibítre"
 
@@ -3491,119 +3488,11 @@ msgstr "Folaigh Barra Stádais"
 msgid "Suppress UI Gesture"
 msgstr "Cuir gotha UI faoi chois"
 
-msgid "XR"
-msgstr "XRName"
-
-msgid "OpenXR"
-msgstr "OpenXRName"
-
-msgid "Target API Version"
-msgstr "Leagan API Sprioc"
-
-msgid "Default Action Map"
-msgstr "Mapa Gníomhaíochta Réamhshocraithe"
-
-msgid "Form Factor"
-msgstr "Fachtóir Foirme"
-
-msgid "View Configuration"
-msgstr "Amharc ar chumraíocht"
-
-msgid "Reference Space"
-msgstr "Spás Tagartha"
-
-msgid "Environment Blend Mode"
-msgstr "Mód Cumaisc Comhshaoil"
-
-msgid "Foveation Level"
-msgstr "Leibhéal Foveation"
-
-msgid "Foveation Dynamic"
-msgstr "Dinimiciúil Foveation"
-
-msgid "Foveation Eye Tracked"
-msgstr "Rianú Súile Foveation"
-
-msgid "Foveation with Subsampled Images"
-msgstr "Foveation le hÍomhánna Foshampláilte"
-
-msgid "Submit Depth Buffer"
-msgstr "Cuir Maolán Doimhneachta isteach"
-
-msgid "Startup Alert"
-msgstr "Foláireamh Tosaithe"
-
-msgid "Extensions"
-msgstr "Iarmhíreanna"
-
-msgid "Debug Utils"
-msgstr "Utils dífhabhtaithe"
-
-msgid "Debug Message Types"
-msgstr "Cineálacha Teachtaireachtaí Dífhabhtaithe"
-
-msgid "Frame Synthesis"
-msgstr "Sintéis Fráma"
-
-msgid "Hand Tracking"
-msgstr "Rianú Láimhe"
-
-msgid "Hand Tracking Unobstructed Data Source"
-msgstr "Rianú Láimhe Foinse Sonraí Gan Bhac"
-
-msgid "Hand Tracking Controller Data Source"
-msgstr "Foinse Sonraí Rialaitheora Rianaithe Láimhe"
-
-msgid "Hand Interaction Profile"
-msgstr "Próifíl Idirghníomhaíochta Láimhe"
-
-msgid "Spatial Entity"
-msgstr "Eintiteas Spásúil"
-
-msgid "Enable Spatial Anchors"
-msgstr "Cumasaigh Ancairí Spásúla"
-
-msgid "Enable Persistent Anchors"
-msgstr "Cumasaigh Ancairí Buana"
-
-msgid "Enable Builtin Anchor Detection"
-msgstr "Cumasaigh Brath Ancaire Insuite"
-
-msgid "Enable Plane Tracking"
-msgstr "Cumasaigh Rianú Eitleáin"
-
-msgid "Enable Builtin Plane Detection"
-msgstr "Cumasaigh Brath Plána Insuite"
-
 msgid "Enable Marker Tracking"
 msgstr "Cumasaigh Rianú Marcóirí"
 
 msgid "Enable Builtin Marker Tracking"
 msgstr "Cumasaigh Rianú Marcóirí Insuite"
-
-msgid "Aruco Dict"
-msgstr "Foclóir Aruco"
-
-msgid "April Tag Dict"
-msgstr "Aibreán Clib Dict"
-
-msgid "Eye Gaze Interaction"
-msgstr "Idirghníomhaíocht Súl"
-
-msgid "Render Model"
-msgstr "Samhail Rindreála"
-
-msgid "User Presence"
-msgstr "Láithreacht Úsáideora"
-
-msgid "Binding Modifiers"
-msgstr "Mionathraitheoirí Ceangailteacha"
-
-msgid "Analog Threshold"
-msgstr "Tairseach Analógach"
-
-msgid "Dpad Binding"
-msgstr "Ceangal Dpad"
 
 msgid "Boot Splash"
 msgstr "Splancscáileán Tosaithe"
@@ -3664,21 +3553,6 @@ msgstr "Íomhá"
 
 msgid "Minimum Display Time"
 msgstr "Am Taispeána Íosta"
-
-msgid "Dotnet"
-msgstr "DotnetName"
-
-msgid "Project"
-msgstr "Tionscadal"
-
-msgid "Assembly Name"
-msgstr "Ainm an Tionóil"
-
-msgid "Solution Directory"
-msgstr "Comhadlann Réitigh"
-
-msgid "Assembly Reload Attempts"
-msgstr "Iarrachtaí Athluchtaithe Tionóil"
 
 msgid "Time"
 msgstr "Am"
@@ -4592,36 +4466,6 @@ msgstr "Dífuaimiú"
 msgid "Denoiser"
 msgstr "DenoiserName"
 
-msgid "Eye Height"
-msgstr "Airde na Súl"
-
-msgid "IOD"
-msgstr "IAIDÍN"
-
-msgid "Display Width"
-msgstr "Taispeáin Leithead"
-
-msgid "Display to Lens"
-msgstr "Taispeáin go Lionsa"
-
-msgid "Offset Rect"
-msgstr "Fritháireamh Rect"
-
-msgid "Oversample"
-msgstr "Ró-shamplaigh"
-
-msgid "K1"
-msgstr "K1GenericName"
-
-msgid "K2"
-msgstr "K2GenericName"
-
-msgid "Vulkan VRS"
-msgstr "Vulkan VRS"
-
-msgid "Min Radius"
-msgstr "Ga Min"
-
 msgid "BPM"
 msgstr "BPM"
 
@@ -4760,200 +4604,11 @@ msgstr "Sciorta cumaisc gan uaim"
 msgid "Bump Strength"
 msgstr "Neart Bump"
 
-msgid "Localized Name"
-msgstr "Ainm Logánaithe"
-
-msgid "Action Type"
-msgstr "Cineál Gnímh"
-
-msgid "Toplevel Paths"
-msgstr "Cosáin Toplevel"
-
-msgid "Action Sets"
-msgstr "Tacair Ghníomhaíochta"
-
-msgid "Interaction Profiles"
-msgstr "Próifílí Idirghníomhaíochta"
-
-msgid "Actions"
-msgstr "Gníomhartha"
-
-msgid "Binding Path"
-msgstr "Cosán Ceangailteacha"
-
-msgid "Interaction Profile Path"
-msgstr "Conair Phróifíl Idirghníomhaíochta"
-
-msgid "Bindings"
-msgstr "Ceangail"
-
-msgid "Runtime Paths"
-msgstr "Cosáin Am Rith"
-
-msgid "Action Set"
-msgstr "Tacar Gníomhaíochta"
-
-msgid "Input Path"
-msgstr "Cosán Ionchuir"
-
-msgid "Threshold Released"
-msgstr "Tairseach Eisithe"
-
-msgid "Center Region"
-msgstr "Réigiún Lár"
-
-msgid "Wedge Angle"
-msgstr "Uillinn Ding"
-
-msgid "Is Sticky"
-msgstr "An bhfuil Greamaitheach"
-
-msgid "On Haptic"
-msgstr "Ar Haptic"
-
-msgid "Off Haptic"
-msgstr "As Haptic"
-
-msgid "Relax Frame Interval"
-msgstr "Eatramh Fráma Scíth a ligean"
-
-msgid "On Threshold"
-msgstr "Ar Tairseach"
-
-msgid "Off Threshold"
-msgstr "Lasmuigh den Tairseach"
-
-msgid "UUID"
-msgstr "UUID"
-
-msgid "Entity"
-msgstr "Eintiteas"
-
-msgid "Spatial Tracking State"
-msgstr "Stádas Rianaithe Spásúil"
-
-msgid "April Dict"
-msgstr "Aibreán Dict"
-
-msgid "Bounds Size"
-msgstr "Méid Teorann"
-
-msgid "Marker Type"
-msgstr "Cineál Marcóra"
-
-msgid "Marker ID"
-msgstr "Aitheantas Marcóra"
-
-msgid "Plane Alignment"
-msgstr "Ailíniú Plána"
-
-msgid "Plane Label"
-msgstr "Lipéad Eitleáin"
-
-msgid "Display Refresh Rate"
-msgstr "Taispeáin Ráta Athnuachana"
-
-msgid "Render Target Size Multiplier"
-msgstr "Rindreáil Iolraitheoir Spriocmhéid"
-
 msgid "Next"
 msgstr "Ar Aghaidh"
 
-msgid "Layer Viewport"
-msgstr "Amharcphort na Sraithe"
-
-msgid "Use Android Surface"
-msgstr "Úsáid Dromchla Android"
-
-msgid "Protected Content"
-msgstr "Ábhar Cosanta"
-
-msgid "Android Surface Size"
-msgstr "Méid Dromchla Android"
-
-msgid "Sort Order"
-msgstr "Ord Sórtála"
-
-msgid "Alpha Blend"
-msgstr "Cumasc Alfa"
-
-msgid "Enable Hole Punch"
-msgstr "Gníomhachtaigh Puncha Poill"
-
-msgid "Eye Visibility"
-msgstr "Infheictheacht Súile"
-
-msgid "Swapchain State"
-msgstr "Stát Swapchain"
-
-msgid "Mipmap Mode"
-msgstr "Mód Mipmap"
-
-msgid "Horizontal Wrap"
-msgstr "Fillteán Cothrománach"
-
-msgid "Vertical Wrap"
-msgstr "Fillteán Ingearach"
-
-msgid "Red Swizzle"
-msgstr "Swizzle Dearg"
-
-msgid "Green Swizzle"
-msgstr "Glas Swizzle"
-
-msgid "Blue Swizzle"
-msgstr "Swizzle Gorm"
-
-msgid "Alpha Swizzle"
-msgstr "Alfa Swizzle"
-
-msgid "Max Anisotropy"
-msgstr "Uasmhéid Ainisotrópachta"
-
 msgid "Border Color"
 msgstr "Dath na Teorann"
-
-msgid "Aspect Ratio"
-msgstr "Cóimheas Treoíochta"
-
-msgid "Central Angle"
-msgstr "Uillinn Lárnach"
-
-msgid "Fallback Segments"
-msgstr "Deighleáin Fallback"
-
-msgid "Central Horizontal Angle"
-msgstr "Uillinn Chothrománach Lárnach"
-
-msgid "Upper Vertical Angle"
-msgstr "Uillinn Ingearach Uachtarach"
-
-msgid "Lower Vertical Angle"
-msgstr "Uillinn Ingearach Íochtarach"
-
-msgid "Quad Size"
-msgstr "Méid quad"
-
-msgid "Hand"
-msgstr "Lámh"
-
-msgid "Motion Range"
-msgstr "Raon Gluaisne"
-
-msgid "Hand Skeleton"
-msgstr "Cnámharlach Láimhe"
-
-msgid "Skeleton Rig"
-msgstr "Rig cnámharlaigh"
-
-msgid "Bone Update"
-msgstr "Nuashonrú Cnámh"
-
-msgid "Tracker"
-msgstr "Lorgaire"
-
-msgid "Make Local to Pose"
-msgstr "Déan Áitiúil le Posáil"
 
 msgid "Subject"
 msgstr "Ábhar"
@@ -5144,27 +4799,6 @@ msgstr "Paicéid Ciúáilte Uasta"
 msgid "Heartbeat Interval"
 msgstr "Eatramh buille croí"
 
-msgid "Session Mode"
-msgstr "Mód Seisiúin"
-
-msgid "Required Features"
-msgstr "Gnéithe Riachtanacha"
-
-msgid "Optional Features"
-msgstr "Gnéithe Roghnacha"
-
-msgid "Requested Reference Space Types"
-msgstr "Cineálacha Spáis Tagartha Iarrtha"
-
-msgid "Reference Space Type"
-msgstr "Cineál Spáis Tagartha"
-
-msgid "Enabled Features"
-msgstr "Gnéithe Cumasaithe"
-
-msgid "Visibility State"
-msgstr "Staid Infheictheachta"
-
 msgid "Debug Keystore"
 msgstr "Stór Eochrach Dífhabhtaithe"
 
@@ -5317,12 +4951,6 @@ msgstr "Grafaic"
 
 msgid "OpenGL Debug"
 msgstr "Dífhabhtú OpenGL"
-
-msgid "XR Features"
-msgstr "Gnéithe XR"
-
-msgid "XR Mode"
-msgstr "Mód XR"
 
 msgid "Gesture"
 msgstr "Gothaí"
@@ -5671,9 +5299,6 @@ msgstr "Cur Síos ar Úsáid Imleabhair Inbhainte"
 
 msgid "Removable Volumes Usage Description Localized"
 msgstr "Inbhainte Imleabhair Cur síos Úsáid Logánaithe"
-
-msgid "Min visionOS Version"
-msgstr "Leagan OS Min vision"
 
 msgid "Web"
 msgstr "Gréasán"
@@ -7807,26 +7432,8 @@ msgstr "Iomadú"
 msgid "Use Two Bounces"
 msgstr "Bain úsáid as Dhá Preab"
 
-msgid "Body Tracker"
-msgstr "Lorgaire Coirp"
-
-msgid "Body Update"
-msgstr "Nuashonrú coirp"
-
-msgid "Face Tracker"
-msgstr "Lorgaire Aghaidhe"
-
-msgid "Hand Tracker"
-msgstr "Lorgaire Láimhe"
-
 msgid "Pose"
 msgstr "Údar"
-
-msgid "Show When Tracked"
-msgstr "Taispeáin nuair a rianaítear é"
-
-msgid "World Scale"
-msgstr "Scála Domhanda"
 
 msgid "Play Mode"
 msgstr "Mód Seinnte"
@@ -9364,9 +8971,6 @@ msgstr "Conair an Phoirt Amhairc"
 
 msgid "Disable 3D"
 msgstr "Díchumasaigh 3D"
-
-msgid "Use XR"
-msgstr "Úsáid XR"
 
 msgid "Own World 3D"
 msgstr "Domhan Féin 3D"
@@ -12725,9 +12329,6 @@ msgstr "Max Soilse Indreáilte"
 msgid "Max Lights per Object"
 msgstr "Soilse Max in aghaidh an Réada"
 
-msgid "Shaders"
-msgstr "Scáthanna"
-
 msgid "Shader Language"
 msgstr "Teanga Shader"
 
@@ -12877,48 +12478,3 @@ msgstr "Cuir Sonraí Freastalaí Téacs san áireamh"
 
 msgid "Line Breaking Strictness"
 msgstr "Déine Briste Líne"
-
-msgid "Has Tracking Data"
-msgstr "An bhfuil Sonraí Rianaithe aige"
-
-msgid "Body Flags"
-msgstr "Bratacha Coirp"
-
-msgid "Blend Shapes"
-msgstr "Cruthanna Cumaisc"
-
-msgid "Hand Tracking Source"
-msgstr "Foinse Rianaithe Láimhe"
-
-msgid "Is Primary"
-msgstr "An bhfuil"
-
-msgid "Play Area Mode"
-msgstr "Mód Limistéar Súgartha"
-
-msgid "AR"
-msgstr "AR"
-
-msgid "Is Anchor Detection Enabled"
-msgstr "An bhfuil Brath Ancaire Cumasaithe"
-
-msgid "Tracking Confidence"
-msgstr "Muinín a Rianú"
-
-msgid "World Origin"
-msgstr "Bunús an Domhain"
-
-msgid "Camera Locked to Origin"
-msgstr "Ceamara Glasáilte go Bunús"
-
-msgid "Primary Interface"
-msgstr "Comhéadan Bunscoile"
-
-msgid "VRS Min Radius"
-msgstr "VRS Min Ga"
-
-msgid "VRS Strength"
-msgstr "Neart VRS"
-
-msgid "VRS Render Region"
-msgstr "Réigiún Rindreála VRS"

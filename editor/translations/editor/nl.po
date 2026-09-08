@@ -3165,13 +3165,6 @@ msgstr ""
 msgid "Note:"
 msgstr "Notitie:"
 
-msgid ""
-"There are notable differences when using this API with C#. See [url=%s]C# API "
-"differences to GDScript[/url] for more information."
-msgstr ""
-"Er zijn aanzienlijke verschillen bij het gebruik van deze API via C#. Zie "
-"[url=%s]verschillen tussen C# en GDScript[/url] voor meer informatie."
-
 msgid "Online Tutorials"
 msgstr "Online handleidingen"
 
@@ -8356,12 +8349,6 @@ msgstr "Navigatie (2D)"
 msgid "Navigation (3D)"
 msgstr "Navigatie (3D)"
 
-msgid "XR"
-msgstr "XR"
-
-msgid "OpenXR"
-msgstr "OpenXR"
-
 msgid "Wayland"
 msgstr "Wayland"
 
@@ -8418,12 +8405,6 @@ msgstr "SIL-Graphite-lettertypen"
 
 msgid "Multi-channel Signed Distance Field Font Rendering"
 msgstr "Lettertyperendering met Multi-channel Signed Distance Field"
-
-msgid "XR (AR and VR)."
-msgstr "XR (AR en VR)."
-
-msgid "OpenXR standard implementation (requires XR to be enabled)."
-msgstr "OpenXR standaardimplementatie (vereist dat XR ingeschakeld is)."
 
 msgid "Forward+ renderer for advanced 3D graphics."
 msgstr "Forward+-renderer voor geavanceerd 3D-beeld."
@@ -8515,13 +8496,6 @@ msgstr ""
 "Dit zal alle bestanden in het huidige project scannen om de gebruikte klassen "
 "te herkennen.\n"
 "De eerste scan kan een tijdje duren, zeker in grote projecten."
-
-msgid ""
-"Warning: Class detection for C# scripts is not currently available, and such "
-"files will be ignored."
-msgstr ""
-"Let op: Klasseherkenning is momenteel niet beschikbaar voor C#-scripts, en "
-"dergelijke bestanden zullen dus genegeerd worden."
 
 msgid "Scanning Project for Used Classes"
 msgstr "Project op gebruikte klassen scannen"
@@ -9158,12 +9132,6 @@ msgstr "Begin lichtberekening"
 msgid "Denoising"
 msgstr "Ruisvrij maken"
 
-msgid "Class name can't be a reserved keyword"
-msgstr "Klassennaam kan geen gereserveerd sleutelwoord zijn"
-
-msgid "Not enough bytes for decoding bytes, or invalid format."
-msgstr "Niet genoeg bytes voor het decoderen van bytes, of ongeldig formaat."
-
 msgctxt "Network"
 msgid "Down"
 msgstr "In"
@@ -9227,15 +9195,6 @@ msgstr "Float"
 
 msgid "Vector2"
 msgstr "Vector2"
-
-msgid "Pose"
-msgstr "Houding"
-
-msgid "Haptic"
-msgstr "Haptisch"
-
-msgid "Unknown"
-msgstr "Onbekend"
 
 msgid "E constant (2.718282). Represents the base of the natural logarithm."
 msgstr ""

@@ -3614,7 +3614,7 @@
                     "name": "string",
                     "type": "const char*",
                     "description": [
-                        "(e.g. \"Godot v3.1.4.stable.official.mono\")"
+                        "(e.g. \"Godot v3.1.4.stable.official\")"
                     ]
                 }
             ]

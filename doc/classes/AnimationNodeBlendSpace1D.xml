@@ -9,16 +9,10 @@
 		You can set the extents of the axis with [member min_space] and [member max_space].
 
 		Optionally, signals can be used by setting an [AnimationNodeObserverBlendSpace] through [AnimationTree].
-		[codeblocks]
-		[gdscript]
+		[codeblock]
 		var observer = tree.get("parameters/BlendSpace/observer")
 		observer.closest_point_changed.connect(on_closest_point_changed)
-		[/gdscript]
-		[csharp]
-		var observer = animationTree.Get("parameters/BlendSpace/observer").As&lt;AnimationNodeObserverBlendSpace&gt;();
-		observer.ClosestPointChanged += OnClosestPointChanged;
-		[/csharp]
-		[/codeblocks]
+		[/codeblock]
 	</description>
 	<tutorials>
 		<link title="Using AnimationTree">$DOCS_URL/tutorials/animation/animation_tree.html</link>

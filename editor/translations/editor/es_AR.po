@@ -2979,13 +2979,6 @@ msgstr ""
 msgid "Note:"
 msgstr "Nota:"
 
-msgid ""
-"There are notable differences when using this API with C#. See [url=%s]C# API "
-"differences to GDScript[/url] for more information."
-msgstr ""
-"Hay diferencias notorias al usar esta API con C#. Véase [url=%s]Diferencias "
-"entre la API de C# y GDScript[/url] para más información."
-
 msgid "Online Tutorials"
 msgstr "Tutoriales en línea"
 
@@ -5468,15 +5461,6 @@ msgstr ""
 "\n"
 "¿Querés convertirlo?\n"
 "Advertencia: No podras abrir el proyecto con versiones anteriores del motor."
-
-msgid ""
-"Warning: This project uses C#, but this build of Godot does not have\n"
-"the Mono module. If you proceed you will not be able to use any C# scripts.\n"
-"\n"
-msgstr ""
-"Advertencia: Este proyecto utiliza C#, pero está versión de Godot no tiene\n"
-"el módulo Mono, si procedes, no serás capaz de usar ningún script en C#.\n"
-"\n"
 
 msgid "Remove %d projects from the list?"
 msgstr "¿Quitar %d proyectos de la lista?"
@@ -7976,9 +7960,6 @@ msgstr "Variable Global"
 msgid "3D Engine"
 msgstr "Motor 3D"
 
-msgid "XR"
-msgstr "XR"
-
 msgid "RenderingDevice"
 msgstr "RenderingDevice"
 
@@ -8002,9 +7983,6 @@ msgstr "Fuentes SIL Graphite"
 
 msgid "Multi-channel Signed Distance Field Font Rendering"
 msgstr "Multi-channel Signed Distance Field Font Rendering"
-
-msgid "XR (AR and VR)."
-msgstr "XR (AR y VR)."
 
 msgid ""
 "Fallback implementation of Text Server\n"
@@ -8568,13 +8546,6 @@ msgstr "Transición Hasta:"
 
 msgid "Begin Bake"
 msgstr "Iniciar Bake"
-
-msgid "Class name can't be a reserved keyword"
-msgstr "El nombre de la clase no puede ser una palabra reservada"
-
-msgid "Not enough bytes for decoding bytes, or invalid format."
-msgstr ""
-"No hay suficientes bytes para decodificar bytes, o el formato es inválido."
 
 msgid "%s/s"
 msgstr "%s/s"
@@ -9358,13 +9329,6 @@ msgstr "No se pudo leer el archivo: \"%s\"."
 
 msgid "PWA"
 msgstr "PWA"
-
-msgid ""
-"Exporting to Web is currently not supported in Godot 4 when using C#/.NET. "
-"Use Godot 3 to target Web with C#/Mono instead."
-msgstr ""
-"Actualmente, la exportación a Web no está soportada en Godot 4 cuando se usa "
-"C#/.Net. Para exportar a la Web, usá Godot 3 con C#/Mono."
 
 msgid "Could not read HTML shell: \"%s\"."
 msgstr "No se pudo leer el HTML shell: \"%s\"."

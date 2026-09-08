@@ -44,7 +44,6 @@
 #include "main/main.h"
 #include "servers/display/display_server.h"
 
-#include "modules/modules_enabled.gen.h" // IWYU pragma: keep. For mono.
 #include "modules/svg/image_loader_svg.h"
 
 #ifdef MACOS_ENABLED
@@ -230,11 +229,6 @@ void EditorExportPlatformAppleEmbedded::_notification(int p_what) {
 }
 
 bool EditorExportPlatformAppleEmbedded::get_export_option_visibility(const EditorExportPreset *p_preset, const String &p_option) const {
-	// Hide unsupported .NET embedding option.
-	if (p_option == "dotnet/embed_build_outputs") {
-		return false;
-	}
-
 	if (p_preset == nullptr) {
 		return true;
 	}
@@ -1232,7 +1226,7 @@ Error EditorExportPlatformAppleEmbedded::_copy_asset(const Ref<EditorExportPrese
 		return ERR_FILE_NOT_FOUND;
 	}
 
-	String base_dir = p_asset.get_base_dir().replace("res://", "").replace(".godot/mono/temp/bin/", "");
+	String base_dir = p_asset.get_base_dir().replace("res://", "");
 	String asset = p_asset.ends_with("/") ? p_asset.left(-1) : p_asset;
 	String destination_dir;
 	String destination;
@@ -1809,7 +1803,7 @@ Error EditorExportPlatformAppleEmbedded::_export_project_helper(const Ref<Editor
 					for (String n = da->get_next(); !n.is_empty(); n = da->get_next()) {
 						if (!n.begins_with(".")) { // Ignore ".", ".." and hidden files.
 							if (da->current_is_dir()) {
-								if (n == "dylibs" || n == "Images.xcassets" || n.ends_with(".lproj") || n == "godot-publish-dotnet" || n.ends_with(".xcframework") || n.ends_with(".framework")) {
+								if (n == "dylibs" || n == "Images.xcassets" || n.ends_with(".lproj") || n.ends_with(".xcframework") || n.ends_with(".framework")) {
 									expected_files++;
 								}
 							} else {
@@ -2287,19 +2281,10 @@ Error EditorExportPlatformAppleEmbedded::_export_project_helper(const Ref<Editor
 }
 
 bool EditorExportPlatformAppleEmbedded::has_valid_export_configuration(const Ref<EditorExportPreset> &p_preset, String &r_error, bool &r_missing_templates, bool p_debug) const {
-#if defined(MODULE_MONO_ENABLED) && !defined(MACOS_ENABLED)
-	// TODO: Remove this restriction when we don't rely on macOS tools to package up the native libraries anymore.
-	r_error += TTR("Exporting to an Apple Embedded platform when using C#/.NET is experimental and requires macOS.") + "\n";
-	return false;
-#else
 
 	String err;
 	bool valid = false;
 
-#if defined(MODULE_MONO_ENABLED)
-	// Apple Embedded export is still a work in progress, keep a message as a warning.
-	err += TTR("Exporting to an Apple Embedded platform when using C#/.NET is experimental.") + "\n";
-#endif
 	// Look for export templates (first official, and if defined custom templates).
 
 	bool dvalid = exists_export_template(get_platform_name() + ".zip", &err);
@@ -2354,7 +2339,6 @@ bool EditorExportPlatformAppleEmbedded::has_valid_export_configuration(const Ref
 	}
 
 	return valid;
-#endif // !(MODULE_MONO_ENABLED && !MACOS_ENABLED)
 }
 
 Error EditorExportPlatformAppleEmbedded::_export_icons(const Ref<EditorExportPreset> &p_preset, const String &p_iconset_dir) {

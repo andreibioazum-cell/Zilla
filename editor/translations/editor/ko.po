@@ -3501,13 +3501,6 @@ msgstr ""
 msgid "Note:"
 msgstr "참고:"
 
-msgid ""
-"There are notable differences when using this API with C#. See [url=%s]C# API "
-"differences to GDScript[/url] for more information."
-msgstr ""
-"이 API를 C#와 함께 사용할 때 주목할 만한 차이점이 있습니다. 자세한 정보는 "
-"[url=%s]C# API와 GDScript의 차이점[/url]을 참조하세요."
-
 msgid "Online Tutorials"
 msgstr "온라인 튜토리얼"
 
@@ -5501,13 +5494,6 @@ msgstr ""
 "스크립트가 툴 스크립트가 아니기 때문에 실행할 수 없습니다 (상단에 @tool 어노테"
 "이션을 추가하세요)."
 
-msgid ""
-"Cannot run the script because it's not a tool script (add the [Tool] "
-"attribute above the class definition)."
-msgstr ""
-"스크립트가 툴 스크립트가 아니기 때문에 실행할 수 없습니다 (클래스 정의 위에 "
-"[Tool] 특성을 추가하세요)."
-
 msgid "Cannot run the script because it's not a tool script."
 msgstr "스크립트가 툴 스크립트가 아니기 때문에 실행할 수 없습니다."
 
@@ -6179,17 +6165,6 @@ msgid ""
 msgstr ""
 ".ipa는 macOS에서만 빌드할 수 있습니다. 패키지를 빌드하지 않고 Xcode 프로젝트"
 "를 종료합니다."
-
-msgid ""
-"Exporting to an Apple Embedded platform when using C#/.NET is experimental "
-"and requires macOS."
-msgstr ""
-"C#/.NET 사용할 때 Apple 임베딩된 플랫폼으로 내보내기는 실험적이며 macOS가 필요"
-"합니다."
-
-msgid ""
-"Exporting to an Apple Embedded platform when using C#/.NET is experimental."
-msgstr "C#/.NET을 사용할 때 Apple 임베딩된 플랫폼으로 내보내기는 실험적입니다."
 
 msgid "Custom debug template not found."
 msgstr "커스텀 디버그 템플릿을 찾을 수 없습니다."
@@ -8993,15 +8968,6 @@ msgstr ""
 "\n"
 
 msgid ""
-"Warning: This project uses C#, but this build of Godot does not have\n"
-"the Mono module. If you proceed you will not be able to use any C# scripts.\n"
-"\n"
-msgstr ""
-"경고: 이 프로젝트는 C#을 사용하지만, 이 빌드의 Godot는 Mono 모듈을\n"
-"지원하지 않습니다. 계속 진행할 경우 C# 스크립트를 사용할 수 없습니다.\n"
-"\n"
-
-msgid ""
 "Warning: This project was last edited in Godot %s. Opening will change it to "
 "Godot %s.\n"
 "\n"
@@ -9440,20 +9406,8 @@ msgstr "프로젝트 정지"
 msgid "Run Current Scene"
 msgstr "현재 씬 실행"
 
-msgid "Run Scene in Regular Mode"
-msgstr "일반 모드에서 씬 실행"
-
-msgid "Run Scene in XR Mode"
-msgstr "XR 모드에서 씬 실행"
-
 msgid "Run Specific Scene"
 msgstr "특정 씬 실행"
-
-msgid "Run in Regular Mode"
-msgstr "일반 모드에서 실행"
-
-msgid "Run in XR Mode"
-msgstr "XR 모드에서 실행"
 
 msgid "Enable Movie Maker Mode"
 msgstr "무비 메이커 모드 활성화"
@@ -15841,12 +15795,6 @@ msgstr "접근성 지원 (AccessKit)"
 msgid "Improved Gamepad Support (SDL)"
 msgstr "개선된 게임패드 지원 (SDL)"
 
-msgid "XR"
-msgstr "XR"
-
-msgid "OpenXR"
-msgstr "OpenXR"
-
 msgid "Wayland"
 msgstr "Wayland"
 
@@ -15909,12 +15857,6 @@ msgstr "SIL Graphite 글꼴"
 
 msgid "Multi-channel Signed Distance Field Font Rendering"
 msgstr "다채널 부호화 디스턴스 필드 글꼴 렌더링"
-
-msgid "XR (AR and VR)."
-msgstr "XR (AR 및 VR)."
-
-msgid "OpenXR standard implementation (requires XR to be enabled)."
-msgstr "OpenXR 표준 구현 (XR 활성화 필요)."
 
 msgid "Forward+ renderer for advanced 3D graphics."
 msgstr "고급 3D 그래픽을 위한 Forward+ 렌더러."
@@ -16002,13 +15944,6 @@ msgid ""
 msgstr ""
 "현재 프로젝트의 모든 파일을 스캔하여 사용된 클래스를 감지할 것입니다.\n"
 "첫 스캔에는 특히 대규모 프로젝트에서 시간이 걸릴 수 있음을 참고하세요."
-
-msgid ""
-"Warning: Class detection for C# scripts is not currently available, and such "
-"files will be ignored."
-msgstr ""
-"경고: C# 스크립트에 대한 클래스 감지를 현재 사용할 수 없으므로, 이러한 파일은 "
-"무시됩니다."
 
 msgid "Scanning Project for Used Classes"
 msgstr "사용된 클래스에 대한 프로젝트 스캔 중"
@@ -17390,54 +17325,6 @@ msgstr "노이즈 감소 중"
 msgid "Retrieving textures"
 msgstr "텍스처 받아오는 중"
 
-msgid "Class name can't be a reserved keyword"
-msgstr "클래스 이름은 키워드가 될 수 없음"
-
-msgid "Class name must be a valid identifier"
-msgstr "클래스 이름은 올바른 식별자여야 함"
-
-msgid "Not enough bytes for decoding bytes, or invalid format."
-msgstr "디코딩할 바이트가 모자라거나 잘못된 형식입니다."
-
-msgid ""
-"Unable to load .NET runtime, no compatible version was found.\n"
-"Attempting to create/edit a project will lead to a crash.\n"
-"\n"
-"Please install the .NET SDK 8.0 or later from https://get.dot.net and restart "
-"Godot."
-msgstr ""
-".NET 런타임을 불러올 수 없습니다. 호환 가능한 버전을 찾을 수 없습니다.\n"
-"프로젝트를 만들거나 편집하려고 하면 충돌이 발생할 것입니다.\n"
-"\n"
-".NET SDK 8.0 이상을 https://get.dot.net 에서 설치한 후 Godot를 다시 시작하세"
-"요."
-
-msgid "Failed to load .NET runtime"
-msgstr ".NET 런타임을 불러오는 데 실패했습니다"
-
-msgid ""
-"Unable to find the .NET assemblies directory.\n"
-"Make sure the '%s' directory exists and contains the .NET assemblies."
-msgstr ""
-".NET 어셈블리 디렉터리를 찾을 수 없습니다.\n"
-"'%s' 디렉터리가 존재하고 .NET 어셈블리를 포함하고 있는지 확인하세요."
-
-msgid ".NET assemblies not found"
-msgstr ".NET 어셈블리를 찾을 수 없음"
-
-msgid ""
-"Unable to load .NET runtime, specifically hostfxr.\n"
-"Attempting to create/edit a project will lead to a crash.\n"
-"\n"
-"Please install the .NET SDK 8.0 or later from https://get.dot.net and restart "
-"Godot."
-msgstr ""
-".NET 런타임, 특히 hostfxr을 불러올 수 없습니다.\n"
-"프로젝트를 만들거나 편집하려고 하면 충돌이 발생할 것입니다.\n"
-"\n"
-".NET SDK 8.0 이상을 https://get.dot.net 에서 설치한 후 Godot를 다시 시작하세"
-"요."
-
 msgctxt "Network"
 msgid "Down"
 msgstr "다운"
@@ -17949,168 +17836,6 @@ msgstr "ObjectDB 프로파일러"
 msgid "Diff Against:"
 msgstr "대상과의 차이:"
 
-msgid "Rename Action"
-msgstr "액션 이름 바꾸기"
-
-msgid "Rename Actions Localized name"
-msgstr "액션의 현지화된 이름 바꾸기"
-
-msgid "Change Action Type"
-msgstr "액션 유형 바꾸기"
-
-msgid ""
-"Internal name of the action. Some XR runtimes don't allow spaces or special "
-"characters."
-msgstr ""
-"액션의 내부 이름입니다. 일부 XR 런타임은 공백이나 특수 문자를 허용하지 않습니"
-"다."
-
-msgid "Action Name"
-msgstr "액션 이름"
-
-msgid "Human-readable name of the action. This can be displayed to end users."
-msgstr ""
-"액션의 사람이 읽을 수 있는 이름입니다. 최종 사용자에게 표시할 수 있습니다."
-
-msgid "Action Localized Name"
-msgstr "액션의 현지화된 이름"
-
-msgid "Type of the action"
-msgstr "액션의 유형"
-
-msgid "Action Type"
-msgstr "액션 유형"
-
-msgid "Remove action"
-msgstr "액션 제거"
-
-msgid "Add action set"
-msgstr "액션 세트 추가"
-
-msgid "Remove action set"
-msgstr "액션 세트 제거"
-
-msgid "Add interaction profile"
-msgstr "상호작용 프로필 추가"
-
-msgid "Error loading %s: %s."
-msgstr "%s 불러오는 중 오류: %s."
-
-msgid "Error saving file %s: %s"
-msgstr "파일 %s 저장 중 오류: %s"
-
-msgid "OpenXR Action map:"
-msgstr "OpenXR 액션 맵:"
-
-msgid "Remove interaction profile"
-msgstr "상호작용 프로필 제거"
-
-msgid "OpenXR Action Map"
-msgstr "OpenXR 액션 맵"
-
-msgid "Toggle OpenXR Action Map Dock"
-msgstr "OpenXR 액션 맵 독 토글"
-
-msgid "Add Action Set"
-msgstr "액션 세트 추가"
-
-msgid "Add an action set."
-msgstr "액션 세트를 추가합니다."
-
-msgid "Add profile"
-msgstr "프로필 추가"
-
-msgid "Add an interaction profile."
-msgstr "상호작용 프로필을 추가합니다."
-
-msgid "Save this OpenXR action map."
-msgstr "이 OpenXR 액션 맵을 저장합니다."
-
-msgid "Reset to default OpenXR action map."
-msgstr "디폴트 OpenXR 액션 맵으로 재설정합니다."
-
-msgid "Action Sets"
-msgstr "액션 세트"
-
-msgid "Rename Action Set"
-msgstr "액션 세트 이름 바꾸기"
-
-msgid "Rename Action Sets Localized name"
-msgstr "액션 세트 현지화된 이름 바꾸기"
-
-msgid "Change Action Sets priority"
-msgstr "액션 세트 우선순위 바꾸기"
-
-msgid "Add action"
-msgstr "액션 추가"
-
-msgid "Delete action"
-msgstr "액션 삭제"
-
-msgid "Fold"
-msgstr "접기"
-
-msgid "Action Set Name"
-msgstr "액션 세트 이름"
-
-msgid ""
-"Human-readable name of the action set. This can be displayed to end users."
-msgstr ""
-"사람이 읽을 수 있는 액션 세트의 이름입니다. 최종 사용자에게 표시될 수 있습니"
-"다."
-
-msgid "Action Set Localized Name"
-msgstr "액션 세트 현지화된 이름"
-
-msgid ""
-"Priority of the action set. If multiple action sets bind to the same input, "
-"the action set with the highest priority will be updated."
-msgstr ""
-"액션 세트의 우선순위입니다. 여러 액션 세트가 같은 입력에 바인딩되어 있으면 가"
-"장 높은 우선순위로 된 액션 세트가 업데이트됩니다."
-
-msgid "Action Set Priority"
-msgstr "액션 세트 우선순위"
-
-msgid "Add action."
-msgstr "액션을 추가합니다."
-
-msgid "Remove action set."
-msgstr "액션 세트를 제거합니다."
-
-msgid "Remove this binding modifier."
-msgstr "이 바인딩 모디파이어를 제거합니다."
-
-msgid "Remove binding modifier"
-msgstr "바인딩 모디파이어 제거"
-
-msgid "Add binding modifier"
-msgstr "바인딩 모디파이어 추가"
-
-msgid "Note: modifiers will only be applied if supported on the host system."
-msgstr "참고: 모디파이어는 호스트 시스템에서 지원되는 경우에만 적용됩니다."
-
-msgid "Binding modifiers for:"
-msgstr "바인딩 모디파이어 대상:"
-
-msgid "Remove action from interaction profile"
-msgstr "액션을 상호작용 프로필로부터 제거"
-
-msgid "Edit binding modifiers"
-msgstr "바인딩 모디파이어 편집"
-
-msgid "Note: This interaction profile requires extension %s support."
-msgstr "참고: 이 상호작용 프로필은 확장기능 %s 지원이 필요합니다."
-
-msgid "Add binding"
-msgstr "바인딩 추가"
-
-msgid "Remove binding"
-msgstr "바인딩 제거"
-
-msgid "Note: This binding path requires extension %s support."
-msgstr "참고: 이 바인딩 경로는 확장기능 %s 지원이 필요합니다."
-
 msgid "Boolean"
 msgstr "Boolean"
 
@@ -18119,58 +17844,6 @@ msgstr "Float"
 
 msgid "Vector2"
 msgstr "Vector2"
-
-msgid "Pose"
-msgstr "자세"
-
-msgid "Haptic"
-msgstr "햅틱"
-
-msgid "Unknown"
-msgstr "알 수 없음"
-
-msgid "Modifiers"
-msgstr "모디파이어"
-
-msgid "Select an action"
-msgstr "액션을 선택하세요"
-
-msgid "Select an interaction profile"
-msgstr "상호작용 프로필 선택"
-
-msgid "All interaction profiles have been added to the action map."
-msgstr "모든 상호작용 프로필이 액션 맵에 추가되었습니다."
-
-msgid "Choose an XR runtime."
-msgstr "XR 런타임을 선택하세요."
-
-msgid ""
-"Cannot use the same SubViewport with multiple OpenXR composition layers. "
-"Clear it from its current layer first."
-msgstr ""
-"같은 SubViewport를 여러 OpenXR 컴포지션 레이어와 사용할 수 없습니다. 먼저 현"
-"재 레이어에서 이를 비우세요."
-
-msgid ""
-"Cannot set SubViewport on an OpenXR composition layer when using an Android "
-"surface."
-msgstr ""
-"Android 표면을 사용할 때 OpenXR 컴포지션 레이어에 SubViewport를 설정할 수 없습"
-"니다."
-
-msgid ""
-"OpenXR composition layers must have orthonormalized transforms (ie. no scale "
-"or shearing)."
-msgstr ""
-"OpenXR 컴포지션 레이어는 직교 정규화된 변형(즉, 스케일이나 밀림이 없음)이 있어"
-"야 합니다."
-
-msgid ""
-"Hole punching won't work as expected unless the sort order is less than zero."
-msgstr "홀 펀칭은 정렬 순서가 0보다 작지 않으면 예상대로 작동하지 않습니다."
-
-msgid "OpenXR visibility mask must have an XRCamera3D node as their parent."
-msgstr "OpenXR 가시성 마스크는 XRCamera3D 노드가 부모로 있어야 합니다."
 
 msgid "E constant (2.718282). Represents the base of the natural logarithm."
 msgstr "E 상수 (2.718282). 자연 로그의 밑을 나타냅니다."
@@ -19652,25 +19325,6 @@ msgstr "기기에서 실행할 수 없었습니다."
 msgid "Error: There was a problem validating the keystore username and password"
 msgstr "오류: 키스토어 사용자 이름과 비밀번호를 검증하는 중 문제가 발생했습니다"
 
-msgid ""
-"Unable to determine the C# project's TFM, it may be incompatible. The export "
-"template only supports '%s'. Make sure the project targets '%s' or consider "
-"using gradle builds instead."
-msgstr ""
-"C# 프로젝트의 TFM을 결정할 수 없으며, 호환되지 않을 수 있습니다. 내보내기 템플"
-"릿은 '%s'만 지원합니다. 프로젝트가 '%s'을(를) 대상으로 하는지 확인하거나 "
-"Gradle 빌드를 대신 사용하는 것을 고려하세요."
-
-msgid ""
-"C# project targets '%s' but the export template only supports '%s'. Consider "
-"using gradle builds instead."
-msgstr ""
-"C# 프로젝트는 '%s'을(를) 대상으로 하지만 내보내기 템플릿은 '%s'만 지원합니다. "
-"Gradle 빌드를 대신 사용하는 것을 고려하세요."
-
-msgid "Exporting to Android when using C#/.NET is experimental."
-msgstr "C#/.NET을 사용할 때 Android로 내보내기는 실험적입니다."
-
 msgid "Custom Android source template not found."
 msgstr "커스텀 Android 소스 템플릿을 찾을 수 없습니다."
 
@@ -20029,13 +19683,6 @@ msgstr "App Store 배포를 위해서는 인스톨러 서명 ID가 필요합니�
 msgid "App sandbox is required for App Store distribution."
 msgstr "App Store 배포를 위해서는 앱 샌드박스가 필요합니다."
 
-msgid ""
-"'rcodesign' doesn't support signing applications with embedded dynamic "
-"libraries (GDExtension or .NET)."
-msgstr ""
-"'rcodesign'은 내장된 동적 라이브러리(GDExtension 또는 .NET)를 사용하는 애플리"
-"케이션의 서명을 지원하지 않습니다."
-
 msgid "Code signing is required for App Store distribution."
 msgstr "App Store 배포를 위해서는 코드 서명이 필요합니다."
 
@@ -20377,20 +20024,6 @@ msgstr "파일을 읽을 수 없음: \"%s\"."
 
 msgid "PWA"
 msgstr "프로그레시브 웹 앱"
-
-msgid ""
-"Exporting to Web is currently not supported in Godot 4 when using C#/.NET. "
-"Use Godot 3 to target Web with C#/Mono instead."
-msgstr ""
-"C#/.NET을 사용하는 Godot 4에서는 아직 웹으로 내보내기를 지원하지 않습니다. 웹"
-"을 대상으로 하려면 대신 C#/Mono를 사용하는 Godot 3을 사용하세요."
-
-msgid ""
-"If this project does not use C#, use a non-C# editor build to export the "
-"project."
-msgstr ""
-"이 프로젝트가 C#을 사용하지 않는다면, C# 빌드가 아닌 편집기를 사용하여 프로젝"
-"트를 내보내세요."
 
 msgid "Could not read HTML shell: \"%s\"."
 msgstr "HTML 셸을 읽을 수 없었음: \"%s\"."
@@ -21365,58 +20998,6 @@ msgid ""
 "scenes)."
 msgstr "씬 (또는 인스턴스화된 씬) 당 WorldEnvironment는 하나만 허용됩니다."
 
-msgid ""
-"XRCamera3D may not function as expected without an XROrigin3D node as its "
-"parent."
-msgstr ""
-"XRCamera3D는 XROrigin3D 노드가 부모로 없으면 예상대로 작동하지 않을 수 있습니"
-"다."
-
-msgid ""
-"XRCamera3D should have physics_interpolation_mode set to OFF in order to "
-"avoid jitter."
-msgstr ""
-"지터를 방지하려면 XRCamera3D의 physics_interpolation_mode를 OFF로 설정해야 합"
-"니다."
-
-msgid ""
-"XRNode3D may not function as expected without an XROrigin3D node as its "
-"parent."
-msgstr ""
-"XRNode3D는 XROrigin3D 노드가 부모로 없으면 예상대로 작동하지 않을 수 있습니다."
-
-msgid "No tracker name is set."
-msgstr "설정된 트래커 이름이 없습니다."
-
-msgid "No pose is set."
-msgstr "설정된 포즈가 없습니다."
-
-msgid ""
-"XRNode3D should have physics_interpolation_mode set to OFF in order to avoid "
-"jitter."
-msgstr ""
-"지터를 방지하려면 XRNode3D의 physics_interpolation_mode를 OFF로 설정해야 합니"
-"다."
-
-msgid "XROrigin3D requires an XRCamera3D child node."
-msgstr "XROrigin3D는 자식으로 XRCamera3D 노드가 필요합니다."
-
-msgid ""
-"Changing the scale on the XROrigin3D node is not supported. Change the World "
-"Scale instead."
-msgstr ""
-"XROrigin3D 노드에 스케일 변경은 지원되지 않습니다. 대신 세계 스케일을 변경하세"
-"요."
-
-msgid ""
-"XR shaders are not enabled in project settings. Stereoscopic output is not "
-"supported unless they are enabled. Please enable `xr/shaders/enabled` to use "
-"stereoscopic output."
-msgstr ""
-"XR 셰이더가 프로젝트 설정에서 활성화되지 않았습니다. 스테레오스코픽 출력은 셰"
-"이더가 활성화되지 않으면 지원되지 않습니다. 스테레오스코픽 출력을 사용하려면 "
-"`xr/shaders/enabled`를 활성화하세요."
-
 msgid "Animation '%s' not found."
 msgstr "애니메이션 '%s'을(를) 찾을 수 없습니다."
 
@@ -21872,14 +21453,6 @@ msgstr "다음 함수를 찾을 수 없습니다: '%s'."
 
 msgid "Varying '%s' cannot be passed for the '%s' parameter in that context."
 msgstr "Varying '%s'은(는) 해당 문맥에서 '%s' 매개변수로 전달할 수 없습니다."
-
-msgid ""
-"Unable to pass a multiview texture sampler as a parameter to a custom "
-"function. Consider sampling it in the main function and then passing the "
-"vector result to the custom function."
-msgstr ""
-"멀티뷰 텍스처 샘플러를 커스텀 함수의 매개변수로 전달할 수 없습니다. 메인 함수"
-"에서 이를 샘플한 다음 벡터 결과를 커스텀 함수로 전달하는 것을 고려하세요."
 
 msgid ""
 "Unable to pass RADIANCE texture sampler as a parameter to a custom function. "

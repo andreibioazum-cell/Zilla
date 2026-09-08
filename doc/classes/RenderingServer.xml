@@ -4126,13 +4126,11 @@
 			<description>
 				Copies the viewport to a region of the screen specified by [param rect]. If [method viewport_set_render_direct_to_screen] is [code]true[/code], then the viewport does not use a framebuffer and the contents of the viewport are rendered directly to screen. However, note that the root viewport is drawn last, therefore it will draw over the screen. Accordingly, you must set the root viewport to an area that does not cover the area that you have attached this viewport to.
 				For example, you can set the root viewport to not render at all with the following code:
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				func _ready():
 					RenderingServer.viewport_attach_to_screen(get_viewport().get_viewport_rid(), Rect2())
 					RenderingServer.viewport_attach_to_screen($Viewport.get_viewport_rid(), Rect2(0, 0, 600, 600))
-				[/gdscript]
-				[/codeblocks]
+				[/codeblock]
 				Using this can result in significant optimization, especially on lower-end devices. However, it comes at the cost of having to manage your viewports manually. For further optimization, see [method viewport_set_render_direct_to_screen].
 			</description>
 		</method>
@@ -4531,14 +4529,6 @@
 			<param index="1" name="enable" type="bool" />
 			<description>
 				If [code]true[/code], use temporal antialiasing. Equivalent to [member ProjectSettings.rendering/anti_aliasing/quality/use_taa] or [member Viewport.use_taa].
-			</description>
-		</method>
-		<method name="viewport_set_use_xr">
-			<return type="void" />
-			<param index="0" name="viewport" type="RID" />
-			<param index="1" name="use_xr" type="bool" />
-			<description>
-				If [code]true[/code], the viewport uses augmented or virtual reality technologies. See [XRInterface].
 			</description>
 		</method>
 		<method name="viewport_set_vrs_mode">
@@ -5672,10 +5662,7 @@
 		<constant name="VIEWPORT_VRS_TEXTURE" value="1" enum="ViewportVRSMode">
 			Variable rate shading uses a texture. Note, for stereoscopic use a texture atlas with a texture for each view.
 		</constant>
-		<constant name="VIEWPORT_VRS_XR" value="2" enum="ViewportVRSMode">
-			Variable rate shading texture is supplied by the primary [XRInterface]. Note that this may override the update mode.
-		</constant>
-		<constant name="VIEWPORT_VRS_MAX" value="3" enum="ViewportVRSMode">
+		<constant name="VIEWPORT_VRS_MAX" value="2" enum="ViewportVRSMode">
 			Represents the size of the [enum ViewportVRSMode] enum.
 		</constant>
 		<constant name="VIEWPORT_VRS_UPDATE_DISABLED" value="0" enum="ViewportVRSUpdateMode">

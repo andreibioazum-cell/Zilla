@@ -48,8 +48,6 @@
 #include "scene/gui/separator.h"
 #include "servers/physics_3d/physics_server_3d_manager.h"
 
-#include "modules/modules_enabled.gen.h" // IWYU pragma: keep. For mono.
-
 const char *EditorBuildProfile::build_option_identifiers[BUILD_OPTION_MAX] = {
 	// This maps to SCons build options.
 	"disable_2d",
@@ -58,8 +56,6 @@ const char *EditorBuildProfile::build_option_identifiers[BUILD_OPTION_MAX] = {
 	"disable_navigation_3d",
 	"accesskit",
 	"sdl",
-	"disable_xr",
-	"module_openxr_enabled",
 	"wayland",
 	"x11",
 	"pulseaudio",
@@ -92,8 +88,6 @@ const bool EditorBuildProfile::build_option_disabled_by_default[BUILD_OPTION_MAX
 	false, // NAVIGATION_3D
 	false, // ACCESSKIT
 	false, // SDL
-	false, // XR
-	false, // OPENXR
 	false, // WAYLAND
 	false, // X11
 	false, // PULSEAUDIO
@@ -126,8 +120,6 @@ const bool EditorBuildProfile::build_option_disable_values[BUILD_OPTION_MAX] = {
 	true, // NAVIGATION_3D
 	false, // ACCESSKIT
 	false, // SDL
-	true, // XR
-	false, // OPENXR
 	false, // WAYLAND
 	false, // X11
 	false, // PULSEAUDIO
@@ -160,8 +152,6 @@ const bool EditorBuildProfile::build_option_explicit_use[BUILD_OPTION_MAX] = {
 	false, // NAVIGATION_3D
 	false, // ACCESSKIT
 	false, // SDL
-	false, // XR
-	false, // OPENXR
 	false, // WAYLAND
 	false, // X11
 	false, // PULSEAUDIO
@@ -193,8 +183,6 @@ const EditorBuildProfile::BuildOptionCategory EditorBuildProfile::build_option_c
 	BUILD_OPTION_CATEGORY_GENERAL, // NAVIGATION_3D
 	BUILD_OPTION_CATEGORY_GENERAL, // ACCESSKIT
 	BUILD_OPTION_CATEGORY_GENERAL, // SDL
-	BUILD_OPTION_CATEGORY_GENERAL, // XR
-	BUILD_OPTION_CATEGORY_GENERAL, // OPENXR
 	BUILD_OPTION_CATEGORY_GENERAL, // WAYLAND
 	BUILD_OPTION_CATEGORY_GENERAL, // X11
 	BUILD_OPTION_CATEGORY_GENERAL, // PULSEAUDIO
@@ -225,9 +213,6 @@ HashMap<EditorBuildProfile::BuildOption, HashMap<String, LocalVector<Variant>>> 
 /* clang-format off */
 
 const HashMap<EditorBuildProfile::BuildOption, LocalVector<EditorBuildProfile::BuildOption>> EditorBuildProfile::build_option_dependencies = {
-	{ BUILD_OPTION_OPENXR, {
-			BUILD_OPTION_XR,
-	} },
 	{ BUILD_OPTION_FORWARD_RENDERER, {
 			BUILD_OPTION_RENDERING_DEVICE,
 	} },
@@ -292,24 +277,6 @@ const HashMap<EditorBuildProfile::BuildOption, LocalVector<String>> EditorBuildP
 			"NavigationMeshSourceGeometryData3D",
 			"NavigationObstacle3D",
 			"NavigationRegion3D",
-	} },
-	{ BUILD_OPTION_XR, {
-			"XRBodyModifier3D",
-			"XRBodyTracker",
-			"XRControllerTracker",
-			"XRFaceModifier3D",
-			"XRFaceTracker",
-			"XRHandModifier3D",
-			"XRHandTracker",
-			"XRInterface",
-			"XRInterfaceExtension",
-			"XRNode3D",
-			"XROrigin3D",
-			"XRPose",
-			"XRPositionalTracker",
-			"XRServer",
-			"XRTracker",
-			"XRVRS",
 	} },
 	{ BUILD_OPTION_RENDERING_DEVICE, {
 			"RenderingDevice",
@@ -426,8 +393,6 @@ String EditorBuildProfile::get_build_option_name(BuildOption p_build_option) {
 		TTRC("Navigation (3D)"),
 		TTRC("Accessibility Support (AccessKit)"),
 		TTRC("Improved Gamepad Support (SDL)"),
-		TTRC("XR"),
-		TTRC("OpenXR"),
 		TTRC("Wayland"),
 		TTRC("X11"),
 		TTRC("PulseAudio"),
@@ -464,8 +429,6 @@ String EditorBuildProfile::get_build_option_description(BuildOption p_build_opti
 		TTRC("NavigationServer and capabilities for 3D."),
 		TTRC("Support for screen readers using the AccessKit library."),
 		TTRC("Improved gamepad support on Windows, macOS, and Linux using the SDL library.\nIf disabled, built-in custom code is used for gamepad support instead, which may be less reliable for certain controller models."),
-		TTRC("XR (AR and VR)."),
-		TTRC("OpenXR standard implementation (requires XR to be enabled)."),
 		TTRC("Wayland display server support (Linux only)."),
 		TTRC("X11 display server support (Linux only)."),
 		TTRC("PulseAudio audio driver (Linux only)."),
@@ -639,8 +602,6 @@ void EditorBuildProfile::_bind_methods() {
 	BIND_ENUM_CONSTANT(BUILD_OPTION_3D);
 	BIND_ENUM_CONSTANT(BUILD_OPTION_NAVIGATION_2D);
 	BIND_ENUM_CONSTANT(BUILD_OPTION_NAVIGATION_3D);
-	BIND_ENUM_CONSTANT(BUILD_OPTION_XR);
-	BIND_ENUM_CONSTANT(BUILD_OPTION_OPENXR);
 	BIND_ENUM_CONSTANT(BUILD_OPTION_WAYLAND);
 	BIND_ENUM_CONSTANT(BUILD_OPTION_X11);
 	BIND_ENUM_CONSTANT(BUILD_OPTION_RENDERING_DEVICE);
@@ -672,11 +633,6 @@ void EditorBuildProfile::_bind_methods() {
 
 EditorBuildProfile::EditorBuildProfile() {
 	reset_build_options();
-
-	HashMap<String, LocalVector<Variant>> settings_openxr = {
-		{ "xr/openxr/enabled", { true } },
-	};
-	build_option_settings.insert(BUILD_OPTION_OPENXR, settings_openxr);
 
 	HashMap<String, LocalVector<Variant>> settings_wayland = {
 		{ "display/display_server/driver.linuxbsd", { "default", "wayland" } },
@@ -807,9 +763,6 @@ void EditorBuildProfileManager::_profile_action(int p_action) {
 
 		case ACTION_DETECT: {
 			String text = TTR("This will scan all files in the current project to detect used classes.\nNote that the first scan may take a while, specially in larger projects.");
-#ifdef MODULE_MONO_ENABLED
-			text += "\n\n" + TTR("Warning: Class detection for C# scripts is not currently available, and such files will be ignored.");
-#endif // MODULE_MONO_ENABLED
 			confirm_dialog->set_text(text);
 			confirm_dialog->popup_centered();
 		} break;

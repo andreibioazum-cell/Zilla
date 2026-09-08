@@ -2656,9 +2656,6 @@ msgstr "Размер на Шрифта на Източника на Помощт
 msgid "Help Title Font Size"
 msgstr "Размер на Шрифта на Заглавие на Помощта"
 
-msgid "Class Reference Examples"
-msgstr "Примери за Референции на Класове"
-
 msgid "Sort Functions Alphabetically"
 msgstr "Сортирай Функции Алфабетично"
 
@@ -3376,107 +3373,11 @@ msgstr "Скриване на Лентата за Състояние"
 msgid "Suppress UI Gesture"
 msgstr "Потискане на Жестове на Потребителския Интерфейс"
 
-msgid "XR"
-msgstr "XR"
-
-msgid "OpenXR"
-msgstr "OpenXR"
-
-msgid "Default Action Map"
-msgstr "Стандартна Карта за Действия"
-
-msgid "Form Factor"
-msgstr "Форм Фактор"
-
-msgid "View Configuration"
-msgstr "Виж Конфигурация"
-
-msgid "Reference Space"
-msgstr "Референтно Пространство"
-
-msgid "Environment Blend Mode"
-msgstr "Режим на Смесване на Околната Среда"
-
-msgid "Foveation Level"
-msgstr "Ниво на Фокусиране"
-
-msgid "Foveation Dynamic"
-msgstr "Изпрати Буфер за Дълбочина"
-
-msgid "Submit Depth Buffer"
-msgstr "Изпрати Буфер за Дълбочина"
-
-msgid "Startup Alert"
-msgstr "Сигнал при Стартиране"
-
-msgid "Extensions"
-msgstr "Добавки"
-
-msgid "Debug Utils"
-msgstr "Инструменти за Дебъгване"
-
-msgid "Debug Message Types"
-msgstr "Типове Съобщения за Дебъгване"
-
-msgid "Frame Synthesis"
-msgstr "Синтез на Кадър"
-
-msgid "Hand Tracking"
-msgstr "Проследяване на Ръцете"
-
-msgid "Hand Tracking Unobstructed Data Source"
-msgstr "Проследяване на Ръцете: Безпрепятствен Източник на Данни"
-
-msgid "Hand Tracking Controller Data Source"
-msgstr "Проследяване на Ръцете: Източник на Данни за Контролер"
-
-msgid "Hand Interaction Profile"
-msgstr "Профил на Взаимодействието с Ръцете"
-
-msgid "Spatial Entity"
-msgstr "Пространствена Единица"
-
-msgid "Enable Spatial Anchors"
-msgstr "Включи Пространствени Котви"
-
-msgid "Enable Persistent Anchors"
-msgstr "Включи Постоянни Котви"
-
-msgid "Enable Builtin Anchor Detection"
-msgstr "Включи Вградено Откриване на Котва"
-
-msgid "Enable Plane Tracking"
-msgstr "Включи Проследяване на Равнина"
-
-msgid "Enable Builtin Plane Detection"
-msgstr "Включи Вградено Проследяване на Равнина"
-
 msgid "Enable Marker Tracking"
 msgstr "Включи Проследяване на Маркери"
 
 msgid "Enable Builtin Marker Tracking"
 msgstr "Включи Вградено Проследяване на Маркери"
-
-msgid "Aruco Dict"
-msgstr "Aruco Речник"
-
-msgid "April Tag Dict"
-msgstr "April Речник на Етикети"
-
-msgid "Eye Gaze Interaction"
-msgstr "Взаимодействие чрез Поглед"
-
-msgid "Render Model"
-msgstr "Режим на Рендър"
-
-msgid "Binding Modifiers"
-msgstr "Свързващи Модификатори"
-
-msgid "Analog Threshold"
-msgstr "Аналогов Праг"
-
-msgid "Dpad Binding"
-msgstr "Свързване на Dpad"
 
 msgid "Boot Splash"
 msgstr "Графично Изобразяване при Стартиране"
@@ -3537,21 +3438,6 @@ msgstr "Изображение"
 
 msgid "Minimum Display Time"
 msgstr "Минимум Време на Показване"
-
-msgid "Dotnet"
-msgstr "Dotnet"
-
-msgid "Project"
-msgstr "Проект"
-
-msgid "Assembly Name"
-msgstr "Име на Assembly"
-
-msgid "Solution Directory"
-msgstr "Главна Директория"
-
-msgid "Assembly Reload Attempts"
-msgstr "Опити за Презареждане на Assembly"
 
 msgid "Time"
 msgstr "Време"
@@ -4453,36 +4339,6 @@ msgstr "Поттискане на Шума"
 msgid "Denoiser"
 msgstr "Шумопотискач"
 
-msgid "Eye Height"
-msgstr "Височина на Очите"
-
-msgid "IOD"
-msgstr "Разстояние Между Очите"
-
-msgid "Display Width"
-msgstr "Ширина на Дисплея"
-
-msgid "Display to Lens"
-msgstr "Дисплей към Обектив"
-
-msgid "Offset Rect"
-msgstr "Отместване на Rect"
-
-msgid "Oversample"
-msgstr "Свръхсемплирай"
-
-msgid "K1"
-msgstr "K1"
-
-msgid "K2"
-msgstr "K2"
-
-msgid "Vulkan VRS"
-msgstr "Vulkan VRS"
-
-msgid "Min Radius"
-msgstr "Мин. Радиус"
-
 msgid "BPM"
 msgstr "Удари/мин."
 
@@ -4618,185 +4474,11 @@ msgstr "Преходна Зона за Плавно Смесване"
 msgid "Bump Strength"
 msgstr "Сила на Удара"
 
-msgid "Localized Name"
-msgstr "Локализирано Име"
-
-msgid "Action Type"
-msgstr "Тип Действие"
-
-msgid "Toplevel Paths"
-msgstr "Най-високо Ниво Пътища"
-
-msgid "Binding Path"
-msgstr "Свързващ Път"
-
-msgid "Interaction Profile Path"
-msgstr "Път на Профил за Взаимодействие"
-
-msgid "Runtime Paths"
-msgstr "Пътища на Изпълнение"
-
-msgid "Action Set"
-msgstr "Набор Действия"
-
-msgid "Input Path"
-msgstr "Входен Път"
-
-msgid "Threshold Released"
-msgstr "Праг Отменен"
-
-msgid "Center Region"
-msgstr "Централен Регион"
-
-msgid "Wedge Angle"
-msgstr "Ъгъл на Клин"
-
-msgid "Is Sticky"
-msgstr "Е Лепкав"
-
-msgid "On Haptic"
-msgstr "Haptic Включен"
-
-msgid "Off Haptic"
-msgstr "Haptic Изключен"
-
-msgid "Relax Frame Interval"
-msgstr "Интервал на Релаксиран Кадър"
-
-msgid "On Threshold"
-msgstr "Включен Праг"
-
-msgid "Off Threshold"
-msgstr "Изключен Праг"
-
-msgid "UUID"
-msgstr "UUID"
-
-msgid "Entity"
-msgstr "Субект"
-
-msgid "Spatial Tracking State"
-msgstr "Състояние на Пространствено Проследяване"
-
-msgid "April Dict"
-msgstr "April Dict"
-
-msgid "Bounds Size"
-msgstr "Размер на Граници"
-
-msgid "Marker Type"
-msgstr "Тип Маркер"
-
-msgid "Marker ID"
-msgstr "ID на Маркер"
-
-msgid "Plane Alignment"
-msgstr "Изравняване на Равнина"
-
-msgid "Plane Label"
-msgstr "Етикет на Равнина"
-
-msgid "Display Refresh Rate"
-msgstr "Покажи Честота на Опресняване"
-
-msgid "Render Target Size Multiplier"
-msgstr "Мултипликатор на Размера на Целевия Рендер"
-
 msgid "Next"
 msgstr "Следващ"
 
-msgid "Layer Viewport"
-msgstr "Виз. Прозорец на Слоя"
-
-msgid "Use Android Surface"
-msgstr "Ползвай Android Surface"
-
-msgid "Protected Content"
-msgstr "Защитено Съдържание"
-
-msgid "Android Surface Size"
-msgstr "Размер на Android Surface"
-
-msgid "Sort Order"
-msgstr "Ред на Сортиране"
-
-msgid "Alpha Blend"
-msgstr "Алфа Смесване"
-
-msgid "Enable Hole Punch"
-msgstr "Включи Hole Punch"
-
-msgid "Swapchain State"
-msgstr "Swapchain Статус"
-
-msgid "Mipmap Mode"
-msgstr "Режим на Mipmap"
-
-msgid "Horizontal Wrap"
-msgstr "Хоризонтално Опаковане"
-
-msgid "Vertical Wrap"
-msgstr "Вертикално Опаковане"
-
-msgid "Red Swizzle"
-msgstr "Червен Swizzle"
-
-msgid "Green Swizzle"
-msgstr "Зелен Swizzle"
-
-msgid "Blue Swizzle"
-msgstr "Син Swizzle"
-
-msgid "Alpha Swizzle"
-msgstr "Алфа Червен Swizzle"
-
-msgid "Max Anisotropy"
-msgstr "Макс. Анизотропия"
-
 msgid "Border Color"
 msgstr "Цвят на Граница"
-
-msgid "Aspect Ratio"
-msgstr "Съотношение на Страните"
-
-msgid "Central Angle"
-msgstr "Централен Ъгъл"
-
-msgid "Fallback Segments"
-msgstr "Резервни Сегменти"
-
-msgid "Central Horizontal Angle"
-msgstr "Централен Хоризонтален Ъгъл"
-
-msgid "Upper Vertical Angle"
-msgstr "Горен Вертикален Ъгъл"
-
-msgid "Lower Vertical Angle"
-msgstr "Долен Вертикален Ъгъл"
-
-msgid "Quad Size"
-msgstr "Размер на Квадроцикъл"
-
-msgid "Hand"
-msgstr "Ръка"
-
-msgid "Motion Range"
-msgstr "Диапазон на Движение"
-
-msgid "Hand Skeleton"
-msgstr "Скелет на Ръка"
-
-msgid "Skeleton Rig"
-msgstr "Скелетна Конструкция"
-
-msgid "Bone Update"
-msgstr "Обновяване на Кост"
-
-msgid "Tracker"
-msgstr "Тракер"
-
-msgid "Make Local to Pose"
-msgstr "Направи Локален за Позата"
 
 msgid "Subject"
 msgstr "Тема"
@@ -4902,27 +4584,6 @@ msgstr "Макс. Пакети в Опашката"
 
 msgid "Heartbeat Interval"
 msgstr "Пулс Интервал"
-
-msgid "Session Mode"
-msgstr "Режим на Сесия"
-
-msgid "Required Features"
-msgstr "Необходими Функции"
-
-msgid "Optional Features"
-msgstr "Опционални Функции"
-
-msgid "Requested Reference Space Types"
-msgstr "Необходими Типове Референтно Пространство"
-
-msgid "Reference Space Type"
-msgstr "Тип Референтно Пространство"
-
-msgid "Enabled Features"
-msgstr "Включени Функции"
-
-msgid "Visibility State"
-msgstr "Статус на Видимост"
 
 msgid "Debug Keystore"
 msgstr "Дебъг Хранилище за Ключове"
@@ -5067,12 +4728,6 @@ msgstr "Графики"
 
 msgid "OpenGL Debug"
 msgstr "OpenGL Дебъг"
-
-msgid "XR Features"
-msgstr "XR Функции"
-
-msgid "XR Mode"
-msgstr "XR Режим"
 
 msgid "Gesture"
 msgstr "Жест"
@@ -6381,9 +6036,3 @@ msgstr "Стандартно Намекване за Шрифт"
 
 msgid "Default Font Subpixel Positioning"
 msgstr "Стандартна подпикселова позиция на текст"
-
-msgid "Hand Tracking Source"
-msgstr "Проследяване на Ръцете: Източник"
-
-msgid "Is Anchor Detection Enabled"
-msgstr "Включено ли е Засичането на Котви"

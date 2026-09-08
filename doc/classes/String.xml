@@ -62,18 +62,11 @@
 			<return type="int" />
 			<description>
 				Converts the string representing a binary number into an [int]. The string may optionally be prefixed with [code]"0b"[/code], and an additional [code]-[/code] prefix for negative numbers.
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				print("101".bin_to_int())   # Prints 5
 				print("0b101".bin_to_int()) # Prints 5
 				print("-0b10".bin_to_int()) # Prints -2
-				[/gdscript]
-				[csharp]
-				GD.Print("101".BinToInt());   // Prints 5
-				GD.Print("0b101".BinToInt()); // Prints 5
-				GD.Print("-0b10".BinToInt()); // Prints -2
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 			</description>
 		</method>
 		<method name="c_escape" qualifiers="const">
@@ -93,20 +86,12 @@
 			<return type="String" />
 			<description>
 				Returns a copy of the string with changed appearance. Replaces underscores ([code]_[/code]) and hyphens ([code]-[/code]) with spaces, adds spaces before uppercase letters in the middle of a word, converts all letters to lowercase, then converts the first one and each one following a space to uppercase.
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				"move_local_x".capitalize()   # Returns "Move Local X"
 				"sceneFile_path".capitalize() # Returns "Scene File Path"
 				"2D, FPS, PNG".capitalize()   # Returns "2d, Fps, Png"
 				"example-name".capitalize()   # Returns "Example Name"
-				[/gdscript]
-				[csharp]
-				"move_local_x".Capitalize();   // Returns "Move Local X"
-				"sceneFile_path".Capitalize(); // Returns "Scene File Path"
-				"2D, FPS, PNG".Capitalize();   // Returns "2d, Fps, Png"
-				"example-name".Capitalize();   // Returns "Example Name"
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 			</description>
 		</method>
 		<method name="casecmp_to" qualifiers="const">
@@ -135,17 +120,11 @@
 			<param index="0" name="what" type="String" />
 			<description>
 				Returns [code]true[/code] if the string contains [param what]. In GDScript, this corresponds to the [code]in[/code] operator.
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				print("Node".contains("de")) # Prints true
 				print("team".contains("I"))  # Prints false
 				print("I" in "team")         # Prints false
-				[/gdscript]
-				[csharp]
-				GD.Print("Node".Contains("de")); // Prints True
-				GD.Print("team".Contains("I"));  // Prints False
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 				If you need to know where [param what] is within the string, use [method find]. See also [method containsn].
 			</description>
 		</method>
@@ -218,22 +197,13 @@
 			<param index="1" name="from" type="int" default="0" />
 			<description>
 				Returns the index of the [b]first[/b] occurrence of [param what] in this string, or [code]-1[/code] if there are none. The search's start can be specified with [param from], continuing to the end of the string.
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				print("Team".find("I")) # Prints -1
 
 				print("Potato".find("t"))    # Prints 2
 				print("Potato".find("t", 3)) # Prints 4
 				print("Potato".find("t", 5)) # Prints -1
-				[/gdscript]
-				[csharp]
-				GD.Print("Team".Find("I")); // Prints -1
-
-				GD.Print("Potato".Find("t"));    // Prints 2
-				GD.Print("Potato".Find("t", 3)); // Prints 4
-				GD.Print("Potato".Find("t", 5)); // Prints -1
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 				[b]Note:[/b] If you just want to know whether the string contains [param what], use [method contains]. In GDScript, you may also use the [code]in[/code] operator.
 				[b]Note:[/b] A negative value of [param from] is converted to a starting index by counting back from the last possible index with enough space to find [param what].
 			</description>
@@ -281,7 +251,6 @@
 				print("{a} {b}".format({"a": "{b}", "b": "c"})) # Prints "c c"
 				print("{a} {b}".format({"b": "c", "a": "{b}"})) # Prints "{b} c"
 				[/codeblock]
-				[b]Note:[/b] In C#, it's recommended to [url=https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated]interpolate strings with "$"[/url], instead.
 			</description>
 		</method>
 		<method name="get_base_dir" qualifiers="const">
@@ -373,34 +342,21 @@
 			<return type="PackedByteArray" />
 			<description>
 				Decodes a hexadecimal string as a [PackedByteArray].
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				var text = "hello world"
 				var encoded = text.to_utf8_buffer().hex_encode() # outputs "68656c6c6f20776f726c64"
 				print(encoded.hex_decode().get_string_from_utf8())
-				[/gdscript]
-				[csharp]
-				var text = "hello world";
-				var encoded = text.ToUtf8Buffer().HexEncode(); // outputs "68656c6c6f20776f726c64"
-				GD.Print(encoded.HexDecode().GetStringFromUtf8());
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 			</description>
 		</method>
 		<method name="hex_to_int" qualifiers="const">
 			<return type="int" />
 			<description>
 				Converts the string representing a hexadecimal number into an [int]. The string may be optionally prefixed with [code]"0x"[/code], and an additional [code]-[/code] prefix for negative numbers.
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				print("0xff".hex_to_int()) # Prints 255
 				print("ab".hex_to_int())   # Prints 171
-				[/gdscript]
-				[csharp]
-				GD.Print("0xff".HexToInt()); // Prints 255
-				GD.Print("ab".HexToInt());   // Prints 171
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 			</description>
 		</method>
 		<method name="humanize_size" qualifiers="static">
@@ -573,21 +529,12 @@
 			<param index="0" name="parts" type="PackedStringArray" />
 			<description>
 				Returns the concatenation of [param parts]' elements, with each element separated by the string calling this method. This method is the opposite of [method split].
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				var fruits = ["Apple", "Orange", "Pear", "Kiwi"]
 
 				print(", ".join(fruits))  # Prints "Apple, Orange, Pear, Kiwi"
 				print("---".join(fruits)) # Prints "Apple---Orange---Pear---Kiwi"
-				[/gdscript]
-				[csharp]
-				string[] fruits = ["Apple", "Orange", "Pear", "Kiwi"];
-
-				// In C#, this method is static.
-				GD.Print(string.Join(", ", fruits));  // Prints "Apple, Orange, Pear, Kiwi"
-				GD.Print(string.Join("---", fruits)); // Prints "Apple---Orange---Pear---Kiwi"
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 			</description>
 		</method>
 		<method name="json_escape" qualifiers="const">
@@ -723,21 +670,11 @@
 			<param index="0" name="number" type="float" />
 			<description>
 				Converts the given [param number] to a string representation, in scientific notation.
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				var n = -5.2e8
 				print(n)                        # Prints -520000000
 				print(String.num_scientific(n)) # Prints -5.2e+08
-				[/gdscript]
-				[csharp]
-				// This method is not implemented in C#.
-				// Use `string.ToString()` with "e" to achieve similar results.
-				var n = -5.2e8f;
-				GD.Print(n);                // Prints -520000000
-				GD.Print(n.ToString("e1")); // Prints -5.2e+008
-				[/csharp]
-				[/codeblocks]
-				[b]Note:[/b] In C#, this method is not implemented. To achieve similar results, see C#'s [url=https://learn.microsoft.com/en-us/dotnet/standard/base-types/standard-numeric-format-strings]Standard numeric format strings[/url].
+				[/codeblock]
 			</description>
 		</method>
 		<method name="num_uint64" qualifiers="static">
@@ -878,19 +815,14 @@
 				Splits the string using a [param delimiter] and returns an array of the substrings, starting from the end of the string. The splits in the returned array appear in the same order as the original string. If [param delimiter] is an empty string, each substring will be a single character.
 				If [param allow_empty] is [code]false[/code], empty strings between adjacent delimiters are excluded from the array.
 				If [param maxsplit] is greater than [code]0[/code], the number of splits may not exceed [param maxsplit]. By default, the entire string is split, which is mostly identical to [method split].
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				var some_string = "One,Two,Three,Four"
 				var some_array = some_string.rsplit(",", true, 1)
 
 				print(some_array.size()) # Prints 2
 				print(some_array[0])     # Prints "One,Two,Three"
 				print(some_array[1])     # Prints "Four"
-				[/gdscript]
-				[csharp]
-				// In C#, there is no String.RSplit() method.
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 			</description>
 		</method>
 		<method name="rstrip" qualifiers="const">
@@ -957,24 +889,14 @@
 				Splits the string using a [param delimiter] and returns an array of the substrings. If [param delimiter] is an empty string, each substring will be a single character. This method is the opposite of [method join].
 				If [param allow_empty] is [code]false[/code], empty strings between adjacent delimiters are excluded from the array.
 				If [param maxsplit] is greater than [code]0[/code], the number of splits may not exceed [param maxsplit]. By default, the entire string is split.
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				var some_array = "One,Two,Three,Four".split(",", true, 2)
 
 				print(some_array.size()) # Prints 3
 				print(some_array[0])     # Prints "One"
 				print(some_array[1])     # Prints "Two"
 				print(some_array[2])     # Prints "Three,Four"
-				[/gdscript]
-				[csharp]
-				// C#'s `Split()` does not support the `maxsplit` parameter.
-				var someArray = "One,Two,Three".Split(",");
-
-				GD.Print(someArray[0]); // Prints "One"
-				GD.Print(someArray[1]); // Prints "Two"
-				GD.Print(someArray[2]); // Prints "Three"
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 				[b]Note:[/b] If you only need one substring from the array, consider using [method get_slice] which is faster. If you need to split strings with more complex rules, use the [RegEx] class instead.
 			</description>
 		</method>
@@ -1057,18 +979,11 @@
 			<description>
 				Returns the string converted to [code]kebab-case[/code].
 				[b]Note:[/b] Numbers followed by a [i]single[/i] letter are not separated in the conversion to keep some words (such as "2D") together.
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				"Node2D".to_kebab_case()               # Returns "node-2d"
 				"2nd place".to_kebab_case()            # Returns "2-nd-place"
 				"Texture3DAssetFolder".to_kebab_case() # Returns "texture-3d-asset-folder"
-				[/gdscript]
-				[csharp]
-				"Node2D".ToKebabCase();               // Returns "node-2d"
-				"2nd place".ToKebabCase();            // Returns "2-nd-place"
-				"Texture3DAssetFolder".ToKebabCase(); // Returns "texture-3d-asset-folder"
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 			</description>
 		</method>
 		<method name="to_lower" qualifiers="const">
@@ -1083,7 +998,7 @@
 			<description>
 				Converts the string to system multibyte code page encoded [PackedByteArray]. If conversion fails, empty array is returned.
 				The values permitted for [param encoding] are system dependent. If [param encoding] is empty string, system default encoding is used.
-				- For Windows, see [url=https://learn.microsoft.com/en-us/windows/win32/Intl/code-page-identifiers]Code Page Identifiers[/url] .NET names.
+				- For Windows, see [url=https://learn.microsoft.com/en-us/windows/win32/Intl/code-page-identifiers]Code Page Identifiers[/url] names.
 				- For macOS and Linux/BSD, see [code]libiconv[/code] library documentation and [code]iconv --list[/code] for a list of supported encodings.
 			</description>
 		</method>
@@ -1098,18 +1013,11 @@
 			<description>
 				Returns the string converted to [code]snake_case[/code].
 				[b]Note:[/b] Numbers followed by a [i]single[/i] letter are not separated in the conversion to keep some words (such as "2D") together.
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				"Node2D".to_snake_case()               # Returns "node_2d"
 				"2nd place".to_snake_case()            # Returns "2_nd_place"
 				"Texture3DAssetFolder".to_snake_case() # Returns "texture_3d_asset_folder"
-				[/gdscript]
-				[csharp]
-				"Node2D".ToSnakeCase();               // Returns "node_2d"
-				"2nd place".ToSnakeCase();            // Returns "2_nd_place"
-				"Texture3DAssetFolder".ToSnakeCase(); // Returns "texture_3d_asset_folder"
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 			</description>
 		</method>
 		<method name="to_upper" qualifiers="const">
@@ -1168,16 +1076,10 @@
 			<return type="String" />
 			<description>
 				Decodes the string from its URL-encoded format. This method is meant to properly decode the parameters in a URL when receiving an HTTP request. See also [method uri_encode].
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				var url = "$DOCS_URL/?highlight=Godot%20Engine%3%docs"
 				print(url.uri_decode()) # Prints "$DOCS_URL/?highlight=Godot Engine:docs"
-				[/gdscript]
-				[csharp]
-				var url = "$DOCS_URL/?highlight=Godot%20Engine%3%docs"
-				GD.Print(url.URIDecode()) // Prints "$DOCS_URL/?highlight=Godot Engine:docs"
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 				[b]Note:[/b] This method decodes [code]+[/code] as space.
 			</description>
 		</method>
@@ -1185,20 +1087,12 @@
 			<return type="String" />
 			<description>
 				Encodes the string to URL-friendly format. This method is meant to properly encode the parameters in a URL when sending an HTTP request. See also [method uri_decode].
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				var prefix = "$DOCS_URL/?highlight="
 				var url = prefix + "Godot Engine:docs".uri_encode()
 
 				print(url) # Prints "$DOCS_URL/?highlight=Godot%20Engine%3%docs"
-				[/gdscript]
-				[csharp]
-				var prefix = "$DOCS_URL/?highlight=";
-				var url = prefix + "Godot Engine:docs".URIEncode();
-
-				GD.Print(url); // Prints "$DOCS_URL/?highlight=Godot%20Engine%3%docs"
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 			</description>
 		</method>
 		<method name="uri_file_decode" qualifiers="const">
@@ -1262,7 +1156,6 @@
 				print(my_message % [location, speed]) # Prints "Travelling to Deep Valley, at 40.35 km/h."
 				[/codeblock]
 				For more information, see the [url=$DOCS_URL/tutorials/scripting/gdscript/gdscript_format_string.html]GDScript format strings[/url] tutorial.
-				[b]Note:[/b] In C#, this operator is not available. Instead, see [url=https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated]how to interpolate strings with "$"[/url].
 			</description>
 		</operator>
 		<operator name="operator +">

@@ -5,8 +5,7 @@
 	</brief_description>
 	<description>
 		[Callable] is a built-in [Variant] type that represents a function. It can either be a method within an [Object] instance, or a custom callable used for different purposes (see [method is_custom]). Like all [Variant] types, it can be stored in variables and passed to other functions. It is most commonly used for signal callbacks.
-		[codeblocks]
-		[gdscript]
+		[codeblock]
 		func print_args(arg1, arg2, arg3 = ""):
 			prints(arg1, arg2, arg3)
 
@@ -15,24 +14,7 @@
 			callable.call("hello", "world")  # Prints "hello world ".
 			callable.call(Vector2.UP, 42, callable)  # Prints "(0.0, -1.0) 42 Node(node.gd)::print_args"
 			callable.call("invalid")  # Invalid call, should have at least 2 arguments.
-		[/gdscript]
-		[csharp]
-		// Default parameter values are not supported.
-		public void PrintArgs(Variant arg1, Variant arg2, Variant arg3 = default)
-		{
-			GD.PrintS(arg1, arg2, arg3);
-		}
-
-		public void Test()
-		{
-			// Invalid calls fail silently.
-			Callable callable = new Callable(this, MethodName.PrintArgs);
-			callable.Call("hello", "world"); // Default parameter values are not supported, should have 3 arguments.
-			callable.Call(Vector2.Up, 42, callable); // Prints "(0, -1) 42 Node(Node.cs)::PrintArgs"
-			callable.Call("invalid"); // Invalid call, should have 3 arguments.
-		}
-		[/csharp]
-		[/codeblocks]
+		[/codeblock]
 		In GDScript, it's possible to create lambda functions within a method. Lambda functions are custom callables that are not associated with an [Object] instance. Optionally, lambda functions can also be named. The name will be displayed in the debugger, or when calling [method get_method].
 		[codeblock]
 		func _init():
@@ -115,18 +97,10 @@
 			<return type="void" />
 			<description>
 				Calls the method represented by this [Callable] in deferred mode, i.e. at the end of the current frame. Arguments can be passed and should match the method's signature.
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				func _ready():
 					grab_focus.call_deferred()
-				[/gdscript]
-				[csharp]
-				public override void _Ready()
-				{
-					Callable.From(GrabFocus).CallDeferred();
-				}
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 				[b]Note:[/b] Deferred calls are processed at idle time. Idle time happens mainly at the end of process and physics frames. In it, deferred calls will be run until there are none left, which means you can defer calls from other deferred calls and they'll still be run in the current idle time cycle. This means you should not call a method deferred from itself (or from a method called by it), as this causes infinite recursion the same way as if you had called the method directly.
 				See also [method Object.call_deferred].
 			</description>
@@ -212,7 +186,7 @@
 				- for binding/unbinding arguments (see [method bind] and [method unbind]);
 				- for representing methods of built-in [Variant] types (see [method create]);
 				- for representing global and lambda functions in GDScript;
-				- for other purposes in the core, GDExtension, and C#.
+				- for other purposes in the core and GDExtension.
 			</description>
 		</method>
 		<method name="is_null" qualifiers="const">

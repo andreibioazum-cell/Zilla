@@ -80,7 +80,7 @@
 #include "servers/physics_3d/physics_server_3d.h"
 #endif // PHYSICS_3D_DISABLED
 
-#include "modules/modules_enabled.gen.h" // For gdscript, mono. (For editor help highlighter).
+#include "modules/modules_enabled.gen.h" // For gdscript. (For editor help highlighter).
 
 constexpr int GODOT4_CONFIG_VERSION = 5;
 
@@ -330,7 +330,7 @@ void ProjectManager::_update_theme(bool p_skip_creation) {
 		}
 	}
 
-#if defined(MODULE_GDSCRIPT_ENABLED) || defined(MODULE_MONO_ENABLED)
+#ifdef MODULE_GDSCRIPT_ENABLED
 	EditorHelpHighlighter::get_singleton()->clear_cache();
 #endif
 
@@ -711,10 +711,6 @@ void ProjectManager::_open_selected_projects_check_warnings() {
 			if (feature == "Double Precision") {
 				ask_update_backup->show();
 				warning_message += TTR("Warning: This project uses double precision floats, but this version of\nGodot uses single precision floats. Opening this project may cause data loss.\n\n");
-				unsupported_features.remove_at(i);
-				i--;
-			} else if (feature == "C#") {
-				warning_message += TTR("Warning: This project uses C#, but this build of Godot does not have\nthe Mono module. If you proceed you will not be able to use any C# scripts.\n\n");
 				unsupported_features.remove_at(i);
 				i--;
 			} else if (ProjectList::project_feature_looks_like_version(feature)) {
@@ -1431,7 +1427,7 @@ ProjectManager::ProjectManager() {
 		OS::get_singleton()->set_low_processor_usage_mode(true);
 	}
 
-#if defined(MODULE_GDSCRIPT_ENABLED) || defined(MODULE_MONO_ENABLED)
+#ifdef MODULE_GDSCRIPT_ENABLED
 	EditorHelpHighlighter::create_singleton();
 #endif
 
@@ -2035,7 +2031,7 @@ ProjectManager::~ProjectManager() {
 
 	EditorHelp::cleanup_doc();
 
-#if defined(MODULE_GDSCRIPT_ENABLED) || defined(MODULE_MONO_ENABLED)
+#ifdef MODULE_GDSCRIPT_ENABLED
 	EditorHelpHighlighter::free_singleton();
 #endif
 

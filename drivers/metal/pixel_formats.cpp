@@ -114,9 +114,6 @@ bool PixelFormats::isSupportedOrSubstitutable(DataFormat p_format) {
 }
 
 bool PixelFormats::isPVRTCFormat(MTL::PixelFormat p_format) {
-#if defined(VISIONOS_ENABLED)
-	return false;
-#else
 	// Deprecated in SDK 26.0
 	GODOT_CLANG_WARNING_PUSH_AND_IGNORE("-Wdeprecated-declarations")
 	switch (p_format) {
@@ -133,7 +130,6 @@ bool PixelFormats::isPVRTCFormat(MTL::PixelFormat p_format) {
 			return false;
 	}
 	GODOT_CLANG_WARNING_POP
-#endif
 }
 
 MTLFormatType PixelFormats::getFormatType(DataFormat p_format) {
@@ -679,7 +675,6 @@ void PixelFormats::initMTLPixelFormatCapabilities() {
 	addMTLPixelFormatDesc(RGBA32Sint, Color128, RWC);
 	addMTLPixelFormatDesc(RGBA32Float, Color128, All);
 
-#if !defined(VISIONOS_ENABLED)
 	GODOT_CLANG_WARNING_PUSH_AND_IGNORE("-Wdeprecated-declarations")
 	// Compressed pixel formats
 	addMTLPixelFormatDesc(PVRTC_RGBA_2BPP, PVRTC_RGBA_2BPP, RF);
@@ -687,7 +682,6 @@ void PixelFormats::initMTLPixelFormatCapabilities() {
 	addMTLPixelFormatDesc(PVRTC_RGBA_4BPP, PVRTC_RGBA_4BPP, RF);
 	addMTLPixelFormatDescSRGB(PVRTC_RGBA_4BPP_sRGB, PVRTC_RGBA_4BPP, RF, PVRTC_RGBA_4BPP);
 	GODOT_CLANG_WARNING_POP
-#endif
 
 	addMTLPixelFormatDesc(ETC2_RGB8, ETC2_RGB8, RF);
 	addMTLPixelFormatDescSRGB(ETC2_RGB8_sRGB, ETC2_RGB8, RF, ETC2_RGB8);

@@ -464,7 +464,7 @@ void CameraApple::update_feeds() {
 #ifdef APPLE_EMBEDDED_ENABLED
 	{
 		NSMutableArray *deviceTypes = [NSMutableArray array];
-		if (@available(iOS 14.0, visionOS 2.1, *)) {
+		if (@available(iOS 14.0, *)) {
 			[deviceTypes addObject:AVCaptureDeviceTypeBuiltInWideAngleCamera];
 		}
 #ifdef IOS_ENABLED

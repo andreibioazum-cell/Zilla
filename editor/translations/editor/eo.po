@@ -5663,9 +5663,6 @@ msgstr "Transiro el:"
 msgid "Transition To:"
 msgstr "Transiro al:"
 
-msgid "Not enough bytes for decoding bytes, or invalid format."
-msgstr "Ne sufiĉas bitokoj por malĉifri bitokojn, aŭ nevalida formo."
-
 msgid "%s/s"
 msgstr "%s/s"
 
@@ -5680,9 +5677,6 @@ msgstr "Elira RPC"
 
 msgid "Delete Property?"
 msgstr "Forigi atributon?"
-
-msgid "Error loading %s: %s."
-msgstr "Eraro dum la ŝargo de %s: %s."
 
 msgid "Add Node"
 msgstr "Aldoni nodon"

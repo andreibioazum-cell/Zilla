@@ -67,18 +67,10 @@
 				This virtual method can be used to insert additional error detection while the user is dragging a connection over a valid port.
 				Return [code]true[/code] if the connection is indeed valid or return [code]false[/code] if the connection is impossible. If the connection is impossible, no snapping to the port and thus no connection request to that port will happen.
 				In this example a connection to same node is suppressed:
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				func _is_node_hover_valid(from, from_port, to, to_port):
 					return from != to
-				[/gdscript]
-				[csharp]
-				public override bool _IsNodeHoverValid(StringName fromNode, int fromPort, StringName toNode, int toPort)
-				{
-					return fromNode != toNode;
-				}
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 			</description>
 		</method>
 		<method name="add_valid_connection_type">
@@ -185,11 +177,9 @@
 				}
 				[/codeblock]
 				For example, getting a connection at a given mouse position can be achieved like this:
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				var connection = get_closest_connection_at_point(mouse_event.get_position())
-				[/gdscript]
-				[/codeblocks]
+				[/codeblock]
 			</description>
 		</method>
 		<method name="get_connection_count">

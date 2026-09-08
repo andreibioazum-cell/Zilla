@@ -900,7 +900,7 @@ ScriptCreateDialog::ScriptCreateDialog() {
 		// Normal Case: GDScript is available, select it.
 		language_menu->select(default_language);
 	} else {
-		// Edge Case 2: Languages exist (like C#), but GDScript is disabled.
+		// Edge Case 2: Other script languages exist, but GDScript is disabled.
 		language_menu->select(0);
 	}
 

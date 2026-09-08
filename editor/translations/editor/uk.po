@@ -3515,14 +3515,6 @@ msgstr ""
 msgid "Note:"
 msgstr "Замітка:"
 
-msgid ""
-"There are notable differences when using this API with C#. See [url=%s]C# API "
-"differences to GDScript[/url] for more information."
-msgstr ""
-"Існують помітні відмінності при використанні цього API з C#. Дивіться "
-"[url=%s]Відмінності API C# від GDScript[/url] для отримання додаткової "
-"інформації."
-
 msgid "Online Tutorials"
 msgstr "Підручники в інтернеті"
 
@@ -5561,13 +5553,6 @@ msgstr ""
 "Неможливо запустити скрипт, оскільки він не є інструментальним (додайте "
 "зверху анотацію @tool)."
 
-msgid ""
-"Cannot run the script because it's not a tool script (add the [Tool] "
-"attribute above the class definition)."
-msgstr ""
-"Не вдається запустити скрипт, оскільки це не скрипт інструменту (додайте "
-"атрибут [Tool] над визначенням класу)."
-
 msgid "Cannot run the script because it's not a tool script."
 msgstr "Неможливо запустити скрипт, оскільки він не є інструментальним."
 
@@ -6246,19 +6231,6 @@ msgid ""
 msgstr ""
 ".ipa можна зібрати лише на macOS. Проект Xcode залишається без побудови "
 "пакету."
-
-msgid ""
-"Exporting to an Apple Embedded platform when using C#/.NET is experimental "
-"and requires macOS."
-msgstr ""
-"Експорт на платформу Apple Embedded під час використання C#/.NET є "
-"експериментальним і вимагає macOS."
-
-msgid ""
-"Exporting to an Apple Embedded platform when using C#/.NET is experimental."
-msgstr ""
-"Експорт на платформу Apple Embedded під час використання C#/.NET є "
-"експериментальним."
 
 msgid "Custom debug template not found."
 msgstr "Нетипового шаблону діагностики не знайдено."
@@ -9136,17 +9108,6 @@ msgstr ""
 "\n"
 
 msgid ""
-"Warning: This project uses C#, but this build of Godot does not have\n"
-"the Mono module. If you proceed you will not be able to use any C# scripts.\n"
-"\n"
-msgstr ""
-"Попередження: У цьому проекті використовується мова C#, але ця збірка Godot "
-"не має\n"
-"модуля Mono. Якщо ви продовжите, ви не зможете використовувати скрипти на "
-"C#.\n"
-"\n"
-
-msgid ""
 "Warning: This project was last edited in Godot %s. Opening will change it to "
 "Godot %s.\n"
 "\n"
@@ -9589,20 +9550,8 @@ msgstr "Зупинити виконання проекту"
 msgid "Run Current Scene"
 msgstr "Запустити поточну сцену"
 
-msgid "Run Scene in Regular Mode"
-msgstr "Запустіть сцену в звичайному режимі"
-
-msgid "Run Scene in XR Mode"
-msgstr "Запустіть сцену в режимі XR"
-
 msgid "Run Specific Scene"
 msgstr "Запустити певну сцену"
-
-msgid "Run in Regular Mode"
-msgstr "Запуск у звичайному режимі"
-
-msgid "Run in XR Mode"
-msgstr "Запуск у режимі XR"
 
 msgid "Enable Movie Maker Mode"
 msgstr "Увімкнути режим Movie Maker"
@@ -16354,12 +16303,6 @@ msgstr "Підтримка доступності (AccessKit)"
 msgid "Improved Gamepad Support (SDL)"
 msgstr "Покращена підтримка ігрових контролерів (SDL)"
 
-msgid "XR"
-msgstr "XR"
-
-msgid "OpenXR"
-msgstr "OpenXR"
-
 msgid "Wayland"
 msgstr "Wayland"
 
@@ -16455,12 +16398,6 @@ msgstr ""
 "Якщо ця опція вимкнена, для підтримки геймпадів замість цього "
 "використовується вбудований власний код, що може бути менш надійним для "
 "деяких моделей контролерів."
-
-msgid "XR (AR and VR)."
-msgstr "XR (AR і VR)."
-
-msgid "OpenXR standard implementation (requires XR to be enabled)."
-msgstr "Стандартна реалізація OpenXR (потрібно увімкнути XR)."
 
 msgid "Wayland display server support (Linux only)."
 msgstr "Підтримка сервера дисплея Wayland (лише для Linux)."
@@ -16582,13 +16519,6 @@ msgstr ""
 "Це просканує всі файли в поточному проєкті на предмет використання класів.\n"
 "Зверніть увагу, що перше сканування може тривати деякий час, особливо у "
 "великих проєктах."
-
-msgid ""
-"Warning: Class detection for C# scripts is not currently available, and such "
-"files will be ignored."
-msgstr ""
-"Попередження: Виявлення класів для скриптів C# наразі недоступне, і такі "
-"файли будуть ігноруватися."
 
 msgid ""
 "Clear cache of used classes per file? This will make it so that those files "
@@ -18109,55 +18039,6 @@ msgstr "Усунення шуму"
 msgid "Retrieving textures"
 msgstr "Отримання текстур"
 
-msgid "Class name can't be a reserved keyword"
-msgstr "Назвою класу не може бути зарезервоване ключове слово"
-
-msgid "Class name must be a valid identifier"
-msgstr "Ім'я класу має бути дійсним ідентифікатором"
-
-msgid "Not enough bytes for decoding bytes, or invalid format."
-msgstr "Недостатньо байтів для їх декодування або вказано некоректний формат."
-
-msgid ""
-"Unable to load .NET runtime, no compatible version was found.\n"
-"Attempting to create/edit a project will lead to a crash.\n"
-"\n"
-"Please install the .NET SDK 8.0 or later from https://get.dot.net and restart "
-"Godot."
-msgstr ""
-"Не вдалося завантажити середовище виконання .NET, сумісної версії не "
-"знайдено. \n"
-"Спроба створити/редагувати проект призведе до збою. \n"
-"\n"
-"Установіть .NET SDK 8.0 або новішої версії з https://get.dot.net і "
-"перезапустіть Godot."
-
-msgid "Failed to load .NET runtime"
-msgstr "Не вдалося завантажити середовище виконання .NET"
-
-msgid ""
-"Unable to find the .NET assemblies directory.\n"
-"Make sure the '%s' directory exists and contains the .NET assemblies."
-msgstr ""
-"Не вдалося знайти каталог збірок .NET.\n"
-"Переконайтеся, що каталог «%s» існує та містить збірки .NET."
-
-msgid ".NET assemblies not found"
-msgstr ".NET збірок не знайдено"
-
-msgid ""
-"Unable to load .NET runtime, specifically hostfxr.\n"
-"Attempting to create/edit a project will lead to a crash.\n"
-"\n"
-"Please install the .NET SDK 8.0 or later from https://get.dot.net and restart "
-"Godot."
-msgstr ""
-"Не вдалося завантажити середовище виконання .NET, зокрема hostfxr. \n"
-"Спроба створити/редагувати проект призведе до збою. \n"
-"\n"
-"Установіть .NET SDK 8.0 або новішої версії з https://get.dot.net і "
-"перезапустіть Godot."
-
 msgctxt "Network"
 msgid "Down"
 msgstr "Отримання"
@@ -18684,170 +18565,6 @@ msgstr "Профайлер ObjectDB"
 msgid "Diff Against:"
 msgstr "Різниця проти:"
 
-msgid "Rename Action"
-msgstr "Перейменувати дію"
-
-msgid "Rename Actions Localized name"
-msgstr "Переименование действий Локализованное название"
-
-msgid "Change Action Type"
-msgstr "Змінити тип дії"
-
-msgid ""
-"Internal name of the action. Some XR runtimes don't allow spaces or special "
-"characters."
-msgstr ""
-"Внутрішня назва дії. Деякі середовища виконання XR не дозволяють пробіли або "
-"спеціальні символи."
-
-msgid "Action Name"
-msgstr "Назва дії"
-
-msgid "Human-readable name of the action. This can be displayed to end users."
-msgstr ""
-"Назва дії, зрозуміла людині. Її можна відображати кінцевим користувачам."
-
-msgid "Action Localized Name"
-msgstr "Локалізована назва дії"
-
-msgid "Type of the action"
-msgstr "Тип з дії"
-
-msgid "Action Type"
-msgstr "Тип дії"
-
-msgid "Remove action"
-msgstr "Вилучити дію"
-
-msgid "Add action set"
-msgstr "Додати набір дій"
-
-msgid "Remove action set"
-msgstr "Вилучити набір дій"
-
-msgid "Add interaction profile"
-msgstr "Додати інтерактивний профіль"
-
-msgid "Error loading %s: %s."
-msgstr "Помилка завантаження %s: %s."
-
-msgid "Error saving file %s: %s"
-msgstr "Помилка під час збереження файлу %s: %s"
-
-msgid "OpenXR Action map:"
-msgstr "Карта дій OpenXR:"
-
-msgid "Remove interaction profile"
-msgstr "Вилучити інтерактивний профіль"
-
-msgid "OpenXR Action Map"
-msgstr "Карта дій OpenXR"
-
-msgid "Toggle OpenXR Action Map Dock"
-msgstr "Перемикання закріплення карти дій OpenXR"
-
-msgid "Add Action Set"
-msgstr "Додати набір дій"
-
-msgid "Add an action set."
-msgstr "Додавання набору дій."
-
-msgid "Add profile"
-msgstr "Додати профіль"
-
-msgid "Add an interaction profile."
-msgstr "Додає інтерактивний профіль."
-
-msgid "Save this OpenXR action map."
-msgstr "Збережіть цю карту дій OpenXR."
-
-msgid "Reset to default OpenXR action map."
-msgstr "Скиньте до стандартної карти дій OpenXR."
-
-msgid "Action Sets"
-msgstr "Набори дій"
-
-msgid "Rename Action Set"
-msgstr "Перейменувати набір дій"
-
-msgid "Rename Action Sets Localized name"
-msgstr "Действие \"Переименовать\" устанавливает локализованное имя"
-
-msgid "Change Action Sets priority"
-msgstr "Зміна пріоритету наборів дій"
-
-msgid "Add action"
-msgstr "Додати дію"
-
-msgid "Delete action"
-msgstr "Вилучити дію"
-
-msgid "Fold"
-msgstr "Згорнути"
-
-msgid "Action Set Name"
-msgstr "Назва набору дій"
-
-msgid ""
-"Human-readable name of the action set. This can be displayed to end users."
-msgstr ""
-"Назва набору дій, що читається людиною. Її можна відображати кінцевим "
-"користувачам."
-
-msgid "Action Set Localized Name"
-msgstr "Локалізована назва набору дій"
-
-msgid ""
-"Priority of the action set. If multiple action sets bind to the same input, "
-"the action set with the highest priority will be updated."
-msgstr ""
-"Пріоритет набору дій. Якщо кілька наборів дій прив’язані до одного й того ж "
-"вхідного сигналу, буде оновлено набір дій з найвищим пріоритетом."
-
-msgid "Action Set Priority"
-msgstr "Пріоритет встановлення дії"
-
-msgid "Add action."
-msgstr "Додати дію."
-
-msgid "Remove action set."
-msgstr "Видалити набір дій."
-
-msgid "Remove this binding modifier."
-msgstr "Видаліть цей модифікатор зв'язування."
-
-msgid "Remove binding modifier"
-msgstr "Видалити модифікатор прив’язки"
-
-msgid "Add binding modifier"
-msgstr "Додати модифікатор прив’язки"
-
-msgid "Note: modifiers will only be applied if supported on the host system."
-msgstr ""
-"Примітка: модифікатори застосовуватимуться, лише якщо вони підтримуються в "
-"системі хосту."
-
-msgid "Binding modifiers for:"
-msgstr "Модифікатори прив'язки для:"
-
-msgid "Remove action from interaction profile"
-msgstr "Видалити дію з інтерактивного профілю"
-
-msgid "Edit binding modifiers"
-msgstr "Редагувати модифікатори прив’язки"
-
-msgid "Note: This interaction profile requires extension %s support."
-msgstr "Примітка. Цей профіль взаємодії потребує підтримки розширення %s."
-
-msgid "Add binding"
-msgstr "Додати прив'язку"
-
-msgid "Remove binding"
-msgstr "Вилучити прив'язку"
-
-msgid "Note: This binding path requires extension %s support."
-msgstr "Примітка. Цей шлях зв’язування вимагає підтримки розширення %s."
-
 msgid "Boolean"
 msgstr "Булеве"
 
@@ -18856,60 +18573,6 @@ msgstr "Поплавок"
 
 msgid "Vector2"
 msgstr "Vector2"
-
-msgid "Pose"
-msgstr "Поза"
-
-msgid "Haptic"
-msgstr "Тактильний"
-
-msgid "Unknown"
-msgstr "Невідомо"
-
-msgid "Modifiers"
-msgstr "Модифікатори"
-
-msgid "Select an action"
-msgstr "Вибрати дію"
-
-msgid "Select an interaction profile"
-msgstr "Виберіть профіль взаємодії"
-
-msgid "All interaction profiles have been added to the action map."
-msgstr "Усі профілі взаємодії додано до карти дій."
-
-msgid "Choose an XR runtime."
-msgstr "Виберіть середовище виконання XR."
-
-msgid ""
-"Cannot use the same SubViewport with multiple OpenXR composition layers. "
-"Clear it from its current layer first."
-msgstr ""
-"Неможливо використовувати той самий SubViewport із кількома композиційними "
-"шарами OpenXR. Спочатку очистіть його від поточного шару."
-
-msgid ""
-"Cannot set SubViewport on an OpenXR composition layer when using an Android "
-"surface."
-msgstr ""
-"Неможливо встановити SubViewport на композиційному шарі OpenXR під час "
-"використання поверхні Android."
-
-msgid ""
-"OpenXR composition layers must have orthonormalized transforms (ie. no scale "
-"or shearing)."
-msgstr ""
-"Композиційні шари OpenXR повинні мати ортонормовані перетворення (тобто без "
-"масштабування чи зсуву)."
-
-msgid ""
-"Hole punching won't work as expected unless the sort order is less than zero."
-msgstr ""
-"Перфорація не працюватиме належним чином, якщо порядок сортування не буде "
-"меншим за нуль."
-
-msgid "OpenXR visibility mask must have an XRCamera3D node as their parent."
-msgstr "Маска видимості OpenXR повинна мати вузол XRCamera3D як батьківський."
 
 msgid "E constant (2.718282). Represents the base of the natural logarithm."
 msgstr "Стала Ойлера (2.718282). Це значення є основою натурального логарифма."
@@ -20460,25 +20123,6 @@ msgid "Error: There was a problem validating the keystore username and password"
 msgstr ""
 "Помилка: виникла проблема перевірки імені користувача та пароля сховища ключів"
 
-msgid ""
-"Unable to determine the C# project's TFM, it may be incompatible. The export "
-"template only supports '%s'. Make sure the project targets '%s' or consider "
-"using gradle builds instead."
-msgstr ""
-"Неможливо визначити TFM проекту C#, можливо, він несумісний. Шаблон експорту "
-"підтримує лише «%s». Переконайтеся, що проект націлений на «%s», або "
-"подумайте про використання натомість збірок gradle."
-
-msgid ""
-"C# project targets '%s' but the export template only supports '%s'. Consider "
-"using gradle builds instead."
-msgstr ""
-"Проект C# націлений на «%s», але шаблон експорту підтримує лише «%s». "
-"Натомість подумайте про використання збірок gradle."
-
-msgid "Exporting to Android when using C#/.NET is experimental."
-msgstr "Експортування в Android при використанні C#/.NET є експериментальним."
-
 msgid "Custom Android source template not found."
 msgstr "Користувацький вихідний шаблон Android не знайдено."
 
@@ -20868,13 +20512,6 @@ msgstr ""
 msgid "App sandbox is required for App Store distribution."
 msgstr "Песочница для приложений необходима для распространения App Store."
 
-msgid ""
-"'rcodesign' doesn't support signing applications with embedded dynamic "
-"libraries (GDExtension or .NET)."
-msgstr ""
-"'rcodesign' не підтримує підписання програм із вбудованими динамічними "
-"бібліотеками (GDExtension або .NET)."
-
 msgid "Code signing is required for App Store distribution."
 msgstr "Засвідчення: для засвідчення потрібне підписування коду."
 
@@ -21222,20 +20859,6 @@ msgstr "Не вдалося прочитати файл: \"%s\"."
 
 msgid "PWA"
 msgstr "PWA"
-
-msgid ""
-"Exporting to Web is currently not supported in Godot 4 when using C#/.NET. "
-"Use Godot 3 to target Web with C#/Mono instead."
-msgstr ""
-"Експорт до Web наразі не підтримується в Godot 4 за використання C#/.NET. "
-"Замість цього використовуйте Godot 3 для експорту до Web за допомогою C#/Mono."
-
-msgid ""
-"If this project does not use C#, use a non-C# editor build to export the "
-"project."
-msgstr ""
-"Якщо цей проект не використовує C#, використовуйте збірку редактора, "
-"відмінного від C#, щоб експортувати проект."
 
 msgid "Could not read HTML shell: \"%s\"."
 msgstr "Не вдалося прочитати оболонку HTML: \"%s\"."
@@ -22295,59 +21918,6 @@ msgstr ""
 "На одну сцену (або набір екземплярів сцен) дозволено використовувати лише "
 "одне WorldEnvironment."
 
-msgid ""
-"XRCamera3D may not function as expected without an XROrigin3D node as its "
-"parent."
-msgstr ""
-"XRCamera3D може не працювати належним чином без вузла XROrigin3D як "
-"батьківського."
-
-msgid ""
-"XRCamera3D should have physics_interpolation_mode set to OFF in order to "
-"avoid jitter."
-msgstr ""
-"У XRCamera3D параметр physics_interpolation_mode слід встановити на OFF, щоб "
-"уникнути тремтіння."
-
-msgid ""
-"XRNode3D may not function as expected without an XROrigin3D node as its "
-"parent."
-msgstr ""
-"XRNode3D може не працювати належним чином без вузла XROrigin3D як "
-"батьківського."
-
-msgid "No tracker name is set."
-msgstr "Ім'я трекера не встановлено."
-
-msgid "No pose is set."
-msgstr "Поза не встановлена."
-
-msgid ""
-"XRNode3D should have physics_interpolation_mode set to OFF in order to avoid "
-"jitter."
-msgstr ""
-"Для уникнення тремтіння у XRNode3D параметр physics_interpolation_mode слід "
-"встановити на OFF."
-
-msgid "XROrigin3D requires an XRCamera3D child node."
-msgstr "XROrigin3D потребує дочірнього вузла XRCamera3D."
-
-msgid ""
-"Changing the scale on the XROrigin3D node is not supported. Change the World "
-"Scale instead."
-msgstr ""
-"Зміна масштабу на вузлі XROrigin3D не підтримується. Натомість змініть "
-"масштаб світу."
-
-msgid ""
-"XR shaders are not enabled in project settings. Stereoscopic output is not "
-"supported unless they are enabled. Please enable `xr/shaders/enabled` to use "
-"stereoscopic output."
-msgstr ""
-"Шейдери XR не ввімкнено в налаштуваннях проекту. Стереоскопічний вихід не "
-"підтримується, якщо його не ввімкнено. Щоб використовувати стереоскопічний "
-"вихід, увімкніть `xr/shaders/enabled`."
-
 msgid "Animation '%s' not found."
 msgstr "Анімацію «%s» не знайдено."
 
@@ -22842,15 +22412,6 @@ msgstr "Не знайдено відповідної функції для: \"%s
 msgid "Varying '%s' cannot be passed for the '%s' parameter in that context."
 msgstr ""
 "Варіація '%s' не може бути передана для параметра '%s' у цьому контексті."
-
-msgid ""
-"Unable to pass a multiview texture sampler as a parameter to a custom "
-"function. Consider sampling it in the main function and then passing the "
-"vector result to the custom function."
-msgstr ""
-"Не вдається передати багатовидовий семплер текстури як параметр до "
-"користувацької функції. Розгляньте можливість семплерування в основній "
-"функції, а потім передачі векторного результату до користувацької функції."
 
 msgid ""
 "Unable to pass RADIANCE texture sampler as a parameter to a custom function. "

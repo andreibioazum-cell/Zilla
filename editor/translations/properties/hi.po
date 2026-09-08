@@ -2643,9 +2643,6 @@ msgstr "एकल उद्धरण चिह्नों का उपयो�
 msgid "Help"
 msgstr "मदद"
 
-msgid "Class Reference Examples"
-msgstr "कक्षा संदर्भ उदाहरण"
-
 msgid "Sort Functions Alphabetically"
 msgstr "फ़ंक्शन को वर्णानुक्रम में क्रमबद्ध करें"
 
@@ -3057,33 +3054,6 @@ msgstr "स्थिति पट्टी छुपाएँ"
 msgid "Suppress UI Gesture"
 msgstr "यूआई जेस्चर को दबाएँ"
 
-msgid "XR"
-msgstr "XR"
-
-msgid "View Configuration"
-msgstr "कॉन्फ़िगरेशन देखें"
-
-msgid "Reference Space"
-msgstr "संदर्भ स्थान"
-
-msgid "Foveation Dynamic"
-msgstr "फोवेशन डायनेमिक"
-
-msgid "Submit Depth Buffer"
-msgstr "गहराई बफर सबमिट करें"
-
-msgid "Frame Synthesis"
-msgstr "फ्रेम संश्लेषण"
-
-msgid "Aruco Dict"
-msgstr "अरुको डिक्ट"
-
-msgid "April Tag Dict"
-msgstr "अप्रैल टैग डिक्ट"
-
-msgid "Analog Threshold"
-msgstr "एनालॉग थ्रेशोल्ड"
-
 msgid "Boot Splash"
 msgstr "बूट स्प्लैश"
 
@@ -3119,15 +3089,6 @@ msgstr "खिंचाव मोड"
 
 msgid "Image"
 msgstr "छवि"
-
-msgid "Dotnet"
-msgstr "डॉट नेट"
-
-msgid "Project"
-msgstr "परियोजना"
-
-msgid "Assembly Reload Attempts"
-msgstr "असेंबली पुनः लोड प्रयास"
 
 msgid "Time"
 msgstr "समय"
@@ -3570,21 +3531,6 @@ msgstr "अल्ट्रा क्वालिटी जांच रे ग�
 msgid "Max Rays per Probe Pass"
 msgstr "प्रति जांच अधिकतम किरणें"
 
-msgid "IOD"
-msgstr "IOD"
-
-msgid "Oversample"
-msgstr "ओवरसैंपल"
-
-msgid "K1"
-msgstr "K1"
-
-msgid "K2"
-msgstr "K2"
-
-msgid "Vulkan VRS"
-msgstr "वुल्कन VRS"
-
 msgid "BPM"
 msgstr "BPM"
 
@@ -3636,38 +3582,8 @@ msgstr "सीमलेस ब्लेंड स्कर्ट"
 msgid "Bump Strength"
 msgstr "टक्कर की ताकत"
 
-msgid "Is Sticky"
-msgstr "चिपचिपा है"
-
-msgid "On Threshold"
-msgstr "दहलीज पर"
-
-msgid "Off Threshold"
-msgstr "दहलीज से बाहर"
-
-msgid "April Dict"
-msgstr "अप्रैल डिक्ट"
-
-msgid "Marker ID"
-msgstr "मार्कर ID"
-
 msgid "Next"
 msgstr "अ‍गला"
-
-msgid "Green Swizzle"
-msgstr "हरा स्विज़ल"
-
-msgid "Blue Swizzle"
-msgstr "नीला स्विज़ल"
-
-msgid "Max Anisotropy"
-msgstr "अधिकतम अनिसोट्रॉपी"
-
-msgid "Hand"
-msgstr "हाथ"
-
-msgid "Hand Skeleton"
-msgstr "हाथ का कंकाल"
 
 msgid "Subject"
 msgstr "विषय"
@@ -3740,15 +3656,6 @@ msgstr "समर्थित प्रोटोकॉल"
 
 msgid "Max Queued Packets"
 msgstr "अधिकतम पंक्तिबद्ध पैकेट"
-
-msgid "Requested Reference Space Types"
-msgstr "अनुरोधित संदर्भ स्थान प्रकार"
-
-msgid "Reference Space Type"
-msgstr "संदर्भ स्थान प्रकार"
-
-msgid "Visibility State"
-msgstr "दृश्यता स्थिति"
 
 msgid "Debug Keystore Pass"
 msgstr "कीस्टोर पास डीबग करें"
@@ -4776,12 +4683,6 @@ msgstr "दो प्रतिबिंबों का उपयोग कर�
 msgid "Pose"
 msgstr "मुद्रा"
 
-msgid "Show When Tracked"
-msgstr "ट्रैक होने पर दिखाएँ"
-
-msgid "World Scale"
-msgstr "विश्व पैमाना"
-
 msgid "Sync"
 msgstr "समकालिकता"
 
@@ -5276,9 +5177,6 @@ msgstr "वस्तु चुनना सक्रिय करे"
 
 msgid "Menu"
 msgstr "मेनू"
-
-msgid "Use XR"
-msgstr "उपयोग XR"
 
 msgid "Own World 3D"
 msgstr "विश्व 3D"
@@ -6378,9 +6276,6 @@ msgstr "अधिकतम रेंडरिंग लाइट्स"
 msgid "Max Lights per Object"
 msgstr "प्रति वस्तु अधिकतम प्रकाश स्रोत"
 
-msgid "Shaders"
-msgstr "शेडर्स"
-
 msgid "Treat Warnings as Errors"
 msgstr "चेतावनियों को त्रुटियाँ समझें"
 
@@ -6428,18 +6323,3 @@ msgstr "प्रायिक लिपि मिपमैप्स उत्प
 
 msgid "Include Text Server Data"
 msgstr "टेक्स्ट सर्वर डेटा शामिल करें"
-
-msgid "Is Primary"
-msgstr "क्या प्राथमिक है"
-
-msgid "AR"
-msgstr "AR"
-
-msgid "Is Anchor Detection Enabled"
-msgstr "क्या एंकर डिटेक्शन सक्रिय है"
-
-msgid "Tracking Confidence"
-msgstr "ट्रैकिंग विश्वसनीयता"
-
-msgid "Primary Interface"
-msgstr "प्राथमिक इंटरफ़ेस"

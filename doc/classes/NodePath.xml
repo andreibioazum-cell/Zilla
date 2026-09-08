@@ -85,24 +85,14 @@
 			<return type="NodePath" />
 			<description>
 				Returns a copy of this node path with a colon character ([code]:[/code]) prefixed, transforming it to a pure property path with no node names (relative to the current node).
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				# node_path points to the "x" property of the child node named "position".
 				var node_path = ^"position:x"
 
 				# property_path points to the "position" in the "x" axis of this node.
 				var property_path = node_path.get_as_property_path()
 				print(property_path) # Prints ":position:x"
-				[/gdscript]
-				[csharp]
-				// nodePath points to the "x" property of the child node named "position".
-				var nodePath = new NodePath("position:x");
-
-				// propertyPath points to the "position" in the "x" axis of this node.
-				NodePath propertyPath = nodePath.GetAsPropertyPath();
-				GD.Print(propertyPath); // Prints ":position:x"
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 			</description>
 		</method>
 		<method name="get_concatenated_names" qualifiers="const">
@@ -115,16 +105,10 @@
 			<return type="StringName" />
 			<description>
 				Returns all property subnames concatenated with a colon character ([code]:[/code]) as a single [StringName].
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				var node_path = ^"Sprite2D:texture:resource_name"
 				print(node_path.get_concatenated_subnames()) # Prints "texture:resource_name"
-				[/gdscript]
-				[csharp]
-				var nodePath = new NodePath("Sprite2D:texture:resource_name");
-				GD.Print(nodePath.GetConcatenatedSubnames()); // Prints "texture:resource_name"
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 			</description>
 		</method>
 		<method name="get_name" qualifiers="const">
@@ -132,20 +116,12 @@
 			<param index="0" name="idx" type="int" />
 			<description>
 				Returns the node name indicated by [param idx], starting from 0. If [param idx] is out of bounds, an error is generated. See also [method get_subname_count] and [method get_name_count].
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				var sprite_path = NodePath("../RigidBody2D/Sprite2D")
 				print(sprite_path.get_name(0)) # Prints ".."
 				print(sprite_path.get_name(1)) # Prints "RigidBody2D"
 				print(sprite_path.get_name(2)) # Prints "Sprite"
-				[/gdscript]
-				[csharp]
-				var spritePath = new NodePath("../RigidBody2D/Sprite2D");
-				GD.Print(spritePath.GetName(0)); // Prints ".."
-				GD.Print(spritePath.GetName(1)); // Prints "PathFollow2D"
-				GD.Print(spritePath.GetName(2)); // Prints "Sprite"
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 			</description>
 		</method>
 		<method name="get_name_count" qualifiers="const">
@@ -160,18 +136,11 @@
 			<param index="0" name="idx" type="int" />
 			<description>
 				Returns the property name indicated by [param idx], starting from 0. If [param idx] is out of bounds, an error is generated. See also [method get_subname_count].
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				var path_to_name = NodePath("Sprite2D:texture:resource_name")
 				print(path_to_name.get_subname(0)) # Prints "texture"
 				print(path_to_name.get_subname(1)) # Prints "resource_name"
-				[/gdscript]
-				[csharp]
-				var pathToName = new NodePath("Sprite2D:texture:resource_name");
-				GD.Print(pathToName.GetSubname(0)); // Prints "texture"
-				GD.Print(pathToName.GetSubname(1)); // Prints "resource_name"
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 			</description>
 		</method>
 		<method name="get_subname_count" qualifiers="const">

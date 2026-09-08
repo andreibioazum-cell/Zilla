@@ -2619,9 +2619,6 @@ msgstr "Yardım Kaynak Yazı Tipi Boyutu"
 msgid "Help Title Font Size"
 msgstr "Yardım Başlık Yazı Tipi Boyutu"
 
-msgid "Class Reference Examples"
-msgstr "Sınıf Başvuru Örnekleri"
-
 msgid "Sort Functions Alphabetically"
 msgstr "Fonksiyonları Alfabetik Olarak Sırala"
 
@@ -3303,72 +3300,6 @@ msgstr "Durum Çubuğunu Gizle"
 msgid "Suppress UI Gesture"
 msgstr "Arayüz Parmak Hareketlerini Baskıla"
 
-msgid "XR"
-msgstr "Genişletilmiş Gerçeklik (XR)"
-
-msgid "OpenXR"
-msgstr "OpenXR"
-
-msgid "Default Action Map"
-msgstr "Varsayılan Eylem Haritası"
-
-msgid "Form Factor"
-msgstr "Kullanım Türü"
-
-msgid "View Configuration"
-msgstr "Görüş Ayarı"
-
-msgid "Reference Space"
-msgstr "Kaynak Uzayı"
-
-msgid "Environment Blend Mode"
-msgstr "Ortam Harmanlama Kipi"
-
-msgid "Foveation Level"
-msgstr "Foveasyon Seviyesi"
-
-msgid "Foveation Dynamic"
-msgstr "Foveasyon Dinamiği"
-
-msgid "Submit Depth Buffer"
-msgstr "Derinlik Arabelleğini Gönder"
-
-msgid "Startup Alert"
-msgstr "Başlangıç Uyarısı"
-
-msgid "Extensions"
-msgstr "Uzantılar"
-
-msgid "Debug Utils"
-msgstr "Hata Ayıklama Araçlar"
-
-msgid "Debug Message Types"
-msgstr "Hata Ayıklama Mesaj Türleri"
-
-msgid "Hand Tracking"
-msgstr "El Takibi"
-
-msgid "Hand Tracking Unobstructed Data Source"
-msgstr "Elle İzleme Görüşü Engellenmemiş Veri Kaynağı"
-
-msgid "Hand Tracking Controller Data Source"
-msgstr "El İzleme Denetleyici Veri Kaynağı"
-
-msgid "Hand Interaction Profile"
-msgstr "El Etkileşim Profili"
-
-msgid "Eye Gaze Interaction"
-msgstr "Göz Bakış Etkileşimi"
-
-msgid "Binding Modifiers"
-msgstr "Bağlama Değiştiricileri"
-
-msgid "Analog Threshold"
-msgstr "Analog Eşik Değeri"
-
-msgid "Dpad Binding"
-msgstr "Dpad Bağlama"
-
 msgid "Boot Splash"
 msgstr "Açılış Resmi"
 
@@ -3428,21 +3359,6 @@ msgstr "Resim"
 
 msgid "Minimum Display Time"
 msgstr "En Az Görüntüleme Süresi"
-
-msgid "Dotnet"
-msgstr "Dotnet"
-
-msgid "Project"
-msgstr "Proje"
-
-msgid "Assembly Name"
-msgstr "Derleme İsmi"
-
-msgid "Solution Directory"
-msgstr "Çözüm Klasörü"
-
-msgid "Assembly Reload Attempts"
-msgstr "Derleme Yeniden Yükleme Girişimleri"
 
 msgid "Time"
 msgstr "Zaman"
@@ -4203,36 +4119,6 @@ msgstr "Gürültü Giderme"
 msgid "Denoiser"
 msgstr "Gürültü Giderici"
 
-msgid "Eye Height"
-msgstr "Göz Yüksekliği"
-
-msgid "IOD"
-msgstr "Gözlerarası Mesafe (IOD)"
-
-msgid "Display Width"
-msgstr "Görüntü Genişliği"
-
-msgid "Display to Lens"
-msgstr "Merceğe Görüntüle"
-
-msgid "Offset Rect"
-msgstr "Kaydırma Dikdörtgeni"
-
-msgid "Oversample"
-msgstr "Sıkörnek"
-
-msgid "K1"
-msgstr "K1"
-
-msgid "K2"
-msgstr "K2"
-
-msgid "Vulkan VRS"
-msgstr "Vulkan VRS"
-
-msgid "Min Radius"
-msgstr "En Düşük Yarıçap"
-
 msgid "BPM"
 msgstr "Dakika Başına Vuruş (BPM)"
 
@@ -4368,122 +4254,11 @@ msgstr "Kusursuz Harman Eteği"
 msgid "Bump Strength"
 msgstr "Tümsek Gücü"
 
-msgid "Localized Name"
-msgstr "Yerelleştirilmiş İsim"
-
-msgid "Action Type"
-msgstr "Eylem Türü"
-
-msgid "Toplevel Paths"
-msgstr "Üstseviye Yollar"
-
-msgid "Binding Path"
-msgstr "Bağlama Yolu"
-
-msgid "Interaction Profile Path"
-msgstr "Etkileşim Profili Yolu"
-
-msgid "Runtime Paths"
-msgstr "Çalışma Zamanı Yolları"
-
-msgid "Action Set"
-msgstr "Eylem Seti"
-
-msgid "Input Path"
-msgstr "Giriş Yolu"
-
-msgid "Threshold Released"
-msgstr "Eşik Serbest Bırakıldı"
-
-msgid "Center Region"
-msgstr "Merkez Bölge"
-
-msgid "Wedge Angle"
-msgstr "Kama Açısı"
-
-msgid "Is Sticky"
-msgstr "Yapışkan mı"
-
-msgid "On Haptic"
-msgstr "Dokunsalın Üzerinde"
-
-msgid "Off Haptic"
-msgstr "Dokunsalın dışında"
-
-msgid "On Threshold"
-msgstr "Eşik Değerinde"
-
-msgid "Off Threshold"
-msgstr "Eşik Değeri dışında"
-
-msgid "Display Refresh Rate"
-msgstr "Görüntü Tazeleme Oranı"
-
-msgid "Render Target Size Multiplier"
-msgstr "İşleme Hedefi Boyut Çoklayıcı"
-
 msgid "Next"
 msgstr "Sonraki"
 
-msgid "Layer Viewport"
-msgstr "Katman Çerçevesi"
-
-msgid "Use Android Surface"
-msgstr "Android Surface kullanın"
-
-msgid "Android Surface Size"
-msgstr "Android Surface Boyut"
-
-msgid "Sort Order"
-msgstr "Sıralama Düzeni"
-
-msgid "Alpha Blend"
-msgstr "Alfa Karışımı"
-
-msgid "Enable Hole Punch"
-msgstr "Delgeçi Etkinleştir"
-
 msgid "Border Color"
 msgstr "Kenarlık Rengi"
-
-msgid "Aspect Ratio"
-msgstr "En Boy Oranı"
-
-msgid "Central Angle"
-msgstr "Merkezi Açı"
-
-msgid "Fallback Segments"
-msgstr "Sonçare Bölümleri"
-
-msgid "Central Horizontal Angle"
-msgstr "Merkezi Yatay Açı"
-
-msgid "Upper Vertical Angle"
-msgstr "Üst Dikey Açı"
-
-msgid "Lower Vertical Angle"
-msgstr "Alt Dikey Açı"
-
-msgid "Quad Size"
-msgstr "Dörtlü Boyut"
-
-msgid "Hand"
-msgstr "El"
-
-msgid "Motion Range"
-msgstr "Hareket Aralığı"
-
-msgid "Hand Skeleton"
-msgstr "El İskeleti"
-
-msgid "Skeleton Rig"
-msgstr "İskelet Teçhizatı"
-
-msgid "Bone Update"
-msgstr "Kemik Güncellemesi"
-
-msgid "Tracker"
-msgstr "İzleyici"
 
 msgid "Subject"
 msgstr "Özne"
@@ -4659,27 +4434,6 @@ msgstr "Sıraya Alınabilecek En Fazla Paket"
 msgid "Heartbeat Interval"
 msgstr "Kalp Atışı Aralığı"
 
-msgid "Session Mode"
-msgstr "Oturum Kipi"
-
-msgid "Required Features"
-msgstr "Gereken Özellikler"
-
-msgid "Optional Features"
-msgstr "İsteğe Bağlı Özellikler"
-
-msgid "Requested Reference Space Types"
-msgstr "İstenen Başvuru Uzayı Türleri"
-
-msgid "Reference Space Type"
-msgstr "Başvuru Uzayı Türü"
-
-msgid "Enabled Features"
-msgstr "Etkinleştirilmiş Özellikler"
-
-msgid "Visibility State"
-msgstr "Görünebilirlik Durumu"
-
 msgid "Debug Keystore"
 msgstr "Hata Ayıklama Anahtar Deposu"
 
@@ -4802,12 +4556,6 @@ msgstr "Grafikler"
 
 msgid "OpenGL Debug"
 msgstr "OpenGL Hata Ayıklama"
-
-msgid "XR Features"
-msgstr "XR Özellikleri"
-
-msgid "XR Mode"
-msgstr "XR Kipi"
 
 msgid "Gesture"
 msgstr "Parmak Hareketleri"
@@ -7211,26 +6959,8 @@ msgstr "Yayılma"
 msgid "Use Two Bounces"
 msgstr "İki Sekmeli Kullan"
 
-msgid "Body Tracker"
-msgstr "Cisim İzleyici"
-
-msgid "Body Update"
-msgstr "Cisim Güncellemesi"
-
-msgid "Face Tracker"
-msgstr "Yüz İzleyici"
-
-msgid "Hand Tracker"
-msgstr "El İzleyici"
-
 msgid "Pose"
 msgstr "Duruş"
-
-msgid "Show When Tracked"
-msgstr "İzlendiğinde Göster"
-
-msgid "World Scale"
-msgstr "Dünya Ölçeği"
 
 msgid "Play Mode"
 msgstr "Oynatma Kipi"
@@ -8504,9 +8234,6 @@ msgstr "Çerçeve Yolu"
 
 msgid "Disable 3D"
 msgstr "3B'yi Devredışı Bırak"
-
-msgid "Use XR"
-msgstr "Arttırılmış Gerçeklik (XR) Kullan"
 
 msgid "Own World 3D"
 msgstr "Kendi Dünyan 3B"
@@ -11508,9 +11235,6 @@ msgstr "En Fazla İşlenebilir Işıklar"
 msgid "Max Lights per Object"
 msgstr "Nesne Başına En Fazla Işıklar"
 
-msgid "Shaders"
-msgstr "Gölgelendiriciler"
-
 msgid "Shader Language"
 msgstr "Gölgelendirici Dili"
 
@@ -11615,48 +11339,3 @@ msgstr "LCD Alt-piksel Yerleşim Düzeni"
 
 msgid "Include Text Server Data"
 msgstr "Metin Sunucu Verisini Dahil Et"
-
-msgid "Has Tracking Data"
-msgstr "İzleme Verisi Var mı"
-
-msgid "Body Flags"
-msgstr "Cisim Bayrakları"
-
-msgid "Blend Shapes"
-msgstr "Harmanlama Şekilleri"
-
-msgid "Hand Tracking Source"
-msgstr "El İzleme Kaynağı"
-
-msgid "Is Primary"
-msgstr "Birincil mi"
-
-msgid "Play Area Mode"
-msgstr "Oyun Alanı Kipi"
-
-msgid "AR"
-msgstr "AR"
-
-msgid "Is Anchor Detection Enabled"
-msgstr "Çapa Algılama Etkin mi"
-
-msgid "Tracking Confidence"
-msgstr "İzleme Güvenirliği"
-
-msgid "World Origin"
-msgstr "Dünya Sıfır Noktası"
-
-msgid "Camera Locked to Origin"
-msgstr "Kamera Sıfır Noktasına Kilitlendi"
-
-msgid "Primary Interface"
-msgstr "Birincil Arayüz"
-
-msgid "VRS Min Radius"
-msgstr "VRS En Az Yarıçap"
-
-msgid "VRS Strength"
-msgstr "VRS Güç"
-
-msgid "VRS Render Region"
-msgstr "VRS İşleme Bölgesi"

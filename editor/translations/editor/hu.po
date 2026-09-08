@@ -3088,13 +3088,6 @@ msgstr "Jelenleg nincs leírás ehhez az osztályhoz."
 msgid "Note:"
 msgstr "Megjegyzés:"
 
-msgid ""
-"There are notable differences when using this API with C#. See [url=%s]C# API "
-"differences to GDScript[/url] for more information."
-msgstr ""
-"Jelentős különbségek vannak ezen API C# változatában. További információk a "
-"[url=%s]C# és GDScript API különbségei[/url] oldalon találhatóak."
-
 msgid "Online Tutorials"
 msgstr "Online oktatóanyagok"
 
@@ -4400,13 +4393,6 @@ msgstr ""
 "A szkript nem futtatható, mert nem eszköz szkript (adja hozzá a @tool "
 "annotációt a tetején)."
 
-msgid ""
-"Cannot run the script because it's not a tool script (add the [Tool] "
-"attribute above the class definition)."
-msgstr ""
-"A szkript nem futtatható, mert nem eszköz szkript (adja hozzá a [Tool] "
-"attribútumot az osztálydefiníció fölött)."
-
 msgid "Cannot run the script because it's not a tool script."
 msgstr "A szkript nem futtatható, mert nem eszköz szkript."
 
@@ -4848,19 +4834,6 @@ msgid ""
 "package."
 msgstr ""
 ".ipa csak macOS-en építhető. Kilépés az Xcode projektből csomagépítés nélkül."
-
-msgid ""
-"Exporting to an Apple Embedded platform when using C#/.NET is experimental "
-"and requires macOS."
-msgstr ""
-"Apple Embedded platformra exportálás C#/.NET használata mellett csak "
-"kísérleti jellegű és macOS-t igényel."
-
-msgid ""
-"Exporting to an Apple Embedded platform when using C#/.NET is experimental."
-msgstr ""
-"Apple Embedded platformra exportálás C#/.NET használata mellett csak "
-"kísérleti jellegű."
 
 msgid "Custom debug template not found."
 msgstr "Az egyéni hibakeresési sablon nem található."
@@ -6737,16 +6710,6 @@ msgstr ""
 "\n"
 
 msgid ""
-"Warning: This project uses C#, but this build of Godot does not have\n"
-"the Mono module. If you proceed you will not be able to use any C# scripts.\n"
-"\n"
-msgstr ""
-"Figyelmeztetés: Ez a projekt C#ot használ, de a Godot jelen változata\n"
-"nem rendelkezik a Mono modullal. Megnyitás esetén nem fog tudni C# "
-"szkripteket használni.\n"
-"\n"
-
-msgid ""
 "Warning: This project was last edited in Godot %s. Opening will change it to "
 "Godot %s.\n"
 "\n"
@@ -7047,17 +7010,8 @@ msgstr "Kikapcsolja a visszaállítási módot és újratölti a projektet."
 msgid "Recovery Mode is enabled. Click for more details."
 msgstr "Visszaállítási Mód engedélyezve. Kattintson a részletekért."
 
-msgid "Run Scene in Regular Mode"
-msgstr "Jelenet Futtatása Szokásos Módon"
-
-msgid "Run Scene in XR Mode"
-msgstr "Jelenet Futtatása XR Módban"
-
 msgid "Run Specific Scene"
 msgstr "Adott Jelenet Futtatása"
-
-msgid "Run in XR Mode"
-msgstr "Futtatás XR Módban"
 
 msgid "Enable Movie Maker Mode"
 msgstr "Filmkészítő Mód Bekapcsolása"
@@ -11261,9 +11215,6 @@ msgstr "Globális Változó"
 msgid "3D Engine"
 msgstr "3D Motor"
 
-msgid "XR"
-msgstr "XR"
-
 msgid "Wayland"
 msgstr "Wayland"
 
@@ -11311,12 +11262,6 @@ msgstr "SIL Graphite Betűtípusok"
 
 msgid "Multi-channel Signed Distance Field Font Rendering"
 msgstr "Többcsatornás Előjeles Távolságmező Betűtípus Renderelés"
-
-msgid "XR (AR and VR)."
-msgstr "XR (AR és VR)."
-
-msgid "OpenXR standard implementation (requires XR to be enabled)."
-msgstr "OpenXR általános implementáció (XR bekapcsolását igényli)."
 
 msgid "Forward+ renderer for advanced 3D graphics."
 msgstr "Forward+ rendermotor fejlett 3D grafikához."
@@ -11402,13 +11347,6 @@ msgstr ""
 "Ez ellenőrzi az összes fájlt a projektben a használatban lévő osztályok "
 "megkereséséhez.\n"
 "Az első ellenőrzés sokáig tarthat, kifejezetten a nagy projektek esetén."
-
-msgid ""
-"Warning: Class detection for C# scripts is not currently available, and such "
-"files will be ignored."
-msgstr ""
-"Figyelmeztetés: C# szkriptekben az osztály érzékelés jelenleg nem érhető el "
-"és ezek a fájlok figyelmen kívül maradnak."
 
 msgid "Scanning Project for Used Classes"
 msgstr "Projektben Használt Osztályok Ellenőrzése"
@@ -12210,45 +12148,6 @@ msgstr "Gyorsítási struktúra optimalizálása"
 msgid "Begin Bake"
 msgstr "Égetés Kezdése"
 
-msgid "Class name can't be a reserved keyword"
-msgstr "Az osztály neve nem lehet lefoglalt kulcsszó"
-
-msgid "Not enough bytes for decoding bytes, or invalid format."
-msgstr "Nincs elég bájt a bájtok dekódolására, vagy hibás formátum."
-
-msgid ""
-"Unable to load .NET runtime, no compatible version was found.\n"
-"Attempting to create/edit a project will lead to a crash.\n"
-"\n"
-"Please install the .NET SDK 8.0 or later from https://get.dot.net and restart "
-"Godot."
-msgstr ""
-".NET futtatási környezet betöltése sikertelen, nincs kompatibilis verzió.\n"
-"Projekt létrehozása/módosítása összeomláshoz fog vezetni.\n"
-"\n"
-"Telepítse a .NET SDK 8.0 vagy újabb verzióját a https://get.dot.net címről és "
-"indítsa újra a Godot szoftvert."
-
-msgid ""
-"Unable to find the .NET assemblies directory.\n"
-"Make sure the '%s' directory exists and contains the .NET assemblies."
-msgstr ""
-"A .NET állományok mappája nem található.\n"
-"Ellenőrizze, hogy a \"%s\" mappa létezik és tartalmazza a .NET állományokat."
-
-msgid ""
-"Unable to load .NET runtime, specifically hostfxr.\n"
-"Attempting to create/edit a project will lead to a crash.\n"
-"\n"
-"Please install the .NET SDK 8.0 or later from https://get.dot.net and restart "
-"Godot."
-msgstr ""
-".NET futtatási környezet betöltése sikertelen, hostfxr nem található.\n"
-"Projekt létrehozása/módosítása összeomláshoz fog vezetni.\n"
-"\n"
-"Telepítse a .NET SDK 8.0 vagy újabb verzióját a https://get.dot.net címről és "
-"indítsa újra a Godot szoftvert."
-
 msgid "%d (%s)"
 msgstr "%d (%s)"
 
@@ -12576,118 +12475,11 @@ msgstr "Snapshot átnevezése sikertelen"
 msgid "Diff Against:"
 msgstr "Különbség:"
 
-msgid "Rename Actions Localized name"
-msgstr "Művelet Lokalizált Nevének Átnevezése"
-
-msgid ""
-"Internal name of the action. Some XR runtimes don't allow spaces or special "
-"characters."
-msgstr ""
-"A művelet belső neve. Egyes XR környezetek nem engedélyeznek szóközöket vagy "
-"speciális karaktereket."
-
-msgid "Human-readable name of the action. This can be displayed to end users."
-msgstr ""
-"A művelet ember által olvasható neve. Megjeleníthető a végfelhasználóknak."
-
-msgid "Action Localized Name"
-msgstr "Művelet Lokalizált Neve"
-
-msgid "Add interaction profile"
-msgstr "Interakciós profil hozzáadása"
-
-msgid "Save this OpenXR action map."
-msgstr "OpenXR művelettérkép mentése."
-
-msgid "Reset to default OpenXR action map."
-msgstr "Visszaállítás az alapértelmezett OpenXR művelettérképre."
-
-msgid "Rename Action Sets Localized name"
-msgstr "Műveletcsoportok Lokalizált Nevének Átnevezése"
-
-msgid ""
-"Human-readable name of the action set. This can be displayed to end users."
-msgstr ""
-"A műveletcsoport ember által olvasható neve. Megjeleníthető a "
-"végfelhasználóknak."
-
-msgid "Action Set Localized Name"
-msgstr "Műveletcsoport Lokalizált Neve"
-
-msgid ""
-"Priority of the action set. If multiple action sets bind to the same input, "
-"the action set with the highest priority will be updated."
-msgstr ""
-"A műveletcsoport prioritása. Ha több műveletcsoport is ugyanazon bemenetre "
-"van kötve, akkor a legmagasabb prioritású frissül."
-
-msgid "Note: modifiers will only be applied if supported on the host system."
-msgstr ""
-"Megjegyzés: a módosítók csak akkor érvényesülnek, ha a gazdarendszer "
-"támogatja őket."
-
-msgid "Binding modifiers for:"
-msgstr "Társítás módosítók ehhez:"
-
-msgid "Remove action from interaction profile"
-msgstr "Művelet eltávolítása az interakciós profilból"
-
-msgid "Edit binding modifiers"
-msgstr "Társítási módosítók módosítása"
-
-msgid "Note: This interaction profile requires extension %s support."
-msgstr "Megjegyzés: Az interakciós profil %s kiterjesztés támogatást igényel."
-
-msgid "Note: This binding path requires extension %s support."
-msgstr "Megjegyzés: A társítási útvonal %s kiterjesztés támogatást igényel."
-
 msgid "Boolean"
 msgstr "Boolean"
 
 msgid "Float"
 msgstr "valós szám"
-
-msgid "Pose"
-msgstr "Póz"
-
-msgid "Haptic"
-msgstr "Haptikus"
-
-msgid "Unknown"
-msgstr "Ismeretlen"
-
-msgid "All interaction profiles have been added to the action map."
-msgstr "Minden interakciós profil hozzáadva a művelettérképhez."
-
-msgid ""
-"Cannot use the same SubViewport with multiple OpenXR composition layers. "
-"Clear it from its current layer first."
-msgstr ""
-"Ugyanazon SubViewport nem használható egyszerre több OpenXR kompozíció "
-"rétegen. Először törölje a jelenlegi rétegről."
-
-msgid ""
-"Cannot set SubViewport on an OpenXR composition layer when using an Android "
-"surface."
-msgstr ""
-"Android felület esetén SubViewport nem állítható be OpenXR kompozíció rétegre."
-
-msgid ""
-"OpenXR composition layers must have orthonormalized transforms (ie. no scale "
-"or shearing)."
-msgstr ""
-"Az OpenXR kompozíció rétegeknek ortonormált transzformációval kell "
-"rendelkezniük (vagyis nem méretezhető (scale) vagy vágható (shear))."
-
-msgid ""
-"Hole punching won't work as expected unless the sort order is less than zero."
-msgstr ""
-"A lyukasztás csak akkor fog megfelelően működni, ha a rendezési sorrend "
-"nullánál kisebb."
-
-msgid "OpenXR visibility mask must have an XRCamera3D node as their parent."
-msgstr ""
-"Az OpenXR láthatósági maszknak XRCamera3D szülő node-dal kell rendelkeznie."
 
 msgid "E constant (2.718282). Represents the base of the natural logarithm."
 msgstr "E konstans (2.718282). A természetes logaritmus alapját jelképezi."
@@ -13925,25 +13717,6 @@ msgstr ""
 "ütközött"
 
 msgid ""
-"Unable to determine the C# project's TFM, it may be incompatible. The export "
-"template only supports '%s'. Make sure the project targets '%s' or consider "
-"using gradle builds instead."
-msgstr ""
-"A C# projekt cél keretrendszere nem meghatározható, lehet, hogy nem "
-"kompatibilis. Az export sablon csak \"%s\"-t támogat. Ellenőrizze, hogy a "
-"projekt a(z) \"%s\"-t célozza vagy használjon gradle építést."
-
-msgid ""
-"C# project targets '%s' but the export template only supports '%s'. Consider "
-"using gradle builds instead."
-msgstr ""
-"A C# projekt célja \"%s\", de az export sablon csak \"%s\"-t támogat. "
-"Használjon helyette gradle építést."
-
-msgid "Exporting to Android when using C#/.NET is experimental."
-msgstr "C#/.NET exportálása Androidra csak kísérleti jellegű."
-
-msgid ""
 "Android build template not installed in the project. Install it from the "
 "Project menu."
 msgstr ""
@@ -14203,13 +13976,6 @@ msgstr "Az App Store-ban kiadáshoz telepítő aláíró identitás szükséges.
 
 msgid "App sandbox is required for App Store distribution."
 msgstr "Az App Store-ban kiadáshoz App sandbox szükséges."
-
-msgid ""
-"'rcodesign' doesn't support signing applications with embedded dynamic "
-"libraries (GDExtension or .NET)."
-msgstr ""
-"Az \"rcodesign\" nem támogatja a beépített dinamikus könyvtárakat tartalmazó "
-"applikációk aláírását (GDExtension vagy .NET)."
 
 msgid "Code signing is required for App Store distribution."
 msgstr "Az App Store-ban kiadáshoz kód aláírás szükséges."
@@ -14473,21 +14239,6 @@ msgstr "Exportált projekt futtatása távoli macOS rendszeren"
 
 msgid "PWA"
 msgstr "PWA"
-
-msgid ""
-"Exporting to Web is currently not supported in Godot 4 when using C#/.NET. "
-"Use Godot 3 to target Web with C#/Mono instead."
-msgstr ""
-"Exportálás Web platformra jelenleg nem támogatott a Godot 4-ben C#/.NET "
-"használata mellett. Használja a Godot 3-mat a Web platformhoz C#/Mono "
-"segítségével."
-
-msgid ""
-"If this project does not use C#, use a non-C# editor build to export the "
-"project."
-msgstr ""
-"Ha ez a projekt nem használja a C# nyelvet, használja a C# nélküli "
-"szerkesztőt a projekt exportálásához."
 
 msgid "Run in Browser"
 msgstr "Böngészőben futtatás"
@@ -15436,55 +15187,6 @@ msgstr ""
 "Jelenetenként (vagy példányosított jelenetcsoportonként) csak egy "
 "WorldEnvironment egedélyezett."
 
-msgid ""
-"XRCamera3D may not function as expected without an XROrigin3D node as its "
-"parent."
-msgstr "Az XRCamera3D nem fog megfelelően működni XROrigin3D szülő node nélkül."
-
-msgid ""
-"XRCamera3D should have physics_interpolation_mode set to OFF in order to "
-"avoid jitter."
-msgstr ""
-"Az XROrigin3D physics_interpolation_mode tulajdonsága OFF kell legyen a "
-"jitter (remegés) elkerüléséhez."
-
-msgid ""
-"XRNode3D may not function as expected without an XROrigin3D node as its "
-"parent."
-msgstr "Az XRNode3D nem fog megfelelően működni XROrigin3D szülő node nélkül."
-
-msgid "No tracker name is set."
-msgstr "Nincs beállítva követő név."
-
-msgid "No pose is set."
-msgstr "Nincs beállítva póz."
-
-msgid ""
-"XRNode3D should have physics_interpolation_mode set to OFF in order to avoid "
-"jitter."
-msgstr ""
-"Az XRNode3D physics_interpolation_mode tulajdonsága OFF kell legyen a jitter "
-"(remegés) elkerüléséhez."
-
-msgid "XROrigin3D requires an XRCamera3D child node."
-msgstr "Az XROrigin3D XRCamera3D gyermek node-ot igényel."
-
-msgid ""
-"Changing the scale on the XROrigin3D node is not supported. Change the World "
-"Scale instead."
-msgstr ""
-"Az XROrigin3D node átméretezése nem támogatott. Változtassa meg helyette a "
-"Világ Méretet."
-
-msgid ""
-"XR shaders are not enabled in project settings. Stereoscopic output is not "
-"supported unless they are enabled. Please enable `xr/shaders/enabled` to use "
-"stereoscopic output."
-msgstr ""
-"Az XR shaderek nincsenek bekapcsolva a projekt beállításokban. A térhatású "
-"kimenet nem támogatott nélküle. Engedélyezze az `xr/shaders/"
-"enabled`beállítást a térhatású kimenet használatához."
-
 msgid "No playback resource set at path: %s."
 msgstr "Nincs lejátszási erőforrás az útvonalon: %s."
 
@@ -15865,15 +15567,6 @@ msgstr ""
 msgid "Varying '%s' cannot be passed for the '%s' parameter in that context."
 msgstr ""
 "Ebben a kontextusban a(z) \"%s\" variáló nem adható a(z) \"%s\" paraméterben."
-
-msgid ""
-"Unable to pass a multiview texture sampler as a parameter to a custom "
-"function. Consider sampling it in the main function and then passing the "
-"vector result to the custom function."
-msgstr ""
-"Többnézetes textúra mintavételező nem adható át egyedi függvény "
-"paramétereként. Vegyen mintát a fő függvényben és adja át az eredményvektort "
-"az egyedi függvénynek."
 
 msgid ""
 "Unable to pass RADIANCE texture sampler as a parameter to a custom function. "

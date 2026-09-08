@@ -60,7 +60,6 @@ _complete_godot_options() {
 --resolution
 --position
 --single-window
---xr-mode
 --debug
 --breakpoints
 --profiling
@@ -126,10 +125,6 @@ _complete_godot_bash() {
     local IFS=$' \n\t'
     # shellcheck disable=SC2207
     COMPREPLY=($(compgen -W "vulkan opengl3 dummy" -- "$cur"))
-	elif [[ $prev == "--xr-mode" ]]; then
-    local IFS=$' \n\t'
-    # shellcheck disable=SC2207
-    COMPREPLY=($(compgen -W "default off on" -- "$cur"))
   elif [[ $prev == "--path" || $prev == "--doctool" ]]; then
     local IFS=$'\n\t'
     # shellcheck disable=SC2207

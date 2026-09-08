@@ -282,7 +282,6 @@ opts.Add(BoolVariable("disable_physics_2d", "Disable 2D physics nodes and server
 opts.Add(BoolVariable("disable_physics_3d", "Disable 3D physics nodes and server", False))
 opts.Add(BoolVariable("disable_navigation_2d", "Disable 2D navigation features", False))
 opts.Add(BoolVariable("disable_navigation_3d", "Disable 3D navigation features", False))
-opts.Add(BoolVariable("disable_xr", "Disable XR nodes and server", False))
 opts.Add(BoolVariable("disable_overrides", "Disable project settings overrides (override.cfg)", False))
 opts.Add(
     BoolVariable(
@@ -352,7 +351,6 @@ opts.Add(BoolVariable("builtin_libwebp", "Use the built-in libwebp library", Tru
 opts.Add(BoolVariable("builtin_wslay", "Use the built-in wslay library", True))
 opts.Add(BoolVariable("builtin_mbedtls", "Use the built-in mbedTLS library", True))
 opts.Add(BoolVariable("builtin_miniupnpc", "Use the built-in miniupnpc library", True))
-opts.Add(BoolVariable("builtin_openxr", "Use the built-in OpenXR library", True))
 opts.Add(BoolVariable("builtin_pcre2", "Use the built-in PCRE2 library", True))
 opts.Add(BoolVariable("builtin_pcre2_with_jit", "Use JIT compiler for the built-in PCRE2 library", True))
 opts.Add(BoolVariable("builtin_recastnavigation", "Use the built-in Recast navigation library", True))
@@ -1091,7 +1089,6 @@ if env["disable_3d"]:
     env.Append(CPPDEFINES=["_3D_DISABLED"])
     env["disable_navigation_3d"] = True
     env["disable_physics_3d"] = True
-    env["disable_xr"] = True
 if env["disable_advanced_gui"]:
     env.Append(CPPDEFINES=["ADVANCED_GUI_DISABLED"])
 if env["disable_physics_2d"]:
@@ -1102,8 +1099,6 @@ if env["disable_navigation_2d"]:
     env.Append(CPPDEFINES=["NAVIGATION_2D_DISABLED"])
 if env["disable_navigation_3d"]:
     env.Append(CPPDEFINES=["NAVIGATION_3D_DISABLED"])
-if env["disable_xr"]:
-    env.Append(CPPDEFINES=["XR_DISABLED"])
 if env["minizip"]:
     env.Append(CPPDEFINES=["MINIZIP_ENABLED"])
 if env["brotli"]:

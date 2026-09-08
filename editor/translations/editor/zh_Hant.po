@@ -3100,13 +3100,6 @@ msgstr ""
 msgid "Note:"
 msgstr "注意："
 
-msgid ""
-"There are notable differences when using this API with C#. See [url=%s]C# API "
-"differences to GDScript[/url] for more information."
-msgstr ""
-"將此 API 與 C# 一起使用時存在顯著差異。請參閱 [url=%s]C# API 與 GDScript[/"
-"url] 的差異以獲取更多資訊。"
-
 msgid "Online Tutorials"
 msgstr "線上教學"
 
@@ -4877,11 +4870,6 @@ msgid ""
 "annotation at the top)."
 msgstr "因為不是工具腳本，無法運作（請在開頭添加 @tool 注解）。"
 
-msgid ""
-"Cannot run the script because it's not a tool script (add the [Tool] "
-"attribute above the class definition)."
-msgstr "此腳本非工具腳本，無法執行（請在類別定義上方加入 [Tool] 標註）。"
-
 msgid "Cannot run the script because it's not a tool script."
 msgstr "腳本不是工具腳本，無法運作。"
 
@@ -5487,16 +5475,6 @@ msgid ""
 ".ipa can only be built on macOS. Leaving Xcode project without building the "
 "package."
 msgstr ".ipa 只能在 macOS 上建置。將僅產生 Xcode 專案，不進行封裝。"
-
-msgid ""
-"Exporting to an Apple Embedded platform when using C#/.NET is experimental "
-"and requires macOS."
-msgstr ""
-"在使用 C#／.NET 時匯出至 Apple Embedded 平台仍屬實驗性功能，且需要 macOS。"
-
-msgid ""
-"Exporting to an Apple Embedded platform when using C#/.NET is experimental."
-msgstr "在使用 C#／.NET 時匯出至 Apple Embedded 平台仍屬實驗性功能。"
 
 msgid "Custom debug template not found."
 msgstr "找不到自訂除錯範本。"
@@ -7690,15 +7668,6 @@ msgstr ""
 "\n"
 
 msgid ""
-"Warning: This project uses C#, but this build of Godot does not have\n"
-"the Mono module. If you proceed you will not be able to use any C# scripts.\n"
-"\n"
-msgstr ""
-"警告：此專案使用 C#，但本版本 Godot 未包含 Mono 模組。\n"
-"若繼續將無法使用任何 C# 腳本。\n"
-"\n"
-
-msgid ""
 "Warning: This project was last edited in Godot %s. Opening will change it to "
 "Godot %s.\n"
 "\n"
@@ -8062,20 +8031,8 @@ msgstr "停止執行的專案"
 msgid "Run Current Scene"
 msgstr "執行目前場景"
 
-msgid "Run Scene in Regular Mode"
-msgstr "一般模式執行場景"
-
-msgid "Run Scene in XR Mode"
-msgstr "在 XR 模式下執行場景"
-
 msgid "Run Specific Scene"
 msgstr "執行特定場景"
-
-msgid "Run in Regular Mode"
-msgstr "以一般模式執行"
-
-msgid "Run in XR Mode"
-msgstr "在 XR 模式下執行"
 
 msgid "Enable Movie Maker Mode"
 msgstr "啟用 Movie Maker 模式"
@@ -13646,12 +13603,6 @@ msgstr "導航（2D）"
 msgid "Navigation (3D)"
 msgstr "導航（3D）"
 
-msgid "XR"
-msgstr "XR"
-
-msgid "OpenXR"
-msgstr "OpenXR"
-
 msgid "Wayland"
 msgstr "Wayland"
 
@@ -13711,12 +13662,6 @@ msgstr "SIL Graphite字型"
 
 msgid "Multi-channel Signed Distance Field Font Rendering"
 msgstr "多通道距離場(Multi-channel Signed Distance Field)字型算繪"
-
-msgid "XR (AR and VR)."
-msgstr "XR(包含AR和VR)。"
-
-msgid "OpenXR standard implementation (requires XR to be enabled)."
-msgstr "OpenXR 標準實作（需啟用 XR）。"
 
 msgid "Forward+ renderer for advanced 3D graphics."
 msgstr "進階 3D 圖形的 Forward+ 算繪器。"
@@ -13801,11 +13746,6 @@ msgid ""
 msgstr ""
 "這將掃描目前專案的所有檔案以偵測已使用的類別。\n"
 "首次掃描在大型專案中可能需要較長時間。"
-
-msgid ""
-"Warning: Class detection for C# scripts is not currently available, and such "
-"files will be ignored."
-msgstr "警告：目前無法偵測 C# 腳本的類別，相關檔案將被略過。"
 
 msgid "Scanning Project for Used Classes"
 msgstr "正在掃描專案以偵測使用的類別"
@@ -15069,52 +15009,6 @@ msgstr "降噪中"
 msgid "Retrieving textures"
 msgstr "擷取紋理中"
 
-msgid "Class name can't be a reserved keyword"
-msgstr "類別名稱不能為保留關鍵字"
-
-msgid "Class name must be a valid identifier"
-msgstr "類別名稱必須為有效識別符"
-
-msgid "Not enough bytes for decoding bytes, or invalid format."
-msgstr "位元組長度不足以進行解碼，或格式無效。"
-
-msgid ""
-"Unable to load .NET runtime, no compatible version was found.\n"
-"Attempting to create/edit a project will lead to a crash.\n"
-"\n"
-"Please install the .NET SDK 8.0 or later from https://get.dot.net and restart "
-"Godot."
-msgstr ""
-"無法載入 .NET 執行環境，找不到相容版本。\n"
-"嘗試建立或編輯專案將導致崩潰。\n"
-"\n"
-"請從 https://get.dot.net 安裝 .NET SDK 8.0 或更新版本後重新啟動 Godot。"
-
-msgid "Failed to load .NET runtime"
-msgstr "無法載入 .NET 執行階段"
-
-msgid ""
-"Unable to find the .NET assemblies directory.\n"
-"Make sure the '%s' directory exists and contains the .NET assemblies."
-msgstr ""
-"找不到 .NET 組件目錄。\n"
-"請確認「%s」資料夾存在且包含 .NET 組件。"
-
-msgid ".NET assemblies not found"
-msgstr "找不到 .NET 組件"
-
-msgid ""
-"Unable to load .NET runtime, specifically hostfxr.\n"
-"Attempting to create/edit a project will lead to a crash.\n"
-"\n"
-"Please install the .NET SDK 8.0 or later from https://get.dot.net and restart "
-"Godot."
-msgstr ""
-"無法載入 .NET 執行環境（hostfxr）。\n"
-"嘗試建立或編輯專案將導致崩潰。\n"
-"\n"
-"請從 https://get.dot.net 安裝 .NET SDK 8.0 或更新版本後重新啟動 Godot。"
-
 msgctxt "Network"
 msgid "Down"
 msgstr "下載"
@@ -15349,159 +15243,6 @@ msgstr "正在烘焙 NavigationMesh…"
 msgid "Toggles whether the noise preview is computed in 3D space."
 msgstr "切換是否在 3D 空間中計算雜訊預覽。"
 
-msgid "Rename Action"
-msgstr "重新命名動作"
-
-msgid "Rename Actions Localized name"
-msgstr "重新命名動作在地化名稱"
-
-msgid "Change Action Type"
-msgstr "變更動作型別"
-
-msgid ""
-"Internal name of the action. Some XR runtimes don't allow spaces or special "
-"characters."
-msgstr "動作的內部名稱；部分 XR 執行環境不允許空白或特殊字元。"
-
-msgid "Action Name"
-msgstr "動作名稱"
-
-msgid "Human-readable name of the action. This can be displayed to end users."
-msgstr "動作的易讀名稱，可顯示給終端使用者。"
-
-msgid "Action Localized Name"
-msgstr "動作在地化名稱"
-
-msgid "Type of the action"
-msgstr "動作型別"
-
-msgid "Action Type"
-msgstr "動作型別"
-
-msgid "Remove action"
-msgstr "刪除動作"
-
-msgid "Add action set"
-msgstr "新增動作集"
-
-msgid "Remove action set"
-msgstr "移除動作集"
-
-msgid "Add interaction profile"
-msgstr "新增互動設定檔"
-
-msgid "Error loading %s: %s."
-msgstr "載入 %s 時發生錯誤：%s。"
-
-msgid "Error saving file %s: %s"
-msgstr "儲存檔案 %s 時發生錯誤：%s"
-
-msgid "OpenXR Action map:"
-msgstr "OpenXR 動作映射："
-
-msgid "Remove interaction profile"
-msgstr "移除互動設定檔"
-
-msgid "OpenXR Action Map"
-msgstr "OpenXR 動作映射"
-
-msgid "Add Action Set"
-msgstr "新增動作集"
-
-msgid "Add an action set."
-msgstr "新增一個動作集。"
-
-msgid "Add profile"
-msgstr "新增設定檔"
-
-msgid "Add an interaction profile."
-msgstr "新增一個互動設定檔。"
-
-msgid "Save this OpenXR action map."
-msgstr "儲存此 OpenXR 動作映射。"
-
-msgid "Reset to default OpenXR action map."
-msgstr "重設為預設的 OpenXR 動作映射。"
-
-msgid "Action Sets"
-msgstr "動作集"
-
-msgid "Rename Action Set"
-msgstr "重新命名動作集"
-
-msgid "Rename Action Sets Localized name"
-msgstr "重新命名動作集在地化名稱"
-
-msgid "Change Action Sets priority"
-msgstr "變更動作集優先順序"
-
-msgid "Add action"
-msgstr "新增動作"
-
-msgid "Delete action"
-msgstr "刪除動作"
-
-msgid "Fold"
-msgstr "收合"
-
-msgid "Action Set Name"
-msgstr "動作集名稱"
-
-msgid ""
-"Human-readable name of the action set. This can be displayed to end users."
-msgstr "動作集的易讀名稱，可顯示給終端使用者。"
-
-msgid "Action Set Localized Name"
-msgstr "動作集在地化名稱"
-
-msgid ""
-"Priority of the action set. If multiple action sets bind to the same input, "
-"the action set with the highest priority will be updated."
-msgstr ""
-"動作集的優先順序；當多個動作集綁定到同一輸入時，優先順序最高者會被更新。"
-
-msgid "Action Set Priority"
-msgstr "動作集優先順序"
-
-msgid "Add action."
-msgstr "新增動作。"
-
-msgid "Remove action set."
-msgstr "移除動作集。"
-
-msgid "Remove this binding modifier."
-msgstr "移除此綁定修飾符。"
-
-msgid "Remove binding modifier"
-msgstr "移除綁定修飾符"
-
-msgid "Add binding modifier"
-msgstr "新增綁定修飾符"
-
-msgid "Note: modifiers will only be applied if supported on the host system."
-msgstr "注意：僅當主機系統支援時，修飾符才會生效。"
-
-msgid "Binding modifiers for:"
-msgstr "綁定修飾符目標："
-
-msgid "Remove action from interaction profile"
-msgstr "從互動設定檔移除動作"
-
-msgid "Edit binding modifiers"
-msgstr "編輯綁定修飾符"
-
-msgid "Note: This interaction profile requires extension %s support."
-msgstr "注意：此互動設定檔需要擴充功能 %s 支援。"
-
-msgid "Add binding"
-msgstr "新增綁定"
-
-msgid "Remove binding"
-msgstr "移除綁定"
-
-msgid "Note: This binding path requires extension %s support."
-msgstr "注意：此綁定路徑需要擴充功能 %s 支援。"
-
 msgid "Boolean"
 msgstr "布林值"
 
@@ -15510,52 +15251,6 @@ msgstr "浮點數"
 
 msgid "Vector2"
 msgstr "Vector2"
-
-msgid "Pose"
-msgstr "姿勢"
-
-msgid "Haptic"
-msgstr "觸覺"
-
-msgid "Unknown"
-msgstr "未知"
-
-msgid "Modifiers"
-msgstr "修飾符"
-
-msgid "Select an action"
-msgstr "選擇一個動作"
-
-msgid "Select an interaction profile"
-msgstr "選擇一個互動設定檔"
-
-msgid "All interaction profiles have been added to the action map."
-msgstr "所有互動設定檔已加入動作映射。"
-
-msgid "Choose an XR runtime."
-msgstr "選擇一個 XR 執行環境。"
-
-msgid ""
-"Cannot use the same SubViewport with multiple OpenXR composition layers. "
-"Clear it from its current layer first."
-msgstr "無法在多個 OpenXR 合成圖層中共用同一 SubViewport，請先從其他圖層移除。"
-
-msgid ""
-"Cannot set SubViewport on an OpenXR composition layer when using an Android "
-"surface."
-msgstr "在 Android Surface 上無法於 OpenXR 合成圖層設定 SubViewport。"
-
-msgid ""
-"OpenXR composition layers must have orthonormalized transforms (ie. no scale "
-"or shearing)."
-msgstr "OpenXR 合成圖層必須使用正交單位化的轉換（不可縮放或斜切）。"
-
-msgid ""
-"Hole punching won't work as expected unless the sort order is less than zero."
-msgstr "若排序值不小於 0，挖洞效果將無法正常運作。"
-
-msgid "OpenXR visibility mask must have an XRCamera3D node as their parent."
-msgstr "OpenXR 可見度遮罩的父節點必須是 XRCamera3D。"
 
 msgid "E constant (2.718282). Represents the base of the natural logarithm."
 msgstr "E 常數 (2.718282)，自然對數的底。"
@@ -16929,22 +16624,6 @@ msgstr "無法於裝置上執行。"
 msgid "Error: There was a problem validating the keystore username and password"
 msgstr "錯誤：驗證金鑰庫的使用者名稱與密碼時發生問題"
 
-msgid ""
-"Unable to determine the C# project's TFM, it may be incompatible. The export "
-"template only supports '%s'. Make sure the project targets '%s' or consider "
-"using gradle builds instead."
-msgstr ""
-"無法判斷 C# 專案的目標框架 (TFM)，可能不相容。匯出範本僅支援「%s」。請確認專案"
-"以「%s」為目標，或考慮改用 Gradle 建置。"
-
-msgid ""
-"C# project targets '%s' but the export template only supports '%s'. Consider "
-"using gradle builds instead."
-msgstr "C# 專案目標為「%s」，但匯出範本僅支援「%s」。建議改用 Gradle 建置。"
-
-msgid "Exporting to Android when using C#/.NET is experimental."
-msgstr "使用 C#/.NET 時匯出到 Android 為實驗性功能。"
-
 msgid "Custom Android source template not found."
 msgstr "找不到自訂 Android 來源範本。"
 
@@ -17278,12 +16957,6 @@ msgstr "發布至 App Store 需要安裝程式簽名身份。"
 msgid "App sandbox is required for App Store distribution."
 msgstr "發布至 App Store 必須啟用 App Sandbox。"
 
-msgid ""
-"'rcodesign' doesn't support signing applications with embedded dynamic "
-"libraries (GDExtension or .NET)."
-msgstr ""
-"「rcodesign」不支援簽署含內嵌動態函式庫（GDExtension 或 .NET）的應用程式。"
-
 msgid "Code signing is required for App Store distribution."
 msgstr "發布至 App Store 需要程式碼簽名。"
 
@@ -17582,18 +17255,6 @@ msgstr "無法讀取檔案：「%s」。"
 
 msgid "PWA"
 msgstr "PWA"
-
-msgid ""
-"Exporting to Web is currently not supported in Godot 4 when using C#/.NET. "
-"Use Godot 3 to target Web with C#/Mono instead."
-msgstr ""
-"Godot 4 目前不支援使用 C#/.NET 匯出至 Web。若需在 Web 目標使用 C#/Mono，請改"
-"用 Godot 3。"
-
-msgid ""
-"If this project does not use C#, use a non-C# editor build to export the "
-"project."
-msgstr "若本專案未使用 C#，請改用無 C# 支援的編輯器版本進行匯出。"
 
 msgid "Could not read HTML shell: \"%s\"."
 msgstr "無法讀取 HTML 外殼：「%s」。"
@@ -18422,43 +18083,6 @@ msgid ""
 "Only one WorldEnvironment is allowed per scene (or set of instantiated "
 "scenes)."
 msgstr "每個場景（或一組實例化場景）僅允許一個 WorldEnvironment。"
-
-msgid ""
-"XRCamera3D may not function as expected without an XROrigin3D node as its "
-"parent."
-msgstr "若未以 XROrigin3D 為父節點，XRCamera3D 可能無法正常運作。"
-
-msgid ""
-"XRCamera3D should have physics_interpolation_mode set to OFF in order to "
-"avoid jitter."
-msgstr "為避免抖動，應將 XRCamera3D 的 physics_interpolation_mode 設為 OFF。"
-
-msgid ""
-"XRNode3D may not function as expected without an XROrigin3D node as its "
-"parent."
-msgstr "若未以 XROrigin3D 為父節點，XRNode3D 可能無法正常運作。"
-
-msgid "No tracker name is set."
-msgstr "未設定追蹤器名稱。"
-
-msgid "No pose is set."
-msgstr "未設定姿勢。"
-
-msgid ""
-"XRNode3D should have physics_interpolation_mode set to OFF in order to avoid "
-"jitter."
-msgstr "為避免抖動，應將 XRNode3D 的 physics_interpolation_mode 設為 OFF。"
-
-msgid "XROrigin3D requires an XRCamera3D child node."
-msgstr "XROrigin3D 需要 XRCamera3D 子節點。"
-
-msgid ""
-"XR shaders are not enabled in project settings. Stereoscopic output is not "
-"supported unless they are enabled. Please enable `xr/shaders/enabled` to use "
-"stereoscopic output."
-msgstr ""
-"專案設定中未啟用 XR 著色器；若未啟用將不支援立體輸出。請啟用 `xr/shaders/"
-"enabled` 以使用立體輸出。"
 
 msgid "Animation Apply Reset"
 msgstr "動畫套用重設"

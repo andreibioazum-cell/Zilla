@@ -72,8 +72,8 @@ protected:
 	Error _create_device() override;
 	void _resolve_sync_mode() override;
 	MTL::CommandQueue *get_command_queue() const override { return device_queue.get(); }
-	void add_residency_set_to_main_queue(MTL::ResidencySet *p_set) override API_AVAILABLE(macos(15.0), ios(18.0), tvos(18.0), visionos(2.0));
-	void remove_residency_set_to_main_queue(MTL::ResidencySet *p_set) override API_AVAILABLE(macos(15.0), ios(18.0), tvos(18.0), visionos(2.0));
+	void add_residency_set_to_main_queue(MTL::ResidencySet *p_set) override API_AVAILABLE(macos(15.0), ios(18.0), tvos(18.0));
+	void remove_residency_set_to_main_queue(MTL::ResidencySet *p_set) override API_AVAILABLE(macos(15.0), ios(18.0), tvos(18.0));
 
 public:
 	Error initialize(uint32_t p_device_index, uint32_t p_frame_count) override;

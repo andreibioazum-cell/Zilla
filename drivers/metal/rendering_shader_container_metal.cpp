@@ -56,9 +56,6 @@ void RenderingShaderContainerMetal::_initialize_toolchain_properties() {
 		case MetalDeviceProfile::Platform::iOS:
 			sdk = "iphoneos";
 			break;
-		case MetalDeviceProfile::Platform::visionOS:
-			sdk = "xros";
-			break;
 	}
 
 	Vector<String> parts{ "echo", R"("")", "|", "/usr/bin/xcrun", "-sdk", sdk, "metal", "-E", "-dM", "-x", "metal" };
@@ -70,10 +67,6 @@ void RenderingShaderContainerMetal::_initialize_toolchain_properties() {
 		}
 		case MetalDeviceProfile::Platform::iOS: {
 			parts.push_back("-mtargetos=ios" + device_profile->min_os_version.to_compiler_os_version());
-			break;
-		}
-		case MetalDeviceProfile::Platform::visionOS: {
-			parts.push_back("-mtargetos=xros" + device_profile->min_os_version.to_compiler_os_version());
 			break;
 		}
 	}
@@ -139,9 +132,6 @@ Error RenderingShaderContainerMetal::compile_metal_source(const char *p_source, 
 		case MetalDeviceProfile::Platform::iOS:
 			sdk = "iphoneos";
 			break;
-		case MetalDeviceProfile::Platform::visionOS:
-			sdk = "xros";
-			break;
 	}
 
 	// Build the .metallib binary.
@@ -164,10 +154,6 @@ Error RenderingShaderContainerMetal::compile_metal_source(const char *p_source, 
 			}
 			case MetalDeviceProfile::Platform::iOS: {
 				args.push_back("-mtargetos=ios" + device_profile->min_os_version.to_compiler_os_version());
-				break;
-			}
-			case MetalDeviceProfile::Platform::visionOS: {
-				args.push_back("-mtargetos=xros" + device_profile->min_os_version.to_compiler_os_version());
 				break;
 			}
 		}

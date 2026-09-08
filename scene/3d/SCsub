@@ -10,5 +10,3 @@ if not env["disable_physics_3d"]:
     SConscript("physics/SCsub")
 if not env["disable_navigation_3d"]:
     SConscript("navigation/SCsub")
-if not env["disable_xr"]:
-    SConscript("xr/SCsub")

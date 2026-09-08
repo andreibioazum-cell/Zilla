@@ -3263,13 +3263,6 @@ msgstr ""
 msgid "Note:"
 msgstr "Nóta:"
 
-msgid ""
-"There are notable differences when using this API with C#. See [url=%s]C# API "
-"differences to GDScript[/url] for more information."
-msgstr ""
-"Tá difríochtaí suntasacha ann agus an API seo á úsáid le C#. Féach [url=%s]C# "
-"difríochtaí API le GDScript[/url] le haghaidh tuilleadh eolais."
-
 msgid "Online Tutorials"
 msgstr "Ranganna Teagaisc Ar Líne"
 
@@ -5284,13 +5277,6 @@ msgstr ""
 "Ní féidir an script a rith toisc nach script uirlisí é (cuir an anótáil @tool "
 "ag an mbarr)."
 
-msgid ""
-"Cannot run the script because it's not a tool script (add the [Tool] "
-"attribute above the class definition)."
-msgstr ""
-"Ní féidir an script a rith mar nach script uirlisí é (cuir an tréith [Tool] "
-"os cionn sainmhíniú an ranga)."
-
 msgid "Cannot run the script because it's not a tool script."
 msgstr "Ní féidir an script a rith toisc nach script uirlisí é."
 
@@ -5967,18 +5953,6 @@ msgid ""
 msgstr ""
 "Ní féidir .ipa a thógáil ach ar macOS. Ag fágáil tionscadal Xcode gan an "
 "pacáiste a thógáil."
-
-msgid ""
-"Exporting to an Apple Embedded platform when using C#/.NET is experimental "
-"and requires macOS."
-msgstr ""
-"Is turgnamhach é onnmhairiú chuig ardán Apple Embedded agus C#/.NET in úsáid "
-"agus teastaíonn macOS chuige."
-
-msgid ""
-"Exporting to an Apple Embedded platform when using C#/.NET is experimental."
-msgstr ""
-"Is turgnamhach é onnmhairiú chuig ardán Apple Embedded agus C#/.NET in úsáid."
 
 msgid "Custom debug template not found."
 msgstr "Níor aimsíodh teimpléad saincheaptha dífhabhtaithe."
@@ -8508,16 +8482,6 @@ msgstr ""
 "\n"
 
 msgid ""
-"Warning: This project uses C#, but this build of Godot does not have\n"
-"the Mono module. If you proceed you will not be able to use any C# scripts.\n"
-"\n"
-msgstr ""
-"Rabhadh: Úsáideann an tionscadal seo C #, ach níl an tógáil seo de Godot\n"
-"an modúl Mono. Má théann tú ar aghaidh ní bheidh tú in ann aon scripteanna C "
-"# a úsáid.\n"
-"\n"
-
-msgid ""
 "Warning: This project was last edited in Godot %s. Opening will change it to "
 "Godot %s.\n"
 "\n"
@@ -8958,20 +8922,8 @@ msgstr "Stop an Tionscadal Rith"
 msgid "Run Current Scene"
 msgstr "Rith an Radharc Reatha"
 
-msgid "Run Scene in Regular Mode"
-msgstr "Rith Radharc i Mód Rialta"
-
-msgid "Run Scene in XR Mode"
-msgstr "Rith Radharc i Mód XR"
-
 msgid "Run Specific Scene"
 msgstr "Rith Radharc Ar Leith"
-
-msgid "Run in Regular Mode"
-msgstr "Rith i Mód Rialta"
-
-msgid "Run in XR Mode"
-msgstr "Rith i Mód XR"
 
 msgid "Enable Movie Maker Mode"
 msgstr "Cumasaigh Mód Déantóra Scannán"
@@ -15215,12 +15167,6 @@ msgstr "Loingseoireacht (2T)"
 msgid "Navigation (3D)"
 msgstr "Loingseoireacht (3T)"
 
-msgid "XR"
-msgstr "XRName"
-
-msgid "OpenXR"
-msgstr "OpenXR"
-
 msgid "Wayland"
 msgstr "Wayland"
 
@@ -15280,12 +15226,6 @@ msgstr "Clónna Graifíte SIL"
 
 msgid "Multi-channel Signed Distance Field Font Rendering"
 msgstr "Rindreáil Cló Réimse Fad Sínithe Il-chainéil"
-
-msgid "XR (AR and VR)."
-msgstr "XR (AR agus VR)."
-
-msgid "OpenXR standard implementation (requires XR to be enabled)."
-msgstr "Cur i bhfeidhm caighdeánach OpenXR (ní mór XR a bheith cumasaithe)."
 
 msgid "Forward+ renderer for advanced 3D graphics."
 msgstr "Rindreálaí Forward+ le haghaidh grafaicí 3T chun cinn."
@@ -15382,13 +15322,6 @@ msgstr ""
 "atá in úsáid a bhrath.\n"
 "Tabhair faoi deara go bhféadfadh tamall a bheith i gceist leis an gcéad "
 "scanadh, go háirithe i dtionscadail níos mó."
-
-msgid ""
-"Warning: Class detection for C# scripts is not currently available, and such "
-"files will be ignored."
-msgstr ""
-"Rabhadh: Níl braiteadh ranga ar fáil faoi láthair do scripteanna C#, agus "
-"déanfar neamhaird de chomhaid den sórt sin."
 
 msgid "Scanning Project for Used Classes"
 msgstr "Tionscadal Scanadh do Ranganna Úsáidte"
@@ -16800,56 +16733,6 @@ msgstr "Dífuaimiú"
 msgid "Retrieving textures"
 msgstr "Uigeachtaí á n-aisghabháil"
 
-msgid "Class name can't be a reserved keyword"
-msgstr "Ní féidir le hainm ranga a bheith ina eochairfhocal forchoimeádta"
-
-msgid "Class name must be a valid identifier"
-msgstr "Ní mór ainm ranga a bheith ina aitheantóir bailí"
-
-msgid "Not enough bytes for decoding bytes, or invalid format."
-msgstr "Ní leor bearta chun bearta díchódaithe, nó formáid neamhbhailí."
-
-msgid ""
-"Unable to load .NET runtime, no compatible version was found.\n"
-"Attempting to create/edit a project will lead to a crash.\n"
-"\n"
-"Please install the .NET SDK 8.0 or later from https://get.dot.net and restart "
-"Godot."
-msgstr ""
-"Ní féidir rith-am .NET a luchtú, níor aimsíodh aon leagan comhoiriúnach.\n"
-"Má dhéantar iarracht tionscadal a chruthú/a chur in eagar, tiocfaidh "
-"tuairteáil air.\n"
-"\n"
-"Suiteáil an .NET SDK 8.0 nó níos déanaí ó https://get.dot.net agus atosú "
-"Godot."
-
-msgid "Failed to load .NET runtime"
-msgstr "Níorbh fhéidir am rite .NET a luchtú"
-
-msgid ""
-"Unable to find the .NET assemblies directory.\n"
-"Make sure the '%s' directory exists and contains the .NET assemblies."
-msgstr ""
-"Ní féidir an chomhadlann tionóil .NET a aimsiú.\n"
-"Cinntigh go bhfuil an chomhadlann '%s' ann agus go bhfuil na tionóil .NET ann."
-
-msgid ".NET assemblies not found"
-msgstr "Ní bhfuarthas tionóil .NET"
-
-msgid ""
-"Unable to load .NET runtime, specifically hostfxr.\n"
-"Attempting to create/edit a project will lead to a crash.\n"
-"\n"
-"Please install the .NET SDK 8.0 or later from https://get.dot.net and restart "
-"Godot."
-msgstr ""
-"Ní féidir rith-am .NET a luchtú, go háirithe hostfxr.\n"
-"Má dhéantar iarracht tionscadal a chruthú/a chur in eagar, tiocfaidh "
-"tuairteáil air.\n"
-"\n"
-"Suiteáil an .NET SDK 8.0 nó níos déanaí ó https://get.dot.net agus atosú "
-"Godot."
-
 msgctxt "Network"
 msgid "Down"
 msgstr "An Dún"
@@ -17377,172 +17260,6 @@ msgstr "Próifíleoir ObjectDB"
 msgid "Diff Against:"
 msgstr "Difríocht i gcoinne:"
 
-msgid "Rename Action"
-msgstr "Athainmnigh Gníomh"
-
-msgid "Rename Actions Localized name"
-msgstr "Athainmnigh Gníomhartha Ainm logánaithe"
-
-msgid "Change Action Type"
-msgstr "Athraigh Cineál Gnímh"
-
-msgid ""
-"Internal name of the action. Some XR runtimes don't allow spaces or special "
-"characters."
-msgstr ""
-"Ainm inmheánach an ghnímh. Ní cheadaítear spásanna ná carachtair speisialta i "
-"roinnt amanna rith XR."
-
-msgid "Action Name"
-msgstr "Ainm an Ghníomhaíochta"
-
-msgid "Human-readable name of the action. This can be displayed to end users."
-msgstr ""
-"Ainm an ghnímh atá inléite ag daoine. Is féidir é seo a thaispeáint "
-"d'úsáideoirí deiridh."
-
-msgid "Action Localized Name"
-msgstr "Ainm Áitiúil an Ghnímh"
-
-msgid "Type of the action"
-msgstr "Cineál an ghnímh"
-
-msgid "Action Type"
-msgstr "Cineál Gnímh"
-
-msgid "Remove action"
-msgstr "Bain gníomh"
-
-msgid "Add action set"
-msgstr "Cuir tacar gníomhartha leis"
-
-msgid "Remove action set"
-msgstr "Bain tacar gníomhartha"
-
-msgid "Add interaction profile"
-msgstr "Cuir próifíl idirghníomhaíochta leis"
-
-msgid "Error loading %s: %s."
-msgstr "Earráid agus %s á luchtú: %s."
-
-msgid "Error saving file %s: %s"
-msgstr "Earráid agus comhad %s á shábháil: %s"
-
-msgid "OpenXR Action map:"
-msgstr "Mapa gníomhaíochta OpenXR:"
-
-msgid "Remove interaction profile"
-msgstr "Bain próifíl idirghníomhaíochta"
-
-msgid "OpenXR Action Map"
-msgstr "Mapa Gníomhaíochta OpenXR"
-
-msgid "Toggle OpenXR Action Map Dock"
-msgstr "Duga Léarscáil Gníomhaíochta OpenXR a Athrú"
-
-msgid "Add Action Set"
-msgstr "Cuir Tacar Gníomhartha Leis"
-
-msgid "Add an action set."
-msgstr "Cuir tacar gníomhaíochta leis."
-
-msgid "Add profile"
-msgstr "Cuir próifíl leis"
-
-msgid "Add an interaction profile."
-msgstr "Cuir próifíl idirghníomhaíochta leis."
-
-msgid "Save this OpenXR action map."
-msgstr "Sábháil an léarscáil ghníomhaíochta OpenXR seo."
-
-msgid "Reset to default OpenXR action map."
-msgstr "Athshocraigh go mapa réamhshocraithe gníomhaíochta OpenXR."
-
-msgid "Action Sets"
-msgstr "Seiteanna Gníomhaíochta"
-
-msgid "Rename Action Set"
-msgstr "Athainmnigh Tacar Gníomhartha"
-
-msgid "Rename Action Sets Localized name"
-msgstr "Athainmnigh Seiteanna Gníomhaíochta Ainm logánaithe"
-
-msgid "Change Action Sets priority"
-msgstr "Athraigh Gníomh Socraigh tosaíocht"
-
-msgid "Add action"
-msgstr "Cuir gníomh leis"
-
-msgid "Delete action"
-msgstr "Scrios gníomh"
-
-msgid "Fold"
-msgstr "Fill"
-
-msgid "Action Set Name"
-msgstr "Ainm an Tacair Ghníomhaíochta"
-
-msgid ""
-"Human-readable name of the action set. This can be displayed to end users."
-msgstr ""
-"Ainm atá inléite ag an duine ar an tsraith gníomhartha. Is féidir é seo a "
-"thaispeáint d'úsáideoirí deiridh."
-
-msgid "Action Set Localized Name"
-msgstr "Ainm Áitiúil an Tacair Ghníomhaíochta"
-
-msgid ""
-"Priority of the action set. If multiple action sets bind to the same input, "
-"the action set with the highest priority will be updated."
-msgstr ""
-"Tosaíocht an tacair ghníomhaíochta. Má cheanglaíonn tacair ghníomhaíochta "
-"iolracha leis an ionchur céanna, déanfar an tacar gníomhaíochta leis an "
-"tosaíocht is airde a nuashonrú."
-
-msgid "Action Set Priority"
-msgstr "Tosaíocht Socraithe Gníomhaíochta"
-
-msgid "Add action."
-msgstr "Cuir gníomh leis."
-
-msgid "Remove action set."
-msgstr "Bain tacar gníomhaíochta."
-
-msgid "Remove this binding modifier."
-msgstr "Bain an modhnóir ceangailteach seo."
-
-msgid "Remove binding modifier"
-msgstr "Bain an modhnóir ceangailteach"
-
-msgid "Add binding modifier"
-msgstr "Cuir modhnóir ceangailteach leis"
-
-msgid "Note: modifiers will only be applied if supported on the host system."
-msgstr ""
-"Nóta: ní chuirfear modhnóirí i bhfeidhm ach amháin má thacaítear leo ar an "
-"gcóras óstach."
-
-msgid "Binding modifiers for:"
-msgstr "Modhnóirí ceangailteach le haghaidh:"
-
-msgid "Remove action from interaction profile"
-msgstr "Bain gníomh ón bpróifíl idirghníomhaíochta"
-
-msgid "Edit binding modifiers"
-msgstr "Cuir modhnóirí ceangailteacha in eagar"
-
-msgid "Note: This interaction profile requires extension %s support."
-msgstr "Nóta: Éilíonn an phróifíl idirghníomhaíochta seo tacaíocht síneadh %s."
-
-msgid "Add binding"
-msgstr "Cuir ceangal leis"
-
-msgid "Remove binding"
-msgstr "Bain ceangal"
-
-msgid "Note: This binding path requires extension %s support."
-msgstr "Nóta: Éilíonn an cosán ceangailteach seo tacaíocht síneadh %s."
-
 msgid "Boolean"
 msgstr "BooleName"
 
@@ -17551,63 +17268,6 @@ msgstr "Snámhphointe"
 
 msgid "Vector2"
 msgstr "Veicteoir 2"
-
-msgid "Pose"
-msgstr "Údar"
-
-msgid "Haptic"
-msgstr "Haptach"
-
-msgid "Unknown"
-msgstr "Neamhaithnid"
-
-msgid "Modifiers"
-msgstr "Modhnóirí"
-
-msgid "Select an action"
-msgstr "Roghnaigh gníomh"
-
-msgid "Select an interaction profile"
-msgstr "Roghnaigh próifíl idirghníomhaíochta"
-
-msgid "All interaction profiles have been added to the action map."
-msgstr ""
-"Tá na próifílí idirghníomhaíochta uile curtha leis an léarscáil gníomhaíochta."
-
-msgid "Choose an XR runtime."
-msgstr "Roghnaigh am rite XR."
-
-msgid ""
-"Cannot use the same SubViewport with multiple OpenXR composition layers. "
-"Clear it from its current layer first."
-msgstr ""
-"Ní féidir an SubViewport céanna a úsáid le sraitheanna comhdhéanamh OpenXR "
-"iolracha. Glan é óna chiseal reatha ar dtús."
-
-msgid ""
-"Cannot set SubViewport on an OpenXR composition layer when using an Android "
-"surface."
-msgstr ""
-"Ní féidir SubViewport a shocrú ar shraith chomhdhéanamh OpenXR agus dromchla "
-"Android á úsáid."
-
-msgid ""
-"OpenXR composition layers must have orthonormalized transforms (ie. no scale "
-"or shearing)."
-msgstr ""
-"Ní mór go mbeadh claochluithe orthonormalized ag sraitheanna comhdhéanamh "
-"OpenXR (ie gan aon scála nó lomadh)."
-
-msgid ""
-"Hole punching won't work as expected unless the sort order is less than zero."
-msgstr ""
-"Ní oibreoidh polladh poll mar a bheifí ag súil leis mura bhfuil an t-ordú "
-"sórtála níos lú ná nialas."
-
-msgid "OpenXR visibility mask must have an XRCamera3D node as their parent."
-msgstr ""
-"Ní mór nód XRCamera3D a bheith mar thuismitheoir ag masc infheictheachta "
-"OpenXR."
 
 msgid "E constant (2.718282). Represents the base of the natural logarithm."
 msgstr "E tairiseach (2.718282). Léiríonn sé seo bonn an logartaim nádúrtha."
@@ -19166,26 +18826,6 @@ msgid "Error: There was a problem validating the keystore username and password"
 msgstr ""
 "Earráid: Bhí fadhb ann ainm úsáideora agus pasfhocal an keystore a bhailíochtú"
 
-msgid ""
-"Unable to determine the C# project's TFM, it may be incompatible. The export "
-"template only supports '%s'. Make sure the project targets '%s' or consider "
-"using gradle builds instead."
-msgstr ""
-"Ní féidir TFM an tionscadail C# a chinneadh, b'fhéidir nach bhfuil sé "
-"comhoiriúnach. Ní thacaíonn an teimpléad easpórtála ach le '%s'. Cinntigh go "
-"bhfuil an tionscadal dírithe ar '%s' nó smaoinigh ar thógálacha gradle a "
-"úsáid ina ionad."
-
-msgid ""
-"C# project targets '%s' but the export template only supports '%s'. Consider "
-"using gradle builds instead."
-msgstr ""
-"Tá '%s' mar sprioc ag tionscadal C# ach ní thacaíonn an teimpléad easpórtála "
-"ach le '%s'. Smaoinigh ar úsáid a bhaint as tógálacha gradle ina ionad."
-
-msgid "Exporting to Android when using C#/.NET is experimental."
-msgstr "Tá onnmhairiú chuig Android agus C #/.NET á úsáid turgnamhach."
-
 msgid "Custom Android source template not found."
 msgstr "Níor aimsíodh teimpléad foinse Android saincheaptha."
 
@@ -19553,13 +19193,6 @@ msgstr ""
 msgid "App sandbox is required for App Store distribution."
 msgstr "Tá bosca gainimh app ag teastáil le haghaidh dáileadh App Store."
 
-msgid ""
-"'rcodesign' doesn't support signing applications with embedded dynamic "
-"libraries (GDExtension or .NET)."
-msgstr ""
-"Ní thacaíonn 'rcodesign' le hiarratais a shíniú le leabharlanna dinimiciúla "
-"leabaithe (GDExtension nó .NET)."
-
 msgid "Code signing is required for App Store distribution."
 msgstr "Tá síniú cóid ag teastáil le haghaidh dáileadh App Store."
 
@@ -19908,21 +19541,6 @@ msgstr "Níorbh fhéidir comhad a léamh: \"%s\"."
 
 msgid "PWA"
 msgstr "PWAName"
-
-msgid ""
-"Exporting to Web is currently not supported in Godot 4 when using C#/.NET. "
-"Use Godot 3 to target Web with C#/Mono instead."
-msgstr ""
-"Ní thacaítear le heaspórtáil chuig an nGréasán faoi láthair i Godot 4 agus C "
-"#/.NET á úsáid. Bain úsáid as Godot 3 chun díriú ar an nGréasán le C # / Mono "
-"ina ionad."
-
-msgid ""
-"If this project does not use C#, use a non-C# editor build to export the "
-"project."
-msgstr ""
-"Mura n-úsáideann an tionscadal seo C #, bain úsáid as tógáil eagarthóir neamh-"
-"C # chun an tionscadal a easpórtáil."
 
 msgid "Could not read HTML shell: \"%s\"."
 msgstr "Níorbh fhéidir blaosc HTML a léamh: \"%s\"."
@@ -20957,59 +20575,6 @@ msgstr ""
 "Ní cheadaítear ach WorldEnvironment amháin in aghaidh an radhairc (nó sraith "
 "radharcanna meandaracha)."
 
-msgid ""
-"XRCamera3D may not function as expected without an XROrigin3D node as its "
-"parent."
-msgstr ""
-"Ní fhéadfaidh XRCamera3D feidhmiú mar a bhíothas ag súil leis gan nód "
-"XROrigin3D mar thuismitheoir."
-
-msgid ""
-"XRCamera3D should have physics_interpolation_mode set to OFF in order to "
-"avoid jitter."
-msgstr ""
-"Ba chóir go mbeadh physics_interpolation_mode socraithe go OFF i XRCamera3D "
-"chun crith a sheachaint."
-
-msgid ""
-"XRNode3D may not function as expected without an XROrigin3D node as its "
-"parent."
-msgstr ""
-"Ní fhéadfaidh XRNode3D feidhmiú mar a bhíothas ag súil leis gan nód "
-"XROrigin3D mar thuismitheoir."
-
-msgid "No tracker name is set."
-msgstr "Níl aon ainm rianaire socraithe."
-
-msgid "No pose is set."
-msgstr "Níl aon údar socraithe."
-
-msgid ""
-"XRNode3D should have physics_interpolation_mode set to OFF in order to avoid "
-"jitter."
-msgstr ""
-"Ba chóir go mbeadh physics_interpolation_mode socraithe go OFF ag XRNode3D "
-"chun crith a sheachaint."
-
-msgid "XROrigin3D requires an XRCamera3D child node."
-msgstr "Éilíonn XROrigin3D nód leanaí XRCamera3D."
-
-msgid ""
-"Changing the scale on the XROrigin3D node is not supported. Change the World "
-"Scale instead."
-msgstr ""
-"Ní thacaítear le hathrú an scála ar an nód XROrigin3D. Athraigh an Scála "
-"Domhanda ina ionad."
-
-msgid ""
-"XR shaders are not enabled in project settings. Stereoscopic output is not "
-"supported unless they are enabled. Please enable `xr/shaders/enabled` to use "
-"stereoscopic output."
-msgstr ""
-"Níl shaders XR cumasaithe i socruithe tionscadail. Ní thacaítear le haschur "
-"steiréascópach mura bhfuil siad cumasaithe. Cumasaigh 'xr/shaders/cumasaithe' "
-"chun aschur steiréascópach a úsáid."
-
 msgid "Animation Apply Reset"
 msgstr "Athshocraigh Feidhmchlár Beochana"
 
@@ -21483,15 +21048,6 @@ msgstr "Níor aimsíodh feidhm chomhoiriúnach le haghaidh: '%s'."
 msgid "Varying '%s' cannot be passed for the '%s' parameter in that context."
 msgstr ""
 "Ní féidir pas a fháil le hathrú '%s' don pharaiméadar '%s' sa chomhthéacs sin."
-
-msgid ""
-"Unable to pass a multiview texture sampler as a parameter to a custom "
-"function. Consider sampling it in the main function and then passing the "
-"vector result to the custom function."
-msgstr ""
-"Ní féidir samplaí uigeachta ilradhairc a chur mar pharaiméadar chuig feidhm "
-"saincheaptha. Smaoinigh ar é a shampláil sa phríomhfheidhm agus ansin an "
-"toradh veicteora a chur chuig an bhfeidhm saincheaptha."
 
 msgid ""
 "Unable to pass RADIANCE texture sampler as a parameter to a custom function. "

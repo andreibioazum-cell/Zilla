@@ -201,7 +201,6 @@
 }
 
 - (void)displayLoadingOverlay {
-#if !defined(VISIONOS_ENABLED)
 	NSBundle *bundle = [NSBundle mainBundle];
 	NSString *storyboardName = @"Launch Screen";
 
@@ -217,7 +216,6 @@
 	self.godotLoadingOverlay.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
 
 	[self.view addSubview:self.godotLoadingOverlay];
-#endif
 }
 
 - (BOOL)godotViewFinishedSetup:(GDTView *)view {

@@ -898,40 +898,6 @@ Files extracted from upstream source:
 - `LICENSE`
 
 
-## openxr
-
-- Upstream: https://github.com/KhronosGroup/OpenXR-SDK
-- Version: 1.1.63 (f2448a8797c85814aa892efc1ab8707900fbcc78, 2026)
-- License: Apache 2.0
-
-Files extracted from upstream source:
-
-- `include/`
-- `src/common/`
-- `src/loader/`
-- `src/*.{c,h}`
-- `src/external/jsoncpp/include/`
-- `src/external/jsoncpp/src/lib_json/`
-- `src/external/jsoncpp/{AUTHORS,LICENSE}`
-- `LICENSE` and `COPYING.adoc`
-
-Exclude:
-
-- `src/external/android-jni-wrappers` and `src/external/jnipp` (not used yet)
-- Obsolete `src/xr_generated_dispatch_table.{c,h}`
-- All CMake stuff: `cmake/`, `CMakeLists.txt` and `*.cmake`
-- All Gradle stuff: `*gradle*`, `AndroidManifest.xml`
-- All following files (and their `.license` files):
-  `*.{def,expsym,in,json,map,pom,rc,txt}`
-- All dotfiles
-
-Additional:
-- Update `openxrLoaderVersion` in `platform/android/java/app/config.gradle`
-
-Patches:
-
-- `0001-remove-try-catch.patch` ([GH-123123](https://github.com/godotengine/godot/pull/123123))
-
 ## pcre2
 
 - Upstream: https://pcre2project.github.io/pcre2/

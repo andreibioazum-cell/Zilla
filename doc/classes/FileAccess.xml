@@ -6,8 +6,7 @@
 	<description>
 		This class can be used to permanently store data in the user device's file system and to read from it. This is useful for storing game save data or player configuration files.
 		[b]Example:[/b] How to write and read from a file. The file named [code]"save_game.dat"[/code] will be stored in the user data folder, as specified in the [url=$DOCS_URL/tutorials/io/data_paths.html]Data paths[/url] documentation:
-		[codeblocks]
-		[gdscript]
+		[codeblock]
 		func save_to_file(content):
 			var file = FileAccess.open("user://save_game.dat", FileAccess.WRITE)
 			file.store_string(content)
@@ -16,24 +15,9 @@
 			var file = FileAccess.open("user://save_game.dat", FileAccess.READ)
 			var content = file.get_as_text()
 			return content
-		[/gdscript]
-		[csharp]
-		public void SaveToFile(string content)
-		{
-			using var file = FileAccess.Open("user://save_game.dat", FileAccess.ModeFlags.Write);
-			file.StoreString(content);
-		}
-
-		public string LoadFromFile()
-		{
-			using var file = FileAccess.Open("user://save_game.dat", FileAccess.ModeFlags.Read);
-			string content = file.GetAsText();
-			return content;
-		}
-		[/csharp]
-		[/codeblocks]
+		[/codeblock]
 		A [FileAccess] instance has its own file cursor, which is the position in bytes in the file where the next read/write operation will occur. Functions such as [method get_8], [method get_16], [method store_8], and [method store_16] will move the file cursor forward by the number of bytes read/written. The file cursor can be moved to a specific position using [method seek] or [method seek_end], and its position can be retrieved using [method get_position].
-		A [FileAccess] instance will close its file when the instance is freed. Since it inherits [RefCounted], this happens automatically when it is no longer in use. [method close] can be called to close it earlier. In C#, the reference must be disposed manually, which can be done with the [code]using[/code] statement or by calling the [code]Dispose[/code] method directly.
+		A [FileAccess] instance will close its file when the instance is freed. Since it inherits [RefCounted], this happens automatically when it is no longer in use. [method close] can be called to close it earlier.
 		[b]Note:[/b] To access project resources once exported, it is recommended to use [ResourceLoader] instead of [FileAccess], as some files are converted to engine-specific formats and their original source files might not be present in the exported PCK package. If using [FileAccess], make sure the file is included in the export by changing its import mode to [b]Keep File (exported as is)[/b] in the Import dock, or, for files where this option is not available, change the non-resource export filter in the Export dialog to include the file's extension (e.g. [code]*.txt[/code]).
 		[b]Note:[/b] Files are automatically closed only if the process exits "normally" (such as by clicking the window manager's close button or pressing [kbd]Alt + F4[/kbd]). If you stop the project execution by pressing [kbd]F8[/kbd] while the project is running, the file won't be closed as the game process will be killed. You can work around this by calling [method flush] at regular intervals.
 	</description>
@@ -48,7 +32,7 @@
 			<return type="void" />
 			<description>
 				Closes the currently opened file and prevents subsequent read/write operations. Use [method flush] to persist the data to disk without closing the file.
-				[b]Note:[/b] [FileAccess] will automatically close when it's freed, which happens when it goes out of scope or when it gets assigned with [code]null[/code]. In C# the reference must be disposed after we are done using it, this can be done with the [code]using[/code] statement or calling the [code]Dispose[/code] method directly.
+				[b]Note:[/b] [FileAccess] will automatically close when it's freed, which happens when it goes out of scope or when it gets assigned with [code]null[/code].
 			</description>
 		</method>
 		<method name="create_temp" qualifiers="static">
@@ -70,18 +54,10 @@
 			<description>
 				Returns [code]true[/code] if the file cursor has already read past the end of the file.
 				[b]Note:[/b] [code]eof_reached() == false[/code] cannot be used to check whether there is more data available. To loop while there is more data available, use:
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				while file.get_position() &lt; file.get_length():
 					# Read data
-				[/gdscript]
-				[csharp]
-				while (file.GetPosition() &lt; file.GetLength())
-				{
-					// Read data
-				}
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 			</description>
 		</method>
 		<method name="file_exists" qualifiers="static">
@@ -499,8 +475,7 @@
 				[b]Note:[/b] The [param value] should lie in the interval [code][0, 2^16 - 1][/code]. Any other value will overflow and wrap around.
 				[b]Note:[/b] If an error occurs, the resulting value of the file position indicator is indeterminate.
 				To store a signed integer, use [method store_64] or store a signed integer from the interval [code][-2^15, 2^15 - 1][/code] (i.e. keeping one bit for the signedness) and compute its sign manually when reading. For example:
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				const MAX_15B = 1 &lt;&lt; 15
 				const MAX_16B = 1 &lt;&lt; 16
 
@@ -516,21 +491,7 @@
 					var read2 = f.get_16() # 121
 					var converted1 = unsigned16_to_signed(read1) # -42
 					var converted2 = unsigned16_to_signed(read2) # 121
-				[/gdscript]
-				[csharp]
-				public override void _Ready()
-				{
-					using var f = FileAccess.Open("user://file.dat", FileAccess.ModeFlags.WriteRead);
-					f.Store16(unchecked((ushort)-42)); // This wraps around and stores 65494 (2^16 - 42).
-					f.Store16(121); // In bounds, will store 121.
-					f.Seek(0); // Go back to start to read the stored value.
-					ushort read1 = f.Get16(); // 65494
-					ushort read2 = f.Get16(); // 121
-					short converted1 = (short)read1; // -42
-					short converted2 = (short)read2; // 121
-				}
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 			</description>
 		</method>
 		<method name="store_32">

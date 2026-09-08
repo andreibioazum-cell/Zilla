@@ -5,18 +5,11 @@
 	</brief_description>
 	<description>
 		[b]Note:[/b] This class can only be used for editor plugins because it relies on editor settings.
-		[codeblocks]
-		[gdscript]
+		[codeblock]
 		var code_preview = TextEdit.new()
 		var highlighter = GDScriptSyntaxHighlighter.new()
 		code_preview.syntax_highlighter = highlighter
-		[/gdscript]
-		[csharp]
-		var codePreview = new TextEdit();
-		var highlighter = new GDScriptSyntaxHighlighter();
-		codePreview.SyntaxHighlighter = highlighter;
-		[/csharp]
-		[/codeblocks]
+		[/codeblock]
 	</description>
 	<tutorials>
 	</tutorials>

@@ -150,7 +150,6 @@ EditorPropertyNameProcessor::EditorPropertyNameProcessor() {
 	capitalize_string_remaps["adb"] = "ADB";
 	capitalize_string_remaps["actool"] = "actool";
 	capitalize_string_remaps["ao"] = "AO";
-	capitalize_string_remaps["androidxr"] = "AndroidXR";
 	capitalize_string_remaps["api"] = "API";
 	capitalize_string_remaps["apk"] = "APK";
 	capitalize_string_remaps["arm32"] = "arm32";
@@ -255,7 +254,6 @@ EditorPropertyNameProcessor::EditorPropertyNameProcessor() {
 	capitalize_string_remaps["opengl"] = "OpenGL";
 	capitalize_string_remaps["opengl3"] = "OpenGL 3";
 	capitalize_string_remaps["opentype"] = "OpenType";
-	capitalize_string_remaps["openxr"] = "OpenXR";
 	capitalize_string_remaps["osslsigncode"] = "osslsigncode";
 	capitalize_string_remaps["path3d"] = "Path3D";
 	capitalize_string_remaps["pck"] = "PCK";
@@ -311,7 +309,6 @@ EditorPropertyNameProcessor::EditorPropertyNameProcessor() {
 	capitalize_string_remaps["uv1"] = "UV1";
 	capitalize_string_remaps["uv2"] = "UV2";
 	capitalize_string_remaps["vector2"] = "Vector2";
-	capitalize_string_remaps["visionos"] = "visionOS";
 	capitalize_string_remaps["vpn"] = "VPN";
 	capitalize_string_remaps["vram"] = "VRAM";
 	capitalize_string_remaps["vrs"] = "VRS";
@@ -326,7 +323,6 @@ EditorPropertyNameProcessor::EditorPropertyNameProcessor() {
 	capitalize_string_remaps["x86"] = "x86";
 	capitalize_string_remaps["x86_32"] = "x86_32";
 	capitalize_string_remaps["x86_64"] = "x86_64";
-	capitalize_string_remaps["xr"] = "XR";
 	capitalize_string_remaps["xray"] = "X-Ray";
 	capitalize_string_remaps["xy"] = "XY";
 	capitalize_string_remaps["xz"] = "XZ";

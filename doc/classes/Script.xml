@@ -28,21 +28,11 @@
 			<return type="StringName" />
 			<description>
 				Returns the class name associated with the script, if there is one. Returns an empty string otherwise.
-				To give the script a global name, you can use the [code]class_name[/code] keyword in GDScript and the [code][GlobalClass][/code] attribute in C#.
-				[codeblocks]
-				[gdscript]
+				To give the script a global name, you can use the [code]class_name[/code] keyword in GDScript.
+				[codeblock]
 				class_name MyNode
 				extends Node
-				[/gdscript]
-				[csharp]
-				using Godot;
-
-				[GlobalClass]
-				public partial class MyNode : Node
-				{
-				}
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 			</description>
 		</method>
 		<method name="get_instance_base_type" qualifiers="const">
@@ -56,7 +46,7 @@
 			<param index="0" name="property" type="StringName" />
 			<description>
 				Returns the default value of the specified property.
-				[b]Note:[/b] In GDScript and C#, this method returns [code]null[/code] outside of editor builds.
+				[b]Note:[/b] In GDScript, this method returns [code]null[/code] outside of editor builds.
 			</description>
 		</method>
 		<method name="get_rpc_config" qualifiers="const">

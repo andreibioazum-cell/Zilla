@@ -188,11 +188,8 @@ if env["builtin_sdl"]:
             "timer/windows/SDL_systimer.c",
         ]
 
-    elif env["platform"] in ["ios", "visionos"]:
-        if env["platform"] == "ios":
-            env_sdl.Append(CPPDEFINES=["SDL_PLATFORM_IOS"])
-        else:
-            env_sdl.Append(CPPDEFINES=["SDL_PLATFORM_VISIONOS"])
+    elif env["platform"] == "ios":
+        env_sdl.Append(CPPDEFINES=["SDL_PLATFORM_IOS"])
 
         thirdparty_sources += [
             "core/unix/SDL_appid.c",

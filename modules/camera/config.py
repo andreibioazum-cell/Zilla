@@ -9,7 +9,6 @@ def can_build(env, platform):
         or platform == "linuxbsd"
         or platform == "android"
         or platform == "ios"
-        or platform == "visionos"
     )
 
 

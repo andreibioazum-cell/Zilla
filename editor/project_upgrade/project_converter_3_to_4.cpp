@@ -122,15 +122,6 @@ public:
 	RegEx keyword_gdscript_mastersync = RegEx("^mastersync func");
 
 	RegEx gdscript_comment = RegEx("^\\s*#");
-	RegEx csharp_comment = RegEx("^\\s*\\/\\/");
-
-	// CSharp keywords.
-	RegEx keyword_csharp_remote = RegEx("\\[Remote(Attribute)?(\\(\\))?\\]");
-	RegEx keyword_csharp_remotesync = RegEx("\\[(Remote)?Sync(Attribute)?(\\(\\))?\\]");
-	RegEx keyword_csharp_puppet = RegEx("\\[(Puppet|Slave)(Attribute)?(\\(\\))?\\]");
-	RegEx keyword_csharp_puppetsync = RegEx("\\[PuppetSync(Attribute)?(\\(\\))?\\]");
-	RegEx keyword_csharp_master = RegEx("\\[Master(Attribute)?(\\(\\))?\\]");
-	RegEx keyword_csharp_mastersync = RegEx("\\[MasterSync(Attribute)?(\\(\\))?\\]");
 
 	// Colors.
 	LocalVector<Ref<RegEx>> color_regexes;
@@ -180,9 +171,6 @@ public:
 	LocalVector<Ref<RegEx>> shaders_regexes;
 	LocalVector<Ref<RegEx>> builtin_types_regexes;
 	LocalVector<Ref<RegEx>> theme_override_regexes;
-	LocalVector<Ref<RegEx>> csharp_function_regexes;
-	LocalVector<Ref<RegEx>> csharp_properties_regexes;
-	LocalVector<Ref<RegEx>> csharp_signal_regexes;
 
 	RegExContainer() {
 		// Common.
@@ -226,18 +214,6 @@ public:
 			// Theme overrides.
 			for (unsigned int current_index = 0; RenamesMap3To4::theme_override_renames[current_index][0]; current_index++) {
 				theme_override_regexes.push_back(memnew(RegEx(String("\\b") + RenamesMap3To4::theme_override_renames[current_index][0] + "\\b")));
-			}
-			// CSharp function renames.
-			for (unsigned int current_index = 0; RenamesMap3To4::csharp_function_renames[current_index][0]; current_index++) {
-				csharp_function_regexes.push_back(memnew(RegEx(String("\\b") + RenamesMap3To4::csharp_function_renames[current_index][0] + "\\b")));
-			}
-			// CSharp properties renames.
-			for (unsigned int current_index = 0; RenamesMap3To4::csharp_properties_renames[current_index][0]; current_index++) {
-				csharp_properties_regexes.push_back(memnew(RegEx(String("\\b") + RenamesMap3To4::csharp_properties_renames[current_index][0] + "\\b")));
-			}
-			// CSharp signals renames.
-			for (unsigned int current_index = 0; RenamesMap3To4::csharp_signals_renames[current_index][0]; current_index++) {
-				csharp_signal_regexes.push_back(memnew(RegEx(String("\\b") + RenamesMap3To4::csharp_signals_renames[current_index][0] + "\\b")));
 			}
 		}
 
@@ -322,7 +298,7 @@ bool ProjectConverter3To4::convert() {
 
 				SourceLine source_line;
 				source_line.line = line;
-				source_line.is_comment = reg_container.gdscript_comment.search_all(line).size() > 0 || reg_container.csharp_comment.search_all(line).size() > 0;
+				source_line.is_comment = reg_container.gdscript_comment.search_all(line).size() > 0;
 				source_lines.append(source_line);
 			}
 		}
@@ -387,16 +363,6 @@ bool ProjectConverter3To4::convert() {
 
 				custom_rename(source_lines, "\\.shader", ".gdshader");
 
-				convert_hexadecimal_colors(source_lines, reg_container);
-			} else if (file_name.ends_with(".cs")) { // TODO, C# should use different methods.
-				rename_classes(source_lines, reg_container); // Using only specialized function.
-				rename_common(RenamesMap3To4::csharp_function_renames, reg_container.csharp_function_regexes, source_lines);
-				rename_common(RenamesMap3To4::builtin_types_renames, reg_container.builtin_types_regexes, source_lines);
-				rename_common(RenamesMap3To4::csharp_properties_renames, reg_container.csharp_properties_regexes, source_lines);
-				rename_common(RenamesMap3To4::csharp_signals_renames, reg_container.csharp_signal_regexes, source_lines);
-				rename_csharp_functions(source_lines, reg_container);
-				rename_csharp_attributes(source_lines, reg_container);
-				custom_rename(source_lines, "public class ", "public partial class ");
 				convert_hexadecimal_colors(source_lines, reg_container);
 			} else if (file_name.ends_with(".gdshader") || file_name.ends_with(".shader")) {
 				rename_common(RenamesMap3To4::shaders_renames, reg_container.shaders_regexes, source_lines);
@@ -576,15 +542,6 @@ bool ProjectConverter3To4::validate_conversion() {
 				changed_elements.append_array(check_for_rename_animation_suffixes(lines, reg_container));
 
 				changed_elements.append_array(check_for_custom_rename(lines, "\\.shader", ".gdshader"));
-			} else if (file_name.ends_with(".cs")) {
-				changed_elements.append_array(check_for_rename_classes(lines, reg_container));
-				changed_elements.append_array(check_for_rename_common(RenamesMap3To4::csharp_function_renames, reg_container.csharp_function_regexes, lines));
-				changed_elements.append_array(check_for_rename_common(RenamesMap3To4::builtin_types_renames, reg_container.builtin_types_regexes, lines));
-				changed_elements.append_array(check_for_rename_common(RenamesMap3To4::csharp_properties_renames, reg_container.csharp_properties_regexes, lines));
-				changed_elements.append_array(check_for_rename_common(RenamesMap3To4::csharp_signals_renames, reg_container.csharp_signal_regexes, lines));
-				changed_elements.append_array(check_for_rename_csharp_functions(lines, reg_container));
-				changed_elements.append_array(check_for_rename_csharp_attributes(lines, reg_container));
-				changed_elements.append_array(check_for_custom_rename(lines, "public class ", "public partial class "));
 			} else if (file_name.ends_with(".gdshader") || file_name.ends_with(".shader")) {
 				changed_elements.append_array(check_for_rename_common(RenamesMap3To4::shaders_renames, reg_container.shaders_regexes, lines));
 			} else if (file_name.ends_with("tres")) {
@@ -670,7 +627,7 @@ Vector<String> ProjectConverter3To4::check_for_files() {
 					directories_to_check.append(current_dir.path_join(file_name) + "/");
 				} else {
 					bool proper_extension = false;
-					if (file_name.ends_with(".gd") || file_name.ends_with(".shader") || file_name.ends_with(".gdshader") || file_name.ends_with(".tscn") || file_name.ends_with(".tres") || file_name.ends_with(".godot") || file_name.ends_with(".cs") || file_name.ends_with(".csproj") || file_name.ends_with(".import")) {
+					if (file_name.ends_with(".gd") || file_name.ends_with(".shader") || file_name.ends_with(".gdshader") || file_name.ends_with(".tscn") || file_name.ends_with(".tres") || file_name.ends_with(".godot") || file_name.ends_with(".import")) {
 						proper_extension = true;
 					}
 
@@ -749,17 +706,11 @@ bool ProjectConverter3To4::test_conversion(RegExContainer &reg_container) {
 
 	valid = valid && test_conversion_basic("can_instance", "can_instantiate", RenamesMap3To4::gdscript_function_renames, reg_container.gdscript_function_regexes, "gdscript function");
 
-	valid = valid && test_conversion_basic("CanInstance", "CanInstantiate", RenamesMap3To4::csharp_function_renames, reg_container.csharp_function_regexes, "csharp function");
-
 	valid = valid && test_conversion_basic("translation", "position", RenamesMap3To4::gdscript_properties_renames, reg_container.gdscript_properties_regexes, "gdscript property");
-
-	valid = valid && test_conversion_basic("Translation", "Position", RenamesMap3To4::csharp_properties_renames, reg_container.csharp_properties_regexes, "csharp property");
 
 	valid = valid && test_conversion_basic("NORMALMAP", "NORMAL_MAP", RenamesMap3To4::shaders_renames, reg_container.shaders_regexes, "shader");
 
 	valid = valid && test_conversion_basic("text_entered", "text_submitted", RenamesMap3To4::gdscript_signals_renames, reg_container.gdscript_signals_regexes, "gdscript signal");
-
-	valid = valid && test_conversion_basic("TextEntered", "TextSubmitted", RenamesMap3To4::csharp_signals_renames, reg_container.csharp_signal_regexes, "csharp signal");
 
 	valid = valid && test_conversion_basic("audio/channel_disable_threshold_db", "audio/buses/channel_disable_threshold_db", RenamesMap3To4::project_settings_renames, reg_container.project_settings_regexes, "project setting");
 
@@ -770,19 +721,6 @@ bool ProjectConverter3To4::test_conversion(RegExContainer &reg_container) {
 	valid = valid && test_conversion_basic("custom_constants/margin_right", "theme_override_constants/margin_right", RenamesMap3To4::theme_override_renames, reg_container.theme_override_regexes, "theme overrides");
 
 	// Custom Renames.
-
-	valid = valid && test_conversion_with_regex("(Connect(A,B,C,D,E,F,G) != OK):", "(Connect(A, new Callable(B, C), D, E, F, G) != OK):", &ProjectConverter3To4::rename_csharp_functions, "custom rename csharp", reg_container);
-	valid = valid && test_conversion_with_regex("(Disconnect(A,B,C) != OK):", "(Disconnect(A, new Callable(B, C)) != OK):", &ProjectConverter3To4::rename_csharp_functions, "custom rename csharp", reg_container);
-	valid = valid && test_conversion_with_regex("(IsConnected(A,B,C) != OK):", "(IsConnected(A, new Callable(B, C)) != OK):", &ProjectConverter3To4::rename_csharp_functions, "custom rename", reg_container);
-
-	valid = valid && test_conversion_with_regex("[Remote]", "[RPC(MultiplayerAPI.RPCMode.AnyPeer)]", &ProjectConverter3To4::rename_csharp_attributes, "custom rename csharp", reg_container);
-	valid = valid && test_conversion_with_regex("[RemoteSync]", "[RPC(MultiplayerAPI.RPCMode.AnyPeer, CallLocal = true)]", &ProjectConverter3To4::rename_csharp_attributes, "custom rename csharp", reg_container);
-	valid = valid && test_conversion_with_regex("[Sync]", "[RPC(MultiplayerAPI.RPCMode.AnyPeer, CallLocal = true)]", &ProjectConverter3To4::rename_csharp_attributes, "custom rename csharp", reg_container);
-	valid = valid && test_conversion_with_regex("[Slave]", "[RPC]", &ProjectConverter3To4::rename_csharp_attributes, "custom rename csharp", reg_container);
-	valid = valid && test_conversion_with_regex("[Puppet]", "[RPC]", &ProjectConverter3To4::rename_csharp_attributes, "custom rename csharp", reg_container);
-	valid = valid && test_conversion_with_regex("[PuppetSync]", "[RPC(CallLocal = true)]", &ProjectConverter3To4::rename_csharp_attributes, "custom rename csharp", reg_container);
-	valid = valid && test_conversion_with_regex("[Master]", "The master and mastersync rpc behavior is not officially supported anymore. Try using another keyword or making custom logic using Multiplayer.GetRemoteSenderId()\n[RPC]", &ProjectConverter3To4::rename_csharp_attributes, "custom rename csharp", reg_container);
-	valid = valid && test_conversion_with_regex("[MasterSync]", "The master and mastersync rpc behavior is not officially supported anymore. Try using another keyword or making custom logic using Multiplayer.GetRemoteSenderId()\n[RPC(CallLocal = true)]", &ProjectConverter3To4::rename_csharp_attributes, "custom rename csharp", reg_container);
 
 	valid = valid && test_conversion_gdscript_builtin("\tif OS.window_resizable: pass", "\tif (not get_window().unresizable): pass", &ProjectConverter3To4::rename_gdscript_functions, "custom rename", reg_container, false);
 	valid = valid && test_conversion_gdscript_builtin("\tif OS.is_window_resizable(): pass", "\tif (not get_window().unresizable): pass", &ProjectConverter3To4::rename_gdscript_functions, "custom rename", reg_container, false);
@@ -1178,9 +1116,7 @@ bool ProjectConverter3To4::test_array_names() {
 	valid = valid && test_single_array(RenamesMap3To4::enum_renames);
 	valid = valid && test_single_array(RenamesMap3To4::class_renames, true);
 	valid = valid && test_single_array(RenamesMap3To4::gdscript_function_renames, true);
-	valid = valid && test_single_array(RenamesMap3To4::csharp_function_renames, true);
 	valid = valid && test_single_array(RenamesMap3To4::gdscript_properties_renames, true);
-	valid = valid && test_single_array(RenamesMap3To4::csharp_properties_renames, true);
 	valid = valid && test_single_array(RenamesMap3To4::shaders_renames, true);
 	valid = valid && test_single_array(RenamesMap3To4::gdscript_signals_renames);
 	valid = valid && test_single_array(RenamesMap3To4::project_settings_renames);
@@ -2328,159 +2264,6 @@ void ProjectConverter3To4::process_gdscript_line(String &line, const RegExContai
 	if (line.contains("Engine.editor_hint")) {
 		line = line.replace("Engine.editor_hint", "Engine.is_editor_hint()");
 	}
-}
-
-void ProjectConverter3To4::process_csharp_line(String &line, const RegExContainer &reg_container) {
-	line = line.replace("OS.GetWindowSafeArea()", "DisplayServer.ScreenGetUsableRect()");
-
-	// GetTree().SetInputAsHandled() -> GetViewport().SetInputAsHandled()
-	if (line.contains("GetTree().SetInputAsHandled()")) {
-		line = line.replace("GetTree().SetInputAsHandled()", "GetViewport().SetInputAsHandled()");
-	}
-
-	// Fix the simple case of using _UnhandledKeyInput
-	// func _UnhandledKeyInput(InputEventKey @event) -> _UnhandledKeyInput(InputEvent @event)
-	if (line.contains("_UnhandledKeyInput(InputEventKey @event)")) {
-		line = line.replace("_UnhandledKeyInput(InputEventKey @event)", "_UnhandledKeyInput(InputEvent @event)");
-	}
-
-	// -- Connect(,,,things) -> Connect(,Callable(,),things)      Object
-	if (line.contains("Connect(")) {
-		int start = line.find("Connect(");
-		// Protection from disconnect
-		if (start == 0 || line.get(start - 1) != 's') {
-			int end = get_end_parenthesis(line.substr(start)) + 1;
-			if (end > -1) {
-				Vector<String> parts = parse_arguments(line.substr(start, end));
-				if (parts.size() >= 3) {
-					line = line.substr(0, start) + "Connect(" + parts[0] + ", new Callable(" + parts[1] + ", " + parts[2] + ")" + connect_arguments(parts, 3) + ")" + line.substr(end + start);
-				}
-			}
-		}
-	}
-	// -- Disconnect(a,b,c) -> Disconnect(a,Callable(b,c))      Object
-	if (line.contains("Disconnect(")) {
-		int start = line.find("Disconnect(");
-		int end = get_end_parenthesis(line.substr(start)) + 1;
-		if (end > -1) {
-			Vector<String> parts = parse_arguments(line.substr(start, end));
-			if (parts.size() == 3) {
-				line = line.substr(0, start) + "Disconnect(" + parts[0] + ", new Callable(" + parts[1] + ", " + parts[2] + "))" + line.substr(end + start);
-			}
-		}
-	}
-	// -- IsConnected(a,b,c) -> IsConnected(a,Callable(b,c))      Object
-	if (line.contains("IsConnected(")) {
-		int start = line.find("IsConnected(");
-		int end = get_end_parenthesis(line.substr(start)) + 1;
-		if (end > -1) {
-			Vector<String> parts = parse_arguments(line.substr(start, end));
-			if (parts.size() == 3) {
-				line = line.substr(0, start) + "IsConnected(" + parts[0] + ", new Callable(" + parts[1] + ", " + parts[2] + "))" + line.substr(end + start);
-			}
-		}
-	}
-}
-
-void ProjectConverter3To4::rename_csharp_functions(Vector<SourceLine> &source_lines, const RegExContainer &reg_container) {
-	for (SourceLine &source_line : source_lines) {
-		if (source_line.is_comment) {
-			continue;
-		}
-
-		String &line = source_line.line;
-		if (uint64_t(line.length()) <= maximum_line_length) {
-			process_csharp_line(line, reg_container);
-		}
-	}
-}
-
-Vector<String> ProjectConverter3To4::check_for_rename_csharp_functions(Vector<String> &lines, const RegExContainer &reg_container) {
-	int current_line = 1;
-
-	Vector<String> found_renames;
-
-	for (String &line : lines) {
-		if (uint64_t(line.length()) <= maximum_line_length) {
-			String old_line = line;
-			process_csharp_line(line, reg_container);
-			if (old_line != line) {
-				found_renames.append(simple_line_formatter(current_line, old_line, line));
-			}
-		}
-	}
-
-	return found_renames;
-}
-
-void ProjectConverter3To4::rename_csharp_attributes(Vector<SourceLine> &source_lines, const RegExContainer &reg_container) {
-	static String error_message = "The master and mastersync rpc behavior is not officially supported anymore. Try using another keyword or making custom logic using Multiplayer.GetRemoteSenderId()\n";
-
-	for (SourceLine &source_line : source_lines) {
-		if (source_line.is_comment) {
-			continue;
-		}
-
-		String &line = source_line.line;
-		if (uint64_t(line.length()) <= maximum_line_length) {
-			line = reg_container.keyword_csharp_remote.sub(line, "[RPC(MultiplayerAPI.RPCMode.AnyPeer)]", true);
-			line = reg_container.keyword_csharp_remotesync.sub(line, "[RPC(MultiplayerAPI.RPCMode.AnyPeer, CallLocal = true)]", true);
-			line = reg_container.keyword_csharp_puppet.sub(line, "[RPC]", true);
-			line = reg_container.keyword_csharp_puppetsync.sub(line, "[RPC(CallLocal = true)]", true);
-			line = reg_container.keyword_csharp_master.sub(line, error_message + "[RPC]", true);
-			line = reg_container.keyword_csharp_mastersync.sub(line, error_message + "[RPC(CallLocal = true)]", true);
-		}
-	}
-}
-
-Vector<String> ProjectConverter3To4::check_for_rename_csharp_attributes(Vector<String> &lines, const RegExContainer &reg_container) {
-	int current_line = 1;
-
-	Vector<String> found_renames;
-
-	for (String &line : lines) {
-		if (uint64_t(line.length()) <= maximum_line_length) {
-			String old;
-			old = line;
-			line = reg_container.keyword_csharp_remote.sub(line, "[RPC(MultiplayerAPI.RPCMode.AnyPeer)]", true);
-			if (old != line) {
-				found_renames.append(line_formatter(current_line, "[Remote]", "[RPC(MultiplayerAPI.RPCMode.AnyPeer)]", line));
-			}
-
-			old = line;
-			line = reg_container.keyword_csharp_remotesync.sub(line, "[RPC(MultiplayerAPI.RPCMode.AnyPeer, CallLocal = true)]", true);
-			if (old != line) {
-				found_renames.append(line_formatter(current_line, "[RemoteSync]", "[RPC(MultiplayerAPI.RPCMode.AnyPeer, CallLocal = true)]", line));
-			}
-
-			old = line;
-			line = reg_container.keyword_csharp_puppet.sub(line, "[RPC]", true);
-			if (old != line) {
-				found_renames.append(line_formatter(current_line, "[Puppet]", "[RPC]", line));
-			}
-
-			old = line;
-			line = reg_container.keyword_csharp_puppetsync.sub(line, "[RPC(CallLocal = true)]", true);
-			if (old != line) {
-				found_renames.append(line_formatter(current_line, "[PuppetSync]", "[RPC(CallLocal = true)]", line));
-			}
-
-			old = line;
-			line = reg_container.keyword_csharp_master.sub(line, "[RPC]", true);
-			if (old != line) {
-				found_renames.append(line_formatter(current_line, "[Master]", "[RPC]", line));
-			}
-
-			old = line;
-			line = reg_container.keyword_csharp_mastersync.sub(line, "[RPC(CallLocal = true)]", true);
-			if (old != line) {
-				found_renames.append(line_formatter(current_line, "[MasterSync]", "[RPC(CallLocal = true)]", line));
-			}
-		}
-		current_line++;
-	}
-
-	return found_renames;
 }
 
 _FORCE_INLINE_ static String builtin_escape(const String &p_str, bool p_builtin) {

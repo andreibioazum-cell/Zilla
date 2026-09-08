@@ -18,7 +18,6 @@ SConscript("navigation_2d/SCsub")
 SConscript("physics_2d/SCsub")
 SConscript("navigation_3d/SCsub")
 SConscript("physics_3d/SCsub")
-SConscript("xr/SCsub")
 
 lib = env.add_library("servers", env.servers_sources)
 

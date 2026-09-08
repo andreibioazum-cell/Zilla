@@ -336,14 +336,9 @@
 			<description>
 				Emitted when a tab's close button is pressed or, if [member close_with_middle_mouse] is [code]true[/code], when middle-clicking on a tab.
 				[b]Note:[/b] Tabs are not removed automatically; this behavior needs to be coded manually. For example:
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				$TabBar.tab_close_pressed.connect($TabBar.remove_tab)
-				[/gdscript]
-				[csharp]
-				GetNode&lt;TabBar&gt;("TabBar").TabClosePressed += GetNode&lt;TabBar&gt;("TabBar").RemoveTab;
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 			</description>
 		</signal>
 		<signal name="tab_hovered">

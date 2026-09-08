@@ -5,26 +5,14 @@
 	</brief_description>
 	<description>
 		The fuzzy search algorithm is designed to find target strings which mostly match a query string while allowing for breaks, typos, and out of order matches.
-		[codeblocks]
-		[gdscript]
+		[codeblock]
 		var items := ["Potion of Healing", "Greater Health Potion", "Poison Vial"]
 		var fuzzy := FuzzySearch.new()
 
 		for result in fuzzy.search_all("health potion", items):
 			# Prints "Greater Health Potion", "Potion of Healing"
 			print(result.target)
-		[/gdscript]
-		[csharp]
-		string[] items = ["Potion of Healing", "Greater Health Potion", "Poison Vial"];
-		FuzzySearch fuzzy = new();
-
-		foreach (var result in fuzzy.SearchAll("health potion", items))
-		{
-			// Prints "Greater Health Potion", "Potion of Healing"
-			GD.Print(result.Target);
-		}
-		[/csharp]
-		[/codeblocks]
+		[/codeblock]
 	</description>
 	<tutorials>
 	</tutorials>

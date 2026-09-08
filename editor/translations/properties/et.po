@@ -1898,18 +1898,6 @@ msgstr "Peida Kodu Indikaator"
 msgid "Hide Status Bar"
 msgstr "Peida Olekuriba"
 
-msgid "XR"
-msgstr "Laiendatud reaalsus"
-
-msgid "OpenXR"
-msgstr "OpenXR"
-
-msgid "View Configuration"
-msgstr "Vaate Konfiguratsioon"
-
-msgid "Submit Depth Buffer"
-msgstr "Esita Sügavuspuhver"
-
 msgid "Boot Splash"
 msgstr "Alglaadimise Ekraan"
 
@@ -1942,12 +1930,6 @@ msgstr "Pilt"
 
 msgid "Minimum Display Time"
 msgstr "Minimaalne Näitamise Aeg"
-
-msgid "Dotnet"
-msgstr "Dotnet"
-
-msgid "Project"
-msgstr "Projekt"
 
 msgid "Time"
 msgstr "Aeg"
@@ -2192,12 +2174,6 @@ msgstr "Ultra Kvaliteediga Sond Kiirte Arv"
 msgid "Max Rays per Probe Pass"
 msgstr "Maksimaalne Kiirte Arv Ühe Passi Kohta"
 
-msgid "Eye Height"
-msgstr "Silma Kõrgus"
-
-msgid "IOD"
-msgstr "IOD"
-
 msgid "BPM"
 msgstr "BPM"
 
@@ -2300,33 +2276,6 @@ msgstr "3D Ruumis"
 msgid "As Normal Map"
 msgstr "Normaalkaardina"
 
-msgid "Localized Name"
-msgstr "Lokaliseeritud Nimi"
-
-msgid "Action Type"
-msgstr "Tegevuse Tüüp"
-
-msgid "Toplevel Paths"
-msgstr "Pealiskihi Teed"
-
-msgid "Interaction Profile Path"
-msgstr "Interaktsiooniprofiili Tee"
-
-msgid "Display Refresh Rate"
-msgstr "Ekraani Värskendussagedus"
-
-msgid "Render Target Size Multiplier"
-msgstr "Renderduse Sihthulga Kordistaja"
-
-msgid "Hand"
-msgstr "Käsi"
-
-msgid "Motion Range"
-msgstr "Liikumisvahemik"
-
-msgid "Hand Skeleton"
-msgstr "Käe Skelett"
-
 msgid "Names"
 msgstr "Nimed"
 
@@ -2390,15 +2339,6 @@ msgstr "Kätluse Ajalõpp"
 msgid "Max Queued Packets"
 msgstr "Maksimaalne Järjekorda Seatud Paketid"
 
-msgid "Session Mode"
-msgstr "Seansirežiim"
-
-msgid "Required Features"
-msgstr "Nõutavad Funktsioonid"
-
-msgid "Optional Features"
-msgstr "Valikulised Funktsioonid"
-
 msgid "Force System User"
 msgstr "Sunni Süsteemi Kasutaja"
 
@@ -2458,12 +2398,6 @@ msgstr "Graafika"
 
 msgid "OpenGL Debug"
 msgstr "OpenGL Silumine"
-
-msgid "XR Features"
-msgstr "XR Funktsionaalsus"
-
-msgid "XR Mode"
-msgstr "XR Režiim"
 
 msgid "Immersive Mode"
 msgstr "Kaasahaarav Režiim"
@@ -3040,15 +2974,3 @@ msgstr "Maks Valguste Arv Objekti Kohta"
 
 msgid "Cull"
 msgstr "Väljalõikama"
-
-msgid "Is Primary"
-msgstr "On Peamine"
-
-msgid "Play Area Mode"
-msgstr "Mängu Ala Režiim"
-
-msgid "World Origin"
-msgstr "Maailma Alguspunkt"
-
-msgid "Primary Interface"
-msgstr "Peamine Kasutajaliides"

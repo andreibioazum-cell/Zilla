@@ -2778,9 +2778,6 @@ msgstr "도움말 소스 글꼴 크기"
 msgid "Help Title Font Size"
 msgstr "도움말 제목 글꼴 크기"
 
-msgid "Class Reference Examples"
-msgstr "클래스 참조 예제"
-
 msgid "Sort Functions Alphabetically"
 msgstr "사전 순으로 함수 정렬"
 
@@ -3546,119 +3543,11 @@ msgstr "상태 표시줄 숨기기"
 msgid "Suppress UI Gesture"
 msgstr "UI 제스쳐 막기"
 
-msgid "XR"
-msgstr "XR"
-
-msgid "OpenXR"
-msgstr "OpenXR"
-
-msgid "Target API Version"
-msgstr "대상 API 버전"
-
-msgid "Default Action Map"
-msgstr "디폴트 액션 맵"
-
-msgid "Form Factor"
-msgstr "폼 팩터"
-
-msgid "View Configuration"
-msgstr "보기 구성"
-
-msgid "Reference Space"
-msgstr "레퍼런스 공간"
-
-msgid "Environment Blend Mode"
-msgstr "환경 블렌드 모드"
-
-msgid "Foveation Level"
-msgstr "포베이션 수준"
-
-msgid "Foveation Dynamic"
-msgstr "포베이션 동적"
-
-msgid "Foveation Eye Tracked"
-msgstr "포베이션 눈 추적"
-
-msgid "Foveation with Subsampled Images"
-msgstr "부분 샘플링된 이미지로 포베이션"
-
-msgid "Submit Depth Buffer"
-msgstr "깊이 버퍼 제출"
-
-msgid "Startup Alert"
-msgstr "시작 알림"
-
-msgid "Extensions"
-msgstr "확장 기능"
-
-msgid "Debug Utils"
-msgstr "디버그 유틸"
-
-msgid "Debug Message Types"
-msgstr "디버그 메시지 유형"
-
-msgid "Frame Synthesis"
-msgstr "프레임 합성"
-
-msgid "Hand Tracking"
-msgstr "손 추적"
-
-msgid "Hand Tracking Unobstructed Data Source"
-msgstr "손 추적 방해받지 않는 데이터 소스"
-
-msgid "Hand Tracking Controller Data Source"
-msgstr "손 추적 컨트롤러 데이터 소스"
-
-msgid "Hand Interaction Profile"
-msgstr "손 상호작용 프로필"
-
-msgid "Spatial Entity"
-msgstr "공간 실체"
-
-msgid "Enable Spatial Anchors"
-msgstr "공간 앵커 활성화"
-
-msgid "Enable Persistent Anchors"
-msgstr "영구 앵커 활성화"
-
-msgid "Enable Builtin Anchor Detection"
-msgstr "내장 앵커 감지 활성화"
-
-msgid "Enable Plane Tracking"
-msgstr "평면 추적 활성화"
-
-msgid "Enable Builtin Plane Detection"
-msgstr "내장 평면 감지 활성화"
-
 msgid "Enable Marker Tracking"
 msgstr "마커 추적 활성화"
 
 msgid "Enable Builtin Marker Tracking"
 msgstr "내장 마커 추적 활성화"
-
-msgid "Aruco Dict"
-msgstr "아루코 딕셔너리"
-
-msgid "April Tag Dict"
-msgstr "에이프릴 태그 딕셔너리"
-
-msgid "Eye Gaze Interaction"
-msgstr "눈 시선 상호작용"
-
-msgid "Render Model"
-msgstr "렌더 모델"
-
-msgid "User Presence"
-msgstr "사용자 존재 여부"
-
-msgid "Binding Modifiers"
-msgstr "바인딩 모디파이어"
-
-msgid "Analog Threshold"
-msgstr "아날로그 역치값"
-
-msgid "Dpad Binding"
-msgstr "십자 패드 바인딩"
 
 msgid "Boot Splash"
 msgstr "부트 스플래시"
@@ -3719,21 +3608,6 @@ msgstr "이미지"
 
 msgid "Minimum Display Time"
 msgstr "최소 표시 시간"
-
-msgid "Dotnet"
-msgstr "닷넷"
-
-msgid "Project"
-msgstr "프로젝트"
-
-msgid "Assembly Name"
-msgstr "어셈블리 이름"
-
-msgid "Solution Directory"
-msgstr "솔루션 디렉터리"
-
-msgid "Assembly Reload Attempts"
-msgstr "어셈블리 다시 불러오기 시도 횟수"
 
 msgid "Time"
 msgstr "시간"
@@ -4647,36 +4521,6 @@ msgstr "노이즈 감소"
 msgid "Denoiser"
 msgstr "디노이저"
 
-msgid "Eye Height"
-msgstr "눈 높이"
-
-msgid "IOD"
-msgstr "IOD"
-
-msgid "Display Width"
-msgstr "디스플레이 너비"
-
-msgid "Display to Lens"
-msgstr "렌즈에 표시"
-
-msgid "Offset Rect"
-msgstr "오프셋 직사각형"
-
-msgid "Oversample"
-msgstr "오버샘플"
-
-msgid "K1"
-msgstr "K1"
-
-msgid "K2"
-msgstr "K2"
-
-msgid "Vulkan VRS"
-msgstr "Vulkan VRS"
-
-msgid "Min Radius"
-msgstr "최소 반경"
-
 msgid "BPM"
 msgstr "BPM"
 
@@ -4815,200 +4659,11 @@ msgstr "틈 없는 블렌드 스커트"
 msgid "Bump Strength"
 msgstr "범프 강도"
 
-msgid "Localized Name"
-msgstr "현지화된 이름"
-
-msgid "Action Type"
-msgstr "액션 유형"
-
-msgid "Toplevel Paths"
-msgstr "최상위 경로"
-
-msgid "Action Sets"
-msgstr "액션 세트"
-
-msgid "Interaction Profiles"
-msgstr "상호작용 프로필"
-
-msgid "Actions"
-msgstr "액션"
-
-msgid "Binding Path"
-msgstr "바이딩 경로"
-
-msgid "Interaction Profile Path"
-msgstr "상호작용 프로필 경로"
-
-msgid "Bindings"
-msgstr "바인딩"
-
-msgid "Runtime Paths"
-msgstr "런타임 경로"
-
-msgid "Action Set"
-msgstr "액션 세트"
-
-msgid "Input Path"
-msgstr "입력 경로"
-
-msgid "Threshold Released"
-msgstr "역치값 놓음"
-
-msgid "Center Region"
-msgstr "가운데 영역"
-
-msgid "Wedge Angle"
-msgstr "웨지 각"
-
-msgid "Is Sticky"
-msgstr "고정 여부"
-
-msgid "On Haptic"
-msgstr "햅틱 켜기"
-
-msgid "Off Haptic"
-msgstr "햅틱 끄기"
-
-msgid "Relax Frame Interval"
-msgstr "이완 프레임 간격"
-
-msgid "On Threshold"
-msgstr "역치값 켜기"
-
-msgid "Off Threshold"
-msgstr "역치값 끄기"
-
-msgid "UUID"
-msgstr "UUID"
-
-msgid "Entity"
-msgstr "실체"
-
-msgid "Spatial Tracking State"
-msgstr "공간 추적 상태"
-
-msgid "April Dict"
-msgstr "에이프릴 딕셔너리"
-
-msgid "Bounds Size"
-msgstr "경계선 크기"
-
-msgid "Marker Type"
-msgstr "마커 유형"
-
-msgid "Marker ID"
-msgstr "마커 ID"
-
-msgid "Plane Alignment"
-msgstr "평면 정렬"
-
-msgid "Plane Label"
-msgstr "평면 레이블"
-
-msgid "Display Refresh Rate"
-msgstr "디스플레이 주사율"
-
-msgid "Render Target Size Multiplier"
-msgstr "렌더 타겟 크기 배수"
-
 msgid "Next"
 msgstr "다음"
 
-msgid "Layer Viewport"
-msgstr "레이어 뷰포트"
-
-msgid "Use Android Surface"
-msgstr "Android 서피스 사용"
-
-msgid "Protected Content"
-msgstr "보호된 내용"
-
-msgid "Android Surface Size"
-msgstr "Android 서피스 경로"
-
-msgid "Sort Order"
-msgstr "정렬 순서"
-
-msgid "Alpha Blend"
-msgstr "알파 블렌드"
-
-msgid "Enable Hole Punch"
-msgstr "구멍뚫기 활성화"
-
-msgid "Eye Visibility"
-msgstr "눈 가시성"
-
-msgid "Swapchain State"
-msgstr "스왑체인 상태"
-
-msgid "Mipmap Mode"
-msgstr "밉맵 모드"
-
-msgid "Horizontal Wrap"
-msgstr "가로 랩"
-
-msgid "Vertical Wrap"
-msgstr "세로 랩"
-
-msgid "Red Swizzle"
-msgstr "빨강 재배열"
-
-msgid "Green Swizzle"
-msgstr "초록 재배열"
-
-msgid "Blue Swizzle"
-msgstr "파랑 재배열"
-
-msgid "Alpha Swizzle"
-msgstr "알파 재배열"
-
-msgid "Max Anisotropy"
-msgstr "최대 이방성"
-
 msgid "Border Color"
 msgstr "테두리 색상"
-
-msgid "Aspect Ratio"
-msgstr "화면 비율"
-
-msgid "Central Angle"
-msgstr "중앙 각"
-
-msgid "Fallback Segments"
-msgstr "폴백 세그먼트"
-
-msgid "Central Horizontal Angle"
-msgstr "중앙 가로 각"
-
-msgid "Upper Vertical Angle"
-msgstr "상단 세로 각"
-
-msgid "Lower Vertical Angle"
-msgstr "하단 세로 각"
-
-msgid "Quad Size"
-msgstr "사변형 크기"
-
-msgid "Hand"
-msgstr "손"
-
-msgid "Motion Range"
-msgstr "모션 범위"
-
-msgid "Hand Skeleton"
-msgstr "손 스켈레톤"
-
-msgid "Skeleton Rig"
-msgstr "스켈레톤 리그"
-
-msgid "Bone Update"
-msgstr "본 업데이트"
-
-msgid "Tracker"
-msgstr "트래커"
-
-msgid "Make Local to Pose"
-msgstr "로컬에서 포즈로 만들기"
 
 msgid "Subject"
 msgstr "주제"
@@ -5199,27 +4854,6 @@ msgstr "큐 내 최대 패킷 수"
 msgid "Heartbeat Interval"
 msgstr "심박 간격"
 
-msgid "Session Mode"
-msgstr "세션 모드"
-
-msgid "Required Features"
-msgstr "필수적 기능"
-
-msgid "Optional Features"
-msgstr "선택적 기능"
-
-msgid "Requested Reference Space Types"
-msgstr "요청된 레퍼런스 공간 유형"
-
-msgid "Reference Space Type"
-msgstr "레퍼런스 공간 유형"
-
-msgid "Enabled Features"
-msgstr "활성화된 기능"
-
-msgid "Visibility State"
-msgstr "가시성 상태"
-
 msgid "Debug Keystore"
 msgstr "디버그 키스토어"
 
@@ -5372,12 +5006,6 @@ msgstr "그래픽"
 
 msgid "OpenGL Debug"
 msgstr "OpenGL 디버그"
-
-msgid "XR Features"
-msgstr "XR 기능"
-
-msgid "XR Mode"
-msgstr "XR 모드"
 
 msgid "Gesture"
 msgstr "제스처"
@@ -5726,9 +5354,6 @@ msgstr "이동식 볼륨 사용법 설명"
 
 msgid "Removable Volumes Usage Description Localized"
 msgstr "이동식 볼륨 사용법 설명 현지화됨"
-
-msgid "Min visionOS Version"
-msgstr "최소 visionOS 버전"
 
 msgid "Web"
 msgstr "웹"
@@ -7862,26 +7487,8 @@ msgstr "전파"
 msgid "Use Two Bounces"
 msgstr "두 바운스 사용"
 
-msgid "Body Tracker"
-msgstr "바디 트래커"
-
-msgid "Body Update"
-msgstr "바디 업데이트"
-
-msgid "Face Tracker"
-msgstr "페이스 트래커"
-
-msgid "Hand Tracker"
-msgstr "헤드 트래커"
-
 msgid "Pose"
 msgstr "자세"
-
-msgid "Show When Tracked"
-msgstr "트랙 시 보이기"
-
-msgid "World Scale"
-msgstr "세계 스케일"
 
 msgid "Play Mode"
 msgstr "재생 모드"
@@ -9419,9 +9026,6 @@ msgstr "뷰포트 경로"
 
 msgid "Disable 3D"
 msgstr "3D 비활성화"
-
-msgid "Use XR"
-msgstr "XR 사용"
 
 msgid "Own World 3D"
 msgstr "자신의 세계 3D"
@@ -12780,9 +12384,6 @@ msgstr "최대 렌더링 가능 조명"
 msgid "Max Lights per Object"
 msgstr "오브젝트 당 최대 조명"
 
-msgid "Shaders"
-msgstr "셰이더"
-
 msgid "Shader Language"
 msgstr "셰이더 언어"
 
@@ -12932,48 +12533,3 @@ msgstr "텍스트 서버 데이터 포함"
 
 msgid "Line Breaking Strictness"
 msgstr "줄 바꿈 엄격함"
-
-msgid "Has Tracking Data"
-msgstr "추적 데이터 가짐"
-
-msgid "Body Flags"
-msgstr "바디 플래그"
-
-msgid "Blend Shapes"
-msgstr "블렌드 모양"
-
-msgid "Hand Tracking Source"
-msgstr "손 트래킹 소스"
-
-msgid "Is Primary"
-msgstr "주요 여부"
-
-msgid "Play Area Mode"
-msgstr "플레이 영역 모드"
-
-msgid "AR"
-msgstr "AR"
-
-msgid "Is Anchor Detection Enabled"
-msgstr "앵커 감지가 활성화되어 있는지 여부"
-
-msgid "Tracking Confidence"
-msgstr "추적 신뢰도"
-
-msgid "World Origin"
-msgstr "세계 원점"
-
-msgid "Camera Locked to Origin"
-msgstr "원점으로 카메라 잠금"
-
-msgid "Primary Interface"
-msgstr "주요 인터페이스"
-
-msgid "VRS Min Radius"
-msgstr "VRS 최소 반경"
-
-msgid "VRS Strength"
-msgstr "VRS 강도"
-
-msgid "VRS Render Region"
-msgstr "VRS 렌더 영역"

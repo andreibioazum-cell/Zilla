@@ -257,10 +257,10 @@ internal class GodotNativeBridge(private val godot: Godot) {
 
 	/**
 	 * Used by the native code (java_godot_wrapper.h) to access the input fallback mapping.
-	 * @return The input fallback mapping for the current XR mode.
+	 * @return The input fallback mapping.
 	 */
 	private fun getInputFallbackMapping(): String? {
-		return godot.xrMode.inputFallbackMapping
+		return "Default Android Gamepad"
 	}
 
 	private fun initInputDevices() {

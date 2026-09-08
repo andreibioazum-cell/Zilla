@@ -5284,18 +5284,6 @@ msgstr "পরোক্ষ আলো একত্রিত করুন %d%%"
 msgid "Integrating light probes %d%%"
 msgstr "হালকা প্রোবগুলিকে একীভূত করা হচ্ছে %d%%"
 
-msgid "Class name must be a valid identifier"
-msgstr "ক্লাসের নাম অবশ্যই একটি বৈধ শনাক্তকারী হতে হবে"
-
-msgid "Not enough bytes for decoding bytes, or invalid format."
-msgstr "ডিকোডিং বাইট, বা অবৈধ বিন্যাসের জন্য পর্যাপ্ত পরিমাণে বাইট নেই।"
-
-msgid "Failed to load .NET runtime"
-msgstr ".NET রানটাইম লোড করতে ব্যর্থ হয়েছে"
-
-msgid ".NET assemblies not found"
-msgstr ".NET সমাবেশ পাওয়া যায়নি"
-
 msgid "%s/s"
 msgstr "%s/সে"
 
@@ -5327,30 +5315,6 @@ msgid "A NavigationMesh resource must be set or created for this node to work."
 msgstr ""
 "এই নোডটি সফল্ভাবে কাজ করার জন্য একটি NavigationMesh রিসোর্স নির্ধারন বা তৈরি করতে "
 "হবে।"
-
-msgid "Error loading %s: %s."
-msgstr "লোড করার সময় ত্রুটি %s: %s।"
-
-msgid "Error saving file %s: %s"
-msgstr "ফাইল সংরক্ষণে ত্রুটি%s: %s"
-
-msgid "OpenXR Action map:"
-msgstr "OpenXR একশন মানচিত্র:"
-
-msgid "Add an action set."
-msgstr "নতুন ইনপুট অ্যাকশন ইভেন্ট সেট করুন।"
-
-msgid "Add action."
-msgstr "একশন যোগ করুন।"
-
-msgid "Remove action set."
-msgstr "একশন সেট অপসারণ করুন।"
-
-msgid "Select an interaction profile"
-msgstr "ইন্টারেকশন প্রোফাইল নির্বাচন করুন"
-
-msgid "Choose an XR runtime."
-msgstr "একটি XR রানটাইম চয়ন করুন।"
 
 msgid "Add Input"
 msgstr "ইনপুট যোগ করুন"
@@ -5727,9 +5691,6 @@ msgstr "প্রোব তৈরি করা হচ্ছে"
 
 msgid "Preparing Lightmapper"
 msgstr "লাইটম্যাপার প্রস্তুত হচ্ছে"
-
-msgid "No pose is set."
-msgstr "কোনো পোজ সেট করা নেই।"
 
 msgid "No playback resource set at path: %s."
 msgstr "পাথে কোন প্লেব্যাক রিসোর্স সেট করা নেই: %s।"

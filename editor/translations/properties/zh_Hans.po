@@ -2821,9 +2821,6 @@ msgstr "帮助源码字体大小"
 msgid "Help Title Font Size"
 msgstr "帮助标题字体大小"
 
-msgid "Class Reference Examples"
-msgstr "类参考示例"
-
 msgid "Sort Functions Alphabetically"
 msgstr "按字母序排列函数"
 
@@ -3589,119 +3586,11 @@ msgstr "隐藏状态栏"
 msgid "Suppress UI Gesture"
 msgstr "抑制 UI 手势"
 
-msgid "XR"
-msgstr "XR"
-
-msgid "OpenXR"
-msgstr "OpenXR"
-
-msgid "Target API Version"
-msgstr "目标API版本"
-
-msgid "Default Action Map"
-msgstr "默认动作映射"
-
-msgid "Form Factor"
-msgstr "构成因素"
-
-msgid "View Configuration"
-msgstr "视图配置"
-
-msgid "Reference Space"
-msgstr "参照空间"
-
-msgid "Environment Blend Mode"
-msgstr "环境混合模式"
-
-msgid "Foveation Level"
-msgstr "注视点级别"
-
-msgid "Foveation Dynamic"
-msgstr "动态注视点"
-
-msgid "Foveation Eye Tracked"
-msgstr "注视点眼球追踪"
-
-msgid "Foveation with Subsampled Images"
-msgstr "子采样图像注视点"
-
-msgid "Submit Depth Buffer"
-msgstr "提交深度缓冲区"
-
-msgid "Startup Alert"
-msgstr "启动警报"
-
-msgid "Extensions"
-msgstr "扩展"
-
-msgid "Debug Utils"
-msgstr "调试工具"
-
-msgid "Debug Message Types"
-msgstr "调试消息类型"
-
-msgid "Frame Synthesis"
-msgstr "帧合成"
-
-msgid "Hand Tracking"
-msgstr "手部跟踪"
-
-msgid "Hand Tracking Unobstructed Data Source"
-msgstr "手部跟踪实际数据源"
-
-msgid "Hand Tracking Controller Data Source"
-msgstr "手部跟踪控制器数据源"
-
-msgid "Hand Interaction Profile"
-msgstr "手部交互配置"
-
-msgid "Spatial Entity"
-msgstr "空间实体"
-
-msgid "Enable Spatial Anchors"
-msgstr "启用空间锚点"
-
-msgid "Enable Persistent Anchors"
-msgstr "启用持久锚点"
-
-msgid "Enable Builtin Anchor Detection"
-msgstr "启用内置锚点检测"
-
-msgid "Enable Plane Tracking"
-msgstr "启用平面跟踪"
-
-msgid "Enable Builtin Plane Detection"
-msgstr "启用内置平面检测"
-
 msgid "Enable Marker Tracking"
 msgstr "启用标记跟踪"
 
 msgid "Enable Builtin Marker Tracking"
 msgstr "启用内置标记跟踪"
-
-msgid "Aruco Dict"
-msgstr "Aruco 字典"
-
-msgid "April Tag Dict"
-msgstr "April Tag 字典"
-
-msgid "Eye Gaze Interaction"
-msgstr "眼动交互"
-
-msgid "Render Model"
-msgstr "渲染模型"
-
-msgid "User Presence"
-msgstr "用户在位"
-
-msgid "Binding Modifiers"
-msgstr "绑定修改器"
-
-msgid "Analog Threshold"
-msgstr "模拟阈值"
-
-msgid "Dpad Binding"
-msgstr "十字键绑定"
 
 msgid "Boot Splash"
 msgstr "启动画面"
@@ -3762,21 +3651,6 @@ msgstr "图像"
 
 msgid "Minimum Display Time"
 msgstr "最短显示时间"
-
-msgid "Dotnet"
-msgstr "Dotnet"
-
-msgid "Project"
-msgstr "项目"
-
-msgid "Assembly Name"
-msgstr "程序集名称"
-
-msgid "Solution Directory"
-msgstr "解决方案目录"
-
-msgid "Assembly Reload Attempts"
-msgstr "尝试重新加载程序集"
 
 msgid "Time"
 msgstr "时间"
@@ -4690,36 +4564,6 @@ msgstr "降噪"
 msgid "Denoiser"
 msgstr "降噪器"
 
-msgid "Eye Height"
-msgstr "眼睛高度"
-
-msgid "IOD"
-msgstr "IOD"
-
-msgid "Display Width"
-msgstr "显示宽度"
-
-msgid "Display to Lens"
-msgstr "显示器至镜头"
-
-msgid "Offset Rect"
-msgstr "偏移矩形"
-
-msgid "Oversample"
-msgstr "过采样"
-
-msgid "K1"
-msgstr "K1"
-
-msgid "K2"
-msgstr "K2"
-
-msgid "Vulkan VRS"
-msgstr "Vulkan VRS"
-
-msgid "Min Radius"
-msgstr "最小半径"
-
 msgid "BPM"
 msgstr "BPM"
 
@@ -4858,200 +4702,11 @@ msgstr "无缝混边"
 msgid "Bump Strength"
 msgstr "凹凸强度"
 
-msgid "Localized Name"
-msgstr "本地化名称"
-
-msgid "Action Type"
-msgstr "动作类型"
-
-msgid "Toplevel Paths"
-msgstr "顶层路径"
-
-msgid "Action Sets"
-msgstr "动作集"
-
-msgid "Interaction Profiles"
-msgstr "交互配置"
-
-msgid "Actions"
-msgstr "动作"
-
-msgid "Binding Path"
-msgstr "绑定路径"
-
-msgid "Interaction Profile Path"
-msgstr "交互配置路径"
-
-msgid "Bindings"
-msgstr "绑定"
-
-msgid "Runtime Paths"
-msgstr "运行时路径"
-
-msgid "Action Set"
-msgstr "动作集"
-
-msgid "Input Path"
-msgstr "输入路径"
-
-msgid "Threshold Released"
-msgstr "松开阈值"
-
-msgid "Center Region"
-msgstr "中央区域"
-
-msgid "Wedge Angle"
-msgstr "楔形角度"
-
-msgid "Is Sticky"
-msgstr "粘性"
-
-msgid "On Haptic"
-msgstr "启用触觉反馈"
-
-msgid "Off Haptic"
-msgstr "关闭触觉反馈"
-
-msgid "Relax Frame Interval"
-msgstr "放宽帧间隔"
-
-msgid "On Threshold"
-msgstr "打开阈值"
-
-msgid "Off Threshold"
-msgstr "关闭阈值"
-
-msgid "UUID"
-msgstr "UUID"
-
-msgid "Entity"
-msgstr "实体"
-
-msgid "Spatial Tracking State"
-msgstr "空间跟踪状态"
-
-msgid "April Dict"
-msgstr "April 字典"
-
-msgid "Bounds Size"
-msgstr "边界大小"
-
-msgid "Marker Type"
-msgstr "标记类型"
-
-msgid "Marker ID"
-msgstr "标记 ID"
-
-msgid "Plane Alignment"
-msgstr "平面对齐"
-
-msgid "Plane Label"
-msgstr "平面标签"
-
-msgid "Display Refresh Rate"
-msgstr "显示刷新率"
-
-msgid "Render Target Size Multiplier"
-msgstr "渲染目标大小倍数"
-
 msgid "Next"
 msgstr "下一个"
 
-msgid "Layer Viewport"
-msgstr "层视口"
-
-msgid "Use Android Surface"
-msgstr "使用 Android 表面"
-
-msgid "Protected Content"
-msgstr "受保护内容"
-
-msgid "Android Surface Size"
-msgstr "Android 表面大小"
-
-msgid "Sort Order"
-msgstr "排序方式"
-
-msgid "Alpha Blend"
-msgstr "Alpha 混合"
-
-msgid "Enable Hole Punch"
-msgstr "启用打洞"
-
-msgid "Eye Visibility"
-msgstr "眼睛可见性"
-
-msgid "Swapchain State"
-msgstr "交换链状态"
-
-msgid "Mipmap Mode"
-msgstr "Mipmap 模式"
-
-msgid "Horizontal Wrap"
-msgstr "水平环绕"
-
-msgid "Vertical Wrap"
-msgstr "垂直环绕"
-
-msgid "Red Swizzle"
-msgstr "红色重排"
-
-msgid "Green Swizzle"
-msgstr "绿色重排"
-
-msgid "Blue Swizzle"
-msgstr "蓝色重排"
-
-msgid "Alpha Swizzle"
-msgstr "Alpha 重排"
-
-msgid "Max Anisotropy"
-msgstr "最大各向异性"
-
 msgid "Border Color"
 msgstr "边框颜色"
-
-msgid "Aspect Ratio"
-msgstr "纵横比"
-
-msgid "Central Angle"
-msgstr "中央角"
-
-msgid "Fallback Segments"
-msgstr "回退段数"
-
-msgid "Central Horizontal Angle"
-msgstr "中央水平角"
-
-msgid "Upper Vertical Angle"
-msgstr "上端垂直角"
-
-msgid "Lower Vertical Angle"
-msgstr "下端垂直角"
-
-msgid "Quad Size"
-msgstr "四边形大小"
-
-msgid "Hand"
-msgstr "手别"
-
-msgid "Motion Range"
-msgstr "运动范围"
-
-msgid "Hand Skeleton"
-msgstr "手骨架"
-
-msgid "Skeleton Rig"
-msgstr "骨架系统"
-
-msgid "Bone Update"
-msgstr "骨骼更新"
-
-msgid "Tracker"
-msgstr "追踪器"
-
-msgid "Make Local to Pose"
-msgstr "本地化到姿势"
 
 msgid "Subject"
 msgstr "对象"
@@ -5242,27 +4897,6 @@ msgstr "最大排队数据包数"
 msgid "Heartbeat Interval"
 msgstr "心跳间隔"
 
-msgid "Session Mode"
-msgstr "会话模式"
-
-msgid "Required Features"
-msgstr "必要特性"
-
-msgid "Optional Features"
-msgstr "可选特性"
-
-msgid "Requested Reference Space Types"
-msgstr "请求参照空间类型"
-
-msgid "Reference Space Type"
-msgstr "参照空间类型"
-
-msgid "Enabled Features"
-msgstr "启用特性"
-
-msgid "Visibility State"
-msgstr "可见状态"
-
 msgid "Debug Keystore"
 msgstr "调试密钥库"
 
@@ -5415,12 +5049,6 @@ msgstr "图形"
 
 msgid "OpenGL Debug"
 msgstr "OpenGL 调试"
-
-msgid "XR Features"
-msgstr "XR 特性"
-
-msgid "XR Mode"
-msgstr "XR 模式"
 
 msgid "Gesture"
 msgstr "手势"
@@ -5769,9 +5397,6 @@ msgstr "可移除卷使用描述"
 
 msgid "Removable Volumes Usage Description Localized"
 msgstr "可移除卷使用描述本地化"
-
-msgid "Min visionOS Version"
-msgstr "最低 visionOS 版本"
 
 msgid "Web"
 msgstr "Web"
@@ -7905,26 +7530,8 @@ msgstr "传播"
 msgid "Use Two Bounces"
 msgstr "使用二次反弹"
 
-msgid "Body Tracker"
-msgstr "身体追踪器"
-
-msgid "Body Update"
-msgstr "身体更新"
-
-msgid "Face Tracker"
-msgstr "面部追踪器"
-
-msgid "Hand Tracker"
-msgstr "手部追踪"
-
 msgid "Pose"
 msgstr "姿势"
-
-msgid "Show When Tracked"
-msgstr "追踪时显示"
-
-msgid "World Scale"
-msgstr "世界缩放"
 
 msgid "Play Mode"
 msgstr "播放模式"
@@ -9462,9 +9069,6 @@ msgstr "Viewport 路径"
 
 msgid "Disable 3D"
 msgstr "禁用 3D"
-
-msgid "Use XR"
-msgstr "使用 XR"
 
 msgid "Own World 3D"
 msgstr "自有 3D 世界"
@@ -12823,9 +12427,6 @@ msgstr "最大可渲染光源数"
 msgid "Max Lights per Object"
 msgstr "单对象最大光源数"
 
-msgid "Shaders"
-msgstr "着色器"
-
 msgid "Shader Language"
 msgstr "着色器语言"
 
@@ -12975,48 +12576,3 @@ msgstr "包括文本服务器数据"
 
 msgid "Line Breaking Strictness"
 msgstr "断行严格度"
-
-msgid "Has Tracking Data"
-msgstr "有跟踪数据"
-
-msgid "Body Flags"
-msgstr "身体标志"
-
-msgid "Blend Shapes"
-msgstr "混合形状"
-
-msgid "Hand Tracking Source"
-msgstr "手部追踪源"
-
-msgid "Is Primary"
-msgstr "是否主要"
-
-msgid "Play Area Mode"
-msgstr "游玩区模式"
-
-msgid "AR"
-msgstr "AR"
-
-msgid "Is Anchor Detection Enabled"
-msgstr "锚点检测是否启用"
-
-msgid "Tracking Confidence"
-msgstr "追踪置信度"
-
-msgid "World Origin"
-msgstr "世界原点"
-
-msgid "Camera Locked to Origin"
-msgstr "相机锁定到原点"
-
-msgid "Primary Interface"
-msgstr "主接口"
-
-msgid "VRS Min Radius"
-msgstr "VRS 最小半径"
-
-msgid "VRS Strength"
-msgstr "VRS 强度"
-
-msgid "VRS Render Region"
-msgstr "VRS 渲染区域"

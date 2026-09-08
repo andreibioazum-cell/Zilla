@@ -49,8 +49,7 @@
 			<description>
 				Emitted for each new node created during drawing.
 				[b]Example:[/b]
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				@tool
 				extends EditorPlugin
 
@@ -60,8 +59,7 @@
 				func _on_scene_painted(node: Node2D):
 					# Set random rotation when drawing nodes.
 					node.rotation = randf_range(0, 360)
-				[/gdscript]
-				[/codeblocks]
+				[/codeblock]
 			</description>
 		</signal>
 	</signals>

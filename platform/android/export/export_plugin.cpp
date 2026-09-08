@@ -54,12 +54,7 @@
 #include "editor/themes/editor_scale.h"
 #include "scene/resources/image_texture.h"
 
-#include "modules/modules_enabled.gen.h" // IWYU pragma: keep. For mono.
 #include "modules/svg/image_loader_svg.h"
-
-#ifdef MODULE_MONO_ENABLED
-#include "modules/mono/utils/path_utils.h"
-#endif
 
 #ifdef ANDROID_ENABLED
 #include "../os_android.h"
@@ -2246,10 +2241,6 @@ void EditorExportPlatformAndroid::get_export_options(List<ExportOption> *r_optio
 
 	r_options->push_back(ExportOption(PropertyInfo(Variant::BOOL, "shader_baker/enabled"), false));
 
-#ifndef XR_DISABLED
-	r_options->push_back(ExportOption(PropertyInfo(Variant::INT, "xr_features/xr_mode", PROPERTY_HINT_ENUM, "Regular,OpenXR"), XR_MODE_REGULAR, false, true));
-#endif // XR_DISABLED
-
 	r_options->push_back(ExportOption(PropertyInfo(Variant::BOOL, "gesture/swipe_to_dismiss"), false));
 
 	r_options->push_back(ExportOption(PropertyInfo(Variant::BOOL, "screen/immersive_mode"), true));
@@ -2310,14 +2301,6 @@ bool EditorExportPlatformAndroid::get_export_option_visibility(const EditorExpor
 		return advanced_options_enabled && !bool(p_preset->get("gradle_build/use_gradle_build"));
 	}
 
-	// Hide .NET embedding option (always enabled).
-	if (p_option == "dotnet/embed_build_outputs") {
-		return false;
-	}
-
-	if (p_option == "dotnet/android_use_linux_bionic") {
-		return advanced_options_enabled;
-	}
 	return true;
 }
 
@@ -2733,76 +2716,10 @@ bool EditorExportPlatformAndroid::has_valid_username_and_password(const Ref<Edit
 	return valid;
 }
 
-#ifdef MODULE_MONO_ENABLED
-static uint64_t _last_validate_tfm_time = 0;
-static String _last_validate_tfm = "";
-
-bool _validate_dotnet_tfm(const String &required_tfm, String &r_error) {
-	String assembly_name = Path::get_csharp_project_name();
-	String project_path = ProjectSettings::get_singleton()->globalize_path("res://" + assembly_name + ".csproj");
-
-	if (!FileAccess::exists(project_path)) {
-		return true;
-	}
-
-	uint64_t modified_time = FileAccess::get_modified_time(project_path);
-	String tfm;
-
-	if (modified_time == _last_validate_tfm_time) {
-		tfm = _last_validate_tfm;
-	} else {
-		String pipe;
-		List<String> args;
-		args.push_back("build");
-		args.push_back(project_path);
-		args.push_back("/p:GodotTargetPlatform=android");
-		args.push_back("--getProperty:TargetFramework");
-
-		int exitcode;
-		Error err = OS::get_singleton()->execute("dotnet", args, &pipe, &exitcode, true);
-		if (err != OK || exitcode != 0) {
-			if (err != OK) {
-				WARN_PRINT("Failed to execute dotnet command. Error " + String(error_names[err]));
-			} else if (exitcode != 0) {
-				print_line(pipe);
-				WARN_PRINT("dotnet command exited with code " + itos(exitcode) + ". See output above for more details.");
-			}
-			r_error += vformat(TTR("Unable to determine the C# project's TFM, it may be incompatible. The export template only supports '%s'. Make sure the project targets '%s' or consider using gradle builds instead."), required_tfm, required_tfm) + "\n";
-			return true;
-		} else {
-			tfm = pipe.strip_edges();
-			_last_validate_tfm_time = modified_time;
-			_last_validate_tfm = tfm;
-		}
-	}
-
-	if (tfm != required_tfm) {
-		r_error += vformat(TTR("C# project targets '%s' but the export template only supports '%s'. Consider using gradle builds instead."), tfm, required_tfm) + "\n";
-		return false;
-	}
-
-	return true;
-}
-#endif
-
 bool EditorExportPlatformAndroid::has_valid_export_configuration(const Ref<EditorExportPreset> &p_preset, String &r_error, bool &r_missing_templates, bool p_debug) const {
 	String err;
 	bool valid = false;
 	const bool gradle_build_enabled = p_preset->get("gradle_build/use_gradle_build");
-
-#ifdef MODULE_MONO_ENABLED
-	// Android export is still a work in progress, keep a message as a warning.
-	err += TTR("Exporting to Android when using C#/.NET is experimental.") + "\n";
-
-	if (!gradle_build_enabled) {
-		// For template exports we only support .NET 9 because the template
-		// includes .jar dependencies that may only be compatible with .NET 9.
-		if (!_validate_dotnet_tfm("net9.0", err)) {
-			r_error = err;
-			return false;
-		}
-	}
-#endif
 
 	// Look for export templates (first official, and if defined custom templates).
 
@@ -3041,22 +2958,6 @@ void EditorExportPlatformAndroid::get_command_line_flags(const Ref<EditorExportP
 	}
 
 	command_line_strings.append_array(gen_export_flags(p_flags));
-
-#ifndef XR_DISABLED
-	int xr_mode_index = p_preset->get("xr_features/xr_mode");
-	if (xr_mode_index == XR_MODE_OPENXR) {
-		command_line_strings.push_back("--xr_mode_openxr");
-	} else { // XRMode.REGULAR is the default.
-		command_line_strings.push_back("--xr_mode_regular");
-
-		// Also override the 'xr/openxr/enabled' project setting.
-		// This is useful for multi-platforms projects supporting both XR and non-XR devices. The project would need
-		// to enable openxr for development, and would create multiple XR and non-XR export presets.
-		// These command line args ensure that the non-XR export presets will have openxr disabled.
-		command_line_strings.push_back("--xr-mode");
-		command_line_strings.push_back("off");
-	}
-#endif // XR_DISABLED
 
 	bool immersive = p_preset->get("screen/immersive_mode");
 	if (immersive) {
@@ -3678,7 +3579,6 @@ Error EditorExportPlatformAndroid::export_project_helper(const Ref<EditorExportP
 		PluginConfigAndroid::get_plugins_custom_maven_repos(enabled_plugins, android_dependencies_maven_repos);
 #endif // DISABLE_DEPRECATED
 
-		bool has_dotnet_project = false;
 		Vector<Ref<EditorExportPlugin>> export_plugins = EditorExport::get_singleton()->get_export_plugins();
 		for (int i = 0; i < export_plugins.size(); i++) {
 			if (export_plugins[i]->supports_platform(Ref<EditorExportPlatform>(this))) {
@@ -3696,11 +3596,6 @@ Error EditorExportPlatformAndroid::export_project_helper(const Ref<EditorExportP
 				PackedStringArray export_plugin_android_dependencies_maven_repos = export_plugins[i]->get_android_dependencies_maven_repos(Ref<EditorExportPlatform>(this), p_debug);
 				android_dependencies_maven_repos.append_array(export_plugin_android_dependencies_maven_repos);
 			}
-
-			PackedStringArray features = export_plugins[i]->get_export_features(Ref<EditorExportPlatform>(this), p_debug);
-			if (features.has("dotnet")) {
-				has_dotnet_project = true;
-			}
 		}
 
 		bool clean_build_required = _is_clean_build_required(p_preset);
@@ -3714,7 +3609,7 @@ Error EditorExportPlatformAndroid::export_project_helper(const Ref<EditorExportP
 			cmdline.push_back("clean");
 		}
 
-		String edition = has_dotnet_project ? "Mono" : "Standard";
+		String edition = "Standard";
 		String build_type = p_debug ? "Debug" : "Release";
 		if (export_format == EXPORT_FORMAT_AAB) {
 			String bundle_build_command = vformat("bundle%s%s", edition, build_type);

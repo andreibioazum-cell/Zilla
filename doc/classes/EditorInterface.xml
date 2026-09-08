@@ -6,15 +6,9 @@
 	<description>
 		[EditorInterface] gives you control over Godot editor's window. It allows customizing the window, saving and (re-)loading scenes, rendering mesh previews, inspecting and editing resources and objects, and provides access to [EditorSettings], [EditorFileSystem], [EditorResourcePreview], [ScriptEditor], the editor viewport, and information about scenes.
 		[b]Note:[/b] This class shouldn't be instantiated directly. Instead, access the singleton directly by its name.
-		[codeblocks]
-		[gdscript]
+		[codeblock]
 		var editor_settings = EditorInterface.get_editor_settings()
-		[/gdscript]
-		[csharp]
-		// In C# you can access it via the static Singleton property.
-		EditorSettings settings = EditorInterface.Singleton.GetEditorSettings();
-		[/csharp]
-		[/codeblocks]
+		[/codeblock]
 	</description>
 	<tutorials>
 	</tutorials>

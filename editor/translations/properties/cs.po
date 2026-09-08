@@ -3134,72 +3134,6 @@ msgstr "Schovat stavový řádek"
 msgid "Suppress UI Gesture"
 msgstr "Potlačit UI gesta"
 
-msgid "XR"
-msgstr "XR"
-
-msgid "OpenXR"
-msgstr "OpenXR"
-
-msgid "Default Action Map"
-msgstr "Výchozí mapa akcí"
-
-msgid "Form Factor"
-msgstr "Tvarový faktor"
-
-msgid "View Configuration"
-msgstr "Konfigurace zobrazení"
-
-msgid "Reference Space"
-msgstr "Referenční prostor"
-
-msgid "Environment Blend Mode"
-msgstr "Režim prolnutí prostoru"
-
-msgid "Foveation Level"
-msgstr "Úroveň foveace"
-
-msgid "Foveation Dynamic"
-msgstr "Dynamická foveace"
-
-msgid "Submit Depth Buffer"
-msgstr "Předat vyrovnávací paměť hloubky"
-
-msgid "Startup Alert"
-msgstr "Upozornění při spuštění"
-
-msgid "Extensions"
-msgstr "Rozšíření"
-
-msgid "Debug Utils"
-msgstr "Utility pro ladění"
-
-msgid "Debug Message Types"
-msgstr "Typy zpráv ladění"
-
-msgid "Hand Tracking"
-msgstr "Sledování rukou"
-
-msgid "Hand Tracking Unobstructed Data Source"
-msgstr "Datový zdroj sledování rukou bez překážek"
-
-msgid "Hand Tracking Controller Data Source"
-msgstr "Datový zdroj sledování rukou z ovladače"
-
-msgid "Hand Interaction Profile"
-msgstr "Interakční profil rukou"
-
-msgid "Eye Gaze Interaction"
-msgstr "Interakce s pohledem očí"
-
-msgid "Binding Modifiers"
-msgstr "Modifikátory vazby"
-
-msgid "Analog Threshold"
-msgstr "Analogový práh"
-
-msgid "Dpad Binding"
-msgstr "Vazba směrových tlačítek"
-
 msgid "Boot Splash"
 msgstr "Úvodní obrazovka načítání"
 
@@ -3256,21 +3190,6 @@ msgstr "Obrázek"
 
 msgid "Minimum Display Time"
 msgstr "Minimální doba zobrazení"
-
-msgid "Dotnet"
-msgstr "Dotnet"
-
-msgid "Project"
-msgstr "Projekt"
-
-msgid "Assembly Name"
-msgstr "Název assembly"
-
-msgid "Solution Directory"
-msgstr "Adresář řešení"
-
-msgid "Assembly Reload Attempts"
-msgstr "Počet pokusů pro načtení assembly"
 
 msgid "Time"
 msgstr "Čas"
@@ -4013,36 +3932,6 @@ msgstr "Odstranění šumu"
 msgid "Denoiser"
 msgstr "Odstraňovač šumu"
 
-msgid "Eye Height"
-msgstr "Výška očí"
-
-msgid "IOD"
-msgstr "Vzdálenost zornic"
-
-msgid "Display Width"
-msgstr "Šířka zobrazení"
-
-msgid "Display to Lens"
-msgstr "Vzdálenost displeje od čoček"
-
-msgid "Offset Rect"
-msgstr "Offset obdélník"
-
-msgid "Oversample"
-msgstr "Převzorkovat"
-
-msgid "K1"
-msgstr "K1"
-
-msgid "K2"
-msgstr "K2"
-
-msgid "Vulkan VRS"
-msgstr "Vulkan VRS"
-
-msgid "Min Radius"
-msgstr "Minimální poloměr"
-
 msgid "BPM"
 msgstr "Tempo (BPM)"
 
@@ -4178,119 +4067,8 @@ msgstr "Lem bezešvého prolnutí"
 msgid "Bump Strength"
 msgstr "Síla nerovností"
 
-msgid "Localized Name"
-msgstr "Lokalizovaný název"
-
-msgid "Action Type"
-msgstr "Typ akce"
-
-msgid "Toplevel Paths"
-msgstr "Cesty nejvyšší úrovně"
-
-msgid "Binding Path"
-msgstr "Cesta vazby"
-
-msgid "Interaction Profile Path"
-msgstr "Cesta k interakčnímu profilu"
-
-msgid "Runtime Paths"
-msgstr "Cesty k běhovým prostředím"
-
-msgid "Action Set"
-msgstr "Sada akcí"
-
-msgid "Input Path"
-msgstr "Cesta vstupu"
-
-msgid "Threshold Released"
-msgstr "Práh puštěn"
-
-msgid "Center Region"
-msgstr "Střední oblast"
-
-msgid "Wedge Angle"
-msgstr "Úhel klínu"
-
-msgid "Is Sticky"
-msgstr "Jedním prstem"
-
-msgid "On Haptic"
-msgstr "Haptika zapnout"
-
-msgid "Off Haptic"
-msgstr "Haptika vypnout"
-
-msgid "On Threshold"
-msgstr "Práh zapnout"
-
-msgid "Off Threshold"
-msgstr "Práh vypnout"
-
-msgid "Display Refresh Rate"
-msgstr "Obnovovací frekvence displeje"
-
-msgid "Render Target Size Multiplier"
-msgstr "Multiplikátor velikosti cíle vykreslování"
-
 msgid "Next"
 msgstr "Další"
-
-msgid "Layer Viewport"
-msgstr "Průzor vrstev"
-
-msgid "Use Android Surface"
-msgstr "Použít Android Surface"
-
-msgid "Android Surface Size"
-msgstr "Velikost Android Surface"
-
-msgid "Sort Order"
-msgstr "Řazení podle"
-
-msgid "Alpha Blend"
-msgstr "Alfa prolnutí"
-
-msgid "Enable Hole Punch"
-msgstr "Povolit děrování"
-
-msgid "Aspect Ratio"
-msgstr "Poměr stran"
-
-msgid "Central Angle"
-msgstr "Středový úhel"
-
-msgid "Fallback Segments"
-msgstr "Záložní segmenty"
-
-msgid "Central Horizontal Angle"
-msgstr "Středový horizontální úhel"
-
-msgid "Upper Vertical Angle"
-msgstr "Horní vertikální úhel"
-
-msgid "Lower Vertical Angle"
-msgstr "Spodní vertikální úhel"
-
-msgid "Quad Size"
-msgstr "Velikost kvadrantu"
-
-msgid "Hand"
-msgstr "Ruka"
-
-msgid "Motion Range"
-msgstr "Pohyblivost"
-
-msgid "Hand Skeleton"
-msgstr "Kostra ruky"
-
-msgid "Skeleton Rig"
-msgstr "Upevnění kostry"
-
-msgid "Bone Update"
-msgstr "Aktualizace kosti"
-
-msgid "Tracker"
-msgstr "Sledovač"
 
 msgid "Subject"
 msgstr "Subjekt"
@@ -4466,21 +4244,6 @@ msgstr "Maximum paketů ve frontě"
 msgid "Heartbeat Interval"
 msgstr "Interval synchronizačního signálu"
 
-msgid "Session Mode"
-msgstr "Režim relace"
-
-msgid "Required Features"
-msgstr "Vyžadované funkce"
-
-msgid "Optional Features"
-msgstr "Volitelné funkce"
-
-msgid "Enabled Features"
-msgstr "Povolené funkce"
-
-msgid "Visibility State"
-msgstr "Stav viditelnosti"
-
 msgid "Install Exported APK"
 msgstr "Spusit exportované APK"
 
@@ -4597,12 +4360,6 @@ msgstr "Grafika"
 
 msgid "OpenGL Debug"
 msgstr "OpenGL ladění"
-
-msgid "XR Features"
-msgstr "Funkce XR"
-
-msgid "XR Mode"
-msgstr "Režim XR"
 
 msgid "Gesture"
 msgstr "Gesto"
@@ -6481,23 +6238,8 @@ msgstr "Propagace"
 msgid "Use Two Bounces"
 msgstr "Použít dva odrazy"
 
-msgid "Body Tracker"
-msgstr "Sledovač těla"
-
-msgid "Face Tracker"
-msgstr "Sledovač obličeje"
-
-msgid "Hand Tracker"
-msgstr "Sledovač rukou"
-
 msgid "Pose"
 msgstr "Póza"
-
-msgid "Show When Tracked"
-msgstr "Zobrazit při sledování"
-
-msgid "World Scale"
-msgstr "Měřítko světa"
 
 msgid "Play Mode"
 msgstr "Režim přehrávání"
@@ -7090,9 +6832,6 @@ msgstr "Cesta k Viewportu"
 msgid "Disable 3D"
 msgstr "Deaktivovat 3D"
 
-msgid "Use XR"
-msgstr "Použít XR"
-
 msgid "Own World 3D"
 msgstr "Vlastní 3D světa"
 
@@ -7528,9 +7267,6 @@ msgstr "Minimální počet instancí pro threaded vyřazování"
 msgid "OpenGL"
 msgstr "OpenGL"
 
-msgid "Shaders"
-msgstr "Shadery"
-
 msgid "Default Font Subpixel Positioning"
 msgstr "Výchozí subpixelové polohování fontů"
 
@@ -7539,15 +7275,3 @@ msgstr "Odstranit rozvržení"
 
 msgid "Include Text Server Data"
 msgstr "Zahrnout data textového serveru"
-
-msgid "Has Tracking Data"
-msgstr "Má sledovací data"
-
-msgid "Hand Tracking Source"
-msgstr "Zdroj sledování rukou"
-
-msgid "AR"
-msgstr "AR"
-
-msgid "Tracking Confidence"
-msgstr "Spolehlivost sledování"

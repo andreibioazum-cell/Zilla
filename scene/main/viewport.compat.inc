@@ -34,16 +34,7 @@
 
 #include "core/object/class_db.h"
 
-#ifndef XR_DISABLED
-bool Viewport::_is_using_xr_115799() {
-	return is_using_xr();
-}
-#endif
-
 void Viewport::_bind_compatibility_methods() {
-#ifndef XR_DISABLED
-	ClassDB::bind_compatibility_method(D_METHOD("is_using_xr"), &Viewport::_is_using_xr_115799);
-#endif
 }
 
 #endif // DISABLE_DEPRECATED

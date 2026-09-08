@@ -325,12 +325,6 @@ def setup_swift_builder(
     elif apple_platform == "iossimulator":
         target_suffix = "ios15.0-simulator"  # iOS 15.0 needed for SwiftUI lifecycle
 
-    elif apple_platform == "visionos":
-        target_suffix = "xros26.0"
-
-    elif apple_platform == "visionossimulator":
-        target_suffix = "xros26.0-simulator"
-
     else:
         raise Exception("Invalid platform argument passed to detect_darwin_sdk_path")
 

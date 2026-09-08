@@ -38,22 +38,12 @@
 				Godot calls this method to test if [param data] from a control's [method _get_drag_data] can be dropped at [param at_position]. [param at_position] is local to this control.
 				This method should only be used to test the data. Process the data in [method _drop_data].
 				[b]Note:[/b] If the drag was initiated by a keyboard shortcut or [method accessibility_drag], [param at_position] is set to [constant Vector2.INF], and the currently selected item/text position should be used as the drop position.
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				func _can_drop_data(position, data):
 					# Check position if it is relevant to you
 					# Otherwise, just check data
 					return typeof(data) == TYPE_DICTIONARY and data.has("expected")
-				[/gdscript]
-				[csharp]
-				public override bool _CanDropData(Vector2 atPosition, Variant data)
-				{
-					// Check position if it is relevant to you
-					// Otherwise, just check data
-					return data.VariantType == Variant.Type.Dictionary &amp;&amp; data.AsGodotDictionary().ContainsKey("expected");
-				}
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 			</description>
 		</method>
 		<method name="_drop_data" qualifiers="virtual">
@@ -63,26 +53,13 @@
 			<description>
 				Godot calls this method to pass you the [param data] from a control's [method _get_drag_data] result. Godot first calls [method _can_drop_data] to test if [param data] is allowed to drop at [param at_position] where [param at_position] is local to this control.
 				[b]Note:[/b] If the drag was initiated by a keyboard shortcut or [method accessibility_drag], [param at_position] is set to [constant Vector2.INF], and the currently selected item/text position should be used as the drop position.
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				func _can_drop_data(position, data):
 					return typeof(data) == TYPE_DICTIONARY and data.has("color")
 
 				func _drop_data(position, data):
 					var color = data["color"]
-				[/gdscript]
-				[csharp]
-				public override bool _CanDropData(Vector2 atPosition, Variant data)
-				{
-					return data.VariantType == Variant.Type.Dictionary &amp;&amp; data.AsGodotDictionary().ContainsKey("color");
-				}
-
-				public override void _DropData(Vector2 atPosition, Variant data)
-				{
-					Color color = data.AsGodotDictionary()["color"].AsColor();
-				}
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 			</description>
 		</method>
 		<method name="_get_accessibility_container_name" qualifiers="virtual const">
@@ -107,22 +84,12 @@
 				Godot calls this method to get data that can be dragged and dropped onto controls that expect drop data. Returns [code]null[/code] if there is no data to drag. Controls that want to receive drop data should implement [method _can_drop_data] and [method _drop_data]. [param at_position] is local to this control. Drag may be forced with [method force_drag].
 				A preview that will follow the mouse that should represent the data can be set with [method set_drag_preview]. A good time to set the preview is in this method.
 				[b]Note:[/b] If the drag was initiated by a keyboard shortcut or [method accessibility_drag], [param at_position] is set to [constant Vector2.INF], and the currently selected item/text position should be used as the drag position.
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				func _get_drag_data(position):
 					var mydata = make_data() # This is your custom method generating the drag data.
 					set_drag_preview(make_preview(mydata)) # This is your custom method generating the preview of the drag data.
 					return mydata
-				[/gdscript]
-				[csharp]
-				public override Variant _GetDragData(Vector2 atPosition)
-				{
-					var myData = MakeData(); // This is your custom method generating the drag data.
-					SetDragPreview(MakePreview(myData)); // This is your custom method generating the preview of the drag data.
-					return myData;
-				}
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 			</description>
 		</method>
 		<method name="_get_maximum_size" qualifiers="virtual const">
@@ -163,26 +130,12 @@
 			<description>
 				Virtual method to be implemented by the user. Override this method to handle and accept inputs on UI elements. See also [method accept_event].
 				[b]Example:[/b] Click on the control to print a message:
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				func _gui_input(event):
 					if event is InputEventMouseButton:
 						if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 							print("I've been clicked D:")
-				[/gdscript]
-				[csharp]
-				public override void _GuiInput(InputEvent @event)
-				{
-					if (@event is InputEventMouseButton mb)
-					{
-						if (mb.ButtonIndex == MouseButton.Left &amp;&amp; mb.Pressed)
-						{
-							GD.Print("I've been clicked D:");
-						}
-					}
-				}
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 				If the [param event] inherits [InputEventMouse], this method will [b]not[/b] be called when:
 				- the control's [member mouse_filter] is set to [constant MOUSE_FILTER_IGNORE];
 				- the control is obstructed by another control on top, that doesn't have [member mouse_filter] set to [constant MOUSE_FILTER_IGNORE];
@@ -212,39 +165,19 @@
 				[b]Note:[/b] The node (and any relevant children) should have their [member CanvasItem.visible] set to [code]true[/code] when returned, otherwise, the viewport that instantiates it will not be able to calculate its minimum size reliably.
 				[b]Note:[/b] If overridden, this method is called even if [method get_tooltip] returns an empty string. When this happens with the default tooltip, it is not displayed. To copy this behavior, return [code]null[/code] in this method when [param for_text] is empty.
 				[b]Example:[/b] Use a constructed node as a tooltip:
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				func _make_custom_tooltip(for_text):
 					var label = Label.new()
 					label.text = for_text
 					return label
-				[/gdscript]
-				[csharp]
-				public override Control _MakeCustomTooltip(string forText)
-				{
-					var label = new Label();
-					label.Text = forText;
-					return label;
-				}
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 				[b]Example:[/b] Use a scene instance as a tooltip:
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				func _make_custom_tooltip(for_text):
 					var tooltip = preload("res://some_tooltip_scene.tscn").instantiate()
 					tooltip.get_node("Label").text = for_text
 					return tooltip
-				[/gdscript]
-				[csharp]
-				public override Control _MakeCustomTooltip(string forText)
-				{
-					Node tooltip = ResourceLoader.Load&lt;PackedScene&gt;("res://some_tooltip_scene.tscn").Instantiate();
-					tooltip.GetNode&lt;Label&gt;("Label").Text = forText;
-					return tooltip;
-				}
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 			</description>
 		</method>
 		<method name="_structured_text_parser" qualifiers="virtual const">
@@ -283,24 +216,14 @@
 				Creates a local override for a theme [Color] with the specified [param name]. Local overrides always take precedence when fetching theme items for the control. An override can be removed with [method remove_theme_color_override].
 				See also [method get_theme_color].
 				[b]Example:[/b] Override a [Label]'s color and reset it later:
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				# Given the child Label node "MyLabel", override its font color with a custom value.
 				$MyLabel.add_theme_color_override("font_color", Color(1, 0.5, 0))
 				# Reset the font color of the child label.
 				$MyLabel.remove_theme_color_override("font_color")
 				# Alternatively it can be overridden with the default value from the Label type.
 				$MyLabel.add_theme_color_override("font_color", get_theme_color("font_color", "Label"))
-				[/gdscript]
-				[csharp]
-				// Given the child Label node "MyLabel", override its font color with a custom value.
-				GetNode&lt;Label&gt;("MyLabel").AddThemeColorOverride("font_color", new Color(1, 0.5f, 0));
-				// Reset the font color of the child label.
-				GetNode&lt;Label&gt;("MyLabel").RemoveThemeColorOverride("font_color");
-				// Alternatively it can be overridden with the default value from the Label type.
-				GetNode&lt;Label&gt;("MyLabel").AddThemeColorOverride("font_color", GetThemeColor("font_color", "Label"));
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 			</description>
 		</method>
 		<method name="add_theme_constant_override">
@@ -347,8 +270,7 @@
 				Creates a local override for a theme [StyleBox] with the specified [param name]. Local overrides always take precedence when fetching theme items for the control. An override can be removed with [method remove_theme_stylebox_override].
 				See also [method get_theme_stylebox].
 				[b]Example:[/b] Modify a property in a [StyleBox] by duplicating it:
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				# The snippet below assumes the child node "MyButton" has a StyleBoxFlat assigned.
 				# Resources are shared across instances, so we need to duplicate it
 				# to avoid modifying the appearance of all other buttons.
@@ -358,19 +280,7 @@
 				$MyButton.add_theme_stylebox_override("normal", new_stylebox_normal)
 				# Remove the stylebox override.
 				$MyButton.remove_theme_stylebox_override("normal")
-				[/gdscript]
-				[csharp]
-				// The snippet below assumes the child node "MyButton" has a StyleBoxFlat assigned.
-				// Resources are shared across instances, so we need to duplicate it
-				// to avoid modifying the appearance of all other buttons.
-				StyleBoxFlat newStyleboxNormal = GetNode&lt;Button&gt;("MyButton").GetThemeStylebox("normal").Duplicate() as StyleBoxFlat;
-				newStyleboxNormal.BorderWidthTop = 3;
-				newStyleboxNormal.BorderColor = new Color(0, 1, 0.5f);
-				GetNode&lt;Button&gt;("MyButton").AddThemeStyleboxOverride("normal", newStyleboxNormal);
-				// Remove the stylebox override.
-				GetNode&lt;Button&gt;("MyButton").RemoveThemeStyleboxOverride("normal");
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 			</description>
 		</method>
 		<method name="begin_bulk_theme_override">
@@ -558,24 +468,13 @@
 			<description>
 				Returns a [Color] from the first matching [Theme] in the tree if that [Theme] has a color item with the specified [param name] and [param theme_type]. If [param theme_type] is omitted the class name of the current control is used as the type, or [member theme_type_variation] if it is defined. If the type is a class name its parent classes are also checked, in order of inheritance. If the type is a variation its base types are checked, in order of dependency, then the control's class name and its parent classes are checked.
 				For the current control its local overrides are considered first (see [method add_theme_color_override]), then its assigned [member theme]. After the current control, each parent control and its assigned [member theme] are considered; controls without a [member theme] assigned are skipped. If no matching [Theme] is found in the tree, the custom project [Theme] (see [member ProjectSettings.gui/theme/custom]) and the default [Theme] are used (see [ThemeDB]).
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				func _ready():
 					# Get the font color defined for the current Control's class, if it exists.
 					modulate = get_theme_color("font_color")
 					# Get the font color defined for the Button class.
 					modulate = get_theme_color("font_color", "Button")
-				[/gdscript]
-				[csharp]
-				public override void _Ready()
-				{
-					// Get the font color defined for the current Control's class, if it exists.
-					Modulate = GetThemeColor("font_color");
-					// Get the font color defined for the Button class.
-					Modulate = GetThemeColor("font_color", "Button");
-				}
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 			</description>
 		</method>
 		<method name="get_theme_constant" qualifiers="const">
@@ -657,18 +556,10 @@
 			<return type="void" />
 			<description>
 				Creates an [InputEventMouseButton] that attempts to click the control. If the event is received, the control gains focus.
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				func _process(delta):
 					grab_click_focus() # When clicking another Control node, this node will be clicked instead.
-				[/gdscript]
-				[csharp]
-				public override void _Process(double delta)
-				{
-					GrabClickFocus(); // When clicking another Control node, this node will be clicked instead.
-				}
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 			</description>
 		</method>
 		<method name="grab_focus">
@@ -922,8 +813,7 @@
 			<param index="0" name="control" type="Control" />
 			<description>
 				Shows the given control at the mouse pointer. A good time to call this method is in [method _get_drag_data]. The control must not be in the scene tree. You should not free the control, and you should not keep a reference to the control beyond the duration of the drag. It will be deleted automatically after the drag has ended.
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				@export var color = Color(1, 0, 0, 1)
 
 				func _get_drag_data(position):
@@ -933,22 +823,7 @@
 					cpb.size = Vector2(50, 50)
 					set_drag_preview(cpb)
 					return color
-				[/gdscript]
-				[csharp]
-				[Export]
-				private Color _color = new Color(1, 0, 0, 1);
-
-				public override Variant _GetDragData(Vector2 atPosition)
-				{
-					// Use a control that is not in the tree
-					var cpb = new ColorPickerButton();
-					cpb.Color = _color;
-					cpb.Size = new Vector2(50, 50);
-					SetDragPreview(cpb);
-					return _color;
-				}
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 			</description>
 		</method>
 		<method name="set_end">
@@ -1254,24 +1129,14 @@
 			The default tooltip text. The tooltip appears when the user's mouse cursor stays idle over this control for a few moments, provided that the [member mouse_filter] property is not [constant MOUSE_FILTER_IGNORE]. The time required for the tooltip to appear can be changed with the [member ProjectSettings.gui/timers/tooltip_delay_sec] setting.
 			This string is the default return value of [method get_tooltip]. Override [method _get_tooltip] to generate tooltip text dynamically. Override [method _make_custom_tooltip] to customize the tooltip interface and behavior.
 			The tooltip popup will use either a default implementation, or a custom one that you can provide by overriding [method _make_custom_tooltip]. The default tooltip includes a [PopupPanel] and [Label] whose theme properties can be customized using [Theme] methods with the [code]"TooltipPanel"[/code] and [code]"TooltipLabel"[/code] respectively. For example:
-			[codeblocks]
-			[gdscript]
+			[codeblock]
 			var style_box = StyleBoxFlat.new()
 			style_box.set_bg_color(Color(1, 1, 0))
 			style_box.set_border_width_all(2)
 			# We assume here that the `theme` property has been assigned a custom Theme beforehand.
 			theme.set_stylebox("panel", "TooltipPanel", style_box)
 			theme.set_color("font_color", "TooltipLabel", Color(0, 1, 1))
-			[/gdscript]
-			[csharp]
-			var styleBox = new StyleBoxFlat();
-			styleBox.SetBgColor(new Color(1, 1, 0));
-			styleBox.SetBorderWidthAll(2);
-			// We assume here that the `Theme` property has been assigned a custom Theme beforehand.
-			Theme.SetStyleBox("panel", "TooltipPanel", styleBox);
-			Theme.SetColor("font_color", "TooltipLabel", new Color(0, 1, 1));
-			[/csharp]
-			[/codeblocks]
+			[/codeblock]
 		</member>
 		<member name="translation_context" type="StringName" setter="set_translation_context" getter="get_translation_context" default="&amp;&quot;&quot;">
 			The translation context used when translating this control's displayed text, if it has any. Also used when generating translation templates.

@@ -6,8 +6,7 @@
 	<description>
 		The [ArrayMesh] is used to construct a [Mesh] by specifying the attributes as arrays.
 		The most basic example is the creation of a single triangle:
-		[codeblocks]
-		[gdscript]
+		[codeblock]
 		var vertices = PackedVector3Array()
 		vertices.push_back(Vector3(0, 1, 0))
 		vertices.push_back(Vector3(1, 0, 0))
@@ -23,27 +22,7 @@
 		arr_mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, arrays)
 		var m = MeshInstance3D.new()
 		m.mesh = arr_mesh
-		[/gdscript]
-		[csharp]
-		Vector3[] vertices =
-		[
-			new Vector3(0, 1, 0),
-			new Vector3(1, 0, 0),
-			new Vector3(0, 0, 1),
-		];
-
-		// Initialize the ArrayMesh.
-		var arrMesh = new ArrayMesh();
-		Godot.Collections.Array arrays = [];
-		arrays.Resize((int)Mesh.ArrayType.Max);
-		arrays[(int)Mesh.ArrayType.Vertex] = vertices;
-
-		// Create the Mesh.
-		arrMesh.AddSurfaceFromArrays(Mesh.PrimitiveType.Triangles, arrays);
-		var m = new MeshInstance3D();
-		m.Mesh = arrMesh;
-		[/csharp]
-		[/codeblocks]
+		[/codeblock]
 		The [MeshInstance3D] is ready to be added to the [SceneTree] to be shown.
 		See also [ImmediateMesh], [MeshDataTool] and [SurfaceTool] for procedural geometry generation.
 		[b]Note:[/b] Godot uses clockwise [url=https://learnopengl.com/Advanced-OpenGL/Face-culling]winding order[/url] for front faces of triangle primitive modes.

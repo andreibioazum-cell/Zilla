@@ -72,16 +72,6 @@ const char *RenamesMap3To4::enum_renames[][2] = {
 	{ "ALIGN_CENTER", "ALIGNMENT_CENTER" }, // AspectRatioContainer
 	{ "ALIGN_END", "ALIGNMENT_END" }, // AspectRatioContainer
 	{ "ARRAY_COMPRESS_BASE", "ARRAY_COMPRESS_FLAGS_BASE" }, // Mesh
-	{ "ARVR_AR", "XR_AR" }, // XRInterface
-	{ "ARVR_EXCESSIVE_MOTION", "XR_EXCESSIVE_MOTION" }, // XRInterface
-	{ "ARVR_EXTERNAL", "XR_EXTERNAL" }, // XRInterface
-	{ "ARVR_INSUFFICIENT_FEATURES", "XR_INSUFFICIENT_FEATURES" }, // XRInterface
-	{ "ARVR_MONO", "XR_MONO" }, // XRInterface
-	{ "ARVR_NONE", "XR_NONE" }, // XRInterface
-	{ "ARVR_NORMAL_TRACKING", "XR_NORMAL_TRACKING" }, // XRInterface
-	{ "ARVR_NOT_TRACKING", "XR_NOT_TRACKING" }, // XRInterface
-	{ "ARVR_STEREO", "XR_STEREO" }, // XRInterface
-	{ "ARVR_UNKNOWN_TRACKING", "XR_UNKNOWN_TRACKING" }, // XRInterface
 	{ "BAKE_ERROR_INVALID_MESH", "BAKE_ERROR_MESHES_INVALID" }, // LightmapGI
 	{ "BODY_MODE_CHARACTER", "BODY_MODE_RIGID_LINEAR" }, // PhysicsServer
 	{ "CLEAR_MODE_ONLY_NEXT_FRAME", "CLEAR_MODE_ONCE" }, // SubViewport
@@ -137,8 +127,6 @@ const char *RenamesMap3To4::enum_renames[][2] = {
 	{ "SOURCE_GEOMETRY_NAVMESH_CHILDREN", "SOURCE_GEOMETRY_ROOT_NODE_CHILDREN" }, // NavigationMesh
 	{ "TEXTURE_TYPE_2D_ARRAY", "TEXTURE_LAYERED_2D_ARRAY" }, // RenderingServer
 	{ "TEXTURE_TYPE_CUBEMAP", "TEXTURE_LAYERED_CUBEMAP_ARRAY" }, // RenderingServer
-	{ "TRACKER_LEFT_HAND", "TRACKER_HAND_LEFT" }, // XRPositionalTracker
-	{ "TRACKER_RIGHT_HAND", "TRACKER_HAND_RIGHT" }, // XRPositionalTracker
 	{ "TYPE_NORMALMAP", "TYPE_NORMAL_MAP" }, // VisualShaderNodeCubemap
 
 	// Enums
@@ -150,7 +138,6 @@ const char *RenamesMap3To4::enum_renames[][2] = {
 	{ "FFT_Size", "FFTSize" }, // AudioEffectPitchShift, AudioEffectSpectrumAnalyzer
 	{ "PauseMode", "ProcessMode" }, // Node
 	{ "TimerProcessMode", "TimerProcessCallback" }, // Timer
-	{ "Tracking_status", "TrackingStatus" }, // XRInterface
 	{ nullptr, nullptr },
 };
 
@@ -158,10 +145,8 @@ const char *RenamesMap3To4::gdscript_function_renames[][2] = {
 	// NOTE: Commented out renames are disabled because deemed not suitable for
 	// the current way the regex-based converter works.
 	// When uncommenting any of those as suitable for conversion, please move it
-	// to the block with other enabled conversions, ordered alphabetically, and
-	// make sure to add it to the C# rename map too.
+	// to the block with other enabled conversions, ordered alphabetically.
 
-	// { "_set_name", "get_tracker_name" }, // XRPositionalTracker -- CameraFeed uses this.
 	// { "_unhandled_input", "_unhandled_key_input" }, // BaseButton, ViewportContainer -- Breaks Node, FileDialog, SubViewportContainer.
 	// { "add_animation", "add_animation_library" }, // AnimationPlayer -- Breaks SpriteFrames (and isn't a correct conversion).
 	// { "create_gizmo", "_create_gizmo" }, // EditorNode3DGizmoPlugin -- May be used.
@@ -170,7 +155,6 @@ const char *RenamesMap3To4::gdscript_function_renames[][2] = {
 	// { "get_h_offset", "get_drag_horizontal_offset" }, // Camera2D -- Breaks PathFollow, Camera.
 	// { "get_mode", "get_file_mode" }, // FileDialog -- Breaks Panel, Shader, CSGPolygon, TileMap.
 	// { "get_motion", "get_travel" }, // PhysicsTestMotionResult2D -- Breaks ParallaxLayer.
-	// { "get_name", "get_tracker_name" }, // XRPositionalTracker -- Breaks OS, Node
 	// { "get_network_connected_peers", "get_peers" }, // MultiplayerAPI -- Breaks SceneTree.
 	// { "get_network_peer", "has_multiplayer_peer" }, // MultiplayerAPI -- Breaks SceneTree.
 	// { "get_network_unique_id", "get_unique_id"}, // MultiplayerAPI -- Breaks SceneTree.
@@ -180,7 +164,6 @@ const char *RenamesMap3To4::gdscript_function_renames[][2] = {
 	// { "get_process_mode", "get_process_callback" }, // ClippedCamera3D -- Breaks Node, Sky.
 	// { "get_render_info", "get_rendering_info" }, // RenderingServer -- Breaks Viewport.
 	// { "get_stylebox", "get_theme_stylebox" }, // Control -- Would rename the method in Theme as well, skipping.
-	// { "get_type", "get_tracker_type" }, // XRPositionalTracker -- Breaks GLTFAccessor, GLTFLight.
 	// { "get_v_offset", "get_drag_vertical_offset" }, // Camera2D -- Breaks PathFollow, Camera.
 	// { "get_v_scroll", "get_v_scroll_bar" }, // ItemList -- Breaks TextView.
 	// { "has_network_peer", "has_multiplayer_peer" }, // MultiplayerAPI -- Breaks SceneTree.
@@ -318,7 +301,6 @@ const char *RenamesMap3To4::gdscript_function_renames[][2] = {
 	{ "get_gravity_distance_scale", "get_gravity_point_unit_distance" }, // Area2D, Area3D
 	{ "get_gravity_vector", "get_gravity_direction" }, // Area(2D/3D)
 	{ "get_h_scrollbar", "get_h_scroll_bar" }, //ScrollContainer
-	{ "get_hand", "get_tracker_hand" }, // XRPositionalTracker
 	{ "get_handle_name", "_get_handle_name" }, // EditorNode3DGizmo
 	{ "get_handle_value", "_get_handle_value" }, // EditorNode3DGizmo
 	{ "get_icon_align", "get_icon_alignment" }, // Button
@@ -362,7 +344,6 @@ const char *RenamesMap3To4::gdscript_function_renames[][2] = {
 	{ "get_preset_name", "_get_preset_name" }, // EditorImportPlugin
 	{ "get_recognized_extensions", "_get_recognized_extensions" }, // ResourceFormatLoader, EditorImportPlugin -- Breaks ResourceSaver.
 	{ "get_render_info", "get_rendering_info" }, // RenderingServer
-	{ "get_render_targetsize", "get_render_target_size" }, // XRInterface
 	{ "get_resource_type", "_get_resource_type" }, // ResourceFormatLoader
 	{ "get_result", "get_data" }, // JSON
 	{ "get_reverb_bus", "set_reverb_bus_name" }, // Area3D
@@ -532,8 +513,6 @@ const char *RenamesMap3To4::gdscript_function_renames[][2] = {
 	{ "set_interior_ambient", "set_ambient_color" }, // ReflectionProbe
 	{ "set_interior_ambient_energy", "set_ambient_color_energy" }, // ReflectionProbe
 	{ "set_invert_faces", "set_flip_faces" }, // CSGPrimitive3D
-	{ "set_is_initialized", "_is_initialized" }, // XRInterface
-	{ "set_is_primary", "set_primary" }, // XRInterface
 	{ "set_item_navmesh", "set_item_navigation_mesh" }, // MeshLibrary
 	{ "set_item_navmesh_transform", "set_item_navigation_mesh_transform" }, // MeshLibrary
 	{ "set_iterations_per_second", "set_physics_ticks_per_second" }, // Engine
@@ -591,7 +570,6 @@ const char *RenamesMap3To4::gdscript_function_renames[][2] = {
 	{ "unselect_all", "deselect_all" }, // ItemList
 	{ "update_configuration_warning", "update_configuration_warnings" }, // Node
 	{ "update_gizmo", "update_gizmos" }, // Node3D
-	{ "viewport_set_use_arvr", "viewport_set_use_xr" }, // RenderingServer
 	{ "warp_mouse_position", "warp_mouse" }, // Input
 	{ "world_to_map", "local_to_map" }, // TileMap, GridMap
 
@@ -636,415 +614,12 @@ const char *RenamesMap3To4::gdscript_function_renames[][2] = {
 };
 
 // gdscript_function_renames clone with CamelCase
-const char *RenamesMap3To4::csharp_function_renames[][2] = {
-	{ "_AboutToShow", "_AboutToPopup" }, // ColorPickerButton
-	{ "_GetConfigurationWarning", "_GetConfigurationWarnings" }, // Node
-	{ "_SetCurrent", "SetCurrent" }, // Camera2D
-	{ "_SetEditorDescription", "SetEditorDescription" }, // Node
-	{ "_SetPlaying", "SetPlaying" }, // AnimatedSprite3D
-	{ "_ToplevelRaiseSelf", "_TopLevelRaiseSelf" }, // CanvasItem
-	{ "AddCancel", "AddCancelButton" }, // AcceptDialog
-	{ "AddCentralForce", "AddConstantCentralForce" }, //RigidBody2D
-	{ "AddChildBelowNode", "AddSibling" }, // Node
-	{ "AddColorOverride", "AddThemeColorOverride" }, // Control
-	{ "AddConstantOverride", "AddThemeConstantOverride" }, // Control
-	{ "AddFontOverride", "AddThemeFontOverride" }, // Control
-	{ "AddForce", "AddConstantForce" }, //RigidBody2D
-	{ "AddIconOverride", "AddThemeIconOverride" }, // Control
-	{ "AddSceneImportPlugin", "AddSceneFormatImporterPlugin" }, //EditorPlugin
-	{ "AddSpatialGizmoPlugin", "AddNode3dGizmoPlugin" }, // EditorPlugin
-	{ "AddStyleboxOverride", "AddThemeStyleboxOverride" }, // Control
-	{ "AddTorque", "AddConstantTorque" }, //RigidBody2D
-	{ "AgentSetNeighborDist", "AgentSetNeighborDistance" }, // NavigationServer2D, NavigationServer3D
-	{ "BindChildNodeToBone", "SetBoneChildren" }, // Skeleton3D
-	{ "BumpmapToNormalmap", "BumpMapToNormalMap" }, // Image
-	{ "CanBeHidden", "_CanBeHidden" }, // EditorNode3DGizmoPlugin
-	{ "CanDropData", "_CanDropData" }, // Control
-	{ "CanDropDataFw", "_CanDropDataFw" }, // ScriptEditor
-	{ "CanGenerateSmallPreview", "_CanGenerateSmallPreview" }, // EditorResourcePreviewGenerator
-	{ "CanInstance", "CanInstantiate" }, // PackedScene, Script
-	{ "CanvasLightSetScale", "CanvasLightSetTextureScale" }, // RenderingServer
-	{ "CaptureGetDevice", "GetInputDevice" }, // AudioServer
-	{ "CaptureGetDeviceList", "GetInputDeviceList" }, // AudioServer
-	{ "CaptureSetDevice", "SetInputDevice" }, // AudioServer
-	{ "CenterViewportToCursor", "CenterViewportToCaret" }, // TextEdit
-	{ "ChangeScene", "ChangeSceneToFile" }, // SceneTree
-	{ "ChangeSceneTo", "ChangeSceneToPacked" }, // SceneTree
-	{ "ClipPolygons2d", "ClipPolygons" }, // Geometry2D
-	{ "ClipPolylineWithPolygon2d", "ClipPolylineWithPolygon" }, //Geometry2D
-	{ "CommitHandle", "_CommitHandle" }, // EditorNode3DGizmo
-	{ "ConvexHull2d", "ConvexHull" }, // Geometry2D
-	{ "CursorGetBlinkSpeed", "GetCaretBlinkInterval" }, // TextEdit
-	{ "CursorGetColumn", "GetCaretColumn" }, // TextEdit
-	{ "CursorGetLine", "GetCaretLine" }, // TextEdit
-	{ "CursorSetBlinkEnabled", "SetCaretBlinkEnabled" }, // TextEdit
-	{ "CursorSetBlinkSpeed", "SetCaretBlinkInterval" }, // TextEdit
-	{ "CursorSetColumn", "SetCaretColumn" }, // TextEdit
-	{ "CursorSetLine", "SetCaretLine" }, // TextEdit
-	{ "DampedSpringJointCreate", "JointMakeDampedSpring" }, // PhysicsServer2D
-	{ "DampedStringJointGetParam", "DampedSpringJointGetParam" }, // PhysicsServer2D
-	{ "DampedStringJointSetParam", "DampedSpringJointSetParam" }, // PhysicsServer2D
-	{ "DeleteCharAtCursor", "DeleteCharAtCaret" }, // LineEdit
-	{ "DeselectItems", "DeselectAll" }, // FileDialog
-	{ "DropData", "_DropData" }, // Control
-	{ "DropDataFw", "_DropDataFw" }, // ScriptEditor
-	{ "ExcludePolygons2d", "ExcludePolygons" }, // Geometry2D
-	{ "FindScancodeFromString", "FindKeycodeFromString" }, // OS
-	{ "ForwardCanvasDrawOverViewport", "_ForwardCanvasDrawOverViewport" }, // EditorPlugin
-	{ "ForwardCanvasForceDrawOverViewport", "_ForwardCanvasForceDrawOverViewport" }, // EditorPlugin
-	{ "ForwardCanvasGuiInput", "_ForwardCanvasGuiInput" }, // EditorPlugin
-	{ "ForwardSpatialDrawOverViewport", "_Forward3dDrawOverViewport" }, // EditorPlugin
-	{ "ForwardSpatialForceDrawOverViewport", "_Forward3dForceDrawOverViewport" }, // EditorPlugin
-	{ "ForwardSpatialGuiInput", "_Forward3dGuiInput" }, // EditorPlugin
-	{ "GenerateFromPath", "_GenerateFromPath" }, // EditorResourcePreviewGenerator
-	{ "GenerateSmallPreviewAutomatically", "_GenerateSmallPreviewAutomatically" }, // EditorResourcePreviewGenerator
-	{ "GetActionList", "ActionGetEvents" }, // InputMap
-	{ "GetAlt", "IsAltPressed" }, // InputEventWithModifiers
-	{ "GetAnimationProcessMode", "GetProcessCallback" }, // AnimationPlayer
-	{ "GetAppliedForce", "GetConstantForce" }, //RigidBody2D
-	{ "GetAppliedTorque", "GetConstantTorque" }, //RigidBody2D
-	{ "GetAudioBus", "GetAudioBusName" }, // Area3D
-	{ "GetBoundChildNodesToBone", "GetBoneChildren" }, // Skeleton3D
-	{ "GetCamera", "GetCamera3d" }, // Viewport -- This is also convertible to GetCamera2d. Breaks GLTFNode.
-	{ "GetCancel", "GetCancelButton" }, // ConfirmationDialog
-	{ "GetCaption", "_GetCaption" }, // AnimationNode
-	{ "GetCastTo", "GetTargetPosition" }, // RayCast2D, RayCast3D
-	{ "GetChildByName", "_GetChildByName" }, // AnimationNode
-	{ "GetChildNodes", "_GetChildNodes" }, // AnimationNode
-	{ "GetClosestPointToSegment2d", "GetClosestPointToSegment" }, // Geometry2D
-	{ "GetClosestPointToSegmentUncapped2d", "GetClosestPointToSegmentUncapped" }, // Geometry2D
-	{ "GetClosestPointsBetweenSegments2d", "GetClosestPointToSegment" }, // Geometry2D
-	{ "GetCollisionLayerBit", "GetCollisionLayerValue" }, // CSGShape3D, and a lot of others like GridMap.
-	{ "GetCollisionMaskBit", "GetCollisionMaskValue" }, // CSGShape3D, and a lot of others like GridMap.
-	{ "GetColorTypes", "GetColorTypeList" }, // Theme
-	{ "GetCommand", "IsCommandPressed" }, // InputEventWithModifiers
-	{ "GetConstantTypes", "GetConstantTypeList" }, // Theme
-	{ "GetControl", "IsCtrlPressed" }, // InputEventWithModifiers
-	{ "GetCullMaskBit", "GetCullMaskValue" }, // Camera3D
-	{ "GetCursorPosition", "GetCaretColumn" }, // LineEdit
-	{ "GetD", "GetDistance" }, // LineShape2D
-	{ "GetDefaultLength", "GetLength" }, // Bone2D
-	{ "GetDepthBiasEnable", "GetDepthBiasEnabled" }, // RDPipelineRasterizationState
-	{ "GetDevice", "GetOutputDevice" }, // AudioServer
-	{ "GetDeviceList", "GetOutputDeviceList" }, // AudioServer
-	{ "GetDragDataFw", "_GetDragDataFw" }, // ScriptEditor
-	{ "GetEditorViewport", "GetViewport" }, // EditorPlugin
-	{ "GetEnabledFocusMode", "GetFocusMode" }, // BaseButton
-	{ "GetEndianSwap", "IsBigEndian" }, // File
-	{ "GetErrorString", "GetErrorMessage" }, // JSON
-	{ "GetFinalLocation", "GetFinalPosition" }, // NavigationAgent2D, NavigationAgent3D
-	{ "GetFocusNeighbour", "GetFocusNeighbor" }, // Control
-	{ "GetFollowSmoothing", "GetPositionSmoothingSpeed" }, // Camera2D
-	{ "GetFontTypes", "GetFontTypeList" }, // Theme
-	{ "GetFrameColor", "GetColor" }, // ColorRect
-	{ "GetGlobalRateScale", "GetPlaybackSpeedScale" }, // AudioServer
-	{ "GetGravityDistanceScale", "GetGravityPointDistanceScale" }, // Area2D
-	{ "GetGravityVector", "GetGravityDirection" }, // Area2D
-	{ "GetHScrollbar", "GetHScrollBar" }, // ScrollContainer
-	{ "GetHand", "GetTrackerHand" }, // XRPositionalTracker
-	{ "GetHandleName", "_GetHandleName" }, // EditorNode3DGizmo
-	{ "GetHandleValue", "_GetHandleValue" }, // EditorNode3DGizmo
-	{ "GetIconAlign", "GetIconAlignment" }, // Button
-	{ "GetIconTypes", "GetIconTypeList" }, // Theme
-	{ "GetIdleFrames", "GetProcessFrames" }, // Engine
-	{ "GetImportOptions", "_GetImportOptions" }, // EditorImportPlugin
-	{ "GetImportOrder", "_GetImportOrder" }, // EditorImportPlugin
-	{ "GetImporterName", "_GetImporterName" }, // EditorImportPlugin
-	{ "GetInteriorAmbient", "GetAmbientColor" }, // ReflectionProbe
-	{ "GetInteriorAmbientEnergy", "GetAmbientColorEnergy" }, // ReflectionProbe
-	{ "GetItemNavmesh", "GetItemMavigationMesh" }, // MeshLibrary
-	{ "GetItemNavmeshTransform", "GetItemNavigationMeshTransform" }, // MeshLibrary
-	{ "GetIterationsPerSecond", "GetPhysicsTicksPerSecond" }, // Engine
-	{ "GetLastMouseSpeed", "GetLastMouseVelocity" }, // Input
-	{ "GetLayerMaskBit", "GetLayerMaskValue" }, // VisualInstance3D
-	{ "GetLen", "GetLength" }, // File
-	{ "GetMaxAtlasSize", "GetMaxTextureSize" }, // LightmapGI
-	{ "GetMetakey", "IsMetaPressed" }, // InputEventWithModifiers
-	{ "GetMidHeight", "GetHeight" }, // CapsuleMesh
-	{ "GetMotionRemainder", "GetRemainder" }, // PhysicsTestMotionResult2D
-	{ "GetNavPath", "GetCurrentNavigationPath" }, // NavigationAgent2D, NavigationAgent3D
-	{ "GetNavPathIndex", "GetCurrentNavigationPathIndex" }, // NavigationAgent2D, NavigationAgent3D
-	{ "GetNeighborDist", "GetNeighborDistance" }, // NavigationAgent2D, NavigationAgent3D
-	{ "GetNetworkConnectedPeers", "GetPeers" }, // Multiplayer API
-	{ "GetNetworkMaster", "GetMultiplayerAuthority" }, // Node
-	{ "GetNetworkPeer", "GetMultiplayerPeer" }, // Multiplayer API
-	{ "GetNetworkUniqueId", "GetUniqueId" }, // Multiplayer API
-	{ "GetNextLocation", "GetNextPathPosition" }, // NavigationAgent2D, NavigationAgent3D
-	{ "GetOneshot", "GetOneShot" }, // AnimatedTexture
-	{ "GetOk", "GetOkButton" }, // AcceptDialog
-	{ "GetOptionVisibility", "_GetOptionVisibility" }, // EditorImportPlugin
-	{ "GetParameterDefaultValue", "_GetParameterDefaultValue" }, // AnimationNode
-	{ "GetParameterList", "_GetParameterList" }, // AnimationNode
-	{ "GetParentSpatial", "GetParentNode3d" }, // Node3D
-	{ "GetPhysicalScancode", "GetPhysicalKeycode" }, // InputEventKey
-	{ "GetPhysicalScancodeWithModifiers", "GetPhysicalKeycodeWithModifiers" }, // InputEventKey
-	{ "GetPluginIcon", "_GetPluginIcon" }, // EditorPlugin
-	{ "GetPluginName", "_GetPluginName" }, // EditorPlugin
-	{ "GetPresetCount", "_GetPresetCount" }, // EditorImportPlugin
-	{ "GetPresetName", "_GetPresetName" }, // EditorImportPlugin
-	{ "GetRecognizedExtensions", "_GetRecognizedExtensions" }, // ResourceFormatLoader, EditorImportPlugin -- Breaks ResourceSaver.
-	{ "GetRenderInfo", "GetRenderingInfo" }, // RenderingServer
-	{ "GetRenderTargetsize", "GetRenderTargetSize" }, // XRInterface
-	{ "GetResourceType", "_GetResourceType" }, // ResourceFormatLoader
-	{ "GetResult", "GetData" }, // JSON
-	{ "GetReverbBus", "GetReverbBusName" }, // Area3D
-	{ "GetRpcSenderId", "GetRemoteSenderId" }, // Multiplayer API
-	{ "GetSaveExtension", "_GetSaveExtension" }, // EditorImportPlugin
-	{ "GetScancode", "GetKeycode" }, // InputEventKey
-	{ "GetScancodeString", "GetKeycodeString" }, // OS
-	{ "GetScancodeWithModifiers", "GetKeycodeWithModifiers" }, // InputEventKey
-	{ "GetShaderParam", "GetShaderParameter" }, // ShaderMaterial
-	{ "GetShift", "IsShiftPressed" }, // InputEventWithModifiers
-	{ "GetSizeOverride", "GetSize2dOverride" }, // SubViewport
-	{ "GetSlipsOnSlope", "GetSlideOnSlope" }, // SeparationRayShape2D, SeparationRayShape3D
-	{ "GetSpaceOverrideMode", "GetGravitySpaceOverrideMode" }, // Area2D
-	{ "GetSpatialNode", "GetNode3d" }, // EditorNode3DGizmo
-	{ "GetSpeed", "GetVelocity" }, // InputEventMouseMotion
-	{ "GetStyleboxTypes", "GetStyleboxTypeList" }, // Theme
-	{ "GetSurfaceMaterial", "GetSurfaceOverrideMaterial" }, // MeshInstance3D -- Breaks ImporterMesh.
-	{ "GetSurfaceMaterialCount", "GetSurfaceOverrideMaterialCount" }, // MeshInstance3D
-	{ "GetTabDisabled", "IsTabDisabled" }, // Tab
-	{ "GetTabHidden", "IsTabHidden" }, // Tab
-	{ "GetTargetLocation", "GetTargetPosition" }, // NavigationAgent2D, NavigationAgent3D
-	{ "GetTextAlign", "GetTextAlignment" }, // Button
-	{ "GetThemeItemTypes", "GetThemeItemTypeList" }, // Theme
-	{ "GetTimerProcessMode", "GetTimerProcessCallback" }, // Timer
-	{ "GetTranslation", "GetPosition" }, // Node3D -- Breaks GLTFNode, but it is used rarely.
-	{ "GetUniformName", "GetParameterName" }, // ParameterRef
-	{ "GetUnitDb", "GetVolumeDb" }, // AudioStreamPlayer3D
-	{ "GetUnitOffset", "GetProgressRatio" }, // PathFollow2D, PathFollow3D
-	{ "GetUseInBakedLight", "IsBakingNavigation" }, // GridMap
-	{ "GetVertsPerPoly", "GetVerticesPerPolygon" }, // NavigationMesh
-	{ "GetVScrollbar", "GetVScrollBar" }, // ScrollContainer
-	{ "GetVisibleName", "_GetVisibleName" }, // EditorImportPlugin
-	{ "GetWindowLayout", "_GetWindowLayout" }, // EditorPlugin
-	{ "GetWordUnderCursor", "GetWordUnderCaret" }, // TextEdit
-	{ "GetWorld", "GetWorld3d" }, // Viewport, Node3D
-	{ "GetZfar", "GetFar" }, // Camera3D -- Breaks GLTFCamera
-	{ "GetZnear", "GetNear" }, // Camera3D -- Breaks GLTFCamera
-	{ "GrooveJointCreate", "JointMakeGroove" }, // PhysicsServer2D
-	{ "HandleMenuSelected", "_HandleMenuSelected" }, // EditorResourcePicker
-	{ "HandlesType", "_HandlesType" }, // ResourceFormatLoader
-	{ "HasColor", "HasThemeColor" }, // Control -- Breaks Theme
-	{ "HasColorOverride", "HasThemeColorOverride" }, // Control -- Breaks Theme
-	{ "HasConstant", "HasThemeConstant" }, // Control
-	{ "HasConstantOverride", "HasThemeConstantOverride" }, // Control
-	{ "HasFilter", "_HasFilter" }, // AnimationNode
-	{ "HasFont", "HasThemeFont" }, // Control -- Breaks Theme
-	{ "HasFontOverride", "HasThemeFontOverride" }, // Control
-	{ "HasIcon", "HasThemeIcon" }, // Control -- Breaks Theme
-	{ "HasIconOverride", "HasThemeIconOverride" }, // Control
-	{ "HasMainScreen", "_HasMainScreen" }, // EditorPlugin
-	{ "HasNetworkPeer", "HasMultiplayerPeer" }, // Multiplayer API
-	{ "HasStylebox", "HasThemeStylebox" }, // Control -- Breaks Theme
-	{ "HasStyleboxOverride", "HasThemeStyleboxOverride" }, // Control
-	{ "HttpEscape", "UriEncode" }, // String
-	{ "HttpUnescape", "UriDecode" }, // String
-	{ "ImportAnimationFromOtherImporter", "_ImportAnimation" }, // EditorSceneFormatImporter
-	{ "ImportSceneFromOtherImporter", "_ImportScene" }, // EditorSceneFormatImporter
-	{ "InstanceSetSurfaceMaterial", "InstanceSetSurfaceOverrideMaterial" }, // RenderingServer
-	{ "IntersectPolygons2d", "IntersectPolygons" }, // Geometry2D
-	{ "IntersectPolylineWithPolygon2d", "IntersectPolylineWithPolygon" }, // Geometry2D
-	{ "IsAParentOf", "IsAncestorOf" }, // Node
-	{ "IsCommitingAction", "IsCommittingAction" }, // UndoRedo
-	{ "IsDoubleclick", "IsDoubleClick" }, // InputEventMouseButton
-	{ "IsFollowSmoothingEnabled", "IsPositionSmoothingEnabled" }, // Camera2D
-	{ "IsHDragEnabled", "IsDragHorizontalEnabled" }, // Camera2D
-	{ "IsHandleHighlighted", "_IsHandleHighlighted" }, // EditorNode3DGizmo, EditorNode3DGizmoPlugin
-	{ "IsNetworkMaster", "IsMultiplayerAuthority" }, // Node
-	{ "IsNetworkServer", "IsServer" }, // Multiplayer API
-	{ "IsNormalmap", "IsNormalMap" }, // NoiseTexture
-	{ "IsRefusingNewNetworkConnections", "IsRefusingNewConnections" }, // Multiplayer API
-	{ "IsRegion", "IsRegionEnabled" }, // Sprite2D
-	{ "IsRotating", "IsIgnoringRotation" }, // Camera2D
-	{ "IsScancodeUnicode", "IsKeycodeUnicode" }, // OS
-	{ "IsSelectableWhenHidden", "_IsSelectableWhenHidden" }, // EditorNode3DGizmoPlugin
-	{ "IsSetAsToplevel", "IsSetAsTopLevel" }, // CanvasItem
-	{ "IsShortcut", "MatchesEvent" }, // Shortcut
-	{ "IsSizeOverrideStretchEnabled", "IsSize2dOverrideStretchEnabled" }, // SubViewport
-	{ "IsSortEnabled", "IsYSortEnabled" }, // Node2D
-	{ "IsStaticBody", "IsAbleToSleep" }, // PhysicalBone3D -- Not sure.
-	{ "IsVDragEnabled", "IsDragVerticalEnabled" }, // Camera2D
-	{ "JointCreateConeTwist", "JointMakeConeTwist" }, // PhysicsServer3D
-	{ "JointCreateGeneric6dof", "JointMakeGeneric6dof" }, // PhysicsServer3D
-	{ "JointCreateHinge", "JointMakeHinge" }, // PhysicsServer3D
-	{ "JointCreatePin", "JointMakePin" }, // PhysicsServer3D
-	{ "JointCreateSlider", "JointMakeSlider" }, // PhysicsServer3D
-	{ "LineIntersectsLine2d", "LineIntersectsLine" }, // Geometry2D
-	{ "LoadFromGlobals", "LoadFromProjectSettings" }, // InputMap
-	{ "MakeConvexFromBrothers", "MakeConvexFromSiblings" }, // CollisionShape3D
-	{ "MergePolygons2d", "MergePolygons" }, // Geometry2D
-	{ "MeshSurfaceGetFormat", "MeshSurfaceGetFormatAttributeStride" }, // RenderingServer
-	{ "MeshSurfaceUpdateRegion", "MeshSurfaceUpdateAttributeRegion" }, // RenderingServer
-	{ "MoveToBottom", "MoveAfter" }, // Skeleton3D
-	{ "MoveToTop", "MoveBefore" }, // Skeleton3D
-	{ "MultimeshAllocate", "MultimeshAllocateData" }, // RenderingServer
-	{ "NormalmapToXy", "NormalMapToXy" }, // Image
-	{ "OffsetPolygon2d", "OffsetPolygon" }, // Geometry2D
-	{ "OffsetPolyline2d", "OffsetPolyline" }, // Geometry2D
-	{ "PercentDecode", "UriDecode" }, // String
-	{ "PercentEncode", "UriEncode" }, // String
-	{ "PinJointCreate", "JointMakePin" }, // PhysicsServer2D
-	{ "PopupCenteredMinsize", "PopupCenteredClamped" }, // Window
-	{ "PostImport", "_PostImport" }, // EditorScenePostImport
-	{ "PrintStrayNodes", "PrintOrphanNodes" }, // Node
-	{ "PropertyListChangedNotify", "NotifyPropertyListChanged" }, // Object
-	{ "Recognize", "_Recognize" }, // ResourceFormatLoader
-	{ "RegenNormalmaps", "RegenNormalMaps" }, // ArrayMesh
-	{ "RegionBakeNavmesh", "region_bake_navigation_mesh" }, // Navigation3DServer
-	{ "RegionSetNavmesh", "RegionSetNavigationMesh" }, // Navigation3DServer
-	{ "RegionSetNavpoly", "RegionSetNavigationPolygon" }, // Navigation2DServer
-	{ "RemoveAnimation", "RemoveAnimationLibrary" }, // AnimationPlayer
-	{ "RemoveColorOverride", "RemoveThemeColorOverride" }, // Control
-	{ "RemoveConstantOverride", "RemoveThemeConstantOverride" }, // Control
-	{ "RemoveFontOverride", "RemoveThemeFontOverride" }, // Control
-	{ "RemoveSceneImportPlugin", "RemoveSceneFormatImporterPlugin" }, //EditorPlugin
-	{ "RemoveSpatialGizmoPlugin", "RemoveNode3dGizmoPlugin" }, // EditorPlugin
-	{ "RemoveStyleboxOverride", "RemoveThemeStyleboxOverride" }, // Control
-	{ "RenameAnimation", "RenameAnimationLibrary" }, // AnimationPlayer
-	{ "RenameDependencies", "_RenameDependencies" }, // ResourceFormatLoader
-	{ "SaveExternalData", "_SaveExternalData" }, // EditorPlugin
-	{ "SegmentIntersectsSegment2d", "SegmentIntersectsSegment" }, // Geometry2D
-	{ "SetAdjustmentEnable", "SetAdjustmentEnabled" }, // Environment
-	{ "SetAlt", "SetAltPressed" }, // InputEventWithModifiers
-	{ "SetAnchorAndMargin", "SetAnchorAndOffset" }, // Control
-	{ "SetAnchorsAndMarginsPreset", "SetAnchorsAndOffsetsPreset" }, // Control
-	{ "SetAnimationProcessMode", "SetProcessCallback" }, // AnimationPlayer
-	{ "SetAsBulkArray", "SetBuffer" }, // MultiMesh
-	{ "SetAsNormalmap", "SetAsNormalMap" }, // NoiseTexture
-	{ "SetAsToplevel", "SetAsTopLevel" }, // CanvasItem
-	{ "SetAudioBus", "SetAudioBusName" }, // Area3D
-	{ "SetAutowrap", "SetAutowrapMode" }, // Label -- Breaks AcceptDialog.
-	{ "SetCastTo", "SetTargetPosition" }, // RayCast2D, RayCast3D
-	{ "SetCollisionLayerBit", "SetCollisionLayerValue" }, // CSGShape3D, and a lot of others like GridMap.
-	{ "SetCollisionMaskBit", "SetCollisionMaskValue" }, // CSGShape3D, and a lot of others like GridMap.
-	{ "SetColumnMinWidth", "SetColumnCustomMinimumWidth" }, // Tree
-	{ "SetCommand", "SetCommandPressed" }, // InputEventWithModifiers
-	{ "SetControl", "SetCtrlPressed" }, // InputEventWithModifiers
-	{ "SetCreateOptions", "_SetCreateOptions" }, //  EditorResourcePicker
-	{ "SetCullMaskBit", "SetCullMaskValue" }, // Camera3D
-	{ "SetCursorPosition", "SetCaretColumn" }, // LineEdit
-	{ "SetD", "SetDistance" }, // WorldMarginShape2D
-	{ "SetDefaultLength", "SetLength" }, // Bone2D
-	{ "SetDepthBiasEnable", "SetDepthBiasEnabled" }, // RDPipelineRasterizationState
-	{ "SetDevice", "SetOutputDevice" }, // AudioServer
-	{ "SetDoubleclick", "SetDoubleClick" }, // InputEventMouseButton
-	{ "SetEnableFollowSmoothing", "SetPositionSmoothingEnabled" }, // Camera2D
-	{ "SetEnabledFocusMode", "SetFocusMode" }, // BaseButton
-	{ "SetEndianSwap", "SetBigEndian" }, // File
-	{ "SetExpandToTextLength", "SetExpandToTextLengthEnabled" }, // LineEdit
-	{ "SetFocusNeighbour", "SetFocusNeighbor" }, // Control
-	{ "SetFollowSmoothing", "SetPositionSmoothingSpeed" }, // Camera2D
-	{ "SetFrameColor", "SetColor" }, // ColorRect
-	{ "SetGlobalRateScale", "SetPlaybackSpeedScale" }, // AudioServer
-	{ "SetGravityDistanceScale", "SetGravityPointDistanceScale" }, // Area2D
-	{ "SetGravityVector", "SetGravityDirection" }, // Area2D
-	{ "SetHDragEnabled", "SetDragHorizontalEnabled" }, // Camera2D
-	{ "SetIconAlign", "SetIconAlignment" }, // Button
-	{ "SetInteriorAmbient", "SetAmbientColor" }, // ReflectionProbe
-	{ "SetInteriorAmbientEnergy", "SetAmbientColorEnergy" }, // ReflectionProbe
-	{ "SetIsInitialized", "_IsInitialized" }, // XRInterface
-	{ "SetIsPrimary", "SetPrimary" }, // XRInterface
-	{ "SetItemNavmesh", "SetItemNavigationMesh" }, // MeshLibrary
-	{ "SetItemNavmeshTransform", "SetItemNavigationMeshTransform" }, // MeshLibrary
-	{ "SetIterationsPerSecond", "SetPhysicsTicksPerSecond" }, // Engine
-	{ "SetLayerMaskBit", "SetLayerMaskValue" }, // VisualInstance3D
-	{ "SetMarginsPreset", "SetOffsetsPreset" }, // Control
-	{ "SetMaxAtlasSize", "SetMaxTextureSize" }, // LightmapGI
-	{ "SetMetakey", "SetMetaPressed" }, // InputEventWithModifiers
-	{ "SetMidHeight", "SetHeight" }, // CapsuleMesh
-	{ "SetNeighborDist", "SetNeighborDistance" }, // NavigationAgent2D, NavigationAgent3D
-	{ "SetNetworkMaster", "SetMultiplayerAuthority" }, // Node
-	{ "SetNetworkPeer", "SetMultiplayerPeer" }, // Multiplayer API
-	{ "SetOneshot", "SetOneShot" }, // AnimatedTexture
-	{ "SetPhysicalScancode", "SetPhysicalKeycode" }, // InputEventKey
-	{ "SetProximityFade", "SetProximityFadeEnabled" }, // Material
-	{ "SetRefuseNewNetworkConnections", "SetRefuseNewConnections" }, // Multiplayer API
-	{ "SetRegion", "SetRegionEnabled" }, // Sprite2D -- Sprite breaks AtlasTexture.
-	{ "SetRegionFilterClip", "SetRegionFilterClipEnabled" }, // Sprite2D
-	{ "SetReverbBus", "SetReverbBusName" }, // Area3D
-	{ "SetRotate", "SetRotates" }, // PathFollow2D
-	{ "SetScancode", "SetKeycode" }, // InputEventKey
-	{ "SetShaderParam", "SetShaderParameter" }, // ShaderMaterial
-	{ "SetShift", "SetShiftPressed" }, // InputEventWithModifiers
-	{ "SetSizeOverride", "SetSize2dOverride" }, // SubViewport -- Breaks ImageTexture.
-	{ "SetSizeOverrideStretch", "SetSize2dOverrideStretch" }, // SubViewport
-	{ "SetSlipsOnSlope", "SetSlideOnSlope" }, // SeparationRayShape2D, SeparationRayShape3D
-	{ "SetSortEnabled", "SetYSortEnabled" }, // Node2D
-	{ "SetSpaceOverrideMode", "SetGravitySpaceOverrideMode" }, // Area2D
-	{ "SetSpatialNode", "SetNode3d" }, // EditorNode3DGizmo
-	{ "SetSpeed", "SetVelocity" }, // InputEventMouseMotion
-	{ "SetSsaoEdgeSharpness", "SetSsaoSharpness" }, // Environment
-	{ "SetSurfaceMaterial", "SetSurfaceOverrideMaterial" }, // MeshInstance3D -- Breaks ImporterMesh.
-	{ "SetTabAlign", "SetTabAlignment" }, // TabContainer
-	{ "SetTangent", "SurfaceSetTangent" }, // ImmediateGeometry -- Breaks SurfaceTool.
-	{ "SetTargetLocation", "SetTargetPosition" }, // NavigationAgent2D, NavigationAgent3D
-	{ "SetTextAlign", "SetTextAlignment" }, // Button
-	{ "SetTimerProcessMode", "SetTimerProcessCallback" }, // Timer
-	{ "SetTonemapAutoExposure", "SetTonemapAutoExposureEnabled" }, // Environment
-	{ "SetTranslation", "SetPosition" }, // Node3D -- This breaks GLTFNode, but it is used rarely.
-	{ "SetUniformName", "SetParameterName" }, // ParameterRef
-	{ "SetUnitDb", "SetVolumeDb" }, // AudioStreamPlayer3D
-	{ "SetUnitOffset", "SetProgressRatio" }, // PathFollow2D, PathFollow3D
-	{ "SetUv2", "SurfaceSetUv2" }, // ImmediateMesh -- Breaks SurfaceTool.
-	{ "SetVertsPerPoly", "SetVerticesPerPolygon" }, // NavigationMesh
-	{ "SetVDragEnabled", "SetDragVerticalEnabled" }, // Camera2D
-	{ "SetValign", "SetVerticalAlignment" }, // Label
-	{ "SetWindowLayout", "_SetWindowLayout" }, // EditorPlugin
-	{ "SetZfar", "SetFar" }, // Camera3D -- Breaks GLTFCamera.
-	{ "SetZnear", "SetNear" }, // Camera3D -- Breaks GLTFCamera.
-	{ "ShortcutMatch", "IsMatch" }, // InputEvent
-	{ "SkeletonAllocate", "SkeletonAllocateData" }, // RenderingServer
-	{ "SurfaceUpdateRegion", "SurfaceUpdateAttributeRegion" }, // ArrayMesh
-	{ "TrackRemoveKeyAtPosition", "TrackRemoveKeyAtTime" }, // Animation
-	{ "TriangulateDelaunay2d", "TriangulateDelaunay" }, // Geometry2D
-	{ "UnbindChildNodeFromBone", "RemoveBoneChild" }, // Skeleton3D
-	{ "Unselect", "Deselect" }, // ItemList
-	{ "UnselectAll", "DeselectAll" }, // ItemList
-	{ "UpdateConfigurationWarning", "UpdateConfigurationWarnings" }, // Node
-	{ "UpdateGizmo", "UpdateGizmos" }, // Node3D
-	{ "ViewportSetUseArvr", "ViewportSetUseXr" }, // RenderingServer
-	{ "WarpMousePosition", "WarpMouse" }, // Input
-	{ "WorldToMap", "LocalToMap" }, // TileMap, GridMap
-
-	// Builtin types
-	{ "Clamped", "LimitLength" }, // Vector2
-	{ "GetRotationQuat", "GetRotationQuaternion" }, // Basis
-	{ "GrowMargin", "GrowSide" }, // Rect2
-	{ "IsAbsPath", "IsAbsolutePath" }, // String
-	{ "IsValidInteger", "IsValidInt" }, // String
-	{ "LinearInterpolate", "Lerp" }, // Color
-	{ "ToAscii", "ToAsciiBuffer" }, // String
-	{ "ToUtf8", "ToUtf8Buffer" }, // String
-
-	// @GlobalScope
-	{ "Bytes2Var", "BytesToVar" },
-	{ "Bytes2VarWithObjects", "BytesToVarWithObjects" },
-	{ "Db2Linear", "DbToLinear" },
-	{ "Deg2Rad", "DegToRad" },
-	{ "Linear2Db", "LinearToDb" },
-	{ "Rad2Deg", "RadToDeg" },
-	{ "RandRange", "RandfRange" },
-	{ "RangeLerp", "Remap" },
-	{ "Stepify", "Snapped" },
-	{ "Str2Var", "StrToVar" },
-	{ "Var2Str", "VarToStr" },
-	{ "Var2Bytes", "VarToBytes" },
-	{ "Var2BytesWithObjects", "VarToBytesWithObjects" },
-
-	// @GDScript
-	{ "Dict2Inst", "DictToInst" },
-	{ "Inst2Dict", "InstToDict" },
-
-	{ nullptr, nullptr },
-};
 
 const char *RenamesMap3To4::gdscript_properties_renames[][2] = {
 	// NOTE: Commented out renames are disabled because deemed not suitable for
 	// the current way the regex-based converter works.
 	// When uncommenting any of those as suitable for conversion, please move it
-	// to the block with other enabled conversions, ordered alphabetically, and
-	// make sure to add it to the C# rename map too.
+	// to the block with other enabled conversions, ordered alphabetically.
 
 	// Too common words, users may use these names for variables or in comments.
 	// { "bg", SceneStringName(panel) }, // Theme
@@ -1174,117 +749,17 @@ const char *RenamesMap3To4::gdscript_properties_renames[][2] = {
 	{ nullptr, nullptr },
 };
 
-const char *RenamesMap3To4::csharp_properties_renames[][2] = {
-	{ "AsNormalmap", "AsNormalMap" }, // NoiseTexture
-	{ "BbcodeText", "Text" }, // RichTextLabel
-	{ "BgFocus", "Focus" }, // Theme
-	{ "CaptureDevice", "InputDevice" }, // AudioServer
-	{ "CaretBlinkSpeed", "CaretBlinkInterval" }, // TextEdit, LineEdit
-	{ "CaretMovingByRightClick", "CaretMoveOnRightClick" }, // TextEdit
-	{ "CaretPosition", "CaretColumn" }, // LineEdit
-	{ "CastTo", "TargetPosition" }, // RayCast2D, RayCast3D
-	{ "CheckVadjust", "CheckVAdjust" }, // Theme
-	{ "CloseHOfs", "CloseHOffset" }, // Theme
-	{ "CloseVOfs", "CloseVOffset" }, // Theme
-	{ "Commentfocus", "CommentFocus" }, // Theme
-	{ "ContactsReported", "MaxContactsReported" }, // RigidBody
-	{ "DepthBiasEnable", "DepthBiasEnabled" }, // RDPipelineRasterizationState
-	{ "DragMarginBottom", "DragBottomMargin" }, // Camera2D
-	{ "DragMarginHEnabled", "DragHorizontalEnabled" }, // Camera2D
-	{ "DragMarginLeft", "DragLeftMargin" }, // Camera2D
-	{ "DragMarginRight", "DragRightMargin" }, // Camera2D
-	{ "DragMarginTop", "DragTopMargin" }, // Camera2D
-	{ "DragMarginVEnabled", "DragVerticalEnabled" }, // Camera2D
-	{ "EnabledFocusMode", "FocusMode" }, // BaseButton - Removed
-	{ "ExtraSpacingBottom", "SpacingBottom" }, // Font
-	{ "ExtraSpacingTop", "SpacingTop" }, // Font
-	{ "FocusNeighbourBottom", "FocusNeighborBottom" }, // Control
-	{ "FocusNeighbourLeft", "FocusNeighborLeft" }, // Control
-	{ "FocusNeighbourRight", "FocusNeighborRight" }, // Control
-	{ "FocusNeighbourTop", "FocusNeighborTop" }, // Control
-	{ "FollowViewportEnable", "FollowViewportEnabled" }, // CanvasItem
-	{ "FileIconModulate", "FileIconColor" }, // Theme
-	{ "FilesDisabled", "FileDisabledColor" }, // Theme
-	{ "FolderIconModulate", "FolderIconColor" }, // Theme
-	{ "GlobalRateScale", "PlaybackSpeedScale" }, // AudioServer
-	{ "GravityDistanceScale", "GravityPointDistanceScale" }, // Area2D
-	{ "GravityVec", "GravityDirection" }, // Area2D
-	{ "HintTooltip", "TooltipText" }, // Control
-	{ "Hseparation", "HSeparation" }, // Theme
-	{ "IconAlign", "IconAlignment" }, // Button
-	{ "IterationsPerSecond", "PhysicsTicksPerSecond" }, // Engine
-	{ "InvertEnable", "InvertEnabled" }, // Polygon2D
-	{ "MarginBottom", "OffsetBottom" }, // Control -- Breaks NinePatchRect, StyleBox.
-	{ "MarginLeft", "OffsetLeft" }, // Control -- Breaks NinePatchRect, StyleBox.
-	{ "MarginRight", "OffsetRight" }, // Control -- Breaks NinePatchRect, StyleBox.
-	{ "MarginTop", "OffsetTop" }, // Control -- Breaks NinePatchRect, StyleBox.
-	{ "MidHeight", "Height" }, // CapsuleMesh
-	{ "Navpoly", "NavigationPolygon" }, // NavigationRegion2D
-	{ "Navmesh", "NavigationMesh" }, // NavigationRegion3D
-	{ "NeighborDist", "NeighborDistance" }, // NavigationAgent2D, NavigationAgent3D
-	{ "Octaves", "FractalOctaves" }, // OpenSimplexNoise -> FastNoiseLite
-	{ "OffsetH", "DragHorizontalOffset" }, // Camera2D
-	{ "OffsetV", "DragVerticalOffset" }, // Camera2D
-	{ "OffDisabled", "UncheckedDisabled" }, // Theme
-	{ "OnDisabled", "CheckedDisabled" }, // Theme
-	{ "Oneshot", "OneShot" }, // AnimatedTexture
-	{ "OutOfRangeMode", "MaxPolyphony" }, // AudioStreamPlayer3D
-	{ "PauseMode", "ProcessMode" }, // Node
-	{ "Perpendicular", "Orthogonal" }, // Vector2 - Only exists in C#
-	{ "PhysicalScancode", "PhysicalKeycode" }, // InputEventKey
-	{ "PopupExclusive", "Exclusive" }, // Window
-	{ "ProximityFadeEnable", "ProximityFadeEnabled" }, // Material
-	{ "RectPosition", "Position" }, // Control
-	{ "RectGlobalPosition", "GlobalPosition" }, // Control
-	{ "RectSize", "Size" }, // Control
-	{ "RectMinSize", "CustomMinimumSize" }, // Control
-	{ "RectRotation", "Rotation" }, // Control
-	{ "RectScale", "Scale" }, // Control
-	{ "RectPivotOffset", "PivotOffset" }, // Control
-	{ "RectClipContent", "ClipContents" }, // Control
-	{ "RefuseNewNetworkConnections", "RefuseNewConnections" }, // MultiplayerAPI
-	{ "RegionFilterClip", "RegionFilterClipEnabled" }, // Sprite2D
-	{ "ReverbBusEnable", "ReverbBusEnabled" }, // Area3D
-	{ "Scancode", "Keycode" }, // InputEventKey
-	{ "Selectedframe", "SelectedFrame" }, // Theme
-	{ "SizeOverrideStretch", "Size2dOverrideStretch" }, // SubViewport
-	{ "SlipsOnSlope", "SlideOnSlope" }, // SeparationRayShape2D
-	{ "SmoothingEnabled", "PositionSmoothingEnabled" }, // Camera2D
-	{ "SmoothingSpeed", "PositionSmoothingSpeed" }, // Camera2D
-	{ "SsReflectionsDepthTolerance", "SsrDepthTolerance" }, // Environment
-	{ "SsReflectionsEnabled", "SsrEnabled" }, // Environment
-	{ "SsReflectionsFadeIn", "SsrFadeIn" }, // Environment
-	{ "SsReflectionsFadeOut", "SsrFadeOut" }, // Environment
-	{ "SsReflectionsMaxSteps", "SsrMaxSteps" }, // Environment
-	{ "StateMachineSelectedframe", "StateMachineSelectedFrame" }, // Theme
-	{ "SyntaxHighlighting", "SyntaxHighlighter" }, // TextEdit
-	{ "TabAlign", "TabAlignment" }, // TabContainer
-	{ "TableHseparation", "TableHSeparation" }, // Theme
-	{ "TableVseparation", "TableVSeparation" }, // Theme
-	{ "Tangent", "Orthogonal" }, // Vector2
-	{ "TargetLocation", "TargetPosition" }, // NavigationAgent2D, NavigationAgent3D
-	{ "Toplevel", "TopLevel" }, // Node
-	{ "Translation", "Position" }, // Node3D
-	{ "UnitDb", "VolumeDb" }, // AudioStreamPlayer3D
-	{ "UnitOffset", "ProgressRatio" }, // PathFollow2D, PathFollow3D
-	{ "Vseparation", "VSeparation" }, // Theme
-
-	{ nullptr, nullptr },
-};
-
 const char *RenamesMap3To4::gdscript_signals_renames[][2] = {
 	// NOTE: Commented out renames are disabled because deemed not suitable for
 	// the current way the regex-based converter works.
 	// When uncommenting any of those as suitable for conversion, please move it
-	// to the block with other enabled conversions, ordered alphabetically, and
-	// make sure to add it to the C# rename map too.
+	// to the block with other enabled conversions, ordered alphabetically.
 
 	// Too common words, users may use these names for variables or in comments.
 	// { "hide", "hidden" }, // CanvasItem
 	// { "changed", "settings_changed" }, // EditorSettings
 
 	{ "about_to_show", "about_to_popup" }, // Popup
-	{ "button_release", "button_released" }, // XRController3D
 	{ "cancelled", "canceled" }, // AcceptDialog
 	{ "item_double_clicked", "item_icon_double_clicked" }, // Tree
 	{ "network_peer_connected", "peer_connected" }, // MultiplayerAPI
@@ -1297,25 +772,6 @@ const char *RenamesMap3To4::gdscript_signals_renames[][2] = {
 	{ "tab_close", "tab_closed" }, // TextEdit
 	{ "tab_hover", "tab_hovered" }, // TextEdit
 	{ "text_entered", "text_submitted" }, // LineEdit
-
-	{ nullptr, nullptr },
-};
-
-const char *RenamesMap3To4::csharp_signals_renames[][2] = {
-	{ "AboutToShow", "AboutToPopup" }, // Popup
-	{ "ButtonRelease", "ButtonReleased" }, // XRController3D
-	{ "Cancelled", "Canceled" }, // AcceptDialog
-	{ "ItemDoubleClicked", "ItemIconDoubleClicked" }, // Tree
-	{ "NetworkPeerConnected", "PeerConnected" }, // MultiplayerAPI
-	{ "NetworkPeerDisconnected", "PeerDisconnected" }, // MultiplayerAPI
-	{ "NetworkPeerPacket", "PeerPacket" }, // MultiplayerAPI
-	{ "NodeUnselected", "NodeDeselected" }, // GraphEdit
-	{ "OffsetChanged", "PositionOffsetChanged" }, // GraphNode
-	{ "SettingsChanged", "Changed" }, // TileMap -- Breaks EditorSettings
-	{ "SkeletonUpdated", "PoseUpdated" }, //
-	{ "TabClose", "TabClosed" }, // TextEdit
-	{ "TabHover", "TabHovered" }, // TextEdit
-	{ "TextEntered", "TextSubmitted" }, // LineEdit
 
 	{ nullptr, nullptr },
 };
@@ -1468,14 +924,6 @@ const char *RenamesMap3To4::class_renames[][2] = {
 	{ "Shape", "Shape3D" },
 	{ "Tabs", "TabBar" },
 
-	{ "ARVRAnchor", "XRAnchor3D" },
-	{ "ARVRCamera", "XRCamera3D" },
-	{ "ARVRController", "XRController3D" },
-	{ "ARVRInterface", "XRInterface" },
-	{ "ARVRInterfaceGDNative", "Node3D" },
-	{ "ARVROrigin", "XROrigin3D" },
-	{ "ARVRPositionalTracker", "XRPositionalTracker" },
-	{ "ARVRServer", "XRServer" },
 	{ "AStar", "AStar3D" },
 	{ "AnimatedSprite", "AnimatedSprite2D" },
 	{ "AudioStreamOGGVorbis", "AudioStreamOggVorbis" },
@@ -1656,9 +1104,6 @@ const char *RenamesMap3To4::class_renames[][2] = {
 	{ "WebRTCMultiplayer", "WebRTCMultiplayerPeer" },
 	{ "WebRTCPeerConnectionGDNative", "WebRTCPeerConnectionExtension" },
 	{ "WindowDialog", "Window" },
-	{ "XRAnchor", "XRAnchor3D" },
-	{ "XRController", "XRController3D" },
-	{ "XROrigin", "XROrigin3D" },
 	{ "YSort", "Node2D" }, // CanvasItem has a new "y_sort_enabled" property.
 
 	{ nullptr, nullptr },

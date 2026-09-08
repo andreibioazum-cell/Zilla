@@ -88,7 +88,7 @@ const Engine = (function () {
 				const me = this;
 				function doInit(promise) {
 					// Care! Promise chaining is bogus with old emscripten versions.
-					// This caused a regression with the Mono build (which uses an older emscripten version).
+					// This caused a regression with builds using an older emscripten version.
 					// Make sure to test that when refactoring.
 					return new Promise(function (resolve, reject) {
 						promise.then(function (response) {

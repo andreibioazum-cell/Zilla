@@ -5,8 +5,7 @@
 	</brief_description>
 	<description>
 		An array data structure that can contain a sequence of elements of any [Variant] type by default. Values can optionally be constrained to a specific type by creating a [i]typed array[/i]. Elements are accessed by a numerical index starting at [code]0[/code]. Negative indices are used to count from the back ([code]-1[/code] is the last element, [code]-2[/code] is the second to last, etc.).
-		[codeblocks]
-		[gdscript]
+		[codeblock]
 		var array = ["First", 2, 3, "Last"]
 		print(array[0])  # Prints "First"
 		print(array[2])  # Prints 3
@@ -19,22 +18,7 @@
 		# This typed array can only contain integers.
 		# Attempting to add any other type will result in an error.
 		var typed_array: Array[int] = [1, 2, 3]
-		[/gdscript]
-		[csharp]
-		Godot.Collections.Array array = ["First", 2, 3, "Last"];
-		GD.Print(array[0]); // Prints "First"
-		GD.Print(array[2]); // Prints 3
-		GD.Print(array[^1]); // Prints "Last"
-
-		array[1] = "Second";
-		GD.Print(array[1]); // Prints "Second"
-		GD.Print(array[^3]); // Prints "Second"
-
-		// This typed array can only contain integers.
-		// Attempting to add any other type will result in an error.
-		Godot.Collections.Array&lt;int&gt; typedArray = [1, 2, 3];
-		[/csharp]
-		[/codeblocks]
+		[/codeblock]
 		[b]Note:[/b] Arrays are always passed by [b]reference[/b]. To get a copy of an array that can be modified independently of the original array, use [method duplicate].
 		[b]Note:[/b] Erasing elements while iterating over arrays is [b]not[/b] supported and will result in unpredictable behavior.
 		[b]Note:[/b] In a boolean context, an array will evaluate to [code]false[/code] if it's empty ([code][][/code]). Otherwise, an array will always evaluate to [code]true[/code].
@@ -170,8 +154,7 @@
 			<description>
 				Calls the given [Callable] on each element in the array and returns [code]true[/code] if the [Callable] returns [code]true[/code] for [i]all[/i] elements in the array. If the [Callable] returns [code]false[/code] for one array element or more, this method returns [code]false[/code].
 				The [param callable] should take one [Variant] parameter (the current array element) and return a [bool].
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				func greater_than_5(number):
 					return number &gt; 5
 
@@ -183,29 +166,7 @@
 
 					# Same as the first line above, but using a lambda function.
 					print([6, 10, 6].all(func(element): return element &gt; 5)) # Prints true
-				[/gdscript]
-				[csharp]
-				private static bool GreaterThan5(int number)
-				{
-					return number &gt; 5;
-				}
-
-				public override void _Ready()
-				{
-					// Prints True (3/3 elements evaluate to true).
-					GD.Print(new Godot.Collections.Array&lt;int&gt; { 6, 10, 6 }.All(GreaterThan5));
-					// Prints False (1/3 elements evaluate to true).
-					GD.Print(new Godot.Collections.Array&lt;int&gt; { 4, 10, 4 }.All(GreaterThan5));
-					// Prints False (0/3 elements evaluate to true).
-					GD.Print(new Godot.Collections.Array&lt;int&gt; { 4, 4, 4 }.All(GreaterThan5));
-					// Prints True (0/0 elements evaluate to true).
-					GD.Print(new Godot.Collections.Array&lt;int&gt; { }.All(GreaterThan5));
-
-					// Same as the first line above, but using a lambda function.
-					GD.Print(new Godot.Collections.Array&lt;int&gt; { 6, 10, 6 }.All(element =&gt; element &gt; 5)); // Prints True
-				}
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 				See also [method any], [method filter], [method map] and [method reduce].
 				[b]Note:[/b] Unlike relying on the size of an array returned by [method filter], this method will return as early as possible to improve performance (especially with large arrays).
 				[b]Note:[/b] For an empty array, this method [url=https://en.wikipedia.org/wiki/Vacuous_truth]always[/url] returns [code]true[/code].
@@ -368,20 +329,12 @@
 			<description>
 				Assigns the given [param value] to all elements in the array.
 				This method can often be combined with [method resize] to create an array with a given size and initialized elements:
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				var array = []
 				array.resize(5)
 				array.fill(2)
 				print(array) # Prints [2, 2, 2, 2, 2]
-				[/gdscript]
-				[csharp]
-				Godot.Collections.Array array = [];
-				array.Resize(5);
-				array.Fill(2);
-				GD.Print(array); // Prints [2, 2, 2, 2, 2]
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 				[b]Note:[/b] If [param value] is a [Variant] passed by reference ([Object]-derived, [Array], [Dictionary], etc.), the array will be filled with references to the same [param value], which are not duplicates.
 			</description>
 		</method>
@@ -410,7 +363,7 @@
 			<param index="1" name="from" type="int" default="0" />
 			<description>
 				Returns the index of the [b]first[/b] occurrence of [param what] in this array, or [code]-1[/code] if there are none. The search's start can be specified with [param from], continuing to the end of the array.
-				[b]Note:[/b] If you just want to know whether the array contains [param what], use [method has] ([code]Contains[/code] in C#). In GDScript, you may also use the [code]in[/code] operator.
+				[b]Note:[/b] If you just want to know whether the array contains [param what], use [method has]. In GDScript, you may also use the [code]in[/code] operator.
 				[b]Note:[/b] For performance reasons, the search is affected by [param what]'s [enum Variant.Type]. For example, [code]7[/code] ([int]) and [code]7.0[/code] ([float]) are not considered equal for this method.
 			</description>
 		</method>
@@ -422,8 +375,7 @@
 				Returns the index of the [b]first[/b] element in the array that causes [param callable] to return [code]true[/code], or [code]-1[/code] if there are none. The search's start can be specified with [param from], continuing to the end of the array.
 				[param callable] takes an element of the array and returns a [bool].
 				[b]Note:[/b] If you just want to know whether the array contains [i]anything[/i] that satisfies [param callable], use [method any].
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				func is_even(number):
 					return number % 2 == 0
 
@@ -436,8 +388,7 @@
 
 				func _ready():
 					print([1, 3, 4, 7].find_custom(is_specific_number.bind(4))) # Prints 2
-				[/gdscript]
-				[/codeblocks]
+				[/codeblock]
 			</description>
 		</method>
 		<method name="front" qualifiers="const">
@@ -478,22 +429,12 @@
 			<param index="0" name="value" type="Variant" />
 			<description>
 				Returns [code]true[/code] if the array contains the given [param value].
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				print(["inside", 7].has("inside"))  # Prints true
 				print(["inside", 7].has("outside")) # Prints false
 				print(["inside", 7].has(7))         # Prints true
 				print(["inside", 7].has("7"))       # Prints false
-				[/gdscript]
-				[csharp]
-				Godot.Collections.Array arr = ["inside", 7];
-				// By C# convention, this method is renamed to `Contains`.
-				GD.Print(arr.Contains("inside"));  // Prints True
-				GD.Print(arr.Contains("outside")); // Prints False
-				GD.Print(arr.Contains(7));         // Prints True
-				GD.Print(arr.Contains("7"));       // Prints False
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 				In GDScript, this is equivalent to the [code]in[/code] operator:
 				[codeblock]
 				if 4 in [2, 4, 6, 8]:
@@ -593,16 +534,10 @@
 			<return type="Variant" />
 			<description>
 				Returns a random element from the array. Generates an error and returns [code]null[/code] if the array is empty.
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				# May print 1, 2, 3.25, or "Hi".
 				print([1, 2, 3.25, "Hi"].pick_random())
-				[/gdscript]
-				[csharp]
-				Godot.Collections.Array array = [1, 2, 3.25f, "Hi"];
-				GD.Print(array.PickRandom()); // May print 1, 2, 3.25, or "Hi".
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 				[b]Note:[/b] Like many similar functions in the engine (such as [method @GlobalScope.randi] or [method shuffle]), this method uses a common, global random seed. To get a predictable outcome from this method, see [method @GlobalScope.seed].
 			</description>
 		</method>
@@ -773,18 +708,11 @@
 			<return type="void" />
 			<description>
 				Sorts the array in ascending order. The final order is dependent on the "less than" ([code]&lt;[/code]) comparison between elements.
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				var numbers = [10, 5, 2.5, 8]
 				numbers.sort()
 				print(numbers) # Prints [2.5, 5, 8, 10]
-				[/gdscript]
-				[csharp]
-				Godot.Collections.Array numbers = [10, 5, 2.5, 8];
-				numbers.Sort();
-				GD.Print(numbers); // Prints [2.5, 5, 8, 10]
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 				[b]Note:[/b] The sorting algorithm used is not [url=https://en.wikipedia.org/wiki/Sorting_algorithm#Stability]stable[/url]. This means that equivalent elements (such as [code]2[/code] and [code]2.0[/code]) may have their order changed when calling [method sort].
 			</description>
 		</method>
@@ -815,7 +743,6 @@
 				files.sort_custom(func(a, b): return a.naturalnocasecmp_to(b) &lt; 0)
 				print(files) # Prints ["newfile1", "newfile2", "newfile10", "newfile11"]
 				[/codeblock]
-				[b]Note:[/b] In C#, this method is not supported.
 				[b]Note:[/b] The sorting algorithm used is not [url=https://en.wikipedia.org/wiki/Sorting_algorithm#Stability]stable[/url]. This means that values considered equal may have their order changed when calling this method.
 				[b]Note:[/b] You should not randomize the return value of [param func], as the heapsort algorithm expects a consistent result. Randomizing the return value will result in unexpected behavior.
 			</description>
@@ -834,19 +761,11 @@
 			<param index="0" name="right" type="Array" />
 			<description>
 				Appends the [param right] array to the left operand, creating a new [Array]. This is also known as an array concatenation.
-				[codeblocks]
-				[gdscript]
+				[codeblock]
 				var array1 = ["One", 2]
 				var array2 = [3, "Four"]
 				print(array1 + array2) # Prints ["One", 2, 3, "Four"]
-				[/gdscript]
-				[csharp]
-				// Note that concatenation is not possible with C#'s native Array type.
-				Godot.Collections.Array array1 = ["One", 2];
-				Godot.Collections.Array array2 = [3, "Four"];
-				GD.Print(array1 + array2); // Prints ["One", 2, 3, "Four"]
-				[/csharp]
-				[/codeblocks]
+				[/codeblock]
 				[b]Note:[/b] For existing arrays, [method append_array] is much more efficient than concatenation and assignment with the [code]+=[/code] operator.
 			</description>
 		</operator>

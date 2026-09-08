@@ -513,12 +513,11 @@ TEST_SUITE("[Modules][GDScript][LSP][Editor]") {
 		// Code listings
 		CHECK_EQ(LSP::marked_documentation("[codeblock]\nfunc test():\n    print(\"Hello, Godot!\")\n[/codeblock]", {}),
 				"```gdscript\nfunc test():\n    print(\"Hello, Godot!\")\n```");
-		CHECK_EQ(LSP::marked_documentation("[codeblock lang=csharp]\npublic void Test()\n{\n    GD.Print(\"Hello, Godot!\");\n}\n[/codeblock]", {}),
-				"```csharp\npublic void Test()\n{\n    GD.Print(\"Hello, Godot!\");\n}\n```");
-		// Code listings with multiple languages (the codeblocks tag is used in the built-in reference)
+		CHECK_EQ(LSP::marked_documentation("[codeblock lang=text]\nplain text\n[/codeblock]", {}),
+				"```text\nplain text\n```");
+		// Code listings wrapped in the codeblocks tag (used in the built-in reference).
 		// When [codeblocks] is used, we only convert the [gdscript] tag to a code block like the built-in editor.
-		// NOTE: There is always a GDScript code listing in the built-in class reference.
-		CHECK_EQ(LSP::marked_documentation("[codeblocks]\n[gdscript]\nprint(hash(\"a\")) # Prints 177670\n[/gdscript]\n[csharp]\nGD.Print(GD.Hash(\"a\")); // Prints 177670\n[/csharp]\n[/codeblocks]", {}),
+		CHECK_EQ(LSP::marked_documentation("[codeblocks]\n[gdscript]\nprint(hash(\"a\")) # Prints 177670\n[/gdscript]\n[/codeblocks]", {}),
 				"```gdscript\nprint(hash(\"a\")) # Prints 177670\n```\n");
 
 		// lb and rb are used to insert literal square brackets in markdown.
