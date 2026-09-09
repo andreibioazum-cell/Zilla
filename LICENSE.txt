@@ -1,5 +1,6 @@
-Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md).
-Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
+MIT License
+
+Copyright (c) 2026 Zilla contributors.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -18,3 +19,17 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+------------------------------------------------------------------------------
+
+Third party components (see the corresponding folders for full license texts):
+
+  thirdparty/volk                  MIT
+  thirdparty/vulkan                Apache-2.0 / MIT (Khronos Vulkan-Headers)
+  thirdparty/stb                   MIT / public domain (stb_truetype,
+                                   stb_image_write by Sean Barrett)
+  assets/fonts/Inter_*.ttf         SIL Open Font License 1.1 (Inter, taken from
+                                   the Godot Engine sources)
+
+The repository used to be a fork of the Godot Engine (MIT). The engine sources
+have been removed; the code in this repository is not derived from them.
