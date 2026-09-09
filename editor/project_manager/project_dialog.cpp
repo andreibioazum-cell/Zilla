@@ -48,6 +48,7 @@
 #include "scene/gui/line_edit.h"
 #include "scene/gui/link_button.h"
 #include "scene/gui/option_button.h"
+#include "scene/gui/scroll_container.h"
 #include "scene/gui/separator.h"
 #include "scene/gui/texture_rect.h"
 #include "servers/display/display_server.h"
@@ -499,15 +500,7 @@ void ProjectDialog::_renderer_selected() {
 
 	bool rd_error = false;
 
-	if (renderer_type == "forward_plus") {
-		renderer_info->set_text(
-				String::utf8("•  ") + TTR("Supports desktop platforms only.") +
-				String::utf8("\n•  ") + TTR("Advanced 3D graphics available.") +
-				String::utf8("\n•  ") + TTR("Can scale to large complex scenes.") +
-				String::utf8("\n•  ") + TTR("Uses RenderingDevice backend.") +
-				String::utf8("\n•  ") + TTR("Slower rendering of simple scenes."));
-		rd_error = !rendering_device_supported;
-	} else if (renderer_type == "mobile") {
+	if (renderer_type == "mobile") {
 		renderer_info->set_text(
 				String::utf8("•  ") + TTR("Supports desktop + mobile platforms.") +
 				String::utf8("\n•  ") + TTR("Less advanced 3D graphics.") +
@@ -574,17 +567,19 @@ void ProjectDialog::ok_pressed() {
 		ProjectSettings::CustomMap initial_settings;
 
 		// Be sure to change this code if/when renderers are changed.
-		// Default values are "forward_plus" for the main setting, "mobile" for the mobile override,
-		// and "gl_compatibility" for the web override.
-		String renderer_type = renderer_button_group->get_pressed_button()->get_meta(SNAME("rendering_method"));
+		// Default values are "mobile" for the main setting/mobile override,
+		// and "gl_compatibility" for the web override. Forward+ has been removed entirely.
+		BaseButton *pressed_renderer_button = renderer_button_group->get_pressed_button();
+		// Guard against no button being selected (e.g. if a stale "forward_plus"
+		// setting from before Forward+ was removed somehow left nothing pressed).
+		// Default to Mobile in that case instead of crashing.
+		String renderer_type = pressed_renderer_button ? String(pressed_renderer_button->get_meta(SNAME("rendering_method"))) : String("mobile");
 		initial_settings["rendering/renderer/rendering_method"] = renderer_type;
 
 		EditorSettings::get_singleton()->set("project_manager/default_renderer", renderer_type);
 		EditorSettings::get_singleton()->save();
 
-		if (renderer_type == "forward_plus") {
-			project_features.push_back("Forward Plus");
-		} else if (renderer_type == "mobile") {
+		if (renderer_type == "mobile") {
 			project_features.push_back("Mobile");
 		} else if (renderer_type == "gl_compatibility") {
 			project_features.push_back("GL Compatibility");
@@ -986,7 +981,13 @@ void ProjectDialog::show_dialog(bool p_reset_name, bool p_is_confirmed) {
 
 	_validate_path();
 
-	popup_centered(Size2(500, 0) * EDSCALE);
+	// Use an explicit desired size (rather than 0/auto) now that the dialog's content
+	// is wrapped in a ScrollContainer: with scrolling enabled the content no longer
+	// forces a particular window height on its own, so we pick a reasonable default
+	// height here. `popup_centered_clamped` additionally ensures the dialog never
+	// ends up taller than the user's screen; on short screens the content simply
+	// becomes scrollable instead of the dialog spilling past the edges of the screen.
+	popup_centered_clamped(Size2(500, 620) * EDSCALE, 0.85);
 }
 
 void ProjectDialog::_notification(int p_what) {
@@ -1020,8 +1021,23 @@ void ProjectDialog::_bind_methods() {
 }
 
 ProjectDialog::ProjectDialog() {
+	// The dialog's actual content (below) can get quite tall once the renderer
+	// selection, VCS metadata row, etc. are all visible at once. Wrapping it in a
+	// ScrollContainer means that content no longer forces the dialog's minimum
+	// size to grow without bound: on short screens the dialog simply becomes
+	// scrollable instead of spilling past the edges of the screen.
+	VBoxContainer *outer_vb = memnew(VBoxContainer);
+	add_child(outer_vb);
+
+	ScrollContainer *scroll = memnew(ScrollContainer);
+	scroll->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	scroll->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	scroll->set_horizontal_scroll_mode(ScrollContainer::SCROLL_MODE_DISABLED);
+	outer_vb->add_child(scroll);
+
 	VBoxContainer *vb = memnew(VBoxContainer);
-	add_child(vb);
+	vb->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	scroll->add_child(vb);
 
 	name_container = memnew(VBoxContainer);
 	vb->add_child(name_container);
@@ -1120,26 +1136,21 @@ ProjectDialog::ProjectDialog() {
 	Container *rvb = memnew(VBoxContainer);
 	rshc->add_child(rvb);
 
-	String default_renderer_type = "forward_plus";
+	// Forward+ has been removed entirely: it's rarely needed and dropping it
+	// saves compile time/binary size. Mobile is now the default high-end renderer.
+	String default_renderer_type = "mobile";
 	if (EditorSettings::get_singleton()->has_setting("project_manager/default_renderer")) {
 		default_renderer_type = EditorSettings::get_singleton()->get_setting("project_manager/default_renderer");
 	}
+	// Old installs/settings may still have "forward_plus" saved from before it was
+	// removed. Treat that the same as "mobile" so a button always ends up selected
+	// (otherwise no CheckBox would be pressed and creating a project would crash
+	// when trying to read the selected renderer's metadata).
+	if (default_renderer_type != "mobile" && default_renderer_type != "gl_compatibility") {
+		default_renderer_type = "mobile";
+	}
 
 	Button *rs_button = memnew(CheckBox);
-	rs_button->set_button_group(renderer_button_group);
-	rs_button->set_text(TTRC("Forward+"));
-	rs_button->set_accessibility_name(TTRC("Renderer:"));
-#if !defined(RD_ENABLED) || !defined(FORWARD_RD_ENABLED)
-	rs_button->set_disabled(true);
-	rs_button->set_tooltip_text(TTRC("Either RenderingDevice or the Forward+ rendering method was disabled at compile time."));
-#endif
-	rs_button->set_meta(SNAME("rendering_method"), "forward_plus");
-	rs_button->connect(SceneStringName(pressed), callable_mp(this, &ProjectDialog::_renderer_selected));
-	rvb->add_child(rs_button);
-	if (default_renderer_type == "forward_plus") {
-		rs_button->set_pressed(true);
-	}
-	rs_button = memnew(CheckBox);
 	rs_button->set_button_group(renderer_button_group);
 	rs_button->set_text(TTRC("Mobile"));
 	rs_button->set_accessibility_name(TTRC("Renderer:"));

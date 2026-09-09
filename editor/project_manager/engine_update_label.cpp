@@ -176,8 +176,11 @@ void EngineUpdateLabel::_set_message(const String &p_message, const Color &p_col
 
 void EngineUpdateLabel::_set_status(UpdateStatus p_status) {
 	status = p_status;
-	if (status == UpdateStatus::BUSY || status == UpdateStatus::UP_TO_DATE) {
+	if (status == UpdateStatus::BUSY || status == UpdateStatus::UP_TO_DATE || status == UpdateStatus::ERROR) {
 		// Hide the label to prevent unnecessary distraction.
+		// This also covers failed update checks (e.g. no internet connection, timeout,
+		// or the update server being unreachable), which shouldn't bother the user with
+		// a visible warning since it isn't something they can act on.
 		hide();
 		return;
 	} else {
@@ -196,12 +199,6 @@ void EngineUpdateLabel::_set_status(UpdateStatus p_status) {
 			set_tooltip_text("");
 			break;
 		}
-
-		case UpdateStatus::ERROR: {
-			set_disabled(false);
-			set_accessibility_live(AccessibilityServerEnums::AccessibilityLiveMode::LIVE_POLITE);
-			set_tooltip_text(TTR("An error has occurred. Click to try again."));
-		} break;
 
 		case UpdateStatus::UPDATE_AVAILABLE: {
 			set_disabled(false);

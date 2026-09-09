@@ -35,8 +35,6 @@
 class EditorTitleBar : public HBoxContainer {
 	GDCLASS(EditorTitleBar, HBoxContainer);
 
-	Point2i click_pos;
-	bool moving = false;
 	bool can_move = false;
 	Control *center_control = nullptr;
 

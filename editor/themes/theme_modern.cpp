@@ -2871,13 +2871,6 @@ void ThemeModern::populate_editor_styles(const Ref<EditorTheme> &p_theme, Editor
 			Ref<StyleBoxFlat> theme_preview_picker_label_sb = EditorThemeManager::make_flat_stylebox(theme_preview_picker_label_bg_color, 4.0, 1.0, 4.0, 3.0);
 			p_theme->set_stylebox("preview_picker_label", "ThemeEditor", theme_preview_picker_label_sb);
 
-			Ref<StyleBoxFlat> style_theme_preview_tab = p_theme->get_stylebox(SNAME("tab_selected"), SNAME("TabContainer"))->duplicate();
-			style_theme_preview_tab->set_expand_margin(SIDE_BOTTOM, EDSCALE_RND(5));
-			p_theme->set_stylebox("ThemeEditorPreviewFG", EditorStringName(EditorStyles), style_theme_preview_tab);
-
-			Ref<StyleBoxFlat> style_theme_preview_bg_tab = p_theme->get_stylebox(SNAME("tab_unselected"), SNAME("TabContainer"))->duplicate();
-			style_theme_preview_bg_tab->set_expand_margin(SIDE_BOTTOM, EDSCALE_RND(2));
-			p_theme->set_stylebox("ThemeEditorPreviewBG", EditorStringName(EditorStyles), style_theme_preview_bg_tab);
 		}
 
 		// VisualShader editor.

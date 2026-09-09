@@ -40,35 +40,12 @@ void EditorTitleBar::gui_input(const Ref<InputEvent> &p_event) {
 		return;
 	}
 
-	Ref<InputEventMouseMotion> mm = p_event;
-	if (mm.is_valid() && moving) {
-		if (mm->get_button_mask().has_flag(MouseButtonMask::LEFT)) {
-			Window *w = Object::cast_to<Window>(get_viewport());
-			if (w) {
-				Point2 mouse = DisplayServer::get_singleton()->mouse_get_position();
-				w->set_position(mouse - click_pos);
-			}
-		} else {
-			moving = false;
-		}
-	}
-
+	// Note: Dragging the window by holding down the title bar has been disabled on purpose.
+	// Double-clicking to maximize/minimize (a separate, non-drag interaction) is still supported.
 	Ref<InputEventMouseButton> mb = p_event;
 	if (mb.is_valid() && has_point(mb->get_position())) {
 		Window *w = Object::cast_to<Window>(get_viewport());
 		if (w) {
-			if (mb->get_button_index() == MouseButton::LEFT) {
-				if (mb->is_pressed()) {
-					if (DisplayServer::get_singleton()->has_feature(DisplayServerEnums::FEATURE_WINDOW_DRAG)) {
-						DisplayServer::get_singleton()->window_start_drag(w->get_window_id());
-					} else {
-						click_pos = DisplayServer::get_singleton()->mouse_get_position() - w->get_position();
-						moving = true;
-					}
-				} else {
-					moving = false;
-				}
-			}
 			if (mb->get_button_index() == MouseButton::LEFT && mb->is_double_click() && mb->is_pressed()) {
 				if (DisplayServer::get_singleton()->window_maximize_on_title_dbl_click()) {
 					if (w->get_mode() == Window::MODE_WINDOWED) {
@@ -79,7 +56,6 @@ void EditorTitleBar::gui_input(const Ref<InputEvent> &p_event) {
 				} else if (DisplayServer::get_singleton()->window_minimize_on_title_dbl_click()) {
 					w->set_mode(Window::MODE_MINIMIZED);
 				}
-				moving = false;
 			}
 		}
 	}

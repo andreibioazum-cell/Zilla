@@ -128,10 +128,6 @@
 #include "editor/settings/editor_settings.h"
 #include "editor/translations/editor_translation.h"
 
-#if defined(TOOLS_ENABLED) && !defined(NO_EDITOR_SPLASH)
-#include "main/splash_editor.gen.h"
-#endif
-
 #ifndef DISABLE_DEPRECATED
 #include "editor/project_upgrade/project_converter_3_to_4.h"
 #endif // DISABLE_DEPRECATED
@@ -3761,6 +3757,14 @@ void Main::setup_boot_logo() {
 	bool show_logo = true;
 #endif
 
+#ifdef TOOLS_ENABLED
+	// Skip the boot splash entirely for the editor and the Project Manager
+	// so they open straight away without a logo/branding screen delay.
+	if (editor || project_manager) {
+		show_logo = false;
+	}
+#endif
+
 	if (show_logo) { //boot logo!
 		const bool boot_logo_image = GLOBAL_DEF_BASIC("application/boot_splash/show_image", true);
 
@@ -3800,20 +3804,13 @@ void Main::setup_boot_logo() {
 
 		Color boot_bg_color = GLOBAL_GET("application/boot_splash/bg_color");
 
-#if defined(TOOLS_ENABLED) && !defined(NO_EDITOR_SPLASH)
-		boot_bg_color = GLOBAL_DEF_BASIC("application/boot_splash/bg_color", (editor || project_manager) ? boot_splash_editor_bg_color : boot_splash_bg_color);
-#endif
 		if (boot_logo.is_valid()) {
 			RenderingServer::get_singleton()->set_boot_image_with_stretch(boot_logo, boot_bg_color, boot_stretch_mode, boot_logo_filter);
 
 		} else {
 #ifndef NO_DEFAULT_BOOT_LOGO
 			MAIN_PRINT("Main: Create bootsplash");
-#if defined(TOOLS_ENABLED) && !defined(NO_EDITOR_SPLASH)
-			Ref<Image> splash = (editor || project_manager) ? memnew(Image(boot_splash_editor_png)) : memnew(Image(boot_splash_png));
-#else
 			Ref<Image> splash = memnew(Image(boot_splash_png));
-#endif
 
 			MAIN_PRINT("Main: ClearColor");
 			RenderingServer::get_singleton()->set_default_clear_color(boot_bg_color);
