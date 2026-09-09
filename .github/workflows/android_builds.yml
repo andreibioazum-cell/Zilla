@@ -31,7 +31,7 @@ env:
     minizip=yes
     brotli=no
     vulkan=yes
-    opengl3=no
+    opengl3=yes
     use_volk=yes
     module_text_server_fb_enabled=yes
     swappy=no
