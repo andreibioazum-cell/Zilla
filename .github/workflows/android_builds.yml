@@ -20,7 +20,7 @@ env:
     lto=none
     progress=no
     verbose=no
-    warnings=moderate
+    warnings=none
     werror=no
     tests=no
     fast_unsafe=yes
@@ -43,11 +43,13 @@ env:
     builtin_icu4c=no
     builtin_graphite=no
     builtin_brotli=no
-    num_jobs=4
+    num_jobs=8
 
 jobs:
   build-android:
-    runs-on: ubuntu-24.04
+    # 8 vCPU / 32 GB (free for public repos). Same arch and compiler as the
+    # default runner, so ccache/SCons caches stay fully valid.
+    runs-on: ubuntu-24.04-8core
     name: Editor (SCU, arm64, ultra-fast)
     timeout-minutes: 15
     steps:
@@ -85,6 +87,16 @@ jobs:
           scons-flags: ${{ env.SCONS_FLAGS }} arch=arm64
           platform: android
           target: editor
+      - name: Cache diagnostics
+        shell: bash
+        run: |
+          echo "=== ccache stats (end of build) ==="
+          ccache -s 2>&1 || echo "ccache binary not found!"
+          echo "=== cache directory sizes ==="
+          du -sh .ccache .scons_cache 2>/dev/null || true
+          if [ ! -d .ccache ] || [ -z "$(ls -A .ccache 2>/dev/null)" ]; then
+            echo "::warning::.ccache is missing or empty — ccache is NOT caching. Check the 'Using ccache launcher:' line in the Compilation log."
+          fi
       - name: Make gradlew executable
         shell: bash
         run: chmod +x platform/android/java/gradlew
@@ -142,7 +154,6 @@ jobs:
         with:
           path: ${{ github.workspace }}/.ccache
           key: ccache-android-editor-fast|${{ runner.os }}|${{ github.sha }}
-        continue-on-error: true
       - name: Save Godot build cache
         uses: ./.github/actions/godot-cache-save
         with:
