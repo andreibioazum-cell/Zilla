@@ -91,23 +91,33 @@ jobs:
         run: |
           cd platform/android/java
           ./gradlew --version
-          ./gradlew generateGodotEditor generateGodotHorizonOSEditor generateGodotPicoOSEditor --info --stacktrace
-          find . -name "*.apk" | head -n 50
-          ls -R app/build 2>&1 | head -n 500
+          ./gradlew generateGodotEditor --info --stacktrace
+          find . -name "*.apk" | head -n 100
+          ls -R editor/build 2>&1 | head -n 500
+          ls -R app/build 2>&1 | head -n 200 || true
       - name: List outputs
         shell: bash
         run: |
+          echo "=== lib (tools/debug) ==="
           ls -lh platform/android/java/lib/libs/tools/debug/arm64-v8a/ || true
-          find platform/android -name "*.apk" | head -n 100
+          echo "=== find apk/aab/so ==="
+          find platform/android -type f \( -name "*.apk" -o -name "*.aab" -o -name "*.so" \) | head -n 100
+          echo "=== bin ==="
           ls -lh bin/ || true
+          ls -lh bin/android_editor_builds/ || true
+          echo "=== editor/build ==="
+          ls -R platform/android/java/editor/build 2>&1 | head -n 300 || true
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: android-editor-apk
           path: |
-            platform/android/java/app/build/outputs/apk/**/*.apk
-            platform/android/java/app/build/outputs/bundle/**/*.aab
+            platform/android/java/editor/build/outputs/apk/**/*.apk
+            platform/android/java/editor/build/outputs/bundle/**/*.aab
+            bin/android_editor_builds/**/*.apk
+            bin/android_editor_builds/**/*.aab
             bin/*.apk
+            bin/*.aab
           if-no-files-found: error
       - name: Save ccache
         uses: actions/cache/save@v6
