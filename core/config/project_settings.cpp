@@ -736,13 +736,6 @@ Error ProjectSettings::_setup(const String &p_path, const String &p_main_pack, b
 		// We need to test both possibilities as extensions for Linux binaries are optional
 		// (so both 'mygame.bin' and 'mygame' should be able to find 'mygame.pck').
 
-#if defined(MACOS_ENABLED) || defined(APPLE_EMBEDDED_ENABLED)
-		if (!found) {
-			// Attempt to load PCK from macOS .app bundle resources.
-			found = _load_resource_pack(OS::get_singleton()->get_bundle_resource_dir().path_join(exec_basename + ".pck"), false, 0, true) || _load_resource_pack(OS::get_singleton()->get_bundle_resource_dir().path_join(exec_filename + ".pck"), false, 0, true);
-		}
-#endif
-
 		if (!found) {
 			// Try to load data pack at the location of the executable.
 			// As mentioned above, we have two potential names to attempt.
@@ -794,33 +787,6 @@ Error ProjectSettings::_setup(const String &p_path, const String &p_main_pack, b
 #endif // OVERRIDE_ENABLED
 		return err;
 	}
-
-#if defined(MACOS_ENABLED) || defined(APPLE_EMBEDDED_ENABLED)
-	// Attempt to load project file from macOS .app bundle resources.
-	resource_path = OS::get_singleton()->get_bundle_resource_dir();
-	if (!resource_path.is_empty()) {
-		if (resource_path[resource_path.length() - 1] == '/') {
-			resource_path = resource_path.substr(0, resource_path.length() - 1); // Chop end.
-		}
-		Ref<DirAccess> d = DirAccess::create(DirAccess::ACCESS_FILESYSTEM);
-		ERR_FAIL_COND_V_MSG(d.is_null(), ERR_CANT_CREATE, vformat("Cannot create DirAccess for path '%s'.", resource_path));
-		d->change_dir(resource_path);
-
-		Error err;
-
-		err = _load_settings_text_or_binary(resource_path.path_join("project.godot"), resource_path.path_join("project.binary"));
-		if (err == OK && !p_ignore_override) {
-			// Optional, we don't mind if it fails.
-#ifdef OVERRIDE_ENABLED
-			bool disable_override = GLOBAL_GET("application/config/disable_project_settings_override");
-			if (!disable_override) {
-				_load_settings_text(resource_path.path_join("override.cfg"));
-			}
-#endif // OVERRIDE_ENABLED
-			return err;
-		}
-	}
-#endif // MACOS_ENABLED
 
 	// Nothing was found, try to find a project file in provided path (`p_path`)
 	// or, if requested (`p_upwards`) in parent directories.

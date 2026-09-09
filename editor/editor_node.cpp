@@ -96,7 +96,6 @@
 #include "editor/import/3d/scene_import_settings.h"
 #include "editor/import/audio_stream_import_settings.h"
 #include "editor/import/dynamic_font_import_settings.h"
-#include "editor/import/fbx_importer_manager.h"
 #include "editor/import/resource_importer_bitmask.h"
 #include "editor/import/resource_importer_bmfont.h"
 #include "editor/import/resource_importer_csv_translation.h"
@@ -213,11 +212,7 @@
 #include "servers/physics_3d/physics_server_3d.h"
 #endif // PHYSICS_3D_DISABLED
 
-#ifdef ANDROID_ENABLED
 #include "editor/gui/touch_actions_panel.h"
-#else
-#include "editor/export/android_sdk_manager.h"
-#endif // ANDROID_ENABLED
 
 #include "modules/modules_enabled.gen.h" // For gdscript.
 
@@ -702,37 +697,17 @@ void EditorNode::_update_system_menu_icons(bool p_dark_mode) {
 	file_menu->set_item_icon(file_menu->get_item_index(SCENE_QUICK_OPEN), get_editor_theme_native_menu_icon(SNAME("Load"), menu_type == MENU_TYPE_GLOBAL, p_dark_mode));
 	file_menu->set_item_icon(file_menu->get_item_index(SCENE_UNDO), get_editor_theme_native_menu_icon(SNAME("RotateLeft"), menu_type == MENU_TYPE_GLOBAL, p_dark_mode));
 	file_menu->set_item_icon(file_menu->get_item_index(SCENE_CLOSE), get_editor_theme_native_menu_icon(SNAME("CloseScene"), menu_type == MENU_TYPE_GLOBAL, p_dark_mode));
-#ifdef MACOS_ENABLED
-	if (menu_type != MENU_TYPE_GLOBAL) {
-		file_menu->set_item_icon(file_menu->get_item_index(SCENE_QUIT), get_editor_theme_native_menu_icon(SNAME("Close"), menu_type == MENU_TYPE_GLOBAL, p_dark_mode));
-	}
-#else
 	file_menu->set_item_icon(file_menu->get_item_index(SCENE_QUIT), get_editor_theme_native_menu_icon(SNAME("Close"), menu_type == MENU_TYPE_GLOBAL, p_dark_mode));
-#endif
 
 	project_menu->set_item_icon(project_menu->get_item_index(PROJECT_OPEN_SETTINGS), get_editor_theme_native_menu_icon(SNAME("ClassList"), menu_type == MENU_TYPE_GLOBAL, p_dark_mode));
 	project_menu->set_item_icon(project_menu->get_item_index(PROJECT_EXPORT), get_editor_theme_native_menu_icon(SNAME("ResourcePreloader"), menu_type == MENU_TYPE_GLOBAL, p_dark_mode));
 	project_menu->set_item_icon(project_menu->get_item_index(PROJECT_QUIT_TO_PROJECT_MANAGER), get_editor_theme_native_menu_icon(SNAME("Close"), menu_type == MENU_TYPE_GLOBAL, p_dark_mode));
 
-#ifdef MACOS_ENABLED
-	if (menu_type != MENU_TYPE_GLOBAL) {
-		settings_menu->set_item_icon(settings_menu->get_item_index(EDITOR_OPEN_SETTINGS), get_editor_theme_native_menu_icon(SNAME("Tools"), menu_type == MENU_TYPE_GLOBAL, p_dark_mode));
-	} else {
-		apple_menu->set_item_icon(apple_menu->get_item_index(EDITOR_OPEN_SETTINGS), get_editor_theme_native_menu_icon(SNAME("Tools"), menu_type == MENU_TYPE_GLOBAL, p_dark_mode));
-	}
-#else
 	settings_menu->set_item_icon(settings_menu->get_item_index(EDITOR_OPEN_SETTINGS), get_editor_theme_native_menu_icon(SNAME("Tools"), menu_type == MENU_TYPE_GLOBAL, p_dark_mode));
-#endif
 
 	help_menu->set_item_icon(help_menu->get_item_index(HELP_SEARCH), get_editor_theme_native_menu_icon(SNAME("HelpSearch"), menu_type == MENU_TYPE_GLOBAL, p_dark_mode));
 	help_menu->set_item_icon(help_menu->get_item_index(HELP_COPY_SYSTEM_INFO), get_editor_theme_native_menu_icon(SNAME("ActionCopy"), menu_type == MENU_TYPE_GLOBAL, p_dark_mode));
-#ifdef MACOS_ENABLED
-	if (menu_type != MENU_TYPE_GLOBAL) {
-		help_menu->set_item_icon(help_menu->get_item_index(HELP_ABOUT), get_editor_theme_native_menu_icon(SNAME("Godot"), menu_type == MENU_TYPE_GLOBAL, p_dark_mode));
-	}
-#else
 	help_menu->set_item_icon(help_menu->get_item_index(HELP_ABOUT), get_editor_theme_native_menu_icon(SNAME("Godot"), menu_type == MENU_TYPE_GLOBAL, p_dark_mode));
-#endif
 	help_menu->set_item_icon(help_menu->get_item_index(HELP_SUPPORT_GODOT_DEVELOPMENT), get_editor_theme_native_menu_icon(SNAME("Heart"), menu_type == MENU_TYPE_GLOBAL, p_dark_mode));
 }
 
@@ -3766,21 +3741,7 @@ void EditorNode::_menu_option_confirm(int p_option, bool p_confirmed) {
 		} break;
 
 		case PROJECT_SETUP_ANDROID_BUILD: {
-#ifndef ANDROID_ENABLED
-			if (!(AndroidSDKManager::is_android_sdk_setup() && AndroidSDKManager::is_java_sdk_setup())) {
-				Callable setup_android_build_callable = callable_mp(this, &EditorNode::_setup_android_build).bind(p_confirmed);
-				android_sdk_manager->run_setup(setup_android_build_callable, setup_android_build_callable);
-			} else {
-#endif
-				_setup_android_build(p_confirmed);
-#ifndef ANDROID_ENABLED
-			}
-#endif
-		} break;
-		case PROJECT_OPEN_USER_DATA_FOLDER: {
-			// Ensure_user_data_dir() to prevent the edge case: "Open User Data Folder" won't work after the project was renamed in ProjectSettingsEditor unless the project is saved.
-			OS::get_singleton()->ensure_user_data_dir();
-			OS::get_singleton()->shell_show_in_file_manager(OS::get_singleton()->get_user_data_dir(), true);
+			_setup_android_build(p_confirmed);
 		} break;
 		case SCENE_QUIT:
 		case PROJECT_QUIT_TO_PROJECT_MANAGER:
@@ -3921,19 +3882,8 @@ void EditorNode::_menu_option_confirm(int p_option, bool p_confirmed) {
 		case EDITOR_OPEN_SETTINGS: {
 			editor_settings_dialog->popup_edit_settings();
 		} break;
-		case EDITOR_OPEN_DATA_FOLDER: {
-			OS::get_singleton()->shell_show_in_file_manager(EditorPaths::get_singleton()->get_data_dir(), true);
-		} break;
-		case EDITOR_OPEN_CONFIG_FOLDER: {
-			OS::get_singleton()->shell_show_in_file_manager(EditorPaths::get_singleton()->get_config_dir(), true);
-		} break;
 		case EDITOR_MANAGE_EXPORT_TEMPLATES: {
 			export_template_manager->popup_manager();
-		} break;
-		case EDITOR_CONFIGURE_FBX_IMPORTER: {
-#if !defined(ANDROID_ENABLED) && !defined(WEB_ENABLED)
-			fbx_importer_manager->show_dialog();
-#endif
 		} break;
 		case EDITOR_MANAGE_FEATURE_PROFILES: {
 			feature_profile_manager->popup_centered_clamped(Size2(900, 800) * EDSCALE, 0.8);
@@ -6104,10 +6054,6 @@ String EditorNode::_get_system_info() const {
 	}
 
 	String display_session_type;
-#ifdef LINUXBSD_ENABLED
-	// `remove_char` is necessary, because `capitalize` introduces a whitespace between "x" and "11".
-	display_session_type = OS::get_singleton()->get_environment("XDG_SESSION_TYPE").capitalize().remove_char(' ');
-#endif // LINUXBSD_ENABLED
 	String driver_name = OS::get_singleton()->get_current_rendering_driver_name().to_lower();
 	String rendering_method = OS::get_singleton()->get_current_rendering_method().to_lower();
 
@@ -6199,10 +6145,6 @@ String EditorNode::_get_system_info() const {
 	info.push_back(distribution_display_session_type);
 
 	String display_driver_window_mode;
-#ifdef LINUXBSD_ENABLED
-	// `remove_char` is necessary, because `capitalize` introduces a whitespace between "x" and "11".
-	display_driver_window_mode = DisplayServer::get_singleton()->get_name().capitalize().remove_char(' ') + " display driver";
-#endif // LINUXBSD_ENABLED
 	if (!display_driver_window_mode.is_empty()) {
 		display_driver_window_mode += ", ";
 	}
@@ -8123,16 +8065,8 @@ void EditorNode::_build_file_menu(bool p_dark_mode) {
 	file_menu->add_shortcut(ED_GET_SHORTCUT("editor/reload_saved_scene"), SCENE_RELOAD_SAVED_SCENE);
 	file_menu->add_icon_shortcut(get_editor_theme_native_menu_icon(SNAME("CloseScene"), menu_type == MENU_TYPE_GLOBAL, p_dark_mode), ED_GET_SHORTCUT("editor/close_scene"), SCENE_CLOSE);
 	file_menu->add_shortcut(ED_GET_SHORTCUT("editor/close_all_scenes"), SCENE_CLOSE_ALL);
-#ifdef MACOS_ENABLED
-	if (menu_type != MENU_TYPE_GLOBAL) {
-		// On macOS "Quit" option is in the "app" menu.
-		file_menu->add_separator();
-		file_menu->add_icon_shortcut(get_editor_theme_native_menu_icon(SNAME("Close"), menu_type == MENU_TYPE_GLOBAL, p_dark_mode), ED_GET_SHORTCUT("editor/file_quit"), SCENE_QUIT, true);
-	}
-#else
 	file_menu->add_separator();
 	file_menu->add_icon_shortcut(get_editor_theme_native_menu_icon(SNAME("Close"), menu_type == MENU_TYPE_GLOBAL, p_dark_mode), ED_GET_SHORTCUT("editor/file_quit"), SCENE_QUIT, true);
-#endif
 }
 
 void EditorNode::_build_project_menu(bool p_dark_mode) {
@@ -8159,9 +8093,6 @@ void EditorNode::_build_project_menu(bool p_dark_mode) {
 	project_menu->add_icon_shortcut(get_editor_theme_native_menu_icon(SNAME("ResourcePreloader"), menu_type == MENU_TYPE_GLOBAL, p_dark_mode), ED_GET_SHORTCUT("editor/export"), PROJECT_EXPORT);
 	project_menu->add_item(TTRC("Pack Project as ZIP..."), PROJECT_PACK_AS_ZIP);
 	project_menu->add_item(TTRC("Setup Android Build..."), PROJECT_SETUP_ANDROID_BUILD);
-#ifndef ANDROID_ENABLED
-	project_menu->add_item(TTRC("Open User Data Folder"), PROJECT_OPEN_USER_DATA_FOLDER);
-#endif
 	project_menu->add_separator();
 
 	if (!tool_menu) {
@@ -8185,14 +8116,7 @@ void EditorNode::_build_settings_menu(bool p_dark_mode) {
 	}
 	settings_menu->clear(false);
 
-#ifdef MACOS_ENABLED
-	if (menu_type != MENU_TYPE_GLOBAL) {
-		// On macOS "Settings" option is in the "app" menu.
-		settings_menu->add_icon_shortcut(get_editor_theme_native_menu_icon(SNAME("Tools"), menu_type == MENU_TYPE_GLOBAL, p_dark_mode), ED_GET_SHORTCUT("editor/editor_settings"), EDITOR_OPEN_SETTINGS);
-	}
-#else
 	settings_menu->add_icon_shortcut(get_editor_theme_native_menu_icon(SNAME("Tools"), menu_type == MENU_TYPE_GLOBAL, p_dark_mode), ED_GET_SHORTCUT("editor/editor_settings"), EDITOR_OPEN_SETTINGS);
-#endif
 	settings_menu->add_shortcut(ED_GET_SHORTCUT("editor/command_palette"), EDITOR_COMMAND_PALETTE);
 	settings_menu->add_separator();
 
@@ -8211,23 +8135,8 @@ void EditorNode::_build_settings_menu(bool p_dark_mode) {
 	settings_menu->add_shortcut(ED_GET_SHORTCUT("editor/fullscreen_mode"), EDITOR_TOGGLE_FULLSCREEN);
 	settings_menu->add_separator();
 
-#ifndef ANDROID_ENABLED
-	if (EditorPaths::get_singleton()->get_data_dir() == EditorPaths::get_singleton()->get_config_dir()) {
-		// Configuration and data folders are located in the same place.
-		settings_menu->add_item(TTRC("Open Editor Data/Settings Folder"), EDITOR_OPEN_DATA_FOLDER);
-	} else {
-		// Separate configuration and data folders.
-		settings_menu->add_item(TTRC("Open Editor Data Folder"), EDITOR_OPEN_DATA_FOLDER);
-		settings_menu->add_item(TTRC("Open Editor Settings Folder"), EDITOR_OPEN_CONFIG_FOLDER);
-	}
-	settings_menu->add_separator();
-#endif
-
 	settings_menu->add_item(TTRC("Manage Editor Features..."), EDITOR_MANAGE_FEATURE_PROFILES);
 	settings_menu->add_item(TTRC("Manage Export Templates..."), EDITOR_MANAGE_EXPORT_TEMPLATES);
-#if !defined(ANDROID_ENABLED) && !defined(WEB_ENABLED)
-	settings_menu->add_item(TTRC("Configure FBX Importer..."), EDITOR_CONFIGURE_FBX_IMPORTER);
-#endif
 }
 
 void EditorNode::_build_help_menu(bool p_dark_mode) {
@@ -8254,14 +8163,7 @@ void EditorNode::_build_help_menu(bool p_dark_mode) {
 	help_menu->add_shortcut(ED_GET_SHORTCUT("editor/suggest_a_feature"), HELP_SUGGEST_A_FEATURE);
 	help_menu->add_shortcut(ED_GET_SHORTCUT("editor/send_docs_feedback"), HELP_SEND_DOCS_FEEDBACK);
 	help_menu->add_separator();
-#ifdef MACOS_ENABLED
-	if (menu_type != MENU_TYPE_GLOBAL) {
-		// On macOS "About" option is in the "app" menu.
-		help_menu->add_icon_shortcut(get_editor_theme_native_menu_icon(SNAME("Godot"), menu_type == MENU_TYPE_GLOBAL, p_dark_mode), ED_GET_SHORTCUT("editor/about"), HELP_ABOUT);
-	}
-#else
 	help_menu->add_icon_shortcut(get_editor_theme_native_menu_icon(SNAME("Godot"), menu_type == MENU_TYPE_GLOBAL, p_dark_mode), ED_GET_SHORTCUT("editor/about"), HELP_ABOUT);
-#endif
 	help_menu->add_icon_shortcut(get_editor_theme_native_menu_icon(SNAME("Heart"), menu_type == MENU_TYPE_GLOBAL, p_dark_mode), ED_GET_SHORTCUT("editor/support_development"), HELP_SUPPORT_GODOT_DEVELOPMENT);
 }
 
@@ -8331,9 +8233,7 @@ void EditorNode::_update_main_menu_type() {
 		main_menu_button->set_switch_on_hover(true);
 
 		for (PopupMenu *menu : main_menu_items) {
-			if (menu != apple_menu) {
-				main_menu_button->get_popup()->add_submenu_node_item(menu->get_name(), menu);
-			}
+			main_menu_button->get_popup()->add_submenu_node_item(menu->get_name(), menu);
 		}
 
 #ifdef ANDROID_ENABLED
@@ -8359,9 +8259,7 @@ void EditorNode::_update_main_menu_type() {
 		main_menu_bar->set_switch_on_hover(true);
 
 		for (PopupMenu *menu : main_menu_items) {
-			if (menu != apple_menu || menu_type == MENU_TYPE_GLOBAL) {
-				main_menu_bar->add_child(menu);
-			}
+			main_menu_bar->add_child(menu);
 		}
 
 		title_bar->add_child(main_menu_bar);
@@ -8406,13 +8304,9 @@ void EditorNode::_touch_actions_panel_mode_changed() {
 }
 #endif
 
-#ifdef MACOS_ENABLED
-extern "C" GameViewPluginBase *get_game_view_plugin();
-#else
 GameViewPluginBase *get_game_view_plugin() {
 	return memnew(GameViewPlugin);
 }
-#endif
 
 void EditorNode::open_setting_override(const String &p_property) {
 	editor_settings_dialog->hide();
@@ -9040,16 +8934,6 @@ EditorNode::EditorNode() {
 	gui_base->add_child(about);
 	feature_profile_manager->connect("current_feature_profile_changed", callable_mp(this, &EditorNode::_feature_profile_changed));
 
-#if !defined(ANDROID_ENABLED) && !defined(WEB_ENABLED)
-	fbx_importer_manager = memnew(FBXImporterManager);
-	gui_base->add_child(fbx_importer_manager);
-#endif
-
-#ifndef ANDROID_ENABLED
-	android_sdk_manager = memnew(AndroidSDKManager);
-	gui_base->add_child(android_sdk_manager);
-#endif
-
 	warning = memnew(AcceptDialog);
 	warning->set_unparent_when_invisible(true);
 	warning->add_button(TTRC("Copy Text"), true, "copy");
@@ -9151,18 +9035,6 @@ EditorNode::EditorNode() {
 
 	// Editor menu and toolbar.
 	bool can_expand = bool(EDITOR_GET("interface/editor/appearance/expand_to_title")) && DisplayServer::get_singleton()->has_feature(DisplayServerEnums::FEATURE_EXTEND_TO_TITLE);
-
-#ifdef MACOS_ENABLED
-	if (NativeMenu::get_singleton()->has_system_menu(NativeMenu::APPLICATION_MENU_ID)) {
-		apple_menu = memnew(PopupMenu);
-		apple_menu->set_system_menu(NativeMenu::APPLICATION_MENU_ID);
-		_add_to_main_menu("Apple", apple_menu);
-
-		apple_menu->add_icon_shortcut(get_editor_theme_native_menu_icon(SNAME("Tools"), menu_type == MENU_TYPE_GLOBAL, DisplayServer::get_singleton()->is_dark_mode_supported() && DisplayServer::get_singleton()->is_dark_mode()), ED_GET_SHORTCUT("editor/editor_settings"), EDITOR_OPEN_SETTINGS);
-		apple_menu->add_separator();
-		apple_menu->connect(SceneStringName(id_pressed), callable_mp(this, &EditorNode::_menu_option));
-	}
-#endif
 
 	if (can_expand) {
 		// Add spacer to avoid other controls under window minimize/maximize/close buttons (left side).

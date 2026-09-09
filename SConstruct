@@ -193,11 +193,10 @@ opts.Add(
 )
 opts.Add(BoolVariable("minizip", "Enable ZIP archive support using minizip", True))
 opts.Add(BoolVariable("brotli", "Enable Brotli for decompression and WOFF2 fonts support", True))
-opts.Add(BoolVariable("xaudio2", "Enable the XAudio2 audio driver on supported platforms", False))
 opts.Add(
     BoolVariable(
         "rendering_device",
-        "Enable RenderingDevice abstraction for modern graphics APIs (use the `vulkan`, `d3d12`, and `metal` options to toggle individual drivers)",
+        "Enable RenderingDevice abstraction for modern graphics APIs (use the `vulkan` option to toggle the driver)",
         True,
     )
 )
@@ -205,12 +204,7 @@ opts.Add(BoolVariable("forward_plus_renderer", "Enable the Forward+ renderer (re
 opts.Add(BoolVariable("forward_mobile_renderer", "Enable the Mobile renderer (requires RenderingDevice)", True))
 opts.Add(BoolVariable("vulkan", "Enable the Vulkan rendering driver", True))
 opts.Add(BoolVariable("opengl3", "Enable the OpenGL/GLES3 rendering driver", True))
-opts.Add(BoolVariable("d3d12", "Enable the Direct3D 12 rendering driver on supported platforms", False))
-opts.Add(BoolVariable("metal", "Enable the Metal rendering driver on supported platforms (Apple arm64 only)", False))
 opts.Add(BoolVariable("use_volk", "Use the volk library to load the Vulkan loader dynamically", True))
-opts.Add(BoolVariable("accesskit", "Enable the AccessKit driver for screen reader support", True))
-opts.Add(BoolVariable("angle", "Enable the ANGLE rendering driver for OpenGL ES 3.0 on supported platforms", True))
-opts.Add(BoolVariable("sdl", "Enable the SDL3 input driver", True))
 opts.Add(
     EnumVariable(
         "profiler", "Specify the profiler to use", "none", ["none", "tracy", "perfetto", "instruments"], ignorecase=2
@@ -340,7 +334,6 @@ opts.Add(BoolVariable("builtin_msdfgen", "Use the built-in MSDFgen library", Tru
 opts.Add(BoolVariable("builtin_glslang", "Use the built-in glslang library", True))
 opts.Add(BoolVariable("builtin_graphite", "Use the built-in Graphite library", True))
 opts.Add(BoolVariable("builtin_harfbuzz", "Use the built-in HarfBuzz library", True))
-opts.Add(BoolVariable("builtin_sdl", "Use the built-in SDL library", True))
 opts.Add(BoolVariable("builtin_icu4c", "Use the built-in ICU library", True))
 opts.Add(BoolVariable("builtin_libjpeg_turbo", "Use the built-in libjpeg-turbo library", True))
 opts.Add(BoolVariable("builtin_libogg", "Use the built-in libogg library", True))
@@ -392,24 +385,13 @@ if env["import_env_vars"]:
             env["ENV"][env_var] = os.environ[env_var]
 
 # Platform selection: validate input, and add options.
+# This build only supports the Android platform; all other platforms have
+# been removed from this source tree.
 
 if not env["platform"]:
-    # Missing `platform` argument, try to detect platform automatically
-    if (
-        sys.platform.startswith("linux")
-        or sys.platform.startswith("dragonfly")
-        or sys.platform.startswith("freebsd")
-        or sys.platform.startswith("netbsd")
-        or sys.platform.startswith("openbsd")
-    ):
-        env["platform"] = "linuxbsd"
-    elif sys.platform == "darwin":
-        env["platform"] = "macos"
-    elif sys.platform == "win32":
-        env["platform"] = "windows"
-
-    if env["platform"]:
-        print(f"Automatically detected platform: {env['platform']}")
+    # Missing `platform` argument. Only Android is supported.
+    env["platform"] = "android"
+    print(f"Automatically detected platform: {env['platform']}")
 
 # Deprecated aliases kept for compatibility.
 if env["platform"] in compatibility_platform_aliases:
@@ -419,10 +401,6 @@ if env["platform"] in compatibility_platform_aliases:
         f'Platform "{alias}" has been renamed to "{platform}" in Godot 4. Building for platform "{platform}".'
     )
     env["platform"] = platform
-
-# Alias for convenience.
-if env["platform"] in ["linux", "bsd"]:
-    env["platform"] = "linuxbsd"
 
 if env["platform"] not in platform_list:
     text = "The following platforms are available:\n\t{}\n".format("\n\t".join(platform_list))
@@ -721,8 +699,6 @@ if env["rendering_device"]:
             env.Append(CPPDEFINES=["FORWARD_RD_ENABLED"])
 # These need to be set before platform detection.
 if not env["rendering_device"] or not (env["forward_mobile_renderer"] or env["forward_plus_renderer"]):
-    env["d3d12"] = False
-    env["metal"] = False
     env["vulkan"] = False
 
 # Must happen after the flags' definition, as configure is when most flags

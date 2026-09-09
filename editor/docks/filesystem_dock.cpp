@@ -2274,215 +2274,6 @@ void FileSystemDock::_file_option(int p_option, const Vector<String> &p_selected
 	// The first one should be the active item.
 
 	switch (p_option) {
-		case FILE_MENU_SHOW_IN_EXPLORER: {
-			// Show the file/folder in the OS explorer.
-			String fpath = current_path;
-			if (current_path == "Favorites") {
-				if (p_selected.is_empty()) {
-					return;
-				}
-				fpath = p_selected[0];
-			}
-
-			String dir = ProjectSettings::get_singleton()->globalize_path(fpath);
-			OS::get_singleton()->shell_show_in_file_manager(dir, true);
-		} break;
-
-		case FILE_MENU_OPEN_EXTERNAL: {
-			for (const String &fpath : p_selected) {
-				if (fpath.ends_with("/")) {
-					continue;
-				}
-				const String file = ProjectSettings::get_singleton()->globalize_path(fpath);
-				const String extension = file.get_extension();
-
-				const String resource_type = ResourceLoader::get_resource_type(fpath);
-				String external_program;
-
-				if (ClassDB::is_parent_class(resource_type, "Script") || extension == "tres" || extension == "tscn") {
-					external_program = EDITOR_GET("text_editor/external/exec_path");
-				} else if (extension == "res" || extension == "scn") {
-					// Binary resources have no meaningful editor outside Godot, so just fallback to something default.
-				} else if (resource_type == "CompressedTexture2D" || resource_type == "StreamedTexture2D" || resource_type == "Image") {
-					if (extension == "svg" || extension == "svgz") {
-						external_program = EDITOR_GET("filesystem/external_programs/vector_image_editor");
-					} else {
-						external_program = EDITOR_GET("filesystem/external_programs/raster_image_editor");
-					}
-				} else if (ClassDB::is_parent_class(resource_type, "AudioStream")) {
-					external_program = EDITOR_GET("filesystem/external_programs/audio_editor");
-				} else if (resource_type == "PackedScene") {
-					external_program = EDITOR_GET("filesystem/external_programs/3d_model_editor");
-				}
-
-				if (external_program.is_empty()) {
-					OS::get_singleton()->shell_open(file);
-				} else {
-					List<String> paths;
-					paths.push_back(file);
-					OS::get_singleton()->open_with_program(external_program, paths);
-				}
-			}
-		} break;
-
-		case FILE_MENU_OPEN_IN_TERMINAL: {
-			String fpath = current_path;
-			if (current_path == "Favorites") {
-				if (p_selected.is_empty()) {
-					return;
-				}
-				fpath = p_selected[0];
-			}
-
-			Vector<String> terminal_emulators;
-			const String terminal_emulator_setting = EDITOR_GET("filesystem/external_programs/terminal_emulator");
-			if (terminal_emulator_setting.is_empty()) {
-				// Figure out a default terminal emulator to use.
-#if defined(WINDOWS_ENABLED)
-				// Default to PowerShell as done by Windows 10 and later.
-				terminal_emulators.push_back("powershell");
-#elif defined(MACOS_ENABLED)
-				// NOTE: To avoid duplicating the Terminal icon on the Dock, we will use the `open` command
-				// rather than directly launching the Terminal.app bundle.
-				terminal_emulators.push_back("open");
-#elif defined(LINUXBSD_ENABLED)
-				// Try terminal emulators that ship with common Linux distributions first.
-				terminal_emulators.push_back("gnome-terminal");
-				terminal_emulators.push_back("konsole");
-				terminal_emulators.push_back("xfce4-terminal");
-				terminal_emulators.push_back("lxterminal");
-				terminal_emulators.push_back("kitty");
-				terminal_emulators.push_back("alacritty");
-				terminal_emulators.push_back("urxvt");
-				terminal_emulators.push_back("xterm");
-#endif
-			} else {
-				// Use the user-specified terminal.
-				terminal_emulators.push_back(terminal_emulator_setting);
-			}
-
-			String flags = EDITOR_GET("filesystem/external_programs/terminal_emulator_flags");
-			String arguments = flags;
-			if (arguments.is_empty()) {
-				// NOTE: This default value is ignored further below if the terminal executable is `powershell` or `cmd`,
-				// due to these terminals requiring nonstandard syntax to start in a specified folder.
-				arguments = "{directory}";
-			}
-
-#ifdef LINUXBSD_ENABLED
-			String chosen_terminal_emulator;
-			for (const String &terminal_emulator : terminal_emulators) {
-				String pipe;
-				List<String> test_args; // Required for `execute()`, as it doesn't accept `Vector<String>`.
-				test_args.push_back("-cr");
-				test_args.push_back("command -v " + terminal_emulator);
-				const Error err = OS::get_singleton()->execute("bash", test_args, &pipe);
-				// Check if a path to the terminal executable exists.
-				if (err == OK && pipe.contains_char('/')) {
-					chosen_terminal_emulator = terminal_emulator;
-					break;
-				} else if (err == ERR_CANT_FORK) {
-					ERR_PRINT_ED(vformat(TTR("Couldn't run external program to check for terminal emulator presence: command -v %s"), terminal_emulator));
-				}
-			}
-#else
-			// On Windows and macOS, the first (and only) terminal emulator in the list is always available.
-			String chosen_terminal_emulator = terminal_emulators[0];
-#endif
-
-			List<String> terminal_emulator_args; // Required for `execute()`, as it doesn't accept `Vector<String>`.
-			bool append_default_args = true;
-
-#ifdef LINUXBSD_ENABLED
-			// Prepend default arguments based on the terminal emulator name.
-			// Use `String.ends_with()` so that installations in non-default paths
-			// or `/usr/local/bin` are detected correctly.
-			if (flags.is_empty()) {
-				if (chosen_terminal_emulator.ends_with("konsole")) {
-					terminal_emulator_args.push_back("--workdir");
-				} else if (chosen_terminal_emulator.ends_with("gnome-terminal")) {
-					terminal_emulator_args.push_back("--working-directory");
-				} else if (chosen_terminal_emulator.ends_with("urxvt")) {
-					terminal_emulator_args.push_back("-cd");
-				} else if (chosen_terminal_emulator.ends_with("xfce4-terminal")) {
-					terminal_emulator_args.push_back("--working-directory");
-				} else if (chosen_terminal_emulator.ends_with("lxterminal")) {
-					terminal_emulator_args.push_back("--working-directory={directory}");
-					append_default_args = false;
-				} else if (chosen_terminal_emulator.ends_with("kitty")) {
-					terminal_emulator_args.push_back("--directory");
-				} else if (chosen_terminal_emulator.ends_with("alacritty")) {
-					terminal_emulator_args.push_back("--working-directory");
-				} else if (chosen_terminal_emulator.ends_with("xterm")) {
-					terminal_emulator_args.push_back("-e");
-					terminal_emulator_args.push_back("cd '{directory}' && exec $SHELL");
-					append_default_args = false;
-				}
-			}
-#endif
-
-#ifdef MACOS_ENABLED
-			if (terminal_emulator_setting.is_empty()) {
-				terminal_emulator_args.push_back("-b");
-				terminal_emulator_args.push_back("com.apple.terminal");
-			}
-#endif
-
-#ifdef WINDOWS_ENABLED
-			// Prepend default arguments based on the terminal emulator name.
-			// Use `String.get_basename().to_lower()` to handle Windows' case-insensitive paths
-			// with optional file extensions for executables in `PATH`.
-			if (chosen_terminal_emulator.get_basename().to_lower() == "powershell") {
-				terminal_emulator_args.push_back("-noexit");
-				terminal_emulator_args.push_back("-command");
-				terminal_emulator_args.push_back("cd '{directory}'");
-				append_default_args = false;
-			} else if (chosen_terminal_emulator.get_basename().to_lower() == "cmd") {
-				terminal_emulator_args.push_back("/K");
-				terminal_emulator_args.push_back("cd /d {directory}");
-				append_default_args = false;
-			}
-#endif
-
-			Vector<String> arguments_array = arguments.split(" ");
-			for (const String &argument : arguments_array) {
-				if (!append_default_args && argument == "{directory}") {
-					// Prevent appending a `{directory}` placeholder twice when using powershell or cmd.
-					// This allows users to enter the path to cmd or PowerShell in the custom terminal emulator path,
-					// and make it work without having to enter custom arguments.
-					continue;
-				}
-				terminal_emulator_args.push_back(argument);
-			}
-
-			const bool is_directory = fpath.ends_with("/");
-			for (String &terminal_emulator_arg : terminal_emulator_args) {
-				if (is_directory) {
-					terminal_emulator_arg = terminal_emulator_arg.replace("{directory}", ProjectSettings::get_singleton()->globalize_path(fpath));
-				} else {
-					terminal_emulator_arg = terminal_emulator_arg.replace("{directory}", ProjectSettings::get_singleton()->globalize_path(fpath).get_base_dir());
-				}
-			}
-
-			if (OS::get_singleton()->is_stdout_verbose()) {
-				// Print full command line to help with troubleshooting.
-				String command_string = chosen_terminal_emulator;
-				for (const String &arg : terminal_emulator_args) {
-					command_string += " " + arg;
-				}
-				print_line("Opening terminal emulator:", command_string);
-			}
-
-			const Error err = OS::get_singleton()->create_process(chosen_terminal_emulator, terminal_emulator_args, nullptr, true);
-			if (err != OK) {
-				String args_string;
-				for (const String &terminal_emulator_arg : terminal_emulator_args) {
-					args_string += terminal_emulator_arg;
-				}
-				ERR_PRINT_ED(vformat(TTR("Couldn't run external terminal program (error code %d): %s %s\nCheck `filesystem/external_programs/terminal_emulator` and `filesystem/external_programs/terminal_emulator_flags` in the Editor Settings."), err, chosen_terminal_emulator, args_string));
-			}
-		} break;
-
 		case FILE_MENU_OPEN: {
 			// Open folders.
 			TreeItem *selected = tree->get_root();
@@ -2803,14 +2594,6 @@ int FileSystemDock::_get_menu_option_from_key(const Ref<InputEventKey> &p_key) {
 		return FILE_MENU_NEW_TEXTFILE;
 	} else if (ED_IS_SHORTCUT("filesystem_dock/rename", p_key)) {
 		return FILE_MENU_RENAME;
-#if !defined(ANDROID_ENABLED) && !defined(WEB_ENABLED)
-	} else if (ED_IS_SHORTCUT("filesystem_dock/show_in_explorer", p_key)) {
-		return FILE_MENU_SHOW_IN_EXPLORER;
-	} else if (ED_IS_SHORTCUT("filesystem_dock/open_in_external_program", p_key)) {
-		return FILE_MENU_OPEN_EXTERNAL;
-	} else if (ED_IS_SHORTCUT("filesystem_dock/open_in_terminal", p_key)) {
-		return FILE_MENU_OPEN_IN_TERMINAL;
-#endif
 	} else if (ED_IS_SHORTCUT("filesystem_dock/focus_path", p_key)) {
 		return EXTRA_FOCUS_PATH;
 	} else if (ED_IS_SHORTCUT("editor/open_search", p_key)) {
@@ -3643,8 +3426,6 @@ void FileSystemDock::_file_and_folders_fill_popup(PopupMenu *p_popup, const Vect
 	if (single_path) {
 		const String &fpath = p_paths[0];
 
-		[[maybe_unused]] bool added_separator = false;
-
 		if (favorites_list.has(fpath)) {
 			TreeItem *cursor_item = tree->get_selected();
 			bool is_item_in_favorites = false;
@@ -3659,46 +3440,12 @@ void FileSystemDock::_file_and_folders_fill_popup(PopupMenu *p_popup, const Vect
 
 			if (is_item_in_favorites) {
 				p_popup->add_separator();
-				added_separator = true;
 				p_popup->add_icon_item(get_editor_theme_icon(SNAME("ShowInFileSystem")), TTRC("Show in FileSystem"), FILE_MENU_SHOW_IN_FILESYSTEM);
 			}
 		}
 
-#if !defined(ANDROID_ENABLED) && !defined(WEB_ENABLED)
-		if (!added_separator) {
-			p_popup->add_separator();
-			added_separator = true;
-		}
-
-		// Opening the system file manager is not supported on the Android and web editors.
-		const bool is_directory = fpath.ends_with("/");
-
-		p_popup->add_icon_shortcut(get_editor_theme_icon(SNAME("Terminal")), ED_GET_SHORTCUT("filesystem_dock/open_in_terminal"), FILE_MENU_OPEN_IN_TERMINAL);
-		p_popup->set_item_text(p_popup->get_item_index(FILE_MENU_OPEN_IN_TERMINAL), is_directory ? TTRC("Open in Terminal") : TTRC("Open Folder in Terminal"));
-
-		if (!is_directory) {
-			p_popup->add_icon_shortcut(get_editor_theme_icon(SNAME("ExternalLink")), ED_GET_SHORTCUT("filesystem_dock/open_in_external_program"), FILE_MENU_OPEN_EXTERNAL);
-		}
-
-		p_popup->add_icon_shortcut(get_editor_theme_icon(SNAME("Filesystem")), ED_GET_SHORTCUT("filesystem_dock/show_in_explorer"), FILE_MENU_SHOW_IN_EXPLORER);
-		p_popup->set_item_text(p_popup->get_item_index(FILE_MENU_SHOW_IN_EXPLORER), is_directory ? OS::get_singleton()->get_platform_string(OS::PLATFORM_STRING_FILE_MANAGER_OPEN) : OS::get_singleton()->get_platform_string(OS::PLATFORM_STRING_FILE_MANAGER_SHOW));
-#endif
-
 		current_path = fpath;
-	} else if (no_paths) {
-#if !defined(ANDROID_ENABLED) && !defined(WEB_ENABLED)
-		p_popup->add_separator();
-		p_popup->add_icon_shortcut(get_editor_theme_icon(SNAME("Terminal")), ED_GET_SHORTCUT("filesystem_dock/open_in_terminal"), FILE_MENU_OPEN_IN_TERMINAL);
-		p_popup->add_icon_shortcut(get_editor_theme_icon(SNAME("Filesystem")), ED_GET_SHORTCUT("filesystem_dock/show_in_explorer"), FILE_MENU_SHOW_IN_EXPLORER);
-#endif
 	}
-
-#if !defined(ANDROID_ENABLED) && !defined(WEB_ENABLED)
-	if (all_files && p_paths.size() > 1) {
-		p_popup->add_separator();
-		p_popup->add_icon_shortcut(get_editor_theme_icon(SNAME("ExternalLink")), ED_GET_SHORTCUT("filesystem_dock/open_in_external_program"), FILE_MENU_OPEN_EXTERNAL);
-	}
-#endif
 
 	if (EditorContextMenuPluginManager::get_singleton()->has_plugins_for_slot(EditorContextMenuPlugin::CONTEXT_SLOT_FILESYSTEM)) {
 		EditorContextMenuPluginManager::get_singleton()->add_options_from_plugins(p_popup, EditorContextMenuPlugin::CONTEXT_SLOT_FILESYSTEM, FileSystemDock::_get_context_data(p_paths));
@@ -4511,13 +4258,6 @@ FileSystemDock::FileSystemDock() {
 	ED_SHORTCUT("filesystem_dock/new_resource", TTRC("New Resource..."), Key::NONE);
 	ED_SHORTCUT("filesystem_dock/new_textfile", TTRC("New TextFile..."), Key::NONE);
 	ED_SHORTCUT("filesystem_dock/rename", TTRC("Rename..."), Key::F2);
-	ED_SHORTCUT_OVERRIDE("filesystem_dock/rename", "macos", Key::ENTER);
-#if !defined(ANDROID_ENABLED) && !defined(WEB_ENABLED)
-	// Opening the system file manager or opening in an external program is not supported on the Android and web editors.
-	ED_SHORTCUT("filesystem_dock/show_in_explorer", TTRC("Open in File Manager"), KeyModifierMask::CMD_OR_CTRL | KeyModifierMask::ALT | Key::R);
-	ED_SHORTCUT("filesystem_dock/open_in_external_program", TTRC("Open in External Program"), KeyModifierMask::CMD_OR_CTRL | KeyModifierMask::ALT | Key::E);
-	ED_SHORTCUT("filesystem_dock/open_in_terminal", TTRC("Open in Terminal"), KeyModifierMask::CMD_OR_CTRL | KeyModifierMask::ALT | Key::T);
-#endif
 
 	ED_SHORTCUT("filesystem_dock/focus_path", TTRC("Focus Path"), KeyModifierMask::CMD_OR_CTRL | Key::L);
 	// Allow both Cmd + L and Cmd + Shift + G to match Safari's and Finder's shortcuts respectively.

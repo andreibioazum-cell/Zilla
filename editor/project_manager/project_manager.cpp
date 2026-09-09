@@ -46,7 +46,6 @@
 #include "editor/gui/editor_about.h"
 #include "editor/gui/editor_file_dialog.h"
 #include "editor/gui/editor_title_bar.h"
-#include "editor/gui/editor_version_button.h"
 #include "editor/inspector/editor_inspector.h"
 #include "editor/project_manager/engine_update_label.h"
 #include "editor/project_manager/project_dialog.h"
@@ -298,7 +297,6 @@ void ProjectManager::_update_theme(bool p_skip_creation) {
 			erase_btn->set_button_icon(get_editor_theme_icon("Remove"));
 			erase_missing_btn->set_button_icon(get_editor_theme_icon("Clear"));
 			create_tag_btn->set_button_icon(get_editor_theme_icon("Add"));
-			donate_btn->set_button_icon(get_editor_theme_icon("Heart"));
 
 			tag_error->add_theme_color_override(SceneStringName(font_color), get_theme_color("error_color", EditorStringName(Editor)));
 			tag_edit_error->add_theme_color_override(SceneStringName(font_color), get_theme_color("error_color", EditorStringName(Editor)));
@@ -1354,10 +1352,6 @@ void ProjectManager::_titlebar_resized() {
 	}
 }
 
-void ProjectManager::_open_donate_page() {
-	OS::get_singleton()->shell_open("https://fund.godotengine.org/?ref=project_manager");
-}
-
 // Object methods.
 
 ProjectManager::ProjectManager() {
@@ -1763,10 +1757,6 @@ ProjectManager::ProjectManager() {
 			erase_missing_btn->connect(SceneStringName(pressed), callable_mp(this, &ProjectManager::_erase_missing_projects));
 			sidebar_buttons_containter->add_child(erase_missing_btn);
 
-			donate_btn = memnew(Button);
-			donate_btn->set_text(TTRC("Donate"));
-			donate_btn->connect(SceneStringName(pressed), callable_mp(this, &ProjectManager::_open_donate_page));
-			project_list_sidebar->add_child(donate_btn);
 		}
 	}
 
@@ -1797,10 +1787,6 @@ ProjectManager::ProjectManager() {
 		update_label->connect("offline_clicked", callable_mp(this, &ProjectManager::_show_quick_settings));
 #endif
 
-		EditorVersionButton *version_btn = memnew(EditorVersionButton(EditorVersionButton::FORMAT_WITH_BUILD));
-		// Fade the version label to be less prominent, but still readable.
-		version_btn->set_self_modulate(Color(1, 1, 1, 0.6));
-		footer_bar->add_child(version_btn);
 	}
 
 	// Dialogs.
