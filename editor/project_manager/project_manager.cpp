@@ -320,12 +320,6 @@ void ProjectManager::_update_theme(bool p_skip_creation) {
 
 		// Dialogs.
 		migration_guide_button->set_button_icon(get_editor_theme_icon("ExternalLink"));
-
-		// Asset store popup.
-		if (asset_library && EDITOR_GET("interface/theme/style") == "Classic") {
-			// Removes extra border margins.
-			asset_library->add_theme_style_override(SceneStringName(panel), memnew(StyleBoxEmpty));
-		}
 	}
 
 #ifdef MODULE_GDSCRIPT_ENABLED

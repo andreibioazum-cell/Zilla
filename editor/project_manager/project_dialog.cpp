@@ -986,7 +986,10 @@ void ProjectDialog::show_dialog(bool p_reset_name, bool p_is_confirmed) {
 
 	_validate_path();
 
-	popup_centered(Size2(500, 0) * EDSCALE);
+	// Use a clamped popup so the dialog can never end up taller than the user's screen
+	// (this was happening because the natural/minimum height of all the stacked
+	// sections, e.g. renderer selection, could exceed the available screen height).
+	popup_centered_clamped(Size2(500, 0) * EDSCALE, 0.8);
 }
 
 void ProjectDialog::_notification(int p_what) {

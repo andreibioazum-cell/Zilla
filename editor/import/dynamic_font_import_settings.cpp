@@ -628,10 +628,8 @@ void DynamicFontImportSettingsDialog::_notification(int p_what) {
 		} break;
 
 		case NOTIFICATION_THEME_CHANGED: {
-			const String theme_style = EDITOR_GET("interface/theme/style");
-			const String type_variation = theme_style == "Classic" ? "TabContainerOdd" : "TabContainerInner";
-			main_pages->set_theme_type_variation(type_variation);
-			preload_pages->set_theme_type_variation(type_variation);
+			main_pages->set_theme_type_variation("TabContainerInner");
+			preload_pages->set_theme_type_variation("TabContainerInner");
 
 			add_var->set_button_icon(get_editor_theme_icon(SNAME("Add")));
 			label_warn->add_theme_color_override(SceneStringName(font_color), get_theme_color(SNAME("warning_color"), EditorStringName(Editor)));

@@ -1260,9 +1260,6 @@
 		<member name="interface/theme/spacing_preset" type="String" setter="" getter="">
 			The editor theme spacing preset to use. See also [member interface/theme/base_spacing] and [member interface/theme/additional_spacing].
 		</member>
-		<member name="interface/theme/style" type="String" setter="" getter="">
-			The editor theme style to use.
-		</member>
 		<member name="interface/theme/use_monospace_font_for_editor_symbols" type="bool" setter="" getter="">
 			If [code]true[/code], use the monospace font for some labels in the editor that display code symbols, such as signals, properties, and methods.
 		</member>

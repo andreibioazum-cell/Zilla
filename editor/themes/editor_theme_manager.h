@@ -53,7 +53,6 @@ public:
 	struct ThemeConfiguration {
 		// Basic properties.
 
-		String style;
 		String preset;
 		String spacing_preset;
 
