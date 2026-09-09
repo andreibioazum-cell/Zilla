@@ -1,42 +1,123 @@
-Skip to content
-Zilla
-Repository navigation
-Code
-Pull requests
-Agents
-🔗 GHA
-Update android_builds.yml #37
-Annotations
-1 error and 1 warning
-🤖 Android 
-/
- Editor (SCU, arm64, ultra-fast)
-failed now in 2m 2s
-1s
-17s
-0s
-2s
-1s
-18s
-2s
-1m 18s
-0s
-Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
-Run actions/upload-artifact@v4
-(node:3508) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
-(Use `node --trace-deprecation ...` to show where the warning was created)
-Multiple search paths detected. Calculating the least common ancestor of all paths
-The least common ancestor is /home/runner/work/Zilla/Zilla. This will be the root directory of the artifact
-Error: No files were found with the provided path: platform/android/java/app/build/outputs/apk/**/*.apk
-platform/android/java/build/outputs/apk/**/*.apk
-platform/android/java/app/build/outputs/bundle/**/*.aab
-platform/android/java/build/outputs/bundle/**/*.aab
-platform/android/java/lib/build/outputs/aar/*.aar
-bin/*.apk
-bin/*.aab. No artifacts will be uploaded.
-0s
-0s
-0s
-0s
-0s
-0s
+name: 🤖 Android Builds
+on:
+  workflow_call:
+    secrets:
+      SERVICE_ACCOUNT_KEY:
+        required: true
+  workflow_dispatch:
+
+env:
+  SCONS_CACHE_LIMIT: 4096
+  SCONS_FLAGS: >-
+    target=editor
+    dev_build=no
+    production=yes
+    scu_build=yes
+    scu_limit=64
+    optimize=none
+    debug_symbols=no
+    separate_debug_symbols=no
+    lto=none
+    progress=no
+    verbose=no
+    warnings=moderate
+    werror=no
+    tests=no
+    fast_unsafe=yes
+    vsproj=no
+    use_static_cpp=no
+    disable_exceptions=yes
+    deprecated=no
+    minizip=yes
+    brotli=no
+    vulkan=yes
+    opengl3=no
+    use_volk=yes
+    module_text_server_fb_enabled=yes
+    swappy=no
+    generate_android_binaries=yes
+    builtin_msdfgen=yes
+    builtin_harfbuzz=no
+    builtin_icu4c=no
+    builtin_graphite=no
+    builtin_brotli=no
+    num_jobs=4
+
+jobs:
+  build-android:
+    runs-on: ubuntu-24.04
+    name: Editor (SCU, arm64, ultra-fast)
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          submodules: recursive
+      - name: Set up Java 17
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: 17
+      - name: Restore ccache
+        uses: actions/cache/restore@v6
+        with:
+          path: ${{ github.workspace }}/.ccache
+          key: ccache-android-editor-fast|${{ runner.os }}|${{ hashFiles('**/SCsub', '**/SCU*', 'SConstruct', 'methods.py') }}
+          restore-keys: ccache-android-editor-fast|${{ runner.os }}|
+        continue-on-error: true
+      - name: Restore Godot build cache
+        uses: ./.github/actions/godot-cache-restore
+        with:
+          cache-name: android-editor-fast
+        continue-on-error: true
+      - name: Setup Python and SCons
+        uses: ./.github/actions/godot-deps
+      - name: Restore Godot build cache (post-deps)
+        uses: ./.github/actions/godot-cache-restore
+        with:
+          cache-name: android-editor-fast
+        continue-on-error: true
+      - name: Compilation
+        uses: ./.github/actions/godot-build
+        with:
+          scons-flags: ${{ env.SCONS_FLAGS }} arch=arm64
+          platform: android
+          target: editor
+      - name: Make gradlew executable
+        shell: bash
+        run: chmod +x platform/android/java/gradlew
+      - name: List outputs (debug)
+        shell: bash
+        run: |
+          echo "=== SCONS FLAGS ==="
+          echo "${{ env.SCONS_FLAGS }}"
+          ls -lh platform/android/java/lib/libs/tools/debug/arm64-v8a/ || true
+          find platform/android -type f -name "*.apk" -o -name "*.aab" -o -name "*.so" | head -n 100
+          ls -R platform/android/java/app/build 2>&1 | head -n 300
+          ls -R platform/android/java/build 2>&1 | head -n 300
+          ls -lh bin/ || true
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: android-editor-apk
+          path: |
+            platform/android/java/app/build/outputs/apk/**/*.apk
+            platform/android/java/app/build/intermediates/**/*.apk
+            platform/android/java/build/outputs/**/*.apk
+            platform/android/java/build/outputs/**/*.aab
+            platform/android/java/lib/build/outputs/**/*.aar
+            platform/android/java/app/build/outputs/bundle/**/*.aab
+            bin/*.apk
+            bin/*.aab
+          if-no-files-found: warn
+      - name: Save ccache
+        uses: actions/cache/save@v6
+        with:
+          path: ${{ github.workspace }}/.ccache
+          key: ccache-android-editor-fast|${{ runner.os }}|${{ github.sha }}
+        continue-on-error: true
+      - name: Save Godot build cache
+        uses: ./.github/actions/godot-cache-save
+        with:
+          cache-name: android-editor-fast
+        continue-on-error: true
