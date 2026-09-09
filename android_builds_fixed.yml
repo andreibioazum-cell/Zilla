@@ -1,0 +1,132 @@
+name: 🤖 Android Builds
+on:
+  workflow_call:
+    secrets:
+      SERVICE_ACCOUNT_KEY:
+        required: true
+  workflow_dispatch:
+
+env:
+  SCONS_CACHE_LIMIT: 4096
+  SCONS_FLAGS: >-
+    target=editor
+    dev_build=no
+    production=yes
+    scu_build=yes
+    scu_limit=64
+    optimize=none
+    debug_symbols=no
+    separate_debug_symbols=no
+    lto=none
+    progress=no
+    verbose=no
+    warnings=moderate
+    werror=no
+    tests=no
+    fast_unsafe=yes
+    vsproj=no
+    use_static_cpp=no
+    disable_exceptions=yes
+    deprecated=no
+    minizip=yes
+    brotli=no
+    vulkan=yes
+    opengl3=no
+    use_volk=yes
+    module_text_server_fb_enabled=yes
+    swappy=no
+    generate_android_binaries=yes
+    builtin_msdfgen=yes
+    builtin_harfbuzz=no
+    builtin_icu4c=no
+    builtin_graphite=no
+    builtin_brotli=no
+    num_jobs=4
+
+jobs:
+  build-android:
+    runs-on: ubuntu-24.04
+    name: Editor (SCU, arm64, ultra-fast)
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          submodules: recursive
+      - name: Set up Java 17
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: 17
+      - name: Restore ccache
+        uses: actions/cache/restore@v6
+        with:
+          path: ${{ github.workspace }}/.ccache
+          key: ccache-android-editor-fast|${{ runner.os }}|${{ hashFiles('**/SCsub', '**/SCU*', 'SConstruct', 'methods.py') }}
+          restore-keys: ccache-android-editor-fast|${{ runner.os }}|
+        continue-on-error: true
+      - name: Restore Godot build cache
+        uses: ./.github/actions/godot-cache-restore
+        with:
+          cache-name: android-editor-fast
+        continue-on-error: true
+      - name: Setup Python and SCons
+        uses: ./.github/actions/godot-deps
+      - name: Restore Godot build cache (post-deps)
+        uses: ./.github/actions/godot-cache-restore
+        with:
+          cache-name: android-editor-fast
+        continue-on-error: true
+      - name: Compilation
+        uses: ./.github/actions/godot-build
+        with:
+          scons-flags: ${{ env.SCONS_FLAGS }} arch=arm64
+          platform: android
+          target: editor
+      - name: Make gradlew executable
+        shell: bash
+        run: chmod +x platform/android/java/gradlew
+      - name: Generate APK via Gradle (explicit)
+        shell: bash
+        run: |
+          cd platform/android/java
+          ./gradlew --version
+          ./gradlew generateGodotEditor --info --stacktrace
+          find . -name "*.apk" | head -n 100
+          ls -R editor/build 2>&1 | head -n 500
+          ls -R app/build 2>&1 | head -n 200 || true
+      - name: List outputs
+        shell: bash
+        run: |
+          echo "=== lib (tools/debug) ==="
+          ls -lh platform/android/java/lib/libs/tools/debug/arm64-v8a/ || true
+          echo "=== find apk/aab/so ==="
+          find platform/android -type f \( -name "*.apk" -o -name "*.aab" -o -name "*.so" \) | head -n 100
+          echo "=== bin ==="
+          ls -lh bin/ || true
+          ls -lh bin/android_editor_builds/ || true
+          echo "=== editor/build ==="
+          ls -R platform/android/java/editor/build 2>&1 | head -n 300 || true
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: android-editor-apk
+          path: |
+            platform/android/java/editor/build/outputs/apk/**/*.apk
+            platform/android/java/editor/build/outputs/bundle/**/*.aab
+            bin/android_editor_builds/**/*.apk
+            bin/android_editor_builds/**/*.aab
+            bin/*.apk
+            bin/*.aab
+          if-no-files-found: error
+      - name: Save ccache
+        uses: actions/cache/save@v6
+        with:
+          path: ${{ github.workspace }}/.ccache
+          key: ccache-android-editor-fast|${{ runner.os }}|${{ github.sha }}
+        continue-on-error: true
+      - name: Save Godot build cache
+        uses: ./.github/actions/godot-cache-save
+        with:
+          cache-name: android-editor-fast
+        continue-on-error: true
