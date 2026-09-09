@@ -32,6 +32,8 @@ env:
     brotli=no
     vulkan=yes
     opengl3=yes
+    forward_plus_renderer=no
+    engine_update_check=no
     use_volk=yes
     module_text_server_fb_enabled=yes
     swappy=no
