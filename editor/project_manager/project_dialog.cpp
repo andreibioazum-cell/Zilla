@@ -567,13 +567,17 @@ void ProjectDialog::ok_pressed() {
 		ProjectSettings::CustomMap initial_settings;
 
 		// Be sure to change this code if/when renderers are changed.
-		// Default values are "mobile" for the main setting/mobile override,
-		// and "gl_compatibility" for the web override. Forward+ has been removed entirely.
+		// Default values are "gl_compatibility" on Android/for the web override,
+		// and "mobile" for the desktop mobile override. Forward+ has been removed entirely.
 		BaseButton *pressed_renderer_button = renderer_button_group->get_pressed_button();
 		// Guard against no button being selected (e.g. if a stale "forward_plus"
 		// setting from before Forward+ was removed somehow left nothing pressed).
-		// Default to Mobile in that case instead of crashing.
+		// Default to Compatibility on Android when it was compiled in, otherwise Mobile.
+#ifdef GLES3_ENABLED
+		String renderer_type = pressed_renderer_button ? String(pressed_renderer_button->get_meta(SNAME("rendering_method"))) : String("gl_compatibility");
+#else
 		String renderer_type = pressed_renderer_button ? String(pressed_renderer_button->get_meta(SNAME("rendering_method"))) : String("mobile");
+#endif
 		initial_settings["rendering/renderer/rendering_method"] = renderer_type;
 
 		EditorSettings::get_singleton()->set("project_manager/default_renderer", renderer_type);
@@ -1137,18 +1141,29 @@ ProjectDialog::ProjectDialog() {
 	rshc->add_child(rvb);
 
 	// Forward+ has been removed entirely: it's rarely needed and dropping it
-	// saves compile time/binary size. Mobile is now the default high-end renderer.
+	// saves compile time/binary size. On Android prefer Compatibility by default:
+	// it starts faster and avoids Vulkan black-screen issues on mobile devices.
+#ifdef GLES3_ENABLED
+	String default_renderer_type = "gl_compatibility";
+#else
 	String default_renderer_type = "mobile";
+#endif
 	if (EditorSettings::get_singleton()->has_setting("project_manager/default_renderer")) {
 		default_renderer_type = EditorSettings::get_singleton()->get_setting("project_manager/default_renderer");
 	}
 	// Old installs/settings may still have "forward_plus" saved from before it was
-	// removed. Treat that the same as "mobile" so a button always ends up selected
-	// (otherwise no CheckBox would be pressed and creating a project would crash
-	// when trying to read the selected renderer's metadata).
+	// removed. Treat that as the default renderer so a button always ends up
+	// selected (otherwise no CheckBox would be pressed and creating a project
+	// would crash when trying to read the selected renderer's metadata).
+#ifdef GLES3_ENABLED
+	if (default_renderer_type != "mobile" && default_renderer_type != "gl_compatibility") {
+		default_renderer_type = "gl_compatibility";
+	}
+#else
 	if (default_renderer_type != "mobile" && default_renderer_type != "gl_compatibility") {
 		default_renderer_type = "mobile";
 	}
+#endif
 
 	Button *rs_button = memnew(CheckBox);
 	rs_button->set_button_group(renderer_button_group);

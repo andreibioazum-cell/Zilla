@@ -1203,6 +1203,10 @@ void EditorSettings::_load_defaults(Ref<ConfigFile> p_extra_config) {
 #if defined(WEB_ENABLED)
 	// Web platform only supports `gl_compatibility`.
 	const String default_renderer = "gl_compatibility";
+#elif defined(ANDROID_ENABLED) && defined(GLES3_ENABLED)
+	// Zilla Android: prefer Compatibility for new projects and the editor UI.
+	// It starts much faster and avoids Vulkan initialization issues on mobile.
+	const String default_renderer = "gl_compatibility";
 #elif defined(MOBILE_RD_ENABLED)
 	// Forward+ has been removed entirely, so Mobile is the highest-end available renderer.
 	const String default_renderer = "mobile";

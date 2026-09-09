@@ -31,8 +31,10 @@ env:
     minizip=yes
     brotli=no
     vulkan=yes
-    opengl3=no
+    opengl3=yes
+    forward_plus_renderer=no
     use_volk=yes
+    engine_update_check=no
     module_text_server_fb_enabled=yes
     swappy=no
     generate_android_binaries=yes
