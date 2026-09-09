@@ -34,7 +34,7 @@ runs:
         sudo apt-get update -qq
         sudo apt-get install -y -qq ccache
         ccache --version
-        ccache --max-size=2G
+        ccache --max-size=4G
         ccache --zero-stats
         echo "CCACHE_DIR=${{ github.workspace }}/.ccache" >> $GITHUB_ENV
         echo "CCACHE_BASEDIR=${{ github.workspace }}" >> $GITHUB_ENV
