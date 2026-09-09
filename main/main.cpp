@@ -2434,6 +2434,42 @@ Error Main::setup(const char *execpath, int argc, char *argv[], bool p_second_ph
 	}
 #endif
 
+	// Zilla: Forward+ can be compiled out (forward_plus_renderer=no). If
+	// Forward+ was explicitly requested or came from a stale project setting,
+	// fall back to a renderer this build actually contains so startup doesn't abort.
+	{
+		const Vector<String> built_hints = renderer_hints.split(",");
+		if ((rendering_method.is_empty() && !built_hints.has("forward_plus")) ||
+				(rendering_method == "forward_plus" && !built_hints.has("forward_plus"))) {
+			const bool open_gl_driver = rendering_driver == "opengl3" || rendering_driver == "opengl3_angle" || rendering_driver == "opengl3_es";
+			// Prefer Compatibility on mobile: it's lighter and much less likely to
+			// leave users staring at a long black screen while Vulkan initializes.
+			// If the user explicitly forced a Vulkan/RD driver, use Mobile instead.
+			if (rendering_driver == "dummy") {
+				rendering_method = "dummy";
+			} else if (open_gl_driver || rendering_driver.is_empty()) {
+				if (built_hints.has("gl_compatibility")) {
+					rendering_method = "gl_compatibility";
+				} else if (built_hints.has("mobile")) {
+					rendering_method = "mobile";
+				} else {
+					rendering_method = renderer_hints.get_slicec(',', 0);
+				}
+			} else if (built_hints.has("mobile")) {
+				rendering_method = "mobile";
+			} else if (built_hints.has("gl_compatibility")) {
+				rendering_method = "gl_compatibility";
+			} else {
+				rendering_method = renderer_hints.get_slicec(',', 0);
+			}
+			if (rendering_method.is_empty()) {
+				rendering_method = "dummy";
+			}
+			rendering_method_source = OS::RenderingSource::RENDERING_SOURCE_FALLBACK;
+			print_verbose("Forward+ is not available in this build; using renderer: " + rendering_method);
+		}
+	}
+
 	if (!rendering_method.is_empty()) {
 		if (rendering_method != "forward_plus" &&
 				rendering_method != "mobile" &&
@@ -2514,8 +2550,21 @@ Error Main::setup(const char *execpath, int argc, char *argv[], bool p_second_ph
 				rendering_method = "dummy";
 			} else if (rendering_driver == "opengl3" || rendering_driver == "opengl3_angle" || rendering_driver == "opengl3_es") {
 				rendering_method = "gl_compatibility";
-			} else {
+			} else if (renderer_hints.split(",").has("forward_plus")) {
 				rendering_method = "forward_plus";
+			} else {
+				// Zilla: no Forward+ in this build. Match the forced driver, otherwise
+				// pick the most compatible fallback.
+				if (renderer_hints.split(",").has("mobile")) {
+					rendering_method = "mobile";
+				} else if (renderer_hints.split(",").has("gl_compatibility")) {
+					rendering_method = "gl_compatibility";
+				} else {
+					rendering_method = renderer_hints.get_slicec(',', 0);
+					if (rendering_method.is_empty()) {
+						rendering_method = "dummy";
+					}
+				}
 			}
 		}
 
