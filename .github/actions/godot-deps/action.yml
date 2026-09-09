@@ -18,9 +18,7 @@ runs:
     - name: Set up Python 3.x
       uses: actions/setup-python@v7
       with:
-        # Semantic version range syntax or exact version of a Python version.
         python-version: ${{ inputs.python-version }}
-        # Optional - x64 or x86 architecture, defaults to x64.
         architecture: ${{ inputs.python-arch }}
 
     - name: Setup SCons
@@ -29,6 +27,18 @@ runs:
         python -c "import sys; print(sys.version)"
         python -m pip install scons==${{ inputs.scons-version }}
         scons --version
+
+    - name: Setup ccache (ultra-fast recompilation)
+      shell: bash
+      run: |
+        sudo apt-get update -qq
+        sudo apt-get install -y -qq ccache
+        ccache --version
+        ccache --max-size=2G
+        ccache --zero-stats
+        echo "CCACHE_DIR=${{ github.workspace }}/.ccache" >> $GITHUB_ENV
+        echo "CCACHE_BASEDIR=${{ github.workspace }}" >> $GITHUB_ENV
+        echo "CCACHE_SLOPPINESS=pch_defines,time_macros" >> $GITHUB_ENV
 
     - name: Setup problem matchers
       shell: bash
