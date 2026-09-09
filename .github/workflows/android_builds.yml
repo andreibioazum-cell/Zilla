@@ -5,119 +5,60 @@ on:
       SERVICE_ACCOUNT_KEY:
         required: true
   workflow_dispatch:
-
 env:
   SCONS_CACHE_LIMIT: 4096
   SCONS_FLAGS: >-
-    target=editor
-    dev_build=no
-    production=yes
-    scu_build=yes
-    scu_limit=64
-    optimize=none
-    debug_symbols=no
-    separate_debug_symbols=no
-    lto=none
-    progress=no
-    verbose=no
-    warnings=moderate
-    werror=no
-    tests=no
-    fast_unsafe=yes
-    vsproj=no
-    use_static_cpp=no
-    disable_exceptions=yes
-    deprecated=no
-    minizip=yes
-    brotli=no
-    vulkan=yes
-    opengl3=no
-    use_volk=yes
-    module_text_server_fb_enabled=yes
-    swappy=no
-    generate_android_binaries=yes
-    builtin_msdfgen=yes
-    builtin_harfbuzz=no
-    builtin_icu4c=no
-    builtin_graphite=no
-    builtin_brotli=no
-    num_jobs=4
-
+    target=editor dev_build=no production=yes scu_build=yes scu_limit=64 optimize=none debug_symbols=no separate_debug_symbols=no lto=none progress=no verbose=no warnings=moderate werror=no tests=no fast_unsafe=yes vsproj=no use_static_cpp=no disable_exceptions=yes deprecated=no minizip=yes brotli=no vulkan=yes opengl3=no use_volk=yes module_text_server_fb_enabled=yes swappy=no generate_android_binaries=yes builtin_msdfgen=yes builtin_harfbuzz=no builtin_icu4c=no builtin_graphite=no builtin_brotli=no num_jobs=4
 jobs:
   build-android:
     runs-on: ubuntu-24.04
     name: Editor (SCU, arm64, ultra-fast)
     timeout-minutes: 15
     steps:
-      - name: Checkout
-        uses: actions/checkout@v7
-        with:
-          submodules: recursive
-      - name: Set up Java 17
-        uses: actions/setup-java@v5
-        with:
-          distribution: temurin
-          java-version: 17
-      - name: Restore ccache
-        uses: actions/cache/restore@v6
-        with:
-          path: ${{ github.workspace }}/.ccache
-          key: ccache-android-editor-fast|${{ runner.os }}|${{ hashFiles('**/SCsub', '**/SCU*', 'SConstruct', 'methods.py') }}
-          restore-keys: ccache-android-editor-fast|${{ runner.os }}|
+      - uses: actions/checkout@v7
+        with: { submodules: recursive }
+      - uses: actions/setup-java@v5
+        with: { distribution: temurin, java-version: 17 }
+      - uses: actions/cache/restore@v6
+        with: { path: ${{ github.workspace }}/.ccache, key: ccache-android-editor-fast|${{ runner.os }}|${{ hashFiles('**/SCsub', '**/SCU*', 'SConstruct', 'methods.py') }}, restore-keys: ccache-android-editor-fast|${{ runner.os }}| }
         continue-on-error: true
-      - name: Restore Godot build cache
-        uses: ./.github/actions/godot-cache-restore
-        with:
-          cache-name: android-editor-fast
+      - uses: ./.github/actions/godot-cache-restore
+        with: { cache-name: android-editor-fast }
         continue-on-error: true
-      - name: Setup Python and SCons
-        uses: ./.github/actions/godot-deps
-      - name: Restore Godot build cache (post-deps)
-        uses: ./.github/actions/godot-cache-restore
-        with:
-          cache-name: android-editor-fast
+      - uses: ./.github/actions/godot-deps
+      - uses: ./.github/actions/godot-cache-restore
+        with: { cache-name: android-editor-fast }
         continue-on-error: true
-      - name: Compilation
-        uses: ./.github/actions/godot-build
-        with:
-          scons-flags: ${{ env.SCONS_FLAGS }} arch=arm64
-          platform: android
-          target: editor
+      - uses: ./.github/actions/godot-build
+        with: { scons-flags: ${{ env.SCONS_FLAGS }} arch=arm64, platform: android, target: editor }
       - name: Make gradlew executable
         shell: bash
         run: chmod +x platform/android/java/gradlew
-      - name: List outputs (debug)
+      - name: Generate APK via Gradle (explicit)
         shell: bash
         run: |
-          echo "=== SCONS FLAGS ==="
-          echo "${{ env.SCONS_FLAGS }}"
+          cd platform/android/java
+          ./gradlew --version
+          ./gradlew generateGodotEditor generateGodotHorizonOSEditor generateGodotPicoOSEditor --info --stacktrace
+          find . -name "*.apk" | head -n 50
+          ls -R app/build 2>&1 | head -n 500
+      - name: List outputs
+        shell: bash
+        run: |
           ls -lh platform/android/java/lib/libs/tools/debug/arm64-v8a/ || true
-          find platform/android -type f -name "*.apk" -o -name "*.aab" -o -name "*.so" | head -n 100
-          ls -R platform/android/java/app/build 2>&1 | head -n 300
-          ls -R platform/android/java/build 2>&1 | head -n 300
+          find platform/android -name "*.apk" | head -n 100
           ls -lh bin/ || true
-      - name: Upload APK
-        uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v4
         with:
           name: android-editor-apk
           path: |
             platform/android/java/app/build/outputs/apk/**/*.apk
-            platform/android/java/app/build/intermediates/**/*.apk
-            platform/android/java/build/outputs/**/*.apk
-            platform/android/java/build/outputs/**/*.aab
-            platform/android/java/lib/build/outputs/**/*.aar
             platform/android/java/app/build/outputs/bundle/**/*.aab
             bin/*.apk
-            bin/*.aab
-          if-no-files-found: warn
-      - name: Save ccache
-        uses: actions/cache/save@v6
-        with:
-          path: ${{ github.workspace }}/.ccache
-          key: ccache-android-editor-fast|${{ runner.os }}|${{ github.sha }}
+          if-no-files-found: error
+      - uses: actions/cache/save@v6
+        with: { path: ${{ github.workspace }}/.ccache, key: ccache-android-editor-fast|${{ runner.os }}|${{ github.sha }} }
         continue-on-error: true
-      - name: Save Godot build cache
-        uses: ./.github/actions/godot-cache-save
-        with:
-          cache-name: android-editor-fast
+      - uses: ./.github/actions/godot-cache-save
+        with: { cache-name: android-editor-fast }
         continue-on-error: true
