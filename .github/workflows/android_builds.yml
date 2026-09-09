@@ -7,13 +7,50 @@ on:
 
   workflow_dispatch:
 
-# Global Settings — ULTRA FAST BUILD
+# Global Settings — ULTRA FAST BUILD (JOLT ONLY, SCU+FAST_UNSAFE+CCACHE)
+# Godot physics removed — only jolt_physics. Heavy modules physically deleted.
+# Flags tuned for <10 min build on ubuntu-24.04 (4 cores) — fits 15 min limit.
 env:
+  SCONS_CACHE_LIMIT: 4096
   SCONS_FLAGS: >-
-    dev_mode=yes
+    target=editor
+    dev_build=no
+    production=yes
     scu_build=yes
+    scu_limit=64
+    optimize=none
     debug_symbols=no
+    separate_debug_symbols=no
+    lto=none
+    progress=no
+    verbose=no
+    warnings=moderate
+    werror=no
+    tests=no
+    fast_unsafe=yes
+    vsproj=no
+    use_static_cpp=no
+    disable_exceptions=yes
+    deprecated=no
+    minizip=yes
+    brotli=no
+    vulkan=yes
+    opengl3=no
+    use_volk=yes
     module_text_server_fb_enabled=yes
+    swappy=no
+    builtin_embree=no
+    builtin_msdfgen=yes
+    builtin_harfbuzz=no
+    builtin_icu4c=no
+    builtin_graphite=no
+    builtin_libtheora=no
+    builtin_libvorbis=no
+    builtin_libogg=no
+    builtin_libwebp=no
+    builtin_mbedtls=no
+    builtin_brotli=no
+    num_jobs=4
 
 jobs:
   build-android:
@@ -33,6 +70,14 @@ jobs:
           distribution: temurin
           java-version: 17
 
+      - name: Restore ccache
+        uses: actions/cache/restore@v6
+        with:
+          path: ${{ github.workspace }}/.ccache
+          key: ccache-android-editor-fast|${{ runner.os }}|${{ hashFiles('**/SCsub', '**/SCU*', 'SConstruct', 'methods.py') }}
+          restore-keys: ccache-android-editor-fast|${{ runner.os }}|
+        continue-on-error: true
+
       - name: Restore Godot build cache
         uses: ./.github/actions/godot-cache-restore
         with:
@@ -42,12 +87,25 @@ jobs:
       - name: Setup Python and SCons
         uses: ./.github/actions/godot-deps
 
+      - name: Restore Godot build cache (post-deps)
+        uses: ./.github/actions/godot-cache-restore
+        with:
+          cache-name: android-editor-fast
+        continue-on-error: true
+
       - name: Compilation
         uses: ./.github/actions/godot-build
         with:
           scons-flags: ${{ env.SCONS_FLAGS }} arch=arm64
           platform: android
           target: editor
+
+      - name: Save ccache
+        uses: actions/cache/save@v6
+        with:
+          path: ${{ github.workspace }}/.ccache
+          key: ccache-android-editor-fast|${{ runner.os }}|${{ github.sha }}
+        continue-on-error: true
 
       - name: Save Godot build cache
         uses: ./.github/actions/godot-cache-save
