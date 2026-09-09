@@ -14,7 +14,8 @@ if env.editor_build:
     SConscript("editor/script_templates/SCsub")
 
     # Those two modules are required for the language server protocol
-    if env["module_jsonrpc_enabled"] and env["module_websocket_enabled"]:
+    # JOLT-only build may have websocket deleted — use get() for safety
+    if env.get("module_jsonrpc_enabled", False) and env.get("module_websocket_enabled", False):
         env_gdscript.add_source_files(env.modules_sources, "./language_server/*.cpp")
     else:
         # Using a define in the disabled case, to avoid having an extra define

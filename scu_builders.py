@@ -331,8 +331,10 @@ def generate_scu_files(max_includes_per_scu):
 
     process_folder(["platform/android/export"])
 
+    # JOLT ONLY — godot_physics_2d/3d удалены, оставлен только jolt
+    # Вернули RayCast и супер-нужные: csg, gridmap, fbx, lightmapper_rd, navigation, tilemap, raycast, vhacd, xatlas, webp, mbedtls, enet/websocket/webrtc/upnp, camera и т.д.
+    # Удаленными остались только: godot_physics_*, betsy, cvtt, etcpak, interactive_music, objectdb_profiler, text_server_adv
     process_folder(["modules/csg"])
-    process_folder(["modules/betsy"])
     process_folder(["modules/gdscript"])
     process_folder(["modules/gdscript/editor"])
     process_folder(["modules/gdscript/language_server"])
@@ -341,11 +343,7 @@ def generate_scu_files(max_includes_per_scu):
     process_folder(["modules/gltf/editor"])
     process_folder(["modules/gltf/extensions"])
     process_folder(["modules/gltf/extensions/physics"])
-    process_folder(["modules/godot_physics_2d"])
-    process_folder(["modules/godot_physics_3d"])
-    process_folder(["modules/godot_physics_3d/joints"])
     process_folder(["modules/gridmap"])
-    process_folder(["modules/interactive_music"])
     process_folder(["modules/jolt_physics"])
     process_folder(["modules/jolt_physics/joints"])
     process_folder(["modules/jolt_physics/objects"])
@@ -361,8 +359,6 @@ def generate_scu_files(max_includes_per_scu):
     process_folder(["modules/navigation_2d"])
     process_folder(["modules/navigation_2d/2d"])
     process_folder(["modules/navigation_2d/editor"])
-    process_folder(["modules/objectdb_profiler/editor"])
-    process_folder(["modules/objectdb_profiler/editor/data_viewers"])
     process_folder(["modules/tilemap"])
     process_folder(["modules/webrtc"])
     process_folder(["modules/websocket"])

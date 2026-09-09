@@ -12,7 +12,7 @@ env_crypto = env.Clone()
 env_crypto.AddMethod(_escape_define, "EscapeDefine")
 
 is_builtin = env["builtin_mbedtls"]
-has_module = env["module_mbedtls_enabled"]
+has_module = env.get("module_mbedtls_enabled", False)
 thirdparty_obj = []
 configs = []
 
