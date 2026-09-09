@@ -331,8 +331,10 @@ def generate_scu_files(max_includes_per_scu):
 
     process_folder(["platform/android/export"])
 
-    process_folder(["modules/csg"])
-    process_folder(["modules/betsy"])
+    # JOLT ONLY — removed godot_physics_2d/3d for build speed + single physics
+    # Removed heavy/unneeded: betsy, cvtt, etcpak, raycast, vhacd, xatlas, lightmapper_rd,
+    # navigation_2d/3d, webrtc/websocket/upnp/enet, camera, csg, gridmap, fbx,
+    # interactive_music, theora/vorbis/ogg, tilemap, objectdb_profiler, text_server_adv, webp, mbedtls
     process_folder(["modules/gdscript"])
     process_folder(["modules/gdscript/editor"])
     process_folder(["modules/gdscript/language_server"])
@@ -341,31 +343,13 @@ def generate_scu_files(max_includes_per_scu):
     process_folder(["modules/gltf/editor"])
     process_folder(["modules/gltf/extensions"])
     process_folder(["modules/gltf/extensions/physics"])
-    process_folder(["modules/godot_physics_2d"])
-    process_folder(["modules/godot_physics_3d"])
-    process_folder(["modules/godot_physics_3d/joints"])
-    process_folder(["modules/gridmap"])
-    process_folder(["modules/interactive_music"])
     process_folder(["modules/jolt_physics"])
     process_folder(["modules/jolt_physics/joints"])
     process_folder(["modules/jolt_physics/objects"])
     process_folder(["modules/jolt_physics/shapes"])
     process_folder(["modules/jolt_physics/spaces"])
-    process_folder(["modules/lightmapper_rd"])
-    process_folder(["modules/mbedtls"])
     process_folder(["modules/multiplayer"])
     process_folder(["modules/multiplayer/editor"])
-    process_folder(["modules/navigation_3d"])
-    process_folder(["modules/navigation_3d/3d"])
-    process_folder(["modules/navigation_3d/editor"])
-    process_folder(["modules/navigation_2d"])
-    process_folder(["modules/navigation_2d/2d"])
-    process_folder(["modules/navigation_2d/editor"])
-    process_folder(["modules/objectdb_profiler/editor"])
-    process_folder(["modules/objectdb_profiler/editor/data_viewers"])
-    process_folder(["modules/tilemap"])
-    process_folder(["modules/webrtc"])
-    process_folder(["modules/websocket"])
 
     process_folder(["scene/2d"])
     process_folder(["scene/2d/physics"])
