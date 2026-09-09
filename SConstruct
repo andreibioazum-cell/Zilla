@@ -200,7 +200,7 @@ opts.Add(
         True,
     )
 )
-opts.Add(BoolVariable("forward_plus_renderer", "Enable the Forward+ renderer (requires RenderingDevice)", True))
+opts.Add(BoolVariable("forward_plus_renderer", "Enable the Forward+ renderer (requires RenderingDevice)", False))
 opts.Add(BoolVariable("forward_mobile_renderer", "Enable the Mobile renderer (requires RenderingDevice)", True))
 opts.Add(BoolVariable("vulkan", "Enable the Vulkan rendering driver", True))
 opts.Add(BoolVariable("opengl3", "Enable the OpenGL/GLES3 rendering driver", True))
