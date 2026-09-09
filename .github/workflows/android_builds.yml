@@ -39,16 +39,10 @@ env:
     use_volk=yes
     module_text_server_fb_enabled=yes
     swappy=no
-    builtin_embree=no
     builtin_msdfgen=yes
     builtin_harfbuzz=no
     builtin_icu4c=no
     builtin_graphite=no
-    builtin_libtheora=no
-    builtin_libvorbis=no
-    builtin_libogg=no
-    builtin_libwebp=no
-    builtin_mbedtls=no
     builtin_brotli=no
     num_jobs=4
 
