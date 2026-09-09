@@ -22,21 +22,32 @@ runs:
   using: composite
   steps:
     - name: SCons Build
-      shell: sh
+      shell: bash
       run: |
         echo "Building with flags:" platform=${{ inputs.platform }} target=${{ inputs.target }} ${{ inputs.scons-flags }} "cache_path=${{ inputs.scons-cache }}" redirect_build_objects=no
+        # Show ccache stats before
+        if command -v ccache >/dev/null 2>&1; then ccache --show-stats || true; fi
+        echo "JOBS: $(nproc) | CCACHE: $(which ccache || echo none)"
 
         if [ "${{ inputs.target }}" != "editor" ]; then
-          # Ensure we don't include editor code in export template builds.
           rm -rf editor
         fi
 
         if [ "${{ github.event.number }}" != "" ]; then
-          # Set build identifier with pull request number if available. This is displayed throughout the editor.
           export BUILD_NAME="gh-${{ github.event.number }}"
         else
           export BUILD_NAME="gh"
         fi
 
-        scons platform=${{ inputs.platform }} target=${{ inputs.target }} ${{ inputs.scons-flags }} "cache_path=${{ inputs.scons-cache }}" redirect_build_objects=no
+        # If ccache is available, inject as launcher for clang used by Android NDK
+        EXTRA_FLAGS=""
+        if command -v ccache >/dev/null 2>&1; then
+          EXTRA_FLAGS="c_compiler_launcher=ccache cpp_compiler_launcher=ccache"
+          echo "Using ccache launcher: $EXTRA_FLAGS"
+        fi
+
+        # JOLT ONLY: godot_physics_* physically deleted, only jolt remains.
+        # Fast unsafe + large SCU + ccache + SCons cache -> target <15 min
+        scons platform=${{ inputs.platform }} target=${{ inputs.target }} ${{ inputs.scons-flags }} $EXTRA_FLAGS "cache_path=${{ inputs.scons-cache }}" redirect_build_objects=no
+        if command -v ccache >/dev/null 2>&1; then ccache --show-stats || true; fi
         ls -l bin/
