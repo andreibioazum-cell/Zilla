@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 # Global Settings — ULTRA FAST BUILD (JOLT ONLY, SCU+FAST_UNSAFE+CCACHE)
-# Godot physics removed — only jolt_physics. Heavy modules physically deleted.
+# Godot physics removed — only jolt_physics. Heavy modules физически удалены.
 # Flags tuned for <10 min build on ubuntu-24.04 (4 cores) — fits 15 min limit.
 env:
   SCONS_CACHE_LIMIT: 4096
@@ -39,6 +39,7 @@ env:
     use_volk=yes
     module_text_server_fb_enabled=yes
     swappy=no
+    generate_android_binaries=yes
     builtin_msdfgen=yes
     builtin_harfbuzz=no
     builtin_icu4c=no
@@ -93,6 +94,20 @@ jobs:
           scons-flags: ${{ env.SCONS_FLAGS }} arch=arm64
           platform: android
           target: editor
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: android-editor-apk
+          path: |
+            platform/android/java/build/outputs/apk/**/*.apk
+            platform/android/java/build/outputs/bundle/**/*.aab
+            bin/*.apk
+            bin/*.aab
+            platform/android/java/lib/libs/**/*.so
+            bin/android-editor-*-native-symbols.zip
+          if-no-files-found: warn
+        continue-on-error: true
 
       - name: Save ccache
         uses: actions/cache/save@v6
