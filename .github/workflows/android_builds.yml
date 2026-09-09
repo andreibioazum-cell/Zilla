@@ -92,7 +92,7 @@ jobs:
             platform/android/java/build/outputs/apk/**/*.apk
             platform/android/java/app/build/outputs/bundle/**/*.aab
             platform/android/java/build/outputs/bundle/**/*.aab
-            platform/android/java/lib/libs/**/libgodot_android.so
+            platform/android/java/lib/build/outputs/aar/*.aar
             bin/*.apk
             bin/*.aab
           if-no-files-found: error
