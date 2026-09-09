@@ -42,9 +42,6 @@ typedef void (*EditorNodeInitCallback)();
 typedef void (*EditorPluginInitializeCallback)();
 typedef bool (*EditorBuildCallback)();
 
-#ifndef ANDROID_ENABLED
-class AndroidSDKManager;
-#endif
 class AcceptDialog;
 class BoxContainer;
 class ColorPicker;
@@ -99,7 +96,6 @@ class EditorSettingsDialog;
 class EditorTitleBar;
 class ExportTemplateManager;
 class EditorQuickOpenDialog;
-class FBXImporterManager;
 class FileSystemDock;
 class HistoryDock;
 class OrphanResourcesDialog;
@@ -177,7 +173,6 @@ public:
 		PROJECT_EXPORT,
 		PROJECT_PACK_AS_ZIP,
 		PROJECT_SETUP_ANDROID_BUILD,
-		PROJECT_OPEN_USER_DATA_FOLDER,
 		PROJECT_RELOAD_CURRENT_PROJECT,
 		PROJECT_QUIT_TO_PROJECT_MANAGER,
 
@@ -195,11 +190,8 @@ public:
 		EDITOR_COMMAND_PALETTE,
 		EDITOR_TAKE_SCREENSHOT,
 		EDITOR_TOGGLE_FULLSCREEN,
-		EDITOR_OPEN_DATA_FOLDER,
-		EDITOR_OPEN_CONFIG_FOLDER,
 		EDITOR_MANAGE_FEATURE_PROFILES,
 		EDITOR_MANAGE_EXPORT_TEMPLATES,
-		EDITOR_CONFIGURE_FBX_IMPORTER,
 
 		LAYOUT_SAVE,
 		LAYOUT_DELETE,
@@ -285,7 +277,6 @@ private:
 	ProjectExportDialog *project_export = nullptr;
 	ProjectSettingsEditor *project_settings_editor = nullptr;
 
-	FBXImporterManager *fbx_importer_manager = nullptr;
 
 	Vector<EditorPlugin *> editor_plugins;
 	bool _initializing_plugins = false;
@@ -345,7 +336,6 @@ private:
 	MenuButton *main_menu_button = nullptr;
 	MenuBar *main_menu_bar = nullptr;
 
-	PopupMenu *apple_menu = nullptr;
 	PopupMenu *file_menu = nullptr;
 	PopupMenu *project_menu = nullptr;
 	PopupMenu *debug_menu = nullptr;
@@ -501,10 +491,6 @@ private:
 	bool was_window_windowed_last = false;
 
 	bool unfocused_low_processor_usage_mode_enabled = true;
-
-#ifndef ANDROID_ENABLED
-	AndroidSDKManager *android_sdk_manager = nullptr;
-#endif
 
 	static EditorBuildCallback build_callbacks[MAX_BUILD_CALLBACKS];
 	static EditorPluginInitializeCallback plugin_init_callbacks[MAX_INIT_CALLBACKS];
