@@ -608,6 +608,17 @@ void ProjectManager::_open_selected_projects() {
 
 		args.push_back("--editor");
 
+#ifdef ANDROID_ENABLED
+		// Zilla (Android): users typically have no access to logcat, so when the
+		// restarted editor crashes while opening a project (e.g. right after
+		// creating it) there was no way to tell why. Persist the launched
+		// instance's full verbose log into the project folder, where the user can
+		// grab it with any file manager and share it for diagnosis.
+		args.push_back("--verbose");
+		args.push_back("--log-file");
+		args.push_back(path.path_join("godot_editor_log.txt"));
+#endif
+
 		if (open_in_recovery_mode) {
 			args.push_back("--recovery-mode");
 		}
