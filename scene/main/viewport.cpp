@@ -337,6 +337,14 @@ void Viewport::_sub_window_register(Window *p_window) {
 	sw.window = p_window;
 	gui.sub_windows.push_back(sw);
 
+#ifdef ANDROID_ENABLED
+	// Zilla (Android): sub-windows (dialogs, popups like the "New Project"
+	// dialog) get a fixed size and cannot be resized by dragging their edges.
+	// Dragging/resizing embedded sub-windows is unreliable on Android and can
+	// lead to hangs or crashes; resizing them is not needed on a touchscreen.
+	p_window->set_flag(Window::FLAG_RESIZE_DISABLED, true);
+#endif
+
 	if (gui.subwindow_drag == SUB_WINDOW_DRAG_DISABLED) {
 		if (p_window->get_flag(Window::FLAG_NO_FOCUS)) {
 			_sub_window_update_order();

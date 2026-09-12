@@ -623,10 +623,12 @@ void ProjectManager::_open_selected_projects() {
 		Error err = OS::get_singleton()->create_instance(args);
 		if (err != OK) {
 			loading_label->hide();
+			print_line("[Zilla] Failed to start an editor instance for " + path + " (error " + itos((int)err) + ")");
 			_show_error(vformat(TTR("Can't open project at '%s'.\nFailed to start the editor."), path));
 			ERR_PRINT(vformat("Failed to start an editor instance for the project at '%s', error code %d.", path, err));
 			return;
 		}
+		print_line("[Zilla] Editor instance started for " + path + " — closing project manager (on Android the app process restarts now, this is the 'loading' pause)");
 	}
 
 	project_list->project_opening_initiated = true;
@@ -966,12 +968,23 @@ void ProjectManager::_on_recovery_mode_popup_open_recovery() {
 }
 
 void ProjectManager::_on_project_created(const String &dir, bool edit) {
+	print_line("[Zilla] ProjectManager::_on_project_created: " + dir + " edit=" + (edit ? "yes" : "no"));
 	project_list->add_project(dir, false);
 	project_list->save_config();
 	search_box->clear();
 
 	int i = project_list->refresh_project(dir);
-	project_list->ensure_project_visible(i);
+	if (i >= 0) {
+		// Make sure the new project is both selected and visible. Selecting it
+		// explicitly (instead of relying on the focus-enter side effect) makes
+		// the "edit right after creation" flow deterministic, and guarding the
+		// index prevents an out-of-bounds access if the project didn't end up
+		// in the list for some reason.
+		project_list->select_project(i, true);
+		project_list->ensure_project_visible(i);
+	} else {
+		ERR_PRINT(vformat("Project at '%s' was created but could not be added to the project list.", dir));
+	}
 	_update_list_placeholder();
 
 	if (edit) {

@@ -537,6 +537,7 @@ void ProjectDialog::_nonempty_confirmation_ok_pressed() {
 }
 
 void ProjectDialog::ok_pressed() {
+	print_line("[Zilla] ProjectDialog::ok_pressed: mode=" + itos((int)mode) + " path=" + project_path->get_text());
 	// Before we create a project, check that the target folder is empty.
 	// If not, we need to ask the user if they're sure they want to do this.
 	if (!is_folder_empty) {
