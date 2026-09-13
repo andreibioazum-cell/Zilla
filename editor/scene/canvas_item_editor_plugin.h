@@ -367,6 +367,7 @@ private:
 	Button *ungroup_button = nullptr;
 
 	MenuButton *view_menu = nullptr;
+	MenuButton *primitives_menu = nullptr;
 	PopupMenu *grid_menu = nullptr;
 	PopupMenu *theme_menu = nullptr;
 	PopupMenu *gizmos_menu = nullptr;
@@ -449,6 +450,17 @@ private:
 	void _add_node_pressed(int p_result);
 	void _create_node();
 	void _instantiate_scene(const String &p_path);
+
+	// Zilla: one-click 2D primitives (square, circle, capsule, ...).
+	enum Primitive2D {
+		PRIMITIVE_2D_SQUARE,
+		PRIMITIVE_2D_RECTANGLE,
+		PRIMITIVE_2D_CIRCLE,
+		PRIMITIVE_2D_ELLIPSE,
+		PRIMITIVE_2D_TRIANGLE,
+		PRIMITIVE_2D_CAPSULE,
+	};
+	void _create_primitive_2d(int p_id);
 	void _update_editor_settings();
 	void _prepare_grid_menu();
 	void _on_grid_menu_id_pressed(int p_id);

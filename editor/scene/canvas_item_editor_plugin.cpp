@@ -1141,6 +1141,113 @@ void CanvasItemEditor::_instantiate_scene(const String &p_path) {
 	undo_redo->commit_action();
 }
 
+void CanvasItemEditor::_create_primitive_2d(int p_id) {
+	// Zilla: one-click creation of simple 2D shapes. Instead of manually
+	// creating a node and editing its mesh/vertices, the user picks a shape
+	// from the "Primitives" menu and a ready-to-use, colored Polygon2D is
+	// added to the scene (with full undo/redo support).
+
+	Polygon2D *child = memnew(Polygon2D);
+
+	Vector<Vector2> points;
+	String base_name;
+	Color color;
+
+	switch (p_id) {
+		case PRIMITIVE_2D_SQUARE: {
+			base_name = "Square";
+			color = Color(0.94, 0.60, 0.26);
+			const real_t half = 50.0;
+			points.push_back(Vector2(-half, -half));
+			points.push_back(Vector2(half, -half));
+			points.push_back(Vector2(half, half));
+			points.push_back(Vector2(-half, half));
+		} break;
+
+		case PRIMITIVE_2D_RECTANGLE: {
+			base_name = "Rectangle";
+			color = Color(0.40, 0.68, 0.95);
+			const real_t half_w = 80.0;
+			const real_t half_h = 50.0;
+			points.push_back(Vector2(-half_w, -half_h));
+			points.push_back(Vector2(half_w, -half_h));
+			points.push_back(Vector2(half_w, half_h));
+			points.push_back(Vector2(-half_w, half_h));
+		} break;
+
+		case PRIMITIVE_2D_CIRCLE: {
+			base_name = "Circle";
+			color = Color(0.55, 0.83, 0.45);
+			const real_t radius = 50.0;
+			const int segments = 48;
+			for (int i = 0; i < segments; i++) {
+				const real_t angle = (real_t)i / segments * Math_TAU - Math_PI / 2.0;
+				points.push_back(Vector2(Math::cos(angle), Math::sin(angle)) * radius);
+			}
+		} break;
+
+		case PRIMITIVE_2D_ELLIPSE: {
+			base_name = "Ellipse";
+			color = Color(0.72, 0.55, 0.93);
+			const real_t radius_x = 80.0;
+			const real_t radius_y = 50.0;
+			const int segments = 48;
+			for (int i = 0; i < segments; i++) {
+				const real_t angle = (real_t)i / segments * Math_TAU - Math_PI / 2.0;
+				points.push_back(Vector2(Math::cos(angle) * radius_x, Math::sin(angle) * radius_y));
+			}
+		} break;
+
+		case PRIMITIVE_2D_TRIANGLE: {
+			base_name = "Triangle";
+			color = Color(0.94, 0.45, 0.55);
+			const real_t radius = 60.0;
+			points.push_back(Vector2(0.0, -radius));
+			points.push_back(Vector2(radius * Math::cos(Math_PI / 6.0), radius * Math::sin(Math_PI / 6.0)));
+			points.push_back(Vector2(-radius * Math::cos(Math_PI / 6.0), radius * Math::sin(Math_PI / 6.0)));
+		} break;
+
+		case PRIMITIVE_2D_CAPSULE: {
+			base_name = "Capsule";
+			color = Color(0.35, 0.80, 0.78);
+			const real_t radius = 35.0;
+			const real_t half_straight = 35.0;
+			const int cap_segments = 24;
+			// Top cap, from the left point over the top to the right point.
+			for (int i = 0; i <= cap_segments; i++) {
+				const real_t angle = Math_PI - (real_t)i / cap_segments * Math_PI;
+				points.push_back(Vector2(radius * Math::cos(angle), -half_straight - radius * Math::sin(angle)));
+			}
+			// Bottom cap, from the right point around the bottom to the left point.
+			for (int i = 0; i <= cap_segments; i++) {
+				const real_t angle = -(real_t)i / cap_segments * Math_PI;
+				points.push_back(Vector2(radius * Math::cos(angle), half_straight - radius * Math::sin(angle)));
+			}
+		} break;
+
+		default: {
+			memdelete(child);
+			ERR_FAIL_MSG("Unknown 2D primitive.");
+		}
+	}
+
+	child->set_polygon(points);
+	child->set_antialiased(true);
+	child->set_color(color);
+	child->set_name(base_name);
+
+	Node *parent = SceneTreeDock::get_singleton()->get_tree_editor()->get_selected();
+	if (!parent) {
+		parent = EditorNode::get_editor_data().get_edited_scene_root();
+	}
+
+	EditorUndoRedoManager *undo_redo = EditorUndoRedoManager::get_singleton();
+	undo_redo->create_action_for_history(TTRC("Create 2D Primitive"), EditorNode::get_editor_data().get_current_edited_scene_history_id());
+	undo_redo->add_do_method(editor_selection, "clear");
+	add_node_to_scene(parent, child, node_create_position);
+	undo_redo->commit_action();
+}
+
 bool CanvasItemEditor::is_grid_visible() const {
 	switch (grid_visibility) {
 		case GRID_VISIBILITY_SHOW:
@@ -4527,6 +4634,16 @@ void CanvasItemEditor::_notification(int p_what) {
 			select_sb->set_texture_margin_all(4);
 			select_sb->set_content_margin_all(4);
 
+			// Zilla: icons for the Primitives menu (theme is only available from READY on).
+			primitives_menu->set_button_icon(get_editor_theme_icon(SNAME("Polygon2D")));
+			PopupMenu *primitives_popup = primitives_menu->get_popup();
+			primitives_popup->set_item_icon(PRIMITIVE_2D_SQUARE, get_editor_theme_icon(SNAME("MaterialPreviewQuad")));
+			primitives_popup->set_item_icon(PRIMITIVE_2D_RECTANGLE, get_editor_theme_icon(SNAME("Rectangle")));
+			primitives_popup->set_item_icon(PRIMITIVE_2D_CIRCLE, get_editor_theme_icon(SNAME("CircleShape2D")));
+			primitives_popup->set_item_icon(PRIMITIVE_2D_ELLIPSE, get_editor_theme_icon(SNAME("PickerShapeCircle")));
+			primitives_popup->set_item_icon(PRIMITIVE_2D_TRIANGLE, get_editor_theme_icon(SNAME("ToolTriangle")));
+			primitives_popup->set_item_icon(PRIMITIVE_2D_CAPSULE, get_editor_theme_icon(SNAME("CapsuleShape2D")));
+
 			AnimationPlayerEditor::get_singleton()->get_track_editor()->connect("keying_changed", callable_mp(this, &CanvasItemEditor::_keying_changed));
 			AnimationPlayerEditor::get_singleton()->connect("animation_selected", callable_mp(this, &CanvasItemEditor::_keying_changed).unbind(1));
 			_keying_changed();
@@ -6163,6 +6280,29 @@ CanvasItemEditor::CanvasItemEditor() {
 	p->connect(SceneStringName(id_pressed), callable_mp(this, &CanvasItemEditor::_popup_callback));
 
 	main_flow->add_child(memnew(VSeparator));
+
+	// Zilla: "Primitives" menu — one-click creation of simple 2D shapes.
+	HBoxContainer *primitives_menu_hbox = memnew(HBoxContainer);
+	primitives_menu_hbox->set_anchors_and_offsets_preset(Control::PRESET_FULL_RECT);
+	main_flow->add_child(primitives_menu_hbox);
+
+	primitives_menu = memnew(MenuButton);
+	primitives_menu->set_flat(false);
+	primitives_menu->set_theme_type_variation("FlatMenuButton");
+	primitives_menu->set_text(TTRC("Primitives"));
+	primitives_menu->set_tooltip_text(TTRC("Quickly create simple 2D shapes (square, circle, capsule...) in the scene."));
+	primitives_menu->set_switch_on_hover(true);
+	primitives_menu->set_shortcut_context(this);
+	primitives_menu_hbox->add_child(primitives_menu);
+
+	PopupMenu *primitives_popup = primitives_menu->get_popup();
+	primitives_popup->add_item(TTRC("Square"), PRIMITIVE_2D_SQUARE);
+	primitives_popup->add_item(TTRC("Rectangle"), PRIMITIVE_2D_RECTANGLE);
+	primitives_popup->add_item(TTRC("Circle"), PRIMITIVE_2D_CIRCLE);
+	primitives_popup->add_item(TTRC("Ellipse"), PRIMITIVE_2D_ELLIPSE);
+	primitives_popup->add_item(TTRC("Triangle"), PRIMITIVE_2D_TRIANGLE);
+	primitives_popup->add_item(TTRC("Capsule"), PRIMITIVE_2D_CAPSULE);
+	primitives_popup->connect(SceneStringName(id_pressed), callable_mp(this, &CanvasItemEditor::_create_primitive_2d));
 
 	HBoxContainer *view_menu_hbox = memnew(HBoxContainer);
 	view_menu_hbox->set_anchors_and_offsets_preset(Control::PRESET_FULL_RECT);
