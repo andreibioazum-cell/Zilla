@@ -90,6 +90,7 @@
 #include "editor/translations/editor_translation_preview_menu.h"
 #include "scene/3d/camera_3d.h"
 #include "scene/3d/light_3d.h"
+#include "scene/3d/mesh_instance_3d.h"
 #include "scene/3d/physics/collision_shape_3d.h"
 #include "scene/3d/physics/physics_body_3d.h"
 #include "scene/3d/world_environment.h"
@@ -107,6 +108,7 @@
 #include "scene/gui/spin_box.h"
 #include "scene/gui/split_container.h"
 #include "scene/main/scene_tree.h"
+#include "scene/resources/3d/primitive_meshes.h"
 #include "scene/resources/3d/sky_material.h"
 #include "scene/resources/sky.h"
 #include "scene/resources/surface_tool.h"
@@ -2542,6 +2544,84 @@ void Node3DEditor::_add_environment_to_scene(bool p_already_added_sun) {
 	undo_redo->commit_action();
 }
 
+void Node3DEditor::_create_primitive_3d(int p_id) {
+	// Zilla: one-click creation of simple 3D shapes. Instead of manually
+	// creating a MeshInstance3D and assigning a mesh resource, the user picks
+	// a shape from the "Primitives" menu and a ready-to-use MeshInstance3D
+	// with the matching PrimitiveMesh is added to the scene (with full
+	// undo/redo support).
+
+	Ref<PrimitiveMesh> mesh;
+	String base_name;
+
+	switch (p_id) {
+		case PRIMITIVE_3D_CUBE: {
+			mesh.instantiate<BoxMesh>();
+			base_name = "Cube";
+		} break;
+
+		case PRIMITIVE_3D_SPHERE: {
+			mesh.instantiate<SphereMesh>();
+			base_name = "Sphere";
+		} break;
+
+		case PRIMITIVE_3D_CAPSULE: {
+			mesh.instantiate<CapsuleMesh>();
+			base_name = "Capsule";
+		} break;
+
+		case PRIMITIVE_3D_CYLINDER: {
+			mesh.instantiate<CylinderMesh>();
+			base_name = "Cylinder";
+		} break;
+
+		case PRIMITIVE_3D_PLANE: {
+			mesh.instantiate<PlaneMesh>();
+			base_name = "Plane";
+		} break;
+
+		case PRIMITIVE_3D_QUAD: {
+			mesh.instantiate<QuadMesh>();
+			base_name = "Quad";
+		} break;
+
+		case PRIMITIVE_3D_TORUS: {
+			mesh.instantiate<TorusMesh>();
+			base_name = "Torus";
+		} break;
+
+		default: {
+			ERR_FAIL_MSG("Unknown 3D primitive.");
+		}
+	}
+
+	MeshInstance3D *child = memnew(MeshInstance3D);
+	child->set_mesh(mesh);
+	child->set_name(base_name);
+
+	Node *parent = SceneTreeDock::get_singleton()->get_tree_editor()->get_selected();
+	if (!parent) {
+		parent = get_tree()->get_edited_scene_root();
+	}
+	if (!parent) {
+		// No scene yet: create a simple root so the primitive has a home
+		// (same approach as "Add Preview Sun to Scene").
+		SceneTreeDock::get_singleton()->add_root_node(memnew(Node3D));
+		parent = get_tree()->get_edited_scene_root();
+	}
+	ERR_FAIL_NULL(parent);
+
+	EditorUndoRedoManager *undo_redo = EditorUndoRedoManager::get_singleton();
+	undo_redo->create_action_for_history(TTRC("Create 3D Primitive"), EditorNode::get_editor_data().get_current_edited_scene_history_id());
+	undo_redo->add_do_method(EditorNode::get_singleton()->get_editor_selection(), "clear");
+	undo_redo->add_do_method(parent, "add_child", child, true);
+	undo_redo->add_do_method(child, "set_owner", EditorNode::get_singleton()->get_edited_scene());
+	undo_redo->add_undo_method(parent, "remove_child", child);
+	undo_redo->add_do_reference(child);
+	undo_redo->add_do_method(EditorNode::get_singleton()->get_editor_selection(), "add_node", child);
+	undo_redo->commit_action();
+}
+
 void Node3DEditor::_update_theme() {
 	tool_button[TOOL_MODE_TRANSFORM]->set_button_icon(get_editor_theme_icon(SNAME("ToolTransform")));
 	tool_button[TOOL_MODE_MOVE]->set_button_icon(get_editor_theme_icon(SNAME("ToolMove")));
@@ -2579,6 +2659,17 @@ void Node3DEditor::_update_theme() {
 	environ_ground_color->set_custom_minimum_size(Size2(0, get_theme_constant(SNAME("inspector_property_height"), EditorStringName(Editor))));
 
 	context_toolbar_panel->add_theme_style_override(SceneStringName(panel), get_theme_stylebox(SNAME("ContextualToolbar"), EditorStringName(EditorStyles)));
+
+	// Zilla: icons for the Primitives menu.
+	primitives_menu->set_button_icon(get_editor_theme_icon(SNAME("MeshInstance3D")));
+	PopupMenu *primitives_popup = primitives_menu->get_popup();
+	primitives_popup->set_item_icon(primitives_popup->get_item_index(PRIMITIVE_3D_CUBE), get_editor_theme_icon(SNAME("BoxMesh")));
+	primitives_popup->set_item_icon(primitives_popup->get_item_index(PRIMITIVE_3D_SPHERE), get_editor_theme_icon(SNAME("SphereMesh")));
+	primitives_popup->set_item_icon(primitives_popup->get_item_index(PRIMITIVE_3D_CAPSULE), get_editor_theme_icon(SNAME("CapsuleMesh")));
+	primitives_popup->set_item_icon(primitives_popup->get_item_index(PRIMITIVE_3D_CYLINDER), get_editor_theme_icon(SNAME("CylinderMesh")));
+	primitives_popup->set_item_icon(primitives_popup->get_item_index(PRIMITIVE_3D_PLANE), get_editor_theme_icon(SNAME("PlaneMesh")));
+	primitives_popup->set_item_icon(primitives_popup->get_item_index(PRIMITIVE_3D_QUAD), get_editor_theme_icon(SNAME("QuadMesh")));
+	primitives_popup->set_item_icon(primitives_popup->get_item_index(PRIMITIVE_3D_TORUS), get_editor_theme_icon(SNAME("TorusMesh")));
 }
 
 void Node3DEditor::_notification(int p_what) {
@@ -3622,6 +3713,31 @@ Node3DEditor::Node3DEditor() {
 	environment_hbox->add_child(sun_environ_settings);
 
 	environment_hbox->add_child(memnew(VSeparator));
+
+	// Zilla: "Primitives" menu — one-click creation of simple 3D shapes.
+	HBoxContainer *primitives_hbox = memnew(HBoxContainer);
+	main_flow->add_child(primitives_hbox);
+
+	primitives_menu = memnew(MenuButton);
+	primitives_menu->set_flat(false);
+	primitives_menu->set_theme_type_variation("FlatMenuButton");
+	primitives_menu->set_text(TTRC("Primitives"));
+	primitives_menu->set_tooltip_text(TTRC("Quickly create simple 3D shapes (cube, sphere, capsule...) in the scene."));
+	primitives_menu->set_switch_on_hover(true);
+	primitives_menu->set_shortcut_context(this);
+	primitives_hbox->add_child(primitives_menu);
+
+	PopupMenu *primitives_popup = primitives_menu->get_popup();
+	primitives_popup->add_item(TTRC("Cube"), PRIMITIVE_3D_CUBE);
+	primitives_popup->add_item(TTRC("Sphere"), PRIMITIVE_3D_SPHERE);
+	primitives_popup->add_item(TTRC("Capsule"), PRIMITIVE_3D_CAPSULE);
+	primitives_popup->add_item(TTRC("Cylinder"), PRIMITIVE_3D_CYLINDER);
+	primitives_popup->add_item(TTRC("Plane"), PRIMITIVE_3D_PLANE);
+	primitives_popup->add_item(TTRC("Quad"), PRIMITIVE_3D_QUAD);
+	primitives_popup->add_item(TTRC("Torus"), PRIMITIVE_3D_TORUS);
+	primitives_popup->connect(SceneStringName(id_pressed), callable_mp(this, &Node3DEditor::_create_primitive_3d));
+
+	primitives_hbox->add_child(memnew(VSeparator));
 
 	HBoxContainer *transform_view_hbox = memnew(HBoxContainer);
 	main_flow->add_child(transform_view_hbox);

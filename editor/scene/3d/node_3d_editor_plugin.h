@@ -348,6 +348,9 @@ private:
 	Label *environ_title = nullptr;
 	VBoxContainer *environ_vb = nullptr;
 	ColorPickerButton *environ_sky_color = nullptr;
+
+	// Zilla: "Primitives" menu in the 3D toolbar.
+	MenuButton *primitives_menu = nullptr;
 	ColorPickerButton *environ_ground_color = nullptr;
 	EditorSpinSlider *environ_energy = nullptr;
 	Button *environ_ao_button = nullptr;
@@ -429,6 +432,18 @@ private:
 
 	void _add_sun_to_scene(bool p_already_added_environment = false);
 	void _add_environment_to_scene(bool p_already_added_sun = false);
+
+	// Zilla: one-click 3D primitives (cube, sphere, capsule, ...).
+	enum Primitive3D {
+		PRIMITIVE_3D_CUBE,
+		PRIMITIVE_3D_SPHERE,
+		PRIMITIVE_3D_CAPSULE,
+		PRIMITIVE_3D_CYLINDER,
+		PRIMITIVE_3D_PLANE,
+		PRIMITIVE_3D_QUAD,
+		PRIMITIVE_3D_TORUS,
+	};
+	void _create_primitive_3d(int p_id);
 
 	void _update_theme();
 
